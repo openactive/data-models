@@ -1,0 +1,137 @@
+{
+  "type": "Schedule",
+  "sameAs": null,
+  "derivedFrom": "http://pending.schema.org/Schedule",
+  "hasId": false,
+  "requiredFields": [
+    "repeatFrequency",
+    "startDate",
+    "startTime",
+    "endTime"
+  ],
+  "recommendedFields": [
+    "duration",
+    "endDate"
+  ],
+  "inSpec": [
+    "type",
+    "repeatFrequency",
+    "byDay",
+    "startDate",
+    "endDate",
+    "startTime",
+    "endTime",
+    "repeatCount",
+    "byMonth",
+    "byMonthDay",
+    "exceptDate",
+    "duration"
+  ],
+  "fields": {
+    "byDay": {
+      "fieldName": "byDay",
+      "requiredType": "ArrayOf#http://schema.org/url",
+      "example": "http://schema.org/Monday",
+      "description": [
+        "Defines the day of the week upon which the Event takes place"
+      ],
+      "options": [
+        "http://schema.org/Monday",
+        "http://schema.org/Tuesday",
+        "http://schema.org/Wednesday",
+        "http://schema.org/Thursday",
+        "http://schema.org/Friday",
+        "http://schema.org/Saturday",
+        "http://schema.org/Sunday"
+      ]
+    },
+    "byMonth": {
+      "fieldName": "byMonth",
+      "requiredType": "ArrayOf#http://schema.org/Integer",
+      "example": [2],
+      "description": [
+        "Defines the months of the year on which the Event takes place. Specified as an integer between 1 and 12, with 1 representing January."
+      ]
+    },
+    "byMonthDay": {
+      "fieldName": "byMonthDay",
+      "requiredType": "ArrayOf#http://schema.org/Integer",
+      "example": [28],
+      "description": [
+        "Defines the days of the month on which the Event takes place. Specified as an integer between 1 and 31"
+      ]
+    },
+    "duration": {
+      "fieldName": "duration",
+      "requiredType": "http://schema.org/Duration",
+      "description": [
+        "The duration of the event given in [ISO8601] format."
+      ],
+      "example": "PT1H"
+    },
+    "endDate": {
+      "fieldName": "endDate",
+      "requiredType": "http://schema.org/Date",
+      "description": [
+        "The end date of the schedule."
+      ],
+      "example": "2018-01-27"
+    },
+    "endTime": {
+      "fieldName": "endTime",
+      "requiredType": "http://schema.org/Time",
+      "description": [
+        "The end time of the event."
+      ],
+      "example": "12:00:00"
+    },
+    "exceptDate": {
+      "fieldName": "exceptDate",
+      "requiredType": "ArrayOf#http://schema.org/Date",
+      "alternativeTypes": ["ArrayOf#http://schema.org/DateTime"],
+      "example": "TODO",
+      "description": [
+        "TODO"
+      ]
+    },
+    "repeatCount": {
+      "fieldName": "repeatCount",
+      "requiredType": "http://schema.org/Integer",
+      "example": 3,
+      "description": [
+        "Defines the number of times a recurring Event will take place."
+      ]
+    },
+    "repeatFrequency": {
+      "fieldName": "repeatFrequency",
+      "requiredType": "http://schema.org/Duration",
+      "example": "P1D",
+      "description": [
+        "Defines the frequency at which Events will occur according to a Schedule. The intervals between events should be defined as a Duration of time."
+      ]
+    },
+    "startDate": {
+      "fieldName": "startDate",
+      "requiredType": "http://schema.org/Date",
+      "description": [
+        "The start date of the event."
+      ],
+      "example": "2018-01-27"
+    },
+    "startTime": {
+      "fieldName": "startTime",
+      "requiredType": "http://schema.org/Time",
+      "description": [
+        "The start time of the event."
+      ],
+      "example": "12:00:00"
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Schedule",
+      "description": "",
+      "example": "Schedule"
+    }
+  }
+}

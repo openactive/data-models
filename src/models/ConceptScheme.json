@@ -1,0 +1,83 @@
+{
+  "type": "ConceptScheme",
+  "sameAs": null,
+  "derivedFrom": "https://www.w3.org/TR/skos-primer/#secscheme",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/scheme/",
+  "requiredFields": [
+    "type",
+    "id",
+    "url",
+    "title",
+    "concepts"
+  ],
+  "recommendedFields": [
+    "description",
+    "license"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "url",
+    "title",
+    "description",
+    "license",
+    "concepts"
+  ],
+  "fields": {
+    "concepts": {
+      "fieldName": "description",
+      "model": "ArrayOf#Concept",
+      "example": [{
+        "id": "https://example.com/concept/martial-arts",
+        "type": "Concept",
+        "prefLabel": "Martial Arts",
+        "inScheme": "https://example.com/scheme/123",
+        "narrower": "https://example.com/concept/martial-arts/karate"
+      }],
+      "description": [
+        "A collection of concepts that are part of this scheme"
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "requiredType": "http://schema.org/Text",
+      "example": "An example activity list.",
+      "description": [
+        "A free text description of the taxonomy"
+      ]
+    },
+    "license": {
+      "fieldName": "license",
+      "requiredType": "http://schema.org/url",
+      "description": [
+        "Reference to the license under which the activity list has been published."
+      ],
+      "example": "https://example.com/license/MIT"
+    },
+    "title": {
+      "fieldName": "title",
+      "requiredType": "http://schema.org/Text",
+      "example": "Activity List",
+      "description": [
+        "The title of the scheme"
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "ConceptScheme",
+      "description": "",
+      "example": "ConceptScheme"
+    },
+    "url": {
+      "fieldName": "url",
+      "requiredType": "http://schema.org/url",
+      "description": [
+        "A URL to a web page (or section of a page) that describes the concept scheme."
+      ],
+      "example": "https://example.com/scheme/1234"
+    }
+  }
+}

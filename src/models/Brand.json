@@ -1,0 +1,58 @@
+{
+  "type": "Brand",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Brand",
+  "hasId": true,
+  "sampleId": "https://example.com/brand/",
+  "idFormat": "http://schema.org/url",
+  "requiredFields": [
+    "name",
+    "url"
+  ],
+  "recommendedFields": [
+    "description",
+    "logo"
+  ],
+  "inSpec": [
+    "id",
+    "type",
+    "name",
+    "url",
+    "description",
+    "logo"
+  ],
+  "fields": {
+    "name": {
+      "fieldName": "name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Play Ball!",
+      "description": [
+        "The name of the programme."
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "requiredType": "http://schema.org/Text",
+      "example": "Play Ball! is a series of games for people of all abilities.",
+      "description": [
+        "A text description for the programme."
+      ]
+    },
+    "url": {
+      "fieldName": "url",
+      "requiredType": "http://schema.org/url",
+      "example": "http://example.com/play_ball",
+      "description": [
+        "A url where further information can be found for the programme."
+      ]
+    },
+    "logo": {
+      "fieldName": "logo",
+      "requiredType": "http://schema.org/url",
+      "example": "http://example.com/images/play_ball_logo.svg",
+      "description": [
+        "The URL where a logo associated with the programme is located."
+      ]
+    }
+  }
+}

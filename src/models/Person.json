@@ -1,0 +1,68 @@
+{
+  "type": "Person",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Person",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/person/",
+  "requiredFields": [
+    "type",
+    "name"
+  ],
+  "recommendedFields": [
+    "description"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "url",
+    "name",
+    "description"
+  ],
+  "fields": {
+    "description": {
+      "fieldName": "description",
+      "sameAs": "http://schema.org/description",
+      "requiredType": "http://schema.org/Text",
+      "example": "The leader of the coaching team",
+      "description": [
+        "The description of the Person"
+      ]
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "http://schema.org/name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Daley Thompson",
+      "description": [
+        "A full name for the person.",
+        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Person",
+      "description": "",
+      "example": "Person"
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "http://schema.org/url",
+      "requiredType": "http://schema.org/url",
+      "example": "http://www.example.com/",
+      "description": [
+        "A URL where more information about the person may be found"
+      ]
+    }
+  }
+}

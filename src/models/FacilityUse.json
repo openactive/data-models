@@ -1,0 +1,169 @@
+{
+  "type": "FacilityUse",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/facilityUse/",
+  "requiredFields": [
+    "type",
+    "id",
+    "@context",
+    "url",
+    "name",
+    "activity",
+    "location",
+    "event",
+  ],
+  "recommendedFields": [
+    "description",
+    "image",
+    "hoursAvailable"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "@context",
+    "url",
+    "identifier",
+    "name",
+    "description",
+    "image",
+    "activity",
+    "location",
+    "event",
+    "offers",
+    "hoursAvailable",
+    "individualFacilityUses"
+  ],
+  "fields": {
+    "@context": {
+      "fieldName": "@context",
+      "requiredType": "http://schema.org/url",
+      "requiredContent": "https://www.openactive.io/ns/oa.jsonld",
+      "description": "",
+      "example": "https://www.openactive.io/ns/oa.jsonld"
+    },
+    "activity": {
+      "fieldName": "activity",
+      "model": "ArrayOf#Concept",
+      "alternativeTypes": [
+        "ArrayOf#http://schema.org/Text"
+      ],
+      "context": "!activity",
+      "description": [
+        "Specifies the physical activity or activities that will take place during a facility use."
+      ],
+      "example": [{
+        "id": "https://example.com/reference/activities#Speedball",
+        "inScheme": "https://example.com/reference/activities",
+        "prefLabel": "Speedball",
+        "type": "Concept"
+      }]
+    },
+    "description": {
+      "fieldName": "description",
+      "requiredType": "http://schema.org/Text",
+      "example": "An fast paced game that incorporates netball, handball and football.",
+      "description": [
+        "A free text description of the facility use"
+      ]
+    },
+    "event": {
+      "fieldName": "event",
+      "model": "ArrayOf#Slot",
+      "description": [
+        "TODO"
+      ]
+    },
+    "hoursAvailable": {
+      "fieldName": "hoursAvailable",
+      "model": "ArrayOf#OpeningHoursSpecification",
+      "description": [
+        "The times the facility use is available"
+      ]
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "image": {
+      "fieldName": "image",
+      "model": "ArrayOf#ImageObject",
+      "description": [
+        "An image or photo that depicts the facility use, e.g. a photo taken at a previous event."
+      ],
+      "example": [{
+        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+        "type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      }]
+    },
+    "individualFacilityUses": {
+      "fieldName": "individualFacilityUses",
+      "model": "ArrayOf#IndividualFacilityUse",
+      "description": [
+        "TODO"
+      ]
+    },
+    "location": {
+      "fieldName": "location",
+      "model": "#Place",
+      "description": [
+        "The location at which the facility use will take place.",
+      ],
+      "example": {
+        "address": {
+          "addressLocality": "New Malden",
+          "addressRegion": "London",
+          "postalCode": "NW5 3DU",
+          "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
+          "type": "PostalAddress"
+        },
+        "description": "Raynes Park High School in London",
+        "geo": {
+          "latitude": 51.4034423828125,
+          "longitude": -0.2369088977575302,
+          "type": "GeoCoordinates"
+        },
+        "id": "https://example.com/locations/1234ABCD",
+        "identifier": "1234ABCD",
+        "name": "Raynes Park High School",
+        "telephone": "01253 473934",
+        "type": "Place"
+      }
+    },
+    "name": {
+      "fieldName": "name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Speedball",
+      "description": [
+        "The name of the facility use"
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "FacilityUse",
+      "description": "",
+      "example": "FacilityUse"
+    },
+    "offers": {
+      "fieldName": "offers",
+      "model": "ArrayOf#Offer",
+      "description": [
+        "TODO"
+      ]
+    },
+    "url": {
+      "fieldName": "url",
+      "requiredType": "http://schema.org/url",
+      "description": [
+        "A URL to a web page (or section of a page) that describes the facility use."
+      ],
+      "example": "https://example.com/facility-use/1234"
+    }
+  }
+}

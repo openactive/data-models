@@ -1,0 +1,195 @@
+{
+  "type": "Place",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Place",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/place/",
+  "requiredFields": [
+    "type",
+    "id",
+    "url",
+    "name"
+  ],
+  "recommendedFields": [
+    "description",
+    "image",
+    "address",
+    "geo",
+    "telephone",
+    "openingHoursSpecification",
+    "amenityFeature"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "url",
+    "name"
+    "description",
+    "image",
+    "address",
+    "geo",
+    "containedInPlace",
+    "containsPlace",
+    "telephone",
+    "openingHoursSpecification",
+    "amenityFeature"
+  ],
+  "fields": {
+    "address": {
+      "fieldName": "address",
+      "sameAs": "http://schema.org/address",
+      "required": true,
+      "model": "#PostalAddress",
+      "preferredComment": "Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires http://schema.org/PostalAddress and will not accept plain text addresses.",
+      "example": {
+        "addressLocality": "New Malden",
+        "addressRegion": "London",
+        "postalCode": "NW5 3DU",
+        "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
+        "type": "PostalAddress"
+      },
+      "description": [
+        "A structured PostalAddress object for the Place.","Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires http://schema.org/PostalAddress and will not accept plain text addresses."
+      ]
+    },
+    "amenityFeature": {
+      "fieldName": "amenityFeature",
+      "requiredType": "ArrayOf#LocationFeatureSpecifiction",
+      "example": [
+        {
+          "name": "Changing Facilities",
+          "value": true,
+          "type": "ChangingFacilities"
+        },
+        {
+          "name": "Showers",
+          "value": false,
+          "type": "Showers"
+        },
+        {
+          "name": "Lockers",
+          "value": true,
+          "type": "Lockers"
+        },
+        {
+          "name": "Towels",
+          "value": false,
+          "type": "Towels"
+        },
+        {
+          "name": "Creche",
+          "value": false,
+          "type": "Creche"
+        },
+        {
+          "name": "Parking",
+          "value": true,
+          "type": "Parking"
+        }
+      ],
+      "description": [
+        "An array listing the Ammenities of the Place."
+      ]
+    },
+    "containedInPlace": {
+      "fieldName": "containedInPlace",
+      "model": "#Place",
+      "example": "TODO",
+      "description": [
+        "TODO"
+      ]
+    },
+    "containsPlace": {
+      "fieldName": "containsPlace",
+      "model": "ArrayOf#Place",
+      "example": "TODO",
+      "description": [
+        "TODO"
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "http://schema.org/description",
+      "requiredType": "http://schema.org/Text",
+      "example": "Raynes Park High School in London",
+      "description": [
+        "The description of the Place"
+      ]
+    },
+    "geo": {
+      "fieldName": "geo",
+      "model": "#GeoCoordinates",
+      "example": {
+        "latitude": 51.4034423828125,
+        "longitude": -0.2369088977575302,
+        "type": "GeoCoordinates"
+      },
+      "description": [
+        "The geo coordinates of the Place."
+      ]
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "image": {
+      "fieldName": "image",
+      "model": "ArrayOf#ImageObject",
+      "description": [
+        "An image or photo that depicts the place, e.g. a photo taken at a previous event."
+      ],
+      "example": [{
+        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+        "type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      }]
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "http://schema.org/name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Raynes Park High School",
+      "description": [
+        "The name of the Place"
+      ]
+    },
+    "openingHoursSpecification": {
+      "fieldName": "openingHoursSpecification",
+      "model": "ArrayOf#OpeningHoursSpecification",
+      "description": [
+        "The times the Place is open"
+      ]
+    },
+    "telephone": {
+      "fieldName": "telephone",
+      "sameAs": "http://schema.org/telephone",
+      "requiredType": "http://schema.org/Text",
+      "example": "01253 473934",
+      "description": [
+        "The telephone number for the Place"
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Place",
+      "description": "",
+      "example": "Place"
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "http://schema.org/url",
+      "requiredType": "http://schema.org/Text",
+      "example": "http://www.rphs.org.uk/",
+      "description": [
+        "The website for the Place"
+      ]
+    }
+  }
+}

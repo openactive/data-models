@@ -1,0 +1,69 @@
+{
+  "type": "Offer",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Offer",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/offer/",
+  "requiredFields": [
+    "type",
+    "id",
+    "name",
+    "price",
+    "priceCurrency"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "name",
+    "price",
+    "priceCurrency"
+  ],
+  "fields": {
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "http://schema.org/name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Speedball winger position",
+      "description": [
+        "A human readable name for the offer."
+      ]
+    },
+    "price": {
+      "fieldName": "price",
+      "sameAs": "http://schema.org/price",
+      "requiredType": "http://schema.org/Float",
+      "example": 33.00,
+      "description": [
+        "The offer price of the activity.",
+        "This price should be specified without currency symbols and as a floating point number with two decimal places.",
+        "The currency of the price should be expressed in the priceCurrency field."
+      ]
+    },
+    "priceCurrency": {
+      "fieldName": "priceCurrency",
+      "sameAs": "http://schema.org/priceCurrency",
+      "requiredType": "http://schema.org/Text",
+      "example": "GBP",
+      "description": [
+        "The currency (in 3-letter ISO 4217 format) of the price."
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Offer",
+      "description": "",
+      "example": "Offer"
+    }
+  }
+}

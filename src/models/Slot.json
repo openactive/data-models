@@ -1,0 +1,108 @@
+{
+  "type": "Slot",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Slot",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/slot/",
+  "requiredFields": [
+    "type",
+    "id",
+    "facilityUse",
+    "startDate",
+    "duration",
+    "remainingUses"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "facilityUse",
+    "startDate",
+    "endDate",
+    "duration",
+    "offers",
+    "remainingUses",
+    "maximumUses"
+  ],
+  "fields": {
+    "duration": {
+      "fieldName": "duration",
+      "requiredType": "http://schema.org/Duration",
+      "description": [
+        "The duration of the slot given in [ISO8601] format."
+      ],
+      "example": "PT1H"
+    },
+    "endDate": {
+      "fieldName": "endDate",
+      "requiredType": "http://schema.org/DateTime",
+      "alternativeTypes": [
+        "http://schema.org/Date"
+      ],
+      "description": [
+        "The end date and time of the slot. Can be specified as a schema:Date or schema:DateTime",
+        "It is recommended that publishers provide either an schema:endDate or a schema:duration for an slot."
+      ],
+      "example": "2018-01-27T12:00:00Z"
+    },
+    "facilityUse": {
+      "fieldName": "facilityUse",
+      "requiredType": "http://schema.org/url",
+      "description": [
+        "URI to the FacilityUse that has this offer"
+      ],
+      "example": "TODO"
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "maximumUses": {
+      "fieldName": "maximumUses",
+      "requiredType": "http://schema.org/Integer",
+      "description": [
+        "TODO"
+      ],
+      "example": 16
+    },
+    "offers": {
+      "fieldName": "offers",
+      "requiredType": "ArrayOf#Offer",
+      "description": [
+        "TODO"
+      ],
+      "example": "TODO"
+    },
+    "remainingUses": {
+      "fieldName": "remainingUses",
+      "requiredType": "http://schema.org/Integer",
+      "description": [
+        "TODO"
+      ],
+      "example": 5
+    },
+    "startDate": {
+      "fieldName": "startDate",
+      "requiredType": "http://schema.org/DateTime",
+      "alternativeTypes": [
+        "http://schema.org/Date"
+      ],
+      "description": [
+        "The start date and time of the slot. Can be specified as a schema:Date or schema:DateTime"
+      ],
+      "example": "2018-01-27T12:00:00Z"
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Slot",
+      "description": "",
+      "example": "Slot"
+    }
+  }
+}
