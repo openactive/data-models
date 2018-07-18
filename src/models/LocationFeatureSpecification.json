@@ -25,10 +25,9 @@
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
-      "example": "ChangingFacilities",
-      "description": [
-        "A string key, suitable for comparison, search or browse interfaces."
-      ]
+      "requiredContent": "LocationFeatureSpecification",
+      "description": "",
+      "example": "LocationFeatureSpecification"
     },
     "value": {
       "fieldName": "value",

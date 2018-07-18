@@ -56,37 +56,37 @@
     },
     "amenityFeature": {
       "fieldName": "amenityFeature",
-      "requiredType": "ArrayOf#LocationFeatureSpecifiction",
+      "requiredType": "ArrayOf#LocationFeatureSpecification",
       "example": [
         {
           "name": "Changing Facilities",
           "value": true,
-          "type": "ChangingFacilities"
+          "type": "LocationFeatureSpecification"
         },
         {
           "name": "Showers",
           "value": false,
-          "type": "Showers"
+          "type": "LocationFeatureSpecification"
         },
         {
           "name": "Lockers",
           "value": true,
-          "type": "Lockers"
+          "type": "LocationFeatureSpecification"
         },
         {
           "name": "Towels",
           "value": false,
-          "type": "Towels"
+          "type": "LocationFeatureSpecification"
         },
         {
           "name": "Creche",
           "value": false,
-          "type": "Creche"
+          "type": "LocationFeatureSpecification"
         },
         {
           "name": "Parking",
           "value": true,
-          "type": "Parking"
+          "type": "LocationFeatureSpecification"
         }
       ],
       "description": [
