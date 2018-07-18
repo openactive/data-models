@@ -17,11 +17,11 @@
   "requiredOptions": [
     {
       "description": [
-        "While these properties are marked as optional, a data publisher must provide either a schema:startDate or specify a oa:schedule for an event."
+        "While these properties are marked as optional, a data publisher must provide either a schema:startDate or specify a oa:eventSchedule for an event."
       ],
       "options": [
         "startDate",
-        "schedule"
+        "eventSchedule"
       ]
     }
   ],
