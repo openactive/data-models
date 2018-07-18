@@ -1,0 +1,81 @@
+{
+  "type": "Organization",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/Organization",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/organization/",
+  "requiredFields": [
+    "type",
+    "name"
+  ],
+  "recommendedFields": [
+    "url",
+    "description",
+    "logo"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "url",
+    "name",
+    "description",
+    "logo"
+  ],
+  "fields": {
+    "description": {
+      "fieldName": "description",
+      "sameAs": "http://schema.org/description",
+      "requiredType": "http://schema.org/Text",
+      "example": "The national governing body of cycling",
+      "description": [
+        "The description of the Organization"
+      ]
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "requiredType": "http://schema.org/Text",
+      "example": "SB1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
+    "logo": {
+      "fieldName": "logo",
+      "model": "ArrayOf#ImageObject",
+      "example": [{
+        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+        "type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      }],
+      "description": [
+        "A logo for the Organization."
+      ]
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "http://schema.org/name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Central Speedball Association",
+      "description": [
+        "The name of the Organization"
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Organization",
+      "description": "",
+      "example": "Organization"
+    },
+    "url": {
+      "fieldName": "url",
+      "requiredType": "http://schema.org/url",
+      "example": "http://www.speedball-world.com",
+      "description": [
+        "A definitive canonical URL for the Organization."
+      ]
+    }
+  }
+}

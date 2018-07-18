@@ -1,0 +1,76 @@
+{
+  "type": "PostalAddress",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/PostalAddress",
+  "hasId": false,
+  "requiredFields": [
+    "type",
+    "addressCountry",
+    "addressLocality",
+    "addressRegion",
+    "postalCode",
+    "streetAddress"
+  ],
+  "inSpec": [
+    "type",
+    "addressCountry",
+    "addressLocality",
+    "addressRegion",
+    "postalCode",
+    "streetAddress"
+  ],
+  "fields": {
+    "addressCountry": {
+      "fieldName": "addressCountry",
+      "sameAs": "http://schema.org/addressCountry",
+      "requiredType": "http://schema.org/Text",
+      "example": "GB",
+      "description": [
+        "The country, expressed as a two-letter ISO 3166-1 alpha-2 country code."
+      ]
+    },
+    "addressLocality": {
+      "fieldName": "addressLocality",
+      "sameAs": "http://schema.org/addressLocality",
+      "requiredType": "http://schema.org/Text",
+      "example": "Shoreditch",
+      "description": [
+        "The locality, a suburb within a city or a town within a county or district."
+      ]
+    },
+    "addressRegion": {
+      "fieldName": "addressRegion",
+      "sameAs": "http://schema.org/addressRegion",
+      "requiredType": "http://schema.org/Text",
+      "example": "London",
+      "description": [
+        "The region, either a city or a county or district."
+      ]
+    },
+    "postalCode": {
+      "fieldName": "postalCode",
+      "sameAs": "http://schema.org/postalCode",
+      "requiredType": "http://schema.org/Text",
+      "example": "EC2A 4JE",
+      "description": [
+        "The postal code."
+      ]
+    },
+    "streetAddress": {
+      "fieldName": "streetAddress",
+      "sameAs": "http://schema.org/streetAddress",
+      "requiredType": "http://schema.org/Text",
+      "example": "Open Data Institute, Floor 3, 65 Clifton St",
+      "description": [
+        "The street address."
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "PostalAddress",
+      "description": "",
+      "example": "PostalAddress"
+    }
+  }
+}

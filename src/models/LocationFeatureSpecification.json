@@ -1,0 +1,42 @@
+{
+  "type": "LocationFeatureSpecification",
+  "sameAs": null,
+  "derivedFrom": "https://schema.org/LocationFeatureSpecification",
+  "hasId": false,
+  "requiredFields": [
+    "name",
+    "type",
+    "value"
+  ],
+  "inSpec": [
+    "name",
+    "type",
+    "value"
+  ],
+  "fields": {
+    "name": {
+      "fieldName": "name",
+      "requiredType": "http://schema.org/Text",
+      "example": "Changing Facilities",
+      "description": [
+        "A string, suitable for presentation in user interfaces."
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "example": "ChangingFacilities",
+      "description": [
+        "A string key, suitable for comparison, search or browse interfaces."
+      ]
+    },
+    "value": {
+      "fieldName": "value",
+      "requiredType": "http://schema.org/Boolean",
+      "example": false,
+      "description": [
+        "A boolean value indicating whether this ammenity is available."
+      ]
+    }
+  }
+}

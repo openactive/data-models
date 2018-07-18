@@ -1,0 +1,31 @@
+{
+  "name": "openactive-data-models",
+  "version": "1.0.0",
+  "description": "Data models used to drive that OpenActive validator and developer documentation",
+  "homepage": "http://openactive.io",
+  "author": "Pete Walker <pete@imin.co> (https://github.com/petewalker)",
+  "keywords": [
+    "openactive",
+    "odi",
+    "models",
+    "json"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": "8.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openactive/data-models.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openactive/data-models/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-node": "^1.15.0"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine-node src"
+  }
+}

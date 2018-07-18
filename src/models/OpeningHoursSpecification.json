@@ -1,0 +1,60 @@
+{
+  "type": "OpeningHoursSpecification",
+  "sameAs": null,
+  "derivedFrom": "http://schema.org/OpeningHoursSpecification",
+  "hasId": false,
+  "requiredFields": [
+    "type",
+    "opens",
+    "closes",
+    "dayOfWeek"
+  ],
+  "inSpec": [
+    "type",
+    "opens",
+    "closes",
+    "dayOfWeek"
+  ],
+  "fields": {
+    "closes": {
+      "fieldName": "closes",
+      "requiredType": "http://schema.org/Time",
+      "description": [
+        "The closing time."
+      ],
+      "example": "17:00:00"
+    },
+    "dayOfWeek": {
+      "fieldName": "dayOfWeek",
+      "requiredType": "http://schema.org/url",
+      "example": "http://schema.org/Monday",
+      "description": [
+        "Defines the day of the week upon which the Place is open"
+      ],
+      "options": [
+        "http://schema.org/Monday",
+        "http://schema.org/Tuesday",
+        "http://schema.org/Wednesday",
+        "http://schema.org/Thursday",
+        "http://schema.org/Friday",
+        "http://schema.org/Saturday",
+        "http://schema.org/Sunday"
+      ]
+    },
+    "opens": {
+      "fieldName": "opens",
+      "requiredType": "http://schema.org/Time",
+      "description": [
+        "The opening time."
+      ],
+      "example": "09:00:00"
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "OpeningHoursSpecification",
+      "description": "",
+      "example": "OpeningHoursSpecification"
+    }
+  }
+}

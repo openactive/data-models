@@ -1,0 +1,82 @@
+{
+  "type": "Concept",
+  "sameAs": null,
+  "derivedFrom": "https://www.w3.org/TR/skos-primer/#secconcept",
+  "hasId": true,
+  "idFormat": "http://schema.org/url",
+  "sampleId": "https://example.com/concept/",
+  "requiredFields": [
+    "type",
+    "id",
+    "prefLabel",
+    "inScheme",
+    "identifier"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "prefLabel",
+    "altLabel",
+    "inScheme",
+    "broader",
+    "narrower",
+    "notation"
+  ],
+  "fields": {
+    "altLabel": {
+      "fieldName": "altLabel",
+      "requiredType": "http://schema.org/Text",
+      "example": "Speedball",
+      "description": [
+        "An alternative human readable string for use in user interfaces."
+      ]
+    },
+    "broader": {
+      "fieldName": "broader",
+      "requiredType": "http://schema.org/url",
+      "example": "https://example.com/football",
+      "description": [
+        "A broader concept URI"
+      ]
+    },
+    "inScheme": {
+      "fieldName": "inScheme",
+      "requiredType": "http://schema.org/url",
+      "example": "https://example.com/reference/activities",
+      "description": [
+        "A stable URL reference for the taxonomy."
+      ]
+    },
+    "narrower": {
+      "fieldName": "narrower",
+      "requiredType": "http://schema.org/url",
+      "example": "https://example.com/walking-football",
+      "description": [
+        "A more specific concept URI"
+      ]
+    },
+    "notation": {
+      "fieldName": "notation",
+      "requiredType": "http://schema.org/Text",
+      "example": "Speedball",
+      "description": [
+        "A concept label that is not normally recognisable as natural language."
+      ]
+    },
+    "prefLabel": {
+      "fieldName": "prefLabel",
+      "requiredType": "http://schema.org/Text",
+      "example": "Speedball",
+      "description": [
+        "A human readable string for use in user interfaces."
+      ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Concept",
+      "description": "",
+      "example": "Concept"
+    }
+  }
+}
