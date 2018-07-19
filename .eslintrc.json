@@ -1,0 +1,12 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "jasmine": true
+  },
+  "rules": {
+    "max-len": "off",
+    "no-await-in-loop": 0,
+    "no-restricted-syntax": 0
+  }
+}
