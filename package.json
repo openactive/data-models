@@ -23,9 +23,14 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "jasmine-node": "^1.15.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jasmine-node src"
+    "lint": "eslint \"src/**/*.js\"",
+    "pretest": "npm run lint",
+    "test": "jasmine-node src"
   }
 }

@@ -3,15 +3,13 @@
  * MIT Licensed
  */
 
-'use strict';
-
-exports = module.exports = createExports();
+const loadModel = require('./loadModel');
 
 function createExports() {
-
-    let root = {
-        loadModel: require('./loadModel')
-    };
-
-    return root;
+  const root = {
+    loadModel,
+  };
+  return root;
 }
+
+module.exports = createExports();
