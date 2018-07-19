@@ -42,3 +42,5 @@ $ npm test
 ### Adding models
 
 Add new models to the `src/models` directory.
+
+Find more on the models, see the [model reference](MODELS.md)
