@@ -1,0 +1,78 @@
+{
+  "models_order": ["Event", "Action", "Brand", "Concept", "ConceptScheme", "EntryPoint", "FacilityUse", "GeoCoordinates", "ImageObject", "IndividualFacilityUse", "LocationFeatureSpecification", "Offer", "OpeningHoursSpecification", "Organization", "Person", "Place", "PostalAddress", "QuantitativeValue", "Schedule", "Slot"],
+  "event_elements": ["Brand", "Concept", "GeoCoordinates", "ImageObject", "LocationFeatureSpecification", "Organization", "Person", "Place", "PostalAddress", "Schedule"],
+  "event_booking": ["Action", "EntryPoint", "Offer"],
+  "event_core": ["Event"],
+  "type_aliases": {
+    "ChangingRooms": "LocationFeatureSpecification",
+    "Showers": "LocationFeatureSpecification",
+    "PublicToilets": "LocationFeatureSpecification",
+    "Lockers": "LocationFeatureSpecification",
+    "Towels": "LocationFeatureSpecification",
+    "Creche": "LocationFeatureSpecification",
+    "Parking": "LocationFeatureSpecification",
+    "BabyChanging": "LocationFeatureSpecification"
+  },
+  "models": {
+    "event": {
+      "modelName": "Event"
+    },
+    "action": {
+      "modelName": "Action"
+    },
+    "brand": {
+      "modelName": "Brand"
+    },
+    "concept": {
+      "modelName": "Concept"
+    },
+    "conceptscheme": {
+      "modelName": "ConceptScheme"
+    },
+    "entrypoint": {
+      "modelName": "EntryPoint"
+    },
+    "facilityuse": {
+      "modelName": "FacilityUse"
+    },
+    "geocoordinates": {
+      "modelName": "GeoCoordinates"
+    },
+    "imageobject": {
+      "modelName": "ImageObject"
+    },
+    "individualfacilityuse": {
+      "modelName": "IndividualFacilityUse"
+    },
+    "locationfeaturespecification": {
+      "modelName": "LocationFeatureSpecification"
+    },
+    "offer": {
+      "modelName": "Offer"
+    },
+    "openinghourspecification": {
+      "modelName": "OpeningHoursSpecification"
+    },
+    "organization": {
+      "modelName": "Organization"
+    },
+    "person": {
+      "modelName": "Person"
+    },
+    "place": {
+      "modelName": "Place"
+    },
+    "postaladdress": {
+      "modelName": "PostalAddress"
+    },
+    "quantitativevalue": {
+      "modelName": "QuantitativeValue"
+    },
+    "schedule": {
+      "modelName": "Schedule"
+    },
+    "slot": {
+      "modelName": "Slot"
+    }
+  }
+}

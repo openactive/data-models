@@ -25,7 +25,17 @@
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
-      "requiredContent": "LocationFeatureSpecification",
+      "options": [
+        "LocationFeatureSpecification",
+        "ChangingRooms",
+        "Showers",
+        "PublicToilets",
+        "Lockers",
+        "Towels",
+        "Creche",
+        "Parking",
+        "BabyChanging"
+      ],
       "description": "",
       "example": "LocationFeatureSpecification"
     },

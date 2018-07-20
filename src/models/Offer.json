@@ -12,15 +12,31 @@
     "price",
     "priceCurrency"
   ],
+  "recommendedFields": [
+    "ageRange"
+  ],
   "inSpec": [
     "type",
     "id",
     "identifier",
     "name",
     "price",
-    "priceCurrency"
+    "priceCurrency",
+    "ageRange"
   ],
   "fields": {
+    "ageRange": {
+      "fieldName": "ageRange",
+      "requiredType": "#QuantitativeValue",
+      "description": [
+        "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
+      ],
+      "example": {
+        "type": "QuantitativeValue",
+        "minValue": 15,
+        "maxValue": 60
+      }
+    },
     "identifier": {
       "fieldName": "identifier",
       "requiredType": "http://schema.org/Text",

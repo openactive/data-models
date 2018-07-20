@@ -16,4 +16,9 @@ describe('loadModel', () => {
     expect(typeof modelData).toBe('object');
     expect(modelData.type).toBe('Event');
   });
+  it('should return a valid model alias as JSON', () => {
+    const modelData = loadModel('Showers');
+    expect(typeof modelData).toBe('object');
+    expect(modelData.type).toBe('LocationFeatureSpecification');
+  });
 });

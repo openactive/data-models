@@ -11,7 +11,7 @@
     "name",
     "activity",
     "location",
-    "event",
+    "event"
   ],
   "recommendedFields": [
     "description",
@@ -112,7 +112,7 @@
       "fieldName": "location",
       "model": "#Place",
       "description": [
-        "The location at which the facility use will take place.",
+        "The location at which the facility use will take place."
       ],
       "example": {
         "address": {

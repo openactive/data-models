@@ -29,11 +29,11 @@
     "description",
     "image",
     "organizer",
-    "contributor",
     "eventStatus",
     "category",
     "ageRange",
-    "genderRestriction"
+    "genderRestriction",
+    "leader"
   ],
   "inSpec": [
     "id",
@@ -69,7 +69,8 @@
     "level",
     "meetingPoint",
     "isAccessibleForFree",
-    "potentialAction"
+    "potentialAction",
+    "offers"
   ],
   "fields": {
     "@context": {
@@ -89,7 +90,7 @@
     },
     "accessibilitySupport": {
       "fieldName": "accessibilitySupport",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "ArrayOf#http://schema.org/Text",
       "description": [
         "Used to specify the types of disabilities or impairments that are supported at an event."
       ],
@@ -261,9 +262,9 @@
     },
     "level": {
       "fieldName": "level",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "ArrayOf#http://schema.org/Text",
       "alternativeModels": [
-        "#Concept"
+        "ArrayOf#Concept"
       ],
       "description": [
         "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements. Values should ideally be drawn from a controlled vocabulary."
@@ -340,6 +341,13 @@
         "The name of the event"
       ]
     },
+    "offers": {
+      "fieldName": "offers",
+      "model": "ArrayOf#Offer",
+      "description": [
+        "TODO"
+      ]
+    },
     "organizer": {
       "fieldName": "organizer",
       "model": "ArrayOf#Organization",
@@ -394,7 +402,7 @@
       "example": 20
     },
     "subEvent": {
-      "fieldName": "subEvent",
+      "fieldName": "ArrayOf#subEvent",
       "model": "#Event",
       "description": [
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"

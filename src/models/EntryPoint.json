@@ -7,13 +7,13 @@
     "type",
     "encodingType",
     "httpMethod",
-    "url"
+    "urlTemplate"
   ],
   "inSpec": [
     "type",
     "encodingType",
     "httpMethod",
-    "url"
+    "urlTemplate"
   ],
   "fields": {
     "encodingType": {
@@ -51,8 +51,8 @@
       "description": "",
       "example": "EntryPoint"
     },
-    "url": {
-      "fieldName": "url",
+    "urlTemplate": {
+      "fieldName": "urlTemplate",
       "sameAs": "http://schema.org/url",
       "requiredType": "http://schema.org/url",
       "example": "https://example.com/orders",
