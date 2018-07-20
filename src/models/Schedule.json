@@ -9,6 +9,18 @@
     "startTime",
     "endTime"
   ],
+  "requiredOptions": [
+    {
+      "description": [
+        "While these properties are marked as optional, a data publisher must provide either a schema:byDay, schema:byMonth or byMonthDay for a schedule."
+      ],
+      "options": [
+        "byDay",
+        "byMonth",
+        "byMonthDay"
+      ]
+    }
+  ],
   "recommendedFields": [
     "duration",
     "endDate"
