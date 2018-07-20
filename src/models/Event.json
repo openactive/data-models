@@ -402,8 +402,8 @@
       "example": 20
     },
     "subEvent": {
-      "fieldName": "ArrayOf#subEvent",
-      "model": "#Event",
+      "fieldName": "subEvent",
+      "model": "ArrayOf#Event",
       "description": [
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"
       ],
