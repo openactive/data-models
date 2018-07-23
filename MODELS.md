@@ -126,6 +126,18 @@ This **MUST** include **ALL** required, recommended and optional fields.
 }
 ```
 
+#### commonTypos
+
+An key-value object of common typos for field names.
+
+```json
+{
+  "commonTypos": {
+    "offer": "offers"
+  }
+}
+```
+
 #### fields
 
 An key-value object of Fields (see below).

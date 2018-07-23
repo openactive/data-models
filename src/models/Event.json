@@ -25,6 +25,9 @@
       ]
     }
   ],
+  "commonTypos": {
+    "offer": "offers"
+  },
   "recommendedFields": [
     "description",
     "image",
