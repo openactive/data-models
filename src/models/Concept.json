@@ -7,8 +7,7 @@
   "sampleId": "https://example.com/concept/",
   "requiredFields": [
     "type",
-    "prefLabel",
-    "inScheme"
+    "prefLabel"
   ],
   "recommendedFields": [
     "id",
