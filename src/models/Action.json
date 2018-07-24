@@ -41,7 +41,12 @@
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
-      "requiredContent": "Action",
+      "options": [
+        "Action",
+        "CancelAction",
+        "PayAction",
+        "ReserveAction"
+      ],
       "description": [
         "The type of object, in this case Action"
       ],

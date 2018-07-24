@@ -10,9 +10,6 @@
     "type",
     "name"
   ],
-  "recommendedFields": [
-    "description"
-  ],
   "inSpec": [
     "id",
     "type",

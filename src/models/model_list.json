@@ -11,7 +11,10 @@
     "Towels": "LocationFeatureSpecification",
     "Creche": "LocationFeatureSpecification",
     "Parking": "LocationFeatureSpecification",
-    "BabyChanging": "LocationFeatureSpecification"
+    "BabyChanging": "LocationFeatureSpecification",
+    "PayAction": "Action",
+    "ReserveAction": "Action",
+    "CancelAction": "Action"
   },
   "models": {
     "event": {

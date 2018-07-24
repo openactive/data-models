@@ -7,11 +7,11 @@
   "sampleId": "https://example.com/place/",
   "requiredFields": [
     "type",
-    "url",
     "name"
   ],
   "recommendedFields": [
     "id",
+    "url",
     "description",
     "image",
     "address",

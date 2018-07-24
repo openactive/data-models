@@ -7,13 +7,14 @@
   "sampleId": "https://example.com/offer/",
   "requiredFields": [
     "type",
-    "id",
     "name",
     "price",
     "priceCurrency"
   ],
   "recommendedFields": [
-    "ageRange"
+    "id",
+    "ageRange",
+    "url"
   ],
   "inSpec": [
     "type",
@@ -22,7 +23,8 @@
     "name",
     "price",
     "priceCurrency",
-    "ageRange"
+    "ageRange",
+    "url"
   ],
   "fields": {
     "ageRange": {
@@ -82,6 +84,15 @@
         "The type of object, in this case Offer"
       ],
       "example": "Offer"
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "http://schema.org/url",
+      "requiredType": "http://schema.org/Text",
+      "example": "http://www.rphs.org.uk/",
+      "description": [
+        "URL describing the offer"
+      ]
     }
   }
 }

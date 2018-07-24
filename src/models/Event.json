@@ -233,6 +233,9 @@
     "identifier": {
       "fieldName": "identifier",
       "requiredType": "http://schema.org/Text",
+      "alternativeTypes": [
+        "http://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
