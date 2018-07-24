@@ -22,7 +22,7 @@
       "description": [
         "The closing time."
       ],
-      "example": "17:00:00"
+      "example": "17:00Z"
     },
     "dayOfWeek": {
       "fieldName": "dayOfWeek",
@@ -47,13 +47,15 @@
       "description": [
         "The opening time."
       ],
-      "example": "09:00:00"
+      "example": "09:00Z"
     },
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "OpeningHoursSpecification",
-      "description": "",
+      "description": [
+        "The type of object, in this case OpeningHoursSpecification"
+      ],
       "example": "OpeningHoursSpecification"
     }
   }

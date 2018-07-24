@@ -32,7 +32,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "QuantitativeValue",
-      "description": "",
+      "description": [
+        "The type of object, in this case QuantitativeValue"
+      ],
       "example": "QuantitativeValue"
     }
   }

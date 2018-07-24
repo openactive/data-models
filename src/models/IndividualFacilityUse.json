@@ -130,7 +130,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "IndividualFacilityUse",
-      "description": "",
+      "description": [
+        "The type of object, in this case IndividualFacilityUse"
+      ],
       "example": "IndividualFacilityUse"
     },
     "offers": {

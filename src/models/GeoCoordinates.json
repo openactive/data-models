@@ -38,7 +38,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "GeoCoordinates",
-      "description": "",
+      "description": [
+        "The type of object, in this case GeoCoordinates"
+      ],
       "example": "GeoCoordinates"
     }
   }

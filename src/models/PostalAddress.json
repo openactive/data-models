@@ -69,7 +69,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "PostalAddress",
-      "description": "",
+      "description": [
+        "The type of object, in this case PostalAddress"
+      ],
       "example": "PostalAddress"
     }
   }

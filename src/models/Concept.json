@@ -9,8 +9,7 @@
     "type",
     "id",
     "prefLabel",
-    "inScheme",
-    "identifier"
+    "inScheme"
   ],
   "inSpec": [
     "type",
@@ -75,7 +74,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Concept",
-      "description": "",
+      "description": [
+        "The type of object, in this case Concept"
+      ],
       "example": "Concept"
     }
   }

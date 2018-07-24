@@ -36,7 +36,9 @@
         "Parking",
         "BabyChanging"
       ],
-      "description": "",
+      "description": [
+        "TODO"
+      ],
       "example": "LocationFeatureSpecification"
     },
     "value": {

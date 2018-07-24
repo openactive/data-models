@@ -6,6 +6,7 @@
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/person/",
   "requiredFields": [
+    "id",
     "type",
     "name"
   ],
@@ -13,8 +14,8 @@
     "description"
   ],
   "inSpec": [
-    "type",
     "id",
+    "type",
     "identifier",
     "url",
     "name",
@@ -52,7 +53,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Person",
-      "description": "",
+      "description": [
+        "The type of object, in this case Person"
+      ],
       "example": "Person"
     },
     "url": {

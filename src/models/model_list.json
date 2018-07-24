@@ -50,7 +50,7 @@
     "offer": {
       "modelName": "Offer"
     },
-    "openinghourspecification": {
+    "openinghoursspecification": {
       "modelName": "OpeningHoursSpecification"
     },
     "organization": {

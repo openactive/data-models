@@ -142,7 +142,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Schedule",
-      "description": "",
+      "description": [
+        "The type of object, in this case Schedule"
+      ],
       "example": "Schedule"
     }
   }

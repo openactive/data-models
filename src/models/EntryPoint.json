@@ -48,7 +48,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "EntryPoint",
-      "description": "",
+      "description": [
+        "The type of object, in this case EntryPoint"
+      ],
       "example": "EntryPoint"
     },
     "urlTemplate": {

@@ -72,7 +72,7 @@
     },
     "offers": {
       "fieldName": "offers",
-      "requiredType": "ArrayOf#Offer",
+      "model": "ArrayOf#Offer",
       "description": [
         "TODO"
       ],
@@ -101,7 +101,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Slot",
-      "description": "",
+      "description": [
+        "The type of object, in this case Slot"
+      ],
       "example": "Slot"
     }
   }

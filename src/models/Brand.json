@@ -6,6 +6,7 @@
   "sampleId": "https://example.com/brand/",
   "idFormat": "http://schema.org/url",
   "requiredFields": [
+    "id",
     "name",
     "url"
   ],
@@ -37,6 +38,15 @@
       "description": [
         "A text description for the programme."
       ]
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Brand",
+      "description": [
+        "The type of object, in this case Brand"
+      ],
+      "example": "Brand"
     },
     "url": {
       "fieldName": "url",

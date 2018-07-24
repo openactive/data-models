@@ -24,7 +24,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "ImageObject",
-      "description": "",
+      "description": [
+        "The type of object, in this case ImageObject"
+      ],
       "example": "ImageObject"
     },
     "url": {

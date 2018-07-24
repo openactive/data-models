@@ -56,7 +56,7 @@
     },
     "amenityFeature": {
       "fieldName": "amenityFeature",
-      "requiredType": "ArrayOf#LocationFeatureSpecification",
+      "model": "ArrayOf#LocationFeatureSpecification",
       "example": [
         {
           "name": "Changing Facilities",
@@ -179,7 +179,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Place",
-      "description": "",
+      "description": [
+        "The type of object, in this case Place"
+      ],
       "example": "Place"
     },
     "url": {

@@ -27,7 +27,7 @@
   "fields": {
     "ageRange": {
       "fieldName": "ageRange",
-      "requiredType": "#QuantitativeValue",
+      "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
       ],
@@ -78,7 +78,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Offer",
-      "description": "",
+      "description": [
+        "The type of object, in this case Offer"
+      ],
       "example": "Offer"
     }
   }

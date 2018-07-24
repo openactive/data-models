@@ -80,7 +80,9 @@
       "fieldName": "@context",
       "requiredType": "http://schema.org/url",
       "requiredContent": "https://www.openactive.io/ns/oa.jsonld",
-      "description": "",
+      "description": [
+          "TODO"
+      ],
       "example": "https://www.openactive.io/ns/oa.jsonld"
     },
     "accessibilityInformation": {
@@ -94,7 +96,7 @@
     "accessibilitySupport": {
       "fieldName": "accessibilitySupport",
       "requiredType": "ArrayOf#http://schema.org/Text",
-      "alternativeModels": "ArrayOf#Concept",
+      "alternativeModels": ["ArrayOf#Concept"],
       "description": [
         "Used to specify the types of disabilities or impairments that are supported at an event."
       ],
@@ -119,7 +121,7 @@
     },
     "ageRange": {
       "fieldName": "ageRange",
-      "requiredType": "#QuantitativeValue",
+      "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
       ],
@@ -369,7 +371,7 @@
     },
     "potentialAction": {
       "fieldName": "potentialAction",
-      "requiredType": "ArrayOf#Action",
+      "model": "ArrayOf#Action",
       "description": [
         "The possible actions that a user may make. e.g. Book."
       ],
@@ -440,7 +442,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Event",
-      "description": "",
+      "description": [
+        "The type of object, in this case Event"
+      ],
       "example": "Event"
     },
     "url": {

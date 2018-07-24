@@ -6,6 +6,7 @@
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
+    "id",
     "type",
     "name"
   ],
@@ -66,7 +67,9 @@
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
       "requiredContent": "Organization",
-      "description": "",
+      "description": [
+        "The type of object, in this case Organization"
+      ],
       "example": "Organization"
     },
     "url": {
