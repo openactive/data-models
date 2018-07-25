@@ -26,11 +26,12 @@
     "eslint": "^5.1.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "jasmine-node": "^1.15.0"
+    "jasmine": "^3.1.0"
   },
   "scripts": {
     "lint": "eslint \"src/**/*.js\"",
     "pretest": "npm run lint",
-    "test": "jasmine-node src"
+    "test": "npm run test-no-lint",
+    "test-no-lint": "jasmine"
   }
 }

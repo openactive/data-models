@@ -3,6 +3,7 @@
   "sameAs": null,
   "derivedFrom": "https://schema.org/LocationFeatureSpecification",
   "hasId": false,
+  "hasFlexibleType": true,
   "requiredFields": [
     "name",
     "type",

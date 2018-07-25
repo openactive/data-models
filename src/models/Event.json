@@ -108,7 +108,6 @@
       "alternativeTypes": [
         "ArrayOf#http://schema.org/Text"
       ],
-      "context": "!activity",
       "description": [
         "Specifies the physical activity or activities that will take place during an event."
       ],
@@ -145,7 +144,6 @@
       "alternativeTypes": [
         "ArrayOf#http://schema.org/Text"
       ],
-      "context": "!category",
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
       ],

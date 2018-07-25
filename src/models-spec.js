@@ -8,11 +8,7 @@ describe('models', () => {
       const filePath = path.join(__dirname, 'models', file);
       const data = fs.readFileSync(filePath, 'utf8');
       let jsonData;
-      let readJson;
-
-      beforeEach(() => {
-        readJson = () => { jsonData = JSON.parse(data); };
-      });
+      const readJson = () => { jsonData = JSON.parse(data); };
 
       it('should be valid json', () => {
         expect(readJson).not.toThrow();
@@ -23,6 +19,9 @@ describe('models', () => {
       if (file === 'model_list.json') {
         // Do one set of checks
         describe('data', () => {
+          beforeEach(() => {
+            jsonData = JSON.parse(data);
+          });
           it('should have event_elements set', () => {
             expect(jsonData.event_elements).toBeDefined();
             expect(jsonData.event_elements instanceof Array).toBe(true);
@@ -50,6 +49,10 @@ describe('models', () => {
         });
       } else {
         describe('data', () => {
+          beforeEach(() => {
+            jsonData = JSON.parse(data);
+          });
+
           it('should have a type that matches the file name', () => {
             expect(jsonData.type).toBeDefined();
             expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());

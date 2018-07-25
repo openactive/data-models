@@ -62,6 +62,26 @@ An example `id`.
 }
 ```
 
+#### hasFlexibleType
+
+Whether the `type` of this model is flexible.
+
+```json
+{
+  "hasFlexibleType": true
+}
+```
+
+If `true`, it means that the `type` of this model can be extended. For example, a `LocationFeatureSpecification` can validly be:
+
+```json
+{
+  "name": "My Place",
+  "value": true,
+  "type": "ext:MyPlace"
+}
+```
+
 #### requiredFields
 
 An array of field names that are **REQUIRED** in the specification. This should only include fields that are explicitly mentioned in the OpenActive spec.
@@ -140,7 +160,7 @@ An key-value object of common typos for field names.
 
 #### fields
 
-An key-value object of Fields (see below).
+A key-value object of Fields (see below).
 
 ```json
 {
@@ -159,7 +179,22 @@ An key-value object of Fields (see below).
 
 #### betaFields
 
-TODO
+An key-value object of beta namespace fields (see below). These are currently not respected by the validator.
+
+```json
+{
+  "betaFields": {
+    "beta:description": {
+      "fieldName": "beta:description",
+      "requiredType": "http://schema.org/Text",
+      "example": "An fast paced game that incorporates netball, handball and football.",
+      "description": [
+        "A free text description of the event"
+      ]
+    }
+  }
+}
+```
 
 #### description
 
@@ -285,10 +320,6 @@ An example value of this field, for documentation.
   "example": "https://example.com/event/1234"
 }
 ```
-
-#### context
-
-TODO
 
 #### options
 
