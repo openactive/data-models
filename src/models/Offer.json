@@ -61,6 +61,7 @@
       "sameAs": "http://schema.org/price",
       "requiredType": "http://schema.org/Float",
       "example": 33.00,
+      "maxDecimalPlaces": 2,
       "description": [
         "The offer price of the activity.",
         "This price should be specified without currency symbols and as a floating point number with two decimal places.",

@@ -280,6 +280,42 @@ Alternative schema.org types this field can conform to.
 }
 ```
 
+#### minDecimalPlaces
+
+The minimum number of decimal places this field should have.
+
+```json
+{
+  "fieldName": "longitude",
+  "sameAs": "http://schema.org/longitude",
+  "requiredType": "http://schema.org/Float",
+  "minDecimalPlaces": 3,
+  "example": -0.083437,
+  "description": [
+    "The longitude of a location. For example -0.083437 (WGS 84)."
+  ]
+}
+```
+
+#### maxDecimalPlaces
+
+The maximum number of decimal places this field should have.
+
+```json
+{
+  "fieldName": "price",
+  "sameAs": "http://schema.org/price",
+  "requiredType": "http://schema.org/Float",
+  "example": 33.00,
+  "maxDecimalPlaces": 2,
+  "description": [
+    "The offer price of the activity.",
+    "This price should be specified without currency symbols and as a floating point number with two decimal places.",
+    "The currency of the price should be expressed in the priceCurrency field."
+  ]
+}
+```
+
 #### requiredContent
 
 If this property must be set to a specific value, this can be specified here.
