@@ -6,9 +6,10 @@
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/person/",
   "requiredFields": [
-    "id",
-    "type",
-    "name"
+    "type"
+  ],
+  "recommendedFields": [
+    "id"
   ],
   "inSpec": [
     "id",
@@ -31,6 +32,9 @@
     "identifier": {
       "fieldName": "identifier",
       "requiredType": "http://schema.org/Text",
+      "alternativeTypes": [
+        "http://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"

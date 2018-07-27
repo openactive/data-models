@@ -10,7 +10,7 @@
     "id",
     "url",
     "title",
-    "concepts"
+    "concept"
   ],
   "recommendedFields": [
     "description",
@@ -23,11 +23,11 @@
     "title",
     "description",
     "license",
-    "concepts"
+    "concept"
   ],
   "fields": {
-    "concepts": {
-      "fieldName": "concepts",
+    "concept": {
+      "fieldName": "concept",
       "model": "ArrayOf#Concept",
       "example": [{
         "id": "https://example.com/concept/martial-arts",

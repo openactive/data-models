@@ -43,8 +43,6 @@
       "requiredType": "http://schema.org/Text",
       "options": [
         "Action",
-        "CancelAction",
-        "PayAction",
         "ReserveAction"
       ],
       "description": [

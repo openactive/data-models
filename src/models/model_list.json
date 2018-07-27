@@ -12,9 +12,7 @@
     "Creche": "LocationFeatureSpecification",
     "Parking": "LocationFeatureSpecification",
     "BabyChanging": "LocationFeatureSpecification",
-    "PayAction": "Action",
-    "ReserveAction": "Action",
-    "CancelAction": "Action"
+    "ReserveAction": "Action"
   },
   "models": {
     "event": {

@@ -6,14 +6,12 @@
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
-    "id",
     "type",
     "name"
   ],
   "recommendedFields": [
-    "url",
-    "description",
-    "logo"
+    "id",
+    "url"
   ],
   "inSpec": [
     "type",
@@ -37,6 +35,9 @@
     "identifier": {
       "fieldName": "identifier",
       "requiredType": "http://schema.org/Text",
+      "alternativeTypes": [
+        "http://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"

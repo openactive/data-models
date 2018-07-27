@@ -15,7 +15,7 @@
   "fields": {
     "thumbnail": {
       "fieldName": "thumbnail",
-      "model": "#ImageObject",
+      "model": "ArrayOf#ImageObject",
       "description": [
         "The URL for a thumbnail image for an image."
       ]

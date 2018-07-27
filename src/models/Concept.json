@@ -26,7 +26,7 @@
   "fields": {
     "altLabel": {
       "fieldName": "altLabel",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "ArrayOf#http://schema.org/Text",
       "example": "Speedball",
       "description": [
         "An alternative human readable string for use in user interfaces."

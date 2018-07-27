@@ -6,7 +6,6 @@
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/event/",
   "requiredFields": [
-    "id",
     "@context",
     "type",
     "url",
@@ -29,6 +28,7 @@
     "offer": "offers"
   },
   "recommendedFields": [
+    "id",
     "description",
     "image",
     "organizer",
@@ -391,14 +391,15 @@
     },
     "programme": {
       "fieldName": "programme",
-      "requiredType": "http://schema.org/Text",
-      "alternativeModels": [
-        "#Thing"
-      ],
+      "model": "#Brand",
       "description": [
         "Indicates that an event will be organised according to a specific Programme."
       ],
-      "example": "Play Ball!"
+      "example": {
+        "type": "Brand",
+        "name": "Play Ball!",
+        "url": "http://example.org/brand/play-ball"
+      }
     },
     "remainingAttendeeCapacity": {
       "fieldName": "remainingAttendeeCapacity",

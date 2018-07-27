@@ -42,6 +42,9 @@
       "sameAs": "http://schema.org/address",
       "required": true,
       "model": "#PostalAddress",
+      "alternativeTypes": [
+        "http://schema.org/Text"
+      ],
       "preferredComment": "Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires http://schema.org/PostalAddress and will not accept plain text addresses.",
       "example": {
         "addressLocality": "New Malden",
@@ -133,6 +136,9 @@
     "identifier": {
       "fieldName": "identifier",
       "requiredType": "http://schema.org/Text",
+      "alternativeTypes": [
+        "http://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
