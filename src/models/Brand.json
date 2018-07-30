@@ -1,6 +1,5 @@
 {
   "type": "Brand",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Brand",
   "hasId": true,
   "sampleId": "https://example.com/brand/",

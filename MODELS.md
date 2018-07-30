@@ -18,9 +18,18 @@ The type of object that this model describes. The name of the file should corres
 }
 ```
 
-#### sameAs
+#### subClassOf
 
-TODO
+If this model is the subclass of another model, this can be referenced here.
+
+When calling `loadModel`, all of the parent model properties will be inherited.
+
+```json
+{
+  "type": "BabyChanging",
+  "subClassOf": "#LocationFeatureSpecification"
+}
+```
 
 #### derivedFrom
 

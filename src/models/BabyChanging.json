@@ -1,0 +1,16 @@
+{
+  "type": "BabyChanging",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "BabyChanging",
+      "description": [
+        "TODO"
+      ],
+      "example": "BabyChanging"
+    }
+  }
+}

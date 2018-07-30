@@ -1,6 +1,5 @@
 {
   "type": "Organization",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Organization",
   "hasId": true,
   "idFormat": "http://schema.org/url",

@@ -1,6 +1,5 @@
 {
   "type": "OpeningHoursSpecification",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/OpeningHoursSpecification",
   "hasId": false,
   "requiredFields": [

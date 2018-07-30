@@ -1,6 +1,7 @@
 {
   "type": "FacilityUse",
   "hasId": true,
+  "subClassOf": "http://schema.org/Product",
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/facilityUse/",
   "requiredFields": [
@@ -62,6 +63,7 @@
     },
     "description": {
       "fieldName": "description",
+      "sameAs": "http://schema.org/description",
       "requiredType": "http://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
@@ -70,6 +72,7 @@
     },
     "event": {
       "fieldName": "event",
+      "sameAs": "http://pending.schema.org/event",
       "model": "ArrayOf#Slot",
       "description": [
         "TODO"
@@ -77,6 +80,7 @@
     },
     "hoursAvailable": {
       "fieldName": "hoursAvailable",
+      "sameAs": "http://schema.org/hoursAvailable",
       "model": "ArrayOf#OpeningHoursSpecification",
       "description": [
         "The times the facility use is available"
@@ -84,6 +88,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "http://schema.org/identifier",
       "requiredType": "http://schema.org/Text",
       "alternativeTypes": [
         "http://schema.org/Integer"
@@ -95,6 +100,7 @@
     },
     "image": {
       "fieldName": "image",
+      "sameAs": "http://schema.org/image",
       "model": "ArrayOf#ImageObject",
       "description": [
         "An image or photo that depicts the facility use, e.g. a photo taken at a previous event."
@@ -115,6 +121,7 @@
     "location": {
       "fieldName": "location",
       "model": "#Place",
+      "sameAs": "http://schema.org/location",
       "description": [
         "The location at which the facility use will take place."
       ],
@@ -141,6 +148,7 @@
     },
     "name": {
       "fieldName": "name",
+      "sameAs": "http://schema.org/name",
       "requiredType": "http://schema.org/Text",
       "example": "Speedball",
       "description": [
@@ -158,6 +166,7 @@
     },
     "offers": {
       "fieldName": "offers",
+      "sameAs": "http://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
         "TODO"
@@ -165,6 +174,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "http://schema.org/url",
       "requiredType": "http://schema.org/url",
       "description": [
         "A URL to a web page (or section of a page) that describes the facility use."

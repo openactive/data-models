@@ -1,6 +1,5 @@
 {
   "type": "Schedule",
-  "sameAs": null,
   "derivedFrom": "http://pending.schema.org/Schedule",
   "hasId": false,
   "requiredFields": [

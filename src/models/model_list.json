@@ -3,17 +3,6 @@
   "event_elements": ["Brand", "Concept", "GeoCoordinates", "ImageObject", "LocationFeatureSpecification", "Organization", "Person", "Place", "PostalAddress", "Schedule"],
   "event_booking": ["Action", "EntryPoint", "Offer"],
   "event_core": ["Event"],
-  "type_aliases": {
-    "ChangingRooms": "LocationFeatureSpecification",
-    "Showers": "LocationFeatureSpecification",
-    "PublicToilets": "LocationFeatureSpecification",
-    "Lockers": "LocationFeatureSpecification",
-    "Towels": "LocationFeatureSpecification",
-    "Creche": "LocationFeatureSpecification",
-    "Parking": "LocationFeatureSpecification",
-    "BabyChanging": "LocationFeatureSpecification",
-    "ReserveAction": "Action"
-  },
   "models": {
     "event": {
       "modelName": "Event"

@@ -1,0 +1,16 @@
+{
+  "type": "Parking",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Parking",
+      "description": [
+        "TODO"
+      ],
+      "example": "Parking"
+    }
+  }
+}

@@ -1,6 +1,5 @@
 {
   "type": "PostalAddress",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/PostalAddress",
   "hasId": false,
   "requiredFields": [

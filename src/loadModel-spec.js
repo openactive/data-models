@@ -16,9 +16,14 @@ describe('loadModel', () => {
     expect(typeof modelData).toBe('object');
     expect(modelData.type).toBe('Event');
   });
-  it('should return a valid model alias as JSON', () => {
+  it('should return inherited properties from parent classes', () => {
     const modelData = loadModel('Showers');
     expect(typeof modelData).toBe('object');
-    expect(modelData.type).toBe('LocationFeatureSpecification');
+    expect(modelData.type).toBe('Showers');
+    expect(modelData.subClassGraph.length).toBe(1);
+    expect(modelData.subClassGraph[0]).toBe('#LocationFeatureSpecification');
+    expect(typeof modelData.fields.value).toBe('object');
+    expect(modelData.fields.value.inheritedFrom).toBe('#LocationFeatureSpecification');
+    expect(modelData.fields.type.requiredContent).toBe('Showers');
   });
 });

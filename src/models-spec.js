@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const loadModel = require('./loadModel');
 
 describe('models', () => {
   const files = fs.readdirSync(path.join(__dirname, 'models'));
@@ -49,8 +50,8 @@ describe('models', () => {
         });
       } else {
         describe('data', () => {
-          beforeEach(() => {
-            jsonData = JSON.parse(data);
+          beforeAll(() => {
+            jsonData = loadModel(file.replace(/\.json$/, ''));
           });
 
           it('should have a type that matches the file name', () => {
@@ -131,7 +132,7 @@ describe('models', () => {
             }
           });
 
-          it('should have a fields property', () => {
+          it('should have a fields property or a subClassOf property', () => {
             expect(typeof jsonData.fields).toBe('object');
           });
 

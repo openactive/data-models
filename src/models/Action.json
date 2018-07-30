@@ -1,6 +1,5 @@
 {
   "type": "Action",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Action",
   "hasId": false,
   "requiredFields": [
@@ -41,10 +40,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
-      "options": [
-        "Action",
-        "ReserveAction"
-      ],
+      "requiredContent": "Action",
       "description": [
         "The type of object, in this case Action"
       ],

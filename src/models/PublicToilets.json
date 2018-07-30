@@ -1,0 +1,16 @@
+{
+  "type": "PublicToilets",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "PublicToilets",
+      "description": [
+        "TODO"
+      ],
+      "example": "PublicToilets"
+    }
+  }
+}
