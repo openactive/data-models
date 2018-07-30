@@ -42,6 +42,7 @@
     },
     "description": {
       "fieldName": "description",
+      "sameAs": "http://schema.org/description",
       "requiredType": "http://schema.org/Text",
       "example": "An example activity list.",
       "description": [
