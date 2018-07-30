@@ -1,18 +1,17 @@
 {
   "type": "Offer",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Offer",
   "hasId": true,
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/offer/",
   "requiredFields": [
     "type",
-    "name",
     "price",
     "priceCurrency"
   ],
   "recommendedFields": [
     "id",
+    "name",
     "ageRange",
     "url"
   ],
