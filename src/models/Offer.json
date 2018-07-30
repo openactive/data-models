@@ -28,6 +28,7 @@
   "fields": {
     "ageRange": {
       "fieldName": "ageRange",
+      "sameAs": "https://www.openactive.org/ns#ageRange",
       "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"

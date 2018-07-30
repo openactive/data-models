@@ -15,7 +15,6 @@
   "fields": {
     "name": {
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
       "requiredType": "http://schema.org/Text",
       "example": "Changing Facilities",
       "description": [

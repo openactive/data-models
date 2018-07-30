@@ -78,6 +78,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "http://schema.org/url",
       "requiredType": "http://schema.org/url",
       "description": [
         "A URL to a web page (or section of a page) that describes the concept scheme."

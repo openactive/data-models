@@ -1,8 +1,15 @@
 const fs = require('fs');
 const path = require('path');
+
+const namespaces = require('./data/namespaces');
+const keywords = require('./data/keywords');
+const consts = require('./data/consts');
+const derivePrefix = require('./helpers/derivePrefix');
+
 const loadModel = require('./loadModel');
 
 describe('models', () => {
+  const existing = {};
   const files = fs.readdirSync(path.join(__dirname, 'models'));
   for (const file of files) {
     describe(`file ${file}`, () => {
@@ -224,6 +231,41 @@ describe('models', () => {
                 if (typeof jsonData.fields[field].description !== 'undefined') {
                   expect(jsonData.fields[field].description instanceof Array).toBe(true);
                 }
+              }
+            }
+          });
+        });
+        describe('namespaces', () => {
+          let model;
+          beforeEach(() => {
+            model = JSON.parse(data);
+          });
+          it('should not have fields in multiple namespaces', () => {
+            let modelPrefix = consts.OPEN_ACTIVE_PREFIX;
+            const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
+            if (hasModelDerivedFrom) {
+              modelPrefix = derivePrefix(model.derivedFrom) || modelPrefix;
+            }
+            for (const fieldName in model.fields) {
+              if (
+                Object.prototype.hasOwnProperty.call(model.fields, fieldName)
+                && typeof keywords[fieldName] === 'undefined'
+                && !fieldName.match(/^@/)
+              ) {
+                const field = model.fields[fieldName];
+                let fieldPrefix = modelPrefix;
+                const hasFieldSameAs = typeof field.sameAs !== 'undefined' && field.sameAs !== null;
+                if (hasFieldSameAs) {
+                  fieldPrefix = derivePrefix(field.sameAs) || fieldPrefix;
+                }
+                const fieldSameAsName = hasFieldSameAs
+                  ? field.sameAs.replace(namespaces[fieldPrefix], '')
+                  : fieldName;
+                expect(
+                  typeof existing[fieldName] === 'undefined'
+                  || existing[fieldName] === `${fieldPrefix}:${fieldSameAsName}`,
+                ).toBe(true);
+                existing[fieldName] = `${fieldPrefix}:${fieldSameAsName}`;
               }
             }
           });
