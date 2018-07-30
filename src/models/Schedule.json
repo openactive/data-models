@@ -74,6 +74,7 @@
     },
     "duration": {
       "fieldName": "duration",
+      "sameAs": "http://schema.org/duration",
       "requiredType": "http://schema.org/Duration",
       "description": [
         "The duration of the event given in [ISO8601] format."
@@ -82,6 +83,7 @@
     },
     "endDate": {
       "fieldName": "endDate",
+      "sameAs": "http://schema.org/endDate",
       "requiredType": "http://schema.org/Date",
       "description": [
         "The end date of the schedule."
@@ -90,6 +92,7 @@
     },
     "endTime": {
       "fieldName": "endTime",
+      "sameAs": "http://schema.org/endTime",
       "requiredType": "http://schema.org/Time",
       "description": [
         "The end time of the event."
@@ -123,6 +126,7 @@
     },
     "startDate": {
       "fieldName": "startDate",
+      "sameAs": "http://schema.org/startDate",
       "requiredType": "http://schema.org/Date",
       "description": [
         "The start date of the event."
@@ -131,6 +135,7 @@
     },
     "startTime": {
       "fieldName": "startTime",
+      "sameAs": "http://schema.org/startTime",
       "requiredType": "http://schema.org/Time",
       "description": [
         "The start time of the event."
