@@ -1,0 +1,16 @@
+{
+  "type": "Creche",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Creche",
+      "description": [
+        "TODO"
+      ],
+      "example": "Creche"
+    }
+  }
+}

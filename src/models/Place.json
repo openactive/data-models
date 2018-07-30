@@ -1,6 +1,5 @@
 {
   "type": "Place",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Place",
   "hasId": true,
   "idFormat": "http://schema.org/url",

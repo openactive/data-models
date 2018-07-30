@@ -1,0 +1,16 @@
+{
+  "type": "Towels",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Towels",
+      "description": [
+        "TODO"
+      ],
+      "example": "Towels"
+    }
+  }
+}

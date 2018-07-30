@@ -1,0 +1,16 @@
+{
+  "type": "Lockers",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Lockers",
+      "description": [
+        "TODO"
+      ],
+      "example": "Lockers"
+    }
+  }
+}

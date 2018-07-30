@@ -1,0 +1,16 @@
+{
+  "type": "Showers",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "Showers",
+      "description": [
+        "TODO"
+      ],
+      "example": "Showers"
+    }
+  }
+}

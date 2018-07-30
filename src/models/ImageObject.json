@@ -1,6 +1,5 @@
 {
   "type": "ImageObject",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/ImageObject",
   "hasId": false,
   "requiredFields":[

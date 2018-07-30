@@ -1,6 +1,5 @@
 {
   "type": "Person",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/Person",
   "hasId": true,
   "idFormat": "http://schema.org/url",

@@ -1,8 +1,7 @@
 {
   "type": "Slot",
-  "sameAs": null,
-  "derivedFrom": "http://schema.org/Slot",
   "hasId": true,
+  "subClassOf": "http://schema.org/Event",
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/slot/",
   "requiredFields": [
@@ -30,6 +29,7 @@
   "fields": {
     "duration": {
       "fieldName": "duration",
+      "sameAs": "http://schema.org/duration",
       "requiredType": "http://schema.org/Duration",
       "description": [
         "The duration of the slot given in [ISO8601] format."
@@ -38,6 +38,7 @@
     },
     "endDate": {
       "fieldName": "endDate",
+      "sameAs": "http://schema.org/endDate",
       "requiredType": "http://schema.org/DateTime",
       "alternativeTypes": [
         "http://schema.org/Date"
@@ -58,6 +59,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "http://schema.org/identifier",
       "requiredType": "http://schema.org/Text",
       "alternativeTypes": [
         "http://schema.org/Integer"
@@ -77,6 +79,7 @@
     },
     "offers": {
       "fieldName": "offers",
+      "sameAs": "http://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
         "TODO"
@@ -93,6 +96,7 @@
     },
     "startDate": {
       "fieldName": "startDate",
+      "sameAs": "http://schema.org/startDate",
       "requiredType": "http://schema.org/DateTime",
       "alternativeTypes": [
         "http://schema.org/Date"

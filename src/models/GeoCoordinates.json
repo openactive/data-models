@@ -1,6 +1,5 @@
 {
   "type": "GeoCoordinates",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/GeoCoordinates",
   "hasId": false,
   "requiredFields": [

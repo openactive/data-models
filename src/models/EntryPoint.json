@@ -1,6 +1,5 @@
 {
   "type": "EntryPoint",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/EntryPoint",
   "hasId": false,
   "requiredFields": [

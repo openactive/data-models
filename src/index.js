@@ -3,13 +3,15 @@
  * MIT Licensed
  */
 
-const getAlias = require('./getAlias');
+const getFullyQualifiedProperty = require('./getFullyQualifiedProperty');
 const loadModel = require('./loadModel');
+const namespaces = require('./data/namespaces');
 
 function createExports() {
   const root = {
-    getAlias,
+    getFullyQualifiedProperty,
     loadModel,
+    namespaces,
   };
   return root;
 }

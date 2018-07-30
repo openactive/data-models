@@ -1,6 +1,5 @@
 {
   "type": "QuantitativeValue",
-  "sameAs": null,
   "derivedFrom": "http://schema.org/QuantitativeValue",
   "hasId": false,
   "requiredFields": [

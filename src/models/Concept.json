@@ -1,7 +1,6 @@
 {
   "type": "Concept",
-  "sameAs": null,
-  "derivedFrom": "https://www.w3.org/TR/skos-primer/#secconcept",
+  "derivedFrom": "http://www.w3.org/2004/02/skos/core#Concept",
   "hasId": true,
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/concept/",

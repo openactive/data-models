@@ -1,9 +1,7 @@
 {
   "type": "LocationFeatureSpecification",
-  "sameAs": null,
-  "derivedFrom": "https://schema.org/LocationFeatureSpecification",
+  "derivedFrom": "http://schema.org/LocationFeatureSpecification",
   "hasId": false,
-  "hasFlexibleType": true,
   "requiredFields": [
     "name",
     "type",
@@ -17,6 +15,7 @@
   "fields": {
     "name": {
       "fieldName": "name",
+      "sameAs": "http://schema.org/name",
       "requiredType": "http://schema.org/Text",
       "example": "Changing Facilities",
       "description": [
@@ -26,17 +25,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "http://schema.org/Text",
-      "options": [
-        "LocationFeatureSpecification",
-        "ChangingRooms",
-        "Showers",
-        "PublicToilets",
-        "Lockers",
-        "Towels",
-        "Creche",
-        "Parking",
-        "BabyChanging"
-      ],
+      "requiredContent": "LocationFeatureSpecification",
       "description": [
         "TODO"
       ],

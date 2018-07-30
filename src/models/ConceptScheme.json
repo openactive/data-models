@@ -1,7 +1,6 @@
 {
   "type": "ConceptScheme",
-  "sameAs": null,
-  "derivedFrom": "https://www.w3.org/TR/skos-primer/#secscheme",
+  "derivedFrom": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
   "hasId": true,
   "idFormat": "http://schema.org/url",
   "sampleId": "https://example.com/scheme/",
@@ -28,6 +27,7 @@
   "fields": {
     "concept": {
       "fieldName": "concept",
+      "sameAs": "https://www.openactive.org/ns#concept",
       "model": "ArrayOf#Concept",
       "example": [{
         "id": "https://example.com/concept/martial-arts",
@@ -50,6 +50,7 @@
     },
     "license": {
       "fieldName": "license",
+      "sameAs": "http://purl.org/dc/terms/license",
       "requiredType": "http://schema.org/url",
       "description": [
         "Reference to the license under which the activity list has been published."
@@ -58,6 +59,7 @@
     },
     "title": {
       "fieldName": "title",
+      "sameAs": "http://purl.org/dc/terms/title",
       "requiredType": "http://schema.org/Text",
       "example": "Activity List",
       "description": [

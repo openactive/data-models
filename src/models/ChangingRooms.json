@@ -1,0 +1,16 @@
+{
+  "type": "ChangingRooms",
+  "subClassOf": "#LocationFeatureSpecification",
+  "derivedFrom": null,
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "http://schema.org/Text",
+      "requiredContent": "ChangingRooms",
+      "description": [
+        "TODO"
+      ],
+      "example": "ChangingRooms"
+    }
+  }
+}
