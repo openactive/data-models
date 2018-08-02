@@ -7,7 +7,6 @@
   "requiredFields": [
     "type",
     "id",
-    "@context",
     "url",
     "name",
     "activity",
@@ -39,9 +38,11 @@
     "@context": {
       "fieldName": "@context",
       "requiredType": "http://schema.org/url",
-      "requiredContent": "https://www.openactive.io/ns/oa.jsonld",
+      "additionalTypes": [
+        "ArrayOf#http://schema.org/url"
+      ],
       "description": [
-        "TODO"
+          "TODO"
       ],
       "example": "https://www.openactive.io/ns/oa.jsonld"
     },
