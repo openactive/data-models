@@ -12,6 +12,10 @@
     "id",
     "inScheme"
   ],
+  "commonTypos": {
+    "identifier": "notation",
+    "name": "prefLabel"
+  },
   "inSpec": [
     "type",
     "id",
