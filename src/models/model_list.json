@@ -1,8 +1,56 @@
 {
-  "models_order": ["Event", "Action", "Brand", "Concept", "ConceptScheme", "EntryPoint", "FacilityUse", "GeoCoordinates", "ImageObject", "IndividualFacilityUse", "LocationFeatureSpecification", "Offer", "OpeningHoursSpecification", "Organization", "Person", "Place", "PostalAddress", "QuantitativeValue", "Schedule", "Slot"],
-  "event_elements": ["Brand", "Concept", "GeoCoordinates", "ImageObject", "LocationFeatureSpecification", "Organization", "Person", "Place", "PostalAddress", "Schedule"],
-  "event_booking": ["Action", "EntryPoint", "Offer"],
-  "event_core": ["Event"],
+  "models_order": [
+    "Event",
+    "Action",
+    "BabyChanging",
+    "Brand",
+    "ChangingRooms",
+    "Concept",
+    "ConceptScheme",
+    "Creche",
+    "EntryPoint",
+    "FacilityUse",
+    "GeoCoordinates",
+    "ImageObject",
+    "IndividualFacilityUse",
+    "LocationFeatureSpecification",
+    "Lockers",
+    "Offer",
+    "OpeningHoursSpecification",
+    "Organization",
+    "Parking",
+    "Person",
+    "Place",
+    "PostalAddress",
+    "PublicToilets",
+    "QuantitativeValue",
+    "ReserveAction",
+    "Schedule",
+    "Showers",
+    "Slot",
+    "Towels"
+  ],
+  "event_elements": [
+    "Brand",
+    "Concept",
+    "GeoCoordinates",
+    "ImageObject",
+    "Organization",
+    "Person",
+    "Place",
+    "PostalAddress",
+    "QuantitativeValue",
+    "Schedule"
+  ],
+  "event_booking": [
+    "Action",
+    "EntryPoint",
+    "Offer",
+    "ReserveAction"
+  ],
+  "event_core": [
+    "Event"
+  ],
   "models": {
     "event": {
       "modelName": "Event"
@@ -10,14 +58,23 @@
     "action": {
       "modelName": "Action"
     },
+    "babychanging": {
+      "modelName": "BabyChanging"
+    },
     "brand": {
       "modelName": "Brand"
+    },
+    "changingrooms": {
+      "modelName": "ChangingRooms"
     },
     "concept": {
       "modelName": "Concept"
     },
     "conceptscheme": {
       "modelName": "ConceptScheme"
+    },
+    "creche": {
+      "modelName": "Creche"
     },
     "entrypoint": {
       "modelName": "EntryPoint"
@@ -37,6 +94,9 @@
     "locationfeaturespecification": {
       "modelName": "LocationFeatureSpecification"
     },
+    "lockers": {
+      "modelName": "Lockers"
+    },
     "offer": {
       "modelName": "Offer"
     },
@@ -45,6 +105,9 @@
     },
     "organization": {
       "modelName": "Organization"
+    },
+    "parking": {
+      "modelName": "Parking"
     },
     "person": {
       "modelName": "Person"
@@ -55,14 +118,26 @@
     "postaladdress": {
       "modelName": "PostalAddress"
     },
+    "publictoilets": {
+      "modelName": "PublicToilets"
+    },
     "quantitativevalue": {
       "modelName": "QuantitativeValue"
+    },
+    "reserveaction": {
+      "modelName": "ReserveAction"
     },
     "schedule": {
       "modelName": "Schedule"
     },
+    "showers": {
+      "modelName": "Showers"
+    },
     "slot": {
       "modelName": "Slot"
+    },
+    "towels": {
+      "modelName": "Towels"
     }
   }
 }
