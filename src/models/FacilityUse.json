@@ -38,7 +38,7 @@
     "@context": {
       "fieldName": "@context",
       "requiredType": "http://schema.org/url",
-      "additionalTypes": [
+      "alternativeTypes": [
         "ArrayOf#http://schema.org/url"
       ],
       "description": [
