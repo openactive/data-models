@@ -98,7 +98,14 @@ const getFullyQualifiedProperty = (value, contexts = []) => {
       // Late check for an alias...
       if (
         typeof mergedContext[qualifiedProperty.label] !== 'undefined'
-        && mergedContext[qualifiedProperty.label] === `${qualifiedProperty.prefix}:${qualifiedProperty.label}`
+        && (
+          mergedContext[qualifiedProperty.label] === `${qualifiedProperty.prefix}:${qualifiedProperty.label}`
+          || (
+            typeof mergedContext[qualifiedProperty.label] === 'object'
+            && typeof mergedContext[qualifiedProperty.label]['@id'] === 'string'
+            && mergedContext[qualifiedProperty.label]['@id'] === `${qualifiedProperty.prefix}:${qualifiedProperty.label}`
+          )
+        )
       ) {
         qualifiedProperty.alias = qualifiedProperty.label;
       }
