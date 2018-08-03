@@ -5,7 +5,12 @@ const loadModel = (name) => {
   if (!name.match(/^[A-Za-z]+$/) || name === 'model_list') {
     throw Error('Invalid model name supplied');
   }
-  const jsonPath = path.join(__dirname, 'models', `${name}.json`);
+  let jsonPath;
+  if (name === 'FeedItem' || name === 'FeedPage') {
+    jsonPath = path.join(__dirname, 'rpde', `${name}.json`);
+  } else {
+    jsonPath = path.join(__dirname, 'models', `${name}.json`);
+  }
   const data = fs.readFileSync(jsonPath, 'utf8');
   let model = JSON.parse(data);
   // Does this have a parent class?
