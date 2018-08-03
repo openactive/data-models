@@ -10,10 +10,17 @@ const loadModel = require('./loadModel');
 
 describe('models', () => {
   const existing = {};
-  const files = fs.readdirSync(path.join(__dirname, 'models'));
+  const files = [
+    ...fs.readdirSync(path.join(__dirname, 'models')),
+    ...fs.readdirSync(path.join(__dirname, 'rpde')),
+  ];
   for (const file of files) {
     describe(`file ${file}`, () => {
-      const filePath = path.join(__dirname, 'models', file);
+      let dir = 'models';
+      if (file.match(/^Feed/)) {
+        dir = 'rpde';
+      }
+      const filePath = path.join(__dirname, dir, file);
       const data = fs.readFileSync(filePath, 'utf8');
       let jsonData;
       const readJson = () => { jsonData = JSON.parse(data); };
@@ -241,6 +248,9 @@ describe('models', () => {
             model = JSON.parse(data);
           });
           it('should not have fields in multiple namespaces', () => {
+            if (typeof model.isJsonLd !== 'undefined' && model.isJsonLd === false) {
+              return;
+            }
             let modelPrefix = consts.OPEN_ACTIVE_PREFIX;
             const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
             if (hasModelDerivedFrom) {
