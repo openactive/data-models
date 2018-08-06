@@ -71,23 +71,13 @@ An example `id`.
 }
 ```
 
-#### hasFlexibleType
+#### isJsonLd
 
-Whether the `type` of this model is flexible.
-
-```json
-{
-  "hasFlexibleType": true
-}
-```
-
-If `true`, it means that the `type` of this model can be extended. For example, a `LocationFeatureSpecification` can validly be:
+Whether the this model is JSON-LD.
 
 ```json
 {
-  "name": "My Place",
-  "value": true,
-  "type": "ext:MyPlace"
+  "isJsonLd": true
 }
 ```
 

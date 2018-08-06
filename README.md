@@ -15,9 +15,9 @@ It also provides a convenience load method, `loadModel`
 
 ```js
 
-const models = require('openactive-data-models');
+const { loadModel } = require('openactive-data-models');
 
-const eventModel = models.loadModel('Event');
+const eventModel = loadModel('Event');
 
 // Do things with the eventModel...
 
@@ -34,12 +34,18 @@ $ npm install
 ```
 ### Running tests
 
-This project uses [Jasmine 1.3](https://jasmine.github.io/) for its tests via [jasmine-node](https://github.com/mhevery/jasmine-node). All spec files are located alongside the files that they target.
+This project uses [Jasmine](https://jasmine.github.io/) for its tests. All spec files are located alongside the files that they target.
 
-To run tests, run:
+To run tests locally, run:
 
 ```shell
 $ npm test
+```
+
+The test run will also include a run of [eslint](https://eslint.org/). To run the tests without these, use:
+
+```shell
+$ npm run test-no-lint
 ```
 
 ### Adding models
