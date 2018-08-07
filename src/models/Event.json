@@ -108,9 +108,6 @@
       "fieldName": "activity",
       "sameAs": "https://www.openactive.org/ns#activity",
       "model": "ArrayOf#Concept",
-      "alternativeTypes": [
-        "ArrayOf#http://schema.org/Text"
-      ],
       "description": [
         "Specifies the physical activity or activities that will take place during an event."
       ],
@@ -147,9 +144,6 @@
       "fieldName": "category",
       "sameAs": "https://www.openactive.org/ns#category",
       "model": "ArrayOf#Concept",
-      "alternativeTypes": [
-        "ArrayOf#http://schema.org/Text"
-      ],
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
       ],
