@@ -35,9 +35,6 @@
     "activity": {
       "fieldName": "activity",
       "model": "ArrayOf#Concept",
-      "alternativeTypes": [
-        "ArrayOf#http://schema.org/Text"
-      ],
       "description": [
         "Specifies the physical activity or activities that will take place during a facility use."
       ],
