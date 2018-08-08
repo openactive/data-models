@@ -1,22 +1,27 @@
 const fs = require('fs');
 const path = require('path');
-const loadModel = require('./loadModel');
-const versions = require('./versions');
+const loadModelCheckArgs = require('./helpers/loadModelCheckArgs');
+const loadModelMergeParent = require('./helpers/loadModelMergeParent');
 
-const loadModelFromFile = (name, version) => loadModel(
-  name,
-  version,
-  (localName, localVersion) => {
-    let jsonPath;
-    if (localName === 'FeedItem' || name === 'FeedPage') {
-      jsonPath = path.join(__dirname, versions[localVersion], 'rpde', `${localName}.json`);
-    } else {
-      jsonPath = path.join(__dirname, versions[localVersion], 'models', `${localName}.json`);
-    }
-    const data = fs.readFileSync(jsonPath, 'utf8');
-    return JSON.parse(data);
-  },
-  loadModelFromFile,
-);
+const loadModelFromFile = (name, version) => {
+  const specVersion = loadModelCheckArgs(name, version);
+  let jsonPath;
+  if (name === 'FeedItem' || name === 'FeedPage') {
+    jsonPath = path.join(__dirname, specVersion, 'rpde', `${name}.json`);
+  } else {
+    jsonPath = path.join(__dirname, specVersion, 'models', `${name}.json`);
+  }
+  const data = fs.readFileSync(jsonPath, 'utf8');
+  let model = JSON.parse(data);
+  if (
+    typeof model.subClassOf !== 'undefined'
+    && model.subClassOf.match(/^#[A-Za-z]+$/)
+  ) {
+    const parentModelName = model.subClassOf.substr(1);
+    const parentModel = loadModelFromFile(parentModelName, specVersion);
+    model = loadModelMergeParent(model, parentModel);
+  }
+  return model;
+};
 
 module.exports = loadModelFromFile;

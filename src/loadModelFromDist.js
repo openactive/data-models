@@ -1,24 +1,30 @@
-const loadModel = require('./loadModel');
+const loadModelCheckArgs = require('./helpers/loadModelCheckArgs');
+const loadModelMergeParent = require('./helpers/loadModelMergeParent');
 const specs = require('./dist/specs');
 
-const loadModelFromDist = (name, version) => loadModel(
-  name,
-  version,
-  (localName, localVersion) => {
-    let jsonKey = 'models';
-    if (localName === 'FeedItem' || localName === 'FeedPage') {
-      jsonKey = 'rpde';
-    }
-    if (
-      typeof specs[localVersion] === 'undefined'
-      || typeof specs[localVersion][jsonKey] === 'undefined'
-      || typeof specs[localVersion][jsonKey][localName] === 'undefined'
-    ) {
-      throw Error('Invalid model name supplied');
-    }
-    return specs[localVersion][jsonKey][localName];
-  },
-  loadModelFromDist,
-);
+const loadModelFromDist = (name, version) => {
+  const specVersion = loadModelCheckArgs(name, version);
+  let jsonKey = 'models';
+  if (name === 'FeedItem' || name === 'FeedPage') {
+    jsonKey = 'rpde';
+  }
+  if (
+    typeof specs[specVersion] === 'undefined'
+    || typeof specs[specVersion][jsonKey] === 'undefined'
+    || typeof specs[specVersion][jsonKey][name] === 'undefined'
+  ) {
+    throw Error('Invalid model name supplied');
+  }
+  let model = Object.assign({}, specs[specVersion][jsonKey][name]);
+  if (
+    typeof model.subClassOf !== 'undefined'
+    && model.subClassOf.match(/^#[A-Za-z]+$/)
+  ) {
+    const parentModelName = model.subClassOf.substr(1);
+    const parentModel = loadModelFromDist(parentModelName, specVersion);
+    model = loadModelMergeParent(model, parentModel);
+  }
+  return model;
+};
 
 module.exports = loadModelFromDist;
