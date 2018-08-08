@@ -1,5 +1,4 @@
-const fs = require('fs');
-const path = require('path');
+const specs = require('./dist/specs');
 const versions = require('./versions');
 
 const getMetaData = (version) => {
@@ -7,12 +6,14 @@ const getMetaData = (version) => {
   if (typeof localVersion === 'undefined') {
     localVersion = 'latest';
   }
-  if (typeof versions[localVersion] === 'undefined') {
+  if (
+    typeof versions[localVersion] === 'undefined'
+    || typeof specs[version] === 'undefined'
+    || typeof specs[version].meta === 'undefined'
+  ) {
     throw Error('Invalid specification version supplied');
   }
-  const jsonPath = path.join(__dirname, versions[localVersion], 'meta.json');
-  const metaData = fs.readFileSync(jsonPath, 'utf8');
-  return JSON.parse(metaData);
+  return specs[version].meta;
 };
 
 module.exports = getMetaData;

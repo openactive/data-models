@@ -7,10 +7,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const getMetaData = require('./getMetaData');
-const derivePrefix = require('./helpers/derivePrefix');
-const deriveSingularTypes = require('./helpers/deriveSingularTypes');
-const versions = require('./versions');
+const getMetaData = require('../src/getMetaData');
+const derivePrefix = require('../src/helpers/derivePrefix');
+const deriveSingularTypes = require('../src/helpers/deriveSingularTypes');
+const versions = require('../src/versions');
 
 const getGraph = (version) => {
   let localVersion = version;
@@ -33,10 +33,10 @@ const getGraph = (version) => {
     rdfs_classes: [],
     rdfs_properties: [],
   };
-  const files = fs.readdirSync(path.join(__dirname, specVersion, 'models'));
+  const files = fs.readdirSync(path.join(__dirname, '..', 'src', specVersion, 'models'));
   for (const file of files) {
     if (file !== 'model_list.json') {
-      const jsonPath = path.join(__dirname, specVersion, 'models', file);
+      const jsonPath = path.join(__dirname, '..', 'src', specVersion, 'models', file);
       const data = fs.readFileSync(jsonPath, 'utf8');
       const model = JSON.parse(data);
 

@@ -29,8 +29,10 @@
     "jasmine": "^3.1.0"
   },
   "scripts": {
+    "build": "node scripts/build.js",
     "lint": "eslint \"src/**/*.js\"",
-    "pretest": "npm run lint",
+    "prepublish": "npm run build",
+    "pretest": "npm run build && npm run lint",
     "test": "npm run test-no-lint",
     "test-no-lint": "jasmine"
   }

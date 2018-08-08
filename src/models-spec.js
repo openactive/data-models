@@ -4,7 +4,7 @@ const path = require('path');
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 
-const loadModel = require('./loadModel');
+const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 describe('models', () => {
@@ -67,7 +67,7 @@ describe('models', () => {
         } else {
           describe('data', () => {
             beforeAll(() => {
-              jsonData = loadModel(file.replace(/\.json$/, ''), version);
+              jsonData = loadModelFromFile(file.replace(/\.json$/, ''), version);
             });
 
             it('should have a type that matches the file name', () => {
