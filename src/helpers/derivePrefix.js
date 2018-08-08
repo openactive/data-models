@@ -1,6 +1,4 @@
-const namespaces = require('../data/namespaces');
-
-const derivePrefix = (value) => {
+const derivePrefix = (value, namespaces) => {
   if (typeof value !== 'string') {
     return null;
   }

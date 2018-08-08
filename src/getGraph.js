@@ -7,16 +7,25 @@
 const fs = require('fs');
 const path = require('path');
 
-const namespaces = require('./data/namespaces');
-const keywords = require('./data/keywords');
-const consts = require('./data/consts');
-const graph = require('./data/graph');
+const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 const deriveSingularTypes = require('./helpers/deriveSingularTypes');
+const versions = require('./versions');
 
-const getGraph = () => {
-  const metaData = {
-    '@id': namespaces[consts.OPEN_ACTIVE_PREFIX],
+const getGraph = (version) => {
+  let localVersion = version;
+  if (typeof localVersion === 'undefined') {
+    localVersion = 'latest';
+  }
+  if (typeof versions[localVersion] === 'undefined') {
+    throw Error('Invalid specification version supplied');
+  }
+
+  const specVersion = versions[localVersion];
+
+  const metaData = getMetaData(specVersion);
+  const extraData = {
+    '@id': metaData.namespaces[metaData.openActivePrefix],
     'dc:date': (new Date()).toISOString().replace(/T.*$/, ''),
     'owl:versionInfo': '#',
   };
@@ -24,24 +33,24 @@ const getGraph = () => {
     rdfs_classes: [],
     rdfs_properties: [],
   };
-  const files = fs.readdirSync(path.join(__dirname, 'models'));
+  const files = fs.readdirSync(path.join(__dirname, specVersion, 'models'));
   for (const file of files) {
     if (file !== 'model_list.json') {
-      const jsonPath = path.join(__dirname, 'models', file);
+      const jsonPath = path.join(__dirname, specVersion, 'models', file);
       const data = fs.readFileSync(jsonPath, 'utf8');
       const model = JSON.parse(data);
 
       if (file !== 'context.json') {
-        let modelPrefix = consts.OPEN_ACTIVE_PREFIX;
+        let modelPrefix = metaData.openActivePrefix;
         const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
         if (hasModelDerivedFrom) {
-          modelPrefix = derivePrefix(model.derivedFrom) || modelPrefix;
+          modelPrefix = derivePrefix(model.derivedFrom, metaData.namespaces) || modelPrefix;
         }
-        if (modelPrefix !== consts.DEFAULT_PREFIX) {
+        if (modelPrefix !== metaData.defaultPrefix) {
           const modelDerivedFromName = hasModelDerivedFrom
-            ? model.derivedFrom.replace(namespaces[modelPrefix], '')
+            ? model.derivedFrom.replace(metaData.namespaces[modelPrefix], '')
             : model.type;
-          if (modelPrefix === consts.OPEN_ACTIVE_PREFIX) {
+          if (modelPrefix === metaData.openActivePrefix) {
             const rdfsClass = {
               '@id': `${modelPrefix}:${modelDerivedFromName}`,
               '@type': 'rdfs:Class',
@@ -53,8 +62,8 @@ const getGraph = () => {
               },
             };
             if (typeof model.subClassOf !== 'undefined') {
-              const subClassNamespace = derivePrefix(model.subClassOf) || consts.OPEN_ACTIVE_PREFIX;
-              const subClassName = model.subClassOf.replace(/^#/, '').replace(namespaces[subClassNamespace], '');
+              const subClassNamespace = derivePrefix(model.subClassOf, metaData.namespaces) || metaData.openActivePrefix;
+              const subClassName = model.subClassOf.replace(/^#/, '').replace(metaData.namespaces[subClassNamespace], '');
               rdfsClass['rdfs:subClassOf'] = `${subClassNamespace}:${subClassName}`;
             }
             propsAndClasses.rdfs_classes.push(rdfsClass);
@@ -63,20 +72,20 @@ const getGraph = () => {
         for (const fieldName in model.fields) {
           if (
             Object.prototype.hasOwnProperty.call(model.fields, fieldName)
-            && typeof keywords[fieldName] === 'undefined'
+            && typeof metaData.keywords[fieldName] === 'undefined'
             && !fieldName.match(/^@/)
           ) {
             const field = model.fields[fieldName];
             let fieldPrefix = modelPrefix;
             const hasFieldSameAs = typeof field.sameAs !== 'undefined' && field.sameAs !== null;
             if (hasFieldSameAs) {
-              fieldPrefix = derivePrefix(field.sameAs) || fieldPrefix;
+              fieldPrefix = derivePrefix(field.sameAs, metaData.namespaces) || fieldPrefix;
             }
-            if (fieldPrefix !== consts.DEFAULT_PREFIX) {
+            if (fieldPrefix !== metaData.defaultPrefix) {
               const fieldSameAsName = hasFieldSameAs
-                ? field.sameAs.replace(namespaces[fieldPrefix], '')
+                ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
                 : fieldName;
-              if (fieldPrefix === consts.OPEN_ACTIVE_PREFIX) {
+              if (fieldPrefix === metaData.openActivePrefix) {
                 const property = {
                   '@id': `${fieldPrefix}:${fieldSameAsName}`,
                   '@type': 'rdf:Property',
@@ -101,8 +110,8 @@ const getGraph = () => {
     }
   }
   return Object.assign(
-    graph,
-    metaData,
+    metaData.graph,
+    extraData,
     propsAndClasses,
   );
 };

@@ -11,6 +11,11 @@ describe('loadModel', () => {
     expect(modelLoadTest).toThrow();
   });
 
+  it('should throw if passed an invalid spec version', () => {
+    const modelLoadTest = () => loadModel('Event', '0.0');
+    expect(modelLoadTest).toThrow();
+  });
+
   it('should return a valid model as JSON', () => {
     const modelData = loadModel('Event');
     expect(typeof modelData).toBe('object');

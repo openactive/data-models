@@ -5,15 +5,15 @@
 
 const getFullyQualifiedProperty = require('./getFullyQualifiedProperty');
 const loadModel = require('./loadModel');
-const consts = require('./data/consts');
-const namespaces = require('./data/namespaces');
+const getMetaData = require('./getMetaData');
+const versions = require('./versions');
 
 function createExports() {
   const root = {
-    contextUrl: consts.CONTEXT_URL,
     getFullyQualifiedProperty,
+    getMetaData,
     loadModel,
-    namespaces,
+    versions,
   };
   return root;
 }

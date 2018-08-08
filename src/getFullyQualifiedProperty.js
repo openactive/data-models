@@ -1,8 +1,18 @@
 const getContext = require('./getContext');
+const versions = require('./versions');
 
 const KEYWORD_REGEX = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)$/;
 
-const getFullyQualifiedProperty = (value, contexts = []) => {
+const getFullyQualifiedProperty = (value, version, contexts = []) => {
+  let localVersion = version;
+  if (typeof localVersion === 'undefined') {
+    localVersion = 'latest';
+  }
+  if (typeof versions[localVersion] === 'undefined') {
+    throw Error('Invalid specification version supplied');
+  }
+  const specVersion = versions[localVersion];
+
   let contextsArg = contexts;
   // Sort the contexts
   if (typeof contextsArg === 'object') {
@@ -19,7 +29,7 @@ const getFullyQualifiedProperty = (value, contexts = []) => {
 
   // Add the openactive context to the top-level if no context
   if (contextsArg.length === 0) {
-    contextsArg.push(getContext());
+    contextsArg.push(getContext(specVersion));
   }
 
   // Return value
