@@ -8,11 +8,11 @@ const getContext = (version) => {
   }
   if (
     typeof versions[localVersion] === 'undefined'
-    || typeof contexts[version] === 'undefined'
+    || typeof contexts[versions[localVersion]] === 'undefined'
   ) {
     throw Error('Invalid specification version supplied');
   }
-  return contexts[version];
+  return contexts[versions[localVersion]];
 };
 
 module.exports = getContext;

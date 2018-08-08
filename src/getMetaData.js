@@ -8,12 +8,12 @@ const getMetaData = (version) => {
   }
   if (
     typeof versions[localVersion] === 'undefined'
-    || typeof specs[version] === 'undefined'
-    || typeof specs[version].meta === 'undefined'
+    || typeof specs[versions[localVersion]] === 'undefined'
+    || typeof specs[versions[localVersion]].meta === 'undefined'
   ) {
     throw Error('Invalid specification version supplied');
   }
-  return specs[version].meta;
+  return specs[versions[localVersion]].meta;
 };
 
 module.exports = getMetaData;
