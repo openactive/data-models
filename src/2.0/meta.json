@@ -3,7 +3,7 @@
   "openActivePrefix": "oa",
   "contextUrl": "https://www.openactive.io/ns/oa.jsonld",
   "defaultActivityLists": {
-    "http://openactive.io/activity-list/": "https://www.openactive.io/activity-list/activity-list.jsonld",
+    "http://openactive.io/activity-list/": "https://www.openactive.io/activity-list/activity-list.jsonld"
   },
   "baseGraph": {
     "@context": {
