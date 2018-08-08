@@ -2,7 +2,7 @@ const getFullyQualifiedProperty = require('./getFullyQualifiedProperty');
 
 describe('getFullyQualifiedProperty', () => {
   it('should successfully place a unprefixed property in the schema namespace', () => {
-    const prop = getFullyQualifiedProperty('name');
+    const prop = getFullyQualifiedProperty('name', '2.0');
 
     expect(prop.prefix).toBe('schema');
     expect(prop.namespace).toBe('http://schema.org/');
@@ -11,7 +11,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully place a unprefixed alias property in the oa namespace', () => {
-    const prop = getFullyQualifiedProperty('meetingPoint');
+    const prop = getFullyQualifiedProperty('meetingPoint', '2.0');
 
     expect(prop.prefix).toBe('oa');
     expect(prop.namespace).toBe('https://www.openactive.org/ns#');
@@ -20,7 +20,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully recognise type as @type', () => {
-    const prop = getFullyQualifiedProperty('type');
+    const prop = getFullyQualifiedProperty('type', '2.0');
 
     expect(prop.prefix).toBe(null);
     expect(prop.namespace).toBe(null);
@@ -29,7 +29,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully recognise @type as type', () => {
-    const prop = getFullyQualifiedProperty('@type');
+    const prop = getFullyQualifiedProperty('@type', '2.0');
 
     expect(prop.prefix).toBe(null);
     expect(prop.namespace).toBe(null);
@@ -38,7 +38,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully recognise license in the dc namespace', () => {
-    const prop = getFullyQualifiedProperty('license');
+    const prop = getFullyQualifiedProperty('license', '2.0');
 
     expect(prop.prefix).toBe('dc');
     expect(prop.namespace).toBe('http://purl.org/dc/terms/');
@@ -47,7 +47,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully recognise dc:license in the dc namespace', () => {
-    const prop = getFullyQualifiedProperty('dc:license');
+    const prop = getFullyQualifiedProperty('dc:license', '2.0');
 
     expect(prop.prefix).toBe('dc');
     expect(prop.namespace).toBe('http://purl.org/dc/terms/');
@@ -56,7 +56,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should successfully recognise http://purl.org/dc/terms/license in the dc namespace', () => {
-    const prop = getFullyQualifiedProperty('http://purl.org/dc/terms/license');
+    const prop = getFullyQualifiedProperty('http://purl.org/dc/terms/license', '2.0');
 
     expect(prop.prefix).toBe('dc');
     expect(prop.namespace).toBe('http://purl.org/dc/terms/');
@@ -65,7 +65,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should return an unknown namespace as is', () => {
-    const prop = getFullyQualifiedProperty('http://example.org/license');
+    const prop = getFullyQualifiedProperty('http://example.org/license', '2.0');
 
     expect(prop.prefix).toBe(null);
     expect(prop.namespace).toBe(null);
@@ -74,7 +74,7 @@ describe('getFullyQualifiedProperty', () => {
   });
 
   it('should return an unknown prefix as is', () => {
-    const prop = getFullyQualifiedProperty('beta:license');
+    const prop = getFullyQualifiedProperty('beta:license', '2.0');
 
     expect(prop.prefix).toBe(null);
     expect(prop.namespace).toBe(null);

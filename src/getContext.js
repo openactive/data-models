@@ -1,42 +1,53 @@
 const fs = require('fs');
 const path = require('path');
 
-const namespaces = require('./data/namespaces');
-const keywords = require('./data/keywords');
-const consts = require('./data/consts');
+const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 const deriveSingularTypes = require('./helpers/deriveSingularTypes');
+const versions = require('./versions');
 
-const getContext = () => {
+const getContext = (version) => {
+  let localVersion = version;
+  if (typeof localVersion === 'undefined') {
+    localVersion = 'latest';
+  }
+  if (typeof versions[localVersion] === 'undefined') {
+    throw Error('Invalid specification version supplied');
+  }
+
+  const specVersion = versions[localVersion];
+
+  const metaData = getMetaData(specVersion);
+
   const context = {
     concepts: {
       '@reverse': 'skos:inScheme',
     },
-    '@vocab': namespaces[consts.DEFAULT_PREFIX],
+    '@vocab': metaData.namespaces[metaData.defaultPrefix],
   };
 
   const existing = {};
   const newModels = {};
   const newFields = {};
 
-  const files = fs.readdirSync(path.join(__dirname, 'models'));
+  const files = fs.readdirSync(path.join(__dirname, specVersion, 'models'));
 
   for (const file of files) {
     if (file !== 'model_list.json') {
-      const jsonPath = path.join(__dirname, 'models', file);
+      const jsonPath = path.join(__dirname, specVersion, 'models', file);
       const data = fs.readFileSync(jsonPath, 'utf8');
       const model = JSON.parse(data);
 
-      let modelPrefix = consts.OPEN_ACTIVE_PREFIX;
+      let modelPrefix = metaData.openActivePrefix;
       const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
       if (hasModelDerivedFrom) {
-        modelPrefix = derivePrefix(model.derivedFrom) || modelPrefix;
+        modelPrefix = derivePrefix(model.derivedFrom, metaData.namespaces) || modelPrefix;
       }
-      if (modelPrefix !== consts.DEFAULT_PREFIX) {
+      if (modelPrefix !== metaData.defaultPrefix) {
         const modelDerivedFromName = hasModelDerivedFrom
-          ? model.derivedFrom.replace(namespaces[modelPrefix], '')
+          ? model.derivedFrom.replace(metaData.namespaces[modelPrefix], '')
           : model.type;
-        if (modelPrefix === consts.OPEN_ACTIVE_PREFIX) {
+        if (modelPrefix === metaData.openActivePrefix) {
           newModels[model.type] = `${modelPrefix}:${modelDerivedFromName}`;
         } else {
           existing[model.type] = `${modelPrefix}:${modelDerivedFromName}`;
@@ -46,20 +57,20 @@ const getContext = () => {
       for (const fieldName in model.fields) {
         if (
           Object.prototype.hasOwnProperty.call(model.fields, fieldName)
-          && typeof keywords[fieldName] === 'undefined'
+          && typeof metaData.keywords[fieldName] === 'undefined'
           && !fieldName.match(/^@/)
         ) {
           const field = model.fields[fieldName];
           let fieldPrefix = modelPrefix;
           const hasFieldSameAs = typeof field.sameAs !== 'undefined' && field.sameAs !== null;
           if (hasFieldSameAs) {
-            fieldPrefix = derivePrefix(field.sameAs) || fieldPrefix;
+            fieldPrefix = derivePrefix(field.sameAs, metaData.namespaces) || fieldPrefix;
           }
-          if (fieldPrefix !== consts.DEFAULT_PREFIX) {
+          if (fieldPrefix !== metaData.defaultPrefix) {
             const fieldSameAsName = hasFieldSameAs
-              ? field.sameAs.replace(namespaces[fieldPrefix], '')
+              ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
               : fieldName;
-            if (fieldPrefix === consts.OPEN_ACTIVE_PREFIX) {
+            if (fieldPrefix === metaData.openActivePrefix) {
               newFields[fieldName] = {
                 '@id': `${fieldPrefix}:${fieldSameAsName}`,
               };
@@ -78,8 +89,8 @@ const getContext = () => {
 
   return Object.assign(
     context,
-    keywords,
-    namespaces,
+    metaData.keywords,
+    metaData.namespaces,
     existing,
     newModels,
     newFields,

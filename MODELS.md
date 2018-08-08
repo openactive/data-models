@@ -2,7 +2,7 @@
 
 ## Model
 
-Each model should have a file corresponding to it in `src/models`. The name of the file should correspond to the name of the object the model is describing.
+Each model should have a file corresponding to it in `src/<version>/models`. The name of the file should correspond to the name of the object the model is describing.
 
 e.g. for model **Event**, the file name should be **Event.json**.
 
