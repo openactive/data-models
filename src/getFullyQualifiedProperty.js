@@ -9,7 +9,7 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
     localVersion = 'latest';
   }
   if (typeof versions[localVersion] === 'undefined') {
-    throw Error('Invalid specification version supplied');
+    throw Error(`Invalid specification version '${localVersion}' supplied`);
   }
   const specVersion = versions[localVersion];
 
@@ -27,10 +27,8 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
     contextsArg = [];
   }
 
-  // Add the openactive context to the top-level if no context
-  if (contextsArg.length === 0) {
-    contextsArg.push(getContext(specVersion));
-  }
+  // Add the openactive context to the top-level
+  contextsArg.unshift({ '@context': getContext(specVersion) });
 
   // Return value
   const qualifiedProperty = {
@@ -47,7 +45,7 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
   for (const context of contextsArg) {
     // If this is not an object, we can't process it
     if (typeof context === 'object' && context !== null) {
-      mergedContext = Object.assign(mergedContext, context);
+      mergedContext = Object.assign(mergedContext, context['@context']);
     }
   }
 
