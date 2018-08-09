@@ -4,7 +4,7 @@
  */
 
 const getFullyQualifiedProperty = require('./getFullyQualifiedProperty');
-const loadModelFromDist = require('./loadModelFromDist');
+const loadModel = require('./loadModel');
 const getMetaData = require('./getMetaData');
 const versions = require('./versions');
 
@@ -12,7 +12,7 @@ function createExports() {
   const root = {
     getFullyQualifiedProperty,
     getMetaData,
-    loadModel: loadModelFromDist,
+    loadModel,
     versions,
   };
   return root;

@@ -1,28 +1,28 @@
-const loadModelFromDist = require('./loadModelFromDist');
+const loadModel = require('./loadModel');
 
-describe('loadModelFromDist', () => {
+describe('loadModel', () => {
   it('should throw if passed an invalid model name', () => {
-    const modelLoadTest = () => loadModelFromDist('../InvalidModel');
+    const modelLoadTest = () => loadModel('../InvalidModel');
     expect(modelLoadTest).toThrow();
   });
 
   it('should throw if passed a model that doesn\'t exist', () => {
-    const modelLoadTest = () => loadModelFromDist('InvalidModel');
+    const modelLoadTest = () => loadModel('InvalidModel');
     expect(modelLoadTest).toThrow();
   });
 
   it('should throw if passed an invalid spec version', () => {
-    const modelLoadTest = () => loadModelFromDist('Event', '0.0');
+    const modelLoadTest = () => loadModel('Event', '0.0');
     expect(modelLoadTest).toThrow();
   });
 
   it('should return a valid model as JSON', () => {
-    const modelData = loadModelFromDist('Event');
+    const modelData = loadModel('Event');
     expect(typeof modelData).toBe('object');
     expect(modelData.type).toBe('Event');
   });
   it('should return inherited properties from parent classes', () => {
-    const modelData = loadModelFromDist('Showers');
+    const modelData = loadModel('Showers');
     expect(typeof modelData).toBe('object');
     expect(modelData.type).toBe('Showers');
     expect(modelData.subClassGraph.length).toBe(1);

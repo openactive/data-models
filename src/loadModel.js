@@ -2,7 +2,7 @@ const loadModelCheckArgs = require('./helpers/loadModelCheckArgs');
 const loadModelMergeParent = require('./helpers/loadModelMergeParent');
 const specs = require('./dist/specs');
 
-const loadModelFromDist = (name, version) => {
+const loadModel = (name, version) => {
   const specVersion = loadModelCheckArgs(name, version);
   let jsonKey = 'models';
   if (name === 'FeedItem' || name === 'FeedPage') {
@@ -21,10 +21,10 @@ const loadModelFromDist = (name, version) => {
     && model.subClassOf.match(/^#[A-Za-z]+$/)
   ) {
     const parentModelName = model.subClassOf.substr(1);
-    const parentModel = loadModelFromDist(parentModelName, specVersion);
+    const parentModel = loadModel(parentModelName, specVersion);
     model = loadModelMergeParent(model, parentModel);
   }
   return model;
 };
 
-module.exports = loadModelFromDist;
+module.exports = loadModel;
