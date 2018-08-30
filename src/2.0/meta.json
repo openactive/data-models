@@ -1,9 +1,9 @@
 {
   "defaultPrefix": "schema",
   "openActivePrefix": "oa",
-  "contextUrl": "https://www.openactive.io/ns/oa.jsonld",
+  "contextUrl": "https://openactive.io/ns/oa.jsonld",
   "defaultActivityLists": {
-    "http://openactive.io/activity-list/": "https://www.openactive.io/activity-list/activity-list.jsonld"
+    "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld"
   },
   "baseGraph": {
     "@context": {
