@@ -85,7 +85,7 @@ const metaData = getMetaData('2.0');
 // {
 //   "defaultPrefix": "schema",
 //   "openActivePrefix": "oa",
-//   "contextUrl": "https://openactive.io/ns/oa.jsonld",
+//   "contextUrl": "https://openactive.io/",
 //   "defaultActivityLists": {
 //     "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld",
 //   },

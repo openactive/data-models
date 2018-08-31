@@ -1,7 +1,8 @@
 {
   "defaultPrefix": "schema",
   "openActivePrefix": "oa",
-  "contextUrl": "https://openactive.io/ns/oa.jsonld",
+  "contextUrl": "https://openactive.io/",
+  "specUrl": "https://www.openactive.io/modelling-opportunity-data/EditorsDraft/",
   "defaultActivityLists": {
     "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld"
   },

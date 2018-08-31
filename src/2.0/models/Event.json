@@ -84,7 +84,7 @@
       "description": [
           "TODO"
       ],
-      "example": "https://openactive.io/ns/oa.jsonld"
+      "example": "https://openactive.io/"
     },
     "accessibilityInformation": {
       "fieldName": "accessibilityInformation",

@@ -44,7 +44,7 @@
       "description": [
           "TODO"
       ],
-      "example": "https://openactive.io/ns/oa.jsonld"
+      "example": "https://openactive.io/"
     },
     "activity": {
       "fieldName": "activity",
