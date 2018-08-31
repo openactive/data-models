@@ -3,9 +3,9 @@
   "openActivePrefix": "oa",
   "contextUrl": "https://openactive.io/",
   "specUrl": "https://www.openactive.io/modelling-opportunity-data/EditorsDraft/",
-  "defaultActivityLists": {
-    "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld"
-  },
+  "defaultActivityLists": [
+    "https://openactive.io/activity-list"
+  ],
   "baseGraph": {
     "@context": {
       "id": "@id",

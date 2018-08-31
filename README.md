@@ -70,6 +70,8 @@ The meta data should contain the following keys:
 * **defaultPrefix** - The default prefix that is used in the `@vocab` field of the OpenActive JSON-LD definition.
 * **openActivePrefix** - The prefix used for OpenActive fields
 * **contextUrl** - The URL that the JSON context of this specification is published at
+* **specUrl** - The URL that the human-readable version of this specification is published at
+* **defaultActivityLists** - An array of activity list URLs that accompany this spec
 * **baseGraph** - A base object used when generating the `@graph` property of the OpenActive JSON-LD definition.
 * **keywords** - A map of aliases for JSON-LD keywords.
 * **namespaces** - A map of prefixes to namespaces used in the OpenActive JSON-LD definition.
@@ -86,9 +88,10 @@ const metaData = getMetaData('2.0');
 //   "defaultPrefix": "schema",
 //   "openActivePrefix": "oa",
 //   "contextUrl": "https://openactive.io/",
-//   "defaultActivityLists": {
-//     "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld",
-//   },
+//   "specUrl": "https://www.openactive.io/modelling-opportunity-data/EditorsDraft/",
+//   "defaultActivityLists": [
+//     "https://openactive.io/activity-list"
+//   ],
 //   "baseGraph": {},
 //   "keywords": {
 //     "type": "@type",
@@ -102,6 +105,9 @@ const metaData = getMetaData('2.0');
 //     "rdfa": "http://www.w3.org/ns/rdfa#",
 //     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
 //     "schema": "https://schema.org/",
+//     "skos": "http://www.w3.org/2004/02/skos/core#",
+//     "xsd": "http://www.w3.org/2001/XMLSchema#",
+//     "pending": "https://pending.schema.org/"
 //   }
 // }
 ```
