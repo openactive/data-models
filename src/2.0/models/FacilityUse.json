@@ -32,7 +32,7 @@
     "event",
     "offers",
     "hoursAvailable",
-    "individualFacilityUses"
+    "individualFacilityUse"
   ],
   "fields": {
     "@context": {
@@ -109,8 +109,8 @@
         "url": "http://example.com/static/image/speedball_large.jpg"
       }]
     },
-    "individualFacilityUses": {
-      "fieldName": "individualFacilityUses",
+    "individualFacilityUse": {
+      "fieldName": "individualFacilityUse",
       "model": "ArrayOf#IndividualFacilityUse",
       "description": [
         "TODO"

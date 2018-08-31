@@ -1,6 +1,9 @@
 {
   "type": "HeadlineEvent",
   "subClassOf": "#Event",
+  "notInSpec": [
+    "eventSchedule"
+  ],
   "derivedFrom": null,
   "fields": {
     "type": {

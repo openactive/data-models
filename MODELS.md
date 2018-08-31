@@ -145,6 +145,18 @@ This **MUST** include **ALL** required, recommended and optional fields.
 }
 ```
 
+#### notInSpec
+
+An array of field names that are not defined for a particular model, where it inherits fields from a parent class.
+
+```json
+{
+  "notInSpec": [
+    "eventSchedule"
+  ]
+}
+```
+
 #### commonTypos
 
 An key-value object of common typos for field names.
