@@ -1,8 +1,8 @@
 {
   "type": "Organization",
-  "derivedFrom": "http://schema.org/Organization",
+  "derivedFrom": "https://schema.org/Organization",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
     "type",
@@ -10,7 +10,8 @@
   ],
   "recommendedFields": [
     "id",
-    "url"
+    "url",
+    "telephone"
   ],
   "inSpec": [
     "type",
@@ -19,13 +20,14 @@
     "url",
     "name",
     "description",
-    "logo"
+    "logo",
+    "telephone"
   ],
   "fields": {
     "description": {
       "fieldName": "description",
-      "sameAs": "http://schema.org/description",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
       "example": "The national governing body of cycling",
       "description": [
         "The description of the Organization"
@@ -33,9 +35,9 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
-        "http://schema.org/Integer"
+        "https://schema.org/Integer"
       ],
       "example": "SB1234",
       "description": [
@@ -44,28 +46,36 @@
     },
     "logo": {
       "fieldName": "logo",
-      "model": "ArrayOf#ImageObject",
-      "example": [{
-        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+      "model": "#ImageObject",
+      "example": {
         "type": "ImageObject",
         "url": "http://example.com/static/image/speedball_large.jpg"
-      }],
+      },
       "description": [
         "A logo for the Organization."
       ]
     },
     "name": {
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
       "example": "Central Speedball Association",
       "description": [
         "The name of the Organization"
       ]
     },
+    "telephone": {
+      "fieldName": "telephone",
+      "sameAs": "https://schema.org/telephone",
+      "requiredType": "https://schema.org/Text",
+      "example": "01234 567890",
+      "description": [
+        "The telephone number of the Organization"
+      ]
+    },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Organization",
       "description": [
         "The type of object, in this case Organization"
@@ -74,7 +84,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "example": "http://www.speedball-world.com",
       "description": [
         "A definitive canonical URL for the Organization."

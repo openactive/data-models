@@ -2,7 +2,7 @@
   "type": "ConceptScheme",
   "derivedFrom": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/scheme/",
   "requiredFields": [
     "type",
@@ -27,7 +27,7 @@
   "fields": {
     "concept": {
       "fieldName": "concept",
-      "sameAs": "https://www.openactive.org/ns#concept",
+      "sameAs": "https://openactive.io/concept",
       "model": "ArrayOf#Concept",
       "example": [{
         "id": "https://example.com/concept/martial-arts",
@@ -42,8 +42,8 @@
     },
     "description": {
       "fieldName": "description",
-      "sameAs": "http://schema.org/description",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
       "example": "An example activity list.",
       "description": [
         "A free text description of the taxonomy"
@@ -52,7 +52,7 @@
     "license": {
       "fieldName": "license",
       "sameAs": "http://purl.org/dc/terms/license",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "description": [
         "Reference to the license under which the activity list has been published."
       ],
@@ -61,7 +61,7 @@
     "title": {
       "fieldName": "title",
       "sameAs": "http://purl.org/dc/terms/title",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "Activity List",
       "description": [
         "The title of the scheme"
@@ -69,7 +69,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "ConceptScheme",
       "description": [
         "The type of object, in this case ConceptScheme"
@@ -78,8 +78,8 @@
     },
     "url": {
       "fieldName": "url",
-      "sameAs": "http://schema.org/url",
-      "requiredType": "http://schema.org/url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "description": [
         "A URL to a web page (or section of a page) that describes the concept scheme."
       ],

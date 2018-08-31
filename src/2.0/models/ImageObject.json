@@ -1,6 +1,6 @@
 {
   "type": "ImageObject",
-  "derivedFrom": "http://schema.org/ImageObject",
+  "derivedFrom": "https://schema.org/ImageObject",
   "hasId": false,
   "requiredFields":[
     "type",
@@ -21,7 +21,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "ImageObject",
       "description": [
         "The type of object, in this case ImageObject"
@@ -30,7 +30,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "example": "http://example.com/static/image/speedball_large.jpg",
       "description": [
         "The URL for the display resolution image."

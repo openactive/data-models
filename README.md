@@ -36,7 +36,7 @@ let info = getFullyQualifiedProperty('meetingPoint', '2.0');
 
 // {
 //   "prefix": "oa",
-//   "namespace": "https://www.openactive.org/ns#",
+//   "namespace": "https://openactive.io/",
 //   "label": "meetingPoint",
 //   "alias": "meetingPoint",
 // }
@@ -45,7 +45,7 @@ let info = getFullyQualifiedProperty('schema:name', '2.0');
 
 // {
 //   "prefix": "schema",
-//   "namespace": "http://schema.org/",
+//   "namespace": "https://schema.org/",
 //   "label": "name",
 //   "alias": null,
 // }
@@ -85,9 +85,9 @@ const metaData = getMetaData('2.0');
 // {
 //   "defaultPrefix": "schema",
 //   "openActivePrefix": "oa",
-//   "contextUrl": "https://www.openactive.io/ns/oa.jsonld",
+//   "contextUrl": "https://openactive.io/ns/oa.jsonld",
 //   "defaultActivityLists": {
-//     "http://openactive.io/activity-list/": "https://www.openactive.io/activity-list/activity-list.jsonld",
+//     "https://openactive.io/activity-list/": "https://openactive.io/activity-list/activity-list.jsonld",
 //   },
 //   "baseGraph": {},
 //   "keywords": {
@@ -95,13 +95,13 @@ const metaData = getMetaData('2.0');
 //     "id": "@id"
 //   },
 //   "namespaces": {
-//     "oa": "https://www.openactive.org/ns#",
+//     "oa": "https://openactive.io/",
 //     "dc": "http://purl.org/dc/terms/",
 //     "owl": "http://www.w3.org/2002/07/owl#",
 //     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
 //     "rdfa": "http://www.w3.org/ns/rdfa#",
 //     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-//     "schema": "http://schema.org/",
+//     "schema": "https://schema.org/",
 //   }
 // }
 ```

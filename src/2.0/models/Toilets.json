@@ -1,16 +1,16 @@
 {
-  "type": "ChangingRooms",
+  "type": "Toilets",
   "subClassOf": "#LocationFeatureSpecification",
   "derivedFrom": null,
   "fields": {
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
-      "requiredContent": "ChangingRooms",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Toilets",
       "description": [
         "TODO"
       ],
-      "example": "ChangingRooms"
+      "example": "Toilets"
     }
   }
 }

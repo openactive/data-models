@@ -1,8 +1,8 @@
 {
   "type": "Offer",
-  "derivedFrom": "http://schema.org/Offer",
+  "derivedFrom": "https://schema.org/Offer",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/offer/",
   "requiredFields": [
     "type",
@@ -28,7 +28,7 @@
   "fields": {
     "ageRange": {
       "fieldName": "ageRange",
-      "sameAs": "https://www.openactive.org/ns#ageRange",
+      "sameAs": "https://openactive.io/ageRange",
       "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
@@ -41,7 +41,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "https://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
@@ -49,8 +52,8 @@
     },
     "name": {
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
       "example": "Speedball winger position",
       "description": [
         "A human readable name for the offer."
@@ -58,8 +61,8 @@
     },
     "price": {
       "fieldName": "price",
-      "sameAs": "http://schema.org/price",
-      "requiredType": "http://schema.org/Float",
+      "sameAs": "https://schema.org/price",
+      "requiredType": "https://schema.org/Float",
       "example": 33.00,
       "maxDecimalPlaces": 2,
       "description": [
@@ -70,8 +73,8 @@
     },
     "priceCurrency": {
       "fieldName": "priceCurrency",
-      "sameAs": "http://schema.org/priceCurrency",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/priceCurrency",
+      "requiredType": "https://schema.org/Text",
       "example": "GBP",
       "description": [
         "The currency (in 3-letter ISO 4217 format) of the price."
@@ -79,7 +82,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Offer",
       "description": [
         "The type of object, in this case Offer"
@@ -88,8 +91,8 @@
     },
     "url": {
       "fieldName": "url",
-      "sameAs": "http://schema.org/url",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "example": "http://www.rphs.org.uk/",
       "description": [
         "URL describing the offer"

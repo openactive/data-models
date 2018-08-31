@@ -5,7 +5,7 @@
   "fields": {
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Towels",
       "description": [
         "TODO"

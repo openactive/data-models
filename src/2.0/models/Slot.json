@@ -1,8 +1,8 @@
 {
   "type": "Slot",
   "hasId": true,
-  "subClassOf": "http://schema.org/Event",
-  "idFormat": "http://schema.org/url",
+  "subClassOf": "https://schema.org/Event",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/slot/",
   "requiredFields": [
     "type",
@@ -29,8 +29,8 @@
   "fields": {
     "duration": {
       "fieldName": "duration",
-      "sameAs": "http://schema.org/duration",
-      "requiredType": "http://schema.org/Duration",
+      "sameAs": "https://schema.org/duration",
+      "requiredType": "https://schema.org/Duration",
       "description": [
         "The duration of the slot given in [ISO8601] format."
       ],
@@ -38,10 +38,10 @@
     },
     "endDate": {
       "fieldName": "endDate",
-      "sameAs": "http://schema.org/endDate",
-      "requiredType": "http://schema.org/DateTime",
+      "sameAs": "https://schema.org/endDate",
+      "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
-        "http://schema.org/Date"
+        "https://schema.org/Date"
       ],
       "description": [
         "The end date and time of the slot. Can be specified as a schema:Date or schema:DateTime",
@@ -51,7 +51,7 @@
     },
     "facilityUse": {
       "fieldName": "facilityUse",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "description": [
         "URI to the FacilityUse that has this offer"
       ],
@@ -59,10 +59,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "sameAs": "http://schema.org/identifier",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/identifier",
+      "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
-        "http://schema.org/Integer"
+        "https://schema.org/Integer"
       ],
       "example": "SB1234",
       "description": [
@@ -71,7 +71,7 @@
     },
     "maximumUses": {
       "fieldName": "maximumUses",
-      "requiredType": "http://schema.org/Integer",
+      "requiredType": "https://schema.org/Integer",
       "description": [
         "TODO"
       ],
@@ -79,7 +79,7 @@
     },
     "offers": {
       "fieldName": "offers",
-      "sameAs": "http://schema.org/offers",
+      "sameAs": "https://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
         "TODO"
@@ -88,7 +88,7 @@
     },
     "remainingUses": {
       "fieldName": "remainingUses",
-      "requiredType": "http://schema.org/Integer",
+      "requiredType": "https://schema.org/Integer",
       "description": [
         "TODO"
       ],
@@ -96,10 +96,10 @@
     },
     "startDate": {
       "fieldName": "startDate",
-      "sameAs": "http://schema.org/startDate",
-      "requiredType": "http://schema.org/DateTime",
+      "sameAs": "https://schema.org/startDate",
+      "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
-        "http://schema.org/Date"
+        "https://schema.org/Date"
       ],
       "description": [
         "The start date and time of the slot. Can be specified as a schema:Date or schema:DateTime"
@@ -108,7 +108,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Slot",
       "description": [
         "The type of object, in this case Slot"

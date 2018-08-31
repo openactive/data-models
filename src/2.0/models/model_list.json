@@ -1,10 +1,15 @@
 {
   "models_order": [
     "Event",
+    "CourseInstance",
+    "EventSeries",
+    "HeadlineEvent",
+    "ScheduledSession",
+    "SessionSeries",
     "Action",
     "BabyChanging",
     "Brand",
-    "ChangingRooms",
+    "ChangingFacilities",
     "Concept",
     "ConceptScheme",
     "Creche",
@@ -22,12 +27,13 @@
     "Person",
     "Place",
     "PostalAddress",
-    "PublicToilets",
     "QuantitativeValue",
     "ReserveAction",
     "Schedule",
     "Showers",
     "Slot",
+    "SportsActivityLocation",
+    "Toilets",
     "Towels"
   ],
   "event_elements": [
@@ -49,11 +55,31 @@
     "ReserveAction"
   ],
   "event_core": [
-    "Event"
+    "Event",
+    "CourseInstance",
+    "EventSeries",
+    "HeadlineEvent",
+    "ScheduledSession",
+    "SessionSeries"
   ],
   "models": {
     "event": {
       "modelName": "Event"
+    },
+    "courseinstance": {
+      "modelName": "CourseInstance"
+    },
+    "eventseries": {
+      "modelName": "EventSeries"
+    },
+    "headlineevent": {
+      "modelName": "HeadlineEvent"
+    },
+    "scheduledsession": {
+      "modelName": "ScheduledSession"
+    },
+    "sessionseries": {
+      "modelName": "SessionSeries"
     },
     "action": {
       "modelName": "Action"
@@ -64,8 +90,8 @@
     "brand": {
       "modelName": "Brand"
     },
-    "changingrooms": {
-      "modelName": "ChangingRooms"
+    "changingfacilities": {
+      "modelName": "ChangingFacilities"
     },
     "concept": {
       "modelName": "Concept"
@@ -118,9 +144,6 @@
     "postaladdress": {
       "modelName": "PostalAddress"
     },
-    "publictoilets": {
-      "modelName": "PublicToilets"
-    },
     "quantitativevalue": {
       "modelName": "QuantitativeValue"
     },
@@ -135,6 +158,12 @@
     },
     "slot": {
       "modelName": "Slot"
+    },
+    "sportsactivitylocation": {
+      "modelName": "SportsActivityLocation"
+    },
+    "toilets": {
+      "modelName": "Toilets"
     },
     "towels": {
       "modelName": "Towels"

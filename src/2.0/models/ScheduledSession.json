@@ -1,16 +1,16 @@
 {
-  "type": "Parking",
-  "subClassOf": "#LocationFeatureSpecification",
+  "type": "ScheduledSession",
+  "subClassOf": "#Event",
   "derivedFrom": null,
   "fields": {
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "Parking",
+      "requiredContent": "ScheduledSession",
       "description": [
         "TODO"
       ],
-      "example": "Parking"
+      "example": "ScheduledSession"
     }
   }
 }

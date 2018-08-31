@@ -1,20 +1,16 @@
 {
   "type": "Brand",
-  "derivedFrom": "http://schema.org/Brand",
-  "hasId": true,
-  "sampleId": "https://example.com/brand/",
-  "idFormat": "http://schema.org/url",
+  "derivedFrom": "https://schema.org/Brand",
+  "hasId": false,
   "requiredFields": [
-    "id",
+    "type",
     "name",
     "url"
   ],
   "recommendedFields": [
-    "description",
-    "logo"
+    "description"
   ],
   "inSpec": [
-    "id",
     "type",
     "name",
     "url",
@@ -22,25 +18,36 @@
     "logo"
   ],
   "fields": {
-    "name": {
-      "fieldName": "name",
-      "requiredType": "http://schema.org/Text",
-      "example": "Play Ball!",
-      "description": [
-        "The name of the programme."
-      ]
-    },
     "description": {
       "fieldName": "description",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "Play Ball! is a series of games for people of all abilities.",
       "description": [
-        "A text description for the programme."
+        "A text description for the brand."
+      ]
+    },
+    "logo": {
+      "fieldName": "logo",
+      "model": "#ImageObject",
+      "example": {
+        "type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      },
+      "description": [
+        "The logo associated with the brand."
+      ]
+    },
+    "name": {
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Play Ball!",
+      "description": [
+        "The name of the brand."
       ]
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Brand",
       "description": [
         "The type of object, in this case Brand"
@@ -49,18 +56,10 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "example": "http://example.com/play_ball",
       "description": [
-        "A url where further information can be found for the programme."
-      ]
-    },
-    "logo": {
-      "fieldName": "logo",
-      "requiredType": "http://schema.org/url",
-      "example": "http://example.com/images/play_ball_logo.svg",
-      "description": [
-        "The URL where a logo associated with the programme is located."
+        "A url where further information can be found for the brand."
       ]
     }
   }

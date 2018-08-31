@@ -1,0 +1,16 @@
+{
+  "type": "SportsActivityLocation",
+  "subClassOf": "#Place",
+  "derivedFrom": "https://schema.org/SportsActivityLocation",
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "SportsActivityLocation",
+      "description": [
+        "TODO"
+      ],
+      "example": "SportsActivityLocation"
+    }
+  }
+}

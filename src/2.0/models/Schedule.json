@@ -1,12 +1,11 @@
 {
   "type": "Schedule",
-  "derivedFrom": "http://pending.schema.org/Schedule",
+  "derivedFrom": "https://pending.schema.org/Schedule",
   "hasId": false,
   "requiredFields": [
+    "type",
     "repeatFrequency",
-    "startDate",
-    "startTime",
-    "endTime"
+    "scheduledEventType"
   ],
   "requiredOptions": [
     {
@@ -22,7 +21,12 @@
   ],
   "recommendedFields": [
     "duration",
-    "endDate"
+    "startDate",
+    "endDate",
+    "startTime",
+    "endTime",
+    "idTemplate",
+    "urlTemplate"
   ],
   "inSpec": [
     "type",
@@ -36,29 +40,32 @@
     "byMonth",
     "byMonthDay",
     "exceptDate",
-    "duration"
+    "duration",
+    "scheduledEventType",
+    "idTemplate",
+    "urlTemplate"
   ],
   "fields": {
     "byDay": {
       "fieldName": "byDay",
-      "requiredType": "ArrayOf#http://schema.org/url",
-      "example": "http://schema.org/Monday",
+      "requiredType": "ArrayOf#https://schema.org/url",
+      "example": "https://schema.org/Monday",
       "description": [
         "Defines the day of the week upon which the Event takes place"
       ],
       "options": [
-        "http://schema.org/Monday",
-        "http://schema.org/Tuesday",
-        "http://schema.org/Wednesday",
-        "http://schema.org/Thursday",
-        "http://schema.org/Friday",
-        "http://schema.org/Saturday",
-        "http://schema.org/Sunday"
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
       ]
     },
     "byMonth": {
       "fieldName": "byMonth",
-      "requiredType": "ArrayOf#http://schema.org/Integer",
+      "requiredType": "ArrayOf#https://schema.org/Integer",
       "example": [2],
       "description": [
         "Defines the months of the year on which the Event takes place. Specified as an integer between 1 and 12, with 1 representing January."
@@ -66,7 +73,7 @@
     },
     "byMonthDay": {
       "fieldName": "byMonthDay",
-      "requiredType": "ArrayOf#http://schema.org/Integer",
+      "requiredType": "ArrayOf#https://schema.org/Integer",
       "example": [28],
       "description": [
         "Defines the days of the month on which the Event takes place. Specified as an integer between 1 and 31"
@@ -74,8 +81,8 @@
     },
     "duration": {
       "fieldName": "duration",
-      "sameAs": "http://schema.org/duration",
-      "requiredType": "http://schema.org/Duration",
+      "sameAs": "https://schema.org/duration",
+      "requiredType": "https://schema.org/Duration",
       "description": [
         "The duration of the event given in [ISO8601] format."
       ],
@@ -83,8 +90,8 @@
     },
     "endDate": {
       "fieldName": "endDate",
-      "sameAs": "http://schema.org/endDate",
-      "requiredType": "http://schema.org/Date",
+      "sameAs": "https://schema.org/endDate",
+      "requiredType": "https://schema.org/Date",
       "description": [
         "The end date of the schedule."
       ],
@@ -92,8 +99,8 @@
     },
     "endTime": {
       "fieldName": "endTime",
-      "sameAs": "http://schema.org/endTime",
-      "requiredType": "http://schema.org/Time",
+      "sameAs": "https://schema.org/endTime",
+      "requiredType": "https://schema.org/Time",
       "description": [
         "The end time of the event."
       ],
@@ -101,16 +108,25 @@
     },
     "exceptDate": {
       "fieldName": "exceptDate",
-      "requiredType": "ArrayOf#http://schema.org/Date",
-      "alternativeTypes": ["ArrayOf#http://schema.org/DateTime"],
+      "requiredType": "ArrayOf#https://schema.org/Date",
+      "alternativeTypes": ["ArrayOf#https://schema.org/DateTime"],
       "example": "TODO",
       "description": [
         "TODO"
       ]
     },
+    "idTemplate": {
+      "fieldName": "idTemplate",
+      "sameAs": "https://schema.org/urlTemplate",
+      "requiredType": "https://schema.org/urlTemplate",
+      "example": "https://example.com/event{/id}",
+      "description": [
+        "An RFC6570 compliant URI template that can be used to generate a unique identifier (@id) for every event described by the schedule (see below for more information). This property is required if the data provider is supporting third-party booking via the Open Booking API."
+      ]
+    },
     "repeatCount": {
       "fieldName": "repeatCount",
-      "requiredType": "http://schema.org/Integer",
+      "requiredType": "https://schema.org/Integer",
       "example": 3,
       "description": [
         "Defines the number of times a recurring Event will take place."
@@ -118,16 +134,32 @@
     },
     "repeatFrequency": {
       "fieldName": "repeatFrequency",
-      "requiredType": "http://schema.org/Duration",
+      "requiredType": "https://schema.org/Duration",
       "example": "P1D",
       "description": [
         "Defines the frequency at which Events will occur according to a Schedule. The intervals between events should be defined as a Duration of time."
       ]
     },
+    "scheduledEventType": {
+      "fieldName": "scheduledEventType",
+      "sameAs": "https://openactive.io/scheduledEventType",
+      "requiredType": "https://schema.org/Text",
+      "options": [
+        "Event",
+        "HeadlineEvent",
+        "SessionSeries",
+        "ScheduledSession",
+        "CourseInstance"
+      ],
+      "description": [
+        "The type of event this schedule related to"
+      ],
+      "example": "Event"
+    },
     "startDate": {
       "fieldName": "startDate",
-      "sameAs": "http://schema.org/startDate",
-      "requiredType": "http://schema.org/Date",
+      "sameAs": "https://schema.org/startDate",
+      "requiredType": "https://schema.org/Date",
       "description": [
         "The start date of the event."
       ],
@@ -135,8 +167,8 @@
     },
     "startTime": {
       "fieldName": "startTime",
-      "sameAs": "http://schema.org/startTime",
-      "requiredType": "http://schema.org/Time",
+      "sameAs": "https://schema.org/startTime",
+      "requiredType": "https://schema.org/Time",
       "description": [
         "The start time of the event."
       ],
@@ -144,12 +176,21 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Schedule",
       "description": [
         "The type of object, in this case Schedule"
       ],
       "example": "Schedule"
+    },
+    "urlTemplate": {
+      "fieldName": "urlTemplate",
+      "sameAs": "https://schema.org/urlTemplate",
+      "requiredType": "https://schema.org/urlTemplate",
+      "example": "https://example.com/event{/id}",
+      "description": [
+        "An RFC6570 compliant URI template that can be used to generate a unique URL (schema:url) for every event described by the schedule (see below for more information). This property is required if the data provider wants to provide participants with a unique URL to book to attend an event."
+      ]
     }
   }
 }

@@ -1,0 +1,16 @@
+{
+  "type": "EventSeries",
+  "subClassOf": "#Event",
+  "derivedFrom": "https://pending.schema.org/EventSeries",
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "EventSeries",
+      "description": [
+        "TODO"
+      ],
+      "example": "EventSeries"
+    }
+  }
+}

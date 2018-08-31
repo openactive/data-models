@@ -1,8 +1,8 @@
 {
   "type": "Event",
-  "derivedFrom": "http://schema.org/Event",
+  "derivedFrom": "https://schema.org/Event",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/event/",
   "requiredFields": [
     "type",
@@ -31,10 +31,10 @@
     "image",
     "organizer",
     "eventStatus",
-    "category",
     "ageRange",
     "genderRestriction",
-    "leader"
+    "leader",
+    "level"
   ],
   "inSpec": [
     "id",
@@ -71,24 +71,25 @@
     "meetingPoint",
     "isAccessibleForFree",
     "potentialAction",
-    "offers"
+    "offers",
+    "isAccessibleWithoutBooking"
   ],
   "fields": {
     "@context": {
       "fieldName": "@context",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "alternativeTypes": [
-        "ArrayOf#http://schema.org/url"
+        "ArrayOf#https://schema.org/url"
       ],
       "description": [
           "TODO"
       ],
-      "example": "https://www.openactive.io/ns/oa.jsonld"
+      "example": "https://openactive.io/ns/oa.jsonld"
     },
     "accessibilityInformation": {
       "fieldName": "accessibilityInformation",
-      "sameAs": "https://www.openactive.org/ns#accessibilityInformation",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://openactive.io/accessibilityInformation",
+      "requiredType": "https://schema.org/Text",
       "description": [
         "Provide additional, specific documentation for participants about how disabilities are, or can be supported at the Event."
       ],
@@ -96,8 +97,8 @@
     },
     "accessibilitySupport": {
       "fieldName": "accessibilitySupport",
-      "sameAs": "https://www.openactive.org/ns#accessibilitySupport",
-      "requiredType": "ArrayOf#http://schema.org/Text",
+      "sameAs": "https://openactive.io/accessibilitySupport",
+      "requiredType": "ArrayOf#https://schema.org/Text",
       "alternativeModels": ["ArrayOf#Concept"],
       "description": [
         "Used to specify the types of disabilities or impairments that are supported at an event."
@@ -106,7 +107,7 @@
     },
     "activity": {
       "fieldName": "activity",
-      "sameAs": "https://www.openactive.org/ns#activity",
+      "sameAs": "https://openactive.io/activity",
       "model": "ArrayOf#Concept",
       "description": [
         "Specifies the physical activity or activities that will take place during an event."
@@ -120,7 +121,7 @@
     },
     "ageRange": {
       "fieldName": "ageRange",
-      "sameAs": "https://www.openactive.org/ns#ageRange",
+      "sameAs": "https://openactive.io/ageRange",
       "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
@@ -133,8 +134,8 @@
     },
     "attendeeInstructions": {
       "fieldName": "attendeeInstructions",
-      "sameAs": "https://www.openactive.org/ns#attendeeInstructions",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://openactive.io/attendeeInstructions",
+      "requiredType": "https://schema.org/Text",
       "description": [
         "Provides additional notes and instructions for event attendees. E.g. more information on how to find the event, what to bring, etc."
       ],
@@ -142,7 +143,7 @@
     },
     "category": {
       "fieldName": "category",
-      "sameAs": "https://www.openactive.org/ns#category",
+      "sameAs": "https://openactive.io/category",
       "model": "ArrayOf#Concept",
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
@@ -157,9 +158,6 @@
     "contributor": {
       "fieldName": "contributor",
       "model": "ArrayOf#Person",
-      "alternativeModels": [
-        "ArrayOf#Organization"
-      ],
       "description": [
         "A Person who contributes to the facilitation of the Event."
       ],
@@ -167,7 +165,7 @@
     },
     "description": {
       "fieldName": "description",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
         "A free text description of the event"
@@ -175,7 +173,7 @@
     },
     "duration": {
       "fieldName": "duration",
-      "requiredType": "http://schema.org/Duration",
+      "requiredType": "https://schema.org/Duration",
       "description": [
         "The duration of the event given in [ISO8601] format."
       ],
@@ -183,29 +181,15 @@
     },
     "endDate": {
       "fieldName": "endDate",
-      "requiredType": "http://schema.org/DateTime",
+      "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
-        "http://schema.org/Date"
+        "https://schema.org/Date"
       ],
       "description": [
         "The end date and time of the event. Can be specified as a schema:Date or  schema:DateTime",
         "It is recommended that publishers provide either an schema:endDate or a schema:duration for an event."
       ],
       "example": "2018-01-27T12:00:00Z"
-    },
-    "eventStatus": {
-      "fieldName": "eventStatus",
-      "requiredType": "http://schema.org/url",
-      "description": [
-        "The status of an event. Can be used to indicate rescheduled or cancelled events"
-      ],
-      "options": [
-        "http://schema.org/EventCancelled",
-        "http://schema.org/EventPostponed",
-        "http://schema.org/EventRescheduled",
-        "http://schema.org/EventScheduled"
-      ],
-      "example": "http://schema.org/EventScheduled"
     },
     "eventSchedule": {
       "fieldName": "eventSchedule",
@@ -215,25 +199,39 @@
       ],
       "example": {}
     },
+    "eventStatus": {
+      "fieldName": "eventStatus",
+      "requiredType": "https://schema.org/url",
+      "description": [
+        "The status of an event. Can be used to indicate rescheduled or cancelled events"
+      ],
+      "options": [
+        "https://schema.org/EventCancelled",
+        "https://schema.org/EventPostponed",
+        "https://schema.org/EventRescheduled",
+        "https://schema.org/EventScheduled"
+      ],
+      "example": "https://schema.org/EventScheduled"
+    },
     "genderRestriction": {
       "fieldName": "genderRestriction",
-      "sameAs": "https://www.openactive.org/ns#genderRestriction",
-      "requiredType": "http://schema.org/url",
+      "sameAs": "https://openactive.io/genderRestriction",
+      "requiredType": "https://schema.org/url",
       "description": [
         "Indicates that an event is restricted to male, female or a mixed audience. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience"
       ],
-      "example": "http://openactive.io/ns#Female",
+      "example": "https://openactive.io/Female",
       "options": [
-        "http://openactive.io/ns#Female",
-        "http://openactive.io/ns#Male",
-        "http://openactive.io/ns#None"
+        "https://openactive.io/Female",
+        "https://openactive.io/Male",
+        "https://openactive.io/None"
       ]
     },
     "identifier": {
       "fieldName": "identifier",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
-        "http://schema.org/Integer"
+        "https://schema.org/Integer"
       ],
       "example": "SB1234",
       "description": [
@@ -254,40 +252,34 @@
     },
     "isAccessibleForFree": {
       "fieldName": "isAccessibleForFree",
-      "requiredType": "http://schema.org/Boolean",
+      "requiredType": "https://schema.org/Boolean",
       "description": [
         "Whether the Event is accessible without charge."
       ],
       "example": true
     },
+    "isAccessibleWithoutBooking": {
+      "fieldName": "isAccessibleWithoutBooking",
+      "sameAs": "https://openactive.io/isAccessibleWithoutBooking",
+      "requiredType": "https://schema.org/Boolean",
+      "description": [
+        "Whether the Event is accessible without booking."
+      ],
+      "example": true
+    },
     "isCoached": {
       "fieldName": "isCoached",
-      "sameAs": "https://www.openactive.org/ns#isCoached",
-      "requiredType": "http://schema.org/Boolean",
+      "sameAs": "https://openactive.io/isCoached",
+      "requiredType": "https://schema.org/Boolean",
       "description": [
         "A boolean property that indicates whether an Event will be coached. This flag allows an Event to be marked as being coached without having to specify a named individual as a coach. This addresses both privacy concerns and also scenarios where the actual coach may only be decided on the day."
       ],
       "example": true
     },
-    "level": {
-      "fieldName": "level",
-      "sameAs": "https://www.openactive.org/ns#level",
-      "requiredType": "ArrayOf#http://schema.org/Text",
-      "alternativeModels": [
-        "ArrayOf#Concept"
-      ],
-      "description": [
-        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements. Values should ideally be drawn from a controlled vocabulary."
-      ],
-      "example": "TODO"
-    },
     "leader": {
       "fieldName": "leader",
-      "sameAs": "https://www.openactive.org/ns#leader",
+      "sameAs": "https://openactive.io/leader",
       "model": "ArrayOf#Person",
-      "alternativeModels": [
-        "ArrayOf#Organization"
-      ],
       "description": [
         "Refers to people (schema:Person) or organizations (schema:Organization) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
       ],
@@ -299,13 +291,25 @@
         "type": "Person"
       }]
     },
+    "level": {
+      "fieldName": "level",
+      "sameAs": "https://openactive.io/level",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "alternativeModels": [
+        "ArrayOf#Concept"
+      ],
+      "description": [
+        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements. Values should ideally be drawn from a controlled vocabulary."
+      ],
+      "example": "TODO"
+    },
     "location": {
       "fieldName": "location",
       "model": "#Place",
       "description": [
         "The location at which the event will take place. Or, in the case of events that may span multiple locations, the initial meeting or starting point.",
         "It is recommended that locations should be specified as a [Place](/models/place) complete with a fully described geographic location and/or address.\r\n\rIf only an address is available then this should be described as a [PostalAddress](/models/postaladdress).",
-        "Applications may use [schema:Text](http://schema.org/Text) to provide a more general description of a location (\"In Victoria Park, near the lake\"), but this is not recommended: consuming applications will be unable to help users discover opportunities based on their location."
+        "Applications may use [schema:Text](https://schema.org/Text) to provide a more general description of a location (\"In Victoria Park, near the lake\"), but this is not recommended: consuming applications will be unable to help users discover opportunities based on their location."
       ],
       "example": {
         "address": {
@@ -330,7 +334,7 @@
     },
     "maximumAttendeeCapacity": {
       "fieldName": "maximumAttendeeCapacity",
-      "requiredType": "http://schema.org/Integer",
+      "requiredType": "https://schema.org/Integer",
       "description": [
         "The maximum capacity of the Event."
       ],
@@ -338,8 +342,8 @@
     },
     "meetingPoint": {
       "fieldName": "meetingPoint",
-      "sameAs": "https://www.openactive.org/ns#meetingPoint",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://openactive.io/meetingPoint",
+      "requiredType": "https://schema.org/Text",
       "description": [
         "Instructions for the attendees of an Event about where they should meet the organizer or leader at the start of the event. Some larger locations may have several possible meeting points, so this property provides additional more specific directions."
       ],
@@ -347,7 +351,7 @@
     },
     "name": {
       "fieldName": "name",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "Speedball",
       "description": [
         "The name of the event"
@@ -396,7 +400,7 @@
     },
     "programme": {
       "fieldName": "programme",
-      "sameAs": "https://www.openactive.org/ns#programme",
+      "sameAs": "https://openactive.io/programme",
       "model": "#Brand",
       "description": [
         "Indicates that an event will be organised according to a specific Programme."
@@ -409,7 +413,7 @@
     },
     "remainingAttendeeCapacity": {
       "fieldName": "remainingAttendeeCapacity",
-      "requiredType": "http://schema.org/Integer",
+      "requiredType": "https://schema.org/Integer",
       "description": [
         "The number of places that are still available for the Event."
       ],
@@ -437,9 +441,9 @@
     },
     "startDate": {
       "fieldName": "startDate",
-      "requiredType": "http://schema.org/DateTime",
+      "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
-        "http://schema.org/Date"
+        "https://schema.org/Date"
       ],
       "description": [
         "The start date and time of the event. Can be specified as a schema:Date or schema:DateTime."
@@ -448,7 +452,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Event",
       "description": [
         "The type of object, in this case Event"
@@ -457,21 +461,11 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "http://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "description": [
         "A URL to a web page (or section of a page) that describes the event."
       ],
       "example": "https://example.com/event/1234"
-    }
-  },
-  "betaFields": {
-    "anonymousLeaseDuration": {
-      "fieldName": "anonymousLeaseDuration",
-      "requiredType": "http://schema.org/Duration",
-      "description": [
-          "TODO"
-      ],
-      "example": "PT15M"
     }
   },
   "description": {

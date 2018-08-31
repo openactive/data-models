@@ -1,6 +1,6 @@
 {
   "type": "GeoCoordinates",
-  "derivedFrom": "http://schema.org/GeoCoordinates",
+  "derivedFrom": "https://schema.org/GeoCoordinates",
   "hasId": false,
   "requiredFields": [
     "type",
@@ -15,8 +15,8 @@
   "fields": {
     "latitude": {
       "fieldName": "latitude",
-      "sameAs": "http://schema.org/latitude",
-      "requiredType": "http://schema.org/Float",
+      "sameAs": "https://schema.org/latitude",
+      "requiredType": "https://schema.org/Float",
       "minDecimalPlaces": 3,
       "example": 51.522338,
       "description": [
@@ -25,8 +25,8 @@
     },
     "longitude": {
       "fieldName": "longitude",
-      "sameAs": "http://schema.org/longitude",
-      "requiredType": "http://schema.org/Float",
+      "sameAs": "https://schema.org/longitude",
+      "requiredType": "https://schema.org/Float",
       "minDecimalPlaces": 3,
       "example": -0.083437,
       "description": [
@@ -35,7 +35,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "GeoCoordinates",
       "description": [
         "The type of object, in this case GeoCoordinates"

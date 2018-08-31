@@ -1,6 +1,6 @@
 {
   "type": "EntryPoint",
-  "derivedFrom": "http://schema.org/EntryPoint",
+  "derivedFrom": "https://schema.org/EntryPoint",
   "hasId": false,
   "requiredFields": [
     "type",
@@ -17,8 +17,8 @@
   "fields": {
     "encodingType": {
       "fieldName": "encodingType",
-      "sameAs": "http://schema.org/encodingType",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/encodingType",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "application/vnd.openactive.v0.4+json",
       "example": "application/vnd.openactive.v0.4+json",
       "description": [
@@ -27,8 +27,8 @@
     },
     "httpMethod": {
       "fieldName": "httpMethod",
-      "sameAs": "http://schema.org/httpMethod",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/httpMethod",
+      "requiredType": "https://schema.org/Text",
       "example": "POST",
       "options": [
         "GET",
@@ -45,7 +45,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "EntryPoint",
       "description": [
         "The type of object, in this case EntryPoint"
@@ -54,13 +54,12 @@
     },
     "urlTemplate": {
       "fieldName": "urlTemplate",
-      "sameAs": "http://schema.org/url",
-      "requiredType": "http://schema.org/url",
-      "example": "https://example.com/orders",
+      "sameAs": "https://schema.org/urlTemplate",
+      "requiredType": "https://schema.org/urlTemplate",
+      "example": "https://example.com/orders{/var}",
       "description": [
         "URL of the item"
       ]
     }
-
   }
 }

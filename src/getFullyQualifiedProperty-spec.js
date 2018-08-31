@@ -5,7 +5,7 @@ describe('getFullyQualifiedProperty', () => {
     const prop = getFullyQualifiedProperty('name', '2.0');
 
     expect(prop.prefix).toBe('schema');
-    expect(prop.namespace).toBe('http://schema.org/');
+    expect(prop.namespace).toBe('https://schema.org/');
     expect(prop.label).toBe('name');
     expect(prop.alias).toBe(null);
   });
@@ -14,7 +14,7 @@ describe('getFullyQualifiedProperty', () => {
     const prop = getFullyQualifiedProperty('meetingPoint', '2.0');
 
     expect(prop.prefix).toBe('oa');
-    expect(prop.namespace).toBe('https://www.openactive.org/ns#');
+    expect(prop.namespace).toBe('https://openactive.io/');
     expect(prop.label).toBe('meetingPoint');
     expect(prop.alias).toBe('meetingPoint');
   });

@@ -215,7 +215,7 @@ describe('models', () => {
               for (const field in jsonData.fields) {
                 if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
                   if (typeof jsonData.fields[field].requiredType !== 'undefined') {
-                    expect(jsonData.fields[field].requiredType).toMatch(/^(ArrayOf#)?http:\/\/schema\.org\/[a-zA-Z]+$/);
+                    expect(jsonData.fields[field].requiredType).toMatch(/^(ArrayOf#)?https:\/\/schema\.org\/[a-zA-Z]+$/);
                   }
                 }
               }

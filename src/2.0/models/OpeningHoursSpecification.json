@@ -1,6 +1,6 @@
 {
   "type": "OpeningHoursSpecification",
-  "derivedFrom": "http://schema.org/OpeningHoursSpecification",
+  "derivedFrom": "https://schema.org/OpeningHoursSpecification",
   "hasId": false,
   "requiredFields": [
     "type",
@@ -17,7 +17,7 @@
   "fields": {
     "closes": {
       "fieldName": "closes",
-      "requiredType": "http://schema.org/Time",
+      "requiredType": "https://schema.org/Time",
       "description": [
         "The closing time."
       ],
@@ -25,24 +25,24 @@
     },
     "dayOfWeek": {
       "fieldName": "dayOfWeek",
-      "requiredType": "http://schema.org/url",
-      "example": "http://schema.org/Monday",
+      "requiredType": "https://schema.org/url",
+      "example": "https://schema.org/Monday",
       "description": [
         "Defines the day of the week upon which the Place is open"
       ],
       "options": [
-        "http://schema.org/Monday",
-        "http://schema.org/Tuesday",
-        "http://schema.org/Wednesday",
-        "http://schema.org/Thursday",
-        "http://schema.org/Friday",
-        "http://schema.org/Saturday",
-        "http://schema.org/Sunday"
+        "https://schema.org/Monday",
+        "https://schema.org/Tuesday",
+        "https://schema.org/Wednesday",
+        "https://schema.org/Thursday",
+        "https://schema.org/Friday",
+        "https://schema.org/Saturday",
+        "https://schema.org/Sunday"
       ]
     },
     "opens": {
       "fieldName": "opens",
-      "requiredType": "http://schema.org/Time",
+      "requiredType": "https://schema.org/Time",
       "description": [
         "The opening time."
       ],
@@ -50,7 +50,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "OpeningHoursSpecification",
       "description": [
         "The type of object, in this case OpeningHoursSpecification"

@@ -37,7 +37,7 @@ A url pointing to any external objects that this model derives from.
 
 ```json
 {
-  "derivedFrom": "http://schema.org/Event"
+  "derivedFrom": "https://schema.org/Event"
 }
 ```
 
@@ -57,7 +57,7 @@ The format that the id should be represented as.
 
 ```json
 {
-  "idFormat": "http://schema.org/url"
+  "idFormat": "https://schema.org/url"
 }
 ```
 
@@ -166,7 +166,7 @@ A key-value object of Fields (see below).
   "fields": {
     "description": {
       "fieldName": "description",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
         "A free text description of the event"
@@ -185,7 +185,7 @@ An key-value object of beta namespace fields (see below). These are currently no
   "betaFields": {
     "beta:description": {
       "fieldName": "beta:description",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
         "A free text description of the event"
@@ -254,7 +254,7 @@ The schema.org type this field should conform to.
 
 ```json
 {
-  "requiredType": "http://schema.org/url"
+  "requiredType": "https://schema.org/url"
 }
 ```
 
@@ -262,7 +262,7 @@ If this is an array of values, you can represent it as below:
 
 ```json
 {
-  "requiredType": "ArrayOf#http://schema.org/url"
+  "requiredType": "ArrayOf#https://schema.org/url"
 }
 ```
 
@@ -272,9 +272,9 @@ Alternative schema.org types this field can conform to.
 
 ```json
 {
-  "requiredType": "http://schema.org/url",
+  "requiredType": "https://schema.org/url",
   "alternativeTypes": [
-    "ArrayOf#http://schema.org/url"
+    "ArrayOf#https://schema.org/url"
   ]
 }
 ```
@@ -286,8 +286,8 @@ The minimum number of decimal places this field should have.
 ```json
 {
   "fieldName": "longitude",
-  "sameAs": "http://schema.org/longitude",
-  "requiredType": "http://schema.org/Float",
+  "sameAs": "https://schema.org/longitude",
+  "requiredType": "https://schema.org/Float",
   "minDecimalPlaces": 3,
   "example": -0.083437,
   "description": [
@@ -303,8 +303,8 @@ The maximum number of decimal places this field should have.
 ```json
 {
   "fieldName": "price",
-  "sameAs": "http://schema.org/price",
-  "requiredType": "http://schema.org/Float",
+  "sameAs": "https://schema.org/price",
+  "requiredType": "https://schema.org/Float",
   "example": 33.00,
   "maxDecimalPlaces": 2,
   "description": [
@@ -322,7 +322,7 @@ If this property must be set to a specific value, this can be specified here.
 ```json
 {
   "fieldName": "type",
-  "requiredType": "http://schema.org/Text",
+  "requiredType": "https://schema.org/Text",
   "requiredContent": "Event",
   "description": "",
   "example": "Event"
@@ -348,7 +348,7 @@ An example value of this field, for documentation.
 ```json
 {
   "fieldName": "url",
-  "requiredType": "http://schema.org/url",
+  "requiredType": "https://schema.org/url",
   "description": [
     "A URL to a web page (or section of a page) that describes the event."
   ],
@@ -363,17 +363,17 @@ If this property must be set to a specific value picked from a list (e.g. an `en
 ```json
 {
   "fieldName": "eventStatus",
-  "requiredType": "http://schema.org/url",
+  "requiredType": "https://schema.org/url",
   "description": [
     "The status of an event. Can be used to indicate rescheduled or cancelled events"
   ],
   "options": [
-    "http://schema.org/EventCancelled",
-    "http://schema.org/EventPostponed",
-    "http://schema.org/EventRescheduled",
-    "http://schema.org/EventScheduled"
+    "https://schema.org/EventCancelled",
+    "https://schema.org/EventPostponed",
+    "https://schema.org/EventRescheduled",
+    "https://schema.org/EventScheduled"
   ],
-  "example": "http://schema.org/EventScheduled"
+  "example": "https://schema.org/EventScheduled"
 }
 ```
 

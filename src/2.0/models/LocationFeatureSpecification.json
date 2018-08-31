@@ -1,6 +1,6 @@
 {
   "type": "LocationFeatureSpecification",
-  "derivedFrom": "http://schema.org/LocationFeatureSpecification",
+  "derivedFrom": "https://schema.org/LocationFeatureSpecification",
   "hasId": false,
   "requiredFields": [
     "name",
@@ -15,7 +15,7 @@
   "fields": {
     "name": {
       "fieldName": "name",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "example": "Changing Facilities",
       "description": [
         "A string, suitable for presentation in user interfaces."
@@ -23,7 +23,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "LocationFeatureSpecification",
       "description": [
         "TODO"
@@ -32,7 +32,7 @@
     },
     "value": {
       "fieldName": "value",
-      "requiredType": "http://schema.org/Boolean",
+      "requiredType": "https://schema.org/Boolean",
       "example": false,
       "description": [
         "A boolean value indicating whether this ammenity is available."

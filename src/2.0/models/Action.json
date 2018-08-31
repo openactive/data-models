@@ -1,6 +1,6 @@
 {
   "type": "Action",
-  "derivedFrom": "http://schema.org/Action",
+  "derivedFrom": "https://schema.org/Action",
   "hasId": false,
   "requiredFields": [
     "type",
@@ -16,8 +16,8 @@
   "fields": {
     "name":{
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
       "example": "Book",
       "description": [
         "The name of the action"
@@ -39,7 +39,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Action",
       "description": [
         "The type of object, in this case Action"

@@ -1,8 +1,8 @@
 {
   "type": "Person",
-  "derivedFrom": "http://schema.org/Person",
+  "derivedFrom": "https://schema.org/Person",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/person/",
   "requiredFields": [
     "type"
@@ -21,8 +21,8 @@
   "fields": {
     "description": {
       "fieldName": "description",
-      "sameAs": "http://schema.org/description",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
       "example": "The leader of the coaching team",
       "description": [
         "The description of the Person"
@@ -30,9 +30,9 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
-        "http://schema.org/Integer"
+        "https://schema.org/Integer"
       ],
       "example": "SB1234",
       "description": [
@@ -41,8 +41,8 @@
     },
     "name": {
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
       "example": "Daley Thompson",
       "description": [
         "A full name for the person.",
@@ -51,7 +51,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "Person",
       "description": [
         "The type of object, in this case Person"
@@ -60,8 +60,8 @@
     },
     "url": {
       "fieldName": "url",
-      "sameAs": "http://schema.org/url",
-      "requiredType": "http://schema.org/url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "example": "http://www.example.com/",
       "description": [
         "A URL where more information about the person may be found"

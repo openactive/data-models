@@ -1,11 +1,10 @@
 {
   "type": "IndividualFacilityUse",
   "hasId": true,
-  "idFormat": "http://schema.org/url",
+  "idFormat": "https://schema.org/url",
   "sampleId": "https://example.com/individfacilityUse/",
   "requiredFields": [
     "type",
-    "id",
     "url",
     "name",
     "activity",
@@ -13,9 +12,11 @@
     "event"
   ],
   "recommendedFields": [
+    "id",
     "description",
     "image",
-    "hoursAvailable"
+    "hoursAvailable",
+    "groupFacilityUse"
   ],
   "inSpec": [
     "type",
@@ -29,7 +30,8 @@
     "location",
     "event",
     "offers",
-    "hoursAvailable"
+    "hoursAvailable",
+    "groupFacilityUse"
   ],
   "fields": {
     "activity": {
@@ -47,8 +49,8 @@
     },
     "description": {
       "fieldName": "description",
-      "sameAs": "http://schema.org/description",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
         "A free text description of the facility use"
@@ -56,15 +58,22 @@
     },
     "event": {
       "fieldName": "event",
-      "sameAs": "http://pending.schema.org/event",
+      "sameAs": "https://pending.schema.org/event",
       "model": "ArrayOf#Slot",
       "description": [
         "TODO"
       ]
     },
+    "groupFacilityUse": {
+      "fieldName": "groupFacilityUse",
+      "model": "#FacilityUse",
+      "description": [
+        "Inverse of the oa:individualFacilityUse property. Related an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court) to a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location)."
+      ]
+    },
     "hoursAvailable": {
       "fieldName": "hoursAvailable",
-      "sameAs": "http://schema.org/hoursAvailable",
+      "sameAs": "https://schema.org/hoursAvailable",
       "model": "ArrayOf#OpeningHoursSpecification",
       "description": [
         "The times the facility use is available"
@@ -72,8 +81,8 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "sameAs": "http://schema.org/identifier",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/identifier",
+      "requiredType": "https://schema.org/Text",
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
@@ -81,7 +90,7 @@
     },
     "image": {
       "fieldName": "image",
-      "sameAs": "http://schema.org/image",
+      "sameAs": "https://schema.org/image",
       "model": "ArrayOf#ImageObject",
       "description": [
         "An image or photo that depicts the facility use, e.g. a photo taken at a previous event."
@@ -94,7 +103,7 @@
     },
     "location": {
       "fieldName": "location",
-      "sameAs": "http://schema.org/location",
+      "sameAs": "https://schema.org/location",
       "model": "#Place",
       "description": [
         "The location at which the facility use will take place."
@@ -122,8 +131,8 @@
     },
     "name": {
       "fieldName": "name",
-      "sameAs": "http://schema.org/name",
-      "requiredType": "http://schema.org/Text",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
       "example": "Speedball",
       "description": [
         "The name of the facility use"
@@ -131,7 +140,7 @@
     },
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "IndividualFacilityUse",
       "description": [
         "The type of object, in this case IndividualFacilityUse"
@@ -140,7 +149,7 @@
     },
     "offers": {
       "fieldName": "offers",
-      "sameAs": "http://schema.org/offers",
+      "sameAs": "https://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
         "TODO"
@@ -148,8 +157,8 @@
     },
     "url": {
       "fieldName": "url",
-      "sameAs": "http://schema.org/url",
-      "requiredType": "http://schema.org/url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/url",
       "description": [
         "A URL to a web page (or section of a page) that describes the facility use."
       ],

@@ -1,0 +1,16 @@
+{
+  "type": "CourseInstance",
+  "subClassOf": "#Event",
+  "derivedFrom": "https://pending.schema.org/CourseInstance",
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "CourseInstance",
+      "description": [
+        "TODO"
+      ],
+      "example": "CourseInstance"
+    }
+  }
+}

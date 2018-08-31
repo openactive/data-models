@@ -1,16 +1,16 @@
 {
-  "type": "PublicToilets",
+  "type": "ChangingFacilities",
   "subClassOf": "#LocationFeatureSpecification",
   "derivedFrom": null,
   "fields": {
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
-      "requiredContent": "PublicToilets",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "ChangingFacilities",
       "description": [
         "TODO"
       ],
-      "example": "PublicToilets"
+      "example": "ChangingFacilities"
     }
   }
 }

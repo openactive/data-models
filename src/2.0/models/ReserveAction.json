@@ -1,11 +1,11 @@
 {
   "type": "ReserveAction",
   "subClassOf": "#Action",
-  "derivedFrom": "http://schema.org/ReserveAction",
+  "derivedFrom": "https://schema.org/ReserveAction",
   "fields": {
     "type": {
       "fieldName": "type",
-      "requiredType": "http://schema.org/Text",
+      "requiredType": "https://schema.org/Text",
       "requiredContent": "ReserveAction",
       "description": [
         "TODO"

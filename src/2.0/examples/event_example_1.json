@@ -1,5 +1,5 @@
 {
-  "@context": "https://www.openactive.io/ns/oa.jsonld",
+  "@context": "https://openactive.io/ns/oa.jsonld",
   "type": "Event",
   "name": "Tai chi Class",
   "url": "http://www.example.org/events/1",
