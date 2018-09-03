@@ -4,6 +4,15 @@
   "notInSpec": [
     "eventSchedule"
   ],
+  "requiredOptions": [],
+  "requiredFields": [
+    "type",
+    "url",
+    "name",
+    "location",
+    "activity",
+    "startDate"
+  ],
   "derivedFrom": null,
   "fields": {
     "type": {
