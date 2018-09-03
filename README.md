@@ -7,11 +7,38 @@ Data models used to drive the OpenActive validator and developer documentation.
 
 ## Introduction
 
-This library provides all the JSON representations of the models in the `src/<version>/models` directory. It is capable of storing multiple versions of the spec.
+This library provides all the JSON representations of the models in the `versions/<version>/models` directory. It is capable of storing multiple versions of the spec.
 
 ## API
 
 The library provides various exports:
+
+#### getExamples([version])
+
+Returns a list of examples relating to the specification version supplied.
+
+Each object in the list should contain the following keys:
+
+* **name** - A human-readable name describing the example.
+* **file** - The file the example is in.
+
+##### Example
+
+```js
+
+const { getExamples } = require('openactive-data-models');
+
+const examples = getExamples('2.0');
+
+// [
+//   {
+//     "file": "event_example_1.json",
+//     "name": "Example Event"
+//   },
+//   // ...
+// ]
+
+```
 
 #### getFullyQualifiedProperty(name [, version [, contexts]])
 
@@ -141,8 +168,8 @@ A hash of available versions. This includes some named aliases. You can pass the
 const { versions } = require('openactive-data-models');
 
 // {
-//   "latest": "2.0",
-//   "2.0": "2.0"
+//   "latest": "2.x",
+//   "2.0": "2.x"
 // }
 
 ```
@@ -175,6 +202,6 @@ $ npm run test-no-lint
 
 ### Adding models
 
-Add new models to the `src/models` directory.
+Add new models to the `versions/models` directory.
 
 Find more on the models, see the [model reference](MODELS.md)

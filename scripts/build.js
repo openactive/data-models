@@ -15,12 +15,18 @@ for (const version of uniqueVersions) {
   const spec = {
     models: {},
     rpde: {},
+    examples: null,
     meta: null,
   };
 
   const metaPath = path.join(specPath, 'meta.json');
   spec.meta = JSON.parse(
     fs.readFileSync(metaPath, 'utf8')
+  );
+
+  const examplePath = path.join(specPath, 'examples/example_list.json');
+  spec.examples = JSON.parse(
+    fs.readFileSync(examplePath, 'utf8')
   );
 
   for (const folder of ['models', 'rpde']) {
