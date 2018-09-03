@@ -1,19 +1,15 @@
 const specs = require('./dist/specs');
-const versions = require('./versions');
+const deriveVersion = require('./helpers/deriveVersion');
 
 const getMetaData = (version) => {
-  let localVersion = version;
-  if (typeof localVersion === 'undefined') {
-    localVersion = 'latest';
-  }
+  const specVersion = deriveVersion(version);
   if (
-    typeof versions[localVersion] === 'undefined'
-    || typeof specs[versions[localVersion]] === 'undefined'
-    || typeof specs[versions[localVersion]].meta === 'undefined'
+    typeof specs[specVersion] === 'undefined'
+    || typeof specs[specVersion].meta === 'undefined'
   ) {
-    throw Error('Invalid specification version supplied');
+    throw Error(`Invalid specification version "${specVersion}" supplied`);
   }
-  return specs[versions[localVersion]].meta;
+  return specs[specVersion].meta;
 };
 
 module.exports = getMetaData;

@@ -13,7 +13,7 @@ const loadModel = (name, version) => {
     || typeof specs[specVersion][jsonKey] === 'undefined'
     || typeof specs[specVersion][jsonKey][name] === 'undefined'
   ) {
-    throw Error('Invalid model name supplied');
+    throw Error(`Invalid model name "${name}" supplied`);
   }
   let model = Object.assign({}, specs[specVersion][jsonKey][name]);
   if (
