@@ -10,20 +10,10 @@ const path = require('path');
 const getMetaData = require('../src/getMetaData');
 const derivePrefix = require('../src/helpers/derivePrefix');
 const deriveSingularTypes = require('../src/helpers/deriveSingularTypes');
-const versions = require('../src/versions');
+const deriveVersion = require('../src/helpers/deriveVersion');
 
-const getGraph = (version) => {
-  let localVersion = version;
-  if (typeof localVersion === 'undefined') {
-    localVersion = 'latest';
-  }
-  if (typeof versions[localVersion] === 'undefined') {
-    throw Error('Invalid specification version supplied');
-  }
-
-  const specVersion = versions[localVersion];
-
-  const metaData = getMetaData(specVersion);
+const getGraph = (version, metaData) => {
+  const specVersion = deriveVersion(version);
   const extraData = {
     '@id': metaData.namespaces[metaData.openActivePrefix],
     'dc:date': (new Date()).toISOString().replace(/T.*$/, ''),
@@ -33,10 +23,10 @@ const getGraph = (version) => {
     rdfs_classes: [],
     rdfs_properties: [],
   };
-  const files = fs.readdirSync(path.join(__dirname, '..', 'src', specVersion, 'models'));
+  const files = fs.readdirSync(path.join(__dirname, '..', 'versions', specVersion, 'models'));
   for (const file of files) {
     if (file !== 'model_list.json') {
-      const jsonPath = path.join(__dirname, '..', 'src', specVersion, 'models', file);
+      const jsonPath = path.join(__dirname, '..', 'versions', specVersion, 'models', file);
       const data = fs.readFileSync(jsonPath, 'utf8');
       const model = JSON.parse(data);
 

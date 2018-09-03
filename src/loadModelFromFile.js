@@ -7,9 +7,9 @@ const loadModelFromFile = (name, version) => {
   const specVersion = loadModelCheckArgs(name, version);
   let jsonPath;
   if (name === 'FeedItem' || name === 'FeedPage') {
-    jsonPath = path.join(__dirname, specVersion, 'rpde', `${name}.json`);
+    jsonPath = path.join(__dirname, '..', 'versions', specVersion, 'rpde', `${name}.json`);
   } else {
-    jsonPath = path.join(__dirname, specVersion, 'models', `${name}.json`);
+    jsonPath = path.join(__dirname, '..', 'versions', specVersion, 'models', `${name}.json`);
   }
   const data = fs.readFileSync(jsonPath, 'utf8');
   let model = JSON.parse(data);

@@ -12,8 +12,8 @@ describe('models', () => {
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
     const files = [
-      ...fs.readdirSync(path.join(__dirname, version, 'models')),
-      ...fs.readdirSync(path.join(__dirname, version, 'rpde')),
+      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'models')),
+      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'rpde')),
     ];
     const metaData = getMetaData(version);
     for (const file of files) {
@@ -22,7 +22,7 @@ describe('models', () => {
         if (file.match(/^Feed/)) {
           dir = 'rpde';
         }
-        const filePath = path.join(__dirname, version, dir, file);
+        const filePath = path.join(__dirname, '..', 'versions', version, dir, file);
         const data = fs.readFileSync(filePath, 'utf8');
         let jsonData;
         const readJson = () => { jsonData = JSON.parse(data); };

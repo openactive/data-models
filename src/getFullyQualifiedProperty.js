@@ -1,17 +1,10 @@
 const getContext = require('./getContext');
-const versions = require('./versions');
+const deriveVersion = require('./helpers/deriveVersion');
 
 const KEYWORD_REGEX = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)$/;
 
 const getFullyQualifiedProperty = (value, version, contexts = []) => {
-  let localVersion = version;
-  if (typeof localVersion === 'undefined') {
-    localVersion = 'latest';
-  }
-  if (typeof versions[localVersion] === 'undefined') {
-    throw Error(`Invalid specification version '${localVersion}' supplied`);
-  }
-  const specVersion = versions[localVersion];
+  const specVersion = deriveVersion(version);
 
   let contextsArg = contexts;
   // Sort the contexts

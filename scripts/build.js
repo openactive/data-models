@@ -11,7 +11,7 @@ const specs = {};
 const contexts = {};
 
 for (const version of uniqueVersions) {
-  const specPath = path.join(__dirname, '..', 'src', version);
+  const specPath = path.join(__dirname, '..', 'versions', version);
   const spec = {
     models: {},
     rpde: {},
@@ -34,7 +34,7 @@ for (const version of uniqueVersions) {
   }
 
   specs[version] = spec;
-  contexts[version] = generateContext(version);
+  contexts[version] = generateContext(version, spec.meta);
 }
 
 fs.writeFileSync(
