@@ -37,7 +37,7 @@
     },
     "broader": {
       "fieldName": "broader",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/url",
       "example": "https://example.com/football",
       "description": [
         "A broader concept URI"
@@ -53,7 +53,7 @@
     },
     "narrower": {
       "fieldName": "narrower",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/url",
       "example": "https://example.com/walking-football",
       "description": [
         "A more specific concept URI"

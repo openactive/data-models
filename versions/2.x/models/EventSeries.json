@@ -2,6 +2,27 @@
   "type": "EventSeries",
   "subClassOf": "#Event",
   "derivedFrom": "https://pending.schema.org/EventSeries",
+  "requiredFields": [
+    "type",
+    "url",
+    "name",
+    "activity",
+    "organizer"
+  ],
+  "requiredOptions": [],
+  "recommendedFields": [
+    "id",
+    "description",
+    "image",
+    "eventStatus",
+    "ageRange",
+    "genderRestriction",
+    "leader",
+    "level",
+    "maximumAttendeeCapacity",
+    "remainingAttendeeCapacity",
+    "offers"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",

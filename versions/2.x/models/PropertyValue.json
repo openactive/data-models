@@ -1,0 +1,57 @@
+{
+  "type": "PropertyValue",
+  "derivedFrom": "https://schema.org/PropertyValue",
+  "hasId": false,
+  "requiredFields": [
+    "name",
+    "type",
+    "value"
+  ],
+  "inSpec": [
+    "name",
+    "propertyID",
+    "type",
+    "value"
+  ],
+  "fields": {
+    "name": {
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "The name of this PropertyValue"
+      ],
+      "example": "Vendor ID"
+    },
+    "propertyID": {
+      "fieldName": "propertyID",
+      "requiredType": "https://schema.org/url",
+      "alternativeTypes": [
+        "https://schema.org/Text"
+      ],
+      "description": [
+        "A commonly used identifier for the characteristic represented by the property"
+      ],
+      "example": "TODO"
+    },
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "PropertyValue",
+      "description": [
+        "The type of object, in this case PropertyValue"
+      ],
+      "example": "PropertyValue"
+    },
+    "value": {
+      "fieldName": "value",
+      "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "https://schema.org/Integer"
+      ],
+      "description": [
+        "TODO"
+      ],
+      "example": "SB1234"
+    }
+  }
+}

@@ -11,7 +11,8 @@
   "recommendedFields": [
     "id",
     "url",
-    "telephone"
+    "telephone",
+    "sameAs"
   ],
   "inSpec": [
     "type",
@@ -21,7 +22,8 @@
     "name",
     "description",
     "logo",
-    "telephone"
+    "telephone",
+    "sameAs"
   ],
   "fields": {
     "description": {
@@ -35,6 +37,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -62,6 +68,15 @@
       "example": "Central Speedball Association",
       "description": [
         "The name of the Organization"
+      ]
+    },
+    "sameAs": {
+      "fieldName": "sameAs",
+      "sameAs": "https://schema.org/sameAs",
+      "requiredType": "ArrayOf#https://schema.org/url",
+      "example": "https://example.org/example-org",
+      "description": [
+        "Lists the URL(s) of the official social media profile pages associated with the organization."
       ]
     },
     "telephone": {

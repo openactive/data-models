@@ -10,13 +10,15 @@
     "name",
     "activity",
     "location",
-    "event"
+    "event",
+    "provider"
   ],
   "recommendedFields": [
     "id",
     "description",
     "image",
-    "hoursAvailable"
+    "hoursAvailable",
+    "offers"
   ],
   "inSpec": [
     "type",
@@ -32,7 +34,12 @@
     "event",
     "offers",
     "hoursAvailable",
-    "individualFacilityUse"
+    "individualFacilityUse",
+    "provider",
+    "accessibilityInformation",
+    "accessibilitySupport",
+    "category",
+    "attendeeInstructions"
   ],
   "fields": {
     "@context": {
@@ -46,6 +53,23 @@
       ],
       "example": "https://openactive.io/"
     },
+    "accessibilityInformation": {
+      "fieldName": "accessibilityInformation",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Provide additional, specific documentation for participants about how disabilities are, or can be supported at the facility."
+      ],
+      "example": "TODO"
+    },
+    "accessibilitySupport": {
+      "fieldName": "accessibilitySupport",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "alternativeModels": ["ArrayOf#Concept"],
+      "description": [
+        "Used to specify the types of disabilities or impairments that are supported at a facility."
+      ],
+      "example": "TODO"
+    },
     "activity": {
       "fieldName": "activity",
       "model": "ArrayOf#Concept",
@@ -56,6 +80,31 @@
         "id": "https://example.com/reference/activities#Speedball",
         "inScheme": "https://example.com/reference/activities",
         "prefLabel": "Speedball",
+        "type": "Concept"
+      }]
+    },
+    "attendeeInstructions": {
+      "fieldName": "attendeeInstructions",
+      "sameAs": "https://openactive.io/attendeeInstructions",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Provides additional notes and instructions for users of a facility. E.g. more information on how to find it, what to bring, etc."
+      ],
+      "example": "TODO"
+    },
+    "category": {
+      "fieldName": "category",
+      "model": "ArrayOf#Concept",
+      "alternativeTypes": [
+        "ArrayOf#https://schema.org/Text"
+      ],
+      "description": [
+        "Provides a set of tags that help categorise and describe a facility."
+      ],
+      "example": [{
+        "id": "https://example.com/reference/categories#Top%20Club%20Level",
+        "inScheme": "https://example.com/reference/categories",
+        "prefLabel": "Top Club Level",
         "type": "Concept"
       }]
     },
@@ -87,6 +136,10 @@
     "identifier": {
       "fieldName": "identifier",
       "sameAs": "https://schema.org/identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -151,6 +204,14 @@
       "example": "Speedball",
       "description": [
         "The name of the facility use"
+      ]
+    },
+    "provider": {
+      "fieldName": "provider",
+      "sameAs": "https://schema.org/provider",
+      "module": "#Organization",
+      "description": [
+        "The organisation responsible for providing the facility"
       ]
     },
     "type": {

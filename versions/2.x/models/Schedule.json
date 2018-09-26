@@ -5,7 +5,9 @@
   "requiredFields": [
     "type",
     "repeatFrequency",
-    "scheduledEventType"
+    "scheduledEventType",
+    "startTime",
+    "endTime"
   ],
   "requiredOptions": [
     {
@@ -23,8 +25,6 @@
     "duration",
     "startDate",
     "endDate",
-    "startTime",
-    "endTime",
     "idTemplate",
     "urlTemplate"
   ],
@@ -49,9 +49,11 @@
     "byDay": {
       "fieldName": "byDay",
       "requiredType": "ArrayOf#https://schema.org/url",
-      "example": "https://schema.org/Monday",
+      "alternativeTypes": ["ArrayOf#https://schema.org/Text"],
+      "example": ["https://schema.org/Monday"],
       "description": [
-        "Defines the day of the week upon which the Event takes place"
+        "Defines the day of the week upon which the Event takes place.",
+        "When using string values, this MUST conform to iCal BYDAY rule."
       ],
       "options": [
         "https://schema.org/Monday",

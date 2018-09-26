@@ -9,7 +9,8 @@
     "url",
     "name",
     "location",
-    "activity"
+    "activity",
+    "organizer"
   ],
   "requiredOptions": [
     {
@@ -29,12 +30,16 @@
     "id",
     "description",
     "image",
-    "organizer",
     "eventStatus",
     "ageRange",
     "genderRestriction",
     "leader",
-    "level"
+    "level",
+    "maximumAttendeeCapacity",
+    "remainingAttendeeCapacity",
+    "offers",
+    "startDate",
+    "endDate"
   ],
   "inSpec": [
     "id",
@@ -72,7 +77,7 @@
     "isAccessibleForFree",
     "potentialAction",
     "offers",
-    "isAccessibleWithoutBooking"
+    "schedulingNote"
   ],
   "fields": {
     "@context": {
@@ -145,6 +150,9 @@
       "fieldName": "category",
       "sameAs": "https://openactive.io/category",
       "model": "ArrayOf#Concept",
+      "alternativeTypes": [
+        "ArrayOf#https://schema.org/Text"
+      ],
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
       ],
@@ -193,7 +201,7 @@
     },
     "eventSchedule": {
       "fieldName": "eventSchedule",
-      "model": "#Schedule",
+      "model": "ArrayOf#Schedule",
       "description": [
         "TODO"
       ],
@@ -229,6 +237,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -255,15 +267,6 @@
       "requiredType": "https://schema.org/Boolean",
       "description": [
         "Whether the Event is accessible without charge."
-      ],
-      "example": true
-    },
-    "isAccessibleWithoutBooking": {
-      "fieldName": "isAccessibleWithoutBooking",
-      "sameAs": "https://openactive.io/isAccessibleWithoutBooking",
-      "requiredType": "https://schema.org/Boolean",
-      "description": [
-        "Whether the Event is accessible without booking."
       ],
       "example": true
     },
@@ -366,9 +369,9 @@
     },
     "organizer": {
       "fieldName": "organizer",
-      "model": "ArrayOf#Organization",
+      "model": "#Organization",
       "alternativeModels": [
-        "ArrayOf#Person"
+        "#Person"
       ],
       "description": [
         "The person or organization ultimately responsible for an event. An organizer might be an  schema:Organization or a schema:Person."
@@ -428,6 +431,15 @@
       "inheritsTo": {
         "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule", "offers"]
       }
+    },
+    "schedulingNote": {
+      "fieldName": "schedulingNote",
+      "sameAs": "https://openactive.io/schedulingNote",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Provides a note from an organizer relating to how this Event is scheduled."
+      ],
+      "example": "This event doesn't run during school holidays"
     },
     "superEvent": {
       "fieldName": "superEvent",

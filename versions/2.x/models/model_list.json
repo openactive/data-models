@@ -24,9 +24,11 @@
     "OpeningHoursSpecification",
     "Organization",
     "Parking",
+    "PartialSchedule",
     "Person",
     "Place",
     "PostalAddress",
+    "PropertyValue",
     "QuantitativeValue",
     "ReserveAction",
     "Schedule",
@@ -135,6 +137,9 @@
     "parking": {
       "modelName": "Parking"
     },
+    "partialschedule": {
+      "modelName": "PartialSchedule"
+    },
     "person": {
       "modelName": "Person"
     },
@@ -143,6 +148,9 @@
     },
     "postaladdress": {
       "modelName": "PostalAddress"
+    },
+    "propertyvalue": {
+      "modelName": "PropertyValue"
     },
     "quantitativevalue": {
       "modelName": "QuantitativeValue"

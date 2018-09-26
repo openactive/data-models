@@ -16,7 +16,10 @@
     "identifier",
     "url",
     "name",
-    "description"
+    "description",
+    "telephone",
+    "sameAs",
+    "logo"
   ],
   "fields": {
     "description": {
@@ -30,6 +33,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -37,6 +44,17 @@
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
+      ]
+    },
+    "logo": {
+      "fieldName": "logo",
+      "model": "#ImageObject",
+      "example": {
+        "type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      },
+      "description": [
+        "A logo for the person."
       ]
     },
     "name": {
@@ -47,6 +65,24 @@
       "description": [
         "A full name for the person.",
         "This person must give direct permission for their personal information to be shared as part of the Open Data."
+      ]
+    },
+    "sameAs": {
+      "fieldName": "sameAs",
+      "sameAs": "https://schema.org/sameAs",
+      "requiredType": "ArrayOf#https://schema.org/url",
+      "example": "https://example.org/example-org",
+      "description": [
+        "Lists the URL(s) of the official social media profile pages associated with the person."
+      ]
+    },
+    "telephone": {
+      "fieldName": "telephone",
+      "sameAs": "https://schema.org/telephone",
+      "requiredType": "https://schema.org/Text",
+      "example": "01234 567890",
+      "description": [
+        "The telephone number of the person"
       ]
     },
     "type": {

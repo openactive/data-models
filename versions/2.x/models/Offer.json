@@ -6,14 +6,14 @@
   "sampleId": "https://example.com/offer/",
   "requiredFields": [
     "type",
-    "price",
-    "priceCurrency"
+    "price"
   ],
   "recommendedFields": [
     "id",
     "name",
     "ageRange",
-    "url"
+    "url",
+    "priceCurrency"
   ],
   "inSpec": [
     "type",
@@ -23,9 +23,25 @@
     "price",
     "priceCurrency",
     "ageRange",
-    "url"
+    "url",
+    "advanceBooking",
+    "prepayment"
   ],
   "fields": {
+    "advanceBooking": {
+      "fieldName": "advanceBooking",
+      "sameAs": "https://openactive.io/advanceBooking",
+      "requiredType": "https://schema.org/url",
+      "description": [
+        "Indicates whether to accept this offer, a participant must book in advance, whether they must pay on attending, or have option to do either."
+      ],
+      "example": "https://openactive.io/Required",
+      "options": [
+        "https://openactive.io/Required",
+        "https://openactive.io/Optional",
+        "https://openactive.io/None"
+      ]
+    },
     "ageRange": {
       "fieldName": "ageRange",
       "sameAs": "https://openactive.io/ageRange",
@@ -41,6 +57,10 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -57,6 +77,20 @@
       "example": "Speedball winger position",
       "description": [
         "A human readable name for the offer."
+      ]
+    },
+    "prepayment": {
+      "fieldName": "prepayment",
+      "sameAs": "https://openactive.io/prepayment",
+      "requiredType": "https://schema.org/url",
+      "description": [
+        "Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either."
+      ],
+      "example": "https://openactive.io/Required",
+      "options": [
+        "https://openactive.io/Required",
+        "https://openactive.io/Optional",
+        "https://openactive.io/None"
       ]
     },
     "price": {
@@ -77,7 +111,8 @@
       "requiredType": "https://schema.org/Text",
       "example": "GBP",
       "description": [
-        "The currency (in 3-letter ISO 4217 format) of the price."
+        "The currency (in 3-letter ISO 4217 format) of the price.",
+        "If an Offer has a zero price, then this property is not required. Otherwise the currency must be specified."
       ]
     },
     "type": {
