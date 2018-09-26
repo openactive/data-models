@@ -1,0 +1,40 @@
+{
+  "DayOfWeek": {
+    "namespace": "https://schema.org/",
+    "values": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ]
+  },
+  "EventStatusType": {
+    "namespace": "https://schema.org/",
+    "values": [
+      "EventCancelled",
+      "EventPostponed",
+      "EventRescheduled",
+      "EventScheduled"
+    ]
+  },
+  "GenderRestrictionType": {
+    "namespace": "https://openactive.io/",
+    "comment": "Enumerated types for gender restrictions that are applied to Events",
+    "values": [
+      "NoRestriction",
+      "MaleOnly",
+      "FemaleOnly"
+    ]
+  },
+  "RequiredStatusType": {
+    "namespace": "https://openactive.io/",
+    "values": [
+      "Required",
+      "Optional",
+      "Unavailable"
+    ]
+  }
+}

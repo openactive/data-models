@@ -209,31 +209,20 @@
     },
     "eventStatus": {
       "fieldName": "eventStatus",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/EventStatusType",
       "description": [
         "The status of an event. Can be used to indicate rescheduled or cancelled events"
-      ],
-      "options": [
-        "https://schema.org/EventCancelled",
-        "https://schema.org/EventPostponed",
-        "https://schema.org/EventRescheduled",
-        "https://schema.org/EventScheduled"
       ],
       "example": "https://schema.org/EventScheduled"
     },
     "genderRestriction": {
       "fieldName": "genderRestriction",
       "sameAs": "https://openactive.io/genderRestriction",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://openactive.io/GenderRestrictionType",
       "description": [
         "Indicates that an event is restricted to male, female or a mixed audience. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience"
       ],
-      "example": "https://openactive.io/Female",
-      "options": [
-        "https://openactive.io/Female",
-        "https://openactive.io/Male",
-        "https://openactive.io/None"
-      ]
+      "example": "https://openactive.io/Female"
     },
     "identifier": {
       "fieldName": "identifier",

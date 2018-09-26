@@ -215,7 +215,7 @@ describe('models', () => {
               for (const field in jsonData.fields) {
                 if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
                   if (typeof jsonData.fields[field].requiredType !== 'undefined') {
-                    expect(jsonData.fields[field].requiredType).toMatch(/^(ArrayOf#)?https:\/\/schema\.org\/[a-zA-Z]+$/);
+                    expect(jsonData.fields[field].requiredType).toMatch(/^(ArrayOf#)?https:\/\/(schema\.org|openactive\.io)\/[a-zA-Z]+$/);
                   }
                 }
               }
@@ -227,7 +227,7 @@ describe('models', () => {
                   if (typeof jsonData.fields[field].additionalTypes !== 'undefined') {
                     expect(jsonData.fields[field].additionalTypes instanceof Array).toBe(true);
                     for (const type of jsonData.fields[field].additionalTypes) {
-                      expect(type).toMatch(/^(ArrayOf#)?http:\/\/schema\.org\/[a-zA-Z]+$/);
+                      expect(type).toMatch(/^(ArrayOf#)?http:\/\/(schema\.org|openactive\.io)\/[a-zA-Z]+$/);
                     }
                   }
                 }

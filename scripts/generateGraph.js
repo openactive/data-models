@@ -12,7 +12,7 @@ const derivePrefix = require('../src/helpers/derivePrefix');
 const deriveSingularTypes = require('../src/helpers/deriveSingularTypes');
 const deriveVersion = require('../src/helpers/deriveVersion');
 
-const getGraph = (version, metaData) => {
+const generateGraph = (version, metaData, enums) => {
   const specVersion = deriveVersion(version);
   const extraData = {
     '@id': metaData.namespaces[metaData.openActivePrefix],
@@ -23,6 +23,40 @@ const getGraph = (version, metaData) => {
     rdfs_classes: [],
     rdfs_properties: [],
   };
+
+  const oaEnums = [];
+  for (const enumKey in enums) {
+    if (Object.prototype.hasOwnProperty.call(enums, enumKey)) {
+      const enumObj = enums[enumKey];
+      if (enumObj.namespace === metaData.contextUrl) {
+        oaEnums.push(`${metaData.contextUrl}${enumKey}`);
+        propsAndClasses.rdfs_classes.push({
+          '@id': `${metaData.openActivePrefix}:${enumKey}`,
+          '@type': 'rdfs:Class',
+          'rdfs:label': {
+            en: enumKey,
+          },
+          'rdfs:comment': {
+            en: enumObj.comment || '',
+          },
+        });
+        for (const enumValue of enumObj.values) {
+          propsAndClasses.rdfs_classes.push({
+            '@id': `${metaData.openActivePrefix}:${enumValue}`,
+            '@type': 'rdfs:Class',
+            'rdfs:label': {
+              en: enumValue,
+            },
+            'rdfs:comment': {
+              en: `Enumerated value of ${enumKey}`,
+            },
+            'rdfs:subClassOf': `${metaData.openActivePrefix}:${enumKey}`,
+          });
+        }
+      }
+    }
+  }
+
   const files = fs.readdirSync(path.join(__dirname, '..', 'versions', specVersion, 'models'));
   for (const file of files) {
     if (file !== 'model_list.json') {
@@ -88,8 +122,12 @@ const getGraph = (version, metaData) => {
                   'rdfs:domain': '#',
                 };
                 const types = deriveSingularTypes(field);
-                if (types.length === 1 && types[0].match(/^[A-Za-z]+$/)) {
-                  property['rdfs:range'] = `oa:${types[0]}`;
+                if (types.length === 1) {
+                  if (types[0].match(/^[A-Za-z]+$/)) {
+                    property['rdfs:range'] = `${metaData.openActivePrefix}:${types[0]}`;
+                  } else if (oaEnums.indexOf(types[0]) >= 0) {
+                    property['rdfs:range'] = `${metaData.openActivePrefix}:${types[0].replace(metaData.contextUrl, '')}`;
+                  }
                 }
                 propsAndClasses.rdfs_properties.push(property);
               }
@@ -100,10 +138,11 @@ const getGraph = (version, metaData) => {
     }
   }
   return Object.assign(
-    metaData.graph,
+    {},
+    metaData.baseGraph,
     extraData,
     propsAndClasses,
   );
 };
 
-module.exports = getGraph;
+module.exports = generateGraph;
