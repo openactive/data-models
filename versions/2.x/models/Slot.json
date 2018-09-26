@@ -12,7 +12,8 @@
     "remainingUses"
   ],
   "recommendedFields": [
-    "id"
+    "id",
+    "maximumUses"
   ],
   "inSpec": [
     "type",
@@ -60,6 +61,10 @@
     "identifier": {
       "fieldName": "identifier",
       "sameAs": "https://schema.org/identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"

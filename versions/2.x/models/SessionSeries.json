@@ -2,6 +2,19 @@
   "type": "SessionSeries",
   "subClassOf": "#Event",
   "derivedFrom": null,
+  "requiredOptions": [],
+  "recommendedFields": [
+    "id",
+    "description",
+    "image",
+    "ageRange",
+    "genderRestriction",
+    "leader",
+    "level",
+    "maximumAttendeeCapacity",
+    "remainingAttendeeCapacity",
+    "offers"
+  ],
   "fields": {
     "subEvent": {
       "fieldName": "subEvent",

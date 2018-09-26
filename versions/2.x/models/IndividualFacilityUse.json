@@ -9,14 +9,15 @@
     "name",
     "activity",
     "location",
-    "event"
+    "event",
+    "provider"
   ],
   "recommendedFields": [
     "id",
     "description",
     "image",
     "hoursAvailable",
-    "groupFacilityUse"
+    "aggregateFacilityUse"
   ],
   "inSpec": [
     "type",
@@ -31,9 +32,31 @@
     "event",
     "offers",
     "hoursAvailable",
-    "groupFacilityUse"
+    "aggregateFacilityUse",
+    "provider",
+    "accessibilityInformation",
+    "accessibilitySupport",
+    "category",
+    "attendeeInstructions"
   ],
   "fields": {
+    "accessibilityInformation": {
+      "fieldName": "accessibilityInformation",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Provide additional, specific documentation for participants about how disabilities are, or can be supported at the facility."
+      ],
+      "example": "TODO"
+    },
+    "accessibilitySupport": {
+      "fieldName": "accessibilitySupport",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "alternativeModels": ["ArrayOf#Concept"],
+      "description": [
+        "Used to specify the types of disabilities or impairments that are supported at a facility."
+      ],
+      "example": "TODO"
+    },
     "activity": {
       "fieldName": "activity",
       "model": "ArrayOf#Concept",
@@ -44,6 +67,38 @@
         "id": "https://example.com/reference/activities#Speedball",
         "inScheme": "https://example.com/reference/activities",
         "prefLabel": "Speedball",
+        "type": "Concept"
+      }]
+    },
+    "aggregateFacilityUse": {
+      "fieldName": "aggregateFacilityUse",
+      "model": "#FacilityUse",
+      "description": [
+        "Inverse of the oa:individualFacilityUse property. Related an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court) to a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location)."
+      ]
+    },
+    "attendeeInstructions": {
+      "fieldName": "attendeeInstructions",
+      "sameAs": "https://openactive.io/attendeeInstructions",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Provides additional notes and instructions for users of a facility. E.g. more information on how to find it, what to bring, etc."
+      ],
+      "example": "TODO"
+    },
+    "category": {
+      "fieldName": "category",
+      "model": "ArrayOf#Concept",
+      "alternativeTypes": [
+        "ArrayOf#https://schema.org/Text"
+      ],
+      "description": [
+        "Provides a set of tags that help categorise and describe a facility."
+      ],
+      "example": [{
+        "id": "https://example.com/reference/categories#Top%20Club%20Level",
+        "inScheme": "https://example.com/reference/categories",
+        "prefLabel": "Top Club Level",
         "type": "Concept"
       }]
     },
@@ -64,13 +119,6 @@
         "TODO"
       ]
     },
-    "groupFacilityUse": {
-      "fieldName": "groupFacilityUse",
-      "model": "#FacilityUse",
-      "description": [
-        "Inverse of the oa:individualFacilityUse property. Related an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court) to a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location)."
-      ]
-    },
     "hoursAvailable": {
       "fieldName": "hoursAvailable",
       "sameAs": "https://schema.org/hoursAvailable",
@@ -82,7 +130,14 @@
     "identifier": {
       "fieldName": "identifier",
       "sameAs": "https://schema.org/identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
       "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "https://schema.org/Integer"
+      ],
       "example": "SB1234",
       "description": [
         "A local non-URI identifier for the resource"
@@ -136,6 +191,14 @@
       "example": "Speedball",
       "description": [
         "The name of the facility use"
+      ]
+    },
+    "provider": {
+      "fieldName": "provider",
+      "sameAs": "https://schema.org/provider",
+      "module": "#Organization",
+      "description": [
+        "The organisation responsible for providing the facility"
       ]
     },
     "type": {

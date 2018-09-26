@@ -34,6 +34,7 @@ for (const version of uniqueVersions) {
     for (const file of files) {
       const filePath = path.join(specPath, folder, file);
       const data = fs.readFileSync(filePath, 'utf8');
+      console.log(`Building ${filePath}`);
       const jsonData = JSON.parse(data);
       spec[folder][jsonData.type] = jsonData;
     }
