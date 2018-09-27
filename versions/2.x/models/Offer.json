@@ -31,16 +31,11 @@
     "advanceBooking": {
       "fieldName": "advanceBooking",
       "sameAs": "https://openactive.io/advanceBooking",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://openactive.io/RequiredStatusType",
       "description": [
         "Indicates whether to accept this offer, a participant must book in advance, whether they must pay on attending, or have option to do either."
       ],
-      "example": "https://openactive.io/Required",
-      "options": [
-        "https://openactive.io/Required",
-        "https://openactive.io/Optional",
-        "https://openactive.io/None"
-      ]
+      "example": "https://openactive.io/Required"
     },
     "ageRange": {
       "fieldName": "ageRange",
@@ -82,16 +77,11 @@
     "prepayment": {
       "fieldName": "prepayment",
       "sameAs": "https://openactive.io/prepayment",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://openactive.io/RequiredStatusType",
       "description": [
         "Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either."
       ],
-      "example": "https://openactive.io/Required",
-      "options": [
-        "https://openactive.io/Required",
-        "https://openactive.io/Optional",
-        "https://openactive.io/None"
-      ]
+      "example": "https://openactive.io/Required"
     },
     "price": {
       "fieldName": "price",

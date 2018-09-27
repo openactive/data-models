@@ -1,12 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const getMetaData = require('../src/getMetaData');
 const derivePrefix = require('../src/helpers/derivePrefix');
 const deriveSingularTypes = require('../src/helpers/deriveSingularTypes');
 const deriveVersion = require('../src/helpers/deriveVersion');
 
-const generateContext = (version, metaData) => {
+const generateContext = (version, metaData, enums) => {
   const specVersion = deriveVersion(version);
 
   const context = {
@@ -71,6 +70,18 @@ const generateContext = (version, metaData) => {
             } else {
               existing[fieldName] = `${fieldPrefix}:${fieldSameAsName}`;
             }
+          }
+        }
+      }
+    }
+
+    for (const enumKey in enums) {
+      if (Object.prototype.hasOwnProperty.call(enums, enumKey)) {
+        const enumObj = enums[enumKey];
+        if (enumObj.namespace === metaData.contextUrl) {
+          newModels[enumKey] = `${metaData.openActivePrefix}:${enumKey}`;
+          for (const enumValue of enumObj.values) {
+            newModels[enumValue] = `${metaData.openActivePrefix}:${enumValue}`;
           }
         }
       }

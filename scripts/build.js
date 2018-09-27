@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const generateContext = require('./generateContext');
+const generateGraph = require('./generateGraph');
 const versions = require('../src/versions');
 
 const uniqueVersions = [...new Set(Object.values(versions))];
@@ -9,6 +10,7 @@ const distPath = path.join(__dirname, '..', 'src', 'dist');
 
 const specs = {};
 const contexts = {};
+const graphs = {};
 
 for (const version of uniqueVersions) {
   const specPath = path.join(__dirname, '..', 'versions', version);
@@ -22,6 +24,11 @@ for (const version of uniqueVersions) {
   const metaPath = path.join(specPath, 'meta.json');
   spec.meta = JSON.parse(
     fs.readFileSync(metaPath, 'utf8')
+  );
+
+  const enumsPath = path.join(specPath, 'enums.json');
+  spec.enums = JSON.parse(
+    fs.readFileSync(enumsPath, 'utf8')
   );
 
   const examplePath = path.join(specPath, 'examples/example_list.json');
@@ -41,7 +48,8 @@ for (const version of uniqueVersions) {
   }
 
   specs[version] = spec;
-  contexts[version] = generateContext(version, spec.meta);
+  contexts[version] = generateContext(version, spec.meta, spec.enums);
+  graphs[version] = generateGraph(version, spec.meta, spec.enums);
 }
 
 fs.writeFileSync(
@@ -49,6 +57,14 @@ fs.writeFileSync(
   `/* eslint-disable */
 // This is a generated file. Do not edit manually.
 module.exports = ${JSON.stringify(contexts)};`,
+  () => {},
+);
+
+fs.writeFileSync(
+  path.join(distPath, 'graphs.js'),
+  `/* eslint-disable */
+// This is a generated file. Do not edit manually.
+module.exports = ${JSON.stringify(graphs)};`,
   () => {},
 );
 

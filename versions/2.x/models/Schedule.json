@@ -48,21 +48,12 @@
   "fields": {
     "byDay": {
       "fieldName": "byDay",
-      "requiredType": "ArrayOf#https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/DayOfWeek",
       "alternativeTypes": ["ArrayOf#https://schema.org/Text"],
       "example": ["https://schema.org/Monday"],
       "description": [
         "Defines the day of the week upon which the Event takes place.",
         "When using string values, this MUST conform to iCal BYDAY rule."
-      ],
-      "options": [
-        "https://schema.org/Monday",
-        "https://schema.org/Tuesday",
-        "https://schema.org/Wednesday",
-        "https://schema.org/Thursday",
-        "https://schema.org/Friday",
-        "https://schema.org/Saturday",
-        "https://schema.org/Sunday"
       ]
     },
     "byMonth": {
