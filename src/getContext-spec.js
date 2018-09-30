@@ -6,13 +6,13 @@ describe('getContext', () => {
     expect(contextLoadTest).toThrow();
   });
 
-  it('should return valid metaData as JSON', () => {
+  it('should return a valid context as JSON', () => {
     const context = getContext('2.0');
     expect(typeof context).toBe('object');
     expect(context['@vocab']).toBe('https://schema.org/');
   });
 
-  it('should return valid metaData as JSON with a version alias', () => {
+  it('should return a valid context as JSON with a version alias', () => {
     const context = getContext('latest');
     expect(typeof context).toBe('object');
     expect(context['@vocab']).toBe('https://schema.org/');

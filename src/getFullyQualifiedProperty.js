@@ -1,4 +1,5 @@
 const getContext = require('./getContext');
+const mergeContexts = require('./mergeContexts');
 const deriveVersion = require('./helpers/deriveVersion');
 
 const KEYWORD_REGEX = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)$/;
@@ -12,7 +13,9 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
     if (contextsArg === null) {
       contextsArg = [];
     } else if (!(contextsArg instanceof Array)) {
-      contextsArg = [contextsArg];
+      contextsArg = [Object.assign({}, contextsArg)];
+    } else {
+      contextsArg = contexts.slice();
     }
   } else if (typeof contextsArg === 'string') {
     contextsArg = [contextsArg];
@@ -34,13 +37,7 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
   let valueToTest = value;
 
   // Merge the contexts into a flat structure
-  let mergedContext = {};
-  for (const context of contextsArg) {
-    // If this is not an object, we can't process it
-    if (typeof context === 'object' && context !== null) {
-      mergedContext = Object.assign(mergedContext, context['@context']);
-    }
-  }
+  const mergedContext = mergeContexts(contextsArg);
 
   const urlsToCheck = [];
 
@@ -142,6 +139,5 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
   qualifiedProperty.label = valueToTest;
   return qualifiedProperty;
 };
-
 
 module.exports = getFullyQualifiedProperty;
