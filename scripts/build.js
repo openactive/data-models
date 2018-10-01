@@ -52,6 +52,10 @@ for (const version of uniqueVersions) {
   graphs[version] = generateGraph(version, spec.meta, spec.enums);
 }
 
+if (!fs.existsSync(distPath)) {
+  fs.mkdirSync(distPath);
+}
+
 fs.writeFileSync(
   path.join(distPath, 'contexts.js'),
   `/* eslint-disable */
