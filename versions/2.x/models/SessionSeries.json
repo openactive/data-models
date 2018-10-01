@@ -2,6 +2,10 @@
   "type": "SessionSeries",
   "subClassOf": "#Event",
   "derivedFrom": null,
+  "notInSpec": [
+    "maximumAttendeeCapacity",
+    "remainingAttendeeCapacity"
+  ],
   "requiredOptions": [],
   "recommendedFields": [
     "id",
@@ -11,8 +15,6 @@
     "genderRestriction",
     "leader",
     "level",
-    "maximumAttendeeCapacity",
-    "remainingAttendeeCapacity",
     "offers"
   ],
   "fields": {
