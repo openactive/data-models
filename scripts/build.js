@@ -23,17 +23,17 @@ for (const version of uniqueVersions) {
 
   const metaPath = path.join(specPath, 'meta.json');
   spec.meta = JSON.parse(
-    fs.readFileSync(metaPath, 'utf8')
+    fs.readFileSync(metaPath, 'utf8'),
   );
 
   const enumsPath = path.join(specPath, 'enums.json');
   spec.enums = JSON.parse(
-    fs.readFileSync(enumsPath, 'utf8')
+    fs.readFileSync(enumsPath, 'utf8'),
   );
 
   const examplePath = path.join(specPath, 'examples/example_list.json');
   spec.examples = JSON.parse(
-    fs.readFileSync(examplePath, 'utf8')
+    fs.readFileSync(examplePath, 'utf8'),
   );
 
   for (const folder of ['models', 'rpde']) {

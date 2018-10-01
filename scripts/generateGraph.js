@@ -7,7 +7,6 @@
 const fs = require('fs');
 const path = require('path');
 
-const getMetaData = require('../src/getMetaData');
 const derivePrefix = require('../src/helpers/derivePrefix');
 const deriveSingularTypes = require('../src/helpers/deriveSingularTypes');
 const deriveVersion = require('../src/helpers/deriveVersion');
@@ -21,7 +20,7 @@ const getPrefixForType = (basePath, metaData, type) => {
     return derivePrefix(parentModel.derivedFrom, metaData.namespaces);
   }
   return null;
-}
+};
 
 const generateGraph = (version, metaData, enums) => {
   const specVersion = deriveVersion(version);
@@ -127,8 +126,8 @@ const generateGraph = (version, metaData, enums) => {
               : fieldName;
             if (fieldPrefix === metaData.openActivePrefix) {
               // Find an existing property
-              let found = propsAndClasses.rdfs_properties.filter(
-                value => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`
+              const found = propsAndClasses.rdfs_properties.filter(
+                value => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`,
               );
               let property;
               if (found.length === 0) {
@@ -145,7 +144,7 @@ const generateGraph = (version, metaData, enums) => {
                 };
                 propsAndClasses.rdfs_properties.push(property);
               } else {
-                property = found[0];
+                ([property] = found);
               }
               property['schema:domainIncludes'].push(`${modelPrefix}:${modelDerivedFromName}`);
               const types = deriveSingularTypes(field);
