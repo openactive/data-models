@@ -15,8 +15,6 @@
     "genderRestriction",
     "leader",
     "level",
-    "maximumAttendeeCapacity",
-    "remainingAttendeeCapacity",
     "offers"
   ],
   "fields": {
