@@ -1,10 +1,10 @@
 {
-  "next": "https://www.example.com/api/rpde/sessions?afterTimestamp=1521565719&afterId=61655",
+  "next": "https://www.example.com/api/rpde/sessions?afterTimestamp=1521565719&afterId=1402CBP20150217",
   "items": [
     {
       "state": "updated",
       "kind": "session",
-      "id": 61655,
+      "id": "1402CBP20150217",
       "modified": 1521565719,
       "data": {
         "@context": "https://openactive.io/",
