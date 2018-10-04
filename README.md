@@ -26,7 +26,7 @@ Each object in the list should contain the following keys:
 
 ```js
 
-const { getExamples } = require('openactive-data-models');
+const { getExamples } = require('@openactive/data-models');
 
 const examples = getExamples('2.0');
 
@@ -48,7 +48,7 @@ Returns a resolved version of a property, indicating its namespace, prefix and a
 
 ```js
 
-const { getFullyQualifiedProperty } = require('openactive-data-models');
+const { getFullyQualifiedProperty } = require('@openactive/data-models');
 
 let info = getFullyQualifiedProperty('type');
 
@@ -107,7 +107,7 @@ The meta data should contain the following keys:
 
 ```js
 
-const { getMetaData } = require('openactive-data-models');
+const { getMetaData } = require('@openactive/data-models');
 
 const metaData = getMetaData('2.0');
 
@@ -147,7 +147,7 @@ Returns the model definition for a particular version of the spec.
 
 ```js
 
-const { loadModel } = require('openactive-data-models');
+const { loadModel } = require('@openactive/data-models');
 
 // Returns the latest version of this model
 const eventModel = loadModel('Event');
@@ -165,7 +165,7 @@ A hash of available versions. This includes some named aliases. You can pass the
 
 ```js
 
-const { versions } = require('openactive-data-models');
+const { versions } = require('@openactive/data-models');
 
 // {
 //   "latest": "2.x",
