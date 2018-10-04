@@ -3,7 +3,6 @@
   "subClassOf": "#Event",
   "derivedFrom": null,
   "notInSpec": [
-    "maximumAttendeeCapacity",
     "remainingAttendeeCapacity"
   ],
   "requiredOptions": [],
