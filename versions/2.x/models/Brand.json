@@ -16,7 +16,8 @@
     "name",
     "url",
     "description",
-    "logo"
+    "logo",
+    "identifier"
   ],
   "fields": {
     "description": {
