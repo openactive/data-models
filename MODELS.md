@@ -467,9 +467,9 @@ To specify a whitelist of fields (anything not in this list will not be inherita
 
 For each field within the model, the rules of resolution are thus:
 
-• *IF* `sameAs` is set on the field, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/d5deb89c2395ba770b8cd943dedda9e996f76ac0/versions/2.x/models/Event.json#L115)) (the `activity` field is defined in the OA namespace, but `Event` is schema.org)
-• *ELSE IF* `derivedFrom` is set for the model, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/06a0516f2f228d2045e63530c7754df35d3810f5/versions/2.x/models/EntryPoint.json#L3)
-• *ELSE* assume the field is in the OA namespace
+* *IF* `sameAs` is set on the field, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/d5deb89c2395ba770b8cd943dedda9e996f76ac0/versions/2.x/models/Event.json#L115)) (the `activity` field is defined in the OA namespace, but `Event` is schema.org)
+* *ELSE IF* `derivedFrom` is set for the model, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/06a0516f2f228d2045e63530c7754df35d3810f5/versions/2.x/models/EntryPoint.json#L3)
+* *ELSE* assume the field is in the OA namespace
 
 If the same field has been defined in two different namespaces (e.g. in both "`schema:`" and "`oa:`"), the oa.jsonld file would not be able to be generated, and the unit tests produce the error "namespaces should not have fields in multiple namespaces".
 
