@@ -2,7 +2,7 @@
   "defaultPrefix": "schema",
   "openActivePrefix": "oa",
   "contextUrl": "https://openactive.io/",
-  "specUrl": "https://www.openactive.io/modelling-opportunity-data/EditorsDraft/",
+  "specUrl": "https://www.openactive.io/modelling-opportunity-data/",
   "defaultActivityLists": [
     "https://openactive.io/activity-list"
   ],
