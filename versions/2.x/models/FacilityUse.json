@@ -10,7 +10,6 @@
     "name",
     "activity",
     "location",
-    "event",
     "provider"
   ],
   "recommendedFields": [
@@ -18,7 +17,8 @@
     "description",
     "image",
     "hoursAvailable",
-    "offers"
+    "offers",
+    "event"
   ],
   "inSpec": [
     "type",
