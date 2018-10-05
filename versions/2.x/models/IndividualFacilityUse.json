@@ -222,6 +222,7 @@
     "potentialAction": {
       "fieldName": "potentialAction",
       "model": "ArrayOf#Action",
+      "sameAs": "https://schema.org/potentialAction",
       "description": [
         "The possible actions that a user may make. e.g. Book."
       ],
