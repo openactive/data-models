@@ -463,7 +463,7 @@ To specify a whitelist of fields (anything not in this list will not be inherita
 
 `exclude` takes precedence over `include`.
 
-### Namespace resolution
+## Namespace resolution
 
 For each field within the model, the rules of resolution are thus:
 
