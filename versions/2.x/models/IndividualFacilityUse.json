@@ -37,7 +37,8 @@
     "accessibilityInformation",
     "accessibilitySupport",
     "category",
-    "attendeeInstructions"
+    "attendeeInstructions",
+    "potentialAction"
   ],
   "fields": {
     "accessibilityInformation": {
@@ -216,6 +217,25 @@
       "model": "ArrayOf#Offer",
       "description": [
         "TODO"
+      ]
+    },
+    "potentialAction": {
+      "fieldName": "potentialAction",
+      "model": "ArrayOf#Action",
+      "description": [
+        "The possible actions that a user may make. e.g. Book."
+      ],
+      "example": [
+        {
+          "name": "Book",
+          "target": {
+            "encodingType": "application/vnd.openactive.v1.0+json",
+            "httpMethod": "POST",
+            "type": "EntryPoint",
+            "url": "https://example.com/orders"
+          },
+          "type": "Action"
+        }
       ]
     },
     "url": {

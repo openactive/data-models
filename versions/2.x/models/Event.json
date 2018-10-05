@@ -381,7 +381,7 @@
         {
           "name": "Book",
           "target": {
-            "encodingType": "application/vnd.openactive.v0.4+json",
+            "encodingType": "application/vnd.openactive.v1.0+json",
             "httpMethod": "POST",
             "type": "EntryPoint",
             "url": "https://example.com/orders"
