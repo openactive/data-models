@@ -242,6 +242,7 @@
     "image": {
       "fieldName": "image",
       "model": "ArrayOf#ImageObject",
+      "sameAs": "https://schema.org/image",
       "description": [
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
       ],
@@ -374,6 +375,7 @@
     "potentialAction": {
       "fieldName": "potentialAction",
       "model": "ArrayOf#Action",
+      "sameAs": "https://schema.org/potentialAction",
       "description": [
         "The possible actions that a user may make. e.g. Book."
       ],
@@ -381,7 +383,7 @@
         {
           "name": "Book",
           "target": {
-            "encodingType": "application/vnd.openactive.v0.4+json",
+            "encodingType": "application/vnd.openactive.v1.0+json",
             "httpMethod": "POST",
             "type": "EntryPoint",
             "url": "https://example.com/orders"
