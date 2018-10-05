@@ -28,6 +28,21 @@
         "A text description for the brand."
       ]
     },
+    "identifier": {
+      "fieldName": "identifier",
+      "alternativeModels": [
+        "#PropertyValue",
+        "ArrayOf#PropertyValue"
+      ],
+      "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "https://schema.org/Integer"
+      ],
+      "example": "BR1234",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
+    },
     "logo": {
       "fieldName": "logo",
       "model": "#ImageObject",
