@@ -9,7 +9,6 @@
     "name",
     "activity",
     "location",
-    "event",
     "provider"
   ],
   "recommendedFields": [
@@ -17,7 +16,8 @@
     "description",
     "image",
     "hoursAvailable",
-    "aggregateFacilityUse"
+    "aggregateFacilityUse",
+    "event"
   ],
   "inSpec": [
     "type",
