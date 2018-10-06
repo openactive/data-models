@@ -17,17 +17,17 @@
         "TODO"
       ],
       "example": "SportsActivityLocation"
+    },
+    "containedInPlace": {
+      "fieldName": "containedInPlace",
+      "model": "#Place",
+      "alternativeTypes": [
+        "https://schema.org/url"
+      ],
+      "example": "TODO",
+      "description": [
+        "While a `url` is not specified as an option in the Modelling Specification, it is necessary to link entities in RPDE."
+      ]
     }
-  },
-  "containedInPlace": {
-    "fieldName": "containedInPlace",
-    "model": "#Place",
-    "alternativeTypes": [
-      "https://schema.org/url"
-    ],
-    "example": "TODO",
-    "description": [
-      "While a `url` is not specified as an option in the Modelling Specification, it is necessary to link entities in RPDE."
-    ]
   }
 }
