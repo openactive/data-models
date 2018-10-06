@@ -205,3 +205,13 @@ $ npm run test-no-lint
 Add new models to the `versions/models` directory.
 
 Find more on the models, see the [model reference](MODELS.md)
+
+
+### Releasing
+
+To release after pushing changes to git run the following:
+- `npm test` - check tests pass
+- `npm version patch` - to bump the patch version (see [semver](https://docs.npmjs.com/getting-started/semantic-versioning))
+- `npm publish` - to publish to npm
+- `git push` - to push the repo, as npm will have created git tags with the last command that need to be pushed
+- Redeploy `data-model-validator-site` in Heroku, and it will auto update (for patch and minor version bumps only, major versions are breaking changes by definition so require code changes to the other projects).

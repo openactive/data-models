@@ -242,7 +242,6 @@
     "image": {
       "fieldName": "image",
       "model": "ArrayOf#ImageObject",
-      "sameAs": "https://schema.org/image",
       "description": [
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
       ],
