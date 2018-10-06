@@ -37,14 +37,16 @@
       "requiredType": "https://schema.org/Text",
       "options": [
         "SessionSeries",
-        "ScheduledSession",
+        "SessionSeries.ScheduledSession",
         "FacilityUse",
         "IndividualFacilityUse",
-        "Slot",
+        "FacilityUse.Slot",
+        "IndividualFacilityUse.Slot",
         "Course",
         "CourseInstance",
         "HeadlineEvent",
-        "Event"
+        "Event",
+        "EventSeries"
       ],
       "description": [
         "The kind property allows for the representation of different entity types, though where possible referenced entities should be embedded into the primary entity. Each entity type (kind) can be synchronised separately, this allows a decoupling of the sync logic from the data structure, and allows the data structure to be reassembled on the data consumer side (at System 2)."
