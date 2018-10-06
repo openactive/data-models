@@ -36,6 +36,6 @@
     "test": "npm run test-no-lint",
     "test-no-lint": "jasmine",
     "test-debug": "node --inspect-brk -i ./node_modules/jasmine/bin/jasmine.js",
-    "publish": "git pull && git push && npm version patch && npm publish && git push"
+    "publish-patch": "git pull && git push && npm version patch && npm publish && git push"
   }
 }
