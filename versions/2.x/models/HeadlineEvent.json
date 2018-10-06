@@ -1,5 +1,5 @@
 {
-  "type": "HeadlineEvent",
+  "type-error": "HeadlineEvent",
   "subClassOf": "#Event",
   "notInSpec": [
     "eventSchedule"
