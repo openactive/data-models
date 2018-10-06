@@ -9,8 +9,7 @@
       "data": {
         "@context": [
           "https://openactive.io/",
-          "https://openactive.io/ns-beta",
-          "http://data.emduk.org/ns/emduk.jsonld"
+          "https://openactive.io/ns-beta"
         ],
         "type": "FacilityUse",
         "id": "http://www.example.org/facility-uses/1",
