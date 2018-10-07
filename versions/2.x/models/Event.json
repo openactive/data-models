@@ -273,7 +273,7 @@
       "sameAs": "https://openactive.io/leader",
       "model": "ArrayOf#Person",
       "description": [
-        "Refers to people (schema:Person) or organizations (schema:Organization) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
+        "Refers to a person (schema:Person) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
       ],
       "example": [{
         "familyName": "Smith",
