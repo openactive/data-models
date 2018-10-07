@@ -5,6 +5,7 @@
 
 const getContext = require('./getContext');
 const getEnums = require('./getEnums');
+const getModels = require('./getModels');
 const getExamples = require('./getExamples');
 const getFullyQualifiedProperty = require('./getFullyQualifiedProperty');
 const getGraph = require('./getGraph');
@@ -17,6 +18,7 @@ function createExports() {
   const root = {
     getContext,
     getEnums,
+    getModels,
     getExamples,
     getFullyQualifiedProperty,
     getGraph,

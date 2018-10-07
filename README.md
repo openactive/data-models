@@ -157,6 +157,24 @@ const eventModel2 = loadModel('Event', '2.0');
 
 ```
 
+#### getModels( [version] )
+
+Returns a map of model definitions for a particular version of the spec.
+
+##### Example
+
+```js
+
+const { getModels } = require('@openactive/data-models');
+
+// Returns the latest version of the models map
+const models = getModels();
+
+// Returns the 2.0 version of  the models map
+const models2 = getModels('2.0');
+
+```
+
 #### versions
 
 A hash of available versions. This includes some named aliases. You can pass the keys of this hash to any of the above methods in the `version` parameter.
