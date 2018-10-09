@@ -15,6 +15,11 @@
     "urlTemplate"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "EntryPoint"
+    },
     "encodingType": {
       "fieldName": "encodingType",
       "sameAs": "https://schema.org/encodingType",
@@ -42,15 +47,6 @@
       "description": [
         "An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "EntryPoint",
-      "description": [
-        "The type of object, in this case EntryPoint"
-      ],
-      "example": "EntryPoint"
     },
     "urlTemplate": {
       "fieldName": "urlTemplate",

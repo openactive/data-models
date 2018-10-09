@@ -36,6 +36,11 @@
     "amenityFeature"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Place"
+    },
     "address": {
       "fieldName": "address",
       "sameAs": "https://schema.org/address",
@@ -190,15 +195,6 @@
       "description": [
         "The telephone number for the Place"
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Place",
-      "description": [
-        "The type of object, in this case Place"
-      ],
-      "example": "Place"
     },
     "url": {
       "fieldName": "url",

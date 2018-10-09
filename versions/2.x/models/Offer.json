@@ -28,6 +28,11 @@
     "prepayment"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Offer"
+    },
     "advanceBooking": {
       "fieldName": "advanceBooking",
       "sameAs": "https://openactive.io/advanceBooking",
@@ -104,15 +109,6 @@
         "The currency (in 3-letter ISO 4217 format) of the price.",
         "If an Offer has a zero price, then this property is not required. Otherwise the currency must be specified."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Offer",
-      "description": [
-        "The type of object, in this case Offer"
-      ],
-      "example": "Offer"
     },
     "url": {
       "fieldName": "url",

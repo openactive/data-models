@@ -27,6 +27,11 @@
     "notation"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Concept"
+    },
     "altLabel": {
       "fieldName": "altLabel",
       "requiredType": "ArrayOf#https://schema.org/Text",
@@ -74,15 +79,6 @@
       "description": [
         "A human readable string for use in user interfaces."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Concept",
-      "description": [
-        "The type of object, in this case Concept"
-      ],
-      "example": "Concept"
     }
   }
 }

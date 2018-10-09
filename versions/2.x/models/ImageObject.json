@@ -12,18 +12,17 @@
     "url"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "ImageObject"
+    },
     "thumbnail": {
       "fieldName": "thumbnail",
       "model": "ArrayOf#ImageObject",
       "description": [
         "The URL for a thumbnail image for an image."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "ImageObject",
-      "example": "ImageObject"
     },
     "url": {
       "fieldName": "url",

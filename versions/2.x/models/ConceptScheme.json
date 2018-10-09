@@ -25,6 +25,11 @@
     "concept"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "ConceptScheme"
+    },
     "concept": {
       "fieldName": "concept",
       "sameAs": "https://openactive.io/concept",
@@ -66,15 +71,6 @@
       "description": [
         "The title of the scheme"
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "ConceptScheme",
-      "description": [
-        "The type of object, in this case ConceptScheme"
-      ],
-      "example": "ConceptScheme"
     },
     "url": {
       "fieldName": "url",

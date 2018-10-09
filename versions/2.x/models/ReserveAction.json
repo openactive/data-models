@@ -6,8 +6,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "ReserveAction",
-      "example": "ReserveAction"
+      "requiredContent": "ReserveAction"
     }
   }
 }

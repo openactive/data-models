@@ -11,6 +11,11 @@
     "maxValue"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "QuantitativeValue"
+    },
     "maxValue": {
       "fieldName": "maxValue",
       "requiredType": "https://schema.org/Integer",
@@ -26,15 +31,6 @@
         "The minimum value."
       ],
       "example": 16
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "QuantitativeValue",
-      "description": [
-        "The type of object, in this case QuantitativeValue"
-      ],
-      "example": "QuantitativeValue"
     }
   }
 }

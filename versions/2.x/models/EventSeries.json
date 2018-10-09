@@ -27,8 +27,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "EventSeries",
-      "example": "EventSeries"
+      "requiredContent": "EventSeries"
     }
   }
 }

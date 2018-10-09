@@ -6,8 +6,16 @@
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "Parking",
-      "example": "Parking"
+      "requiredContent": "Parking"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Roadside Parking",
+      "description": [
+        "A string, suitable for presentation in user interfaces."
+      ]
     }
   }
 }

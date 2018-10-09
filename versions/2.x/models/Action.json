@@ -14,6 +14,11 @@
     "target"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Action"
+    },
     "name":{
       "fieldName": "name",
       "sameAs": "https://schema.org/name",
@@ -36,15 +41,6 @@
       "description": [
         "A definition of the target of the action."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Action",
-      "description": [
-        "The type of object, in this case Action"
-      ],
-      "example": "Action"
     }
   }
 }

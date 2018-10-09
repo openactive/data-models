@@ -17,6 +17,11 @@
     "offers"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "SessionSeries"
+    },
     "subEvent": {
       "fieldName": "subEvent",
       "sameAs": "https://schema.org/subEvent",
@@ -27,12 +32,6 @@
       "inheritsTo": {
         "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule"]
       }
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "SessionSeries",
-      "example": "SessionSeries"
     }
   }
 }

@@ -13,6 +13,11 @@
     "longitude"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "GeoCoordinates"
+    },
     "latitude": {
       "fieldName": "latitude",
       "sameAs": "https://schema.org/latitude",
@@ -32,15 +37,6 @@
       "description": [
         "The longitude of a location. For example -0.083437 (WGS 84)."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "GeoCoordinates",
-      "description": [
-        "The type of object, in this case GeoCoordinates"
-      ],
-      "example": "GeoCoordinates"
     }
   }
 }

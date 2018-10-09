@@ -22,6 +22,11 @@
     "logo"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Person"
+    },
     "description": {
       "fieldName": "description",
       "sameAs": "https://schema.org/description",
@@ -84,15 +89,6 @@
       "description": [
         "The telephone number of the person"
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Person",
-      "description": [
-        "The type of object, in this case Person"
-      ],
-      "example": "Person"
     },
     "url": {
       "fieldName": "url",

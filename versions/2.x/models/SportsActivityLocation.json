@@ -12,8 +12,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "SportsActivityLocation",
-      "example": "SportsActivityLocation"
+      "requiredContent": "SportsActivityLocation"
     },
     "containedInPlace": {
       "fieldName": "containedInPlace",

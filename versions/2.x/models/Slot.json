@@ -39,6 +39,11 @@
     "maximumUses"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Slot"
+    },
     "duration": {
       "fieldName": "duration",
       "sameAs": "https://schema.org/duration",
@@ -128,15 +133,6 @@
         "The start date and time of the slot. Can be specified as a schema:Date or schema:DateTime"
       ],
       "example": "2018-01-27T12:00:00Z"
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Slot",
-      "description": [
-        "The type of object, in this case Slot"
-      ],
-      "example": "Slot"
     }
   }
 }

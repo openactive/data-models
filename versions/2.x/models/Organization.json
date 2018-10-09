@@ -26,6 +26,11 @@
     "sameAs"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Organization"
+    },
     "description": {
       "fieldName": "description",
       "sameAs": "https://schema.org/description",
@@ -87,12 +92,6 @@
       "description": [
         "The telephone number of the Organization"
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Organization",
-      "example": "Organization"
     },
     "url": {
       "fieldName": "url",

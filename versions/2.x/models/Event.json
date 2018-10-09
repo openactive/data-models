@@ -80,6 +80,11 @@
     "schedulingNote"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Event"
+    },
     "@context": {
       "fieldName": "@context",
       "requiredType": "https://schema.org/url",
@@ -479,15 +484,6 @@
         "The start date and time of the event. Can be specified as a schema:Date or schema:DateTime."
       ],
       "example": "2018-01-27T12:00:00Z"
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "Event",
-      "description": [
-        "The type of object, in this case Event"
-      ],
-      "example": "Event"
     },
     "url": {
       "fieldName": "url",

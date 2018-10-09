@@ -45,6 +45,11 @@
     "potentialAction"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "IndividualFacilityUse"
+    },
     "aggregateFacilityUse": {
       "fieldName": "aggregateFacilityUse",
       "model": "#FacilityUse",
@@ -70,12 +75,6 @@
           "maximumUses": 1
         }
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "IndividualFacilityUse",
-      "example": "IndividualFacilityUse"
     }
   }
 }

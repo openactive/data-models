@@ -25,6 +25,11 @@
     "endDate"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "ScheduledSession"
+    },
     "superEvent": {
       "fieldName": "superEvent",
       "sameAs": "https://schema.org/superEvent",
@@ -35,12 +40,6 @@
       "inheritsFrom": {
         "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule"]
       }
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "ScheduledSession",
-      "example": "ScheduledSession"
     }
   }
 }

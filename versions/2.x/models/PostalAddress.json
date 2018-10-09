@@ -19,6 +19,11 @@
     "streetAddress"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "PostalAddress"
+    },
     "addressCountry": {
       "fieldName": "addressCountry",
       "sameAs": "https://schema.org/addressCountry",
@@ -63,12 +68,6 @@
       "description": [
         "The street address."
       ]
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "PostalAddress",
-      "example": "PostalAddress"
     }
   }
 }

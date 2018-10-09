@@ -15,6 +15,11 @@
     "dayOfWeek"
   ],
   "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "OpeningHoursSpecification"
+    },
     "closes": {
       "fieldName": "closes",
       "requiredType": "https://schema.org/Time",
@@ -38,12 +43,6 @@
         "The opening time."
       ],
       "example": "09:00"
-    },
-    "type": {
-      "fieldName": "type",
-      "requiredType": "https://schema.org/Text",
-      "requiredContent": "OpeningHoursSpecification",
-      "example": "OpeningHoursSpecification"
     }
   }
 }

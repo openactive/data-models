@@ -13,19 +13,18 @@
     "value"
   ],
   "fields": {
-    "name": {
-      "fieldName": "name",
-      "requiredType": "https://schema.org/Text",
-      "example": "Changing Facilities",
-      "description": [
-        "A string, suitable for presentation in user interfaces."
-      ]
-    },
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "LocationFeatureSpecification",
-      "example": "LocationFeatureSpecification"
+      "requiredContent": "LocationFeatureSpecification"
+    },
+    "name": {
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Bike Shed",
+      "description": [
+        "A string, suitable for presentation in user interfaces."
+      ]
     },
     "value": {
       "fieldName": "value",
