@@ -246,6 +246,15 @@ describe('models', () => {
                 }
               }
             });
+
+            it('should have "type" with only exactly the properties fieldName, requiredType, requiredContent; and with requiredType as "https://schema.org/Text".', () => {
+              if (jsonData.type !== 'FeedPage' && jsonData.type !== 'FeedItem') {
+                expect(jsonData.fields.type && Object.keys(jsonData.fields.type).length).toBe(3, 'number of properties within type');
+                expect(jsonData.fields.type.fieldName).toBe('type');
+                expect(jsonData.fields.type.requiredType).toBe('https://schema.org/Text');
+                expect(jsonData.fields.type.requiredContent).toMatch(/^[a-zA-Z]+$/);
+              }
+            });
           });
           describe('namespaces', () => {
             let model;
