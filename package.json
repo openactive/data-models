@@ -31,6 +31,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "lint": "eslint \"src/**/*.js\" \"scripts/**/*.js\"",
+    "lint-fix": "eslint --fix \"src/**/*.js\" \"scripts/**/*.js\"",
     "prepare": "npm run build",
     "pretest": "npm run build && npm run lint",
     "test": "npm run test-no-lint",

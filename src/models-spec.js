@@ -234,11 +234,14 @@ describe('models', () => {
               }
             });
 
-            it('should have fields with a description property that is an array', () => {
+            it('should have fields with a description property that is an array of strings, unless it is a type', () => {
               for (const field in jsonData.fields) {
                 if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
                   if (typeof jsonData.fields[field].description !== 'undefined') {
-                    expect(jsonData.fields[field].description instanceof Array).toBe(true);
+                    expect(jsonData.fields[field].description instanceof Array
+                      && jsonData.fields[field].description.filter(item => typeof item !== 'string').length === 0).toBe(true, field);
+                  } else if (field !== 'type') {
+                    fail(`Does not have description, '${field}'.`);
                   }
                 }
               }
