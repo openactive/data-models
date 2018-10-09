@@ -87,7 +87,7 @@
         "ArrayOf#https://schema.org/url"
       ],
       "description": [
-          "This must be included in the top-most entity in the JSON model."
+        "This must be included in the top-most entity in the JSON model."
       ],
       "example": "https://openactive.io/"
     },
