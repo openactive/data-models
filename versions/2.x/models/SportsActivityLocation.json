@@ -13,9 +13,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "SportsActivityLocation",
-      "description": [
-        "TODO"
-      ],
       "example": "SportsActivityLocation"
     },
     "containedInPlace": {
@@ -24,7 +21,7 @@
       "alternativeTypes": [
         "https://schema.org/url"
       ],
-      "example": "TODO",
+      "example": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d",
       "description": [
         "While a `url` is not specified as an option in the Modelling Specification, it is necessary to link entities in RPDE."
       ]

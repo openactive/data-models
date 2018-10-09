@@ -7,9 +7,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "Parking",
-      "description": [
-        "TODO"
-      ],
       "example": "Parking"
     }
   }

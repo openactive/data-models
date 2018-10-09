@@ -103,9 +103,16 @@
       "fieldName": "exceptDate",
       "requiredType": "ArrayOf#https://schema.org/Date",
       "alternativeTypes": ["ArrayOf#https://schema.org/DateTime"],
-      "example": "TODO",
+      "example": [
+        "2016-04-13T17:10:00Z",
+        "2016-09-14T17:10:00Z",
+        "2016-12-14T18:10:00Z",
+        "2016-12-21T18:10:00Z",
+        "2016-12-28T18:10:00Z",
+        "2017-01-04T18:10:00Z"
+      ],
       "description": [
-        "TODO"
+        "Exception dates where the schedule should not generate an event."
       ]
     },
     "idTemplate": {
@@ -145,7 +152,7 @@
         "CourseInstance"
       ],
       "description": [
-        "The type of event this schedule related to"
+        "The type of event this schedule related to."
       ],
       "example": "Event"
     },
@@ -171,9 +178,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "Schedule",
-      "description": [
-        "The type of object, in this case Schedule"
-      ],
       "example": "Schedule"
     },
     "urlTemplate": {

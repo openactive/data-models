@@ -15,7 +15,7 @@
       "fieldName": "maxValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "TODO"
+        "The maximum value."
       ],
       "example": 60
     },
@@ -23,7 +23,7 @@
       "fieldName": "minValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "TODO"
+        "The minimum value."
       ],
       "example": 16
     },

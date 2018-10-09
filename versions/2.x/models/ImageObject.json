@@ -23,9 +23,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "ImageObject",
-      "description": [
-        "The type of object, in this case ImageObject"
-      ],
       "example": "ImageObject"
     },
     "url": {

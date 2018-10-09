@@ -19,8 +19,8 @@
       "fieldName": "encodingType",
       "sameAs": "https://schema.org/encodingType",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "application/vnd.openactive.v0.4+json",
-      "example": "application/vnd.openactive.v0.4+json",
+      "requiredContent": "application/vnd.openactive.v1.0+json",
+      "example": "application/vnd.openactive.v1.0+json",
       "description": [
         "The supported encoding type for an EntryPoint request"
       ]
