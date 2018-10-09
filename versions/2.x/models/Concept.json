@@ -40,7 +40,7 @@
       "requiredType": "ArrayOf#https://schema.org/url",
       "example": "https://example.com/football",
       "description": [
-        "A broader concept URI"
+        "A broader Concept URI"
       ]
     },
     "inScheme": {

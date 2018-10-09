@@ -40,9 +40,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "ScheduledSession",
-      "description": [
-        "TODO"
-      ],
       "example": "ScheduledSession"
     }
   }

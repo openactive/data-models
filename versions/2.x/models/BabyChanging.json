@@ -7,9 +7,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "BabyChanging",
-      "description": [
-        "TODO"
-      ],
       "example": "BabyChanging"
     }
   }

@@ -25,9 +25,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "LocationFeatureSpecification",
-      "description": [
-        "TODO"
-      ],
       "example": "LocationFeatureSpecification"
     },
     "value": {

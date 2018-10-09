@@ -1,8 +1,7 @@
 {
   "type": "IndividualFacilityUse",
-  "hasId": true,
-  "idFormat": "https://schema.org/url",
-  "sampleId": "https://example.com/individfacilityUse/",
+  "subClassOf": "#FacilityUse",
+  "sampleId": "https://example.com/individual-facility-use/1",
   "requiredFields": [
     "type",
     "url",
@@ -19,9 +18,13 @@
     "aggregateFacilityUse",
     "event"
   ],
+  "notInSpec": [
+    "individualFacilityUse"
+  ],
   "inSpec": [
     "type",
     "id",
+    "@context",
     "url",
     "identifier",
     "name",
@@ -33,6 +36,7 @@
     "offers",
     "hoursAvailable",
     "aggregateFacilityUse",
+    "individualFacilityUse",
     "provider",
     "accessibilityInformation",
     "accessibilitySupport",
@@ -41,36 +45,6 @@
     "potentialAction"
   ],
   "fields": {
-    "accessibilityInformation": {
-      "fieldName": "accessibilityInformation",
-      "requiredType": "https://schema.org/Text",
-      "description": [
-        "Provide additional, specific documentation for participants about how disabilities are, or can be supported at the facility."
-      ],
-      "example": "TODO"
-    },
-    "accessibilitySupport": {
-      "fieldName": "accessibilitySupport",
-      "requiredType": "ArrayOf#https://schema.org/Text",
-      "alternativeModels": ["ArrayOf#Concept"],
-      "description": [
-        "Used to specify the types of disabilities or impairments that are supported at a facility."
-      ],
-      "example": "TODO"
-    },
-    "activity": {
-      "fieldName": "activity",
-      "model": "ArrayOf#Concept",
-      "description": [
-        "Specifies the physical activity or activities that will take place during a facility use."
-      ],
-      "example": [{
-        "id": "https://example.com/reference/activities#Speedball",
-        "inScheme": "https://example.com/reference/activities",
-        "prefLabel": "Speedball",
-        "type": "Concept"
-      }]
-    },
     "aggregateFacilityUse": {
       "fieldName": "aggregateFacilityUse",
       "model": "#FacilityUse",
@@ -78,175 +52,27 @@
         "Inverse of the oa:individualFacilityUse property. Related an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court) to a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location)."
       ]
     },
-    "attendeeInstructions": {
-      "fieldName": "attendeeInstructions",
-      "sameAs": "https://openactive.io/attendeeInstructions",
-      "requiredType": "https://schema.org/Text",
-      "description": [
-        "Provides additional notes and instructions for users of a facility. E.g. more information on how to find it, what to bring, etc."
-      ],
-      "example": "TODO"
-    },
-    "category": {
-      "fieldName": "category",
-      "model": "ArrayOf#Concept",
-      "alternativeTypes": [
-        "ArrayOf#https://schema.org/Text"
-      ],
-      "description": [
-        "Provides a set of tags that help categorise and describe a facility."
-      ],
-      "example": [{
-        "id": "https://example.com/reference/categories#Top%20Club%20Level",
-        "inScheme": "https://example.com/reference/categories",
-        "prefLabel": "Top Club Level",
-        "type": "Concept"
-      }]
-    },
-    "description": {
-      "fieldName": "description",
-      "sameAs": "https://schema.org/description",
-      "requiredType": "https://schema.org/Text",
-      "example": "An fast paced game that incorporates netball, handball and football.",
-      "description": [
-        "A free text description of the facility use"
-      ]
-    },
     "event": {
       "fieldName": "event",
       "sameAs": "https://pending.schema.org/event",
       "model": "ArrayOf#Slot",
       "description": [
-        "TODO"
-      ]
-    },
-    "hoursAvailable": {
-      "fieldName": "hoursAvailable",
-      "sameAs": "https://schema.org/hoursAvailable",
-      "model": "ArrayOf#OpeningHoursSpecification",
-      "description": [
-        "The times the facility use is available"
-      ]
-    },
-    "identifier": {
-      "fieldName": "identifier",
-      "sameAs": "https://schema.org/identifier",
-      "alternativeModels": [
-        "#PropertyValue",
-        "ArrayOf#PropertyValue"
-      ],
-      "requiredType": "https://schema.org/Text",
-      "alternativeTypes": [
-        "https://schema.org/Integer"
-      ],
-      "example": "SB1234",
-      "description": [
-        "A local non-URI identifier for the resource"
-      ]
-    },
-    "image": {
-      "fieldName": "image",
-      "sameAs": "https://schema.org/image",
-      "model": "ArrayOf#ImageObject",
-      "description": [
-        "An image or photo that depicts the facility use, e.g. a photo taken at a previous event."
-      ],
-      "example": [{
-        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
-        "type": "ImageObject",
-        "url": "http://example.com/static/image/speedball_large.jpg"
-      }]
-    },
-    "location": {
-      "fieldName": "location",
-      "sameAs": "https://schema.org/location",
-      "model": "#Place",
-      "description": [
-        "The location at which the facility use will take place."
-      ],
-      "example": {
-        "address": {
-          "addressLocality": "New Malden",
-          "addressRegion": "London",
-          "postalCode": "NW5 3DU",
-          "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
-          "type": "PostalAddress"
-        },
-        "description": "Raynes Park High School in London",
-        "geo": {
-          "latitude": 51.4034423828125,
-          "longitude": -0.2369088977575302,
-          "type": "GeoCoordinates"
-        },
-        "id": "https://example.com/locations/1234ABCD",
-        "identifier": "1234ABCD",
-        "name": "Raynes Park High School",
-        "telephone": "01253 473934",
-        "type": "Place"
-      }
-    },
-    "name": {
-      "fieldName": "name",
-      "sameAs": "https://schema.org/name",
-      "requiredType": "https://schema.org/Text",
-      "example": "Speedball",
-      "description": [
-        "The name of the facility use"
-      ]
-    },
-    "provider": {
-      "fieldName": "provider",
-      "sameAs": "https://schema.org/provider",
-      "module": "#Organization",
-      "description": [
-        "The organisation responsible for providing the facility"
+        {
+          "type": "Slot",
+          "id": "http://www.example.org/api/individual-facility-uses/432#/event/2018-03-01T10:00:00Z",
+          "startDate": "2018-03-01T11:00:00Z",
+          "endDate": "2018-03-01T11:30:00Z",
+          "duration": "PT30M",
+          "remainingUses": 0,
+          "maximumUses": 1
+        }
       ]
     },
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "IndividualFacilityUse",
-      "description": [
-        "The type of object, in this case IndividualFacilityUse"
-      ],
       "example": "IndividualFacilityUse"
-    },
-    "offers": {
-      "fieldName": "offers",
-      "sameAs": "https://schema.org/offers",
-      "model": "ArrayOf#Offer",
-      "description": [
-        "TODO"
-      ]
-    },
-    "potentialAction": {
-      "fieldName": "potentialAction",
-      "model": "ArrayOf#Action",
-      "sameAs": "https://schema.org/potentialAction",
-      "description": [
-        "The possible actions that a user may make. e.g. Book."
-      ],
-      "example": [
-        {
-          "name": "Book",
-          "target": {
-            "encodingType": "application/vnd.openactive.v1.0+json",
-            "httpMethod": "POST",
-            "type": "EntryPoint",
-            "url": "https://example.com/orders"
-          },
-          "type": "Action"
-        }
-      ]
-    },
-    "url": {
-      "fieldName": "url",
-      "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
-      "description": [
-        "A URL to a web page (or section of a page) that describes the facility use."
-      ],
-      "example": "https://example.com/facility-use/1234"
     }
   }
 }

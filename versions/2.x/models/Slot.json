@@ -67,7 +67,7 @@
       "description": [
         "URI to the FacilityUse that has this offer"
       ],
-      "example": "TODO"
+      "example": "https://example.com/facility-use/1"
     },
     "identifier": {
       "fieldName": "identifier",
@@ -89,7 +89,7 @@
       "fieldName": "maximumUses",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "TODO"
+        "The maximum available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
       "example": 16
     },
@@ -98,15 +98,22 @@
       "sameAs": "https://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
-        "TODO"
+        "An array of schema:Offer that include the price of booking."
       ],
-      "example": "TODO"
+      "example": {
+        "type": "Offer",
+        "identifier": "OX-AD",
+        "name": "Adult",
+        "price": 7.5,
+        "priceCurrency": "GBP",
+        "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
+      }
     },
     "remainingUses": {
       "fieldName": "remainingUses",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "TODO"
+        "The remaining available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
       "example": 5
     },

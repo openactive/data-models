@@ -87,7 +87,7 @@
         "ArrayOf#https://schema.org/url"
       ],
       "description": [
-          "TODO"
+        "This must be included in the top-most entity in the JSON model."
       ],
       "example": "https://openactive.io/"
     },
@@ -98,7 +98,7 @@
       "description": [
         "Provide additional, specific documentation for participants about how disabilities are, or can be supported at the Event."
       ],
-      "example": "TODO"
+      "example": "This route has been British Cycling assessed as an accessible route, meaning it is suitable for the majority of adaptive bikes. The route will have no or low levels of traffic, there will be plenty of space and will have a good surface throughout. If you have any questions about using this route on an adaptive bike on this ride, please use visit https://www.letsride.co.uk/accessibility or call 0123 456 7000 and ask for the Recreation team."
     },
     "accessibilitySupport": {
       "fieldName": "accessibilitySupport",
@@ -108,7 +108,14 @@
       "description": [
         "Used to specify the types of disabilities or impairments that are supported at an event."
       ],
-      "example": "TODO"
+      "example": [
+        {
+          "type": "Concept",
+          "id": "https://openactive.io/accessibility-support#1393f2dc-3fcc-4be9-a99f-f1e51f5ad277",
+          "prefLabel": "Visual impairment",
+          "inScheme": "https://openactive.io/accessibility-support"
+        }
+      ]
     },
     "activity": {
       "fieldName": "activity",
@@ -117,12 +124,14 @@
       "description": [
         "Specifies the physical activity or activities that will take place during an event."
       ],
-      "example": [{
-        "id": "https://example.com/reference/activities#Speedball",
-        "inScheme": "https://example.com/reference/activities",
-        "prefLabel": "Speedball",
-        "type": "Concept"
-      }]
+      "example": [
+        {
+          "type": "Concept",
+          "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+          "prefLabel": "Bodypump™",
+          "inScheme": "https://openactive.io/activity-list"
+        }
+      ]
     },
     "ageRange": {
       "fieldName": "ageRange",
@@ -144,7 +153,7 @@
       "description": [
         "Provides additional notes and instructions for event attendees. E.g. more information on how to find the event, what to bring, etc."
       ],
-      "example": "TODO"
+      "example": "Ensure you bring trainers and a bottle of water."
     },
     "category": {
       "fieldName": "category",
@@ -156,12 +165,7 @@
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
       ],
-      "example": [{
-        "id": "https://example.com/reference/categories#Top%20Club%20Level",
-        "inScheme": "https://example.com/reference/categories",
-        "prefLabel": "Top Club Level",
-        "type": "Concept"
-      }]
+      "example": [ "High Intensity" ]
     },
     "contributor": {
       "fieldName": "contributor",
@@ -169,7 +173,13 @@
       "description": [
         "A Person who contributes to the facilitation of the Event."
       ],
-      "example": {}
+      "example": [{
+        "type": "Person",
+        "familyName": "Smith",
+        "givenName": "Nicole",
+        "id": "https://example.com/locations/1234ABCD/leaders/89",
+        "identifier": 89
+      }]
     },
     "description": {
       "fieldName": "description",
@@ -203,9 +213,19 @@
       "fieldName": "eventSchedule",
       "model": "ArrayOf#Schedule",
       "description": [
-        "TODO"
+        "A an array of oa:Schedule or oa:PartialSchedule, which represents a recurrence pattern."
       ],
-      "example": {}
+      "example": [
+        {
+          "type": "PartialSchedule",
+          "repeatFrequency": "P1W",
+          "startTime": "20:15",
+          "endTime": "20:45",
+          "byDay": [
+            "http://schema.org/Tuesday"
+          ]
+        }
+      ]
     },
     "eventStatus": {
       "fieldName": "eventStatus",
@@ -222,7 +242,7 @@
       "description": [
         "Indicates that an event is restricted to male, female or a mixed audience. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience"
       ],
-      "example": "https://openactive.io/Female"
+      "example": "https://openactive.io/FemaleOnly"
     },
     "identifier": {
       "fieldName": "identifier",
@@ -276,11 +296,11 @@
         "Refers to a person (schema:Person) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
       ],
       "example": [{
+        "type": "Person",
         "familyName": "Smith",
         "givenName": "Nicole",
         "id": "https://example.com/locations/1234ABCD/leaders/89",
-        "identifier": 89,
-        "type": "Person"
+        "identifier": 89
       }]
     },
     "level": {
@@ -291,9 +311,9 @@
         "ArrayOf#Concept"
       ],
       "description": [
-        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements. Values should ideally be drawn from a controlled vocabulary."
+        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements."
       ],
-      "example": "TODO"
+      "example": "beginner"
     },
     "location": {
       "fieldName": "location",
@@ -353,8 +373,16 @@
       "fieldName": "offers",
       "model": "ArrayOf#Offer",
       "description": [
-        "TODO"
-      ]
+        "An array of schema:Offer that include the price of attending."
+      ],
+      "example": [ {
+        "type": "Offer",
+        "identifier": "OX-AD",
+        "name": "Adult",
+        "price": 3.3,
+        "priceCurrency": "GBP",
+        "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
+      } ]
     },
     "organizer": {
       "fieldName": "organizer",
@@ -365,11 +393,11 @@
       "description": [
         "The person or organization ultimately responsible for an event. An organizer might be an  schema:Organization or a schema:Person."
       ],
-      "example": [{
+      "example": [ {
         "name": "Central Speedball Association",
         "type": "Organization",
         "url": "http://www.speedball-world.com"
-      }]
+      } ]
     },
     "potentialAction": {
       "fieldName": "potentialAction",
@@ -470,7 +498,7 @@
       "example": "https://example.com/event/1234"
     }
   },
-  "description": {
+  "description-example": {
     "sections": [
       {
         "title": "Example heading",

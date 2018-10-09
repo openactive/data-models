@@ -31,15 +31,12 @@
       "description": [
         "A commonly used identifier for the characteristic represented by the property"
       ],
-      "example": "TODO"
+      "example": "ActivePlaces"
     },
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "PropertyValue",
-      "description": [
-        "The type of object, in this case PropertyValue"
-      ],
       "example": "PropertyValue"
     },
     "value": {
@@ -49,7 +46,7 @@
         "https://schema.org/Integer"
       ],
       "description": [
-        "TODO"
+        "The actual value of this identifier"
       ],
       "example": "SB1234"
     }

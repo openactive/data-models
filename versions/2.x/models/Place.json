@@ -97,17 +97,25 @@
     "containedInPlace": {
       "fieldName": "containedInPlace",
       "model": "#Place",
-      "example": "TODO",
+      "example": {
+        "type": "Place",
+        "url": "https://www.everyoneactive.com/centres/Middlesbrough-Sports-Village",
+        "name": "Middlesbrough Sports Village"
+      },
       "description": [
-        "TODO"
+        "The place within which this Place exists"
       ]
     },
     "containsPlace": {
       "fieldName": "containsPlace",
       "model": "ArrayOf#Place",
-      "example": "TODO",
+      "example": {
+        "type": "Place",
+        "url": "https://www.everyoneactive.com/centres/Center-Parcs-Sports-Plaza",
+        "name": "Center Parcs Sports Plaza"
+      },
       "description": [
-        "TODO"
+        "Places that exist within this place"
       ]
     },
     "description": {
