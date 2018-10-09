@@ -134,6 +134,9 @@
       "sameAs": "https://pending.schema.org/event",
       "model": "ArrayOf#Slot",
       "description": [
+        "An array of slots of availability of this FacilityUse."
+      ],
+      "example": [
         {
           "type": "Slot",
           "id": "http://www.example.org/api/facility-uses/432#/event/2018-03-01T10:00:00Z",
@@ -186,6 +189,9 @@
       "fieldName": "individualFacilityUse",
       "model": "ArrayOf#IndividualFacilityUse",
       "description": [
+        "Inverse of the oa:aggregateFacilityUse property. Relates a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location) to an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court)."
+      ],
+      "example": [
         {
           "type": "IndividualFacilityUse",
           "id": "http://www.example.org/facility-uses/1",
