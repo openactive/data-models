@@ -1,6 +1,6 @@
 {
   "name": "@openactive/data-models",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Data models used to drive that OpenActive validator and developer documentation",
   "homepage": "http://openactive.io",
   "author": "Pete Walker <pete@imin.co> (https://github.com/petewalker)",
