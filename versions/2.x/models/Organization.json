@@ -79,7 +79,9 @@
       "fieldName": "sameAs",
       "sameAs": "https://schema.org/sameAs",
       "requiredType": "ArrayOf#https://schema.org/url",
-      "example": "https://example.org/example-org",
+      "example": [
+        "https://www.example.org/"
+      ],
       "description": [
         "Lists the URL(s) of the official social media profile pages associated with the organization."
       ]
