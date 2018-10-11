@@ -271,9 +271,14 @@
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
       ],
       "example": [{
-        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
         "type": "ImageObject",
-        "url": "http://example.com/static/image/speedball_large.jpg"
+        "url": "http://example.com/static/image/speedball_large.jpg",
+        "thumbnail":[
+          {
+            "type": "ImageObject",
+            "url": "http://example.com/static/image/speedball_thumbnail.jpg"
+          }
+        ]
       }]
     },
     "isAccessibleForFree": {
