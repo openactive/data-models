@@ -80,7 +80,8 @@
       "sameAs": "https://schema.org/sameAs",
       "requiredType": "ArrayOf#https://schema.org/url",
       "example": [
-        "https://www.example.org/"
+        "https://www.facebook.com/everyoneactive/",
+        "https://twitter.com/everyoneactive"
       ],
       "description": [
         "Lists the URL(s) of the official social media profile pages associated with the organization."
