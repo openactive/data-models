@@ -50,11 +50,12 @@
       ],
       "preferredComment": "Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires https://schema.org/PostalAddress and will not accept plain text addresses.",
       "example": {
+        "type": "PostalAddress",
+        "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
         "addressLocality": "New Malden",
         "addressRegion": "London",
         "postalCode": "NW5 3DU",
-        "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
-        "type": "PostalAddress"
+        "addressCountry": "GB"
       },
       "description": [
         "A structured PostalAddress object for the Place.","Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires https://schema.org/PostalAddress and will not accept plain text addresses."
