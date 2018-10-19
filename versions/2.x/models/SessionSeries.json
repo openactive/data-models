@@ -13,8 +13,7 @@
     "ageRange",
     "genderRestriction",
     "leader",
-    "level",
-    "offers"
+    "level"
   ],
   "fields": {
     "type": {

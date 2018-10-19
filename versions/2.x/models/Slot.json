@@ -9,7 +9,8 @@
     "facilityUse",
     "startDate",
     "duration",
-    "remainingUses"
+    "remainingUses",
+    "offers"
   ],
   "recommendedFields": [
     "id",

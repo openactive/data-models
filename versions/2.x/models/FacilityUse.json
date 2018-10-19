@@ -267,7 +267,12 @@
       "module": "#Organization",
       "description": [
         "The organisation responsible for providing the facility"
-      ]
+      ],
+      "example": {
+        "name": "Central Speedball Association",
+        "type": "Organization",
+        "url": "http://www.speedball-world.com"
+      }
     },
     "offers": {
       "fieldName": "offers",

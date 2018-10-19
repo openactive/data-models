@@ -10,7 +10,8 @@
     "name",
     "location",
     "activity",
-    "organizer"
+    "organizer",
+    "offers"
   ],
   "requiredOptions": [
     {
@@ -37,7 +38,6 @@
     "level",
     "maximumAttendeeCapacity",
     "remainingAttendeeCapacity",
-    "offers",
     "startDate",
     "endDate"
   ],
@@ -403,11 +403,11 @@
       "description": [
         "The person or organization ultimately responsible for an event. An organizer might be an  schema:Organization or a schema:Person."
       ],
-      "example": [ {
+      "example": {
         "name": "Central Speedball Association",
         "type": "Organization",
         "url": "http://www.speedball-world.com"
-      } ]
+      }
     },
     "potentialAction": {
       "fieldName": "potentialAction",

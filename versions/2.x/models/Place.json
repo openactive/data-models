@@ -8,13 +8,22 @@
     "type",
     "name"
   ],
+  "requiredOptions": [
+    {
+      "description": [
+        "While these properties are marked as recommended, a data publisher must provide a schema:address and/or specify a oa:geo for an event. Ideally both would be included."
+      ],
+      "options": [
+        "address",
+        "geo"
+      ]
+    }
+  ],
   "recommendedFields": [
     "id",
     "url",
     "description",
     "image",
-    "address",
-    "geo",
     "telephone",
     "openingHoursSpecification",
     "amenityFeature"
