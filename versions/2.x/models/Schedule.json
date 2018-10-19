@@ -4,7 +4,6 @@
   "hasId": false,
   "requiredFields": [
     "type",
-    "repeatFrequency",
     "scheduledEventType",
     "startTime",
     "endTime"
