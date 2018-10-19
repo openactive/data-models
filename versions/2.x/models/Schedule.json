@@ -12,12 +12,13 @@
   "requiredOptions": [
     {
       "description": [
-        "While these properties are marked as optional, a data publisher must provide either a schema:byDay, schema:byMonth or byMonthDay for a schedule."
+        "While these properties are marked as optional, a data publisher must provide either a `byDay`, `byMonth`, `byMonthDay` or `repeatFrequency` for a schedule."
       ],
       "options": [
         "byDay",
         "byMonth",
-        "byMonthDay"
+        "byMonthDay",
+        "repeatFrequency"
       ]
     }
   ],
