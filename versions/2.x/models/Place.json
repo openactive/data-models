@@ -11,7 +11,7 @@
   "requiredOptions": [
     {
       "description": [
-        "While these properties are marked as recommended, a data publisher must provide a schema:address and/or specify a oa:geo for an event. Ideally both would be included."
+        "While these properties are marked as recommended in the specification, a data publisher must provide as much detail in both `address` and `geo` for an event as possible."
       ],
       "options": [
         "address",
