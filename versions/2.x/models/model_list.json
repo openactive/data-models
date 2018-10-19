@@ -12,6 +12,7 @@
     "ChangingFacilities",
     "Concept",
     "ConceptScheme",
+    "Course",
     "Creche",
     "EntryPoint",
     "FacilityUse",
@@ -41,6 +42,7 @@
   "event_elements": [
     "Brand",
     "Concept",
+    "Course",
     "GeoCoordinates",
     "ImageObject",
     "Organization",
