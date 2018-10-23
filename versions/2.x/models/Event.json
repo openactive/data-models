@@ -310,6 +310,7 @@
         "type": "Person",
         "familyName": "Smith",
         "givenName": "Nicole",
+        "gender": "https://schema.org/Male",
         "id": "https://example.com/locations/1234ABCD/leaders/89",
         "identifier": 89
       }]
