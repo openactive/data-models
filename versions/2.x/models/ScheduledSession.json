@@ -8,9 +8,6 @@
   ],
   "requiredFields": [
     "type",
-    "name",
-    "location",
-    "activity",
     "startDate"
   ],
   "requiredOptions": [],
