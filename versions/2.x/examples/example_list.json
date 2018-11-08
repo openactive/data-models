@@ -1,7 +1,15 @@
 [
   {
     "file": "sessionseries_example_1.json",
+    "name": "SessionSeries / ScheduledSession Combined Example"
+  },
+  {
+    "file": "sessionseries-split_example_1.json",
     "name": "SessionSeries Example"
+  },
+  {
+    "file": "scheduledsession-split_example_1.json",
+    "name": "ScheduledSession Example"
   },
   {
     "file": "facilityuse_example_1.json",
