@@ -16,6 +16,8 @@
     "identifier",
     "url",
     "name",
+    "givenName",
+    "familyName",
     "description",
     "telephone",
     "sameAs",
@@ -69,6 +71,26 @@
       "example": "Daley Thompson",
       "description": [
         "A full name for the person.",
+        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+      ]
+    },
+    "givenName": {
+      "fieldName": "givenName",
+      "sameAs": "https://schema.org/givenName",
+      "requiredType": "https://schema.org/Text",
+      "example": "Daley",
+      "description": [
+        "A first name for the person.",
+        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+      ]
+    },
+    "familyName": {
+      "fieldName": "familyName",
+      "sameAs": "https://schema.org/familyName",
+      "requiredType": "https://schema.org/Text",
+      "example": "Thompson",
+      "description": [
+        "A last name for the person.",
         "This person must give direct permission for their personal information to be shared as part of the Open Data."
       ]
     },

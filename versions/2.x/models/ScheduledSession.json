@@ -34,6 +34,9 @@
       "fieldName": "superEvent",
       "sameAs": "https://schema.org/superEvent",
       "model": "#Event",
+      "alternativeTypes": [
+        "https://schema.org/url"
+      ],
       "description": [
         "Relates a child event to a parent event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A parent event might specify a recurring schedule, of which the child event is one specific instance"
       ],

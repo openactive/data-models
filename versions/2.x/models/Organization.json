@@ -20,6 +20,7 @@
     "identifier",
     "url",
     "name",
+    "email",
     "description",
     "logo",
     "telephone",
@@ -73,6 +74,15 @@
       "example": "Central Speedball Association",
       "description": [
         "The name of the Organization"
+      ]
+    },
+    "email": {
+      "fieldName": "email",
+      "sameAs": "https://schema.org/email",
+      "requiredType": "https://schema.org/Text",
+      "example": "info@example.com",
+      "description": [
+        "General enquiries e-mail address for the organization."
       ]
     },
     "sameAs": {
