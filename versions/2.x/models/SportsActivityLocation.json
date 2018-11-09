@@ -5,6 +5,7 @@
   "requiredFields": [
     "type"
   ],
+  "requiredOptions": [],
   "recommendedFields": [
     "id"
   ],
