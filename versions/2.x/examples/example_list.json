@@ -16,6 +16,10 @@
     "name": "ScheduledSession Example"
   },
   {
+    "file": "sessionseries-eventseries-split_example_1.json",
+    "name": "SessionSeries with EventSeries Example"
+  },
+  {
     "file": "facilityuse_example_1.json",
     "name": "FacilityUse Example"
   },
