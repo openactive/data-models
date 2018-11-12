@@ -11,16 +11,14 @@
   "requiredOptions": [],
   "recommendedFields": [
     "id",
-    "description",
-    "image",
-    "eventStatus",
     "ageRange",
+    "description",
     "genderRestriction",
-    "leader",
+    "image",
+    "isCoached",
     "level",
-    "maximumAttendeeCapacity",
-    "remainingAttendeeCapacity",
-    "offers"
+    "offers",
+    "programme"
   ],
   "fields": {
     "type": {
