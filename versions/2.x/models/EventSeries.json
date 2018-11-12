@@ -4,7 +4,6 @@
   "derivedFrom": "https://pending.schema.org/EventSeries",
   "requiredFields": [
     "type",
-    "url",
     "name",
     "activity",
     "organizer"
