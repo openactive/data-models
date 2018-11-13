@@ -8,7 +8,17 @@
     "activity",
     "organizer"
   ],
-  "requiredOptions": [],
+  "requiredOptions": [
+    {
+      "description": [
+        "An `id` and/or `identifier` must be provided in order to allow data users to group `EventSeries` together consistently."
+      ],
+      "options": [
+        "id",
+        "identifier"
+      ]
+    }
+  ],
   "recommendedFields": [
     "id",
     "ageRange",
