@@ -3,7 +3,7 @@
   "items": [
     {
       "state": "updated",
-      "kind": "SessionSeries.ScheduledSession",
+      "kind": "ScheduledSession.SessionSeries",
       "id": "C5EE1E55-2DE6-44F7-A865-42F268A82C63",
       "modified": 1521565719,
       "data": {

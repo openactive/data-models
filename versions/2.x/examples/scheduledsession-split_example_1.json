@@ -1,10 +1,10 @@
 {
-  "next": "https://www.example.com/api/rpde/sessions?afterTimestamp=1521565719&afterId=1402CBP20150217",
+  "next": "https://www.example.com/api/rpde/scheduled-sessions?afterTimestamp=1521565719&afterId=C5EE1E55-2DE6-44F7-A865-42F268A82C63",
   "items": [
     {
       "state": "updated",
-      "kind": "SessionSeries.ScheduledSession",
-      "id": "1402CBP20150217",
+      "kind": "ScheduledSession",
+      "id": "C5EE1E55-2DE6-44F7-A865-42F268A82C63",
       "modified": 1521565719,
       "data": {
         "@context": "https://openactive.io/",

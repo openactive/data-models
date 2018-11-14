@@ -3,7 +3,7 @@
   "items": [
     {
       "state": "updated",
-      "kind": "FacilityUse.Slot",
+      "kind": "FacilityUse/Slot",
       "id": "009/2018-03-01T10:00:00Z",
       "modified": 44234351,
       "data": {
