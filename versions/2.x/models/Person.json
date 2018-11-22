@@ -16,6 +16,7 @@
     "identifier",
     "url",
     "name",
+    "gender",
     "givenName",
     "familyName",
     "description",
@@ -93,6 +94,15 @@
         "A last name for the person.",
         "This person must give direct permission for their personal information to be shared as part of the Open Data."
       ]
+    },
+    "gender": {
+      "fieldName": "gender",
+      "sameAs": "https://schema.org/gender",
+      "requiredType": "https://schema.org/GenderType",
+      "description": [
+        "Indicates the gender of the person."
+      ],
+      "example": "https://schema.org/Female"
     },
     "sameAs": {
       "fieldName": "sameAs",

@@ -20,6 +20,13 @@
       "EventScheduled"
     ]
   },
+  "GenderType": {
+    "namespace": "https://schema.org/",
+    "values": [
+      "Male",
+      "Female"
+    ]
+  },
   "GenderRestrictionType": {
     "namespace": "https://openactive.io/",
     "comment": "Enumerated types for gender restrictions that are applied to Events",
