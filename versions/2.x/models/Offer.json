@@ -25,13 +25,23 @@
     "ageRange",
     "url",
     "advanceBooking",
-    "prepayment"
+    "prepayment",
+    "acceptedPaymentMethod"
   ],
   "fields": {
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "Offer"
+    },
+    "acceptedPaymentMethod": {
+      "fieldName": "acceptedPaymentMethod",
+      "sameAs": "https://schema.org/acceptedPaymentMethod",
+      "requiredType": "http://purl.org/goodrelations/v1#PaymentMethod",
+      "description": [
+        "Indicates the offline payment methods accepted by this provider."
+      ],
+      "example": [ "http://purl.org/goodrelations/v1#Cash", "http://purl.org/goodrelations/v1#PaymentMethodCreditCard" ]
     },
     "advanceBooking": {
       "fieldName": "advanceBooking",

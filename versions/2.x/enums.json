@@ -36,6 +36,13 @@
       "FemaleOnly"
     ]
   },
+  "PaymentMethod": {
+    "namespace": "http://purl.org/goodrelations/v1#",
+    "values": [
+      "Cash",
+      "PaymentMethodCreditCard"
+    ]
+  },
   "RequiredStatusType": {
     "namespace": "https://openactive.io/",
     "values": [
