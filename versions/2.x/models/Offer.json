@@ -37,7 +37,7 @@
     "acceptedPaymentMethod": {
       "fieldName": "acceptedPaymentMethod",
       "sameAs": "https://schema.org/acceptedPaymentMethod",
-      "requiredType": "http://purl.org/goodrelations/v1#PaymentMethod",
+      "requiredType": "ArrayOf#http://purl.org/goodrelations/v1#PaymentMethod",
       "description": [
         "Indicates the offline payment methods accepted by this provider."
       ],

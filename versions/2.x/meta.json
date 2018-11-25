@@ -110,6 +110,7 @@
     "schema": "https://schema.org/",
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
-    "pending": "https://pending.schema.org/"
+    "pending": "https://pending.schema.org/",
+    "gr": "http://purl.org/goodrelations/v1#"
   }
 }
