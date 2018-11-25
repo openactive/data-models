@@ -71,8 +71,7 @@
     "accessibilitySupport": {
       "fieldName": "accessibilitySupport",
       "sameAs": "https://openactive.io/accessibilitySupport",
-      "requiredType": "ArrayOf#https://schema.org/Text",
-      "alternativeModels": ["ArrayOf#Concept"],
+      "model": "ArrayOf#Concept",
       "description": [
         "Used to specify the types of disabilities or impairments that are supported at an event."
       ],
