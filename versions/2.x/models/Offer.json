@@ -20,6 +20,7 @@
     "id",
     "identifier",
     "name",
+    "description",
     "price",
     "priceCurrency",
     "ageRange",
@@ -64,6 +65,15 @@
         "minValue": 15,
         "maxValue": 60
       }
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
+      "example": "Concession requirements are available at https://www.fusion-lifestyle.com/. Proof of entitlement to concession membership must be provided when you visit the centre.",
+      "description": [
+        "A free text description of the Offer"
+      ]
     },
     "identifier": {
       "fieldName": "identifier",

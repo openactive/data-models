@@ -20,6 +20,7 @@
     "identifier",
     "url",
     "name",
+    "legalName",
     "email",
     "description",
     "logo",
@@ -74,6 +75,15 @@
       "example": "Central Speedball Association",
       "description": [
         "The name of the Organization"
+      ]
+    },
+    "legalName": {
+      "fieldName": "legalName",
+      "sameAs": "https://schema.org/legalName",
+      "requiredType": "https://schema.org/Text",
+      "example": "Central Speedball Ltd",
+      "description": [
+        "The official name of the organization, e.g. the registered company name."
       ]
     },
     "email": {
