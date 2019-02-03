@@ -162,7 +162,7 @@
     },
     "category": {
       "fieldName": "category",
-      "sameAs": "https://openactive.io/category",
+      "sameAs": "https://schema.org/category",
       "model": "ArrayOf#Concept",
       "alternativeTypes": [
         "ArrayOf#https://schema.org/Text"
