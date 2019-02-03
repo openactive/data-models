@@ -2,7 +2,7 @@
   "type": "Place",
   "derivedFrom": "https://schema.org/Place",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/place/",
   "requiredFields": [
     "type",
@@ -209,7 +209,7 @@
     "url": {
       "fieldName": "url",
       "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://www.rphs.org.uk/",
       "description": [
         "The website for the Place"

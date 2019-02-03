@@ -2,7 +2,7 @@
   "type": "Concept",
   "derivedFrom": "http://www.w3.org/2004/02/skos/core#Concept",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/concept/",
   "requiredFields": [
     "type",
@@ -42,7 +42,7 @@
     },
     "broader": {
       "fieldName": "broader",
-      "requiredType": "ArrayOf#https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/URL",
       "example": "https://example.com/football",
       "description": [
         "A broader Concept URI"
@@ -50,7 +50,7 @@
     },
     "inScheme": {
       "fieldName": "inScheme",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "https://example.com/reference/activities",
       "description": [
         "A stable URL reference for the taxonomy."
@@ -58,7 +58,7 @@
     },
     "narrower": {
       "fieldName": "narrower",
-      "requiredType": "ArrayOf#https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/URL",
       "example": "https://example.com/walking-football",
       "description": [
         "A more specific concept URI"

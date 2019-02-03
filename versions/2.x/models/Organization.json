@@ -2,7 +2,7 @@
   "type": "Organization",
   "derivedFrom": "https://schema.org/Organization",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
     "type",
@@ -98,7 +98,7 @@
     "sameAs": {
       "fieldName": "sameAs",
       "sameAs": "https://schema.org/sameAs",
-      "requiredType": "ArrayOf#https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/URL",
       "example": [
         "https://www.facebook.com/everyoneactive/",
         "https://twitter.com/everyoneactive"
@@ -118,7 +118,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://www.speedball-world.com",
       "description": [
         "A definitive canonical URL for the Organization."

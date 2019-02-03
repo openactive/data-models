@@ -29,7 +29,7 @@
     },
     "propertyID": {
       "fieldName": "propertyID",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "alternativeTypes": [
         "https://schema.org/Text"
       ],

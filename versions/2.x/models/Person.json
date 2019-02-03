@@ -2,7 +2,7 @@
   "type": "Person",
   "derivedFrom": "https://schema.org/Person",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/person/",
   "requiredFields": [
     "type"
@@ -107,7 +107,7 @@
     "sameAs": {
       "fieldName": "sameAs",
       "sameAs": "https://schema.org/sameAs",
-      "requiredType": "ArrayOf#https://schema.org/url",
+      "requiredType": "ArrayOf#https://schema.org/URL",
       "example": "https://example.org/example-org",
       "description": [
         "Lists the URL(s) of the official social media profile pages associated with the person."
@@ -125,7 +125,7 @@
     "url": {
       "fieldName": "url",
       "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://www.example.com/",
       "description": [
         "A URL where more information about the person may be found"

@@ -2,7 +2,7 @@
   "type": "FacilityUse",
   "hasId": true,
   "subClassOf": "https://schema.org/Product",
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/facility-use/1",
   "requiredFields": [
     "type",
@@ -50,9 +50,9 @@
     },
     "@context": {
       "fieldName": "@context",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "alternativeTypes": [
-        "ArrayOf#https://schema.org/url"
+        "ArrayOf#https://schema.org/URL"
       ],
       "description": [
           "This must be included in the top-most entity in the JSON model."
@@ -263,7 +263,7 @@
     "provider": {
       "fieldName": "provider",
       "sameAs": "https://schema.org/provider",
-      "module": "#Organization",
+      "model": "#Organization",
       "description": [
         "The organisation responsible for providing the facility"
       ],
@@ -292,7 +292,7 @@
     "url": {
       "fieldName": "url",
       "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "description": [
         "A URL to a web page (or section of a page) that describes the facility use."
       ],

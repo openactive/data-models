@@ -69,7 +69,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://example.com/play_ball",
       "description": [
         "A url where further information can be found for the brand."

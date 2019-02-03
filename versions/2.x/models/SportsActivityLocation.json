@@ -19,7 +19,7 @@
       "fieldName": "containedInPlace",
       "model": "#Place",
       "alternativeTypes": [
-        "https://schema.org/url"
+        "https://schema.org/URL"
       ],
       "example": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d",
       "description": [

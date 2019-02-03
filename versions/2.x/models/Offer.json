@@ -2,7 +2,7 @@
   "type": "Offer",
   "derivedFrom": "https://schema.org/Offer",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/offer/",
   "requiredFields": [
     "type",
@@ -133,7 +133,7 @@
     "url": {
       "fieldName": "url",
       "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://www.rphs.org.uk/",
       "description": [
         "URL describing the offer"

@@ -2,7 +2,7 @@
   "type": "Event",
   "derivedFrom": "https://schema.org/Event",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/event/",
   "requiredFields": [
     "type",
@@ -88,9 +88,9 @@
     },
     "@context": {
       "fieldName": "@context",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "alternativeTypes": [
-        "ArrayOf#https://schema.org/url"
+        "ArrayOf#https://schema.org/URL"
       ],
       "description": [
         "This must be included in the top-most entity in the JSON model."
@@ -493,7 +493,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "description": [
         "A URL to a web page (or section of a page) that describes the event."
       ],

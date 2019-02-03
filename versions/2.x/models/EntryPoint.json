@@ -51,7 +51,7 @@
     "urlTemplate": {
       "fieldName": "urlTemplate",
       "sameAs": "https://schema.org/urlTemplate",
-      "requiredType": "https://schema.org/urlTemplate",
+      "requiredType": "https://schema.org/URL",
       "example": "https://example.com/orders{/var}",
       "description": [
         "URL of the item"

@@ -26,7 +26,7 @@
     },
     "url": {
       "fieldName": "url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "example": "http://example.com/static/image/speedball_large.jpg",
       "description": [
         "The URL for the display resolution image."

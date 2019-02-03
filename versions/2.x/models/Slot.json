@@ -2,7 +2,7 @@
   "type": "Slot",
   "hasId": true,
   "subClassOf": "https://schema.org/Event",
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/slot/",
   "requiredFields": [
     "type",
@@ -69,7 +69,7 @@
     },
     "facilityUse": {
       "fieldName": "facilityUse",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "description": [
         "URI to the FacilityUse that has this offer"
       ],

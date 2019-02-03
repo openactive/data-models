@@ -2,7 +2,7 @@
   "type": "ConceptScheme",
   "derivedFrom": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
   "hasId": true,
-  "idFormat": "https://schema.org/url",
+  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/scheme/",
   "requiredFields": [
     "type",
@@ -57,7 +57,7 @@
     "license": {
       "fieldName": "license",
       "sameAs": "http://purl.org/dc/terms/license",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "description": [
         "Reference to the license under which the activity list has been published."
       ],
@@ -75,7 +75,7 @@
     "url": {
       "fieldName": "url",
       "sameAs": "https://schema.org/url",
-      "requiredType": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
       "description": [
         "A URL to a web page (or section of a page) that describes the concept scheme."
       ],
