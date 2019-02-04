@@ -1,13 +1,13 @@
 {
   "type": "SportsActivityLocation",
-  "subClassOf": "#Place",
   "derivedFrom": "https://schema.org/SportsActivityLocation",
+  "hasId": false,
   "requiredFields": [
     "type"
   ],
-  "requiredOptions": [],
-  "recommendedFields": [
-    "id"
+  "inSpec": [
+    "type",
+    "containedInPlace"
   ],
   "fields": {
     "type": {
