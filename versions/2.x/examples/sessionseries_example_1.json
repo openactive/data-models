@@ -183,7 +183,7 @@
             "startTime": "20:15",
             "endTime": "20:45",
             "byDay": [
-              "http://schema.org/Tuesday"
+              "https://schema.org/Tuesday"
             ]
           }
         ],

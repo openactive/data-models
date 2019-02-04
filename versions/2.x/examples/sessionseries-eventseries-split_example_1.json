@@ -190,8 +190,8 @@
             "startTime": "08:30",
             "endTime": "09:30",
             "byDay": [
-              "http://schema.org/Tuesday",
-              "http://schema.org/Sunday"
+              "https://schema.org/Tuesday",
+              "https://schema.org/Sunday"
             ],
             "duration": "PT1H"
           }
