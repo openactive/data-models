@@ -1,5 +1,6 @@
 {
   "type": "SportsActivityLocation",
+  "subClassOf": "#Place",
   "derivedFrom": "https://schema.org/SportsActivityLocation",
   "requiredFields": [
     "type"
