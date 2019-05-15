@@ -1,7 +1,7 @@
 {
    "type":"OrderQuote",
    "subClassOf":"https://schema.org/Order",
-   "isJsonLd":"true",
+   "isJsonLd": true,
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderQuote/",
    "status":{
@@ -125,7 +125,7 @@
       },
       "seller":{
          "fieldName":"seller",
-         "model":"Organization",
+         "model":"#Organization",
          "description":[
             "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."
          ]
@@ -177,7 +177,6 @@
       },
       "orderedItem":{
          "fieldName":"orderedItem",
-         "sameAs":"https://schema.org/orderedItem",
          "model":"ArrayOf#orderItem",
          "description":"The items that constitute the Order."
       },
