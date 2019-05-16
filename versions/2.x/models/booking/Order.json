@@ -1,9 +1,9 @@
 {
-   "type":"OrderQuote",
-   "subClassOf":"https://schema.org/Order",
+   "type":"Order",
+   "derivedFrom":"https://schema.org/Order",
    "isJsonLd":true,
    "idFormat":"https://schema.org/URL",
-   "sampleId":"https://example.com/OrderQuote/",
+   "sampleId":"https://example.com/Order/",
    "status":{
       "REQUEST":{
          "hasId":false,
@@ -19,7 +19,7 @@
 
          ],
          "shallNotInclude":[
-            "id",
+            "@id",
             "identifier",
             "seller",
             "taxMode",
@@ -27,10 +27,7 @@
             "bookingService",
             "totalPaymentTaxSpecification",
             "orderCreationStatus",
-            "orderProposalVersion",
-            "lease",
-            "totalPaymentDue",
-            "orderRequiresApproval"
+            "orderProposalVersion"
          ],
          "requiredOptions":[
 
@@ -40,6 +37,7 @@
          "hasId":true,
          "requiredFields":[
             "@type",
+            "@id",
             "seller",
             "taxMode",
             "broker",
@@ -48,8 +46,7 @@
             "orderedItem",
             "totalPaymentDue",
             "totalPaymentTaxSpecification",
-            "orderProposalVersion",
-            "orderRequiresApproval"
+            "orderProposalVersion"
          ],
          "recommendedFields":[
 
@@ -99,15 +96,41 @@
       "totalPaymentTaxSpecification",
       "payment",
       "orderCreationStatus",
-      "orderProposalVersion",
-      "lease",
-      "orderRequiresApproval"
+      "orderProposalVersion"
+   ],
+   "notInSpec":[
+      "acceptedOffer",
+      "billingAddress",
+      "confirmationNumber",
+      "discount",
+      "discountCode",
+      "discountCurrency",
+      "isGift",
+      "orderDate",
+      "orderDelivery",
+      "orderStatus",
+      "partOfInvoice",
+      "paymentDueDate",
+      "paymentMethod",
+      "paymentMethodId",
+      "paymentUrl",
+      "additionalType",
+      "alternateName",
+      "description",
+      "disambiguatingDescription",
+      "image",
+      "mainEntityOfPage",
+      "name",
+      "potentialAction",
+      "sameAs",
+      "subjectOf",
+      "url"
    ],
    "fields":{
       "@type":{
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
-         "requiredContent":"OrderQuote"
+         "requiredContent":"Order"
       },
       "@id":{
          "fieldName":"@id",
@@ -215,21 +238,9 @@
          "sameAs":"https://www.openactive.io/ns/#orderProposalVersion",
          "description":"The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."
       },
-      "lease":{
-         "fieldName":"lease",
-         "sameAs":"https://www.openactive.io/ns/#lease",
-         "model":"#Lease",
-         "description":"The Lease on the OrderItems which lasts for the duration specified by the Booking System."
-      },
       "totalPaymentDue":{
          "fieldName":"totalPaymentDue",
          "model":"#PriceSpecification"
-      },
-      "orderRequiresApproval":{
-         "fieldName":"orderRequiresApproval",
-         "sameAs":"https://www.openactive.io/ns/#orderRequiresApproval",
-         "requiredType":"https://schema.org/Boolean",
-         "description":"Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."
       }
    }
 }

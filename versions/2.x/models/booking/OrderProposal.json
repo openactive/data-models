@@ -21,7 +21,6 @@
             "orderCustomerNote"
          ],
          "shallNotInclude":[
-            "id",
             "identifier",
             "seller",
             "taxMode",
@@ -59,7 +58,6 @@
             "orderCustomerNote"
          ],
          "shallNotInclude":[
-            "customer",
             "orderCreationStatus"
          ],
          "requiredOptions":[
@@ -96,6 +94,10 @@
          "requiredType":"https://schema.org/Text",
          "requiredContent":"OrderProposal"
       },
+      "@id":{
+         "fieldName":"@id",
+         "requiredType":"https://schema.org/URL"
+      },
       "identifier":{
          "fieldName":"identifier",
          "sameAs":"https://schema.org/identifier",
@@ -122,7 +124,8 @@
       },
       "taxMode":{
          "fieldName":"taxMode",
-         "requiredType":"https://schema.org/URL",
+         "sameAs":"https://www.openactive.io/ns/#taxMode",
+         "model":"#TaxMode",
          "options":[
             "https://openactive/TaxNet",
             "https://openactive/TaxGross"
@@ -135,7 +138,8 @@
       },
       "brokerRole":{
          "fieldName":"brokerRole",
-         "requiredType":"https://schema.org/URL",
+         "sameAs":"https://www.openactive.io/ns/#brokerRole",
+         "model":"#BrokerType",
          "options":[
             "https://openactive/AgentBroker",
             "https://openactive/ResellerBroker",
@@ -213,6 +217,7 @@
       "orderProposalStatus":{
          "fieldName":"orderProposalStatus",
          "requiredType":"https://schema.org/URL",
+         "model":"ArrayOf#orderProposalStatus",
          "options":[
             "https://openactive.io/AwaitingSellerConfirmation",
             "https://openactive.io/SellerAccepted",
