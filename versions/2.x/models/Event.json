@@ -216,7 +216,7 @@
     },
     "eventSchedule": {
       "fieldName": "eventSchedule",
-      "sameAs": "https://pending.schema.org/eventSchedule",
+      "sameAs": "https://schema.org/eventSchedule",
       "model": "ArrayOf#Schedule",
       "description": [
         "A an array of oa:Schedule or oa:PartialSchedule, which represents a recurrence pattern."

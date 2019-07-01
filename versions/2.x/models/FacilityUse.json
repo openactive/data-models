@@ -136,7 +136,7 @@
     },
     "event": {
       "fieldName": "event",
-      "sameAs": "https://pending.schema.org/event",
+      "sameAs": "https://schema.org/event",
       "model": "ArrayOf#Slot",
       "description": [
         "An array of slots of availability of this FacilityUse."

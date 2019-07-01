@@ -21,6 +21,8 @@
     "familyName",
     "description",
     "telephone",
+    "email",
+    "jobTitle",
     "sameAs",
     "logo"
   ],
@@ -72,7 +74,7 @@
       "example": "Daley Thompson",
       "description": [
         "A full name for the person.",
-        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+        "This person must have given permission for their personal information to be shared as part of the open data."
       ]
     },
     "givenName": {
@@ -82,7 +84,7 @@
       "example": "Daley",
       "description": [
         "A first name for the person.",
-        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+        "This person must have given permission for their personal information to be shared as part of the open data."
       ]
     },
     "familyName": {
@@ -92,7 +94,7 @@
       "example": "Thompson",
       "description": [
         "A last name for the person.",
-        "This person must give direct permission for their personal information to be shared as part of the Open Data."
+        "This person must have given permission for their personal information to be shared as part of the open data."
       ]
     },
     "gender": {
@@ -119,7 +121,28 @@
       "requiredType": "https://schema.org/Text",
       "example": "01234 567890",
       "description": [
-        "The telephone number of the person"
+        "The telephone number of the person",
+        "This person must have given permission for their personal information to be shared as part of the open data."
+      ]
+    },
+    "email": {
+      "fieldName": "email",
+      "sameAs": "https://schema.org/email",
+      "requiredType": "https://schema.org/Text",
+      "example": "jane.smith@example.com",
+      "description": [
+        "The e-mail address of the person.",
+        "This person must have given permission for their personal information to be shared as part of the open data."
+      ]
+    },
+    "jobTitle": {
+      "fieldName": "jobTitle",
+      "sameAs": "https://schema.org/jobTitle",
+      "requiredType": "https://schema.org/Text",
+      "example": "Team Captain",
+      "description": [
+        "The job title of a person",
+        "This person must have given permission for their personal information to be shared as part of the open data."
       ]
     },
     "url": {

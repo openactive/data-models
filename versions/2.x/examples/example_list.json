@@ -26,5 +26,9 @@
   {
     "file": "slot_example_1.json",
     "name": "Slot Example"
+  },
+  {
+    "file": "courseinstance_example_1.json",
+    "name": "CourseInstance Example"
   }
 ]
