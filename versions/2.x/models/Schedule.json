@@ -1,6 +1,6 @@
 {
   "type": "Schedule",
-  "derivedFrom": "https://schema.org/Schedule",
+  "derivedFrom": "https://pending.schema.org/Schedule",
   "hasId": false,
   "requiredFields": [
     "type",
