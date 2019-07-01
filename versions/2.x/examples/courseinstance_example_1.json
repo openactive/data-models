@@ -82,6 +82,8 @@
           "url": "https://www.englandnetball.co.uk"
         },
         "url": "https://www.englandnetball.co.uk/?pagename=session&sessionid=[76121&NYC006506",
+        "maximumAttendeeCapacity": 30,
+        "remainingAttendeeCapacity": 21,
         "offers": [
           {
             "type": "Offer",
