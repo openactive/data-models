@@ -184,7 +184,8 @@
             "endTime": "20:45",
             "byDay": [
               "https://schema.org/Tuesday"
-            ]
+            ],
+            "beta:timeZone": "Europe/London"
           }
         ],
         "subEvent": [
