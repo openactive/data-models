@@ -34,5 +34,9 @@
   {
     "file": "courseinstance_event_example_1.json",
     "name": "CourseInstance with Event Example"
+  },
+  {
+    "file": "event_example_1.json",
+    "name": "Event Example"
   }
 ]
