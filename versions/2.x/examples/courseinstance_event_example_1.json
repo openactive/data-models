@@ -41,14 +41,14 @@
         ],
         "subEvent": [
           {
-            "type": "ScheduledSession",
+            "type": "Event",
             "startDate": "2018-10-02T19:15:00Z",
             "endDate": "2018-10-02T19:45:00Z",
             "eventStatus": "https://schema.org/EventScheduled",
             "identifier": 1400109454
           },
           {
-            "type": "ScheduledSession",
+            "type": "Event",
             "startDate": "2018-10-09T19:15:00Z",
             "endDate": "2018-10-09T19:45:00Z",
             "eventStatus": "https://schema.org/EventScheduled",
