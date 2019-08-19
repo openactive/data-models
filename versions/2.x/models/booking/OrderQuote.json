@@ -1,3 +1,8 @@
+# Questions:
+# 1. How to deal with NotInSpec
+#
+
+
 {
    "type":"OrderQuote",
    "subClassOf":"https://schema.org/Order",
@@ -5,10 +10,10 @@
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderQuote/",
    "status":{
-      "REQUEST":{
+      "request":{
          "hasId":false,
          "requiredFields":[
-            "@type",
+            "type",
             "broker",
             "brokerRole",
             "customer",
@@ -36,10 +41,10 @@
 
          ]
       },
-      "RESPONSE":{
+      "response":{
          "hasId":true,
          "requiredFields":[
-            "@type",
+            "type",
             "seller",
             "taxMode",
             "broker",
@@ -62,11 +67,11 @@
 
          ]
       },
-      "ORDERFEED":{
+      "orderFeed":{
          "hasId":true,
          "requiredFields":[
-            "@type",
-            "@id",
+            "type",
+            "id",
             "taxMode",
             "orderedItem",
             "totalPaymentDue",
@@ -84,8 +89,8 @@
       }
    },
    "inSpec":[
-      "@type",
-      "@id",
+      "type",
+      "id",
       "identifier",
       "seller",
       "taxMode",
@@ -104,13 +109,13 @@
       "orderRequiresApproval"
    ],
    "fields":{
-      "@type":{
+      "type":{
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
          "requiredContent":"OrderQuote"
       },
-      "@id":{
-         "fieldName":"@id",
+      "id":{
+         "fieldName":"id",
          "requiredType":"https://schema.org/URL"
       },
       "identifier":{
@@ -137,11 +142,9 @@
       },
       "taxMode":{
          "fieldName":"taxMode",
-         "sameAs":"https://www.openactive.io/ns/#taxMode",
-         "model":"#TaxMode",
-         "options":[
-            "https://openactive/TaxNet",
-            "https://openactive/TaxGross"
+         "requiredType": "https://openactive/TaxMode",
+         "description": [
+           "Note that taxMode only affects the interpretation of the price of the Offer. totalPaymentDue is always Gross (tax inclusive), and unitTaxSpecification and totalPaymentTaxSpecification include only the taxes themselves so are unaffected."
          ]
       },
       "broker":{
@@ -152,13 +155,7 @@
       },
       "brokerRole":{
          "fieldName":"brokerRole",
-         "sameAs":"https://www.openactive.io/ns/#brokerRole",
-         "model":"#BrokerType",
-         "options":[
-            "https://openactive/AgentBroker",
-            "https://openactive/ResellerBroker",
-            "https://openactive/NoBroker"
-         ],
+         "requiredType":"https://openactive/BrokerType",
          "description":"Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."
       },
       "orderNumber":{
@@ -199,14 +196,7 @@
       },
       "orderCreationStatus":{
          "fieldName":"orderCreationStatus",
-         "sameAs":"https://www.openactive.io/ns/#orderCreationStatus",
-         "model":"#OrderCreationStatus",
-         "options":[
-            "https://openactive.io/OrderCreationPaymentAuthorized",
-            "https://openactive.io/OrderCreationPaymentDue",
-            "https://openactive.io/OrderCreationPaymentCaptured",
-            "https://openactive.io/OrderCreationComplete"
-         ],
+         "requiredType":"https://openactive.io/OrderCreationStatus",
          "description":"This property is internal to the Broker in this version of the specification."
       },
       "orderProposalVersion":{
