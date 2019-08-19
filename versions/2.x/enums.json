@@ -53,6 +53,15 @@
       "OrderCreationPaymentDue"
     ]
   },
+  "OrderProposalStatus":{
+    "namespace": "https://openactive.io/",
+    "values": [
+      "AwaitingSellerConfirmation",
+      "SellerAccepted",
+      "SellerRejected",
+      "CustomerRejected"
+    ]
+  },
   "PaymentMethod": {
     "namespace": "http://purl.org/goodrelations/v1#",
     "values": [
