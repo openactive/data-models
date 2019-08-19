@@ -3,10 +3,10 @@
    "subClassOf":"https://openactive.io/OrderQuote",
    "isJsonLd":true,
    "idFormat":"https://schema.org/URL",
-   "sampleId":"https://example.com/OrderProposal/",
+   "sampleId":"https://example.com/OrderProposal/d45b31031ab6d80b",
    "status":{
-      "REQUEST":{
-         "hasId":false,
+      "request":{
+         "hasId":true,
          "requiredFields":[
             "@type",
             "broker",
@@ -14,7 +14,7 @@
             "customer",
             "orderedItem",
             "totalPaymentDue",
-            "OrderProposalStatus"
+            "orderProposalStatus"
          ],
          "recommendedFields":[
             "orderSellerNote",
@@ -37,7 +37,7 @@
 
          ]
       },
-      "RESPONSE":{
+      "response":{
          "hasId":true,
          "requiredFields":[
             "@type",
@@ -110,26 +110,17 @@
             "https://schema.org/Integer"
          ],
          "example":"SB1234",
-         "description":[
-            "A local non-URI identifier for the resource"
-         ]
+         "description": "A local non-URI identifier for the resource"
       },
       "seller":{
          "fieldName":"seller",
-         "model":"Organization",
+         "model":"#Organization",
          "sameAs":"https://schema.org/seller",
-         "description":[
-            "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."
-         ]
+         "description": "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."
       },
       "taxMode":{
          "fieldName":"taxMode",
-         "sameAs":"https://www.openactive.io/ns/#taxMode",
-         "model":"#TaxMode",
-         "options":[
-            "https://openactive/TaxNet",
-            "https://openactive/TaxGross"
-         ]
+         "requiredType": "https://openactive/TaxMode"
       },
       "broker":{
          "fieldName":"broker",
@@ -138,13 +129,7 @@
       },
       "brokerRole":{
          "fieldName":"brokerRole",
-         "sameAs":"https://www.openactive.io/ns/#brokerRole",
-         "model":"#BrokerType",
-         "options":[
-            "https://openactive/AgentBroker",
-            "https://openactive/ResellerBroker",
-            "https://openactive/NoBroker"
-         ],
+         "model":"https://openactive/BrokerType",
          "description":"Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."
       },
       "orderNumber":{
@@ -185,13 +170,7 @@
       },
       "orderCreationStatus":{
          "fieldName":"orderCreationStatus",
-         "requiredType":"https://schema.org/URL",
-         "options":[
-            "https://openactive.io/OrderCreationPaymentAuthorized",
-            "https://openactive.io/OrderCreationPaymentDue",
-            "https://openactive.io/OrderCreationPaymentCaptured",
-            "https://openactive.io/OrderCreationComplete"
-         ],
+         "requiredType":"https://openactive.io/OrderCreationStatus",
          "description":"This property is internal to the Broker in this version of the specification."
       },
       "orderProposalVersion":{
@@ -216,14 +195,8 @@
       },
       "orderProposalStatus":{
          "fieldName":"orderProposalStatus",
-         "requiredType":"https://schema.org/URL",
+         "requiredType":"https://openactive.io/OrderProposalStatus",
          "model":"ArrayOf#orderProposalStatus",
-         "options":[
-            "https://openactive.io/AwaitingSellerConfirmation",
-            "https://openactive.io/SellerAccepted",
-            "https://openactive.io/SellerRejected",
-            "https://openactive.io/CustomerRejected"
-         ]
       },
       "orderSellerNote":{
          "fieldName":"orderSellerNote",
