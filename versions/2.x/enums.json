@@ -1,4 +1,12 @@
 {
+  "BrokerType":{
+    "namespace": "https://openactive/",
+    "values": [
+      "AgentBroker",
+      "NoBroker",
+      "ResellerBroker"
+    ]
+  },
   "DayOfWeek": {
     "namespace": "https://schema.org/",
     "values": [
@@ -36,6 +44,15 @@
       "FemaleOnly"
     ]
   },
+  "OrderCreationStatus":{
+    "namespace": "https://openactive.io/",
+    "values": [
+      "OrderCreationPaymentAuthorized",
+      "OrderCreationPaymentCaptured",
+      "OrderCreationComplete",
+      "OrderCreationPaymentDue"
+    ]
+  },
   "PaymentMethod": {
     "namespace": "http://purl.org/goodrelations/v1#",
     "values": [
@@ -49,6 +66,13 @@
       "Required",
       "Optional",
       "Unavailable"
+    ]
+  },
+  "TaxMode": {
+    "namespace": "https://openactive/",
+    "values": [
+      "TaxGross",
+      "TaxNet"
     ]
   }
 }
