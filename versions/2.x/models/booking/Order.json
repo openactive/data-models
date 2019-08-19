@@ -139,9 +139,7 @@
             "https://schema.org/Integer"
          ],
          "example":"SB1234",
-         "description":[
-            "A local non-URI identifier for the resource"
-         ]
+         "description": "A local non-URI identifier for the resource" 
       },
       "seller":{
          "fieldName":"seller",
