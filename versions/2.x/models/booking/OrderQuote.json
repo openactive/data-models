@@ -1,11 +1,6 @@
-# Questions:
-# 1. How to deal with NotInSpec
-#
-
-
 {
    "type":"OrderQuote",
-   "subClassOf":"https://schema.org/Order",
+   "subClassOf":"#Order",
    "isJsonLd":true,
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderQuote/",
@@ -71,7 +66,6 @@
          "hasId":true,
          "requiredFields":[
             "type",
-            "id",
             "taxMode",
             "orderedItem",
             "totalPaymentDue",
@@ -102,21 +96,19 @@
       "orderedItem",
       "totalPaymentDue",
       "totalPaymentTaxSpecification",
-      "payment",
       "orderCreationStatus",
-      "orderProposalVersion",
       "lease",
       "orderRequiresApproval"
+   ],
+   "notInSpec":[
+     "payment",
+     "orderProposalVersion"
    ],
    "fields":{
       "type":{
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
          "requiredContent":"OrderQuote"
-      },
-      "id":{
-         "fieldName":"id",
-         "requiredType":"https://schema.org/URL"
       },
       "identifier":{
          "fieldName":"identifier",
@@ -129,9 +121,7 @@
             "https://schema.org/Integer"
          ],
          "example":"SB1234",
-         "description":[
-            "A local non-URI identifier for the resource"
-         ]
+         "description": "A local non-URI identifier for the resource"
       },
       "seller":{
          "fieldName":"seller",
@@ -149,14 +139,14 @@
       },
       "broker":{
          "fieldName":"broker",
-         "sameAs":"https://www.openactive.io/ns/#broker",
+         "sameAs":"https://openactive.io/broker",
          "model":"#Organization",
          "description":"The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive/NoBroker this is not required."
       },
       "brokerRole":{
          "fieldName":"brokerRole",
          "requiredType":"https://openactive/BrokerType",
-         "description":"Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."
+         "description":"Either https://openactive/AgentBroker, https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."
       },
       "orderNumber":{
          "fieldName":"orderNumber",
@@ -173,7 +163,7 @@
       },
       "bookingService":{
          "fieldName":"bookingService",
-         "sameAs":"https://www.openactive.io/ns/#bookingService",
+         "sameAs":"https://openactive.io/bookingService",
          "model":"#BookingService",
          "description":"Details about the Booking System"
       },
@@ -184,13 +174,13 @@
       },
       "totalPaymentTaxSpecification":{
          "fieldName":"totalPaymentTaxSpecification",
-         "sameAs":"https://www.openactive.io/ns/#totalPaymentTaxSpecification",
+         "sameAs":"https://openactive.io/totalPaymentTaxSpecification",
          "model":"ArrayOf#taxChargeSpecification",
          "description":"Breakdown of tax payable for the Order."
       },
       "payment":{
          "fieldName":"payment",
-         "sameAs":"https://www.openactive.io/ns/#Payment",
+         "sameAs":"https://openactive.io/Payment",
          "model":"#Payment",
          "description":"The payment associated with the Order by the Broker. It is required for cases where a payment has been taken."
       },
@@ -202,22 +192,23 @@
       "orderProposalVersion":{
          "fieldName":"orderProposalVersion",
          "requiredType":"https://schema.org/URL",
-         "sameAs":"https://www.openactive.io/ns/#orderProposalVersion",
+         "sameAs":"https://openactive.io/orderProposalVersion",
          "description":"The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."
       },
       "lease":{
          "fieldName":"lease",
-         "sameAs":"https://www.openactive.io/ns/#lease",
+         "sameAs":"https://openactive.io/lease",
          "model":"#Lease",
          "description":"The Lease on the OrderItems which lasts for the duration specified by the Booking System."
       },
       "totalPaymentDue":{
          "fieldName":"totalPaymentDue",
+         "sameAs":"https://openactive.io/lease",
          "model":"#PriceSpecification"
       },
       "orderRequiresApproval":{
          "fieldName":"orderRequiresApproval",
-         "sameAs":"https://www.openactive.io/ns/#orderRequiresApproval",
+         "sameAs":"https://openactive.io/orderRequiresApproval",
          "requiredType":"https://schema.org/Boolean",
          "description":"Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."
       }
