@@ -5,10 +5,10 @@
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/Order/",
    "status":{
-      "REQUEST":{
+      "request":{
          "hasId":false,
          "requiredFields":[
-            "@type",
+            "type",
             "broker",
             "brokerRole",
             "customer",
@@ -19,7 +19,6 @@
 
          ],
          "shallNotInclude":[
-            "@id",
             "identifier",
             "seller",
             "taxMode",
@@ -33,11 +32,10 @@
 
          ]
       },
-      "RESPONSE":{
+      "response":{
          "hasId":true,
          "requiredFields":[
-            "@type",
-            "@id",
+            "type",
             "seller",
             "taxMode",
             "broker",
@@ -59,11 +57,10 @@
 
          ]
       },
-      "ORDERFEED":{
+      "orderFeed":{
          "hasId":true,
          "requiredFields":[
-            "@type",
-            "@id",
+            "type",
             "taxMode",
             "orderedItem",
             "totalPaymentDue",
@@ -81,8 +78,7 @@
       }
    },
    "inSpec":[
-      "@type",
-      "@id",
+      "type",
       "identifier",
       "seller",
       "taxMode",
@@ -127,14 +123,10 @@
       "url"
    ],
    "fields":{
-      "@type":{
+      "type":{
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
          "requiredContent":"Order"
-      },
-      "@id":{
-         "fieldName":"@id",
-         "requiredType":"https://schema.org/URL"
       },
       "identifier":{
          "fieldName":"identifier",
@@ -160,7 +152,7 @@
       },
       "taxMode":{
          "fieldName":"taxMode",
-         "sameAs":"https://www.openactive.io/ns/#taxMode",
+         "sameAs":"https://openactive.io/taxMode",
          "model":"#TaxMode",
          "options":[
             "https://openactive/TaxNet",
@@ -169,19 +161,13 @@
       },
       "broker":{
          "fieldName":"broker",
-         "sameAs":"https://www.openactive.io/ns/#broker",
+         "sameAs":"https://openactive.io/broker",
          "model":"#Organization",
          "description":"The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive/NoBroker this is not required."
       },
       "brokerRole":{
          "fieldName":"brokerRole",
-         "sameAs":"https://www.openactive.io/ns/#brokerRole",
-         "model":"#BrokerType",
-         "options":[
-            "https://openactive/AgentBroker",
-            "https://openactive/ResellerBroker",
-            "https://openactive/NoBroker"
-         ],
+         "requiredType":"BrokerType",
          "description":"Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."
       },
       "orderNumber":{
@@ -199,7 +185,7 @@
       },
       "bookingService":{
          "fieldName":"bookingService",
-         "sameAs":"https://www.openactive.io/ns/#bookingService",
+         "sameAs":"https://openactive.io/bookingService",
          "model":"#BookingService",
          "description":"Details about the Booking System"
       },
@@ -210,32 +196,25 @@
       },
       "totalPaymentTaxSpecification":{
          "fieldName":"totalPaymentTaxSpecification",
-         "sameAs":"https://www.openactive.io/ns/#totalPaymentTaxSpecification",
+         "sameAs":"https://openactive.io/totalPaymentTaxSpecification",
          "model":"ArrayOf#taxChargeSpecification",
          "description":"Breakdown of tax payable for the Order."
       },
       "payment":{
          "fieldName":"payment",
-         "sameAs":"https://www.openactive.io/ns/#Payment",
+         "sameAs":"https://openactive.io/Payment",
          "model":"#Payment",
          "description":"The payment associated with the Order by the Broker. It is required for cases where a payment has been taken."
       },
       "orderCreationStatus":{
          "fieldName":"orderCreationStatus",
-         "sameAs":"https://www.openactive.io/ns/#orderCreationStatus",
-         "model":"#OrderCreationStatus",
-         "options":[
-            "https://openactive.io/OrderCreationPaymentAuthorized",
-            "https://openactive.io/OrderCreationPaymentDue",
-            "https://openactive.io/OrderCreationPaymentCaptured",
-            "https://openactive.io/OrderCreationComplete"
-         ],
+         "requiredType":"OrderCreationStatus",
          "description":"This property is internal to the Broker in this version of the specification."
       },
       "orderProposalVersion":{
          "fieldName":"orderProposalVersion",
          "requiredType":"https://schema.org/URL",
-         "sameAs":"https://www.openactive.io/ns/#orderProposalVersion",
+         "sameAs":"https://openactive.io/orderProposalVersion",
          "description":"The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."
       },
       "totalPaymentDue":{
