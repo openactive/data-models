@@ -94,11 +94,6 @@
          "requiredType":"https://schema.org/Text",
          "requiredContent":"OrderProposal"
       },
-      "@id":{
-         "fieldName":"@id",
-         "requiredType":"https://schema.org/URL",
-         "description":[ ""]
-      },
       "identifier":{
          "fieldName":"identifier",
          "sameAs":"https://schema.org/identifier",

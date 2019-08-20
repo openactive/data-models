@@ -27,6 +27,7 @@
     "@context",
     "url",
     "identifier",
+    "individualFacilityUse",
     "name",
     "description",
     "image",

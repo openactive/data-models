@@ -37,7 +37,7 @@
       "name":{
          "fieldName":"name",
          "requiredType":"https://schema.org/Text",
-         "sameAs": "https://schema.org/valueRequired",
+         "sameAs": "https://schema.org/name",
          "description":[
             "Display label for the field."
          ]
