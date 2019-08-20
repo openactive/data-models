@@ -9,7 +9,6 @@
          "hasId":true,
          "requiredFields":[
             "type",
-            "@id",
             "acceptedOffer",
             "orderedItem"
          ],
@@ -35,8 +34,7 @@
       "RESPONSE":{
          "hasId":true,
          "requiredFields":[
-            "@type",
-            "@id",
+            "type",
             "orderItemStatus",
             "unitTaxSpecification",
             "acceptedOffer",
@@ -68,7 +66,6 @@
    },
    "inSpec":[
       "type",
-      "@id",
       "orderItemStatus",
       "allowCustomerCancellationFullRefund",
       "unitTaxSpecification",
@@ -90,11 +87,6 @@
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
          "requiredContent":"OrderItem"
-      },
-      "@id":{
-         "fieldName":"@id",
-         "requiredType":"https://schema.org/URL",
-         "description": [""]
       },
       "orderItemStatus":{
          "fieldName":"orderItemStatus",

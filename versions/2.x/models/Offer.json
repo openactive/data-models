@@ -9,7 +9,6 @@
         "hasId":true,
          "requiredFields":[
             "type",
-            "@id",
             "availableChannel"
          ],
          "recommendedFields":[
@@ -30,7 +29,6 @@
          "hasId":true,
          "requiredFields":[
             "type",
-            "@id",
             "availableChannel",
             "price",
             "priceCurrency"
@@ -46,7 +44,6 @@
    },
    "inSpec":[
       "type",
-      "@id",
       "price",
       "priceCurrency",
       "name",
@@ -114,11 +111,6 @@
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
          "requiredContent":"Offer"
-      },
-      "@id":{
-         "fieldName":"@id",
-         "requiredType":"https://schema.org/URL",
-         "description": [""]
       },
       "price":{
          "fieldName":"price",

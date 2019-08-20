@@ -67,7 +67,6 @@
    },
    "inSpec":[
       "type",
-      "@id",
       "identifier",
       "seller",
       "taxMode",

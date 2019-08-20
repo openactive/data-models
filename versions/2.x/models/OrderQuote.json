@@ -19,7 +19,6 @@
 
          ],
          "shallNotInclude":[
-            "id",
             "identifier",
             "seller",
             "orderNumber",
