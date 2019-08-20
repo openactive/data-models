@@ -1,0 +1,51 @@
+{
+   "type":"PriceSpecification",
+   "subClassOf":"https://schema.org/PriceSpecification",
+   "isJsonLd":true,
+   "status":{
+      "response":{
+         "hasId":false,
+         "requiredFields":[
+            "type",
+            "price",
+            "priceCurrency"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "price",
+      "priceCurrency"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"PriceSpecification"
+      },
+      "price":{
+         "fieldName":"price",
+         "requiredType":"https://schema.org/Float",
+         "sameAs": "https://schema.org/price",
+         "description":["The total amount."]
+      },
+      "priceCurrency":{
+         "fieldName":"priceCurrency",
+         "requiredType":"https://schema.org/Text",
+         "sameAs": "https://schema.org/priceCurrency",
+         "description":["The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."]
+      }
+   }
+}

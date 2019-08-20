@@ -1,0 +1,215 @@
+  {
+   "type":"OrderProposal",
+   "subClassOf":"#OrderQuote",
+   "isJsonLd":true,
+   "idFormat":"https://schema.org/URL",
+   "sampleId":"https://example.com/OrderProposal/d45b31031ab6d80b",
+   "status":{
+      "request":{
+         "hasId":true,
+         "requiredFields":[
+            "type",
+            "broker",
+            "brokerRole",
+            "customer",
+            "orderedItem",
+            "totalPaymentDue",
+            "orderProposalStatus"
+         ],
+         "recommendedFields":[
+            "orderSellerNote",
+            "orderCustomerNote"
+         ],
+         "shallNotInclude":[
+            "identifier",
+            "seller",
+            "taxMode",
+            "orderNumber",
+            "bookingService",
+            "totalPaymentTaxSpecification",
+            "orderCreationStatus",
+            "orderProposalVersion",
+            "lease",
+            "totalPaymentDue",
+            "orderRequiresApproval"
+         ],
+         "requiredOptions":[
+
+         ]
+      },
+      "response":{
+         "hasId":true,
+         "requiredFields":[
+            "type",
+            "seller",
+            "taxMode",
+            "broker",
+            "brokerRole",
+            "bookingService",
+            "orderedItem",
+            "totalPaymentDue",
+            "totalPaymentTaxSpecification",
+            "orderProposalVersion",
+            "orderRequiresApproval",
+            "OrderProposalStatus"
+         ],
+         "recommendedFields":[
+            "orderSellerNote",
+            "orderCustomerNote"
+         ],
+         "shallNotInclude":[
+            "orderCreationStatus"
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "@id",
+      "identifier",
+      "seller",
+      "taxMode",
+      "broker",
+      "brokerRole",
+      "orderNumber",
+      "customer",
+      "bookingService",
+      "orderedItem",
+      "totalPaymentDue",
+      "totalPaymentTaxSpecification",
+      "payment",
+      "orderCreationStatus",
+      "orderProposalVersion",
+      "lease",
+      "orderRequiresApproval",
+      "orderProposalStatus",
+      "orderSellerNote",
+      "orderCustomerNote"
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"OrderProposal"
+      },
+      "@id":{
+         "fieldName":"@id",
+         "requiredType":"https://schema.org/URL",
+         "description":[ ""]
+      },
+      "identifier":{
+         "fieldName":"identifier",
+         "sameAs":"https://schema.org/identifier",
+         "alternativeModels":[
+            "#PropertyValue",
+            "ArrayOf#PropertyValue"
+         ],
+         "requiredType":"https://schema.org/Text",
+         "alternativeTypes":[
+            "https://schema.org/Integer"
+         ],
+         "example":"SB1234",
+         "description":[ "A local non-URI identifier for the resource"]
+      },
+      "seller":{
+         "fieldName":"seller",
+         "model":"#Organization",
+         "sameAs":"https://schema.org/seller",
+         "description":[ "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."]
+      },
+      "taxMode":{
+         "fieldName":"taxMode",
+         "requiredType": "https://openactive.io/TaxMode",
+         "description":[""]
+      },
+      "broker":{
+         "fieldName":"broker",
+         "model":"#Organization",
+         "description":["The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive/NoBroker this is not required."]
+      },
+      "brokerRole":{
+         "fieldName":"brokerRole",
+         "requiredType":"https://openactive.io/BrokerType",
+         "description":["Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."]
+      },
+      "orderNumber":{
+         "fieldName":"orderNumber",
+         "sameAs":"https://schema.org/orderNumber",
+         "requiredType":"https://schema.org/Text",
+         "description":["The Customer-facing identifier of the Order."]
+      },
+      "customer":{
+         "fieldName":"customer",
+         "sameAs":"https://schema.org/customer",
+         "model":"#Person",
+         "alternativeModels":[
+            "#Organization"
+         ],
+         "description":["The person or organization purchasing the Order."]
+      },
+      "bookingService":{
+         "fieldName":"bookingService",
+         "model":"#BookingService",
+         "description":["Details about the Booking System"]
+      },
+      "orderedItem":{
+         "fieldName":"orderedItem",
+         "sameAs":"https://schema.org/orderedItem",
+         "model":"ArrayOf#orderItem",
+         "description":["The items that constitute the Order."]
+      },
+      "totalPaymentTaxSpecification":{
+         "fieldName":"totalPaymentTaxSpecification",
+         "requiredType":"ArrayOf#https://openactive.io/TaxChargeSpecification",
+         "description":["Breakdown of tax payable for the Order."]
+      },
+      "payment":{
+         "fieldName":"payment",
+         "model":"#Payment",
+         "description":["The payment associated with the Order by the Broker. It is required for cases where a payment has been taken."]
+      },
+      "orderCreationStatus":{
+         "fieldName":"orderCreationStatus",
+         "requiredType":"https://openactive.io/OrderCreationStatus",
+         "description":["This property is internal to the Broker in this version of the specification."]
+      },
+      "orderProposalVersion":{
+         "fieldName":"orderProposalVersion",
+         "requiredType":"https://schema.org/URL",
+         "description":["The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."]
+      },
+      "lease":{
+         "fieldName":"lease",
+         "model":"#Lease",
+         "description":["The Lease on the OrderItems which lasts for the duration specified by the Booking System."]
+      },
+      "totalPaymentDue":{
+         "fieldName":"totalPaymentDue",
+         "sameAs":"https://schema.org/totalPaymentDue",
+         "model":"#PriceSpecification",
+         "description":[ ""]
+      },
+      "orderRequiresApproval":{
+         "fieldName":"orderRequiresApproval",
+         "requiredType":"https://schema.org/Boolean",
+         "description":["Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."]
+      },
+      "orderProposalStatus":{
+         "fieldName":"orderProposalStatus",
+         "requiredType":"https://openactive.io/OrderProposalStatus",
+         "description":[ ""]
+      },
+      "orderSellerNote":{
+         "fieldName":"orderSellerNote",
+         "requiredType":"https://schema.org/Text",
+         "description":[ ""]
+      },
+      "orderCustomerNote":{
+         "fieldName":"orderCustomerNote",
+         "requiredType":"https://schema.org/Text",
+         "description":[ ""]
+      }
+   }
+}
