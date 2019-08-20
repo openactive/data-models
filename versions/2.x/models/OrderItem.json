@@ -104,13 +104,13 @@
       "allowCustomerCancellationFullRefund":{
          "fieldName":"allowCustomerCancellationFullRefund",
          "requiredType":"https://schema.org/Boolean",
-         "sameAs":"https://www.openactive.io/ns/#allowCustomerCancellationFullRefund",
+         "sameAs":"https://openactive.io/allowCustomerCancellationFullRefund",
          "description":["Whether the event can be cancelled."]
       },
       "unitTaxSpecification":{
          "fieldName":"unitTaxSpecification",
          "model":"ArrayOf#TaxChargeSpecification",
-         "sameAs":"https://www.openactive.io/ns/#unitTaxSpecification",
+         "sameAs":"https://openactive.io/unitTaxSpecification",
          "description":["Breakdown of tax payable for the OrderItem."]
       },
       "acceptedOffer":{
@@ -123,9 +123,9 @@
          "model":"#Event",
          "alternativeModels":[
             "#CourseInstance",
-            "https://www.openactive.io/ns/#ScheduledSession",
-            "https://www.openactive.io/ns/#Slot",
-            "https://www.openactive.io/ns/#HeadlineEvent"
+            "https://openactive.io/ScheduledSession",
+            "https://openactive.io/Slot",
+            "https://openactive.io/HeadlineEvent"
          ],
          "description":["The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."]
       },
@@ -149,19 +149,19 @@
       },
       "error":{
          "fieldName":"error",
-         "sameAs":"https://www.openactive.io/ns/#OpenBookingError",
+         "sameAs":"https://openactive.io/OpenBookingError",
          "model":"ArrayOf#OpenBookingError",
          "description":["Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."]
       },
       "cancellationMessage":{
          "fieldName":"cancellationMessage",
-         "sameAs":"https://www.openactive.io/ns/#cancellationMessage",
+         "sameAs":"https://openactive.io/cancellationMessage",
          "requiredType":"https://schema.org/Text",
          "description":["A message set by the Seller in the event of Opportunity cancellation, only applicable for an  Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/SellerCancelled"]
       },
       "customerNotice":{
          "fieldName":"customerNotice",
-         "sameAs":"https://www.openactive.io/ns/#customerNotice",
+         "sameAs":"https://openactive.io/customerNotice",
          "requiredType":"https://schema.org/Text",
          "description":["A message set by the Seller to trigger a notification to the Customer, only applicable for an Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/OrderConfirmed or  https://openactive.io/CustomerAttended"]
       },
@@ -172,19 +172,19 @@
       },
       "attendeeDetailsRequired":{
          "fieldName":"attendeeDetailsRequired",
-         "sameAs":"https://www.openactive.io/ns/#attendeeDetailsRequired",
+         "sameAs":"https://openactive.io/attendeeDetailsRequired",
          "model":"ArrayOf#Property",
          "description": []
       },
       "orderItemIntakeForm":{
          "fieldName":"orderItemIntakeForm",
-         "sameAs":"https://www.openactive.io/ns/#orderItemIntakeForm",
+         "sameAs":"https://openactive.io/orderItemIntakeForm",
          "model":"ArrayOf#PropertyValueSpecification",
          "description":["PropertyValueSpecifications that describe fields in the orderItemIntakeForm."]
       },
       "orderItemIntakeFormResponse":{
          "fieldName":"orderItemIntakeFormResponse",
-         "sameAs":"https://www.openactive.io/ns/#orderItemIntakeFormResponse",
+         "sameAs":"https://openactive.io/orderItemIntakeFormResponse",
          "model":"ArrayOf#PropertyValue",
          "description":["PropertyValues that contains a text value responses to the orderItemIntakeForm."]
       }

@@ -137,6 +137,7 @@
       },
       "ageRange":{
          "fieldName":"ageRange",
+         "sameAs": "https://openactive.io/ageRange",
          "model":"#QuantitativeValue",
          "description":["ndicates that an Offer is applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties."]
       },
@@ -157,13 +158,13 @@
       },
       "validFromBeforeStartDate":{
          "fieldName":"validFromBeforeStartDate",
-         "sameAs":"https://www.openactive.io/ns/#validFromBeforeStartDate",
+         "sameAs":"https://openactive.io/validFromBeforeStartDate",
          "model":"#Duration",
          "description":["The duration before the startDate for which this Offer is valid, given in ISO 8601 format. This is a relatively-defined equivalent of schema:validFrom, to allow for Offer inheritance."]
       },
       "latestCancellationBeforeStartDate":{
          "fieldName":"latestCancellationBeforeStartDate",
-         "sameAs":"https://www.openactive.io/ns/#latestCancellationBeforeStartDate",
+         "sameAs":"https://openactive.io/latestCancellationBeforeStartDate",
          "model":"#Duration",
          "description":["The duration before the startDate during which this Offer may not be cancelled, given in ISO 8601 format."]
       },

@@ -130,7 +130,7 @@
       },
       "broker":{
          "fieldName":"broker",
-         "sameAs":"https://openactive.io/broker",
+         "sameAs":"https://schema.org/broker",
          "model":"#Organization",
          "description":["The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive/NoBroker this is not required."]
       },
