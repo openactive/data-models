@@ -140,7 +140,7 @@
     },
     "ageRange": {
       "fieldName": "ageRange",
-      "sameAs": "https://schema.org/ageRange",
+      "sameAs": "https://openactive.io/ageRange",
       "model": "#QuantitativeValue",
       "description": [
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
@@ -174,7 +174,6 @@
     },
     "contributor": {
       "fieldName": "contributor",
-      "sameAs": "https://schema.org/contributor",
       "model": "ArrayOf#Person",
       "description": [
         "A Person who contributes to the facilitation of the Event."
@@ -189,7 +188,6 @@
     },
     "description": {
       "fieldName": "description",
-      "sameAs": "https://schema.org/description",
       "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
@@ -198,7 +196,6 @@
     },
     "duration": {
       "fieldName": "duration",
-      "sameAs": "https://schema.org/duration",
       "requiredType": "https://schema.org/Duration",
       "description": [
         "The duration of the event given in [ISO8601] format."
@@ -207,7 +204,6 @@
     },
     "endDate": {
       "fieldName": "endDate",
-      "sameAs": "https://schema.org/endDate",
       "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
         "https://schema.org/Date"
@@ -239,7 +235,6 @@
     },
     "eventStatus": {
       "fieldName": "eventStatus",
-      "sameAs": "https://schema.org/eventStatus",
       "requiredType": "https://schema.org/EventStatusType",
       "description": [
         "The status of an event. Can be used to indicate rescheduled or cancelled events"
@@ -257,7 +252,6 @@
     },
     "identifier": {
       "fieldName": "identifier",
-      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
