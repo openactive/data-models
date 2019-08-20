@@ -1,6 +1,6 @@
 {
   "BrokerType":{
-    "namespace": "https://openactive/",
+    "namespace": "https://openactive.io/",
     "values": [
       "AgentBroker",
       "NoBroker",
@@ -78,10 +78,41 @@
     ]
   },
   "TaxMode": {
-    "namespace": "https://openactive/",
+    "namespace": "https://openactive.io/",
     "values": [
       "TaxGross",
       "TaxNet"
+    ]
+  },
+  "openBookingFlowRequirement":{
+    "namespace": "https://openactive.io/",
+    "values":[
+      "OnlinePrepayment",
+      "OpenBookingIntakeForm",
+      "OpenBookingAttendeeDetails",
+      "OpenBookingApproval",
+      "OpenBookingNegotiation",
+      "OpenBookingMessageExchange"
+    ]
+  },
+  "OrderItemStatus":{
+    "namespace": "https://openactive.io/",
+    "values":[
+      "SellerCancelled",
+      "CustomerCancelled",
+      "OrderProposed",
+      "OrderConfirmed",
+      "CustomerAttended"
+    ]
+  },
+  "AvailableChannelType":{
+    "namespace": "https://openactive.io/",
+    "values":[
+      "OpenBookingPrepayment",
+      "TelephoneAdvanceBooking",
+      "Optional",
+      "TelephonePrepayment",
+      "OnlinePrepayment"
     ]
   }
 }
