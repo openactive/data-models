@@ -84,7 +84,7 @@
       "TaxNet"
     ]
   },
-  "openBookingFlowRequirement":{
+  "OpenBookingFlowRequirement":{
     "namespace": "https://openactive.io/",
     "values":[
       "OnlinePrepayment",
