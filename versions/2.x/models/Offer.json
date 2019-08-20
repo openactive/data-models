@@ -159,13 +159,13 @@
       "validFromBeforeStartDate":{
          "fieldName":"validFromBeforeStartDate",
          "sameAs":"https://openactive.io/validFromBeforeStartDate",
-         "model":"#Duration",
+         "requiredType": "https://schema.org/Duration",
          "description":["The duration before the startDate for which this Offer is valid, given in ISO 8601 format. This is a relatively-defined equivalent of schema:validFrom, to allow for Offer inheritance."]
       },
       "latestCancellationBeforeStartDate":{
          "fieldName":"latestCancellationBeforeStartDate",
          "sameAs":"https://openactive.io/latestCancellationBeforeStartDate",
-         "model":"#Duration",
+         "requiredType": "https://schema.org/Duration",
          "description":["The duration before the startDate during which this Offer may not be cancelled, given in ISO 8601 format."]
       },
       "openBookingFlowRequirement":{

@@ -149,8 +149,8 @@
       },
       "error":{
          "fieldName":"error",
-         "sameAs":"https://openactive.io/OpenBookingError",
-         "model":"ArrayOf#OpenBookingError",
+         "sameAs":"https://openactive.io/error",
+         "requiredType":"ArrayOf#https://openactive.io/OpenBookingError",
          "description":["Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."]
       },
       "cancellationMessage":{
@@ -173,7 +173,7 @@
       "attendeeDetailsRequired":{
          "fieldName":"attendeeDetailsRequired",
          "sameAs":"https://openactive.io/attendeeDetailsRequired",
-         "model":"ArrayOf#Property",
+         "requiredType":"ArrayOf#https://schema.org/Property",
          "description": []
       },
       "orderItemIntakeForm":{
