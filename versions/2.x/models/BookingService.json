@@ -49,7 +49,7 @@
       "termsOfService":{
          "fieldName":"termsOfService",
          "sameAs": "https://schema.org/termsOfService",
-         "requiredType":"ArrayOf#https://openactive.io/Terms",
+         "model": "ArrayOf#Terms",
          "description": ["The terms of service of the Booking System."]
       }
    }
