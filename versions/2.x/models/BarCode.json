@@ -1,0 +1,35 @@
+{
+  "type": "BarCode",
+  "subClassOf":"#ImageObject",
+  "derivedFrom": "https://schema.org/BarCode",
+  "hasId": false,
+  "inSpec": [
+    "type",
+    "text",
+    "url",
+    "thumbnail"
+  ],
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "BarCode"
+    },
+    "text": {
+      "fieldName": "text",
+      "requiredType": "https://schema.org/Text",
+      "example": "0123456789",
+      "description": [
+        "The barcode number"
+      ]
+    },
+    "url": {
+      "fieldName": "url",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://fallback.image.example.com/476ac24c694da79c5e33731ebbb5f1",
+      "description": [
+        "A fallback rendered barcode image url in addition to the raw barcode details."
+      ]
+    }
+  }
+}
