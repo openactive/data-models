@@ -154,9 +154,9 @@
          "model":"ArrayOf#OrderItem",
          "description":["The items that constitute the Order."]
       },
-      "totalPaymentTaxSpecification":{
-         "fieldName":"totalPaymentTaxSpecification",
-         "sameAs":"https://openactive.io/totalPaymentTaxSpecification",
+      "totalPaymentTax":{
+         "fieldName":"totalPaymentTax",
+         "sameAs":"https://openactive.io/totalPaymentTax",
          "model":"ArrayOf#TaxChargeSpecification",
          "description":["Breakdown of tax payable for the Order."]
       },
