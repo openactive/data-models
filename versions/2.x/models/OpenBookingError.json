@@ -1,0 +1,40 @@
+{
+  "type": "OpenBookingError",
+  "isJsonLd": true,
+  "hasId": false,
+  "requiredFields": [
+    "type",
+    "name",
+    "description"
+  ],
+  "inSpec": [
+    "type",
+    "name",
+    "description"
+  ],
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "LocationFeatureSpecification"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "No customer details supplied",
+      "description": [
+        "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
+      "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.",
+      "description": [
+        "A slightly longer, human-readable summary of the problem type. It largely should not change from occurrence to occurrence of the problem, except for purposes of localization or to provide specific information about why the error occurred in that particular case."
+      ]
+    }
+  }
+}

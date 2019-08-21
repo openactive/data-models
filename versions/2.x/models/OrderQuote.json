@@ -1,0 +1,123 @@
+{
+   "type":"OrderQuote",
+   "subClassOf":"#Order",
+   "isJsonLd":true,
+   "idFormat":"https://schema.org/URL",
+   "sampleId":"https://example.com/OrderQuote/f98e76e95b70e5801",
+   "status":{
+      "request":{
+         "hasId":false,
+         "requiredFields":[
+            "type",
+            "broker",
+            "brokerRole",
+            "customer",
+            "orderedItem",
+            "totalPaymentDue"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+            "identifier",
+            "seller",
+            "orderNumber",
+            "bookingService",
+            "totalPaymentTaxSpecification",
+            "orderCreationStatus",
+            "orderProposalVersion",
+            "lease",
+            "totalPaymentDue",
+            "orderRequiresApproval"
+         ],
+         "requiredOptions":[
+
+         ]
+      },
+      "response":{
+         "hasId":true,
+         "requiredFields":[
+            "type",
+            "seller",
+            "broker",
+            "brokerRole",
+            "bookingService",
+            "orderedItem",
+            "totalPaymentDue",
+            "totalPaymentTaxSpecification",
+            "orderProposalVersion",
+            "orderRequiresApproval"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+            "customer",
+            "orderCreationStatus"
+         ],
+         "requiredOptions":[
+
+         ]
+      },
+      "orderFeed":{
+         "hasId":true,
+         "requiredFields":[
+            "type",
+            "orderedItem",
+            "totalPaymentDue",
+            "totalPaymentTaxSpecification"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "id",
+      "identifier",
+      "seller",
+      "broker",
+      "brokerRole",
+      "orderNumber",
+      "customer",
+      "bookingService",
+      "orderedItem",
+      "totalPaymentDue",
+      "totalPaymentTaxSpecification",
+      "orderCreationStatus",
+      "lease",
+      "orderRequiresApproval",
+      "payment",
+      "orderProposalVersion"
+   ],
+   "notInSpec":[
+     "payment",
+     "orderProposalVersion"
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"OrderQuote"
+      },
+      "lease":{
+         "fieldName":"lease",
+         "sameAs":"https://openactive.io/lease",
+         "model":"#Lease",
+         "description":["The Lease on the OrderItems which lasts for the duration specified by the Booking System."]
+      },
+      "orderRequiresApproval":{
+         "fieldName":"orderRequiresApproval",
+         "sameAs":"https://openactive.io/orderRequiresApproval",
+         "requiredType":"https://schema.org/Boolean",
+         "description":["Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."]
+      }
+   }
+}

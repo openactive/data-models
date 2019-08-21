@@ -1,0 +1,56 @@
+{
+   "type":"BookingService",
+   "subClassOf":"https://schema.org/Service",
+   "isJsonLd":true,
+   "status":{
+      "response":{
+         "hasId":false,
+         "requiredFields":[
+            "type"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "name",
+      "url",
+      "termsOfService"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"BookingService"
+      },
+      "name":{
+         "fieldName":"name",
+         "requiredType":"https://schema.org/Text",
+         "sameAs": "https://schema.org/name",
+         "description": ["The name of the Booking System."]
+      },
+      "url":{
+         "fieldName":"url",
+         "requiredType":"https://schema.org/URL",
+         "sameAs": "https://schema.org/url",
+         "description": ["The URL of the website of the Booking System."]
+      },
+      "termsOfService":{
+         "fieldName":"termsOfService",
+         "sameAs": "https://schema.org/termsOfService",
+         "requiredType":"ArrayOf#https://openactive.io/Term",
+         "description": ["The terms of service of the Booking System."]
+      }
+   }
+}

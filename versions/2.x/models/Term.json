@@ -1,0 +1,59 @@
+{
+   "type":"Term",
+   "isJsonLd":true,
+   "subClassOf":"https://schema.org/DigitalDocument",
+   "status":{
+      "response":{
+         "hasId":false,
+         "requiredFields":[
+            "type",
+            "name",
+            "url",
+            "requiresExplicitConsent"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "name",
+      "url",
+      "requiresExplicitConsent"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"Term"
+      },
+      "name":{
+         "fieldName":"name",
+         "requiredType":"https://schema.org/Text",
+         "sameAs": "https://schema.org/name",
+         "description":["The name of the terms. The name must distinguish this from other terms fields provided, e.g. 'Terms and Conditions' or 'Privacy Policy'."]
+      },
+      "url":{
+         "fieldName":"url",
+         "sameAs": "https://schema.org/url",
+         "requiredType":"https://schema.org/URL",
+         "description": ["The URL of the webpage containing the contents of the terms."]
+      },
+      "requiresExplicitConsent":{
+         "fieldName":"requiresExplicitConsent",
+         "requiredType":"https://schema.org/Boolean",
+         "sameAs": "https://openactive.io/requiresExplicitConsent",
+         "description": [""]
+      }
+   }
+}

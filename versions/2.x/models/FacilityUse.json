@@ -86,6 +86,7 @@
     },
     "activity": {
       "fieldName": "activity",
+      "sameAs": "https://openactive.io/activity",
       "model": "ArrayOf#Concept",
       "description": [
         "Specifies the physical activity or activities that will take place during a facility use."
