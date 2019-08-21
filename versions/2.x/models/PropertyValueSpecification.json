@@ -1,6 +1,6 @@
 {
    "type":"PropertyValueSpecification",
-   "isJsonLd":true,
+   "derivedFrom": "https://schema.org/PropertyValueSpecification",
    "status":{
       "response":{
          "hasId":false,

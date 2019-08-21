@@ -1,6 +1,6 @@
 {
    "type":"Payment",
-   "isJsonLd":true,
+   "derivedFrom": "https://schema.org/Thing",
    "status":{
       "response":{
          "hasId":false,

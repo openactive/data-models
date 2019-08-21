@@ -1,6 +1,6 @@
 {
   "type": "OpenBookingError",
-  "isJsonLd": true,
+  "derivedFrom": "https://schema.org/Thing",
   "hasId": false,
   "requiredFields": [
     "type",
