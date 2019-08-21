@@ -1,5 +1,5 @@
 {
-   "type":"Term",
+   "type":"Terms",
    "isJsonLd":true,
    "subClassOf":"https://schema.org/DigitalDocument",
    "status":{
@@ -35,7 +35,7 @@
       "type":{
          "fieldName":"type",
          "requiredType":"https://schema.org/Text",
-         "requiredContent":"Term"
+         "requiredContent":"Terms"
       },
       "name":{
          "fieldName":"name",
