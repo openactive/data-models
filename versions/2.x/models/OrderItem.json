@@ -115,9 +115,9 @@
          "model":"#Event",
          "alternativeModels":[
             "#CourseInstance",
-            "https://openactive.io/ScheduledSession",
-            "https://openactive.io/Slot",
-            "https://openactive.io/HeadlineEvent"
+            "#ScheduledSession",
+            "#Slot",
+            "#HeadlineEvent"
          ],
          "description":["The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."]
       },
@@ -142,7 +142,7 @@
       "error":{
          "fieldName":"error",
          "sameAs":"https://openactive.io/error",
-         "requiredType":"ArrayOf#https://openactive.io/OpenBookingError",
+         "model":"ArrayOf#OpenBookingError",
          "description":["Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."]
       },
       "cancellationMessage":{
