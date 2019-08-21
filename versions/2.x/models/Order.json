@@ -179,13 +179,13 @@
       "orderedItem":{
          "fieldName":"orderedItem",
          "sameAs": "https://schema.org/orderedItem",
-         "model":"ArrayOf#orderItem",
+         "model":"ArrayOf#OrderItem",
          "description":["The items that constitute the Order."]
       },
       "totalPaymentTaxSpecification":{
          "fieldName":"totalPaymentTaxSpecification",
          "sameAs":"https://openactive.io/totalPaymentTaxSpecification",
-         "model":"ArrayOf#taxChargeSpecification",
+         "model":"ArrayOf#TaxChargeSpecification",
          "description":["Breakdown of tax payable for the Order."]
       },
       "payment":{
