@@ -70,7 +70,6 @@
     "facilityUse": {
       "fieldName": "facilityUse",
       "requiredType": "https://schema.org/URL",
-      "sameAs": "https://openactive.io/facilityUse",
       "description": [
         "URI to the FacilityUse that has this offer"
       ],
@@ -95,7 +94,6 @@
     "maximumUses": {
       "fieldName": "maximumUses",
       "requiredType": "https://schema.org/Integer",
-      "sameAs": "https://openactive.io/maximumUses",
       "description": [
         "The maximum available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
@@ -120,7 +118,6 @@
     "remainingUses": {
       "fieldName": "remainingUses",
       "requiredType": "https://schema.org/Integer",
-      "sameAs": "https://openactive.io/remainingUses",
       "description": [
         "The remaining available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
