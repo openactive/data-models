@@ -22,7 +22,7 @@
             "seller",
             "orderNumber",
             "bookingService",
-            "totalPaymentTaxSpecification",
+            "totalPaymentTax",
             "orderCreationStatus",
             "orderProposalVersion"
          ],
@@ -40,7 +40,7 @@
             "bookingService",
             "orderedItem",
             "totalPaymentDue",
-            "totalPaymentTaxSpecification",
+            "totalPaymentTax",
             "orderProposalVersion"
          ],
          "recommendedFields":[
@@ -60,7 +60,7 @@
             "type",
             "orderedItem",
             "totalPaymentDue",
-            "totalPaymentTaxSpecification"
+            "totalPaymentTax"
          ],
          "recommendedFields":[
 
@@ -84,7 +84,7 @@
       "bookingService",
       "orderedItem",
       "totalPaymentDue",
-      "totalPaymentTaxSpecification",
+      "totalPaymentTax",
       "payment",
       "orderCreationStatus",
       "orderProposalVersion"
