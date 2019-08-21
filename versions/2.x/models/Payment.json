@@ -37,13 +37,11 @@
       },
       "name":{
          "fieldName":"name",
-         "sameAs": "https://schema.org/name",
          "requiredType":"https://schema.org/Text",
          "description":["Optional free text description of the payment method for the Booking System, to help the Seller in discussions with the Customer (e.g. 'AcmeBroker Points' or 'AcmeBroker via Credit Card')."]
       },
       "identifier":{
          "fieldName":"identifier",
-         "sameAs": "https://schema.org/identifier",
          "alternativeModels":[
             "#PropertyValue",
             "ArrayOf#PropertyValue"
@@ -57,18 +55,17 @@
       },
       "paymentMethod":{
          "fieldName":"paymentMethod",
-         "sameAs": "https://schema.org/paymentMethod",
          "requiredType":"https://schema.org/PaymentMethod",
          "description":["paymentMethod must not be used, and is reserved for future versions of this specification."]
       },
       "accountId":{
          "fieldName":"accountId",
-         "sameAs": "https://schema.org/accountId",
          "requiredType":"https://schema.org/Text",
          "description":["A reference used by the Seller to group transactions, which is used to aid reconciliation."]
       },
       "paymentProviderId":{
          "fieldName":"paymentProviderId",
+         "sameAs":"https://openactive.io/paymentProviderId",
          "requiredType":"https://schema.org/Text",
          "description":["A reference to the specific Payment Provider that is used."]
       }

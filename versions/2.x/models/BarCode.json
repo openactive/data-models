@@ -1,7 +1,6 @@
 {
   "type": "BarCode",
   "subClassOf":"#ImageObject",
-  "derivedFrom": "https://schema.org/BarCode",
   "hasId": false,
   "inSpec": [
     "type",
@@ -17,6 +16,7 @@
     },
     "text": {
       "fieldName": "text",
+      "sameAs": "https://schema.org/text",
       "requiredType": "https://schema.org/Text",
       "example": "0123456789",
       "description": [
@@ -25,6 +25,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "example": "https://fallback.image.example.com/476ac24c694da79c5e33731ebbb5f1",
       "description": [

@@ -49,6 +49,7 @@
       },
       "leaseExpires":{
          "fieldName":"leaseExpires",
+         "sameAs": "https://openactive.io/leaseExpires",
          "requiredType":"https://schema.org/DateTime",
          "description":["Expiry DateTime of the Lease in ISO 8601 format"]
       }
