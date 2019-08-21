@@ -51,7 +51,7 @@
             "totalPaymentTaxSpecification",
             "orderProposalVersion",
             "orderRequiresApproval",
-            "OrderProposalStatus"
+            "orderProposalStatus"
          ],
          "recommendedFields":[
             "orderSellerNote",
