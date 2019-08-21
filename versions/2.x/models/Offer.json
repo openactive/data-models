@@ -1,23 +1,32 @@
 {
-   "type":"Offer",
-   "derivedFrom":"https://schema.org/Offer",
-   "isJsonLd":true,
-   "idFormat":"https://schema.org/URL",
-   "sampleId":"https://example.com/Offer/",
-   "status":{
-      "request":{
-        "hasId":true,
-         "requiredFields":[
+   "type": "Offer",
+   "derivedFrom": "https://schema.org/Offer",
+   "hasId": true,
+   "idFormat": "https://schema.org/URL",
+   "sampleId": "https://example.com/offer/",
+   "requiredFields": [
+      "type",
+      "price"
+   ],
+   "recommendedFields": [
+      "id",
+      "name",
+      "ageRange",
+      "url",
+      "priceCurrency"
+   ],
+   "status": {
+      "request": {
+         "hasId": true,
+         "requiredFields": [
             "type",
             "availableChannel"
          ],
-         "recommendedFields":[
+         "recommendedFields": [
             "ageRange"
          ],
-         "requiredOptions":[
-
-         ],
-         "shallNotInclude":[
+         "requiredOptions": [],
+         "shallNotInclude": [
             "validFromBeforeStartDate",
             "latestCancellationBeforeStartDate",
             "name",
@@ -25,24 +34,23 @@
             "priceCurrency"
          ]
       },
-      "response":{
-         "hasId":true,
-         "requiredFields":[
+      "response": {
+         "hasId": true,
+         "requiredFields": [
             "type",
             "availableChannel",
             "price",
             "priceCurrency"
          ],
-         "recommendedFields":[
+         "recommendedFields": [
             "name",
             "ageRange"
          ],
-         "requiredOptions":[
-
-         ]
+         "requiredOptions": []
       }
    },
-   "inSpec":[
+   "inSpec": [
+      "id",
       "type",
       "price",
       "priceCurrency",
@@ -50,120 +58,153 @@
       "ageRange",
       "advanceBooking",
       "prepayment",
+      "acceptedPaymentMethod",
       "availableChannel",
       "validFromBeforeStartDate",
       "latestCancellationBeforeStartDate",
-      "openBookingFlowRequirement"
-   ],
-   "notInSpec":[
-      "acceptedPaymentMethod",
-      "addOn",
-      "advanceBookingRequirement",
-      "aggregateRating",
-      "areaServed",
-      "availability",
-      "availabilityEnds",
-      "availabilityStarts",
-      "availableAtOrFrom",
-      "availableDeliveryMethod",
-      "businessFunction",
-      "category",
-      "deliveryLeadTime",
-      "eligibleCustomerType",
-      "eligibleDuration",
-      "eligibleQuantity",
-      "eligibleRegion",
-      "eligibleTransactionVolume",
-      "gtin12",
-      "gtin13",
-      "gtin14",
-      "gtin8",
-      "includesObject",
-      "ineligibleRegion",
-      "inventoryLevel",
-      "itemCondition",
-      "itemOffered",
-      "mpn",
-      "offeredBy",
-      "priceSpecification",
-      "priceValidUntil",
-      "review",
-      "seller",
-      "serialNumber",
-      "sku",
-      "validFrom",
-      "validThrough",
-      "warranty",
-      "additionalType",
-      "alternateName",
-      "description",
-      "disambiguatingDescription",
+      "openBookingFlowRequirement",
       "identifier",
-      "image",
-      "mainEntityOfPage",
-      "potentialAction",
-      "sameAs",
-      "subjectOf",
+      "description",
       "url"
    ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"Offer"
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "Offer"
       },
-      "price":{
-         "fieldName":"price",
-         "requiredType":"https://schema.org/Float",
-         "description":["The offer price available to participants, which includes or excludes tax depending on the taxMode of the Order."]
+      "price": {
+         "fieldName": "price",
+         "sameAs": "https://schema.org/price",
+         "requiredType": "https://schema.org/Float",
+         "example": 33,
+         "maxDecimalPlaces": 2,
+         "description": [
+            "The offer price of the activity.",
+            "This price should be specified without currency symbols and as a floating point number with two decimal places.",
+            "The currency of the price should be expressed in the priceCurrency field.",
+            "Includes or excludes tax depending on the taxMode of the seller."
+         ]
       },
-      "priceCurrency":{
-         "fieldName":"priceCurrency",
-         "requiredType":"https://schema.org/Text",
-         "description":["The currency of the price. Specified as a 3-letter ISO 4217 value. If an Offer has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."]
+      "priceCurrency": {
+         "fieldName": "priceCurrency",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+            "The currency of the price. Specified as a 3-letter ISO 4217 value. If an Offer has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."
+         ],
+         "example": "GBP"
       },
-      "name":{
-         "fieldName":"name",
-         "requiredType":"https://schema.org/Text",
-         "description":["The name of the Offer suitable for communication to participants."]
+      "name": {
+         "fieldName": "name",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+            "The name of the Offer suitable for communication to participants."
+         ],
+         "example": "Speedball winger position"
       },
-      "ageRange":{
-         "fieldName":"ageRange",
+      "identifier": {
+         "fieldName": "identifier",
+         "alternativeModels": [
+            "#PropertyValue",
+            "ArrayOf#PropertyValue"
+         ],
+         "requiredType": "https://schema.org/Text",
+         "alternativeTypes": [
+            "https://schema.org/Integer"
+         ],
+         "example": "SB1234",
+         "description": [
+            "A local non-URI identifier for the resource"
+         ]
+      },
+      "ageRange": {
+         "fieldName": "ageRange",
          "sameAs": "https://openactive.io/ageRange",
-         "model":"#QuantitativeValue",
-         "description":["ndicates that an Offer is applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties."]
+         "model": "#QuantitativeValue",
+         "description": [
+            "Indicates that an Offer is applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties."
+         ],
+         "example": {
+            "type": "QuantitativeValue",
+            "minValue": 15,
+            "maxValue": 60
+         }
       },
-      "advanceBooking":{
-         "fieldName":"advanceBooking",
-         "requiredType":"https://openactive.io/RequiredStatusType",
-         "description":["Indicates whether to accept this offer, a participant must book in advance, whether they must pay on attending, or have option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."]
+      "acceptedPaymentMethod": {
+         "fieldName": "acceptedPaymentMethod",
+         "sameAs": "https://schema.org/acceptedPaymentMethod",
+         "requiredType": "ArrayOf#http://purl.org/goodrelations/v1#PaymentMethod",
+         "description": [
+            "Indicates the offline payment methods accepted by this provider."
+         ],
+         "example": [
+            "http://purl.org/goodrelations/v1#Cash",
+            "http://purl.org/goodrelations/v1#PaymentMethodCreditCard"
+         ]
       },
-      "prepayment":{
-         "fieldName":"prepayment",
-         "requiredType":"https://openactive.io/RequiredStatusType",
-         "description":["Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."]
+      "advanceBooking": {
+         "fieldName": "advanceBooking",
+         "requiredType": "https://openactive.io/RequiredStatusType",
+         "description": [
+            "Indicates whether to accept this offer, a participant must book in advance, whether they must pay on attending, or have option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."
+         ],
+         "example": "https://openactive.io/Required"
       },
-      "availableChannel":{
-         "fieldName":"availableChannel",
-         "requiredType":"ArrayOf#https://openactive.io/AvailableChannelType",
-         "description": [""]
+      "description": {
+         "fieldName": "description",
+         "sameAs": "https://schema.org/description",
+         "requiredType": "https://schema.org/Text",
+         "example": "Concession requirements are available at https://www.fusion-lifestyle.com/. Proof of entitlement to concession membership must be provided when you visit the centre.",
+         "description": [
+            "A free text description of the Offer"
+         ]
       },
-      "validFromBeforeStartDate":{
-         "fieldName":"validFromBeforeStartDate",
-         "sameAs":"https://openactive.io/validFromBeforeStartDate",
+      "prepayment": {
+         "fieldName": "prepayment",
+         "requiredType": "https://openactive.io/RequiredStatusType",
+         "description": [
+            "Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."
+         ],
+         "example": "https://openactive.io/Required"
+      },
+      "availableChannel": {
+         "fieldName": "availableChannel",
+         "requiredType": "ArrayOf#https://openactive.io/AvailableChannelType",
+         "description": [
+            ""
+         ]
+      },
+      "validFromBeforeStartDate": {
+         "fieldName": "validFromBeforeStartDate",
+         "sameAs": "https://openactive.io/validFromBeforeStartDate",
          "requiredType": "https://schema.org/Duration",
-         "description":["The duration before the startDate for which this Offer is valid, given in ISO 8601 format. This is a relatively-defined equivalent of schema:validFrom, to allow for Offer inheritance."]
+         "description": [
+            "The duration before the startDate for which this Offer is valid, given in ISO 8601 format. This is a relatively-defined equivalent of schema:validFrom, to allow for Offer inheritance."
+         ]
       },
-      "latestCancellationBeforeStartDate":{
-         "fieldName":"latestCancellationBeforeStartDate",
-         "sameAs":"https://openactive.io/latestCancellationBeforeStartDate",
+      "latestCancellationBeforeStartDate": {
+         "fieldName": "latestCancellationBeforeStartDate",
+         "sameAs": "https://openactive.io/latestCancellationBeforeStartDate",
          "requiredType": "https://schema.org/Duration",
-         "description":["The duration before the startDate during which this Offer may not be cancelled, given in ISO 8601 format."]
+         "description": [
+            "The duration before the startDate during which this Offer may not be cancelled, given in ISO 8601 format."
+         ]
       },
-      "openBookingFlowRequirement":{
-         "fieldName":"openBookingFlowRequirement",
-         "requiredType":"ArrayOf#https://openactive.io/OpenBookingFlowRequirement",
-         "description":[ "Can include  https://openactive.io/OpenBookingIntakeForm,  https://openactive.io/OpenBookingAttendeeDetails,  https://openactive.io/OpenBookingApproval,  https://openactive.io/OpenBookingNegotiation,  https://openactive.io/OpenBookingMessageExchange"]
+      "openBookingFlowRequirement": {
+         "fieldName": "openBookingFlowRequirement",
+         "requiredType": "ArrayOf#https://openactive.io/OpenBookingFlowRequirement",
+         "description": [
+            "Can include  https://openactive.io/OpenBookingIntakeForm,  https://openactive.io/OpenBookingAttendeeDetails,  https://openactive.io/OpenBookingApproval,  https://openactive.io/OpenBookingNegotiation,  https://openactive.io/OpenBookingMessageExchange"
+         ]
+      },
+      "url": {
+         "fieldName": "url",
+         "sameAs": "https://schema.org/url",
+         "requiredType": "https://schema.org/URL",
+         "example": "http://www.rphs.org.uk/",
+         "description": [
+            "URL describing the offer"
+         ]
       }
    }
 }
