@@ -90,7 +90,7 @@
       },
       "orderItemStatus":{
          "fieldName":"orderItemStatus",
-         "requiredType":"ArrayOf#https://openactive.io/OrderItemStatus",
+         "requiredType":"https://openactive.io/OrderItemStatus",
          "description":[]
       },
       "allowCustomerCancellationFullRefund":{
