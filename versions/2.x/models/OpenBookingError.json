@@ -10,7 +10,12 @@
   "inSpec": [
     "type",
     "name",
-    "description"
+    "description",
+    "instance",
+    "method",
+    "status",
+    "invalidParams",
+    "requestId"
   ],
   "fields": {
     "type": {
@@ -34,6 +39,41 @@
       "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.",
       "description": [
         "A slightly longer, human-readable summary of the problem type. It largely should not change from occurrence to occurrence of the problem, except for purposes of localization or to provide specific information about why the error occurred in that particular case."
+      ]
+    },
+    "instance": {
+      "fieldName": "instance",
+      "requiredType": "https://schema.org/URL",
+      "description": [
+        "The requested URL."
+      ]
+    },
+    "method": {
+      "fieldName": "method",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "The method of the request (e.g. GET)."
+      ]
+    },
+    "status": {
+      "fieldName": "status",
+      "requiredType": "https://schema.org/Integer",
+      "description": [
+        "An integer representing the HTTP status code."
+      ]
+    },
+    "invalidParams": {
+      "fieldName": "invalidParams",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "description": [
+        "An array of invalid parameters, if appropriate."
+      ]
+    },
+    "requestId": {
+      "fieldName": "requestId",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "Used by technical support for diagnostics purposes."
       ]
     }
   }
