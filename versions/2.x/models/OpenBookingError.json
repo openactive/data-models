@@ -16,7 +16,7 @@
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
-      "requiredContent": "LocationFeatureSpecification"
+      "requiredContent": "Error"
     },
     "name": {
       "fieldName": "name",
