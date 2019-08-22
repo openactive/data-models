@@ -1,0 +1,39 @@
+{
+   "type":"DynamicPayment",
+   "subClassOf": "#Payment",
+   "status":{
+      "response":{
+         "hasId":false,
+         "requiredFields":[
+            "type",
+            "identifier",
+            "accountId"
+         ],
+         "recommendedFields":[
+            "name",
+            "paymentProviderId"
+         ],
+         "shallNotInclude":[
+            "paymentMethod"
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "name",
+      "identifier",
+      "paymentMethod",
+      "accountId",
+      "paymentProviderId"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+     "type": {
+       "fieldName": "type",
+       "requiredType": "https://schema.org/Text",
+       "requiredContent": "DynamicPayment"
+     }
+  }
+}
