@@ -5,27 +5,33 @@
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
+    "id",
     "type",
     "name"
   ],
   "recommendedFields": [
-    "id",
     "url",
     "telephone",
     "sameAs"
   ],
   "inSpec": [
-    "type",
     "id",
+    "type",
     "identifier",
-    "url",
     "name",
     "legalName",
     "email",
     "description",
     "logo",
     "telephone",
-    "sameAs"
+    "sameAs",
+    "taxMode",
+    "vatID",
+    "telephone",
+    "url",
+    "logo",
+    "address",
+    "termsOfService"
   ],
   "fields": {
     "type": {
@@ -40,6 +46,21 @@
       "example": "The national governing body of cycling",
       "description": [
         "The description of the Organization"
+      ]
+    },
+    "taxMode": {
+      "fieldName": "taxMode",
+      "requiredType": "https://openactive.io/TaxMode",
+      "description": [
+        "Either  https://openactive/TaxNet or  https://openactive/TaxGross"
+      ]
+    },
+    "vatID": {
+      "fieldName": "vatID",
+      "sameAs": "https://schema.org/vatID",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "The Value-added Tax ID of the of the Seller."
       ]
     },
     "identifier": {
@@ -122,6 +143,22 @@
       "example": "http://www.speedball-world.com",
       "description": [
         "A definitive canonical URL for the Organization."
+      ]
+    },
+    "address": {
+      "fieldName": "address",
+      "sameAs": "https://schema.org/address",
+      "requiredType": "https://schema.org/PostalAddress",
+      "description": [
+        "Address of the Seller, used on tax receipts."
+      ]
+    },
+    "termsOfService": {
+      "fieldName": "termsOfService",
+      "sameAs": "https://schema.org/termsOfService",
+      "model": "ArrayOf#Terms",
+      "description": [
+        "The terms of service of the Seller."
       ]
     }
   }

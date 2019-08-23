@@ -1,0 +1,31 @@
+{
+    "fields": {
+        "type": {
+            "fieldName": "type", 
+            "requiredContent": "InvalidAuthorizationDetailsError", 
+            "requiredType": "https://schema.org/Text"
+        }
+    }, 
+    "hasId": false, 
+    "inSpec": [
+        "type", 
+        "name", 
+        "description", 
+        "instance", 
+        "method", 
+        "status", 
+        "invalidParams", 
+        "requestId"
+    ], 
+    "recommendedFields": [
+        "name", 
+        "description", 
+        "instance", 
+        "method"
+    ], 
+    "requiredFields": [
+        "type"
+    ], 
+    "subClassOf": "#OpenBookingError", 
+    "type": "InvalidAuthorizationDetailsError"
+}

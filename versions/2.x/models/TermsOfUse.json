@@ -1,0 +1,41 @@
+{
+   "type":"TermsOfUse",
+   "isJsonLd":true,
+   "subClassOf":"#Terms",
+   "status":{
+      "response":{
+         "hasId":false,
+         "requiredFields":[
+            "type",
+            "name",
+            "url",
+            "requiresExplicitConsent"
+         ],
+         "recommendedFields":[
+
+         ],
+         "shallNotInclude":[
+
+         ],
+         "requiredOptions":[
+
+         ]
+      }
+   },
+   "inSpec":[
+      "type",
+      "name",
+      "url",
+      "requiresExplicitConsent"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"TermsOfUse"
+      }
+   }
+}
