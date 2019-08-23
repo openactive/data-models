@@ -5,11 +5,11 @@
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/offer/fc8f8c37e70ae50b",
    "requiredFields":[
+      "id",
       "type",
       "price"
    ],
    "recommendedFields":[
-      "id",
       "name",
       "ageRange",
       "url",
@@ -39,6 +39,7 @@
       "response":{
          "hasId":true,
          "requiredFields":[
+            "id",
             "type",
             "availableChannel",
             "price",

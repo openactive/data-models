@@ -5,10 +5,10 @@
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/person/",
   "requiredFields": [
+    "id",
     "type"
   ],
   "recommendedFields": [
-    "id"
   ],
   "inSpec": [
     "id",

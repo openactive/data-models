@@ -8,7 +8,8 @@
          "requiredFields":[
             "type",
             "price",
-            "priceCurrency"
+            "priceCurrency",
+            "name"
          ],
          "recommendedFields":[
 
@@ -24,7 +25,10 @@
    "inSpec":[
       "type",
       "price",
-      "priceCurrency"
+      "priceCurrency",
+      "identifier",
+      "name",
+      "rate"
    ],
    "notInSpec":[
 
@@ -38,14 +42,49 @@
       "price":{
          "fieldName":"price",
          "requiredType":"https://schema.org/Float",
-         "sameAs": "https://schema.org/price",
-         "description":["The total amount."]
+         "sameAs":"https://schema.org/price",
+         "description":[
+            "The total amount."
+         ]
       },
       "priceCurrency":{
          "fieldName":"priceCurrency",
          "requiredType":"https://schema.org/Text",
-         "sameAs": "https://schema.org/priceCurrency",
-         "description":["The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."]
+         "sameAs":"https://schema.org/priceCurrency",
+         "description":[
+            "The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."
+         ]
+      },
+      "name":{
+         "fieldName":"name",
+         "requiredType":"https://schema.org/Text",
+         "sameAs":"https://schema.org/name",
+         "description":[
+            "The name of the tax charge, e.g. \"VAT at 0% for EU transactions\""
+         ]
+      },
+      "rate":{
+         "fieldName":"rate",
+         "requiredType":"https://schema.org/Float",
+         "description":[
+            "The rate of VAT."
+         ]
+      },
+      "identifier":{
+         "fieldName":"identifier",
+         "sameAs":"https://schema.org/identifier",
+         "alternativeModels":[
+            "#PropertyValue",
+            "ArrayOf#PropertyValue"
+         ],
+         "requiredType":"https://schema.org/Text",
+         "alternativeTypes":[
+            "https://schema.org/Integer"
+         ],
+         "example":"SB1234",
+         "description":[
+            "A local non-URI identifier for the resource"
+         ]
       }
    }
 }

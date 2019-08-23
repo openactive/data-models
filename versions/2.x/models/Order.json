@@ -77,6 +77,7 @@
       "type",
       "identifier",
       "seller",
+      "taxCalculationExcluded",
       "broker",
       "brokerRole",
       "orderNumber",
@@ -114,6 +115,12 @@
          "sameAs": "https://schema.org/seller",
          "model":"#Organization",
          "description":[ "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."]
+      },
+      "taxCalculationExcluded":{
+        "fieldName": "taxCalculationExcluded",
+        "requiredType": "https://schema.org/Boolean",
+        "description":["Set to true when business-to-business tax calculation is required by the seller or brokerRole settings, but not supported by the Broker."]
+
       },
       "broker":{
          "fieldName":"broker",

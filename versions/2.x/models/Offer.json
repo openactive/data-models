@@ -5,11 +5,11 @@
    "idFormat": "https://schema.org/URL",
    "sampleId": "https://example.com/offer/",
    "requiredFields": [
+      "id",
       "type",
       "price"
    ],
    "recommendedFields": [
-      "id",
       "name",
       "ageRange",
       "url",

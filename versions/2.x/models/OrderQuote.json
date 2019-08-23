@@ -85,6 +85,7 @@
       "seller",
       "broker",
       "brokerRole",
+      "taxCalculationExcluded",
       "orderNumber",
       "customer",
       "bookingService",
@@ -100,7 +101,7 @@
    "notInSpec":[
      "payment",
      "orderProposalVersion"
-   ],
+      ],
    "fields":{
       "type":{
          "fieldName":"type",
