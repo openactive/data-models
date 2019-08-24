@@ -148,7 +148,7 @@
     "address": {
       "fieldName": "address",
       "sameAs": "https://schema.org/address",
-      "requiredType": "https://schema.org/PostalAddress",
+      "model": "#PostalAddress",
       "description": [
         "Address of the Seller, used on tax receipts."
       ]
