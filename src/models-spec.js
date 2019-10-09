@@ -8,7 +8,7 @@ const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 describe('models', () => {
-  const existing = {};
+  const fieldNameToNamespaced = {};
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
     const files = [
@@ -285,11 +285,14 @@ describe('models', () => {
                   const fieldSameAsName = hasFieldSameAs
                     ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
                     : fieldName;
-                  expect(
-                    typeof existing[fieldName] === 'undefined'
-                    || existing[fieldName] === `${fieldPrefix}:${fieldSameAsName}`,
-                  ).toBe(true);
-                  existing[fieldName] = `${fieldPrefix}:${fieldSameAsName}`;
+                  const fieldNameWithNamespace = `${fieldPrefix}:${fieldSameAsName}`;
+                  if (typeof fieldNameToNamespaced[fieldName] === 'undefined') {
+                    // if field with this name has not been seen before, then store to compare with other occurances
+                    fieldNameToNamespaced[fieldName] = fieldNameWithNamespace;
+                  } else {
+                    // if field with this name has been seen before, then make sure two occurances are from the same namespace
+                    expect(fieldNameToNamespaced[fieldName] === fieldNameWithNamespace).toBe(true);
+                  }
                 }
               }
             });
