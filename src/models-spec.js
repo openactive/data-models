@@ -18,10 +18,7 @@ describe('models', () => {
     const metaData = getMetaData(version);
     for (const file of files) {
       describe(`file ${file}`, () => {
-        let dir = 'models';
-        if (file.match(/^Feed/)) {
-          dir = 'rpde';
-        }
+        const dir = file.match(/^Feed/) ? 'rpde' : 'models';
         const filePath = path.join(__dirname, '..', 'versions', version, dir, file);
         const data = fs.readFileSync(filePath, 'utf8');
         let jsonData;
