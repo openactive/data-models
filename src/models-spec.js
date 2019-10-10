@@ -84,6 +84,16 @@ describe('models', () => {
           }
         });
 
+        it('should check that any schema.org class that a model derives from actually exists', () => {
+          if (
+            typeof jsonData.derivedFrom === 'string'
+              && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
+          ) {
+            const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
+            expect(schemaOrgDataModels.includes(derivedFromClassId)).toBe(true);
+          }
+        });
+
         it('should have an idFormat and sampleId if hasId is true', () => {
           if (typeof jsonData.hasId !== 'undefined') {
             expect(typeof jsonData.hasId).toBe('boolean');
