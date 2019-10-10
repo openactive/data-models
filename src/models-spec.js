@@ -1,11 +1,26 @@
 const fs = require('fs');
 const path = require('path');
+const request = require('sync-request');
 
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
+
+const schemaOrgDataModels = (() => {
+  const pendingResponse = request('GET', 'https://schema.org/version/latest/ext-pending.jsonld', {
+    accept: 'application/ld+json',
+  });
+  const pendingIds = JSON.parse(pendingResponse.body)['@graph'].map(model => model['@id']);
+
+  const mainResponse = request('GET', 'https://schema.org/version/latest/schema.jsonld', {
+    accept: 'application/ld+json',
+  });
+  const mainIds = JSON.parse(mainResponse.body)['@graph'].map(model => model['@id']);
+
+  return [...pendingIds, ...mainIds];
+})();
 
 const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
