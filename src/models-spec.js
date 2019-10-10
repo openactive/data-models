@@ -71,6 +71,19 @@ describe('models', () => {
           expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
         });
 
+        it('should check sameAs on fields actually exist when they are properties from schema.org', () => {
+          for (const field in jsonData.fields) {
+            if (
+              Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+                && typeof jsonData.fields[field].sameAs === 'string'
+                && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
+            ) {
+              const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
+              expect(schemaOrgDataModels.includes(propertyId)).toBe(true);
+            }
+          }
+        });
+
         it('should have an idFormat and sampleId if hasId is true', () => {
           if (typeof jsonData.hasId !== 'undefined') {
             expect(typeof jsonData.hasId).toBe('boolean');
