@@ -84,6 +84,22 @@ describe('models', () => {
           }
         });
 
+        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org class', () => {
+          if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
+            for (const field in jsonData.fields) {
+              if (
+                Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+                  && typeof jsonData.fields[field].sameAs === 'undefined'
+                  && field !== 'type'
+              ) {
+                const impliedPropertyId = `http://schema.org/${field}`;
+                const actual = schemaOrgDataModels.includes(impliedPropertyId);
+                expect(actual).toBe(true);
+              }
+            }
+          }
+        });
+
         it('should check that any schema.org class that a model derives from actually exists', () => {
           if (
             typeof jsonData.derivedFrom === 'string'
