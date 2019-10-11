@@ -39,9 +39,9 @@ describe('models', () => {
     const fieldNameToNamespaced = {};
     describe(`file ${file}`, () => {
       let jsonData;
-      const readJson = () => { jsonData = JSON.parse(data); };
 
       it('should be valid json', () => {
+        const readJson = () => { jsonData = JSON.parse(data); };
         expect(readJson).not.toThrow();
         expect(typeof jsonData).toEqual('object');
       });
