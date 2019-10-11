@@ -8,21 +8,20 @@ const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 describe('models', () => {
-  const existing = {};
+  const fieldNameToNamespaced = {};
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
+    const modelsDirpath = path.join(__dirname, '..', 'versions', version, 'models');
+    const rpdeDirpath = path.join(__dirname, '..', 'versions', version, 'rpde');
     const files = [
-      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'models')),
-      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'rpde')),
+      ...fs.readdirSync(modelsDirpath),
+      ...fs.readdirSync(rpdeDirpath),
     ];
     const metaData = getMetaData(version);
     for (const file of files) {
       describe(`file ${file}`, () => {
-        let dir = 'models';
-        if (file.match(/^Feed/)) {
-          dir = 'rpde';
-        }
-        const filePath = path.join(__dirname, '..', 'versions', version, dir, file);
+        const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
+        const filePath = path.join(dir, file);
         const data = fs.readFileSync(filePath, 'utf8');
         let jsonData;
         const readJson = () => { jsonData = JSON.parse(data); };
@@ -255,7 +254,28 @@ describe('models', () => {
                 expect(jsonData.fields.type.requiredContent).toMatch(/^[a-zA-Z]+$/);
               }
             });
+            describe('alternativeModels', () => {
+              it('should only include entries defined in models json', () => {
+                for (const field in jsonData.fields) {
+                  if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
+                    const fieldSpec = jsonData.fields[field];
+                    if (
+                      typeof fieldSpec.alternativeModels === 'object'
+                      && fieldSpec.alternativeModels.length > 0
+                    ) {
+                      fieldSpec.alternativeModels.forEach((alternativeModel) => {
+                        const alternativeModelShortName = alternativeModel.replace(/^(ArrayOf)?#/, '');
+                        const alternativeModelFilename = `${alternativeModelShortName}.json`;
+                        const alternativeModelExpectedFilepath = path.join(modelsDirpath, alternativeModelFilename);
+                        expect(fs.existsSync(alternativeModelExpectedFilepath)).toBe(true);
+                      });
+                    }
+                  }
+                }
+              });
+            });
           });
+
           describe('namespaces', () => {
             let model;
             beforeEach(() => {
@@ -285,11 +305,14 @@ describe('models', () => {
                   const fieldSameAsName = hasFieldSameAs
                     ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
                     : fieldName;
-                  expect(
-                    typeof existing[fieldName] === 'undefined'
-                    || existing[fieldName] === `${fieldPrefix}:${fieldSameAsName}`,
-                  ).toBe(true);
-                  existing[fieldName] = `${fieldPrefix}:${fieldSameAsName}`;
+                  const fieldNameWithNamespace = `${fieldPrefix}:${fieldSameAsName}`;
+                  if (typeof fieldNameToNamespaced[fieldName] === 'undefined') {
+                    // if field with this name has not been seen before, then store to compare with other occurances
+                    fieldNameToNamespaced[fieldName] = fieldNameWithNamespace;
+                  } else {
+                    // if field with this name has been seen before, then make sure two occurances are from the same namespace
+                    expect(fieldNameToNamespaced[fieldName] === fieldNameWithNamespace).toBe(true);
+                  }
                 }
               }
             });
