@@ -7,8 +7,7 @@ const derivePrefix = require('./helpers/derivePrefix');
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
-describe('models', () => {
-  const fieldNameToNamespaced = {};
+const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
     const modelsDirpath = path.join(__dirname, '..', 'versions', version, 'models');
@@ -18,6 +17,13 @@ describe('models', () => {
       ...fs.readdirSync(rpdeDirpath),
     ];
     const metaData = getMetaData(version);
+    cb(version, metaData, modelsDirpath, rpdeDirpath, files);
+  }
+};
+
+describe('models', () => {
+  const fieldNameToNamespaced = {};
+  forEachVersion((version, metaData, modelsDirpath, rpdeDirpath, files) => {
     for (const file of files) {
       describe(`file ${file}`, () => {
         const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
@@ -320,5 +326,5 @@ describe('models', () => {
         }
       });
     }
-  }
+  });
 });
