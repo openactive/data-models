@@ -11,15 +11,17 @@ describe('models', () => {
   const fieldNameToNamespaced = {};
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
+    const modelsDirpath = path.join(__dirname, '..', 'versions', version, 'models');
+    const rpdeDirpath = path.join(__dirname, '..', 'versions', version, 'rpde');
     const files = [
-      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'models')),
-      ...fs.readdirSync(path.join(__dirname, '..', 'versions', version, 'rpde')),
+      ...fs.readdirSync(modelsDirpath),
+      ...fs.readdirSync(rpdeDirpath),
     ];
     const metaData = getMetaData(version);
     for (const file of files) {
       describe(`file ${file}`, () => {
-        const dir = file.match(/^Feed/) ? 'rpde' : 'models';
-        const filePath = path.join(__dirname, '..', 'versions', version, dir, file);
+        const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
+        const filePath = path.join(dir, file);
         const data = fs.readFileSync(filePath, 'utf8');
         let jsonData;
         const readJson = () => { jsonData = JSON.parse(data); };
