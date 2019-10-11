@@ -254,7 +254,28 @@ describe('models', () => {
                 expect(jsonData.fields.type.requiredContent).toMatch(/^[a-zA-Z]+$/);
               }
             });
+            describe('alternativeModels', () => {
+              it('should only include entries defined in models json', () => {
+                for (const field in jsonData.fields) {
+                  if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
+                    const fieldSpec = jsonData.fields[field];
+                    if (
+                      typeof fieldSpec.alternativeModels === 'object'
+                      && fieldSpec.alternativeModels.length > 0
+                    ) {
+                      fieldSpec.alternativeModels.forEach((alternativeModel) => {
+                        const alternativeModelShortName = alternativeModel.replace(/^(ArrayOf)?#/, '');
+                        const alternativeModelFilename = `${alternativeModelShortName}.json`;
+                        const alternativeModelExpectedFilepath = path.join(modelsDirpath, alternativeModelFilename);
+                        expect(fs.existsSync(alternativeModelExpectedFilepath)).toBe(true);
+                      });
+                    }
+                  }
+                }
+              });
+            });
           });
+
           describe('namespaces', () => {
             let model;
             beforeEach(() => {
