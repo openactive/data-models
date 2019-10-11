@@ -22,8 +22,8 @@ const forEachVersion = (cb) => {
 };
 
 describe('models', () => {
-  const fieldNameToNamespaced = {};
   forEachVersion((version, metaData, modelsDirpath, rpdeDirpath, files) => {
+    const fieldNameToNamespaced = {};
     for (const file of files) {
       describe(`file ${file}`, () => {
         const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
