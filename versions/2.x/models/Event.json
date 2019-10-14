@@ -3,7 +3,7 @@
   "derivedFrom": "https://schema.org/Event",
   "hasId": true,
   "idFormat": "https://schema.org/URL",
-  "sampleId": "https://example.com/event/",
+  "sampleId": "https://example.com/event/12345",
   "requiredFields": [
     "type",
     "url",
@@ -44,7 +44,6 @@
   ],
   "inSpec": [
     "id",
-    "@context",
     "type",
     "identifier",
     "url",
@@ -85,17 +84,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "Event"
-    },
-    "@context": {
-      "fieldName": "@context",
-      "requiredType": "https://schema.org/URL",
-      "alternativeTypes": [
-        "ArrayOf#https://schema.org/URL"
-      ],
-      "description": [
-        "This must be included in the top-most entity in the JSON model."
-      ],
-      "example": "https://openactive.io/"
     },
     "accessibilityInformation": {
       "fieldName": "accessibilityInformation",

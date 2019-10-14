@@ -1,6 +1,6 @@
 {
    "type":"Payment",
-   "derivedFrom": "https://schema.org/Thing",
+   "subClassOf": "#Thing",
    "status":{
       "response":{
          "hasId":false,
@@ -38,6 +38,7 @@
       "name":{
          "fieldName":"name",
          "requiredType":"https://schema.org/Text",
+         "sameAs":"https://schema.org/name",
          "description":["Optional free text description of the payment method for the Booking System, to help the Seller in discussions with the Customer (e.g. 'AcmeBroker Points' or 'AcmeBroker via Credit Card')."]
       },
       "identifier":{

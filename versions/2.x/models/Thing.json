@@ -1,0 +1,89 @@
+{
+   "type":"Thing",
+   "isJsonLd":true,
+   "derivedFrom":"https://schema.org/Thing",
+   "hasId":false,
+   "requiredFields":[
+   ],
+   "recommendedFields":[
+
+   ],
+   "shallNotInclude":[
+
+   ],
+   "requiredOptions":[
+
+   ],
+   "inSpec":[
+      "type",
+      "description",
+      "identifier",
+      "image",
+      "name",
+      "sameAs",
+      "url",
+      "potentialAction"
+   ],
+   "notInSpec":[
+
+   ],
+   "fields":{
+      "type":{
+         "fieldName":"type",
+         "requiredType":"https://schema.org/Text",
+         "requiredContent":"Thing"
+      },
+      "name":{
+         "fieldName":"name",
+         "requiredType":"https://schema.org/Text",
+         "sameAs":"https://schema.org/name",
+         "description":[
+            "The name of the item."
+         ]
+      },
+      "url":{
+         "fieldName":"url",
+         "sameAs":"https://schema.org/url",
+         "requiredType":"https://schema.org/URL",
+         "description":[
+            "URL of the item."
+         ]
+      },
+      "sameAs":{
+         "fieldName":"sameAs",
+         "requiredType":"https://schema.org/url",
+         "description":[
+            "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website."
+         ]
+      },
+      "description":{
+         "fieldName":"description",
+         "requiredType":"https://schema.org/Text",
+         "description":[
+            "A description of the item."
+         ]
+      },
+      "identifier":{
+         "fieldName":"identifier",
+         "requiredType":"https://schema.org/Text",
+         "description":[
+            "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links."
+         ]
+      },
+      "image":{
+         "fieldName":"image",
+         "requiredType":"https://schema.org/url",
+         "description":[
+            "An image of the item. This can be a URL or a fully described ImageObject."
+         ]
+      },
+      "potentialAction":{
+         "fieldName":"potentialAction",
+         "model":"ArrayOf#Action",
+         "sameAs":"https://schema.org/potentialAction",
+         "description":[
+            "The possible actions that a user may make. e.g. Book."
+         ]
+      }
+   }
+}

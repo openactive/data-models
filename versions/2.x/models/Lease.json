@@ -1,6 +1,6 @@
 {
    "type":"Lease",
-   "derivedFrom": "https://schema.org/Thing",
+   "derivedFrom": "#Thing",
    "status":{
       "response":{
          "hasId":false,

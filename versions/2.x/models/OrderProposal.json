@@ -96,17 +96,21 @@
       "orderProposalStatus":{
          "fieldName":"orderProposalStatus",
          "requiredType":"https://openactive.io/OrderProposalStatus",
-         "description":[ ""]
+         "description":[ ""],
+         "sameAs":"https://openactive.io/orderProposalStatus"
       },
       "orderSellerNote":{
          "fieldName":"orderSellerNote",
          "requiredType":"https://schema.org/Text",
-         "description":[ ""]
+         "description":[ ""],
+         "sameAs":"https://openactive.io/orderSellerNote"
       },
       "orderCustomerNote":{
          "fieldName":"orderCustomerNote",
          "requiredType":"https://schema.org/Text",
-         "description":[ ""]
+         "description":[""],
+         "sameAs":"https://openactive.io/orderCustomerNote"
+
       }
    }
 }

@@ -119,8 +119,8 @@
       "taxCalculationExcluded":{
         "fieldName": "taxCalculationExcluded",
         "requiredType": "https://schema.org/Boolean",
-        "description":["Set to true when business-to-business tax calculation is required by the seller or brokerRole settings, but not supported by the Broker."]
-
+        "description":["Set to true when business-to-business tax calculation is required by the seller or brokerRole settings, but not supported by the Broker."],
+        "sameAs":"https://openactive.io/taxCalculationExcluded"
       },
       "broker":{
          "fieldName":"broker",

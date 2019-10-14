@@ -1,8 +1,7 @@
 {
   "type": "Parking",
-  "derivedFrom": "https://schema.org/Thing",
+  "derivedFrom": "#Thing",
   "subClassOf": "#LocationFeatureSpecification",
-  "derivedFrom": null,
   "fields": {
     "type": {
       "fieldName": "type",
