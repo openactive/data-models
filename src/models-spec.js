@@ -185,8 +185,7 @@ describe('models', () => {
           if (
             typeof jsonData.derivedFrom === 'string'
           ) {
-            const derivedFromTypeId = jsonData.derivedFrom.replace(/^https/, 'http');
-            expect(schemaOrgDataModel.includes(derivedFromTypeId)).toBe(true);
+            expect(jsonData.derivedFrom).toBeValidTypeReference();
           }
         });
 
