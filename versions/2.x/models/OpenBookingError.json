@@ -1,84 +1,101 @@
 {
-    "derivedFrom": "https://schema.org/Thing", 
+    "subClassOf": "#Thing",
     "fields": {
         "description": {
             "description": [
                 "A slightly longer, human-readable summary of the problem type. It largely should not change from occurrence to occurrence of the problem, except for purposes of localization or to provide specific information about why the error occurred in that particular case."
-            ], 
-            "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.", 
-            "fieldName": "description", 
-            "requiredType": "https://schema.org/Text", 
+            ],
+            "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.",
+            "fieldName": "description",
+            "requiredType": "https://schema.org/Text",
             "sameAs": "https://schema.org/description"
-        }, 
+        },
         "instance": {
             "description": [
                 "The requested URL."
-            ], 
-            "fieldName": "instance", 
-            "requiredType": "https://schema.org/URL"
-        }, 
+            ],
+            "fieldName": "instance",
+            "requiredType": "https://schema.org/URL",
+            "sameAs": "https://openactive.io/instance"
+        },
         "invalidParams": {
             "description": [
                 "An array of invalid parameters, if appropriate."
-            ], 
-            "fieldName": "invalidParams", 
-            "requiredType": "ArrayOf#https://schema.org/Text"
-        }, 
+            ],
+            "fieldName": "invalidParams",
+            "requiredType": "ArrayOf#https://schema.org/Text",
+            "sameAs": "https://openactive.io/invalidParams"
+        },
         "method": {
             "description": [
                 "The method of the request (e.g. GET)."
-            ], 
-            "fieldName": "method", 
-            "requiredType": "https://schema.org/Text"
-        }, 
+            ],
+            "fieldName": "method",
+            "requiredType": "https://schema.org/Text",
+            "sameAs": "https://openactive.io/method"
+        },
         "name": {
             "description": [
                 "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
-            ], 
-            "example": "No customer details supplied", 
-            "fieldName": "name", 
-            "requiredType": "https://schema.org/Text", 
+            ],
+            "example": "No customer details supplied",
+            "fieldName": "name",
+            "requiredType": "https://schema.org/Text",
             "sameAs": "https://schema.org/name"
-        }, 
+        },
         "requestId": {
             "description": [
                 "Used by technical support for diagnostics purposes."
-            ], 
-            "fieldName": "requestId", 
-            "requiredType": "https://schema.org/Text"
-        }, 
+            ],
+            "fieldName": "requestId",
+            "requiredType": "https://schema.org/Text",
+            "sameAs": "https://openactive.io/requestId"
+        },
         "status": {
             "description": [
                 "An integer representing the HTTP status code."
-            ], 
-            "fieldName": "status", 
-            "requiredType": "https://schema.org/Integer"
-        }, 
+            ],
+            "fieldName": "status",
+            "requiredType": "https://schema.org/Integer",
+            "sameAs": "https://openactive.io/status"
+        },
         "type": {
-            "fieldName": "type", 
-            "requiredContent": "OpenBookingError", 
+            "fieldName": "type",
+            "requiredContent": "OpenBookingError",
             "requiredType": "https://schema.org/Text"
         }
-    }, 
-    "hasId": false, 
+    },
+    "hasId": false,
     "inSpec": [
-        "type", 
-        "name", 
-        "description", 
-        "instance", 
-        "method", 
-        "status", 
-        "invalidParams", 
-        "requestId"
-    ], 
+        "type",
+        "name",
+        "description",
+        "instance",
+        "method",
+        "status",
+        "invalidParams",
+        "requestId",
+        "url",
+        "sameAs",
+        "identifier",
+        "image",
+        "potentialAction"
+    ],
     "recommendedFields": [
-        "name", 
-        "description", 
-        "instance", 
+        "name",
+        "description",
+        "instance",
         "method"
-    ], 
+    ],
     "requiredFields": [
         "type"
-    ], 
+    ],
+    "notInSpec": [
+      "url",
+      "sameAs",
+      "identifier",
+      "image",
+      "potentialAction"
+    ],
     "type": "OpenBookingError"
 }

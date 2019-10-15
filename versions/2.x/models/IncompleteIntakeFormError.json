@@ -15,7 +15,12 @@
         "method",
         "status",
         "invalidParams",
-        "requestId"
+        "requestId",
+        "url",
+        "sameAs",
+        "identifier",
+        "image",
+        "potentialAction"
     ],
     "recommendedFields": [
         "name",
@@ -26,6 +31,13 @@
     "requiredFields": [
         "type"
     ],
+    "notInSpec": [
+          "url",
+          "sameAs",
+          "identifier",
+          "image",
+          "potentialAction"
+        ],
     "subClassOf": "#OpenBookingError",
     "type": "IncompleteIntakeFormError"
 }

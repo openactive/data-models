@@ -1,31 +1,43 @@
 {
     "fields": {
         "type": {
-            "fieldName": "type", 
-            "requiredContent": "OrderCreationFailedError", 
+            "fieldName": "type",
+            "requiredContent": "OrderCreationFailedError",
             "requiredType": "https://schema.org/Text"
         }
-    }, 
-    "hasId": false, 
+    },
+    "hasId": false,
     "inSpec": [
-        "type", 
-        "name", 
-        "description", 
-        "instance", 
-        "method", 
-        "status", 
-        "invalidParams", 
-        "requestId"
-    ], 
+        "type",
+        "name",
+        "description",
+        "instance",
+        "method",
+        "status",
+        "invalidParams",
+        "requestId",
+        "url",
+        "sameAs",
+        "identifier",
+        "image",
+        "potentialAction"
+    ],
     "recommendedFields": [
-        "name", 
-        "description", 
-        "instance", 
+        "name",
+        "description",
+        "instance",
         "method"
-    ], 
+    ],
     "requiredFields": [
         "type"
-    ], 
-    "subClassOf": "#OpenBookingError", 
+    ],
+    "notInSpec": [
+          "url",
+          "sameAs",
+          "identifier",
+          "image",
+          "potentialAction"
+        ],
+    "subClassOf": "#OpenBookingError",
     "type": "OrderCreationFailedError"
 }

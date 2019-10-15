@@ -23,7 +23,6 @@
   "inSpec": [
     "type",
     "id",
-    "@context",
     "url",
     "identifier",
     "name",
@@ -47,17 +46,6 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "FacilityUse"
-    },
-    "@context": {
-      "fieldName": "@context",
-      "requiredType": "https://schema.org/URL",
-      "alternativeTypes": [
-        "ArrayOf#https://schema.org/URL"
-      ],
-      "description": [
-          "This must be included in the top-most entity in the JSON model."
-      ],
-      "example": "https://openactive.io/"
     },
     "accessibilityInformation": {
       "fieldName": "accessibilityInformation",

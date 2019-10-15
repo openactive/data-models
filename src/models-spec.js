@@ -1,11 +1,26 @@
 const fs = require('fs');
 const path = require('path');
+const request = require('sync-request');
 
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
+
+const schemaOrgDataModels = (() => {
+  const pendingResponse = request('GET', 'https://schema.org/version/latest/ext-pending.jsonld', {
+    accept: 'application/ld+json',
+  });
+  const pendingIds = JSON.parse(pendingResponse.body)['@graph'].map(model => model['@id']);
+
+  const mainResponse = request('GET', 'https://schema.org/version/latest/schema.jsonld', {
+    accept: 'application/ld+json',
+  });
+  const mainIds = JSON.parse(mainResponse.body)['@graph'].map(model => model['@id']);
+
+  return [...pendingIds, ...mainIds];
+})();
 
 const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
@@ -54,6 +69,45 @@ describe('models', () => {
         it('should have a type that matches the file name', () => {
           expect(jsonData.type).toBeDefined();
           expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+        });
+
+        it('should check sameAs on fields actually exist when they are properties from schema.org', () => {
+          for (const field in jsonData.fields) {
+            if (
+              Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+                && typeof jsonData.fields[field].sameAs === 'string'
+                && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
+            ) {
+              const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
+              expect(schemaOrgDataModels.includes(propertyId)).toBe(true);
+            }
+          }
+        });
+
+        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org class', () => {
+          if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
+            for (const field in jsonData.fields) {
+              if (
+                Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+                  && typeof jsonData.fields[field].sameAs === 'undefined'
+                  && field !== 'type'
+              ) {
+                const impliedPropertyId = `http://schema.org/${field}`;
+                const actual = schemaOrgDataModels.includes(impliedPropertyId);
+                expect(actual).toBe(true);
+              }
+            }
+          }
+        });
+
+        it('should check that any schema.org class that a model derives from actually exists', () => {
+          if (
+            typeof jsonData.derivedFrom === 'string'
+              && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
+          ) {
+            const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
+            expect(schemaOrgDataModels.includes(derivedFromClassId)).toBe(true);
+          }
         });
 
         it('should have an idFormat and sampleId if hasId is true', () => {

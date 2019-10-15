@@ -53,7 +53,8 @@
       "requiredType": "https://openactive.io/TaxMode",
       "description": [
         "Either  https://openactive/TaxNet or  https://openactive/TaxGross"
-      ]
+      ],
+      "sameAs":"https://openactive.io/taxMode"
     },
     "vatID": {
       "fieldName": "vatID",
