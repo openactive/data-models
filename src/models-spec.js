@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const request = require('sync-request');
 
+const getEnums = require('./getEnums');
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 
@@ -65,18 +66,49 @@ describe('models', () => {
   forEachVersionedFile((version, metaData, modelsDirpath, rpdeDirpath, file, data) => {
     const fieldNameToNamespaced = {};
 
+    const modelExists = (modelName) => {
+      const modelFilename = `${modelName}.json`;
+      const modelExpectedFilepath = path.join(modelsDirpath, modelFilename);
+      return fs.existsSync(modelExpectedFilepath);
+    };
+
     const customMatchers = {
       toBeValidModelReference() {
         return {
           compare(modelRef) {
-            const modelName = modelRef.replace(/^(ArrayOf)?#/, '');
-            const modelFilename = `${modelName}.json`;
-            const modelExpectedFilepath = path.join(modelsDirpath, modelFilename);
             const result = {};
-            result.pass = fs.existsSync(modelExpectedFilepath);
+            const modelName = modelRef.replace(/^(ArrayOf)?#/, '');
+
+            result.pass = modelExists(modelName);
             if (!result.pass) {
-              result.message = `${modelRef} is not a valid model reference`
+              result.message = `${modelRef} is not a valid model reference`;
             }
+            return result;
+          },
+        };
+      },
+
+      toBeValidClassReference() {
+        return {
+          compare(classRef) {
+            const result = {};
+            const classId = classRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
+            if (classId.match(/^http:\/\/schema\.org/)) {
+              result.pass = schemaOrgDataModels.includes(classId);
+              if (!result.pass) {
+                result.message = `${classRef} is not a valid schema.org reference`;
+              }
+            } else if (classId.match(/^https:\/\/openactive.io/)) {
+              const enumName = classId.replace(/^https:\/\/openactive.io\//, '');
+              const enums = getEnums(version);
+              result.pass = Object.prototype.hasOwnProperty.call(enums, enumName);
+              if (!result.pass) {
+                result.message = `${classRef} is not a valid Open Active reference`;
+              }
+            } else {
+              throw new Error(`unrecognished class ${classId}`);
+            }
+
             return result;
           },
         };
