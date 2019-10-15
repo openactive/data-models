@@ -276,7 +276,7 @@ describe('models', () => {
           }
         });
 
-        it('should have a fields property or a subClassOf property', () => {
+        it('should have a fields property', () => {
           expect(typeof jsonData.fields).toBe('object');
         });
 
