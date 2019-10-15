@@ -307,6 +307,16 @@ describe('models', () => {
           }
         });
 
+        it('should only use existing models for models property of a field spec', () => {
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (
+              typeof fieldSpec.model === 'string'
+            ) {
+              expect(fieldSpec.model).toBeValidModelReference();
+            }
+          });
+        });
+
         describe('alternativeModels', () => {
           it('should only include entries defined in models json', () => {
             forEachField(jsonData, (field, fieldSpec) => {
