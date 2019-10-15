@@ -181,7 +181,7 @@ describe('models', () => {
           }
         });
 
-        it('should check that any schema.org class that a model derives from actually exists', () => {
+        it('should check that any derivedFrom property refers to a class that actually exists', () => {
           if (
             typeof jsonData.derivedFrom === 'string'
           ) {
