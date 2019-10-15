@@ -236,6 +236,7 @@ describe('models', () => {
             expect(jsonData.fields.type.requiredContent).toMatch(/^[a-zA-Z]+$/);
           }
         });
+
         describe('alternativeModels', () => {
           it('should only include entries defined in models json', () => {
             for (const field in jsonData.fields) {
@@ -253,6 +254,21 @@ describe('models', () => {
                   });
                 }
               }
+            }
+          });
+        });
+
+        describe('notInSpec', () => {
+          it('should only include fields present in the parentModel', () => {
+            if (
+              typeof jsonData.notInSpec === 'object'
+              && jsonData.notInSpec.length > 0
+            ) {
+              const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
+              const parentModel = loadModelFromFile(parentModelName, version);
+              jsonData.notInSpec.forEach((notInSpecField) => {
+                expect(Object.hasOwnProperty.call(parentModel.fields, notInSpecField)).toBe(true);
+              });
             }
           });
         });
