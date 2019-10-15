@@ -170,12 +170,14 @@ describe('models', () => {
           expect(inheritsFrom).not.toBeEmptyString();
         });
 
-        it('should be a subclass of an existing model if subClassOf is provided', () => {
+        it('should be a subclass of an existing model or class in vocab if subClassOf is provided', () => {
           if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
-            const subClassModelShortName = jsonData.subClassOf.replace(/^#/, '');
-            const subClassModelFilename = `${subClassModelShortName}.json`;
-            const subClassModelExpectedFilepath = path.join(modelsDirpath, subClassModelFilename);
-            expect(fs.existsSync(subClassModelExpectedFilepath)).toBe(true);
+            expect(jsonData.subClassOf).not.toStartWith('ArrayOf#');
+            if (jsonData.subClassOf.startsWith('http')) {
+              expect(jsonData.subClassOf).toBeValidTypeReference();
+            } else {
+              expect(jsonData.subClassOf).toBeValidModelReference();
+            }
           }
         });
 
