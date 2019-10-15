@@ -352,6 +352,16 @@ describe('models', () => {
           });
         });
 
+        it('should only use valid classes with for requiredType property of a field spec', () => {
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (
+              typeof fieldSpec.requiredType === 'string'
+            ) {
+              expect(fieldSpec.requiredType).toBeValidClassReference();
+            }
+          });
+        });
+
         describe('alternativeModels', () => {
           it('should only include entries defined in models json', () => {
             forEachField(jsonData, (field, fieldSpec) => {
