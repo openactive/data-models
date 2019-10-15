@@ -9,17 +9,20 @@ const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 const schemaOrgDataModels = (() => {
-  const pendingResponse = request('GET', 'https://schema.org/version/latest/ext-pending.jsonld', {
-    accept: 'application/ld+json',
-  });
-  const pendingIds = JSON.parse(pendingResponse.body)['@graph'].map(model => model['@id']);
+  const fetchIds = (url) => {
+    const response = request('GET', url, {
+      accept: 'application/ld+json',
+    });
+    return JSON.parse(response.body)['@graph'].map(model => model['@id']);
+  };
 
-  const mainResponse = request('GET', 'https://schema.org/version/latest/schema.jsonld', {
-    accept: 'application/ld+json',
-  });
-  const mainIds = JSON.parse(mainResponse.body)['@graph'].map(model => model['@id']);
+  const schemaSources = [
+    'https://schema.org/version/latest/schema.jsonld',
+    'https://schema.org/version/3.9/ext-meta.jsonld',
+    'https://schema.org/version/latest/ext-pending.jsonld',
+  ];
 
-  return [...pendingIds, ...mainIds];
+  return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
 })();
 
 const forEachVersion = (cb) => {
