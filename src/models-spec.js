@@ -164,6 +164,30 @@ describe('models', () => {
           expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
         });
 
+        it('should be fit into the model inheritence hierarchy', () => {
+          const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
+          expect(inheritsFrom).toBeString();
+          expect(inheritsFrom).not.toBeEmptyString();
+        });
+
+        it('should be a subclass of an existing model if subClassOf is provided', () => {
+          if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
+            const subClassModelShortName = jsonData.subClassOf.replace(/^#/, '');
+            const subClassModelFilename = `${subClassModelShortName}.json`;
+            const subClassModelExpectedFilepath = path.join(modelsDirpath, subClassModelFilename);
+            expect(fs.existsSync(subClassModelExpectedFilepath)).toBe(true);
+          }
+        });
+
+        it('should check that any schema.org class that a model derives from actually exists', () => {
+          if (
+            typeof jsonData.derivedFrom === 'string'
+          ) {
+            const derivedFromTypeId = jsonData.derivedFrom.replace(/^https/, 'http');
+            expect(schemaOrgDataModel.includes(derivedFromTypeId)).toBe(true);
+          }
+        });
+
         it('should check sameAs on fields actually exist when they are properties from schema.org', () => {
           for (const field in jsonData.fields) {
             if (
@@ -190,16 +214,6 @@ describe('models', () => {
                 expect(actual).toBe(true);
               }
             }
-          }
-        });
-
-        it('should check that any schema.org class that a model derives from actually exists', () => {
-          if (
-            typeof jsonData.derivedFrom === 'string'
-              && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
-          ) {
-            const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
-            expect(schemaOrgDataModel.includes(derivedFromClassId)).toBe(true);
           }
         });
 
