@@ -24,10 +24,21 @@
       "identifier",
       "paymentMethod",
       "accountId",
-      "paymentProviderId"
+      "paymentProviderId",
+      "url",
+      "sameAs",
+      "identifier",
+      "image",
+      "potentialAction",
+      "description"
    ],
    "notInSpec":[
-
+     "url",
+     "sameAs",
+     "identifier",
+     "image",
+     "potentialAction",
+     "description"
    ],
    "fields":{
       "type":{

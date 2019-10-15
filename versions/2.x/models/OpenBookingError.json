@@ -1,5 +1,5 @@
 {
-    "subClassOf": "#Thing", 
+    "subClassOf": "#Thing",
     "fields": {
         "description": {
             "description": [
@@ -15,21 +15,24 @@
                 "The requested URL."
             ],
             "fieldName": "instance",
-            "requiredType": "https://schema.org/URL"
+            "requiredType": "https://schema.org/URL",
+            "sameAs": "https://openactive.io/instance"
         },
         "invalidParams": {
             "description": [
                 "An array of invalid parameters, if appropriate."
             ],
             "fieldName": "invalidParams",
-            "requiredType": "ArrayOf#https://schema.org/Text"
+            "requiredType": "ArrayOf#https://schema.org/Text",
+            "sameAs": "https://openactive.io/invalidParams"
         },
         "method": {
             "description": [
                 "The method of the request (e.g. GET)."
             ],
             "fieldName": "method",
-            "requiredType": "https://schema.org/Text"
+            "requiredType": "https://schema.org/Text",
+            "sameAs": "https://openactive.io/method"
         },
         "name": {
             "description": [
@@ -45,14 +48,16 @@
                 "Used by technical support for diagnostics purposes."
             ],
             "fieldName": "requestId",
-            "requiredType": "https://schema.org/Text"
+            "requiredType": "https://schema.org/Text",
+            "sameAs": "https://openactive.io/requestId"
         },
         "status": {
             "description": [
                 "An integer representing the HTTP status code."
             ],
             "fieldName": "status",
-            "requiredType": "https://schema.org/Integer"
+            "requiredType": "https://schema.org/Integer",
+            "sameAs": "https://openactive.io/status"
         },
         "type": {
             "fieldName": "type",
@@ -69,7 +74,12 @@
         "method",
         "status",
         "invalidParams",
-        "requestId"
+        "requestId",
+        "url",
+        "sameAs",
+        "identifier",
+        "image",
+        "potentialAction"
     ],
     "recommendedFields": [
         "name",
@@ -79,6 +89,13 @@
     ],
     "requiredFields": [
         "type"
+    ],
+    "notInSpec": [
+      "url",
+      "sameAs",
+      "identifier",
+      "image",
+      "potentialAction"
     ],
     "type": "OpenBookingError"
 }
