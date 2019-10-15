@@ -61,6 +61,29 @@ const forEachField = (model, cb) => {
 describe('models', () => {
   forEachVersionedFile((version, metaData, modelsDirpath, rpdeDirpath, file, data) => {
     const fieldNameToNamespaced = {};
+
+    const customMatchers = {
+      toBeValidModelReference() {
+        return {
+          compare(modelRef) {
+            const modelName = modelRef.replace(/^(ArrayOf)?#/, '');
+            const modelFilename = `${modelName}.json`;
+            const modelExpectedFilepath = path.join(modelsDirpath, modelFilename);
+            const result = {};
+            result.pass = fs.existsSync(modelExpectedFilepath);
+            if (!result.pass) {
+              result.message = `${modelRef} is not a valid model reference`
+            }
+            return result;
+          },
+        };
+      },
+    };
+
+    beforeEach(() => {
+      jasmine.addMatchers(customMatchers);
+    });
+
     describe(`file ${file}`, () => {
       let jsonData;
 
@@ -292,10 +315,7 @@ describe('models', () => {
                 && fieldSpec.alternativeModels.length > 0
               ) {
                 fieldSpec.alternativeModels.forEach((alternativeModel) => {
-                  const alternativeModelShortName = alternativeModel.replace(/^(ArrayOf)?#/, '');
-                  const alternativeModelFilename = `${alternativeModelShortName}.json`;
-                  const alternativeModelExpectedFilepath = path.join(modelsDirpath, alternativeModelFilename);
-                  expect(fs.existsSync(alternativeModelExpectedFilepath)).toBe(true);
+                  expect(alternativeModel).toBeValidModelReference();
                 });
               }
             });
