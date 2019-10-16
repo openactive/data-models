@@ -88,25 +88,25 @@ describe('models', () => {
         };
       },
 
-      toBeValidClassReference() {
+      toBeValidTypeReference() {
         return {
-          compare(classRef) {
+          compare(typeRef) {
             const result = {};
-            const classId = classRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
-            if (classId.match(/^http:\/\/schema\.org/)) {
-              result.pass = schemaOrgDataModels.includes(classId);
+            const typeId = typeRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
+            if (typeId.match(/^http:\/\/schema\.org/)) {
+              result.pass = schemaOrgDataModels.includes(typeId);
               if (!result.pass) {
-                result.message = `${classRef} is not a valid schema.org reference`;
+                result.message = `${typeRef} is not a valid schema.org reference`;
               }
-            } else if (classId.match(/^https:\/\/openactive.io/)) {
-              const enumName = classId.replace(/^https:\/\/openactive.io\//, '');
+            } else if (typeId.match(/^https:\/\/openactive.io/)) {
+              const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
-              result.pass = Object.prototype.hasOwnProperty.call(enums, enumName);
+              result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
               if (!result.pass) {
-                result.message = `${classRef} is not a valid Open Active reference`;
+                result.message = `${typeRef} is not a valid Open Active reference`;
               }
             } else {
-              throw new Error(`unrecognished class ${classId}`);
+              throw new Error(`unrecognished type ${typeId}`);
             }
 
             return result;
@@ -151,7 +151,7 @@ describe('models', () => {
           }
         });
 
-        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org class', () => {
+        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org type', () => {
           if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
             for (const field in jsonData.fields) {
               if (
@@ -357,7 +357,7 @@ describe('models', () => {
             if (
               typeof fieldSpec.requiredType === 'string'
             ) {
-              expect(fieldSpec.requiredType).toBeValidClassReference();
+              expect(fieldSpec.requiredType).toBeValidTypeReference();
             }
           });
         });
