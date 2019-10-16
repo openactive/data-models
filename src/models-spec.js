@@ -2,24 +2,28 @@ const fs = require('fs');
 const path = require('path');
 const request = require('sync-request');
 
+const getEnums = require('./getEnums');
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
 
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
-const schemaOrgDataModels = (() => {
-  const pendingResponse = request('GET', 'https://schema.org/version/latest/ext-pending.jsonld', {
-    accept: 'application/ld+json',
-  });
-  const pendingIds = JSON.parse(pendingResponse.body)['@graph'].map(model => model['@id']);
+const schemaOrgDataModel = (() => {
+  const fetchIds = (url) => {
+    const response = request('GET', url, {
+      accept: 'application/ld+json',
+    });
+    return JSON.parse(response.body)['@graph'].map(entity => entity['@id']);
+  };
 
-  const mainResponse = request('GET', 'https://schema.org/version/latest/schema.jsonld', {
-    accept: 'application/ld+json',
-  });
-  const mainIds = JSON.parse(mainResponse.body)['@graph'].map(model => model['@id']);
+  const schemaSources = [
+    'https://schema.org/version/latest/schema.jsonld',
+    'https://schema.org/version/3.9/ext-meta.jsonld',
+    'https://schema.org/version/latest/ext-pending.jsonld',
+  ];
 
-  return [...pendingIds, ...mainIds];
+  return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
 })();
 
 const forEachVersion = (cb) => {
@@ -49,9 +53,79 @@ const forEachVersionedFile = (cb) => {
   });
 };
 
+const forEachField = (model, cb) => {
+  for (const field in model.fields) {
+    if (Object.prototype.hasOwnProperty.call(model.fields, field)) {
+      const fieldSpec = model.fields[field];
+      cb(field, fieldSpec);
+    }
+  }
+};
+
 describe('models', () => {
   forEachVersionedFile((version, metaData, modelsDirpath, rpdeDirpath, file, data) => {
     const fieldNameToNamespaced = {};
+
+    const modelExists = (modelName) => {
+      const modelFilename = `${modelName}.json`;
+      const modelExpectedFilepath = modelName.match(/^Feed/) ? path.join(rpdeDirpath, modelFilename) : path.join(modelsDirpath, modelFilename);
+      return fs.existsSync(modelExpectedFilepath);
+    };
+
+    const customMatchers = {
+      toBeValidModelReference() {
+        return {
+          compare(modelRef) {
+            const result = {};
+            const modelName = modelRef.replace(/^(ArrayOf)?#/, '');
+
+            result.pass = modelExists(modelName);
+            if (!result.pass) {
+              result.message = `${modelRef} is not a valid model reference`;
+            }
+            return result;
+          },
+        };
+      },
+
+      toBeValidTypeReference() {
+        const adHocValidTypes = [
+          // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
+          'http://purl.org/goodrelations/v1#PaymentMethod',
+        ];
+
+        return {
+          compare(typeRef) {
+            const result = {};
+            const typeId = typeRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
+            if (typeId.match(/^http:\/\/schema\.org/)) {
+              result.pass = schemaOrgDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid schema.org reference`;
+              }
+            } else if (typeId.match(/^https:\/\/openactive.io/)) {
+              const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
+              const enums = getEnums(version);
+              result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid Open Active reference`;
+              }
+            } else if (adHocValidTypes.includes(typeId)) {
+              result.pass = true;
+            } else {
+              throw new Error(`unrecognished type ${typeId}`);
+            }
+
+            return result;
+          },
+        };
+      },
+    };
+
+    beforeEach(() => {
+      jasmine.addMatchers(customMatchers);
+    });
+
     describe(`file ${file}`, () => {
       let jsonData;
 
@@ -79,12 +153,12 @@ describe('models', () => {
                 && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
             ) {
               const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
-              expect(schemaOrgDataModels.includes(propertyId)).toBe(true);
+              expect(schemaOrgDataModel.includes(propertyId)).toBe(true);
             }
           }
         });
 
-        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org class', () => {
+        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org type', () => {
           if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
             for (const field in jsonData.fields) {
               if (
@@ -93,7 +167,7 @@ describe('models', () => {
                   && field !== 'type'
               ) {
                 const impliedPropertyId = `http://schema.org/${field}`;
-                const actual = schemaOrgDataModels.includes(impliedPropertyId);
+                const actual = schemaOrgDataModel.includes(impliedPropertyId);
                 expect(actual).toBe(true);
               }
             }
@@ -106,7 +180,7 @@ describe('models', () => {
               && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
           ) {
             const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
-            expect(schemaOrgDataModels.includes(derivedFromClassId)).toBe(true);
+            expect(schemaOrgDataModel.includes(derivedFromClassId)).toBe(true);
           }
         });
 
@@ -196,90 +270,74 @@ describe('models', () => {
         });
 
         it('should have inSpec value for everything in fields', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              expect(jsonData.inSpec).toContain(field);
-            }
-          }
+          forEachField(jsonData, (field) => {
+            expect(jsonData.inSpec).toContain(field);
+          });
         });
 
         it('should have fields with names that match their keys', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              expect(jsonData.fields[field].fieldName).toBeDefined();
-              expect(jsonData.fields[field].fieldName).toBe(field);
-            }
-          }
+          forEachField(jsonData, (field, fieldSpec) => {
+            expect(fieldSpec.fieldName).toBeDefined();
+            expect(fieldSpec.fieldName).toBe(field);
+          });
         });
 
         it('should have fields with either a requiredType or model', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              expect(
-                typeof jsonData.fields[field].model === 'undefined'
-                || typeof jsonData.fields[field].requiredType === 'undefined',
-              ).toBe(true);
-            }
-          }
+          forEachField(jsonData, (field, fieldSpec) => {
+            expect(
+              typeof fieldSpec.model === 'undefined'
+              || typeof fieldSpec.requiredType === 'undefined',
+            ).toBe(true);
+          });
         });
 
         it('should have fields with a model property that points to real models', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              if (typeof jsonData.fields[field].model !== 'undefined') {
-                expect(jsonData.fields[field].model).toMatch(/^(ArrayOf)?#[A-Za-z]+$/);
-              }
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (typeof fieldSpec.model !== 'undefined') {
+              expect(fieldSpec.model).toMatch(/^(ArrayOf)?#[A-Za-z]+$/);
             }
-          }
+          });
         });
 
         it('should have fields with an additionalModels property that are arrays pointing to real models', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              if (typeof jsonData.fields[field].additionalModels !== 'undefined') {
-                expect(jsonData.fields[field].additionalModels instanceof Array).toBe(true);
-                for (const model of jsonData.fields[field].additionalModels) {
-                  expect(model).toMatch(/^(ArrayOf)?#[A-Za-z]+$/);
-                }
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (typeof fieldSpec.additionalModels !== 'undefined') {
+              expect(fieldSpec.additionalModels instanceof Array).toBe(true);
+              for (const model of fieldSpec.additionalModels) {
+                expect(model).toMatch(/^(ArrayOf)?#[A-Za-z]+$/);
               }
             }
-          }
+          });
         });
 
         it('should have fields with a type property that points to real types', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              if (typeof jsonData.fields[field].requiredType !== 'undefined') {
-                expect(jsonData.fields[field].requiredType).toMatch(/^(ArrayOf#)?(https:\/\/schema\.org\/|https:\/\/openactive\.io\/|http:\/\/purl\.org\/goodrelations\/v1#)[a-zA-Z]+$/);
-              }
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (typeof fieldSpec.requiredType !== 'undefined') {
+              expect(fieldSpec.requiredType).toMatch(/^(ArrayOf#)?(https:\/\/schema\.org\/|https:\/\/openactive\.io\/|http:\/\/purl\.org\/goodrelations\/v1#)[a-zA-Z]+$/);
             }
-          }
+          });
         });
 
         it('should have fields with an additionalTypes property that are arrays pointing to real models', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              if (typeof jsonData.fields[field].additionalTypes !== 'undefined') {
-                expect(jsonData.fields[field].additionalTypes instanceof Array).toBe(true);
-                for (const type of jsonData.fields[field].additionalTypes) {
-                  expect(type).toMatch(/^(ArrayOf#)?http:\/\/(schema\.org|openactive\.io)\/[a-zA-Z]+$/);
-                }
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (typeof fieldSpec.additionalTypes !== 'undefined') {
+              expect(fieldSpec.additionalTypes instanceof Array).toBe(true);
+              for (const type of fieldSpec.additionalTypes) {
+                expect(type).toMatch(/^(ArrayOf#)?http:\/\/(schema\.org|openactive\.io)\/[a-zA-Z]+$/);
               }
             }
-          }
+          });
         });
 
         it('should have fields with a description property that is an array of strings, unless it is a type', () => {
-          for (const field in jsonData.fields) {
-            if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-              if (typeof jsonData.fields[field].description !== 'undefined') {
-                expect(jsonData.fields[field].description instanceof Array
-                  && jsonData.fields[field].description.filter(item => typeof item !== 'string').length === 0).toBe(true, field);
-              } else if (field !== 'type') {
-                fail(`Does not have description, '${field}'.`);
-              }
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (typeof fieldSpec.description !== 'undefined') {
+              expect(fieldSpec.description instanceof Array
+                && fieldSpec.description.filter(item => typeof item !== 'string').length === 0).toBe(true, field);
+            } else if (field !== 'type') {
+              fail(`Does not have description, '${field}'.`);
             }
-          }
+          });
         });
 
         it('should have "type" with only exactly the properties fieldName, requiredType, requiredContent; and with requiredType as "https://schema.org/Text".', () => {
@@ -291,24 +349,38 @@ describe('models', () => {
           }
         });
 
+        it('should only use existing models for models property of a field spec', () => {
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (
+              typeof fieldSpec.model === 'string'
+            ) {
+              expect(fieldSpec.model).toBeValidModelReference();
+            }
+          });
+        });
+
+        it('should only use valid classes with for requiredType property of a field spec', () => {
+          forEachField(jsonData, (field, fieldSpec) => {
+            if (
+              typeof fieldSpec.requiredType === 'string'
+            ) {
+              expect(fieldSpec.requiredType).toBeValidTypeReference();
+            }
+          });
+        });
+
         describe('alternativeModels', () => {
           it('should only include entries defined in models json', () => {
-            for (const field in jsonData.fields) {
-              if (Object.prototype.hasOwnProperty.call(jsonData.fields, field)) {
-                const fieldSpec = jsonData.fields[field];
-                if (
-                  typeof fieldSpec.alternativeModels === 'object'
-                  && fieldSpec.alternativeModels.length > 0
-                ) {
-                  fieldSpec.alternativeModels.forEach((alternativeModel) => {
-                    const alternativeModelShortName = alternativeModel.replace(/^(ArrayOf)?#/, '');
-                    const alternativeModelFilename = `${alternativeModelShortName}.json`;
-                    const alternativeModelExpectedFilepath = path.join(modelsDirpath, alternativeModelFilename);
-                    expect(fs.existsSync(alternativeModelExpectedFilepath)).toBe(true);
-                  });
-                }
+            forEachField(jsonData, (field, fieldSpec) => {
+              if (
+                typeof fieldSpec.alternativeModels === 'object'
+                && fieldSpec.alternativeModels.length > 0
+              ) {
+                fieldSpec.alternativeModels.forEach((alternativeModel) => {
+                  expect(alternativeModel).toBeValidModelReference();
+                });
               }
-            }
+            });
           });
         });
 
