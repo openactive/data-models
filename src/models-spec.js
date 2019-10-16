@@ -165,9 +165,11 @@ describe('models', () => {
         });
 
         it('should be fit into the model inheritence hierarchy', () => {
-          const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
-          expect(inheritsFrom).toBeString();
-          expect(inheritsFrom).not.toBeEmptyString();
+          if (!file.match(/^Feed/)) { // Models for feed aren't part of the main model hierarchy
+            const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
+            expect(inheritsFrom).toBeString();
+            expect(inheritsFrom).not.toBeEmptyString();
+          }
         });
 
         it('should be a subclass of an existing model or class in vocab if subClassOf is provided', () => {
