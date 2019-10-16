@@ -89,6 +89,11 @@ describe('models', () => {
       },
 
       toBeValidTypeReference() {
+        const adHocValidTypes = [
+          // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
+          'http://purl.org/goodrelations/v1#PaymentMethod',
+        ];
+
         return {
           compare(typeRef) {
             const result = {};
@@ -105,6 +110,8 @@ describe('models', () => {
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid Open Active reference`;
               }
+            } else if (adHocValidTypes.includes(typeId)) {
+              result.pass = true;
             } else {
               throw new Error(`unrecognished type ${typeId}`);
             }
