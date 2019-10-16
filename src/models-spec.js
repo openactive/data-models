@@ -68,7 +68,7 @@ describe('models', () => {
 
     const modelExists = (modelName) => {
       const modelFilename = `${modelName}.json`;
-      const modelExpectedFilepath = path.join(modelsDirpath, modelFilename);
+      const modelExpectedFilepath = modelName.match(/^Feed/) ? path.join(rpdeDirpath, modelFilename) : path.join(modelsDirpath, modelFilename);
       return fs.existsSync(modelExpectedFilepath);
     };
 
