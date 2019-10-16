@@ -9,12 +9,12 @@ const derivePrefix = require('./helpers/derivePrefix');
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
-const schemaOrgDataModels = (() => {
+const schemaOrgDataModel = (() => {
   const fetchIds = (url) => {
     const response = request('GET', url, {
       accept: 'application/ld+json',
     });
-    return JSON.parse(response.body)['@graph'].map(model => model['@id']);
+    return JSON.parse(response.body)['@graph'].map(entity => entity['@id']);
   };
 
   const schemaSources = [
@@ -99,7 +99,7 @@ describe('models', () => {
             const result = {};
             const typeId = typeRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
             if (typeId.match(/^http:\/\/schema\.org/)) {
-              result.pass = schemaOrgDataModels.includes(typeId);
+              result.pass = schemaOrgDataModel.includes(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid schema.org reference`;
               }
@@ -153,7 +153,7 @@ describe('models', () => {
                 && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
             ) {
               const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
-              expect(schemaOrgDataModels.includes(propertyId)).toBe(true);
+              expect(schemaOrgDataModel.includes(propertyId)).toBe(true);
             }
           }
         });
@@ -167,7 +167,7 @@ describe('models', () => {
                   && field !== 'type'
               ) {
                 const impliedPropertyId = `http://schema.org/${field}`;
-                const actual = schemaOrgDataModels.includes(impliedPropertyId);
+                const actual = schemaOrgDataModel.includes(impliedPropertyId);
                 expect(actual).toBe(true);
               }
             }
@@ -180,7 +180,7 @@ describe('models', () => {
               && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
           ) {
             const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
-            expect(schemaOrgDataModels.includes(derivedFromClassId)).toBe(true);
+            expect(schemaOrgDataModel.includes(derivedFromClassId)).toBe(true);
           }
         });
 
