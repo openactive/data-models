@@ -92,6 +92,8 @@ describe('models', () => {
         const adHocValidTypes = [
           // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
           'http://purl.org/goodrelations/v1#PaymentMethod',
+          'http://www.w3.org/2004/02/skos/core#ConceptScheme',
+          'http://www.w3.org/2004/02/skos/core#Concept',
         ];
 
         return {
