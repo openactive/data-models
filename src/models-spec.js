@@ -122,14 +122,14 @@ describe('models', () => {
             } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
               result.pass = skosDataModel.includes(typeId);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid goodrelations reference`;
+                result.message = `${typeRef} is not a valid SKOS reference`;
               }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
               result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid SKOS reference`;
+                result.message = `${typeRef} is not a valid OpenActive reference`;
               }
             } else {
               throw new Error(`unrecognished type ${typeId}`);
