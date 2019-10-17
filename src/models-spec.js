@@ -26,6 +26,18 @@ const schemaOrgDataModel = (() => {
   return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
 })();
 
+const goodRelationsDataModel = (() => {
+  const response = request('POST', 'http://rdf-translator.appspot.com/convert/detect/json-ld/http%3A%2F%2Fwww.heppnetz.de%2Fontologies%2Fgoodrelations%2Fv1.owl');
+
+  const context = JSON.parse(response.body)['@context'];
+  const ids = JSON.parse(response.body)['@graph'].map((entity) => {
+    const [namespace, shortId] = entity['@id'].split(':');
+    return context[namespace] ? `${context[namespace]}${shortId}` : entity['@id'];
+  });
+
+  return ids;
+})();
+
 const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
@@ -91,7 +103,6 @@ describe('models', () => {
       toBeValidTypeReference() {
         const adHocValidTypes = [
           // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
-          'http://purl.org/goodrelations/v1#PaymentMethod',
           'http://www.w3.org/2004/02/skos/core#ConceptScheme',
           'http://www.w3.org/2004/02/skos/core#Concept',
         ];
@@ -104,6 +115,11 @@ describe('models', () => {
               result.pass = schemaOrgDataModel.includes(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid schema.org reference`;
+              }
+            } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
+              result.pass = goodRelationsDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid goodrelations reference`;
               }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
