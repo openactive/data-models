@@ -26,6 +26,22 @@ const schemaOrgDataModel = (() => {
   return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
 })();
 
+const parseRDFXML = (uri) => {
+  const translationUri = `http://rdf-translator.appspot.com/convert/detect/json-ld/${encodeURI(uri)}`;
+  const response = request('POST', translationUri);
+
+  const context = JSON.parse(response.body)['@context'];
+  const ids = JSON.parse(response.body)['@graph'].map((entity) => {
+    const [namespace, shortId] = entity['@id'].split(':');
+    return context[namespace] ? `${context[namespace]}${shortId}` : entity['@id'];
+  });
+
+  return ids;
+};
+
+const goodRelationsDataModel = parseRDFXML('http://www.heppnetz.de/ontologies/goodrelations/v1.owl');
+const skosDataModel = parseRDFXML('https://www.w3.org/2009/08/skos-reference/skos.rdf');
+
 const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
   for (const version of uniqueVersions) {
@@ -89,11 +105,6 @@ describe('models', () => {
       },
 
       toBeValidTypeReference() {
-        const adHocValidTypes = [
-          // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
-          'http://purl.org/goodrelations/v1#PaymentMethod',
-        ];
-
         return {
           compare(typeRef) {
             const result = {};
@@ -103,15 +114,23 @@ describe('models', () => {
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid schema.org reference`;
               }
+            } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
+              result.pass = goodRelationsDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid goodrelations reference`;
+              }
+            } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
+              result.pass = skosDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid goodrelations reference`;
+              }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
               result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid Open Active reference`;
+                result.message = `${typeRef} is not a valid SKOS reference`;
               }
-            } else if (adHocValidTypes.includes(typeId)) {
-              result.pass = true;
             } else {
               throw new Error(`unrecognished type ${typeId}`);
             }
