@@ -26,8 +26,9 @@ const schemaOrgDataModel = (() => {
   return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
 })();
 
-const goodRelationsDataModel = (() => {
-  const response = request('POST', 'http://rdf-translator.appspot.com/convert/detect/json-ld/http%3A%2F%2Fwww.heppnetz.de%2Fontologies%2Fgoodrelations%2Fv1.owl');
+const parseRDFXML = (uri) => {
+  const translationUri = `http://rdf-translator.appspot.com/convert/detect/json-ld/${encodeURI(uri)}`;
+  const response = request('POST', translationUri);
 
   const context = JSON.parse(response.body)['@context'];
   const ids = JSON.parse(response.body)['@graph'].map((entity) => {
@@ -36,7 +37,10 @@ const goodRelationsDataModel = (() => {
   });
 
   return ids;
-})();
+};
+
+const goodRelationsDataModel = parseRDFXML('http://www.heppnetz.de/ontologies/goodrelations/v1.owl');
+const skosDataModel = parseRDFXML('https://www.w3.org/2009/08/skos-reference/skos.rdf');
 
 const forEachVersion = (cb) => {
   const uniqueVersions = [...new Set(Object.values(versions))];
@@ -101,12 +105,6 @@ describe('models', () => {
       },
 
       toBeValidTypeReference() {
-        const adHocValidTypes = [
-          // these are a selection of terms in vocab that can't so easily be validated (e.g. no JSON-LD file to check against)
-          'http://www.w3.org/2004/02/skos/core#ConceptScheme',
-          'http://www.w3.org/2004/02/skos/core#Concept',
-        ];
-
         return {
           compare(typeRef) {
             const result = {};
@@ -121,15 +119,18 @@ describe('models', () => {
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid goodrelations reference`;
               }
+            } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
+              result.pass = skosDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid goodrelations reference`;
+              }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
               result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid Open Active reference`;
+                result.message = `${typeRef} is not a valid SKOS reference`;
               }
-            } else if (adHocValidTypes.includes(typeId)) {
-              result.pass = true;
             } else {
               throw new Error(`unrecognished type ${typeId}`);
             }
