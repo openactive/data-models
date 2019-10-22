@@ -15,12 +15,7 @@
         "method",
         "status",
         "invalidParams",
-        "requestId",
-        "url",
-        "sameAs",
-        "identifier",
-        "image",
-        "potentialAction"
+        "requestId"
     ],
     "recommendedFields": [
         "name",
@@ -32,11 +27,7 @@
         "type"
     ],
     "notInSpec": [
-          "url",
-          "sameAs",
-          "identifier",
-          "image",
-          "potentialAction"
+
         ],
     "subClassOf": "#OpenBookingError",
     "type": "TemporarilyUnableToDeleteOrderError"

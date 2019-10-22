@@ -1,5 +1,5 @@
 {
-    "subClassOf": "#Thing",
+    "subClassOf": "https://schema.org/Thing",
     "fields": {
         "description": {
             "description": [
@@ -74,12 +74,7 @@
         "method",
         "status",
         "invalidParams",
-        "requestId",
-        "url",
-        "sameAs",
-        "identifier",
-        "image",
-        "potentialAction"
+        "requestId"
     ],
     "recommendedFields": [
         "name",
@@ -89,13 +84,6 @@
     ],
     "requiredFields": [
         "type"
-    ],
-    "notInSpec": [
-      "url",
-      "sameAs",
-      "identifier",
-      "image",
-      "potentialAction"
     ],
     "type": "OpenBookingError"
 }

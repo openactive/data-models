@@ -20,7 +20,7 @@ The type of object that this model describes. The name of the file should corres
 
 #### subClassOf
 
-If this model is the subclass of another model, this can be referenced here.
+If this model is the subclass of another model or an external object _for which a local model does not exist_, this can be referenced here.
 
 When calling `loadModel`, all of the parent model properties will be inherited.
 
@@ -28,6 +28,13 @@ When calling `loadModel`, all of the parent model properties will be inherited.
 {
   "type": "BabyChanging",
   "subClassOf": "#LocationFeatureSpecification"
+}
+```
+
+```json
+{
+  "type": "FacilityUse",
+  "subClassOf": "https://schema.org/Product"
 }
 ```
 

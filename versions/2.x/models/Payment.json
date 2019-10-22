@@ -1,6 +1,6 @@
 {
    "type":"Payment",
-   "subClassOf": "#Thing",
+   "subClassOf": "https://schema.org/Thing",
    "status":{
       "response":{
          "hasId":false,
@@ -24,21 +24,7 @@
       "identifier",
       "paymentMethod",
       "accountId",
-      "paymentProviderId",
-      "url",
-      "sameAs",
-      "identifier",
-      "image",
-      "potentialAction",
-      "description"
-   ],
-   "notInSpec":[
-     "url",
-     "sameAs",
-     "identifier",
-     "image",
-     "potentialAction",
-     "description"
+      "paymentProviderId"
    ],
    "fields":{
       "type":{

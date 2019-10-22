@@ -1,6 +1,6 @@
 {
    "type":"PriceSpecification",
-   "subClassOf":"https://schema.org/PriceSpecification",
+   "derivedFrom":"https://schema.org/PriceSpecification",
    "isJsonLd":true,
    "status":{
       "response":{

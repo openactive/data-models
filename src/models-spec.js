@@ -164,7 +164,7 @@ describe('models', () => {
           expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
         });
 
-        it('should be fit into the model inheritence hierarchy', () => {
+        it('should be fit into the model inheritance hierarchy', () => {
           if (!file.match(/^Feed/)) { // Models for feed aren't part of the main model hierarchy
             const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
             expect(inheritsFrom).toBeString();
@@ -172,7 +172,7 @@ describe('models', () => {
           }
         });
 
-        it('should be a subclass of an existing model or class in vocab if subClassOf is provided', () => {
+        it('should be a subclass of an existing model or class in external vocab if subClassOf is provided', () => {
           if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
             expect(jsonData.subClassOf).not.toStartWith('ArrayOf#');
             if (jsonData.subClassOf.startsWith('http')) {
@@ -428,7 +428,7 @@ describe('models', () => {
               const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
               const parentModel = loadModelFromFile(parentModelName, version);
               jsonData.notInSpec.forEach((notInSpecField) => {
-                expect(Object.hasOwnProperty.call(parentModel.fields, notInSpecField)).toBe(true);
+                expect(parentModel.inSpec).toContain(notInSpecField);
               });
             }
           });

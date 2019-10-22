@@ -1,6 +1,6 @@
 {
    "type":"Lease",
-   "subClassOf": "#Thing",
+   "subClassOf": "https://schema.org/Thing",
    "status":{
       "response":{
          "hasId":false,
@@ -24,9 +24,6 @@
       "leaseExpires",
       "identifier"
    ],
-   "notInSpec":[
-
-   ],
    "fields":{
       "type":{
          "fieldName":"type",
@@ -35,7 +32,6 @@
       },
       "identifier":{
          "fieldName":"identifier",
-         "sameAs": "https://schema.org/identifier",
          "alternativeModels":[
             "#PropertyValue",
             "ArrayOf#PropertyValue"

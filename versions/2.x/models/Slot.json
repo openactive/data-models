@@ -1,7 +1,7 @@
 {
   "type": "Slot",
   "hasId": true,
-  "subClassOf": "https://schema.org/Event",
+  "subClassOf": "#Event",
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/slot/",
   "requiredFields": [
@@ -37,7 +37,65 @@
     "duration",
     "offers",
     "remainingUses",
-    "maximumUses"
+    "maximumUses",
+    "accessibilityInformation",
+    "accessibilitySupport",
+    "activity",
+    "ageRange",
+    "attendeeInstructions",
+    "category",
+    "contributor",
+    "description",
+    "eventSchedule",
+    "eventStatus",
+    "genderRestriction",
+    "image",
+    "isAccessibleForFree",
+    "isCoached",
+    "leader",
+    "level",
+    "location",
+    "maximumAttendeeCapacity",
+    "meetingPoint",
+    "name",
+    "organizer",
+    "potentialAction",
+    "programme",
+    "remainingAttendeeCapacity",
+    "subEvent",
+    "schedulingNote",
+    "superEvent",
+    "url"
+  ],
+  "notInSpec": [
+    "accessibilityInformation",
+    "accessibilitySupport",
+    "activity",
+    "ageRange",
+    "attendeeInstructions",
+    "category",
+    "contributor",
+    "description",
+    "eventSchedule",
+    "eventStatus",
+    "genderRestriction",
+    "image",
+    "isAccessibleForFree",
+    "isCoached",
+    "leader",
+    "level",
+    "location",
+    "maximumAttendeeCapacity",
+    "meetingPoint",
+    "name",
+    "organizer",
+    "potentialAction",
+    "programme",
+    "remainingAttendeeCapacity",
+    "subEvent",
+    "schedulingNote",
+    "superEvent",
+    "url"
   ],
   "fields": {
     "type": {
@@ -69,6 +127,7 @@
     },
     "facilityUse": {
       "fieldName": "facilityUse",
+      "sameAs": "https://openactive.io/facilityUse",
       "requiredType": "https://schema.org/URL",
       "description": [
         "URI to the FacilityUse that has this offer"
@@ -93,6 +152,7 @@
     },
     "maximumUses": {
       "fieldName": "maximumUses",
+      "sameAs": "https://openactive.io/maximumUses",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The maximum available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
@@ -117,6 +177,7 @@
     },
     "remainingUses": {
       "fieldName": "remainingUses",
+      "sameAs": "https://openactive.io/remainingUses",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The remaining available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
