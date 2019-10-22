@@ -204,6 +204,12 @@ describe('models', () => {
               expect(jsonData.derivedFrom).toBeValidTypeReference();
             }
           });
+
+          it('should always reference an external schema', () => {
+            if (typeof jsonData.derivedFrom === 'string') {
+              expect(jsonData.derivedFrom).toMatch(/^https?:\/\//);
+            }
+          });
         });
 
         it('should only use sameAs references to schema.org, which such properties in schema.org actually already exist', () => {
