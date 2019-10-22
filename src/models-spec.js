@@ -196,12 +196,14 @@ describe('models', () => {
           });
         });
 
-        it('should contain derivedFrom property that refers to a class that actually exists', () => {
-          if (
-            typeof jsonData.derivedFrom === 'string'
-          ) {
-            expect(jsonData.derivedFrom).toBeValidTypeReference();
-          }
+        describe('derivedFrom', () => {
+          it('should refer to a class that actually exists', () => {
+            if (
+              typeof jsonData.derivedFrom === 'string'
+            ) {
+              expect(jsonData.derivedFrom).toBeValidTypeReference();
+            }
+          });
         });
 
         it('should only use sameAs references to schema.org, which such properties in schema.org actually already exist', () => {
