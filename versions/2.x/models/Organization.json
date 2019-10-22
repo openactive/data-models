@@ -52,7 +52,7 @@
       "fieldName": "taxMode",
       "requiredType": "https://openactive.io/TaxMode",
       "description": [
-        "Either  https://openactive/TaxNet or  https://openactive/TaxGross"
+        "Either  https://openactive.io/TaxNet or  https://openactive.io/TaxGross"
       ],
       "sameAs":"https://openactive.io/taxMode"
     },

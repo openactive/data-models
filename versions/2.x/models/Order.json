@@ -126,13 +126,13 @@
          "fieldName":"broker",
          "sameAs":"https://schema.org/broker",
          "model":"#Organization",
-         "description":["The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive/NoBroker this is not required."]
+         "description":["The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive.io/NoBroker this is not required."]
       },
       "brokerRole":{
          "fieldName":"brokerRole",
          "sameAs":"https://openactive.io/brokerRole",
          "requiredType":"https://openactive.io/BrokerType",
-         "description":["Either https://openactive/AgentBroker,  https://openactive/ResellerBroker or  https://openactive/NoBroker, as agreed in advance between the Broker and Seller."]
+         "description":["Either https://openactive.io/AgentBroker,  https://openactive.io/ResellerBroker or  https://openactive.io/NoBroker, as agreed in advance between the Broker and Seller."]
       },
       "orderNumber":{
          "fieldName":"orderNumber",
