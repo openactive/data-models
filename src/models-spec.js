@@ -122,14 +122,14 @@ describe('models', () => {
             } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
               result.pass = skosDataModel.includes(typeId);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid goodrelations reference`;
+                result.message = `${typeRef} is not a valid SKOS reference`;
               }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
               result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid SKOS reference`;
+                result.message = `${typeRef} is not a valid OpenActive reference`;
               }
             } else {
               throw new Error(`unrecognished type ${typeId}`);
@@ -164,6 +164,33 @@ describe('models', () => {
           expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
         });
 
+        it('should be fit into the model inheritence hierarchy', () => {
+          if (!file.match(/^Feed/)) { // Models for feed aren't part of the main model hierarchy
+            const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
+            expect(inheritsFrom).toBeString();
+            expect(inheritsFrom).not.toBeEmptyString();
+          }
+        });
+
+        it('should be a subclass of an existing model or class in vocab if subClassOf is provided', () => {
+          if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
+            expect(jsonData.subClassOf).not.toStartWith('ArrayOf#');
+            if (jsonData.subClassOf.startsWith('http')) {
+              expect(jsonData.subClassOf).toBeValidTypeReference();
+            } else {
+              expect(jsonData.subClassOf).toBeValidModelReference();
+            }
+          }
+        });
+
+        it('should check that any derivedFrom property refers to a class that actually exists', () => {
+          if (
+            typeof jsonData.derivedFrom === 'string'
+          ) {
+            expect(jsonData.derivedFrom).toBeValidTypeReference();
+          }
+        });
+
         it('should check sameAs on fields actually exist when they are properties from schema.org', () => {
           for (const field in jsonData.fields) {
             if (
@@ -190,16 +217,6 @@ describe('models', () => {
                 expect(actual).toBe(true);
               }
             }
-          }
-        });
-
-        it('should check that any schema.org class that a model derives from actually exists', () => {
-          if (
-            typeof jsonData.derivedFrom === 'string'
-              && jsonData.derivedFrom.match(/^https:\/\/schema.org/)
-          ) {
-            const derivedFromClassId = jsonData.derivedFrom.replace(/^https/, 'http');
-            expect(schemaOrgDataModel.includes(derivedFromClassId)).toBe(true);
           }
         });
 
@@ -276,7 +293,7 @@ describe('models', () => {
           }
         });
 
-        it('should have a fields property or a subClassOf property', () => {
+        it('should have a fields property', () => {
           expect(typeof jsonData.fields).toBe('object');
         });
 

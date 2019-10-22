@@ -1,6 +1,6 @@
 {
    "type":"Lease",
-   "derivedFrom": "#Thing",
+   "subClassOf": "#Thing",
    "status":{
       "response":{
          "hasId":false,
