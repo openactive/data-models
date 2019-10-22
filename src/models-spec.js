@@ -189,6 +189,8 @@ describe('models', () => {
               if (jsonData.subClassOf.startsWith('https://schema.org/')) {
                 const modelName = jsonData.subClassOf.replace(/^https:\/\/schema.org\//, '#');
                 expect(modelName).not.toBeValidModelReference();
+              } else if (jsonData.subClassOf.startsWith('https://')) {
+                throw new Error(`Cannot determine model name from ${jsonData.subClassOf}`);
               }
             }
           });
