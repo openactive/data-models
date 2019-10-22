@@ -159,9 +159,11 @@ describe('models', () => {
           jsonData = loadModelFromFile(file.replace(/\.json$/, ''), version);
         });
 
-        it('should have a type that matches the file name', () => {
-          expect(jsonData.type).toBeDefined();
-          expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+        describe('type', () => {
+          it('should match the file name', () => {
+            expect(jsonData.type).toBeDefined();
+            expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+          });
         });
 
         it('should be fit into the model inheritance hierarchy', () => {
