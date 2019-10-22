@@ -220,7 +220,7 @@ describe('models', () => {
                 const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
                 const parentModel = loadModelFromFile(parentModelName, version);
                 if (parentModel.derivedFrom !== jsonData.derivedFrom) {
-                  expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+                  expect(jsonData.derivedFrom).toEndWith(`/${jsonData.type}`);
                 }
               }
             }
