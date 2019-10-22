@@ -183,7 +183,7 @@ describe('models', () => {
           }
         });
 
-        it('should check that any derivedFrom property refers to a class that actually exists', () => {
+        it('should contain derivedFrom property that refers to a class that actually exists', () => {
           if (
             typeof jsonData.derivedFrom === 'string'
           ) {
@@ -191,7 +191,7 @@ describe('models', () => {
           }
         });
 
-        it('should check sameAs on fields actually exist when they are properties from schema.org', () => {
+        it('should only use sameAs references to schema.org, which such properties in schema.org actually already exist', () => {
           for (const field in jsonData.fields) {
             if (
               Object.prototype.hasOwnProperty.call(jsonData.fields, field)
@@ -199,12 +199,12 @@ describe('models', () => {
                 && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
             ) {
               const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
-              expect(schemaOrgDataModel.includes(propertyId)).toBe(true);
+              expect(schemaOrgDataModel).toContain(propertyId);
             }
           }
         });
 
-        it('should check fields actually exist as properties from schema.org when model is derivedFrom from a schema.org type', () => {
+        it('should contain properties from schema.org (unless sameAs states otherwise) when model is derivedFrom from a schema.org type', () => {
           if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
             for (const field in jsonData.fields) {
               if (
@@ -213,8 +213,7 @@ describe('models', () => {
                   && field !== 'type'
               ) {
                 const impliedPropertyId = `http://schema.org/${field}`;
-                const actual = schemaOrgDataModel.includes(impliedPropertyId);
-                expect(actual).toBe(true);
+                expect(schemaOrgDataModel).toContain(impliedPropertyId);
               }
             }
           }
