@@ -213,7 +213,16 @@ describe('models', () => {
 
           it('should match the type name', () => {
             if (typeof jsonData.derivedFrom === 'string') {
-              expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+              if (typeof jsonData.subClassOf !== 'string') {
+                expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+              } else {
+                // check derivedFrom only if it is different to parent model's derived from
+                const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
+                const parentModel = loadModelFromFile(parentModelName, version);
+                if (parentModel.derivedFrom !== jsonData.derivedFrom) {
+                  expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+                }
+              }
             }
           });
         });
