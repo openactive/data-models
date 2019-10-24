@@ -183,6 +183,19 @@ describe('models', () => {
           }
         });
 
+        describe('subClassOf', () => {
+          it('should refer to local model if it exists', () => {
+            if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
+              if (jsonData.subClassOf.startsWith('https://schema.org/')) {
+                const modelName = jsonData.subClassOf.replace(/^https:\/\/schema.org\//, '#');
+                expect(modelName).not.toBeValidModelReference();
+              } else if (jsonData.subClassOf.startsWith('https://')) {
+                throw new Error(`Cannot determine model name from ${jsonData.subClassOf}`);
+              }
+            }
+          });
+        });
+
         it('should contain derivedFrom property that refers to a class that actually exists', () => {
           if (
             typeof jsonData.derivedFrom === 'string'
