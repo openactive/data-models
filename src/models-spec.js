@@ -495,7 +495,7 @@ describe('models', () => {
         });
 
         describe('validationMode', () => {
-          it('should pointt to entries in imperativeConfiguration', () => {
+          it('should point to entries in imperativeConfiguration', () => {
             if (Object.prototype.hasOwnProperty.call(jsonData, 'validationMode')) {
               for (const imperativeConfigurationKey of Object.values(jsonData.validationMode)) {
                 expect(Object.keys(jsonData.imperativeConfiguration)).toContain(imperativeConfigurationKey);
