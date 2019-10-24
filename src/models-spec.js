@@ -196,12 +196,35 @@ describe('models', () => {
           });
         });
 
-        it('should contain derivedFrom property that refers to a class that actually exists', () => {
-          if (
-            typeof jsonData.derivedFrom === 'string'
-          ) {
-            expect(jsonData.derivedFrom).toBeValidTypeReference();
-          }
+        describe('derivedFrom', () => {
+          it('should refer to a class that actually exists', () => {
+            if (
+              typeof jsonData.derivedFrom === 'string'
+            ) {
+              expect(jsonData.derivedFrom).toBeValidTypeReference();
+            }
+          });
+
+          it('should always reference an external schema', () => {
+            if (typeof jsonData.derivedFrom === 'string') {
+              expect(jsonData.derivedFrom).toMatch(/^https?:\/\//);
+            }
+          });
+
+          it('should match the type name', () => {
+            if (typeof jsonData.derivedFrom === 'string') {
+              if (typeof jsonData.subClassOf !== 'string') {
+                expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+              } else {
+                // check derivedFrom only if it is different to parent model's derived from
+                const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
+                const parentModel = loadModelFromFile(parentModelName, version);
+                if (parentModel.derivedFrom !== jsonData.derivedFrom) {
+                  expect(jsonData.derivedFrom).toEndWith(`/${jsonData.type}`);
+                }
+              }
+            }
+          });
         });
 
         it('should only use sameAs references to schema.org, which such properties in schema.org actually already exist', () => {
