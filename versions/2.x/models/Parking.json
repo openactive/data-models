@@ -1,7 +1,6 @@
 {
   "type": "Parking",
   "subClassOf": "#LocationFeatureSpecification",
-  "derivedFromX": null,
   "fields": {
     "type": {
       "fieldName": "type",

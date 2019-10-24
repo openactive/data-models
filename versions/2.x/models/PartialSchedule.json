@@ -5,7 +5,6 @@
   "requiredFields": [
     "type"
   ],
-  "derivedFromX": null,
   "recommendedFields": [
     "endTime",
     "repeatFrequency",

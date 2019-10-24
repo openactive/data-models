@@ -1,7 +1,6 @@
 {
   "type": "Creche",
   "subClassOf": "#LocationFeatureSpecification",
-  "derivedFromX": null,
   "fields": {
     "type": {
       "fieldName": "type",

@@ -1,7 +1,6 @@
 {
   "type": "Toilets",
   "subClassOf": "#LocationFeatureSpecification",
-  "derivedFromX": null,
   "fields": {
     "type": {
       "fieldName": "type",

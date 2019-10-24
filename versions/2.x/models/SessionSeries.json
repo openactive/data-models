@@ -1,7 +1,6 @@
 {
   "type": "SessionSeries",
   "subClassOf": "#Event",
-  "derivedFromX": null,
   "notInSpec": [
     "remainingAttendeeCapacity"
   ],

@@ -1,7 +1,6 @@
 {
   "type": "ScheduledSession",
   "subClassOf": "#Event",
-  "derivedFromX": null,
   "notInSpec": [
     "eventSchedule",
     "subEvent"

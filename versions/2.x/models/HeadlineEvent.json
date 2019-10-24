@@ -28,7 +28,6 @@
     "offers",
     "endDate"
   ],
-  "derivedFromX": null,
   "fields": {
     "type": {
       "fieldName": "type",
