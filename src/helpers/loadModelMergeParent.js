@@ -9,6 +9,8 @@ const loadModelMergeParent = (paramModel, paramParentModel) => {
     }
   }
   model.fields = Object.assign(parentModel.fields, model.fields || {});
+  model.derivedFrom = model.derivedFrom || null;
+  model.baseSchemaClass = model.derivedFrom || parentModel.baseSchemaClass;
   model = Object.assign(parentModel, model);
   if (typeof model.subClassGraph === 'undefined') {
     model.subClassGraph = [];

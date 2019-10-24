@@ -17,12 +17,12 @@ const loadModelFromFile = (name, version) => {
     if (model.subClassOf.match(/^#[A-Za-z]+$/)) {
       const parentModelName = model.subClassOf.substr(1);
       const parentModel = loadModelFromFile(parentModelName, specVersion);
-      // Note this brings derivedFrom of the parent into the current model, if no derivedFrom is set
       model = loadModelMergeParent(model, parentModel);
-    } else if (typeof model.derivedFrom === 'undefined') {
-      // If not set, set derivedFrom in the current model, if subClassOf is external
-      model.derivedFrom = model.subClassOf;
+    } else {
+      model.baseSchemaClass = model.subClassOf;
     }
+  } else {
+    model.baseSchemaClass = model.derivedFrom;
   }
   return model;
 };

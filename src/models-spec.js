@@ -88,9 +88,12 @@ describe('models', () => {
     const fieldNameToNamespaced = {};
 
     const modelExists = (modelName) => {
-      const modelFilename = `${modelName}.json`;
-      const modelExpectedFilepath = modelName.match(/^Feed/) ? path.join(rpdeDirpath, modelFilename) : path.join(modelsDirpath, modelFilename);
-      return fs.existsSync(modelExpectedFilepath);
+      try {
+        const model = loadModelFromFile(modelName, version);
+        return model.type === modelName;
+      } catch (e) {
+        return false;
+      }
     };
 
     const customMatchers = {
@@ -135,7 +138,7 @@ describe('models', () => {
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
-              result.pass = modelExists(typeName) || Object.prototype.hasOwnProperty.call(enums, typeName);
+              result.pass = Object.prototype.hasOwnProperty.call(enums, typeName) || modelExists(typeName);
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid OpenActive reference`;
               }
@@ -259,7 +262,8 @@ describe('models', () => {
 
         describe('subClassOf', () => {
           it('should refer to local model if it exists', () => {
-            if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
+            if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')
+              && typeof jsonData.subClassOf === 'string') {
               if (jsonData.subClassOf.startsWith('https://schema.org/')) {
                 const modelName = jsonData.subClassOf.replace(/^https:\/\/schema.org\//, '#');
                 expect(modelName).not.toBeValidModelReference();
@@ -287,27 +291,14 @@ describe('models', () => {
 
           it('should match the type name, and include https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
             if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
-              let parentModelDerivedFrom = null;
-              if (Array.isArray(jsonData.subClassGraph) && jsonData.subClassGraph.length > 0) {
-                const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
-                const parentModel = loadModelFromFile(parentModelName, version);
-                parentModelDerivedFrom = parentModel.derivedFrom;
-              }
-
               if (typeof jsonData.derivedFrom === 'string') {
-                if (typeof jsonData.subClassOf !== 'string') {
-                  expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+                // Should always end with the type name
+                expect(jsonData.derivedFrom).toEndWith(`${jsonData.type}`);
 
-                // derivedFrom originated in this file if it is different to parent model's derived from, and the current subClassOf
-                } else if (parentModelDerivedFrom !== jsonData.derivedFrom && jsonData.derivedFrom !== jsonData.subClassOf) {
-                  // Should always end with the type name
-                  expect(jsonData.derivedFrom).toEndWith(`${jsonData.type}`);
-
-                  // If it exists in schema, should always reference schema
-                  const typeId = `http://schema.org/${jsonData.type}`;
-                  if (jsonData.derivedFrom.replace(/^https/, 'http') !== typeId) {
-                    expect(schemaOrgDataModel).not.toContain(typeId);
-                  }
+                // If it exists in schema, should always reference schema
+                const typeId = `http://schema.org/${jsonData.type}`;
+                if (jsonData.derivedFrom.replace(/^https/, 'http') !== typeId) {
+                  expect(schemaOrgDataModel).not.toContain(typeId);
                 }
               }
             }
@@ -340,9 +331,7 @@ describe('models', () => {
 
         it('should not set derivedFrom when subClassOf refers to an external class', () => {
           if (typeof jsonData.subClassOf === 'string' && !jsonData.subClassOf.match(/^#/)) {
-            // Note that loadModelFromFile will set jsonData.derivedFrom = jsonData.subClassOf,
-            // if derivedFrom is not set and subClassOf is external
-            expect(jsonData.derivedFrom === jsonData.subClassOf).toBe(true);
+            expect(jsonData.derivedFrom).not.toBeDefined();
           }
         });
 
