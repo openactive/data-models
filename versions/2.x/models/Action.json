@@ -30,6 +30,7 @@
     },
     "target":{
       "fieldName": "target",
+      "sameAs": "https://schema.org/target",
       "model": "#EntryPoint",
       "example":
       {

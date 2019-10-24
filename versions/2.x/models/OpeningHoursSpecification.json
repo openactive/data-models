@@ -22,6 +22,7 @@
     },
     "closes": {
       "fieldName": "closes",
+      "sameAs": "https://schema.org/closes",
       "requiredType": "https://schema.org/Time",
       "description": [
         "The closing time."
@@ -30,6 +31,7 @@
     },
     "dayOfWeek": {
       "fieldName": "dayOfWeek",
+      "sameAs": "https://schema.org/dayOfWeek",
       "requiredType": "https://schema.org/DayOfWeek",
       "example": "https://schema.org/Monday",
       "description": [
@@ -38,6 +40,7 @@
     },
     "opens": {
       "fieldName": "opens",
+      "sameAs": "https://schema.org/opens",
       "requiredType": "https://schema.org/Time",
       "description": [
         "The opening time."

@@ -1,6 +1,5 @@
 {
    "type":"Terms",
-   "isJsonLd":true,
    "subClassOf":"https://schema.org/DigitalDocument",
    "status":{
       "response":{

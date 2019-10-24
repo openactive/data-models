@@ -19,7 +19,9 @@
       "requiredContent": "LocationFeatureSpecification"
     },
     "name": {
+         "sameAs": "https://schema.org/identifier",
       "fieldName": "name",
+      "sameAs": "https://schema.org/name",
       "requiredType": "https://schema.org/Text",
       "example": "Bike Shed",
       "description": [
@@ -28,6 +30,7 @@
     },
     "value": {
       "fieldName": "value",
+      "sameAs": "https://schema.org/value",
       "requiredType": "https://schema.org/Boolean",
       "example": false,
       "description": [

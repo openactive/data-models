@@ -20,7 +20,7 @@ The type of object that this model describes. The name of the file should corres
 
 #### subClassOf
 
-If this model is the subclass of another model or an external object _for which a local model does not exist_, this can be referenced here.
+If this model is the subclass of another model or an external class _for which a local model does not exist_, this can be referenced here.
 
 When calling `loadModel`, all of the parent model properties will be inherited.
 
@@ -41,6 +41,8 @@ When calling `loadModel`, all of the parent model properties will be inherited.
 #### derivedFrom
 
 A url pointing to any external objects that this model derives from.
+
+Note this cannot be set when `subClassOf` is set to an external class.
 
 ```json
 {
@@ -80,11 +82,11 @@ An example `id`.
 
 #### isJsonLd
 
-Whether the this model is JSON-LD.
+Whether the this model is JSON-LD (defaults to `true`)
 
 ```json
 {
-  "isJsonLd": true
+  "isJsonLd": false
 }
 ```
 
@@ -470,12 +472,23 @@ To specify a whitelist of fields (anything not in this list will not be inherita
 
 `exclude` takes precedence over `include`.
 
+
 ## Namespace resolution
+
+`sameAs` is REQUIRED, and must reflect the `fieldName` within the relevant namespace.
+
+
+## DEPRECATED Namespace resolution
+
+> Although the section below still reflects the inner workings of the validator, `sameAs` is now REQUIRED to remove ambiguity and make the model files easier to parse by various tools.
+> It is expected that future versions of the OpenActive validator library will remove the namespace resolution logic specified below, and instead use the `sameAs` value provided.
 
 For each field within the model, the rules of resolution are thus:
 
 * *IF* `sameAs` is set on the field, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/d5deb89c2395ba770b8cd943dedda9e996f76ac0/versions/2.x/models/Event.json#L115)) (the `activity` field is defined in the OA namespace, but `Event` is schema.org)
-* *ELSE IF* `derivedFrom` is set for the model (or a model further up the hierarchy as is specified via `subClassOf`), use the namespace in there (see [example](https://github.com/openactive/data-models/blob/06a0516f2f228d2045e63530c7754df35d3810f5/versions/2.x/models/EntryPoint.json#L3))
+* *ELSE IF* `derivedFrom` is set for the model, use the namespace in there (see [example](https://github.com/openactive/data-models/blob/06a0516f2f228d2045e63530c7754df35d3810f5/versions/2.x/models/EntryPoint.json#L3)
+* *ELSE IF* `derivedFrom` is set for a model further up the hierarchy as is specified via `subClassOf`, use the namespace in there
+* *ELSE IF* `subClassOf` at the base of the hierarchy is an external class, use the namespace in there
 * *ELSE* assume the field is in the OA namespace
 
 If the same field has been defined in two different namespaces (e.g. in both "`schema:`" and "`oa:`"), the oa.jsonld file would not be able to be generated, and the unit tests produce the error "namespaces should not have fields in multiple namespaces".

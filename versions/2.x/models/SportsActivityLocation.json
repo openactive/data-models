@@ -20,6 +20,7 @@
     },
     "containedInPlace": {
       "fieldName": "containedInPlace",
+      "sameAs": "https://schema.org/containedInPlace",
       "model": "#Place",
       "alternativeTypes": [
         "https://schema.org/URL"

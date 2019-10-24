@@ -18,6 +18,7 @@
     },
     "maxValue": {
       "fieldName": "maxValue",
+      "sameAs": "https://schema.org/maxValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The maximum value."
@@ -26,6 +27,7 @@
     },
     "minValue": {
       "fieldName": "minValue",
+      "sameAs": "https://schema.org/minValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The minimum value."

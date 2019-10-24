@@ -22,6 +22,7 @@
     },
     "name": {
       "fieldName": "name",
+      "sameAs": "https://schema.org/name",
       "requiredType": "https://schema.org/Text",
       "description": [
         "The name of this PropertyValue"
@@ -30,6 +31,7 @@
     },
     "propertyID": {
       "fieldName": "propertyID",
+      "sameAs": "https://schema.org/propertyID",
       "requiredType": "https://schema.org/URL",
       "alternativeTypes": [
         "https://schema.org/Text"
@@ -41,6 +43,7 @@
     },
     "value": {
       "fieldName": "value",
+      "sameAs": "https://schema.org/value",
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
         "https://schema.org/Integer"
@@ -52,6 +55,7 @@
     },
     "description": {
       "fieldName": "description",
+      "sameAs": "https://schema.org/description",
       "requiredType": "https://schema.org/Text",
       "description": [
         "Additional human-readable version of the value of the property."

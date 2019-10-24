@@ -19,6 +19,7 @@
     },
     "thumbnail": {
       "fieldName": "thumbnail",
+      "sameAs": "https://schema.org/thumbnail",
       "model": "ArrayOf#ImageObject",
       "description": [
         "The URL for a thumbnail image for an image."
@@ -26,6 +27,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "example": "http://example.com/static/image/speedball_large.jpg",
       "description": [

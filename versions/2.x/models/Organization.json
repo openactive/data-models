@@ -50,11 +50,11 @@
     },
     "taxMode": {
       "fieldName": "taxMode",
+      "sameAs":"https://openactive.io/taxMode",
       "requiredType": "https://openactive.io/TaxMode",
       "description": [
         "Either  https://openactive.io/TaxNet or  https://openactive.io/TaxGross"
-      ],
-      "sameAs":"https://openactive.io/taxMode"
+      ]
     },
     "vatID": {
       "fieldName": "vatID",
@@ -66,6 +66,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -81,6 +82,7 @@
     },
     "logo": {
       "fieldName": "logo",
+      "sameAs": "https://schema.org/logo",
       "model": "#ImageObject",
       "example": {
         "type": "ImageObject",
@@ -140,6 +142,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "example": "http://www.speedball-world.com",
       "description": [

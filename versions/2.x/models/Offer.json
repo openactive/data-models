@@ -88,6 +88,7 @@
       },
       "priceCurrency": {
          "fieldName": "priceCurrency",
+         "sameAs": "https://schema.org/priceCurrency",
          "requiredType": "https://schema.org/Text",
          "description": [
             "The currency of the price. Specified as a 3-letter ISO 4217 value. If an Offer has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."
@@ -96,6 +97,7 @@
       },
       "name": {
          "fieldName": "name",
+         "sameAs": "https://schema.org/name",
          "requiredType": "https://schema.org/Text",
          "description": [
             "The name of the Offer suitable for communication to participants."
@@ -104,6 +106,7 @@
       },
       "identifier": {
          "fieldName": "identifier",
+         "sameAs": "https://schema.org/identifier",
          "alternativeModels": [
             "#PropertyValue",
             "ArrayOf#PropertyValue"
@@ -162,15 +165,16 @@
       },
       "prepayment": {
          "fieldName": "prepayment",
+         "sameAs":"https://openactive.io/prepayment",
          "requiredType": "https://openactive.io/RequiredStatusType",
          "description": [
             "Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."
          ],
-         "example": "https://openactive.io/Required",
-         "sameAs":"https://openactive.io/prepayment"
+         "example": "https://openactive.io/Required"
       },
       "availableChannel": {
          "fieldName": "availableChannel",
+         "sameAs": "https://schema.org/availableChannel",
          "requiredType": "ArrayOf#https://openactive.io/AvailableChannelType",
          "description": [
             ""

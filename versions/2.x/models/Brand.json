@@ -27,6 +27,7 @@
     },
     "description": {
       "fieldName": "description",
+      "sameAs": "https://schema.org/description",
       "requiredType": "https://schema.org/Text",
       "example": "Play Ball! is a series of games for people of all abilities.",
       "description": [
@@ -35,6 +36,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -50,6 +52,7 @@
     },
     "logo": {
       "fieldName": "logo",
+      "sameAs": "https://schema.org/logo",
       "model": "#ImageObject",
       "example": {
         "type": "ImageObject",
@@ -61,6 +64,7 @@
     },
     "name": {
       "fieldName": "name",
+      "sameAs": "https://schema.org/name",
       "requiredType": "https://schema.org/Text",
       "example": "Play Ball!",
       "description": [
@@ -69,6 +73,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "example": "http://example.com/play_ball",
       "description": [

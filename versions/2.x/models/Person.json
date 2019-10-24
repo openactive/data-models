@@ -43,6 +43,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -58,6 +59,7 @@
     },
     "logo": {
       "fieldName": "logo",
+      "sameAs": "https://schema.org/logo",
       "model": "#ImageObject",
       "example": {
         "type": "ImageObject",

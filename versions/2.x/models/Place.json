@@ -72,6 +72,7 @@
     },
     "amenityFeature": {
       "fieldName": "amenityFeature",
+      "sameAs": "https://schema.org/amenityFeature",
       "model": "ArrayOf#LocationFeatureSpecification",
       "example": [
         {
@@ -111,6 +112,7 @@
     },
     "containedInPlace": {
       "fieldName": "containedInPlace",
+      "sameAs": "https://schema.org/containedInPlace",
       "model": "#Place",
       "example": {
         "type": "Place",
@@ -123,6 +125,7 @@
     },
     "containsPlace": {
       "fieldName": "containsPlace",
+      "sameAs": "https://schema.org/containsPlace",
       "model": "ArrayOf#Place",
       "example": {
         "type": "Place",
@@ -144,6 +147,7 @@
     },
     "geo": {
       "fieldName": "geo",
+      "sameAs": "https://schema.org/geo",
       "model": "#GeoCoordinates",
       "example": {
         "latitude": 51.4034423828125,
@@ -156,6 +160,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -171,6 +176,7 @@
     },
     "image": {
       "fieldName": "image",
+      "sameAs": "https://schema.org/image",
       "model": "ArrayOf#ImageObject",
       "description": [
         "An image or photo that depicts the place, e.g. a photo taken at a previous event."
@@ -191,6 +197,7 @@
       ]
     },
     "openingHoursSpecification": {
+      "sameAs": "https://schema.org/openingHoursSpecification",
       "fieldName": "openingHoursSpecification",
       "model": "ArrayOf#OpeningHoursSpecification",
       "description": [

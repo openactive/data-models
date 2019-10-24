@@ -1,6 +1,5 @@
 {
    "type":"TermsOfUse",
-   "isJsonLd":true,
    "subClassOf":"#Terms",
    "status":{
       "response":{

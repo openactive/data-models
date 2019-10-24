@@ -162,6 +162,7 @@
     },
     "contributor": {
       "fieldName": "contributor",
+      "sameAs": "https://schema.org/contributor",
       "model": "ArrayOf#Person",
       "description": [
         "A Person who contributes to the facilitation of the Event."
@@ -176,6 +177,7 @@
     },
     "description": {
       "fieldName": "description",
+      "sameAs": "https://schema.org/description",
       "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
@@ -184,6 +186,7 @@
     },
     "duration": {
       "fieldName": "duration",
+      "sameAs": "https://schema.org/duration",
       "requiredType": "https://schema.org/Duration",
       "description": [
         "The duration of the event given in [ISO8601] format."
@@ -192,6 +195,7 @@
     },
     "endDate": {
       "fieldName": "endDate",
+      "sameAs": "https://schema.org/endDate",
       "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
         "https://schema.org/Date"
@@ -204,7 +208,7 @@
     },
     "eventSchedule": {
       "fieldName": "eventSchedule",
-      "sameAs": "https://pending.schema.org/eventSchedule",
+      "sameAs": "https://schema.org/eventSchedule",
       "model": "ArrayOf#Schedule",
       "description": [
         "A an array of oa:Schedule or oa:PartialSchedule, which represents a recurrence pattern."
@@ -223,6 +227,7 @@
     },
     "eventStatus": {
       "fieldName": "eventStatus",
+      "sameAs": "https://schema.org/eventStatus",
       "requiredType": "https://schema.org/EventStatusType",
       "description": [
         "The status of an event. Can be used to indicate rescheduled or cancelled events"
@@ -240,6 +245,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -255,6 +261,7 @@
     },
     "image": {
       "fieldName": "image",
+      "sameAs": "https://schema.org/image",
       "model": "ArrayOf#ImageObject",
       "description": [
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
@@ -272,6 +279,7 @@
     },
     "isAccessibleForFree": {
       "fieldName": "isAccessibleForFree",
+      "sameAs": "https://schema.org/isAccessibleForFree",
       "requiredType": "https://schema.org/Boolean",
       "description": [
         "Whether the Event is accessible without charge."
@@ -317,6 +325,7 @@
     },
     "location": {
       "fieldName": "location",
+      "sameAs": "https://schema.org/location",
       "model": "#Place",
       "description": [
         "The location at which the event will take place. Or, in the case of events that may span multiple locations, the initial meeting or starting point.",
@@ -347,6 +356,7 @@
     },
     "maximumAttendeeCapacity": {
       "fieldName": "maximumAttendeeCapacity",
+      "sameAs": "https://schema.org/maximumAttendeeCapacity",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The maximum capacity of the Event."
@@ -364,6 +374,7 @@
     },
     "name": {
       "fieldName": "name",
+      "sameAs": "https://schema.org/name",
       "requiredType": "https://schema.org/Text",
       "example": "Speedball",
       "description": [
@@ -372,6 +383,7 @@
     },
     "offers": {
       "fieldName": "offers",
+      "sameAs": "https://schema.org/offers",
       "model": "ArrayOf#Offer",
       "description": [
         "An array of schema:Offer that include the price of attending."
@@ -387,6 +399,7 @@
     },
     "organizer": {
       "fieldName": "organizer",
+      "sameAs": "https://schema.org/organizer",
       "model": "#Organization",
       "alternativeModels": [
         "#Person"
@@ -402,8 +415,8 @@
     },
     "potentialAction": {
       "fieldName": "potentialAction",
-      "model": "ArrayOf#Action",
       "sameAs": "https://schema.org/potentialAction",
+      "model": "ArrayOf#Action",
       "description": [
         "The possible actions that a user may make. e.g. Book."
       ],
@@ -435,6 +448,7 @@
     },
     "remainingAttendeeCapacity": {
       "fieldName": "remainingAttendeeCapacity",
+      "sameAs": "https://schema.org/remainingAttendeeCapacity",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "The number of places that are still available for the Event."
@@ -443,6 +457,7 @@
     },
     "subEvent": {
       "fieldName": "subEvent",
+      "sameAs": "https://schema.org/subEvent",
       "model": "ArrayOf#Event",
       "description": [
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"
@@ -462,6 +477,7 @@
     },
     "superEvent": {
       "fieldName": "superEvent",
+      "sameAs": "https://schema.org/superEvent",
       "model": "#Event",
       "description": [
         "Relates a child event to a parent event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A parent event might specify a recurring schedule, of which the child event is one specific instance"
@@ -472,6 +488,7 @@
     },
     "startDate": {
       "fieldName": "startDate",
+      "sameAs": "https://schema.org/startDate",
       "requiredType": "https://schema.org/DateTime",
       "alternativeTypes": [
         "https://schema.org/Date"
@@ -483,6 +500,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "description": [
         "A URL to a web page (or section of a page) that describes the event."

@@ -78,6 +78,11 @@ const forEachField = (model, cb) => {
   }
 };
 
+const isDerivedFromSchema = (model) => {
+  const { derivedFrom } = model;
+  return typeof derivedFrom === 'string' && derivedFrom.match(/^https:\/\/schema.org/);
+};
+
 describe('models', () => {
   forEachVersionedFile((version, metaData, modelsDirpath, rpdeDirpath, file, data) => {
     const fieldNameToNamespaced = {};
@@ -139,6 +144,55 @@ describe('models', () => {
           },
         };
       },
+
+      toBeValidPropertyReferenceFor() {
+        return {
+          compare(typeRef, field) {
+            const result = {};
+            if (typeof typeRef !== 'string') {
+              result.pass = false;
+              result.message = `A valid SameAs reference was not specified for ${field}`;
+              return result;
+            }
+            const typeId = typeRef.replace(/^https:\/\/schema.org/, 'http://schema.org');
+            if (typeId.match(/^http:\/\/schema\.org/)) {
+              const expectedId = `http://schema.org/${field}`;
+              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate schema.org reference for ${field}`;
+              }
+            } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
+              const expectedId = `http://purl.org/goodrelations/v1/${field}`;
+              result.pass = expectedId === typeId && goodRelationsDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate goodrelations reference for ${field}`;
+              }
+            } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
+              const expectedId = `http://www.w3.org/2004/02/skos/core#${field}`;
+              result.pass = expectedId === typeId && skosDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate SKOS reference for ${field}`;
+              }
+            } else if (typeId.match(/^https:\/\/openactive.io/)) {
+              const expectedId = `https://openactive.io/${field}`;
+              result.pass = expectedId === typeId;
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid OpenActive reference for ${field}`;
+              }
+            } else if (typeId.match(/^http:\/\/purl.org\/dc\/terms\//)) {
+              const expectedId = `http://purl.org/dc/terms/${field}`;
+              result.pass = expectedId === typeId;
+              if (!result.pass) {
+                result.message = `${typeRef} is not a valid DCAT reference for ${field}`;
+              }
+            } else {
+              throw new Error(`unrecognished type ${typeId}`);
+            }
+
+            return result;
+          },
+        };
+      },
     };
 
     beforeEach(() => {
@@ -161,11 +215,15 @@ describe('models', () => {
 
         it('should have a type that matches the file name', () => {
           expect(jsonData.type).toBeDefined();
-          expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+          expect(`${jsonData.type}.json`).toEqual(file);
+        });
+
+        it('should have a type that matches that is alphabetic', () => {
+          expect(jsonData.type).toMatch(/^[A-Za-z]+$/);
         });
 
         it('should be fit into the model inheritance hierarchy', () => {
-          if (!file.match(/^Feed/)) { // Models for feed aren't part of the main model hierarchy
+          if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) { // Non JSON-LD models aren't part of the main model hierarchy
             const inheritsFrom = Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf') ? jsonData.subClassOf : jsonData.derivedFrom;
             expect(inheritsFrom).toBeString();
             expect(inheritsFrom).not.toBeEmptyString();
@@ -204,7 +262,18 @@ describe('models', () => {
           }
         });
 
-        it('should only use sameAs references to schema.org, which such properties in schema.org actually already exist', () => {
+        it('should have a valid sameAs reference that matches the field name', () => {
+          // Only for JSON-LD models
+          if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
+            forEachField(jsonData, (field, fieldSpec) => {
+              if (field !== 'type') {
+                expect(fieldSpec.sameAs).toBeValidPropertyReferenceFor(field);
+              }
+            });
+          }
+        });
+
+        it('should only use sameAs references to schema.org when such properties in schema.org actually already exist', () => {
           for (const field in jsonData.fields) {
             if (
               Object.prototype.hasOwnProperty.call(jsonData.fields, field)
@@ -217,34 +286,51 @@ describe('models', () => {
           }
         });
 
-        it('should include derivedFrom with reference to https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
-          const typeId = `https://schema.org/${jsonData.type}`;
-          if (jsonData.derivedFrom !== typeId) {
-            expect(schemaOrgDataModel).not.toContain(typeId);
+        it('should include derivedFrom that includes https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
+          if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
+            const typeId = `https://schema.org/${jsonData.type}`;
+            if (jsonData.derivedFrom !== typeId) {
+              expect(schemaOrgDataModel).not.toContain(typeId);
+            }
           }
         });
 
-        it('should contain properties referencing schema.org if a property with the same name already exists in schema.org (as we do not plan to duplicate schema.org properties into the OpenActive namespace)', () => {
-          const defaultToSchema = typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/);
+        it('should not set derivedFrom when subClassOf refers to an external class', () => {
+          if (typeof jsonData.subClassOf === 'string' && !jsonData.subClassOf.match(/^#/)) {
+            // Note that loadModelFromFile will set jsonData.derivedFrom = jsonData.subClassOf,
+            // if derivedFrom is not set and subClassOf is external
+            expect(jsonData.derivedFrom === jsonData.subClassOf).toBe(true);
+          }
+        });
 
-          for (const field in jsonData.fields) {
-            if (
-              Object.prototype.hasOwnProperty.call(jsonData.fields, field)
-              // Field is not claiming to be derivedFrom schema.org
-              && !(defaultToSchema && typeof jsonData.fields[field].sameAs === 'undefined')
-              // Field is not claiming to be sameAs schema.org
-              && !(typeof jsonData.fields[field].sameAs === 'string' && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/))
-              && field !== 'type'
-            ) {
-              // There should not be a conflicting property matching the schema.org property
-              const impliedPropertyId = `http://schema.org/${field}`;
-              expect(schemaOrgDataModel).not.toContain(impliedPropertyId);
+        it('should contain properties referencing schema.org (via sameAs or derivedFrom) if a property with the same name already exists in schema.org (as we do not plan to duplicate schema.org properties into the OpenActive namespace)', () => {
+          if (
+            // Exclude non JSON-LD classes (e.g. RPDE)
+            !(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)
+            // Exclude SKOS classes
+            && !(typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^http:\/\/www.w3.org\/2004\/02\/skos/))
+          ) {
+            const defaultToSchema = isDerivedFromSchema(jsonData);
+
+            for (const field in jsonData.fields) {
+              if (
+                Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+                // Field is not claiming to be derivedFrom schema.org
+                && !(defaultToSchema && typeof jsonData.fields[field].sameAs === 'undefined')
+                // Field is not claiming to be sameAs schema.org
+                && !(typeof jsonData.fields[field].sameAs === 'string' && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/))
+                && field !== 'type'
+              ) {
+                // There should not be a conflicting property matching the schema.org property
+                const impliedPropertyId = `http://schema.org/${field}`;
+                expect(schemaOrgDataModel).not.toContain(impliedPropertyId);
+              }
             }
           }
         });
 
         it('should contain properties from schema.org (unless sameAs states otherwise) when model is derivedFrom from a schema.org type', () => {
-          if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
+          if (isDerivedFromSchema(jsonData)) {
             for (const field in jsonData.fields) {
               if (
                 Object.prototype.hasOwnProperty.call(jsonData.fields, field)

@@ -1,7 +1,6 @@
 {
    "type":"OrderItem",
    "derivedFrom":"https://schema.org/OrderItem",
-   "isJsonLd":true,
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderItem/",
    "status":{
@@ -90,45 +89,50 @@
       },
       "orderItemStatus":{
          "fieldName":"orderItemStatus",
+         "sameAs":"https://schema.org/orderItemStatus",
          "requiredType":"https://openactive.io/OrderItemStatus",
          "description":[]
       },
       "allowCustomerCancellationFullRefund":{
          "fieldName":"allowCustomerCancellationFullRefund",
-         "requiredType":"https://schema.org/Boolean",
          "sameAs":"https://openactive.io/allowCustomerCancellationFullRefund",
+         "requiredType":"https://schema.org/Boolean",
          "description":["Whether the event can be cancelled."]
       },
       "unitTaxSpecification":{
          "fieldName":"unitTaxSpecification",
-         "model":"ArrayOf#TaxChargeSpecification",
          "sameAs":"https://openactive.io/unitTaxSpecification",
+         "model":"ArrayOf#TaxChargeSpecification",
          "description":["Breakdown of tax payable for the OrderItem."]
       },
       "acceptedOffer":{
          "fieldName":"acceptedOffer",
+         "sameAs":"https://schema.org/acceptedOffer",
          "model":"#Offer",
          "description":["The offer from the associated orderedItem that has been selected by the Customer. The price of this includes or excludes tax depending on the taxMode of the Order."]
       },
       "orderedItem":{
          "fieldName":"orderedItem",
+         "sameAs":"https://schema.org/orderedItem",
          "model":"#Event",
          "description":["The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."]
       },
       "additionalProperty":{
          "fieldName":"additionalProperty",
+         "sameAs":"https://schema.org/additionalProperty",
          "model":"ArrayOf#PropertyValue",
          "description":["PropertyValue that contains a text value useful for reconciliation."]
       },
       "accessCode":{
          "fieldName":"accessCode",
+         "sameAs":"https://schema.org/accessCode",
          "model":"ArrayOf#PropertyValue",
          "description":["PropertyValue that contains a text value usable for entrance. Not applicable for an  OrderQuote."]
       },
       "accessToken":{
          "fieldName":"accessToken",
-         "model":"#ImageObject",
          "sameAs":"https://openactive.io/accessToken",
+         "model":"#ImageObject",
          "alternativeModels":[
             "#BarCode"
          ],
@@ -136,7 +140,7 @@
       },
       "error":{
          "fieldName":"error",
-         "sameAs":"https://openactive.io/error",
+         "sameAs":"https://schema.org/error",
          "model":"ArrayOf#OpenBookingError",
          "description":["Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."]
       },
@@ -154,6 +158,7 @@
       },
       "attendee":{
          "fieldName":"attendee",
+         "sameAs":"https://schema.org/attendee",
          "model":"#Person",
          "description": []
       },

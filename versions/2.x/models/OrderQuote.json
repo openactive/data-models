@@ -1,7 +1,6 @@
 {
    "type":"OrderQuote",
    "subClassOf":"#Order",
-   "isJsonLd":true,
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderQuote/f98e76e95b70e5801",
    "status":{

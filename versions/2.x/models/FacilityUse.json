@@ -181,6 +181,7 @@
     },
     "individualFacilityUse": {
       "fieldName": "individualFacilityUse",
+      "sameAs": "https://openactive.io/individualFacilityUse",
       "model": "ArrayOf#IndividualFacilityUse",
       "description": [
         "Inverse of the oa:aggregateFacilityUse property. Relates a oa:FacilityUse (e.g. an opportunity to play tennis at a specific location) to an oa:IndividualFacilityUse (e.g. an opportunity to play tennis on a specific court)."

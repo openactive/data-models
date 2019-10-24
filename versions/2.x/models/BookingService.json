@@ -1,7 +1,6 @@
 {
    "type":"BookingService",
    "subClassOf":"https://schema.org/Service",
-   "isJsonLd":true,
    "status":{
       "response":{
          "hasId":false,

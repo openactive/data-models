@@ -36,6 +36,7 @@
     },
     "author": {
       "fieldName": "author",
+      "sameAs": "https://schema.org/author",
       "model": "#Organization",
       "alternativeModels": [
         "#Person"
@@ -60,6 +61,7 @@
     },
     "identifier": {
       "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
       "alternativeModels": [
         "#PropertyValue",
         "ArrayOf#PropertyValue"
@@ -75,6 +77,7 @@
     },
     "logo": {
       "fieldName": "logo",
+      "sameAs": "https://schema.org/logo",
       "model": "#ImageObject",
       "example": {
         "type": "ImageObject",
@@ -95,6 +98,7 @@
     },
     "url": {
       "fieldName": "url",
+      "sameAs": "https://schema.org/url",
       "requiredType": "https://schema.org/URL",
       "example": "http://www.speedball-world.com/beginners-course",
       "description": [
