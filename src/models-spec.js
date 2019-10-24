@@ -113,9 +113,12 @@ describe('models', () => {
         return {
           compare(typeRef) {
             const result = {};
-            const typeId = typeRef.replace(/^ArrayOf#?/, '').replace(/^https:\/\/schema.org/, 'http://schema.org');
+            const typeId = typeRef.replace(/^ArrayOf#?/, '');
             if (typeId.match(/^http:\/\/schema\.org/)) {
-              result.pass = schemaOrgDataModel.includes(typeId);
+              result.pass = false;
+              result.message = `${typeRef} must use https to be a valid schema.org reference`;
+            } else if (typeId.match(/^https:\/\/schema\.org/)) {
+              result.pass = schemaOrgDataModel.includes(typeId.replace(/^https:\/\/schema.org/, 'http://schema.org'));
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid schema.org reference`;
               }
@@ -154,10 +157,13 @@ describe('models', () => {
               result.message = `A valid SameAs reference was not specified for ${field}`;
               return result;
             }
-            const typeId = typeRef.replace(/^https:\/\/schema.org/, 'http://schema.org');
+            const typeId = typeRef;
             if (typeId.match(/^http:\/\/schema\.org/)) {
-              const expectedId = `http://schema.org/${field}`;
-              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId);
+              result.pass = false;
+              result.message = `${typeRef} must use https to be a valid schema.org reference`;
+            } else if (typeId.match(/^https:\/\/schema\.org/)) {
+              const expectedId = `https://schema.org/${field}`;
+              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId.replace(/^https:\/\/schema.org/, 'http://schema.org'));
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate schema.org reference for ${field}`;
               }
@@ -213,13 +219,23 @@ describe('models', () => {
           jsonData = loadModelFromFile(file.replace(/\.json$/, ''), version);
         });
 
-        it('should have a type that matches the file name', () => {
-          expect(jsonData.type).toBeDefined();
-          expect(`${jsonData.type}.json`).toEqual(file);
-        });
+        describe('type', () => {
+          it('should match the file name', () => {
+            expect(jsonData.type).toBeDefined();
+            expect(`${jsonData.type}.json`).toEqual(file);
+          });
 
-        it('should have a type that matches that is alphabetic', () => {
-          expect(jsonData.type).toMatch(/^[A-Za-z]+$/);
+          it('should match the fields.type.requiredContent', () => {
+            // Only apply to JSON-LD
+            if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
+              // Non JSON-LD models don't have a type property so this check isn't needed
+              expect(jsonData.type).toEqual(jsonData.fields.type.requiredContent);
+            }
+          });
+
+          it('should have a type that is alphabetic', () => {
+            expect(jsonData.type).toMatch(/^[A-Za-z]+$/);
+          });
         });
 
         it('should be fit into the model inheritance hierarchy', () => {
@@ -254,12 +270,48 @@ describe('models', () => {
           });
         });
 
-        it('should contain derivedFrom property that refers to a class that actually exists', () => {
-          if (
-            typeof jsonData.derivedFrom === 'string'
-          ) {
-            expect(jsonData.derivedFrom).toBeValidTypeReference();
-          }
+        describe('derivedFrom', () => {
+          it('should refer to a class that actually exists', () => {
+            if (
+              typeof jsonData.derivedFrom === 'string'
+            ) {
+              expect(jsonData.derivedFrom).toBeValidTypeReference();
+            }
+          });
+
+          it('should always reference an external schema', () => {
+            if (typeof jsonData.derivedFrom === 'string') {
+              expect(jsonData.derivedFrom).toMatch(/^https?:\/\//);
+            }
+          });
+
+          it('should match the type name, and include https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
+            if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
+              let parentModelDerivedFrom = null;
+              if (Array.isArray(jsonData.subClassGraph) && jsonData.subClassGraph.length > 0) {
+                const parentModelName = jsonData.subClassGraph[0].replace(/^#/, '');
+                const parentModel = loadModelFromFile(parentModelName, version);
+                parentModelDerivedFrom = parentModel.derivedFrom;
+              }
+
+              if (typeof jsonData.derivedFrom === 'string') {
+                if (typeof jsonData.subClassOf !== 'string') {
+                  expect(jsonData.derivedFrom).toEndWith(jsonData.type);
+
+                // derivedFrom originated in this file if it is different to parent model's derived from, and the current subClassOf
+                } else if (parentModelDerivedFrom !== jsonData.derivedFrom && jsonData.derivedFrom !== jsonData.subClassOf) {
+                  // Should always end with the type name
+                  expect(jsonData.derivedFrom).toEndWith(`${jsonData.type}`);
+
+                  // If it exists in schema, should always reference schema
+                  const typeId = `http://schema.org/${jsonData.type}`;
+                  if (jsonData.derivedFrom.replace(/^https/, 'http') !== typeId) {
+                    expect(schemaOrgDataModel).not.toContain(typeId);
+                  }
+                }
+              }
+            }
+          });
         });
 
         it('should have a valid sameAs reference that matches the field name', () => {
@@ -282,15 +334,6 @@ describe('models', () => {
             ) {
               const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
               expect(schemaOrgDataModel).toContain(propertyId);
-            }
-          }
-        });
-
-        it('should include derivedFrom that includes https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
-          if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
-            const typeId = `https://schema.org/${jsonData.type}`;
-            if (jsonData.derivedFrom !== typeId) {
-              expect(schemaOrgDataModel).not.toContain(typeId);
             }
           }
         });

@@ -1,5 +1,5 @@
 {
-  "type": "BarCode",
+  "type": "Barcode",
   "subClassOf":"#ImageObject",
   "derivedFrom": "https://schema.org/Barcode",
   "hasId": false,
