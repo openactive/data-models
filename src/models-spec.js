@@ -159,9 +159,17 @@ describe('models', () => {
           jsonData = loadModelFromFile(file.replace(/\.json$/, ''), version);
         });
 
-        it('should have a type that matches the file name', () => {
-          expect(jsonData.type).toBeDefined();
-          expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+        describe('type', () => {
+          it('should match the file name', () => {
+            expect(jsonData.type).toBeDefined();
+            expect(`${jsonData.type.toLowerCase()}.json`).toEqual(file.toLowerCase());
+          });
+
+          it('should match the fields.type.requiredContent', () => {
+            if (!file.match(/^Feed/)) { // Models for feed don't have a type field so this check isn't needed
+              expect(jsonData.type).toEqual(jsonData.fields.type.requiredContent);
+            }
+          });
         });
 
         it('should be fit into the model inheritance hierarchy', () => {
