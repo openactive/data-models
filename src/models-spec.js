@@ -477,6 +477,32 @@ describe('models', () => {
             }
           });
         });
+
+        describe('imperativeConfiguration', () => {
+          ['requiredFields', 'recommendedFields', 'shallNotInclude'].forEach((fieldRestriction) => {
+            describe(fieldRestriction, () => {
+              it('should only contain fields from inSpec', () => {
+                if (Object.prototype.hasOwnProperty.call(jsonData, 'imperativeConfiguration')) {
+                  for (const config of Object.values(jsonData.imperativeConfiguration)) {
+                    for (const fieldName of config[fieldRestriction]) {
+                      expect(jsonData.inSpec).toContain(fieldName);
+                    }
+                  }
+                }
+              });
+            });
+          });
+        });
+
+        describe('validationMode', () => {
+          it('should pointt to entries in imperativeConfiguration', () => {
+            if (Object.prototype.hasOwnProperty.call(jsonData, 'validationMode')) {
+              for (const imperativeConfigurationKey of Object.values(jsonData.validationMode)) {
+                expect(Object.keys(jsonData.imperativeConfiguration)).toContain(imperativeConfigurationKey);
+              }
+            }
+          });
+        });
       });
 
       describe('namespaces', () => {
