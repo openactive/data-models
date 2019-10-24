@@ -217,6 +217,32 @@ describe('models', () => {
           }
         });
 
+        it('should include derivedFrom with reference to https://schema.org/ if a class with the same name already exists in schema.org (as we do not plan to duplicate schema.org classes into the OpenActive namespace)', () => {
+          const typeId = `https://schema.org/${jsonData.type}`;
+          if (jsonData.derivedFrom !== typeId) {
+            expect(schemaOrgDataModel).not.toContain(typeId);
+          }
+        });
+
+        it('should contain properties referencing schema.org if a property with the same name already exists in schema.org (as we do not plan to duplicate schema.org properties into the OpenActive namespace)', () => {
+          const defaultToSchema = typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/);
+
+          for (const field in jsonData.fields) {
+            if (
+              Object.prototype.hasOwnProperty.call(jsonData.fields, field)
+              // Field is not claiming to be derivedFrom schema.org
+              && !(defaultToSchema && typeof jsonData.fields[field].sameAs === 'undefined')
+              // Field is not claiming to be sameAs schema.org
+              && !(typeof jsonData.fields[field].sameAs === 'string' && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/))
+              && field !== 'type'
+            ) {
+              // There should not be a conflicting property matching the schema.org property
+              const impliedPropertyId = `http://schema.org/${field}`;
+              expect(schemaOrgDataModel).not.toContain(impliedPropertyId);
+            }
+          }
+        });
+
         it('should contain properties from schema.org (unless sameAs states otherwise) when model is derivedFrom from a schema.org type', () => {
           if (typeof jsonData.derivedFrom === 'string' && jsonData.derivedFrom.match(/^https:\/\/schema.org/)) {
             for (const field in jsonData.fields) {
