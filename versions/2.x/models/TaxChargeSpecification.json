@@ -66,6 +66,7 @@
       "rate":{
          "fieldName":"rate",
          "requiredType":"https://schema.org/Float",
+         "sameAs":"https://openactive.io/rate",
          "description":[
             "The rate of VAT."
          ]
