@@ -6,6 +6,68 @@
   "defaultActivityLists": [
     "https://openactive.io/activity-list"
   ],
+  "feedConfigurations": [
+    {
+      "name": "SessionSeries",
+      "sameAs": "https://openactive.io/SessionSeries",
+      "defaultFeedPath": "session-series",
+      "possibleKinds": ["SessionSeries", "SessionSeries.ScheduledSession"]
+    },
+    {
+      "name": "ScheduledSession",
+      "sameAs": "https://openactive.io/ScheduledSession",
+      "defaultFeedPath": "scheduled-sessions",
+      "possibleKinds": ["ScheduledSession", "ScheduledSession.SessionSeries"]
+    },
+    {
+      "name": "FacilityUse",
+      "sameAs": "https://openactive.io/FacilityUse",
+      "defaultFeedPath": "facility-uses",
+      "possibleKinds": ["FacilityUse"]
+    },
+    {
+      "name": "IndividualFacilityUse",
+      "sameAs": "https://openactive.io/IndividualFacilityUse",
+      "defaultFeedPath": "individual-facility-uses",
+      "possibleKinds": ["IndividualFacilityUse"]
+    },
+    {
+      "name": "Slot",
+      "sameAs": "https://openactive.io/Slot",
+      "defaultFeedPath": "slots",
+      "possibleKinds": ["FacilityUse/Slot", "IndividualFacilityUse/Slot"]
+    },
+    {
+      "name": "Course",
+      "sameAs": "https://openactive.io/Course",
+      "defaultFeedPath": "courses",
+      "possibleKinds": ["Course"]
+    },
+    {
+      "name": "CourseInstance",
+      "sameAs": "https://openactive.io/CourseInstance",
+      "defaultFeedPath": "course-instances",
+      "possibleKinds": ["CourseInstance", "CourseInstance.Event"]
+    },
+    {
+      "name": "HeadlineEvent",
+      "sameAs": "https://openactive.io/HeadlineEvent",
+      "defaultFeedPath": "headline-events",
+      "possibleKinds": ["HeadlineEvent"]
+    },
+    {
+      "name": "Event",
+      "sameAs": "https://schema.org/Event",
+      "defaultFeedPath": "events",
+      "possibleKinds": ["Event"]
+    },
+    {
+      "name": "EventSeries",
+      "sameAs": "https://schema.org/EventSeries",
+      "defaultFeedPath": "event-series",
+      "possibleKinds": ["EventSeries"]
+    }
+  ],
   "baseGraph": {
     "@context": {
       "id": "@id",
