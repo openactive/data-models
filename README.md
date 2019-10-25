@@ -102,6 +102,7 @@ The meta data should contain the following keys:
 * **baseGraph** - A base object used when generating the `@graph` property of the OpenActive JSON-LD definition.
 * **keywords** - A map of aliases for JSON-LD keywords.
 * **namespaces** - A map of prefixes to namespaces used in the OpenActive JSON-LD definition.
+* **feedConfigurations** - A map of feed configurations, to be used by the Dataset Site generators.
 
 ##### Example
 
