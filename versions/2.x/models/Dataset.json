@@ -1,0 +1,211 @@
+{
+  "type": "Dataset",
+  "derivedFrom": "https://schema.org/Dataset",
+  "hasId": false,
+  "requiredFields": [
+    "type",
+    "url",
+    "name",
+    "description",
+    "keywords",
+    "license",
+    "distribution",
+    "discussionUrl",
+    "documentation",
+    "inLanguage",
+    "publisher",
+    "schemaVersion"
+  ],
+  "recommendedFields": [
+    "datePublished",
+    "backgroundImage"
+  ],
+  "inSpec": [
+    "type",
+    "url",
+    "name",
+    "description",
+    "keywords",
+    "license",
+    "distribution",
+    "discussionUrl",
+    "documentation",
+    "inLanguage",
+    "publisher",
+    "datePublished",
+    "schemaVersion",
+    "softwareVersion",
+    "backgroundImage"
+  ],
+  "description": {
+    "sections": [
+      {
+        "title": "EARLY RELEASE NOTICE",
+        "paragraphs": [
+          "In order to expedite the OpenActive tooling work, this class has been added to the model for the purposes of testing.",
+          "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Dataset"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Acme Leisure Sessions and Facilities",
+      "description": [
+        "The name of the Dataset"
+      ]
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
+      "description": [
+        "The URL of the dataset site."
+      ],
+      "example": "https://opendata.fusion-lifestyle.com/OpenActive/"
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
+      "example": "Near real-time availability and rich descriptions relating to the sessions and facilities available from {OrganisationName}, published using the OpenActive Modelling Specification 2.0.",
+      "description": [
+        "The description of the Dataset"
+      ]
+    },
+    "keywords": {
+      "fieldName": "keywords",
+      "sameAs": "https://schema.org/keywords",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "example": [
+        "Sessions",
+        "Facilities",
+        "Activities",
+        "Sports",
+        "Physical Activity",
+        "OpenActive"
+      ],
+      "description": [
+        "Keywords for search engine optimisation"
+      ]
+    },
+    "license": {
+      "fieldName": "license",
+      "sameAs": "https://schema.org/license",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "https://creativecommons.org/licenses/by/4.0/",
+      "example": "https://creativecommons.org/licenses/by/4.0/",
+      "description": [
+        "The license under which the data is published. OpenActive data must be published under CC-BY 4.0."
+      ]
+    },
+    "distribution": {
+      "fieldName": "distribution",
+      "sameAs": "https://schema.org/distribution",
+      "model": "ArrayOf#DataDownload",
+      "example": [
+        {
+          "@type": "DataDownload",
+          "name": "FacilityUse",
+          "additionalType": "https://openactive.io/FacilityUse",
+          "encodingFormat": "application/vnd.openactive.rpde+json; version=1",
+          "contentUrl": "https://opendata.leisurecloud.live/api/feeds/fusion-lifestyle-fl-live-facility-uses"
+        }
+      ],
+      "description": [
+        "An array of feeds within the dataset"
+      ]
+    },
+    "discussionUrl": {
+      "fieldName": "discussionUrl",
+      "sameAs": "https://schema.org/discussionUrl",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://github.com/gladstonemrm/FusionLifestyle/issues",
+      "description": [
+        "A URL that can be used to raise issues related to the Dataset via a public forum."
+      ]
+    },
+    "documentation": {
+      "fieldName": "documentation",
+      "sameAs": "https://pending.schema.org/documentation",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://developer.openactive.io",
+      "description": [
+        "A link to documentation related to the Dataset, or a link to the OpenActive developer documentation if no Dataset-specific documentation is available."
+      ]
+    },
+    "inLanguage": {
+      "fieldName": "inLanguage",
+      "sameAs": "https://schema.org/inLanguage",
+      "requiredType": "https://schema.org/Text",
+      "example": [
+        "en-GB"
+      ],
+      "description": [
+        "An array of languages included in the Dataset content. Please use one of the language codes from the IETF BCP 47 standard."
+      ]
+    },
+    "publisher": {
+      "fieldName": "publisher",
+      "sameAs": "https://schema.org/publisher",
+      "model": "#Organization",
+      "description": [
+        "The organization ultimately responsible for this Dataset."
+      ],
+      "example": {
+        "name": "Central Speedball Association",
+        "type": "Organization",
+        "url": "http://www.speedball-world.com"
+      }
+    },
+    "datePublished": {
+      "fieldName": "datePublished",
+      "sameAs": "https://schema.org/datePublished",
+      "requiredType": "https://schema.org/DateTime",
+      "alternativeTypes": [
+        "https://schema.org/Date"
+      ],
+      "description": [
+        "The date this Dataset was first published. Can be specified as a schema:Date or schema:DateTime."
+      ],
+      "example": "2018-01-27T12:00:00Z"
+    },
+    "schemaVersion": {
+      "fieldName": "schemaVersion",
+      "sameAs": "https://schema.org/schemaVersion",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://www.openactive.io/modelling-opportunity-data/2.0/",
+      "description": [
+        "Indicates the version of OpenActive Modelling Opportunity Data Specification with which this Dataset conforms, by specifying its URL."
+      ]
+    },
+    "softwareVersion": {
+      "fieldName": "softwareVersion",
+      "sameAs": "https://schema.org/softwareVersion",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "The version of the application publishing data, useful for on-premise installations."
+      ]
+    },
+    "backgroundImage": {
+      "fieldName": "backgroundImage",
+      "sameAs": "https://openactive.io/backgroundImage",
+      "model": "#ImageObject",
+      "description": [
+        "A background image for the Dataset."
+      ],
+      "example": {
+        "@type": "ImageObject",
+        "url": "http://example.com/static/image/speedball_large.jpg"
+      }
+    }
+  }
+}

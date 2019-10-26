@@ -134,7 +134,7 @@
         "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
       ],
       "example": {
-        "type": "QuantitativeValue",
+        "@type": "QuantitativeValue",
         "minValue": 15,
         "maxValue": 60
       }
@@ -168,7 +168,7 @@
         "A Person who contributes to the facilitation of the Event."
       ],
       "example": [{
-        "type": "Person",
+        "@type": "Person",
         "familyName": "Smith",
         "givenName": "Nicole",
         "id": "https://example.com/locations/1234ABCD/leaders/89",
@@ -267,11 +267,11 @@
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
       ],
       "example": [{
-        "type": "ImageObject",
+        "@type": "ImageObject",
         "url": "http://example.com/static/image/speedball_large.jpg",
         "thumbnail":[
           {
-            "type": "ImageObject",
+            "@type": "ImageObject",
             "url": "http://example.com/static/image/speedball_thumbnail.jpg"
           }
         ]
@@ -303,7 +303,7 @@
         "Refers to a person (schema:Person) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
       ],
       "example": [{
-        "type": "Person",
+        "@type": "Person",
         "familyName": "Smith",
         "givenName": "Nicole",
         "gender": "https://schema.org/Male",
@@ -389,7 +389,7 @@
         "An array of schema:Offer that include the price of attending."
       ],
       "example": [ {
-        "type": "Offer",
+        "@type": "Offer",
         "identifier": "OX-AD",
         "name": "Adult",
         "price": 3.3,
@@ -441,7 +441,7 @@
         "Indicates that an event will be organised according to a specific Programme."
       ],
       "example": {
-        "type": "Brand",
+        "@type": "Brand",
         "name": "Play Ball!",
         "url": "http://example.org/brand/play-ball"
       }

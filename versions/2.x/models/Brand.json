@@ -55,7 +55,7 @@
       "sameAs": "https://schema.org/logo",
       "model": "#ImageObject",
       "example": {
-        "type": "ImageObject",
+        "@type": "ImageObject",
         "url": "http://example.com/static/image/speedball_large.jpg"
       },
       "description": [

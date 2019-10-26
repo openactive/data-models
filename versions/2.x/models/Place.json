@@ -59,7 +59,7 @@
       ],
       "preferredComment": "Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires https://schema.org/PostalAddress and will not accept plain text addresses.",
       "example": {
-        "type": "PostalAddress",
+        "@type": "PostalAddress",
         "streetAddress": "Raynes Park High School, 46A West Barnes Lane",
         "addressLocality": "New Malden",
         "addressRegion": "London",
@@ -115,7 +115,7 @@
       "sameAs": "https://schema.org/containedInPlace",
       "model": "#Place",
       "example": {
-        "type": "Place",
+        "@type": "Place",
         "url": "https://www.everyoneactive.com/centres/Middlesbrough-Sports-Village",
         "name": "Middlesbrough Sports Village"
       },
@@ -128,7 +128,7 @@
       "sameAs": "https://schema.org/containsPlace",
       "model": "ArrayOf#Place",
       "example": {
-        "type": "Place",
+        "@type": "Place",
         "url": "https://www.everyoneactive.com/centres/Center-Parcs-Sports-Plaza",
         "name": "Center Parcs Sports Plaza"
       },

@@ -128,7 +128,7 @@
             "Indicates that an Offer is applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties."
          ],
          "example": {
-            "type": "QuantitativeValue",
+            "@type": "QuantitativeValue",
             "minValue": 15,
             "maxValue": 60
          }
