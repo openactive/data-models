@@ -22,6 +22,7 @@
       "type",
       "name",
       "url",
+      "softwareVersion",
       "termsOfService"
    ],
    "notInSpec":[
@@ -45,6 +46,14 @@
          "sameAs": "https://schema.org/url",
          "description": ["The URL of the website of the Booking System."]
       },
+      "softwareVersion": {
+         "fieldName": "softwareVersion",
+         "sameAs": "https://schema.org/softwareVersion",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+           "The version of the application, useful for on-premise installations."
+         ]
+       },
       "termsOfService":{
          "fieldName":"termsOfService",
          "sameAs": "https://pending.schema.org/termsOfService",

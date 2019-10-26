@@ -11,55 +11,64 @@
       "name": "SessionSeries",
       "sameAs": "https://openactive.io/SessionSeries",
       "defaultFeedPath": "session-series",
-      "possibleKinds": ["SessionSeries", "SessionSeries.ScheduledSession"]
+      "possibleKinds": ["SessionSeries", "SessionSeries.ScheduledSession"],
+      "displayName": "Sessions"
     },
     {
       "name": "ScheduledSession",
       "sameAs": "https://openactive.io/ScheduledSession",
       "defaultFeedPath": "scheduled-sessions",
-      "possibleKinds": ["ScheduledSession", "ScheduledSession.SessionSeries"]
+      "possibleKinds": ["ScheduledSession", "ScheduledSession.SessionSeries"],
+      "displayName": "Sessions"
     },
     {
       "name": "FacilityUse",
       "sameAs": "https://openactive.io/FacilityUse",
       "defaultFeedPath": "facility-uses",
-      "possibleKinds": ["FacilityUse"]
+      "possibleKinds": ["FacilityUse"],
+      "displayName": "Facilities"
     },
     {
       "name": "IndividualFacilityUse",
       "sameAs": "https://openactive.io/IndividualFacilityUse",
       "defaultFeedPath": "individual-facility-uses",
-      "possibleKinds": ["IndividualFacilityUse"]
+      "possibleKinds": ["IndividualFacilityUse"],
+      "displayName": "Facilities"
     },
     {
       "name": "Slot",
       "sameAs": "https://openactive.io/Slot",
       "defaultFeedPath": "slots",
-      "possibleKinds": ["FacilityUse/Slot", "IndividualFacilityUse/Slot"]
+      "possibleKinds": ["FacilityUse/Slot", "IndividualFacilityUse/Slot"],
+      "displayName": "Facilities"
     },
     {
       "name": "Course",
       "sameAs": "https://openactive.io/Course",
       "defaultFeedPath": "courses",
-      "possibleKinds": ["Course"]
+      "possibleKinds": ["Course"],
+      "displayName": "Courses"
     },
     {
       "name": "CourseInstance",
       "sameAs": "https://openactive.io/CourseInstance",
       "defaultFeedPath": "course-instances",
-      "possibleKinds": ["CourseInstance", "CourseInstance.Event"]
+      "possibleKinds": ["CourseInstance", "CourseInstance.Event"],
+      "displayName": "Courses"
     },
     {
       "name": "HeadlineEvent",
       "sameAs": "https://openactive.io/HeadlineEvent",
       "defaultFeedPath": "headline-events",
-      "possibleKinds": ["HeadlineEvent"]
+      "possibleKinds": ["HeadlineEvent"],
+      "displayName": "Events"
     },
     {
       "name": "Event",
       "sameAs": "https://schema.org/Event",
       "defaultFeedPath": "events",
-      "possibleKinds": ["Event"]
+      "possibleKinds": ["Event"],
+      "displayName": "Events"
     },
     {
       "name": "EventSeries",

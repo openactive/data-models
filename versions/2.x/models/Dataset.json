@@ -34,8 +34,8 @@
     "publisher",
     "datePublished",
     "schemaVersion",
-    "softwareVersion",
-    "backgroundImage"
+    "backgroundImage",
+    "bookingService"
   ],
   "description": {
     "sections": [
@@ -100,7 +100,7 @@
     "license": {
       "fieldName": "license",
       "sameAs": "https://schema.org/license",
-      "requiredType": "https://schema.org/Text",
+      "requiredType": "https://schema.org/URL",
       "requiredContent": "https://creativecommons.org/licenses/by/4.0/",
       "example": "https://creativecommons.org/licenses/by/4.0/",
       "description": [
@@ -187,14 +187,6 @@
         "Indicates the version of OpenActive Modelling Opportunity Data Specification with which this Dataset conforms, by specifying its URL."
       ]
     },
-    "softwareVersion": {
-      "fieldName": "softwareVersion",
-      "sameAs": "https://schema.org/softwareVersion",
-      "requiredType": "https://schema.org/Text",
-      "description": [
-        "The version of the application publishing data, useful for on-premise installations."
-      ]
-    },
     "backgroundImage": {
       "fieldName": "backgroundImage",
       "sameAs": "https://openactive.io/backgroundImage",
@@ -206,6 +198,14 @@
         "@type": "ImageObject",
         "url": "http://example.com/static/image/speedball_large.jpg"
       }
+    },
+    "bookingService": {
+      "fieldName": "bookingService",
+      "sameAs": "https://openactive.io/bookingService",
+      "model": "#BookingService",
+      "description": [
+        "Information about the Booking System or publishing platform"
+      ]
     }
   }
 }
