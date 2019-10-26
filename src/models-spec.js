@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const request = require('sync-request');
+const request = require('sync-request'); // eslint-disable-line import/no-extraneous-dependencies
 
 const getEnums = require('./getEnums');
 const getMetaData = require('./getMetaData');
