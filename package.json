@@ -27,7 +27,8 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "jasmine": "^3.2.0",
-    "jasmine-expect": "^4.0.3"
+    "jasmine-expect": "^4.0.3",
+    "sync-request": "^6.1.0"
   },
   "scripts": {
     "build": "node scripts/build.js",
@@ -40,8 +41,5 @@
     "test-debug": "node --inspect-brk -i ./node_modules/jasmine/bin/jasmine.js",
     "postpublish": "git push",
     "publish-patch": "npm test && git pull && git push && npm version patch && npm publish"
-  },
-  "dependencies": {
-    "sync-request": "^6.1.0"
   }
 }
