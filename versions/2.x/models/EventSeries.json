@@ -1,7 +1,7 @@
 {
   "type": "EventSeries",
   "subClassOf": "#Event",
-  "derivedFrom": "https://schema.org/EventSeries",
+  "derivedFrom": "https://pending.schema.org/EventSeries",
   "requiredFields": [
     "type",
     "name",

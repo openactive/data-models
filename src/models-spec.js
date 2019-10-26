@@ -10,20 +10,36 @@ const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 const schemaOrgDataModel = (() => {
-  const fetchIds = (url) => {
+  const fetchIds = (url, prefixReplacement) => {
     const response = request('GET', url, {
       accept: 'application/ld+json',
     });
-    return JSON.parse(response.body)['@graph'].map(entity => entity['@id']);
+    return JSON.parse(response.body)['@graph'].map(entity => entity['@id'].replace(/^http:\/\/schema.org/, prefixReplacement));
   };
 
   const schemaSources = [
-    'https://schema.org/version/latest/schema.jsonld',
-    'https://schema.org/version/3.9/ext-meta.jsonld',
-    'https://schema.org/version/latest/ext-pending.jsonld',
+    {
+      // In expectation of future update, schema file is upgraded to use https
+      // See https://schema.org/docs/faq.html#19
+      url: 'https://schema.org/version/latest/schema.jsonld',
+      prefixReplacement: 'https://schema.org',
+    },
+    {
+      // In expectation of future update, schema file is upgraded to use https
+      // See https://schema.org/docs/faq.html#19
+      url: 'https://schema.org/version/latest/ext-meta.jsonld',
+      prefixReplacement: 'https://schema.org',
+    },
+    {
+      // Note even though schema.org has migrated http://pending.schema.org/ to http://schema.org/
+      // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
+      // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
+      url: 'https://schema.org/version/latest/ext-pending.jsonld',
+      prefixReplacement: 'https://pending.schema.org',
+    },
   ];
 
-  return schemaSources.reduce((store, url) => store.concat(fetchIds(url)), []);
+  return schemaSources.reduce((store, source) => store.concat(fetchIds(source.url, source.prefixReplacement)), []);
 })();
 
 const parseRDFXML = (uri) => {
@@ -117,30 +133,35 @@ describe('models', () => {
           compare(typeRef) {
             const result = {};
             const typeId = typeRef.replace(/^ArrayOf#?/, '');
-            if (typeId.match(/^http:\/\/schema\.org/)) {
+            if (typeId.match(/^http:\/\/(pending\.)?schema\.org/)) {
               result.pass = false;
-              result.message = `${typeRef} must use https to be a valid schema.org reference`;
+              result.message = `${typeRef} must use https to be a valid schema.org type reference`;
             } else if (typeId.match(/^https:\/\/schema\.org/)) {
-              result.pass = schemaOrgDataModel.includes(typeId.replace(/^https:\/\/schema.org/, 'http://schema.org'));
+              result.pass = schemaOrgDataModel.includes(typeId);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid schema.org reference`;
+                result.message = `${typeRef} is not an accurate schema.org type reference`;
+              }
+            } else if (typeId.match(/^https:\/\/pending\.schema\.org/)) {
+              result.pass = schemaOrgDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate pending.schema.org type reference`;
               }
             } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
               result.pass = goodRelationsDataModel.includes(typeId);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid goodrelations reference`;
+                result.message = `${typeRef} is not an accurate goodrelations type reference`;
               }
             } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
               result.pass = skosDataModel.includes(typeId);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid SKOS reference`;
+                result.message = `${typeRef} is not a valid SKOS type reference`;
               }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const typeName = typeId.replace(/^https:\/\/openactive.io\//, '');
               const enums = getEnums(version);
               result.pass = Object.prototype.hasOwnProperty.call(enums, typeName) || modelExists(typeName);
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid OpenActive reference`;
+                result.message = `${typeRef} is not a valid OpenActive type reference`;
               }
             } else {
               throw new Error(`unrecognished type ${typeId}`);
@@ -161,14 +182,20 @@ describe('models', () => {
               return result;
             }
             const typeId = typeRef;
-            if (typeId.match(/^http:\/\/schema\.org/)) {
+            if (typeId.match(/^http:\/\/(pending\.)?schema\.org/)) {
               result.pass = false;
               result.message = `${typeRef} must use https to be a valid schema.org reference`;
             } else if (typeId.match(/^https:\/\/schema\.org/)) {
               const expectedId = `https://schema.org/${field}`;
-              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId.replace(/^https:\/\/schema.org/, 'http://schema.org'));
+              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate schema.org reference for ${field}`;
+              }
+            } else if (typeId.match(/^https:\/\/pending\.schema\.org/)) {
+              const expectedId = `https://pending.schema.org/${field}`;
+              result.pass = expectedId === typeId && schemaOrgDataModel.includes(typeId);
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate pending.schema.org reference for ${field}`;
               }
             } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
               const expectedId = `http://purl.org/goodrelations/v1/${field}`;
@@ -296,8 +323,8 @@ describe('models', () => {
                 expect(jsonData.derivedFrom).toEndWith(`${jsonData.type}`);
 
                 // If it exists in schema, should always reference schema
-                const typeId = `http://schema.org/${jsonData.type}`;
-                if (jsonData.derivedFrom.replace(/^https/, 'http') !== typeId) {
+                const typeId = `https://schema.org/${jsonData.type}`;
+                if (jsonData.derivedFrom !== typeId) {
                   expect(schemaOrgDataModel).not.toContain(typeId);
                 }
               }
@@ -323,7 +350,7 @@ describe('models', () => {
                 && typeof jsonData.fields[field].sameAs === 'string'
                 && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/)
             ) {
-              const propertyId = jsonData.fields[field].sameAs.replace(/^https/, 'http');
+              const propertyId = jsonData.fields[field].sameAs;
               expect(schemaOrgDataModel).toContain(propertyId);
             }
           }
@@ -350,27 +377,16 @@ describe('models', () => {
                 // Field is not claiming to be derivedFrom schema.org
                 && !(defaultToSchema && typeof jsonData.fields[field].sameAs === 'undefined')
                 // Field is not claiming to be sameAs schema.org
-                && !(typeof jsonData.fields[field].sameAs === 'string' && jsonData.fields[field].sameAs.match(/^https:\/\/schema.org/))
+                && !(typeof jsonData.fields[field].sameAs === 'string' && jsonData.fields[field].sameAs.match(/^https:\/\/(pending\.)?schema.org/))
                 && field !== 'type'
               ) {
-                // There should not be a conflicting property matching the schema.org property
-                const impliedPropertyId = `http://schema.org/${field}`;
+                // There should not be a conflicting schema.org property
+                const impliedPropertyId = `https://schema.org/${field}`;
                 expect(schemaOrgDataModel).not.toContain(impliedPropertyId);
-              }
-            }
-          }
-        });
 
-        it('should contain properties from schema.org (unless sameAs states otherwise) when model is derivedFrom from a schema.org type', () => {
-          if (isDerivedFromSchema(jsonData)) {
-            for (const field in jsonData.fields) {
-              if (
-                Object.prototype.hasOwnProperty.call(jsonData.fields, field)
-                  && typeof jsonData.fields[field].sameAs === 'undefined'
-                  && field !== 'type'
-              ) {
-                const impliedPropertyId = `http://schema.org/${field}`;
-                expect(schemaOrgDataModel).toContain(impliedPropertyId);
+                // There should not be a conflicting pending.schema.org property
+                const impliedPendingPropertyId = `https://pending.schema.org/${field}`;
+                expect(schemaOrgDataModel).not.toContain(impliedPendingPropertyId);
               }
             }
           }
@@ -505,7 +521,7 @@ describe('models', () => {
         it('should have fields with a type property that points to real types', () => {
           forEachField(jsonData, (field, fieldSpec) => {
             if (typeof fieldSpec.requiredType !== 'undefined') {
-              expect(fieldSpec.requiredType).toMatch(/^(ArrayOf#)?(https:\/\/schema\.org\/|https:\/\/openactive\.io\/|http:\/\/purl\.org\/goodrelations\/v1#)[a-zA-Z]+$/);
+              expect(fieldSpec.requiredType).toMatch(/^(ArrayOf#)?(https:\/\/schema\.org\/|https:\/\/pending\.schema\.org\/|https:\/\/openactive\.io\/|http:\/\/purl\.org\/goodrelations\/v1#)[a-zA-Z]+$/);
             }
           });
         });
@@ -515,7 +531,7 @@ describe('models', () => {
             if (typeof fieldSpec.additionalTypes !== 'undefined') {
               expect(fieldSpec.additionalTypes instanceof Array).toBe(true);
               for (const type of fieldSpec.additionalTypes) {
-                expect(type).toMatch(/^(ArrayOf#)?http:\/\/(schema\.org|openactive\.io)\/[a-zA-Z]+$/);
+                expect(type).toMatch(/^(ArrayOf#)?http:\/\/(schema\.org|pending\.schema\.org|openactive\.io)\/[a-zA-Z]+$/);
               }
             }
           });

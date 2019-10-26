@@ -159,7 +159,7 @@
     },
     "termsOfService": {
       "fieldName": "termsOfService",
-      "sameAs": "https://schema.org/termsOfService",
+      "sameAs": "https://pending.schema.org/termsOfService",
       "model": "ArrayOf#Terms",
       "description": [
         "The terms of service of the Seller."

@@ -101,7 +101,7 @@
     },
     "gender": {
       "fieldName": "gender",
-      "sameAs": "https://schema.org/gender",
+      "sameAs": "https://pending.schema.org/gender",
       "requiredType": "https://schema.org/GenderType",
       "description": [
         "Indicates the gender of the person."
@@ -139,7 +139,7 @@
     },
     "jobTitle": {
       "fieldName": "jobTitle",
-      "sameAs": "https://schema.org/jobTitle",
+      "sameAs": "https://pending.schema.org/jobTitle",
       "requiredType": "https://schema.org/Text",
       "example": "Team Captain",
       "description": [
