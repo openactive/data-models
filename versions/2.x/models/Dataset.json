@@ -145,7 +145,7 @@
     "inLanguage": {
       "fieldName": "inLanguage",
       "sameAs": "https://schema.org/inLanguage",
-      "requiredType": "https://schema.org/Text",
+      "requiredType": "ArrayOf#https://schema.org/Text",
       "example": [
         "en-GB"
       ],
