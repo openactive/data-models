@@ -1,42 +1,47 @@
 [
   {
-    "file": "sessionseries_example_1.json",
-    "name": "SessionSeries with ScheduledSession Example"
-  },
-  {
-    "file": "scheduledsession_example_1.json",
-    "name": "ScheduledSession with SessionSeries Example"
-  },
-  {
-    "file": "sessionseries-split_example_1.json",
-    "name": "SessionSeries Example"
-  },
-  {
-    "file": "scheduledsession-split_example_1.json",
-    "name": "ScheduledSession Example"
-  },
-  {
-    "file": "sessionseries-eventseries-split_example_1.json",
-    "name": "SessionSeries with EventSeries Example"
-  },
-  {
-    "file": "facilityuse_example_1.json",
-    "name": "FacilityUse Example"
-  },
-  {
-    "file": "slot_example_1.json",
-    "name": "Slot Example"
-  },
-  {
-    "file": "courseinstance_example_1.json",
-    "name": "CourseInstance Example"
-  },
-  {
-    "file": "courseinstance_event_example_1.json",
-    "name": "CourseInstance with Event Example"
-  },
-  {
-    "file": "event_example_1.json",
-    "name": "Event Example"
+    "name": "Opportunity Data Publishing",
+    "exampleList": [
+      {
+        "file": "sessionseries_example_1.json",
+        "name": "SessionSeries with ScheduledSession Example"
+      },
+      {
+        "file": "scheduledsession_example_1.json",
+        "name": "ScheduledSession with SessionSeries Example"
+      },
+      {
+        "file": "sessionseries-split_example_1.json",
+        "name": "SessionSeries Example"
+      },
+      {
+        "file": "scheduledsession-split_example_1.json",
+        "name": "ScheduledSession Example"
+      },
+      {
+        "file": "sessionseries-eventseries-split_example_1.json",
+        "name": "SessionSeries with EventSeries Example"
+      },
+      {
+        "file": "facilityuse_example_1.json",
+        "name": "FacilityUse Example"
+      },
+      {
+        "file": "slot_example_1.json",
+        "name": "Slot Example"
+      },
+      {
+        "file": "courseinstance_example_1.json",
+        "name": "CourseInstance Example"
+      },
+      {
+        "file": "courseinstance_event_example_1.json",
+        "name": "CourseInstance with Event Example"
+      },
+      {
+        "file": "event_example_1.json",
+        "name": "Event Example"
+      }
+    ]
   }
 ]
