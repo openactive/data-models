@@ -2,8 +2,8 @@
   "name": "@openactive/data-models",
   "version": "2.0.1",
   "description": "Data models used to drive that OpenActive validator and developer documentation",
-  "homepage": "http://openactive.io",
-  "author": "Pete Walker <pete@imin.co> (https://github.com/petewalker)",
+  "homepage": "https://www.openactive.io",
+  "author": "OpenActive Community <hello@openactive.io>",
   "keywords": [
     "openactive",
     "odi",
