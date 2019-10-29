@@ -1,0 +1,98 @@
+{
+  "next": "/api/orders-rpde?afterTimestamp=1521565719&afterId=e11429ea-467f-4270-ab62-e47368996fe8",
+  "items": [
+    {
+      "state": "updated",
+      "kind": "Order",
+      "@id": "e11429ea-467f-4270-ab62-e47368996fe8",
+      "modified": 1521565719,
+      "data": {
+        "@context": "https://openactive.io/",
+        "@type": "Order",
+        "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8",
+        "seller": {
+          "@type": "Organization",
+          "@id": "https://example.com/api/organisations/123",
+          "identifier": "CRUOZWJ1",
+          "name": "Better",
+          "taxMode": "https://openactive.io/TaxGross",
+          "legalName": "Greenwich Leisure Limited",
+          "description": "A charitable social enterprise for all the community",
+          "url": "https://www.better.org.uk",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "http://data.better.org.uk/images/logo.png"
+          },
+          "telephone": "020 3457 8700",
+          "email": "customerservices@gll.org",
+          "vatID": "GB 789 1234 56",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Alan Peacock Way",
+            "addressLocality": "Village East",
+            "addressRegion": "Middlesbrough",
+            "postalCode": "TS4 3AE",
+            "addressCountry": "GB"
+          },
+          "termsOfService": [
+            {
+              "@type": "Terms",
+              "name": "Privacy Policy",
+              "url": "https://example.com/privacy-policy"
+            },
+            {
+              "@type": "Terms",
+              "name": "Terms and Conditions",
+              "url": "https://example.com/terms-and-conditions"
+            }
+          ]
+        },
+        "orderedItem": [
+          {
+            "@type": "OrderItem",
+            "@id": "https://example.com/api/orders/123e4567-e89b-12d3-a456-426655440000/order-items/1234",
+            "orderItemStatus": "https://openactive.io/OrderConfirmed",
+            "allowCustomerCancellationFullRefund": true,
+            "unitTaxSpecification": [
+              {
+                "@type": "TaxChargeSpecification",
+                "name": "VAT at 0% for EU transactions",
+                "price": 1,
+                "priceCurrency": "GBP",
+                "rate": 0.2
+              }
+            ],
+            "acceptedOffer": {
+              "@type": "Offer",
+              "@id": "https://example.com/events/452#/offers/878",
+              "description": "Winger space for Speedball.",
+              "name": "Speedball winger position",
+              "price": 10,
+              "priceCurrency": "GBP",
+              "validFromBeforeStartDate": "P6D",
+              "latestCancellationBeforeStartDate": "P1D"
+            },
+            "orderedItem": {
+              "@type": "ScheduledSession",
+              "@id": "https://example.com/events/452/subEvents/132"
+            }
+          }
+        ],
+        "totalPaymentDue": {
+          "@type": "PriceSpecification",
+          "price": 5,
+          "priceCurrency": "GBP"
+        },
+        "totalPaymentTax": [
+          {
+            "@type": "TaxChargeSpecification",
+            "name": "VAT at 20%",
+            "price": 1,
+            "priceCurrency": "GBP",
+            "rate": 0.2
+          }
+        ]
+      }
+    }
+  ]
+}

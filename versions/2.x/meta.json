@@ -208,6 +208,42 @@
         {
           "validationMode": "C2Request",
           "name": "C2 Request"
+        },
+        {
+          "validationMode": "C2Response",
+          "name": "C2 Response"
+        },
+        {
+          "validationMode": "PRequest",
+          "name": "P Request"
+        },
+        {
+          "validationMode": "PResponse",
+          "name": "P Response"
+        },
+        {
+          "validationMode": "BRequest",
+          "name": "B Request"
+        },
+        {
+          "validationMode": "BResponse",
+          "name": "B Response"
+        },
+        {
+          "validationMode": "OrderProposalPatch",
+          "name": "OrderProposal Patch"
+        },
+        {
+          "validationMode": "OrderPatch",
+          "name": "Order Patch"
+        },
+        {
+          "validationMode": "OrderFeed",
+          "name": "Order Feed"
+        },
+        {
+          "validationMode": "OrderStatus",
+          "name": "OrderStatus"
         }
       ]
     }

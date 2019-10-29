@@ -43,5 +43,75 @@
         "name": "Event Example"
       }
     ]
+  },
+  {
+    "name": "Open Booking API - Simple",
+    "exampleList": [
+      {
+        "file": "booking_spec_examples/c1_request_example_1.json",
+        "name": "C1 Request Example",
+        "validationMode": "C1Request"
+      },
+      {
+        "file": "booking_spec_examples/c1_response_example_1.json",
+        "name": "C1 Response Example",
+        "validationMode": "C1Response"
+      },
+      {
+        "file": "booking_spec_examples/c2_request_example_1.json",
+        "name": "C2 Request Example",
+        "validationMode": "C2Request"
+      },
+      {
+        "file": "booking_spec_examples/c2_response_example_1.json",
+        "name": "C2 Response Example",
+        "validationMode": "C2Response"
+      },
+      {
+        "file": "booking_spec_examples/b_request_example_1.json",
+        "name": "B Request Example",
+        "validationMode": "BRequest"
+      },
+      {
+        "file": "booking_spec_examples/b_response_example_1.json",
+        "name": "B Response Example",
+        "validationMode": "BResponse"
+      },
+      {
+        "file": "booking_spec_examples/order_patch_example_1.json",
+        "name": "Order Patch Example (Cancellation)",
+        "validationMode": "OrderPatch"
+      },
+      {
+        "file": "booking_spec_examples/order_feed_example_1.json",
+        "name": "Order Feed Example",
+        "validationMode": "OrderFeed"
+      },
+      {
+        "file": "booking_spec_examples/orderstatus_example_1.json",
+        "name": "OrderStatus Example",
+        "validationMode": "OrderStatus"
+      }
+    ]
+  },
+  {
+    "name": "Open Booking API - Approval",
+    "exampleList": [
+      {
+        "file": "booking_spec_examples/p_request_example_1.json",
+        "name": "P Request Example",
+        "validationMode": "PRequest"
+      },
+      {
+        "file": "booking_spec_examples/p_response_example_1.json",
+        "name": "P Response Example",
+        "validationMode": "PResponse"
+      },
+      {
+        "file": "booking_spec_examples/orderproposal_patch_example_1.json",
+        "name": "OrderProposal Example",
+        "validationMode": "OrderProposalPatch"
+      }
+    ]
   }
 ]
