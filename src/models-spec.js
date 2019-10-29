@@ -631,6 +631,18 @@ describe('models', () => {
               }
             }
           });
+
+          it('should have keys which are validationModes from the metadata', () => {
+            if (Object.prototype.hasOwnProperty.call(jsonData, 'validationMode')) {
+              const allowedValidationModes = metaData.validationModeGroups.reduce((allModes, group) => {
+                const modesInGroup = group.validationModeList.map(modeObj => modeObj.validationMode);
+                return allModes.concat(modesInGroup);
+              }, []);
+              for (const validationMode of Object.keys(jsonData.validationMode)) {
+                expect(allowedValidationModes).toContain(validationMode);
+              }
+            }
+          });
         });
       });
 
