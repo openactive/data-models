@@ -183,5 +183,33 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "pending": "https://pending.schema.org/",
     "gr": "http://purl.org/goodrelations/v1#"
-  }
+  },
+  "validationModeGroups":[
+    {
+      "name": "Opportunity Data Publishing",
+      "validationModeList": [
+        {
+          "validationMode": "RPDEFeed",
+          "name": "RPDE Feed"
+        }
+      ]
+    },
+    {
+      "name": "Open Booking API",
+      "validationModeList": [
+        {
+          "validationMode": "C1Request",
+          "name": "C1 Request"
+        },
+        {
+          "validationMode": "C1Response",
+          "name": "C1 Response"
+        },
+        {
+          "validationMode": "C2Request",
+          "name": "C2 Request"
+        }
+      ]
+    }
+  ]
 }
