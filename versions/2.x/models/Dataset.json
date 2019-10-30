@@ -18,6 +18,7 @@
   ],
   "recommendedFields": [
     "datePublished",
+    "dateModified",
     "backgroundImage"
   ],
   "inSpec": [
@@ -32,6 +33,7 @@
     "documentation",
     "inLanguage",
     "publisher",
+    "dateModified",
     "datePublished",
     "schemaVersion",
     "backgroundImage",
@@ -165,6 +167,15 @@
         "type": "Organization",
         "url": "http://www.speedball-world.com"
       }
+    },
+    "dateModified": {
+      "fieldName": "dateModified",
+      "sameAs": "https://schema.org/dateModified",
+      "requiredType": "https://schema.org/DateTime",
+      "description": [
+        "The date this Dataset was last updated. For RPDE feeds this may simply be the date and time that the Dataset Site was rendered, which may be cached."
+      ],
+      "example": "2018-01-27T12:00:00Z"
     },
     "datePublished": {
       "fieldName": "datePublished",
