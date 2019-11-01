@@ -13,7 +13,7 @@
         "description",
         "instance",
         "method",
-        "status",
+        "statusCode",
         "invalidParams",
         "requestId"
     ],
