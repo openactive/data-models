@@ -37,7 +37,8 @@
     "datePublished",
     "schemaVersion",
     "backgroundImage",
-    "bookingService"
+    "bookingService",
+    "accessService"
   ],
   "description": {
     "sections": [
@@ -216,6 +217,14 @@
       "model": "#BookingService",
       "description": [
         "Information about the Booking System or publishing platform"
+      ]
+    },
+    "accessService": {
+      "fieldName": "accessService",
+      "sameAs": "http://www.w3.org/ns/dcat#accessService",
+      "model": "#WebAPI",
+      "description": [
+        "Information about the Open Booking API. Note this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE."
       ]
     }
   }
