@@ -209,6 +209,12 @@ describe('models', () => {
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate SKOS reference for ${field}`;
               }
+            } else if (typeId.match(/^http:\/\/www\.w3\.org\/ns\/dcat#/)) {
+              const expectedId = `http://www.w3.org/ns/dcat#${field}`;
+              result.pass = expectedId === typeId;
+              if (!result.pass) {
+                result.message = `${typeRef} is not an accurate DCAT v2 reference for ${field}`;
+              }
             } else if (typeId.match(/^https:\/\/openactive.io/)) {
               const expectedId = `https://openactive.io/${field}`;
               result.pass = expectedId === typeId;
@@ -219,7 +225,7 @@ describe('models', () => {
               const expectedId = `http://purl.org/dc/terms/${field}`;
               result.pass = expectedId === typeId;
               if (!result.pass) {
-                result.message = `${typeRef} is not a valid DCAT reference for ${field}`;
+                result.message = `${typeRef} is not a valid Dublin Core reference for ${field}`;
               }
             } else {
               throw new Error(`unrecognished type ${typeId}`);

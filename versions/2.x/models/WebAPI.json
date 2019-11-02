@@ -1,0 +1,120 @@
+{
+  "type": "WebAPI",
+  "derivedFrom": "https://pending.schema.org/WebAPI",
+  "hasId": false,
+  "requiredFields": [
+    "type",
+    "name",
+    "endpointURL",
+    "conformsTo",
+    "endpointDescription",
+    "landingPage"
+  ],
+  "recommendedFields": [
+    "documentation",
+    "termsOfService"
+  ],
+  "inSpec": [
+    "type",
+    "name",
+    "description",
+    "documentation",
+    "termsOfService",
+    "endpointURL",
+    "conformsTo",
+    "endpointDescription",
+    "landingPage"
+  ],
+  "description": {
+    "sections": [
+      {
+        "title": "EARLY RELEASE NOTICE",
+        "paragraphs": [
+          "In order to expedite the OpenActive tooling work, this class has been added to the model for the purposes of testing.",
+          "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "WebAPI"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Acme Leisure Sessions and Facilities",
+      "description": [
+        "The name of the WebAPI"
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
+      "example": "Near real-time availability and rich descriptions relating to the sessions and facilities available from {OrganisationName}, published using the OpenActive Modelling Specification 2.0.",
+      "description": [
+        "The description of the Dataset"
+      ]
+    },
+    "documentation": {
+      "fieldName": "documentation",
+      "sameAs": "https://pending.schema.org/documentation",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://developer.openactive.io",
+      "description": [
+        "A link to documentation related to the Dataset, or a link to the OpenActive developer documentation if no Dataset-specific documentation is available."
+      ]
+    },
+    "termsOfService": {
+      "fieldName": "termsOfService",
+      "sameAs": "https://pending.schema.org/termsOfService",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://example.bookingsystem.com/terms",
+      "description": [
+        "A link to terms of service related to the use of this API."
+      ]
+    },
+    "endpointURL": {
+      "fieldName": "endpointURL",
+      "sameAs": "http://www.w3.org/ns/dcat#endpointURL",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://example.bookingsystem.com/api/openbooking",
+      "description": [
+        "The base URL of the Open Booking API"
+      ]
+    },
+    "conformsTo": {
+      "fieldName": "conformsTo",
+      "sameAs": "http://purl.org/dc/terms/conformsTo",
+      "requiredType": "ArrayOf#https://schema.org/URL",
+      "example": [ 
+        "https://www.openactive.io/open-booking-api/1.0/#core"
+      ],
+      "description": [
+        "Indicates the version and profiles of OpenActive Open Booking Specification with which this WebAPI conforms, by specifying these as URLs."
+      ]
+    },
+    "endpointDescription": {
+      "fieldName": "endpointDescription",
+      "sameAs": "http://www.w3.org/ns/dcat#endpointDescription",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://www.openactive.io/open-booking-api/1.0/swagger.json",
+      "description": [
+        "The Open API document associated with this version of the Open Booking API"
+      ]
+    },
+    "landingPage": {
+      "fieldName": "landingPage",
+      "sameAs": "http://www.w3.org/ns/dcat#landingPage",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://exampleforms.com/get-me-an-api-access-key",
+      "description": [
+        "The web page the broker uses to obtain access to the API, e.g. via a web form."
+      ]
+    }
+  }
+}
