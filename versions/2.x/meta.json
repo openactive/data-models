@@ -6,75 +6,121 @@
   "defaultActivityLists": [
     "https://openactive.io/activity-list"
   ],
-  "feedConfigurations": [
+  "opportunityTypes": [
     {
+      "identifier": "SessionSeries",
       "name": "SessionSeries",
       "sameAs": "https://openactive.io/SessionSeries",
+      "parent": "EventSeries",
       "defaultFeedPath": "session-series",
-      "possibleKinds": ["SessionSeries", "SessionSeries.ScheduledSession"],
-      "displayName": "Sessions"
+      "themeDisplayName": "Sessions",
+      "bookable": false
     },
     {
+      "identifier": "ScheduledSession",
       "name": "ScheduledSession",
       "sameAs": "https://openactive.io/ScheduledSession",
+      "parent": "SessionSeries",
       "defaultFeedPath": "scheduled-sessions",
-      "possibleKinds": ["ScheduledSession", "ScheduledSession.SessionSeries"],
-      "displayName": "Sessions"
+      "themeDisplayName": "Sessions",
+      "bookable": true
     },
     {
+      "identifier": "FacilityUse",
       "name": "FacilityUse",
       "sameAs": "https://openactive.io/FacilityUse",
       "defaultFeedPath": "facility-uses",
-      "possibleKinds": ["FacilityUse"],
-      "displayName": "Facilities"
+      "themeDisplayName": "Facilities",
+      "bookable": false
     },
     {
+      "identifier": "IndividualFacilityUse",
       "name": "IndividualFacilityUse",
       "sameAs": "https://openactive.io/IndividualFacilityUse",
       "defaultFeedPath": "individual-facility-uses",
-      "possibleKinds": ["IndividualFacilityUse"],
-      "displayName": "Facilities"
+      "themeDisplayName": "Facilities",
+      "bookable": false
     },
     {
+      "identifier": "FacilityUseSlot",
       "name": "Slot",
       "sameAs": "https://openactive.io/Slot",
-      "defaultFeedPath": "slots",
-      "possibleKinds": ["FacilityUse/Slot", "IndividualFacilityUse/Slot"],
-      "displayName": "Facilities"
+      "parent": "FacilityUse",
+      "defaultFeedPath": "facility-use-slots",
+      "themeDisplayName": "Facilities",
+      "bookable": true
     },
     {
+      "identifier": "IndividualFacilityUseSlot",
+      "name": "Slot",
+      "sameAs": "https://openactive.io/Slot",
+      "parent": "IndividualFacilityUse",
+      "defaultFeedPath": "individual-facility-use-slots",
+      "themeDisplayName": "Facilities",
+      "bookable": true
+    },
+    {
+      "identifier": "Course",
       "name": "Course",
-      "sameAs": "https://openactive.io/Course",
+      "sameAs": "https://schema.org/Course",
       "defaultFeedPath": "courses",
-      "possibleKinds": ["Course"],
-      "displayName": "Courses"
+      "themeDisplayName": "Courses",
+      "bookable": false
     },
     {
+      "identifier": "CourseInstance",
       "name": "CourseInstance",
-      "sameAs": "https://openactive.io/CourseInstance",
+      "sameAs": "https://schema.org/CourseInstance",
+      "parent": "Course",
       "defaultFeedPath": "course-instances",
-      "possibleKinds": ["CourseInstance", "CourseInstance.Event"],
-      "displayName": "Courses"
+      "themeDisplayName": "Courses",
+      "bookable": true
     },
     {
-      "name": "HeadlineEvent",
-      "sameAs": "https://openactive.io/HeadlineEvent",
-      "defaultFeedPath": "headline-events",
-      "possibleKinds": ["HeadlineEvent"],
-      "displayName": "Events"
-    },
-    {
+      "identifier": "CourseInstanceSubEvent",
       "name": "Event",
       "sameAs": "https://schema.org/Event",
-      "defaultFeedPath": "events",
-      "possibleKinds": ["Event"],
-      "displayName": "Events"
+      "parent": "CourseInstance",
+      "defaultFeedPath": "course-instance-subevents",
+      "themeDisplayName": "Courses",
+      "bookable": true
     },
     {
+      "identifier": "HeadlineEvent",
+      "name": "HeadlineEvent",
+      "sameAs": "https://openactive.io/HeadlineEvent",
+      "parent": "EventSeries",
+      "defaultFeedPath": "headline-events",
+      "themeDisplayName": "Headline Events",
+      "bookable": true
+    },
+    {
+      "identifier": "HeadlineEventSubEvent",
+      "name": "Event",
+      "sameAs": "https://schema.org/Event",
+      "parent": "HeadlineEvent",
+      "defaultFeedPath": "headline-event-subevents",
+      "themeDisplayName": "Headline Events",
+      "bookable": true
+    },
+    {
+      "identifier": "Event",
+      "name": "Event",
+      "sameAs": "https://schema.org/Event",
+      "parent": "EventSeries",
+      "defaultFeedPath": "events",
+      "kind": ["Event"],
+      "themeDisplayName": "Events",
+      "bookable": true
+    },
+    {
+      "identifier": "EventSeries",
       "name": "EventSeries",
       "sameAs": "https://schema.org/EventSeries",
       "defaultFeedPath": "event-series",
-      "possibleKinds": ["EventSeries"]
+      "kind": ["EventSeries"],
+      "bookable": false
+
     }
   ],
   "baseGraph": {
