@@ -43,7 +43,7 @@
     },
     {
       "identifier": "FacilityUseSlot",
-      "name": "Slot",
+      "name": "Slot for FacilityUse",
       "sameAs": "https://openactive.io/Slot",
       "parent": "FacilityUse",
       "defaultFeedPath": "facility-use-slots",
@@ -52,7 +52,7 @@
     },
     {
       "identifier": "IndividualFacilityUseSlot",
-      "name": "Slot",
+      "name": "Slot for IndividualFacilityUse",
       "sameAs": "https://openactive.io/Slot",
       "parent": "IndividualFacilityUse",
       "defaultFeedPath": "individual-facility-use-slots",
@@ -78,7 +78,7 @@
     },
     {
       "identifier": "CourseInstanceSubEvent",
-      "name": "Event",
+      "name": "Event for CourseInstance",
       "sameAs": "https://schema.org/Event",
       "parent": "CourseInstance",
       "defaultFeedPath": "course-instance-subevents",
@@ -96,7 +96,7 @@
     },
     {
       "identifier": "HeadlineEventSubEvent",
-      "name": "Event",
+      "name": "Event for HeadlineEvent",
       "sameAs": "https://schema.org/Event",
       "parent": "HeadlineEvent",
       "defaultFeedPath": "headline-event-subevents",
