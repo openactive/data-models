@@ -1,6 +1,7 @@
 {
    "type":"Order",
    "derivedFrom":"https://schema.org/Order",
+   "hasId": true,
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/Order/a4bf0373270be803",
    "validationMode":{
@@ -89,6 +90,7 @@
    },
    "inSpec":[
       "type",
+      "id",
       "identifier",
       "seller",
       "taxCalculationExcluded",

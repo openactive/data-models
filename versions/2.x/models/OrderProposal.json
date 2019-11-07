@@ -1,11 +1,9 @@
   {
    "type":"OrderProposal",
    "subClassOf":"#OrderQuote",
-   "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderProposal/d45b31031ab6d80b",
    "status":{
       "request":{
-         "hasId":true,
          "requiredFields":[
             "type",
             "broker",
@@ -37,7 +35,6 @@
          ]
       },
       "response":{
-         "hasId":true,
          "requiredFields":[
             "type",
             "seller",
@@ -66,6 +63,7 @@
    },
    "inSpec":[
       "type",
+      "id",
       "identifier",
       "seller",
       "broker",

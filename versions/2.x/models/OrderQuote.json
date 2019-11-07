@@ -1,11 +1,9 @@
 {
    "type":"OrderQuote",
    "subClassOf":"#Order",
-   "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderQuote/f98e76e95b70e5801",
    "status":{
       "request":{
-         "hasId":false,
          "requiredFields":[
             "type",
             "broker",
@@ -34,7 +32,6 @@
          ]
       },
       "response":{
-         "hasId":true,
          "requiredFields":[
             "type",
             "seller",
