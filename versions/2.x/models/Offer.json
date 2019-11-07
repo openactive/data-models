@@ -4,6 +4,30 @@
    "hasId": true,
    "idFormat": "https://schema.org/URL",
    "sampleId": "https://example.com/offer/",
+   "validationMode":{
+      "C1Request": "openBookingRequest",
+      "C2Request": "openBookingRequest",
+      "PRequest": "openBookingRequest",
+      "BRequest": "openBookingRequest",
+      "OrderProposalPatch": "openBookingRequest",
+      "OrderPatch": "openBookingRequest"
+    },
+    "imperativeConfiguration":{
+      "openBookingRequest":{
+         "hasId":false,
+         "requiredFields":[
+            "id",
+            "type"
+         ],
+         "shallNotInclude":[
+            "price",
+            "name",
+            "ageRange",
+            "url",
+            "priceCurrency"
+         ]
+      }
+   },
    "requiredFields": [
       "id",
       "type",

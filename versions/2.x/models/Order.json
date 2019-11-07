@@ -3,7 +3,21 @@
    "derivedFrom":"https://schema.org/Order",
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/Order/a4bf0373270be803",
-   "status":{
+   "validationMode":{
+      "C1Request": "request",
+      "C1Response": "response",
+      "C2Request": "request",
+      "C2Response": "response",
+      "PRequest": "request",
+      "PResponse": "response",
+      "BRequest": "request",
+      "BResponse": "response",
+      "OrderProposalPatch": "request",
+      "OrderPatch": "request",
+      "OrderFeed": "orderFeed",
+      "OrderStatus": "response"
+    },
+    "imperativeConfiguration":{
       "request":{
          "hasId":false,
          "requiredFields":[
