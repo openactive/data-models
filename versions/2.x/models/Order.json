@@ -19,7 +19,6 @@
     },
     "imperativeConfiguration":{
       "request":{
-         "hasId":false,
          "requiredFields":[
             "type",
             "broker",
