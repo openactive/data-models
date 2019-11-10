@@ -132,10 +132,7 @@
       "accessToken":{
          "fieldName":"accessToken",
          "sameAs":"https://openactive.io/accessToken",
-         "model":"#ImageObject",
-         "alternativeModels":[
-            "#Barcode"
-         ],
+         "model":"ArrayOf#ImageObject",
          "description":["ImageObject or Barcode that contains reference to an asset (e.g. Barcode, QR code image or PDF) usable for entrance. Not applicable for an OrderQuote."]
       },
       "error":{
