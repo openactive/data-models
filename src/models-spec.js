@@ -405,7 +405,6 @@ describe('models', () => {
             if (jsonData.hasId === true) {
               expect(jsonData.idFormat).toBeDefined();
               expect(jsonData.sampleId).toBeDefined();
-              expect(jsonData.requiredFields.concat(jsonData.recommendedFields)).toContain('id');
               expect(jsonData.inSpec).toContain('id');
             }
           }
@@ -619,8 +618,10 @@ describe('models', () => {
               it('should only contain fields from inSpec', () => {
                 if (Object.prototype.hasOwnProperty.call(jsonData, 'imperativeConfiguration')) {
                   for (const config of Object.values(jsonData.imperativeConfiguration)) {
-                    for (const fieldName of config[fieldRestriction]) {
-                      expect(jsonData.inSpec).toContain(fieldName);
+                    if (Array.isArray(config[fieldRestriction])) {
+                      for (const fieldName of config[fieldRestriction]) {
+                        expect(jsonData.inSpec).toContain(fieldName);
+                      }
                     }
                   }
                 }
