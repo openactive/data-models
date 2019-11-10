@@ -128,9 +128,15 @@
     "facilityUse": {
       "fieldName": "facilityUse",
       "sameAs": "https://openactive.io/facilityUse",
-      "requiredType": "https://schema.org/URL",
+      "model": "#FacilityUse",
+      "alternativeModels": [
+        "#IndividualFacilityUse"
+      ],
+      "alternativeTypes": [
+        "https://schema.org/URL"
+      ],
       "description": [
-        "URI to the FacilityUse that has this offer"
+        "FacilityUse or IndividualFacilityUse that has this offer, either directly embedded or referenced by its @id"
       ],
       "example": "https://example.com/facility-use/1"
     },
