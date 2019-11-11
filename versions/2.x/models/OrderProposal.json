@@ -24,7 +24,6 @@
          "shallNotInclude":[
             "identifier",
             "seller",
-            "taxMode",
             "orderNumber",
             "bookingService",
             "totalPaymentTax",
@@ -42,7 +41,6 @@
          "requiredFields":[
             "type",
             "seller",
-            "taxMode",
             "broker",
             "brokerRole",
             "bookingService",

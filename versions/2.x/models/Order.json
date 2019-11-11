@@ -130,7 +130,10 @@
          "fieldName":"seller",
          "sameAs": "https://schema.org/seller",
          "model":"#Organization",
-         "description":[ "The organisation (schema:Organization) providing access to events or facilities via a Booking System. e.g. a leisure provider running yoga classes."]
+         "alternativeModels": [
+            "#Person"
+          ],
+         "description":[ "The organisation (schema:Organization) or person (schema:Person) providing access to events or facilities via a Booking System. e.g. a leisure provider or independent instructor running a yoga classes."]
       },
       "taxCalculationExcluded":{
         "fieldName": "taxCalculationExcluded",
