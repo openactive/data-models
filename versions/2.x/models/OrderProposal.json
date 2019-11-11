@@ -2,7 +2,11 @@
    "type":"OrderProposal",
    "subClassOf":"#OrderQuote",
    "sampleId":"https://example.com/OrderProposal/d45b31031ab6d80b",
-   "status":{
+   "validationMode":{
+     "PRequest": "request",
+     "PResponse": "response",
+   },
+   "imperativeConfiguration":{
       "request":{
          "requiredFields":[
             "type",

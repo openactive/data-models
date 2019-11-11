@@ -2,7 +2,13 @@
    "type":"OrderQuote",
    "subClassOf":"#Order",
    "sampleId":"https://example.com/OrderQuote/f98e76e95b70e5801",
-   "status":{
+   "validationMode":{
+     "C1Request": "request",
+     "C1Response": "response",
+     "C2Request": "request",
+     "C2Response": "response"
+   },
+   "imperativeConfiguration":{
       "request":{
          "requiredFields":[
             "type",

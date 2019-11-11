@@ -3,8 +3,22 @@
    "derivedFrom":"https://schema.org/OrderItem",
    "idFormat":"https://schema.org/URL",
    "sampleId":"https://example.com/OrderItem/",
-   "status":{
-      "REQUEST":{
+   "validationMode":{
+      "C1Request": "request",
+      "C1Response": "response",
+      "C2Request": "request",
+      "C2Response": "response",
+      "PRequest": "request",
+      "PResponse": "response",
+      "BRequest": "request",
+      "BResponse": "response",
+      "OrderProposalPatch": "request",
+      "OrderPatch": "request",
+      "OrderFeed": "response",
+      "OrderStatus": "response"
+    },
+   "imperativeConfiguration":{
+      "request":{
          "hasId":true,
          "requiredFields":[
             "type",
@@ -30,7 +44,7 @@
 
          ]
       },
-      "RESPONSE":{
+      "response":{
          "hasId":true,
          "requiredFields":[
             "type",
