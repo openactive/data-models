@@ -4,7 +4,7 @@
    "sampleId":"https://example.com/OrderProposal/d45b31031ab6d80b",
    "validationMode":{
      "PRequest": "request",
-     "PResponse": "response",
+     "PResponse": "response"
    },
    "imperativeConfiguration":{
       "request":{
