@@ -24,7 +24,12 @@
     "email",
     "jobTitle",
     "sameAs",
-    "logo"
+    "logo",
+    "address",
+    "termsOfService",
+    "taxMode",
+    "vatID",
+    "legalName"
   ],
   "fields": {
     "type": {
@@ -154,6 +159,47 @@
       "example": "http://www.example.com/",
       "description": [
         "A URL where more information about the person may be found"
+      ]
+    },
+    "address": {
+      "fieldName": "address",
+      "sameAs": "https://schema.org/address",
+      "model": "#PostalAddress",
+      "description": [
+        "Address of the Seller, used on tax receipts."
+      ]
+    },
+    "termsOfService": {
+      "fieldName": "termsOfService",
+      "sameAs": "https://pending.schema.org/termsOfService",
+      "model": "ArrayOf#Terms",
+      "description": [
+        "The terms of service of the Seller."
+      ]
+    },
+    "taxMode": {
+      "fieldName": "taxMode",
+      "sameAs":"https://openactive.io/taxMode",
+      "requiredType": "https://openactive.io/TaxMode",
+      "description": [
+        "Either  https://openactive.io/TaxNet or  https://openactive.io/TaxGross"
+      ]
+    },
+    "vatID": {
+      "fieldName": "vatID",
+      "sameAs": "https://schema.org/vatID",
+      "requiredType": "https://schema.org/Text",
+      "description": [
+        "The Value-added Tax ID of the of the Seller."
+      ]
+    },
+    "legalName": {
+      "fieldName": "legalName",
+      "sameAs": "https://schema.org/legalName",
+      "requiredType": "https://schema.org/Text",
+      "example": "Central Speedball Ltd",
+      "description": [
+        "The official name of the organization, e.g. the registered company name."
       ]
     }
   }
