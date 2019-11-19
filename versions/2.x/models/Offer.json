@@ -99,7 +99,7 @@
       "price": {
          "fieldName": "price",
          "sameAs": "https://schema.org/price",
-         "requiredType": "https://schema.org/Float",
+         "requiredType": "https://schema.org/Number",
          "example": 33,
          "maxDecimalPlaces": 2,
          "description": [

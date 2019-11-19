@@ -36,7 +36,7 @@
       },
       "price":{
          "fieldName":"price",
-         "requiredType":"https://schema.org/Float",
+         "requiredType":"https://schema.org/Number",
          "sameAs": "https://schema.org/price",
          "description":["The total amount."]
       },

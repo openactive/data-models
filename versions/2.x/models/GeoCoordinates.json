@@ -21,7 +21,7 @@
     "latitude": {
       "fieldName": "latitude",
       "sameAs": "https://schema.org/latitude",
-      "requiredType": "https://schema.org/Float",
+      "requiredType": "https://schema.org/Number",
       "minDecimalPlaces": 3,
       "example": 51.522338,
       "description": [
@@ -31,7 +31,7 @@
     "longitude": {
       "fieldName": "longitude",
       "sameAs": "https://schema.org/longitude",
-      "requiredType": "https://schema.org/Float",
+      "requiredType": "https://schema.org/Number",
       "minDecimalPlaces": 3,
       "example": -0.083437,
       "description": [

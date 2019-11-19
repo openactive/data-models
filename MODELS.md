@@ -308,7 +308,7 @@ The minimum number of decimal places this field should have.
 {
   "fieldName": "longitude",
   "sameAs": "https://schema.org/longitude",
-  "requiredType": "https://schema.org/Float",
+  "requiredType": "https://schema.org/Number",
   "minDecimalPlaces": 3,
   "example": -0.083437,
   "description": [
@@ -325,7 +325,7 @@ The maximum number of decimal places this field should have.
 {
   "fieldName": "price",
   "sameAs": "https://schema.org/price",
-  "requiredType": "https://schema.org/Float",
+  "requiredType": "https://schema.org/Number",
   "example": 33.00,
   "maxDecimalPlaces": 2,
   "description": [
