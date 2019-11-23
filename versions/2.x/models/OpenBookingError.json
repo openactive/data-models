@@ -3,7 +3,7 @@
     "fields": {
         "description": {
             "description": [
-                "A slightly longer, human-readable summary of the problem type. It largely should not change from occurrence to occurrence of the problem, except for purposes of localization or to provide specific information about why the error occurred in that particular case."
+                "A human-readable explanation specific to this occurrence of the problem, providing specific information about why the error occurred in this particular case."
             ],
             "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.",
             "fieldName": "description",
@@ -12,27 +12,11 @@
         },
         "instance": {
             "description": [
-                "The requested URL."
+                "A URI reference that identifies the specific occurrence of the problem. It may or may not yield further information if dereferenced."
             ],
             "fieldName": "instance",
             "requiredType": "https://schema.org/URL",
             "sameAs": "https://openactive.io/instance"
-        },
-        "invalidParams": {
-            "description": [
-                "An array of invalid parameters, if appropriate."
-            ],
-            "fieldName": "invalidParams",
-            "requiredType": "ArrayOf#https://schema.org/Text",
-            "sameAs": "https://openactive.io/invalidParams"
-        },
-        "method": {
-            "description": [
-                "The method of the request (e.g. GET)."
-            ],
-            "fieldName": "method",
-            "requiredType": "https://schema.org/Text",
-            "sameAs": "https://openactive.io/method"
         },
         "name": {
             "description": [
@@ -71,16 +55,13 @@
         "name",
         "description",
         "instance",
-        "method",
         "statusCode",
-        "invalidParams",
         "requestId"
     ],
     "recommendedFields": [
         "name",
         "description",
-        "instance",
-        "method"
+        "instance"
     ],
     "requiredFields": [
         "type"
