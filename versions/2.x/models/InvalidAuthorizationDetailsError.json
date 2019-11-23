@@ -6,29 +6,6 @@
             "requiredType": "https://schema.org/Text"
         }
     },
-    "hasId": false,
-    "inSpec": [
-        "type",
-        "name",
-        "description",
-        "instance",
-        "method",
-        "statusCode",
-        "invalidParams",
-        "requestId"
-    ],
-    "recommendedFields": [
-        "name",
-        "description",
-        "instance",
-        "method"
-    ],
-    "requiredFields": [
-        "type"
-    ],
-    "notInSpec": [
-
-        ], 
     "subClassOf": "#OpenBookingError",
     "type": "InvalidAuthorizationDetailsError"
 }
