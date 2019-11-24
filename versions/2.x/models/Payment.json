@@ -41,14 +41,7 @@
       "identifier":{
          "fieldName":"identifier",
          "sameAs":"https://schema.org/identifier",
-         "alternativeModels":[
-            "#PropertyValue",
-            "ArrayOf#PropertyValue"
-         ],
          "requiredType":"https://schema.org/Text",
-         "alternativeTypes":[
-            "https://schema.org/Integer"
-         ],
          "example":"SB1234",
          "description":["The identifier of the payment held by the Broker and/or Payment Provider."]
       },
