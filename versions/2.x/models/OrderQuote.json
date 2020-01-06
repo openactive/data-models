@@ -61,25 +61,6 @@
 
          ]
       },
-      "orderFeed":{
-         "hasId":true,
-         "requiredFields":[
-            "type",
-            "orderedItem",
-            "totalPaymentDue",
-            "totalPaymentTax"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
    "inSpec":[
       "type",
       "id",
