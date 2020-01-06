@@ -60,7 +60,8 @@
 			"requiredOptions": [
 
 			]
-		},
+		}
+  },
 		"inSpec": [
 			"type",
 			"id",
@@ -105,4 +106,3 @@
 			}
 		}
 	}
-}
