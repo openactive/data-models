@@ -73,6 +73,8 @@
          "requiredFields":[
             "type",
             "id",
+            "seller",
+            "taxCalculationExcluded",
             "orderedItem",
             "totalPaymentDue",
             "totalPaymentTax"
