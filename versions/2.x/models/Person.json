@@ -4,12 +4,43 @@
   "hasId": true,
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/person/",
-  "requiredFields": [
-    "id",
-    "type"
-  ],
-  "recommendedFields": [
-  ],
+  "validationMode": {
+		"C1Request": "request",
+		"C1Response": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "request",
+		"OrderProposalPatch": "request",
+		"OrderPatch": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+			"requiredFields": [
+				"type",
+        "email"
+			],
+			"recommendedFields": [
+				"givenName",
+        "familyName"
+			]
+		},
+		"response": {
+			"requiredFields": [
+				"id",
+				"type",
+				"price",
+				"priceCurrency",
+				"availableChannel"
+			],
+			"recommendedFields": [
+				"name",
+				"ageRange"
+			]
+		}
+	},
   "inSpec": [
     "id",
     "type",
