@@ -1,23 +1,35 @@
 {
    "type":"Payment",
    "subClassOf": "https://schema.org/Thing",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "identifier"
-         ],
-         "recommendedFields":[
-            "name",
-            "accountId",
-            "paymentProviderId"
-         ],
-         "shallNotInclude":[
-            "paymentMethod"
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Request": "request",
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request",
+ 		"OrderProposalPatch": "request",
+ 		"OrderPatch": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+ 				"type",
+ 				"identifier"
+ 			],
+      "recommendedFields": [
+        "name",
+        "accountId",
+        "paymentProviderId"
+      ]
+ 		}
+ 	},
    "inSpec":[
       "type",
       "name",
