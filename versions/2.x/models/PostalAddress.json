@@ -2,14 +2,35 @@
   "type": "PostalAddress",
   "derivedFrom": "https://schema.org/PostalAddress",
   "hasId": false,
-  "requiredFields": [
-    "type",
-    "addressCountry",
-    "addressLocality",
-    "addressRegion",
-    "postalCode",
-    "streetAddress"
-  ],
+  "validationMode": {
+		"C1Request": "request",
+		"C1Response": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "request",
+		"OrderProposalPatch": "request",
+		"OrderPatch": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+			"requiredFields": [
+				"type",
+				"streetAddress",
+        "addressLocality",
+        "addressRegion",
+        "postalCode",
+        "addressCountry"
+			],
+			"recommendedFields": []
+		},
+		"response": {
+			"requiredFields": [],
+			"recommendedFields": []
+		}
+	},
   "inSpec": [
     "type",
     "addressCountry",
