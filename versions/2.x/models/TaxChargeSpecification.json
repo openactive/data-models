@@ -2,26 +2,32 @@
    "type":"TaxChargeSpecification",
    "subClassOf":"#PriceSpecification",
    "isJsonLd":true,
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "price",
-            "priceCurrency",
-            "name"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Request": "request",
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request",
+ 		"OrderProposalPatch": "request",
+ 		"OrderPatch": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+ 				"type",
+ 				"price",
+ 				"priceCurrency",
+        "name"
+ 			]
+ 		}
+ 	},
    "inSpec":[
       "type",
       "price",
