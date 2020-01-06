@@ -1,24 +1,28 @@
 {
    "type":"Lease",
    "subClassOf": "https://schema.org/Thing",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "leaseExpires"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+ 				"type",
+ 				"leaseExpires"
+ 			],
+ 			"recommendedFields": []
+ 		}
+ 	},
    "inSpec":[
       "type",
       "leaseExpires",
