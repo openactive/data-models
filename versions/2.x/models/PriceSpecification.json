@@ -1,25 +1,31 @@
 {
    "type":"PriceSpecification",
    "derivedFrom":"https://schema.org/PriceSpecification",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "price",
-            "priceCurrency"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Request": "request",
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request",
+ 		"OrderProposalPatch": "request",
+ 		"OrderPatch": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+ 				"type",
+ 				"price",
+ 				"priceCurrency"
+ 			]
+ 		}
+ 	},
    "inSpec":[
       "type",
       "price",
