@@ -1,10 +1,8 @@
 {
    "type":"DropdownFormFieldSpecification",
    "subClassOf":"#PropertyValueSpecification",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
+    "hasId":false,
+    "requiredFields":[
             "type",
             "name",
             "valueOption"
@@ -17,9 +15,7 @@
          ],
          "requiredOptions":[
 
-         ]
-      }
-   },
+         ],
    "inSpec":[
       "type",
       "name",

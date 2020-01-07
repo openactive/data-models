@@ -1,10 +1,8 @@
 {
    "type":"ShortAnswerFormFieldSpecification",
    "subClassOf":"#PropertyValueSpecification",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
+   "hasId":false,
+   "requiredFields":[
             "type",
             "name"
          ],
@@ -14,11 +12,7 @@
          "shallNotInclude":[
 
          ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+         "requiredOptions":[],
    "inSpec":[
       "type",
       "name",
