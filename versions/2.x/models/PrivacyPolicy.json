@@ -1,26 +1,6 @@
 {
    "type":"PrivacyPolicy",
    "subClassOf":"#Terms",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "name",
-            "url",
-            "requiresExplicitConsent"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
    "inSpec":[
       "type",
       "name",
