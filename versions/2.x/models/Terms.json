@@ -1,26 +1,32 @@
 {
    "type":"Terms",
    "subClassOf":"https://schema.org/DigitalDocument",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type",
-            "name",
-            "url",
-            "requiresExplicitConsent"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Request": "request",
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request",
+ 		"OrderProposalPatch": "request",
+ 		"OrderPatch": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+        "type",
+ 				"name",
+ 				"url",
+ 				"requiresExplicitConsent"
+ 			]
+ 		}
+ 	},
    "inSpec":[
       "type",
       "name",
