@@ -5,15 +5,9 @@
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
-    "id",
-    "type",
-    "name"
+    "id"
   ],
-  "recommendedFields": [
-    "url",
-    "telephone",
-    "sameAs"
-  ],
+  "recommendedFields": [],
   "inSpec": [
     "id",
     "type",

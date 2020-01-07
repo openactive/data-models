@@ -19,13 +19,9 @@
 	"imperativeConfiguration": {
 		"request": {
 			"requiredFields": [
-				"type",
-				"email"
+				"id"
 			],
-			"recommendedFields": [
-				"givenName",
-				"familyName"
-			]
+			"recommendedFields": []
 		},
 		"response": {
 			"requiredFields": [],
