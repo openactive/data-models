@@ -1,33 +1,37 @@
 {
    "type":"BookingService",
    "subClassOf":"https://schema.org/Service",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
-            "type"
-         ],
-         "recommendedFields":[
-
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
-      }
-   },
+   "validationMode": {
+ 		"C1Request": "request",
+ 		"C1Response": "response",
+ 		"C2Request": "request",
+ 		"C2Response": "response",
+ 		"PRequest": "request",
+ 		"PResponse": "response",
+ 		"BRequest": "request",
+ 		"BResponse": "request",
+ 		"OrderProposalPatch": "request",
+ 		"OrderPatch": "request"
+ 	},
+ 	"imperativeConfiguration": {
+ 		"request": {
+ 			"requiredFields": [],
+ 			"recommendedFields": []
+ 		},
+ 		"response": {
+ 			"requiredFields": [
+ 				"type"
+ 			],
+ 			"recommendedFields": []
+ 		}
+ 	},
    "inSpec":[
       "type",
       "name",
       "url",
-      "softwareVersion",
       "termsOfService"
    ],
-   "notInSpec":[
-
-   ],
+   "notInSpec":[],
    "fields":{
       "type":{
          "fieldName":"type",
@@ -46,14 +50,6 @@
          "sameAs": "https://schema.org/url",
          "description": ["The URL of the website of the Booking System."]
       },
-      "softwareVersion": {
-         "fieldName": "softwareVersion",
-         "sameAs": "https://schema.org/softwareVersion",
-         "requiredType": "https://schema.org/Text",
-         "description": [
-           "The version of the application, useful for on-premise installations."
-         ]
-       },
       "termsOfService":{
          "fieldName":"termsOfService",
          "sameAs": "https://pending.schema.org/termsOfService",
