@@ -31,9 +31,7 @@
       "price",
       "priceCurrency"
    ],
-   "notInSpec":[
-
-   ],
+   "notInSpec":[],
    "fields":{
       "type":{
          "fieldName":"type",
