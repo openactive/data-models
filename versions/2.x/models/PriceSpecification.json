@@ -21,8 +21,7 @@
  		"response": {
  			"requiredFields": [
  				"type",
- 				"price",
- 				"priceCurrency"
+ 				"price"
  			]
  		}
  	},

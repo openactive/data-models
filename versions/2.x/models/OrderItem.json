@@ -59,11 +59,6 @@
 			],
 			"shallNotInclude": [
 				"orderItemStatus",
-				"allowCustomerCancellationFullRefund",
-				"unitTaxSpecification",
-				"additionalProperty",
-				"accessCode",
-				"accessToken",
 				"cancellationMessage",
 				"customerNotice",
 				"orderItemIntakeForm"
@@ -87,11 +82,6 @@
 				"accessToken"
 			],
 			"shallNotInclude": [
-				"orderItemStatus",
-				"allowCustomerCancellationFullRefund",
-				"additionalProperty",
-				"accessCode",
-				"accessToken",
 				"cancellationMessage",
 				"customerNotice",
 				"orderItemIntakeForm"
@@ -119,14 +109,8 @@
 				"cancellationMessage",
 				"customerNotice",
 				"orderItemIntakeForm",
-				"unitTaxSpecification",
-				"allowCustomerCancellationFullRefund",
-				"additionalProperty",
-				"accessCode",
-				"accessToken",
 				"acceptedOffer",
-				"orderedItem",
-				"error"
+				"orderedItem"
 			],
 			"requiredOptions": [
 
