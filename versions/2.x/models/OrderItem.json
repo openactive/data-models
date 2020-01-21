@@ -13,7 +13,7 @@
 		"BRequest": "request",
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
-		"OrderPatch": "request",
+		"OrderPatch": "cancellation",
 		"OrderFeed": "response",
 		"OrderStatus": "response"
 	},
@@ -71,6 +71,38 @@
 				"cancellationMessage",
 				"customerNotice",
 				"orderItemIntakeForm"
+			],
+			"requiredOptions": [
+
+			]
+		},
+		"cancellation": {
+			"hasId": true,
+			"requiredFields": [
+				"type",
+				"orderItemStatus"
+			],
+			"recommendedFields": [
+			],
+			"shallNotInclude": [
+				"orderItemStatus",
+				"allowCustomerCancellationFullRefund",
+				"unitTaxSpecification",
+				"additionalProperty",
+				"accessCode",
+				"accessToken",
+				"error",
+				"cancellationMessage",
+				"customerNotice",
+				"orderItemIntakeForm",
+				"unitTaxSpecification",
+				"allowCustomerCancellationFullRefund",
+				"additionalProperty",
+				"accessCode",
+				"accessToken",
+				"acceptedOffer",
+				"orderedItem",
+				"error"
 			],
 			"requiredOptions": [
 

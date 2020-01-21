@@ -277,6 +277,10 @@
           "name": "B Request"
         },
         {
+          "validationMode": "BOrderProposalRequest",
+          "name": "B OrderProposal Request"
+        },
+        {
           "validationMode": "BResponse",
           "name": "B Response"
         },

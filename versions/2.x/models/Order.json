@@ -12,9 +12,10 @@
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
+    "BOrderProposalRequest": "orderProposalRequest",
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
-		"OrderPatch": "request",
+		"OrderPatch": "cancellation",
 		"OrderFeed": "orderFeed",
 		"OrderStatus": "response"
 	},
@@ -45,6 +46,32 @@
 
 			]
 		},
+		"orderProposalRequest": {
+			"requiredFields": [
+				"type",
+				"orderProposalVersion",
+				"payment"
+			],
+			"recommendedFields": [
+
+			],
+			"shallNotInclude": [
+				"id",
+				"identifier",
+				"seller",
+				"orderNumber",
+				"bookingService",
+				"totalPaymentTax",
+				"orderCreationStatus",
+				"brokerRole",
+				"customer",
+				"orderedItem",
+				"totalPaymentDue"
+			],
+			"requiredOptions": [
+
+			]
+		},
 		"response": {
 			"requiredFields": [
 				"type",
@@ -55,8 +82,7 @@
 				"bookingService",
 				"orderedItem",
 				"totalPaymentDue",
-				"totalPaymentTax",
-				"orderProposalVersion"
+				"totalPaymentTax"
 			],
 			"recommendedFields": [
 
@@ -84,6 +110,32 @@
 			],
 			"shallNotInclude": [
 
+			],
+			"requiredOptions": [
+
+			]
+		},
+		"cancellation": {
+			"requiredFields": [
+				"type",
+				"orderedItem"
+			],
+			"recommendedFields": [
+
+			],
+			"shallNotInclude": [
+				"id",
+				"identifier",
+				"seller",
+				"orderNumber",
+				"bookingService",
+				"totalPaymentTax",
+				"orderCreationStatus",
+				"orderProposalVersion",
+				"broker",
+				"brokerRole",
+				"customer",
+				"totalPaymentDue"
 			],
 			"requiredOptions": [
 

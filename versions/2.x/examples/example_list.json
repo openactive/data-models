@@ -108,6 +108,11 @@
         "validationMode": "PResponse"
       },
       {
+        "file": "booking_spec_examples/b_response_example_2_proposal.json",
+        "name": "P Response Example",
+        "validationMode": "BOrderProposalRequest"
+      },
+      {
         "file": "booking_spec_examples/orderproposal_patch_example_1.json",
         "name": "OrderProposal Example",
         "validationMode": "OrderProposalPatch"
