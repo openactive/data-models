@@ -47,7 +47,6 @@
 				"orderedItem",
 				"totalPaymentDue",
 				"totalPaymentTax",
-				"orderProposalVersion",
 				"orderRequiresApproval"
 			],
 			"recommendedFields": [

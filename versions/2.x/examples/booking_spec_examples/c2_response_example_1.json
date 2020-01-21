@@ -1,6 +1,7 @@
 {
   "@context": "https://openactive.io/",
   "@type": "OrderQuote",
+  "@id": "https://example.com/api/order-quotes/e11429ea-467f-4270-ab62-e47368996fe8",
   "brokerRole": "https://openactive.io/AgentBroker",
   "broker": {
     "@type": "Organization",
@@ -46,14 +47,16 @@
     },
     "termsOfService": [
       {
-        "@type": "Terms",
+        "@type": "PrivacyPolicy",
         "name": "Privacy Policy",
-        "url": "https://example.com/privacy-policy"
+        "url": "https://example.com/privacy-policy",
+        "requiresExplicitConsent": false
       },
       {
-        "@type": "Terms",
+        "@type": "TermsOfUse",
         "name": "Terms and Conditions",
-        "url": "https://example.com/terms-and-conditions"
+        "url": "https://example.com/terms-and-conditions",
+        "requiresExplicitConsent": true
       }
     ]
   },
@@ -71,7 +74,9 @@
     "termsOfService": [
       {
         "@type": "Terms",
-        "url": "https://brokerexample.com/terms.html"
+        "name": "Terms of Service",
+        "url": "https://brokerexample.com/terms.html",
+        "requiresExplicitConsent": false
       }
     ]
   },
@@ -86,7 +91,7 @@
       "unitTaxSpecification": [
         {
           "@type": "TaxChargeSpecification",
-          "name": "VAT at 0% for EU transactions",
+          "name": "VAT at 20%",
           "price": 1,
           "priceCurrency": "GBP",
           "rate": 0.2

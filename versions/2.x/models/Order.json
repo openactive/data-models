@@ -5,7 +5,7 @@
 	"idFormat": "https://schema.org/URL",
 	"sampleId": "https://example.com/Order/a4bf0373270be803",
 	"validationMode": {
-		"C1Request": "request",
+		"C1Request": "C1request",
 		"C1Response": "response",
 		"C2Request": "request",
 		"C2Response": "response",
@@ -20,6 +20,31 @@
 		"OrderStatus": "response"
 	},
 	"imperativeConfiguration": {
+		"C1request": {
+			"requiredFields": [
+				"type",
+				"broker",
+				"brokerRole",
+				"orderedItem",
+				"totalPaymentDue"
+			],
+			"recommendedFields": [
+
+			],
+			"shallNotInclude": [
+				"id",
+				"identifier",
+				"seller",
+				"orderNumber",
+				"bookingService",
+				"totalPaymentTax",
+				"orderCreationStatus",
+				"orderProposalVersion"
+			],
+			"requiredOptions": [
+
+			]
+		},
 		"request": {
 			"requiredFields": [
 				"type",
@@ -49,8 +74,7 @@
 		"orderProposalRequest": {
 			"requiredFields": [
 				"type",
-				"orderProposalVersion",
-				"payment"
+				"orderProposalVersion"
 			],
 			"recommendedFields": [
 
@@ -81,18 +105,25 @@
 				"brokerRole",
 				"bookingService",
 				"orderedItem",
-				"totalPaymentDue",
-				"totalPaymentTax"
+				"totalPaymentDue"
+			],
+			"requiredOptions": [
+				{
+					"description": [
+						"While these properties are marked as optional in the specification, a booking system must provide either `totalPaymentTax` or `taxCalculationExcluded` for an Order."
+					],
+					"options": [
+						"totalPaymentTax",
+						"taxCalculationExcluded"
+					],
+					"oneOf": true
+				}
 			],
 			"recommendedFields": [
 
 			],
 			"shallNotInclude": [
-				"customer",
 				"orderCreationStatus"
-			],
-			"requiredOptions": [
-
 			]
 		},
 		"orderFeed": {

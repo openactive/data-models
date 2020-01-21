@@ -4,7 +4,7 @@
 	"hasId": true,
 	"idFormat": "https://schema.org/URL",
 	"sampleId": "https://example.com/person/",
-	"validationMode": {
+	"validationModeX": {
 		"C1Request": "request",
 		"C1Response": "response",
 		"C2Request": "request",
@@ -12,20 +12,49 @@
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
-		"BResponse": "request",
-		"OrderProposalPatch": "request",
-		"OrderPatch": "request"
+		"BResponse": "request"
 	},
-	"imperativeConfiguration": {
+	"imperativeConfigurationWithContext": {
 		"request": {
-			"requiredFields": [
-				"id"
-			],
-			"recommendedFields": []
+			"requiredFields": {
+        "seller": [
+          "id"
+        ],
+        "customer": [
+          "email"
+        ]
+      },
+			"recommendedFields": {
+        "seller": [
+        ],
+        "customer": [
+					"givenName",
+					"familyName"
+        ]
+      }
 		},
 		"response": {
-			"requiredFields": [],
-			"recommendedFields": []
+			"requiredFields": {
+        "seller": [
+          "id",
+          "name",
+          "legalName",
+          "taxMode",
+          "vatID",
+          "address"
+        ],
+        "customer": [
+        ]
+      },
+			"recommendedFields": {
+        "seller": [
+          "email",
+          "url",
+          "logo"
+        ],
+        "customer": [
+        ]
+      }
 		}
 	},
 	"inSpec": [

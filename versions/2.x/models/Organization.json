@@ -8,6 +8,63 @@
     "id"
   ],
   "recommendedFields": [],
+  "validationModeX": {
+		"C1Request": "request",
+		"C1Response": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "request",
+		"OrderProposalPatch": "request",
+		"OrderPatch": "request"
+	},
+	"imperativeConfigurationWithContext": {
+		"request": {
+			"requiredFields": {
+        "broker": [
+          "id",
+          "name"
+        ],
+        "seller": [
+          "id"
+        ]
+      },
+			"recommendedFields": {
+        "broker": [
+          "email",
+          "url",
+          "logo"
+        ],
+        "seller": [
+        ]
+      }
+		},
+		"response": {
+			"requiredFields": {
+        "broker": [
+        ],
+        "seller": [
+          "id",
+          "name",
+          "legalName",
+          "taxMode",
+          "vatID",
+          "address"
+        ]
+      },
+			"recommendedFields": {
+        "broker": [
+        ],
+        "seller": [
+          "email",
+          "url",
+          "logo"
+        ]
+      }
+		}
+	},
   "inSpec": [
     "id",
     "type",

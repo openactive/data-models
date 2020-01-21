@@ -5,9 +5,9 @@
 	"sampleId": "https://example.com/OrderItem/",
 	"validationMode": {
 		"C1Request": "request",
-		"C1Response": "response",
+		"C1Response": "Cresponse",
 		"C2Request": "request",
-		"C2Response": "response",
+		"C2Response": "Cresponse",
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
@@ -44,15 +44,12 @@
 
 			]
 		},
-		"response": {
+		"Cresponse": {
 			"hasId": true,
 			"requiredFields": [
 				"type",
-				"orderItemStatus",
-				"unitTaxSpecification",
 				"acceptedOffer",
-				"orderedItem",
-				"error"
+				"orderedItem"
 			],
 			"recommendedFields": [
 				"allowCustomerCancellationFullRefund",
@@ -67,7 +64,34 @@
 				"additionalProperty",
 				"accessCode",
 				"accessToken",
-				"error",
+				"cancellationMessage",
+				"customerNotice",
+				"orderItemIntakeForm"
+			],
+			"requiredOptions": [
+
+			]
+		},
+		"response": {
+			"hasId": true,
+			"requiredFields": [
+				"type",
+				"orderItemStatus",
+				"acceptedOffer",
+				"orderedItem"
+			],
+			"recommendedFields": [
+				"allowCustomerCancellationFullRefund",
+				"additionalProperty",
+				"accessCode",
+				"accessToken"
+			],
+			"shallNotInclude": [
+				"orderItemStatus",
+				"allowCustomerCancellationFullRefund",
+				"additionalProperty",
+				"accessCode",
+				"accessToken",
 				"cancellationMessage",
 				"customerNotice",
 				"orderItemIntakeForm"

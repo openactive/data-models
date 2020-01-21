@@ -4,7 +4,7 @@
   "orderedItem": [
     {
       "@type": "OrderItem",
-      "@id": "https://example.com/api/orders/123e4567-e89b-12d3-a456-426655440000/order-items/1234",
+      "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8/order-items/1234",
       "orderItemStatus": "https://openactive.io/CustomerCancelled"
     }
   ]
