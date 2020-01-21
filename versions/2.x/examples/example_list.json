@@ -109,7 +109,7 @@
       },
       {
         "file": "booking_spec_examples/b_response_example_2_proposal.json",
-        "name": "P Response Example",
+        "name": "B Request (with OrderProposal) Example",
         "validationMode": "BOrderProposalRequest"
       },
       {
