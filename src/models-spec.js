@@ -422,15 +422,39 @@ describe('models', () => {
           }
         });
 
-        it('should not have fields in both requiredFields and recommendedFields', () => {
-          if (typeof jsonData.recommendedFields !== 'undefined'
-            && typeof jsonData.requiredFields !== 'undefined'
-          ) {
-            for (const field of jsonData.requiredFields) {
-              expect(jsonData.recommendedFields).not.toContain(field);
-            }
+        const restrictionProperties = ['requiredFields', 'recommendedFields', 'shallNotInclude'];
+        // eslint-disable-next-line no-plusplus
+        for (let i = 0; i < restrictionProperties.length - 1; i++) {
+          // eslint-disable-next-line no-plusplus
+          for (let j = i + 1; j < restrictionProperties.length; j++) {
+            const prop1 = restrictionProperties[i];
+            const prop2 = restrictionProperties[j];
+            // eslint-disable-next-line no-loop-func
+            it(`should not have fields in both ${prop1} and ${prop2} within imperativeConfiguration`, () => {
+              if (Object.prototype.hasOwnProperty.call(jsonData, 'imperativeConfiguration')) {
+                for (const config of Object.values(jsonData.imperativeConfiguration)) {
+                  if (typeof config[prop1] !== 'undefined'
+                  && typeof config[prop2] !== 'undefined'
+                  ) {
+                    for (const field of config[prop1]) {
+                      expect(config[prop2]).not.toContain(field);
+                    }
+                  }
+                }
+              }
+            });
+            // eslint-disable-next-line no-loop-func
+            it(`should not have fields in both ${prop1} and ${prop2}`, () => {
+              if (typeof jsonData[prop1] !== 'undefined'
+                && typeof jsonData[prop2] !== 'undefined'
+              ) {
+                for (const field of jsonData[prop1]) {
+                  expect(jsonData[prop2]).not.toContain(field);
+                }
+              }
+            });
           }
-        });
+        }
 
         it('should not have fields in both requiredFields and requiredOptions', () => {
           if (typeof jsonData.requiredOptions !== 'undefined'

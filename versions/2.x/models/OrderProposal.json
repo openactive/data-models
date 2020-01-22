@@ -30,7 +30,6 @@
         "orderCreationStatus",
         "orderProposalVersion",
         "lease",
-        "totalPaymentDue",
         "orderRequiresApproval"
       ],
       "requiredOptions": [

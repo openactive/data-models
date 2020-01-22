@@ -71,6 +71,7 @@
 			"hasId": true,
 			"requiredFields": [
 				"type",
+				"id",
 				"orderItemStatus",
 				"acceptedOffer",
 				"orderedItem"
@@ -94,12 +95,12 @@
 			"hasId": true,
 			"requiredFields": [
 				"type",
+				"id",
 				"orderItemStatus"
 			],
 			"recommendedFields": [
 			],
 			"shallNotInclude": [
-				"orderItemStatus",
 				"allowCustomerCancellationFullRefund",
 				"unitTaxSpecification",
 				"additionalProperty",
@@ -118,6 +119,7 @@
 		}
 	},
 	"inSpec": [
+		"id",
 		"type",
 		"orderItemStatus",
 		"allowCustomerCancellationFullRefund",

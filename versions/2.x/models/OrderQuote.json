@@ -15,8 +15,7 @@
 				"broker",
 				"brokerRole",
 				"customer",
-				"orderedItem",
-				"totalPaymentDue"
+				"orderedItem"
 			],
 			"recommendedFields": [
 
