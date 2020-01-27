@@ -27,6 +27,58 @@
       ]
     }
   ],
+  "validationMode": {
+		"C1Request": "request",
+		"C2Request": "request",
+		"PRequest": "request",
+		"BRequest": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+      "requiredFields": [
+        "type",
+        "id"
+      ],
+      "shallNotInclude": [
+        "identifier",
+        "facilityUse",
+        "startDate",
+        "endDate",
+        "duration",
+        "offers",
+        "remainingUses",
+        "maximumUses",
+        "accessibilityInformation",
+        "accessibilitySupport",
+        "activity",
+        "ageRange",
+        "attendeeInstructions",
+        "category",
+        "contributor",
+        "description",
+        "eventSchedule",
+        "eventStatus",
+        "genderRestriction",
+        "image",
+        "isAccessibleForFree",
+        "isCoached",
+        "leader",
+        "level",
+        "location",
+        "maximumAttendeeCapacity",
+        "meetingPoint",
+        "name",
+        "organizer",
+        "potentialAction",
+        "programme",
+        "remainingAttendeeCapacity",
+        "subEvent",
+        "schedulingNote",
+        "superEvent",
+        "url"
+      ]
+		}
+	},
   "inSpec": [
     "type",
     "id",

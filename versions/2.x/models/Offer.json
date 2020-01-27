@@ -5,6 +5,8 @@
 	"idFormat": "https://schema.org/URL",
 	"sampleId": "https://example.com/offer/",
 	"validationMode": {
+		"RPDEFeed": "opendata",
+		"BookableRPDEFeed": "bookableopendata",
 		"C1Request": "request",
 		"C1Response": "response",
 		"C2Request": "request",
@@ -17,13 +19,50 @@
 		"OrderPatch": "request"
 	},
 	"imperativeConfiguration": {
+		"opendata": {
+			"requiredFields": [
+				"type",
+				"price",
+				"priceCurrency"
+			],
+			"recommendedFields": [
+				"name",
+				"ageRange"
+			]
+		},
+		"bookableopendata": {
+			"requiredFields": [
+				"id",
+				"type",
+				"price",
+				"priceCurrency",
+				"availableChannel"
+			],
+			"recommendedFields": [
+				"name",
+				"ageRange"
+			]
+		},
 		"request": {
 			"requiredFields": [
 				"id",
 				"type"
 			],
-			"recommendedFields": [
-				"ageRange"
+			"shallNotInclude": [
+				"price",
+				"priceCurrency",
+				"name",
+				"ageRange",
+				"advanceBooking",
+				"prepayment",
+				"acceptedPaymentMethod",
+				"availableChannel",
+				"validFromBeforeStartDate",
+				"latestCancellationBeforeStartDate",
+				"openBookingFlowRequirement",
+				"identifier",
+				"description",
+				"url"
 			]
 		},
 		"response": {

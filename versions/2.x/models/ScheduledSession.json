@@ -20,6 +20,55 @@
     "url",
     "endDate"
   ],
+  "validationMode": {
+		"C1Request": "request",
+		"C2Request": "request",
+		"PRequest": "request",
+		"BRequest": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+      "requiredFields": [
+        "type",
+        "id"
+      ],
+      "shallNotInclude": [
+        "identifier",
+        "url",
+        "name",
+        "description",
+        "image",
+        "startDate",
+        "endDate",
+        "duration",
+        "location",
+        "organizer",
+        "contributor",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity",
+        "eventStatus",
+        "subEvent",
+        "superEvent",
+        "eventSchedule",
+        "activity",
+        "category",
+        "ageRange",
+        "genderRestriction",
+        "programme",
+        "attendeeInstructions",
+        "leader",
+        "accessibilitySupport",
+        "accessibilityInformation",
+        "isCoached",
+        "level",
+        "meetingPoint",
+        "isAccessibleForFree",
+        "potentialAction",
+        "offers",
+        "schedulingNote"
+      ]
+		}
+	},
   "fields": {
     "type": {
       "fieldName": "type",
