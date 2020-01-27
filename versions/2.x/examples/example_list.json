@@ -114,7 +114,7 @@
       },
       {
         "file": "booking_spec_examples/orderproposal_patch_example_1.json",
-        "name": "OrderProposal Example",
+        "name": "OrderProposal Update Example",
         "validationMode": "OrderProposalPatch"
       }
     ]
