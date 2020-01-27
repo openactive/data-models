@@ -25,8 +25,7 @@
 				"type",
 				"broker",
 				"brokerRole",
-				"orderedItem",
-				"totalPaymentDue"
+				"orderedItem"
 			],
 			"recommendedFields": [
 
@@ -39,7 +38,8 @@
 				"bookingService",
 				"totalPaymentTax",
 				"orderCreationStatus",
-				"orderProposalVersion"
+				"orderProposalVersion",
+				"totalPaymentDue"
 			],
 			"requiredOptions": [
 

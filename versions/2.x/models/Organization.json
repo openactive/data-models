@@ -8,41 +8,52 @@
     "id"
   ],
   "recommendedFields": [],
-  "validationModeX": {
-		"C1Request": "request",
-		"C1Response": "response",
-		"C2Request": "request",
-		"C2Response": "response",
-		"PRequest": "request",
-		"PResponse": "response",
-		"BRequest": "request",
-		"BResponse": "request",
-		"OrderProposalPatch": "request",
-		"OrderPatch": "request"
-	},
-	"imperativeConfigurationWithContext": {
-		"request": {
-			"requiredFields": {
+  "validationMode": {
+    "C1Request": "request",
+    "C1Response": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "BRequest": "request",
+    "BResponse": "request",
+    "OrderProposalPatch": "request",
+    "OrderPatch": "request"
+  },
+  "imperativeConfiguration": {
+    "request": {},
+    "response": {}
+  },
+  "imperativeConfigurationWithContext": {
+    "request": {
+      "requiredFields": {
         "broker": [
           "id",
           "name"
         ],
         "seller": [
           "id"
+        ],
+        "customer": [
+          "email",
+          "name",
+          "address"
         ]
       },
-			"recommendedFields": {
+      "recommendedFields": {
         "broker": [
           "email",
           "url",
           "logo"
         ],
         "seller": [
+        ],
+        "customer": [
         ]
       }
-		},
-		"response": {
-			"requiredFields": {
+    },
+    "response": {
+      "requiredFields": {
         "broker": [
         ],
         "seller": [
@@ -52,19 +63,23 @@
           "taxMode",
           "vatID",
           "address"
+        ],
+        "customer": [
         ]
       },
-			"recommendedFields": {
+      "recommendedFields": {
         "broker": [
         ],
         "seller": [
           "email",
           "url",
           "logo"
+        ],
+        "customer": [
         ]
       }
-		}
-	},
+    }
+  },
   "inSpec": [
     "id",
     "type",

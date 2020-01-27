@@ -3,12 +3,37 @@
 	"subClassOf": "#Order",
 	"sampleId": "https://example.com/OrderQuote/f98e76e95b70e5801",
 	"validationMode": {
-		"C1Request": "request",
+		"C1Request": "C1request",
 		"C1Response": "response",
 		"C2Request": "request",
 		"C2Response": "response"
 	},
 	"imperativeConfiguration": {
+		"C1request": {
+			"requiredFields": [
+				"type",
+				"broker",
+				"brokerRole",
+				"orderedItem"
+			],
+			"recommendedFields": [
+
+			],
+			"shallNotInclude": [
+				"id",
+				"identifier",
+				"seller",
+				"orderNumber",
+				"bookingService",
+				"totalPaymentTax",
+				"orderCreationStatus",
+				"orderProposalVersion",
+				"totalPaymentDue"
+			],
+			"requiredOptions": [
+
+			]
+		},
 		"request": {
 			"requiredFields": [
 				"type",
