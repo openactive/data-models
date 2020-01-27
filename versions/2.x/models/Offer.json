@@ -20,8 +20,7 @@
 		"request": {
 			"requiredFields": [
 				"id",
-				"type",
-				"availableChannel"
+				"type"
 			],
 			"recommendedFields": [
 				"ageRange"
@@ -32,8 +31,7 @@
 				"id",
 				"type",
 				"price",
-				"priceCurrency",
-				"availableChannel"
+				"priceCurrency"
 			],
 			"recommendedFields": [
 				"name",

@@ -14,7 +14,8 @@
 				"type",
 				"broker",
 				"brokerRole",
-				"orderedItem"
+				"orderedItem",
+				"seller"
 			],
 			"recommendedFields": [
 
@@ -22,7 +23,6 @@
 			"shallNotInclude": [
 				"id",
 				"identifier",
-				"seller",
 				"orderNumber",
 				"bookingService",
 				"totalPaymentTax",
@@ -40,14 +40,14 @@
 				"broker",
 				"brokerRole",
 				"customer",
-				"orderedItem"
+				"orderedItem",
+				"seller"
 			],
 			"recommendedFields": [
 
 			],
 			"shallNotInclude": [
 				"identifier",
-				"seller",
 				"orderNumber",
 				"bookingService",
 				"totalPaymentTax",

@@ -21,16 +21,8 @@
     "OrderPatch": "request"
   },
   "imperativeConfiguration": {
-    "request": {
-      "requiredFields": [],
-      "recommendedFields": [],
-      "shallNotInclude": []
-    },
-    "response": {
-      "requiredFields": [],
-      "recommendedFields": [],
-      "shallNotInclude": []
-    }
+    "request": {},
+    "response": {}
   },
   "imperativeConfigurationWithContext": {
     "request": {
