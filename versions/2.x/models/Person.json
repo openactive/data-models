@@ -4,7 +4,7 @@
 	"hasId": true,
 	"idFormat": "https://schema.org/URL",
 	"sampleId": "https://example.com/person/",
-	"validationModeX": {
+	"validationMode": {
 		"C1Request": "request",
 		"C1Response": "response",
 		"C2Request": "request",
@@ -14,6 +14,10 @@
 		"BRequest": "request",
 		"BResponse": "request"
 	},
+	"imperativeConfiguration": {
+    "request": {},
+    "response": {}
+  },
 	"imperativeConfigurationWithContext": {
 		"request": {
 			"requiredFields": {
