@@ -67,12 +67,6 @@
           ]
         }
       ],
-      "recommendedFields": [
-        "url",
-        "description",
-        "image",
-        "telephone"
-      ],
       "shallNotInclude": [
         "containedInPlace",
         "containsPlace"

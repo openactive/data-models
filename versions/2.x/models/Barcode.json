@@ -3,6 +3,9 @@
   "subClassOf":"#ImageObject",
   "derivedFrom": "https://schema.org/Barcode",
   "hasId": false,
+  "requiredFields":[
+    "type"
+  ],
   "inSpec": [
     "type",
     "text",

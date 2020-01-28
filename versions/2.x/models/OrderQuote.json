@@ -67,6 +67,7 @@
 				"seller",
 				"broker",
 				"brokerRole",
+				"customer",
 				"bookingService",
 				"orderedItem",
 				"totalPaymentDue",
@@ -76,7 +77,6 @@
 
 			],
 			"shallNotInclude": [
-				"customer",
 				"orderCreationStatus"
 			],
 			"requiredOptions": [
@@ -93,47 +93,47 @@
 			]
 		}
   },
-		"inSpec": [
-			"type",
-			"id",
-			"identifier",
-			"seller",
-			"broker",
-			"brokerRole",
-			"taxCalculationExcluded",
-			"orderNumber",
-			"customer",
-			"bookingService",
-			"orderedItem",
-			"totalPaymentDue",
-			"totalPaymentTax",
-			"orderCreationStatus",
-			"lease",
-			"orderRequiresApproval",
-			"payment",
-			"orderProposalVersion"
-		],
-		"notInSpec": [
-			"payment",
-			"orderProposalVersion"
-		],
-		"fields": {
-			"type": {
-				"fieldName": "type",
-				"requiredType": "https://schema.org/Text",
-				"requiredContent": "OrderQuote"
-			},
-			"lease": {
-				"fieldName": "lease",
-				"sameAs": "https://openactive.io/lease",
-				"model": "#Lease",
-				"description": ["The Lease on the OrderItems which lasts for the duration specified by the Booking System."]
-			},
-			"orderRequiresApproval": {
-				"fieldName": "orderRequiresApproval",
-				"sameAs": "https://openactive.io/orderRequiresApproval",
-				"requiredType": "https://schema.org/Boolean",
-				"description": ["Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."]
-			}
+	"inSpec": [
+		"type",
+		"id",
+		"identifier",
+		"seller",
+		"broker",
+		"brokerRole",
+		"taxCalculationExcluded",
+		"orderNumber",
+		"customer",
+		"bookingService",
+		"orderedItem",
+		"totalPaymentDue",
+		"totalPaymentTax",
+		"orderCreationStatus",
+		"lease",
+		"orderRequiresApproval",
+		"payment",
+		"orderProposalVersion"
+	],
+	"notInSpec": [
+		"payment",
+		"orderProposalVersion"
+	],
+	"fields": {
+		"type": {
+			"fieldName": "type",
+			"requiredType": "https://schema.org/Text",
+			"requiredContent": "OrderQuote"
+		},
+		"lease": {
+			"fieldName": "lease",
+			"sameAs": "https://openactive.io/lease",
+			"model": "#Lease",
+			"description": ["The Lease on the OrderItems which lasts for the duration specified by the Booking System."]
+		},
+		"orderRequiresApproval": {
+			"fieldName": "orderRequiresApproval",
+			"sameAs": "https://openactive.io/orderRequiresApproval",
+			"requiredType": "https://schema.org/Boolean",
+			"description": ["Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."]
 		}
 	}
+}
