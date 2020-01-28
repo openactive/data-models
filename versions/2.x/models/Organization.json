@@ -24,7 +24,8 @@
   },
   "imperativeConfiguration": {
     "request": {},
-    "response": {}
+    "response": {},
+    "result": {}
   },
   "imperativeConfigurationWithContext": {
     "request": {
