@@ -35,7 +35,8 @@
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
-		"BResponse": "response"
+		"BResponse": "response",
+    "OrderFeed": "request"
 	},
 	"imperativeConfiguration": {
 		"request": {
@@ -88,6 +89,10 @@
         "id",
         "startDate",
         "facilityUse"
+      ],
+      "recommendedFields": [
+        "endDate",
+        "duration"
       ],
       "shallNotInclude": [
         "maximumUses",

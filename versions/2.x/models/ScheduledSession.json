@@ -28,7 +28,8 @@
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
-		"BResponse": "response"
+    "BResponse": "response",
+    "OrderFeed": "request"
 	},
 	"imperativeConfiguration": {
 		"request": {
@@ -80,11 +81,11 @@
         "superEvent"
       ],
       "recommendedFields": [
-        "eventStatus"
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
       ],
       "shallNotInclude": [
-        "maximumAttendeeCapacity",
-        "remainingAttendeeCapacity",
         "offers"
       ]
 		}

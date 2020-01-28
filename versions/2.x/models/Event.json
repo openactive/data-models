@@ -50,7 +50,8 @@
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
-		"BResponse": "response"
+		"BResponse": "response",
+    "OrderFeed": "request"
 	},
 	"imperativeConfiguration": {
 		"request": {
@@ -105,13 +106,15 @@
         "startDate"
       ],
       "recommendedFields": [
+        "endDate",
+        "duration",
         "ageRange",
         "genderRestriction",
-        "eventStatus"
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
       ],
       "shallNotInclude": [
-        "maximumAttendeeCapacity",
-        "remainingAttendeeCapacity",
         "offers",
         "subEvent",
         "organizer"

@@ -7,6 +7,20 @@
     "items",
     "license"
   ],
+  "validationMode": {
+		"OrderFeed": "orderfeed"
+	},
+	"imperativeConfiguration": {
+    "orderfeed": {
+      "requiredFields": [
+        "next",
+        "items"
+      ],
+      "shallNotInclude": [
+        "license"
+      ]
+		}
+	},
   "inSpec": [
     "next",
     "items",

@@ -16,7 +16,8 @@
 		"BRequest": "request",
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
-		"OrderPatch": "request"
+		"OrderPatch": "request",
+    "OrderFeed": "response"
 	},
 	"imperativeConfiguration": {
 		"opendata": {

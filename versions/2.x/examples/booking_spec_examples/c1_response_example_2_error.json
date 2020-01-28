@@ -114,14 +114,23 @@
         "duration": "PT1H",
         "superEvent": {
           "@type": "SessionSeries",
-          "@id": "https://example.com/events/452",
-          "name": "Speedball",
+          "@id": "https://api.example.com/events/452",
+          "name": "Bodypump",
+          "activity": [
+            {
+              "type": "Concept",
+              "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+              "prefLabel": "Bodypump™",
+              "inScheme": "https://openactive.io/activity-list"
+            }
+          ],
           "duration": "PT1H",
           "organizer": {
             "@type": "Organization",
             "name": "Central Speedball Association",
             "url": "http://www.speedball-world.com"
           },
+          "url": "https://example.com/events/452",
           "location": {
             "@type": "Place",
             "url": "https://www.everyoneactive.com/centres/Middlesbrough-Sports-Village",
