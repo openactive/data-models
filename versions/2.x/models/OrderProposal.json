@@ -4,18 +4,19 @@
   "sampleId": "https://example.com/OrderProposal/d45b31031ab6d80b",
   "validationMode": {
     "PRequest": "request",
-    "PResponse": "response"
+    "PResponse": "response",
+    "OrderProposalPatch": "patch"
   },
   "imperativeConfiguration": {
     "request": {
       "requiredFields": [
         "type",
+        "seller",
         "broker",
         "brokerRole",
         "customer",
         "orderedItem",
-        "totalPaymentDue",
-        "orderProposalStatus"
+        "totalPaymentDue"
       ],
       "recommendedFields": [
         "orderSellerNote",
@@ -23,14 +24,14 @@
       ],
       "shallNotInclude": [
         "identifier",
-        "seller",
         "orderNumber",
         "bookingService",
         "totalPaymentTax",
         "orderCreationStatus",
         "orderProposalVersion",
         "lease",
-        "orderRequiresApproval"
+        "orderRequiresApproval",
+        "orderProposalStatus"
       ],
       "requiredOptions": [
 
@@ -59,6 +60,42 @@
       ],
       "requiredOptions": [
 
+      ]
+    },
+    "patch": {
+      "requiredFields": [
+        "type"
+      ],
+      "requiredOptions": [
+        {
+          "description": [
+            "The endpoint accepts a simple PATCH containing either or both of `orderProposalStatus` and `orderCustomerNote`."
+          ],
+          "options": [
+            "orderProposalStatus",
+            "orderCustomerNote"
+          ]
+        }
+      ],
+      "shallNotInclude": [
+        "id",
+        "identifier",
+        "seller",
+        "broker",
+        "brokerRole",
+        "orderNumber",
+        "customer",
+        "bookingService",
+        "orderedItem",
+        "totalPaymentDue",
+        "totalPaymentTax",
+        "taxCalculationExcluded",
+        "payment",
+        "orderProposalVersion",
+        "lease",
+        "orderRequiresApproval",
+        "orderProposalStatus",
+        "orderSellerNote"
       ]
     }
   },

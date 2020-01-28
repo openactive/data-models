@@ -48,7 +48,8 @@
 		"C1Response": "response",
 		"C2Response": "response",
 		"PResponse": "response",
-		"BResponse": "response"
+		"BResponse": "response",
+    "OrderStatus": "response"
 	},
 	"imperativeConfiguration": {
     "response": {
