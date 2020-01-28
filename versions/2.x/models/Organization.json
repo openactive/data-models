@@ -18,7 +18,9 @@
     "BRequest": "request",
     "BResponse": "response",
     "OrderProposalPatch": "request",
-    "OrderPatch": "request"
+    "OrderPatch": "request",
+    "OrderFeed": "result",
+    "OrderStatus": "result"
   },
   "imperativeConfiguration": {
     "request": {},
@@ -69,6 +71,41 @@
       },
       "recommendedFields": {
         "broker": [
+        ],
+        "seller": [
+          "email",
+          "url",
+          "logo"
+        ],
+        "customer": [
+        ]
+      }
+    },
+    "result": {
+      "requiredFields": {
+        "broker": [
+          "id",
+          "name"
+        ],
+        "seller": [
+          "id",
+          "name",
+          "legalName",
+          "taxMode",
+          "vatID",
+          "address"
+        ],
+        "customer": [
+          "email",
+          "name",
+          "address"
+        ]
+      },
+      "recommendedFields": {
+        "broker": [
+          "email",
+          "url",
+          "logo"
         ],
         "seller": [
           "email",
