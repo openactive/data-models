@@ -9,7 +9,7 @@
  		"PRequest": "request",
  		"PResponse": "response",
  		"BRequest": "request",
- 		"BResponse": "request",
+ 		"BResponse": "response",
  		"OrderProposalPatch": "request",
  		"OrderPatch": "request"
  	},

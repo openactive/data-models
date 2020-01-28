@@ -29,10 +29,14 @@
     "endDate"
   ],
   "validationMode": {
-		"C1Request": "request",
+    "C1Request": "request",
+		"C1Response": "response",
 		"C2Request": "request",
+		"C2Response": "response",
 		"PRequest": "request",
-		"BRequest": "request"
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "response"
 	},
 	"imperativeConfiguration": {
 		"request": {
@@ -74,6 +78,28 @@
         "potentialAction",
         "offers",
         "schedulingNote"
+      ]
+		},
+    "response": {
+      "requiredFields": [
+        "type",
+        "url",
+        "name",
+        "location",
+        "activity",
+        "startDate"
+      ],
+      "recommendedFields": [
+        "ageRange",
+        "genderRestriction",
+        "eventStatus"
+      ],
+      "shallNotInclude": [
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity",
+        "organizer",
+        "offers",
+        "subEvent"
       ]
 		}
 	},

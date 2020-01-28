@@ -28,10 +28,14 @@
     }
   ],
   "validationMode": {
-		"C1Request": "request",
+    "C1Request": "request",
+		"C1Response": "response",
 		"C2Request": "request",
+		"C2Response": "response",
 		"PRequest": "request",
-		"BRequest": "request"
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "response"
 	},
 	"imperativeConfiguration": {
 		"request": {
@@ -76,6 +80,19 @@
         "schedulingNote",
         "superEvent",
         "url"
+      ]
+    },
+    "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "startDate",
+        "facilityUse"
+      ],
+      "shallNotInclude": [
+        "maximumUses",
+        "remainingUses",
+        "offers"
       ]
 		}
 	},

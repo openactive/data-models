@@ -44,6 +44,32 @@
     "openingHoursSpecification",
     "amenityFeature"
   ],
+  "validationMode": {
+		"C1Response": "response",
+		"C2Response": "response",
+		"PResponse": "response",
+		"BResponse": "response"
+	},
+	"imperativeConfiguration": {
+    "response": {
+      "requiredFields": [
+        "type",
+        "name",
+        "address",
+        "geo"
+      ],
+      "recommendedFields": [
+        "url",
+        "description",
+        "image",
+        "telephone"
+      ],
+      "shallNotInclude": [
+        "containedInPlace",
+        "containsPlace"
+      ]
+		}
+	},
   "fields": {
     "type": {
       "fieldName": "type",

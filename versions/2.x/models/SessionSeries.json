@@ -14,6 +14,36 @@
     "leader",
     "level"
   ],
+  "validationMode": {
+		"C1Response": "response",
+		"C2Response": "response",
+		"PResponse": "response",
+		"BResponse": "response"
+	},
+	"imperativeConfiguration": {
+    "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "url",
+        "name",
+        "location",
+        "activity"
+      ],
+      "recommendedFields": [
+        "ageRange",
+        "genderRestriction",
+        "eventStatus"
+      ],
+      "shallNotInclude": [
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity",
+        "offers",
+        "subEvent",
+        "organizer"
+      ]
+		}
+	},
   "fields": {
     "type": {
       "fieldName": "type",

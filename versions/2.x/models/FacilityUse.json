@@ -20,6 +20,28 @@
     "offers",
     "event"
   ],
+  "validationMode": {
+		"C1Response": "response",
+		"C2Response": "response",
+		"PResponse": "response",
+		"BResponse": "response"
+	},
+	"imperativeConfiguration": {
+    "response": {
+      "requiredFields": [
+        "type",
+        "url",
+        "name",
+        "activity",
+        "location"
+      ],
+      "shallNotInclude": [
+        "offers",
+        "event",
+        "provider"
+      ]
+		}
+	},
   "inSpec": [
     "type",
     "id",

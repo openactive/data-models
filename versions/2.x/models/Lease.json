@@ -8,7 +8,7 @@
  		"PRequest": "request",
  		"PResponse": "response",
  		"BRequest": "request",
- 		"BResponse": "request"
+ 		"BResponse": "response"
  	},
  	"imperativeConfiguration": {
  		"request": {
