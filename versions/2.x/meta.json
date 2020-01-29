@@ -237,11 +237,11 @@
       "validationModeList": [
         {
           "validationMode": "RPDEFeed",
-          "name": "RPDE Feed"
+          "name": "Opportunity RPDE Feed"
         },
         {
           "validationMode": "BookableRPDEFeed",
-          "name": "Bookable RPDE Feed"
+          "name": "Bookable Opportunity RPDE Feed"
         }
       ]
     },
