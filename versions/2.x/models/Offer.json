@@ -17,7 +17,7 @@
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
 		"OrderPatch": "request",
-    "OrderFeed": "response",
+    "OrdersFeed": "response",
     "OrderStatus": "response"
 	},
 	"imperativeConfiguration": {

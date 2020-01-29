@@ -16,7 +16,7 @@
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
 		"OrderPatch": "cancellation",
-		"OrderFeed": "orderFeed",
+		"OrdersFeed": "orderFeed",
 		"OrderStatus": "response"
 	},
 	"imperativeConfiguration": {

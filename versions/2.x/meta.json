@@ -250,55 +250,55 @@
       "validationModeList": [
         {
           "validationMode": "C1Request",
-          "name": "C1 Request"
+          "name": "OrderQuote Creation C1 Request"
         },
         {
           "validationMode": "C1Response",
-          "name": "C1 Response"
+          "name": "OrderQuote Creation C1 Response"
         },
         {
           "validationMode": "C2Request",
-          "name": "C2 Request"
+          "name": "OrderQuote Creation C2 Request"
         },
         {
           "validationMode": "C2Response",
-          "name": "C2 Response"
+          "name": "OrderQuote Creation C2 Response"
         },
         {
           "validationMode": "PRequest",
-          "name": "P Request"
+          "name": "OrderProposal Creation P Request"
         },
         {
           "validationMode": "PResponse",
-          "name": "P Response"
-        },
-        {
-          "validationMode": "BRequest",
-          "name": "B Request"
-        },
-        {
-          "validationMode": "BOrderProposalRequest",
-          "name": "B OrderProposal Request"
-        },
-        {
-          "validationMode": "BResponse",
-          "name": "B Response"
+          "name": "OrderProposal Creation P Response"
         },
         {
           "validationMode": "OrderProposalPatch",
-          "name": "OrderProposal Patch"
+          "name": "OrderProposal Update"
+        },
+        {
+          "validationMode": "BRequest",
+          "name": "Order Creation B Order Request"
+        },
+        {
+          "validationMode": "BOrderProposalRequest",
+          "name": "Order Creation B OrderProposal Request"
+        },
+        {
+          "validationMode": "BResponse",
+          "name": "Order Creation B Response"
         },
         {
           "validationMode": "OrderPatch",
-          "name": "Order Patch"
+          "name": "Order Cancellation"
         },
         {
-          "validationMode": "OrderFeed",
-          "name": "Order Feed"
+          "validationMode": "OrdersFeed",
+          "name": "Orders RPDE feed"
         },
         {
           "validationMode": "OrderStatus",
-          "name": "OrderStatus"
+          "name": "Order Status"
         }
       ]
     }

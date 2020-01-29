@@ -85,7 +85,7 @@
       {
         "file": "booking_spec_examples/order_feed_example_1.json",
         "name": "Order Feed Example",
-        "validationMode": "OrderFeed"
+        "validationMode": "OrdersFeed"
       },
       {
         "file": "booking_spec_examples/orderstatus_example_1.json",

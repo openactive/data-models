@@ -51,7 +51,7 @@
 		"PResponse": "response",
 		"BRequest": "request",
 		"BResponse": "response",
-    "OrderFeed": "request",
+    "OrdersFeed": "request",
     "OrderStatus": "response"
 	},
 	"imperativeConfiguration": {
