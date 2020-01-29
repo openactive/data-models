@@ -94,7 +94,6 @@
         "orderProposalVersion",
         "lease",
         "orderRequiresApproval",
-        "orderProposalStatus",
         "orderSellerNote"
       ]
     }
