@@ -12,7 +12,7 @@
     "BResponse": "response",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
-    "OrdersFeed": "orderFeed",
+    "OrdersFeed": "ordersFeed",
     "OrderStatus": "response"
   },
   "imperativeConfiguration": {
@@ -98,7 +98,7 @@
         "orderProposalVersion"
       ]
     },
-    "orderFeed": {
+    "ordersFeed": {
       "requiredFields": [
         "type",
         "id",

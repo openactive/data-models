@@ -5,7 +5,8 @@
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",
-    "OrderProposalPatch": "patch"
+    "OrderProposalPatch": "patch",
+    "OrdersFeed": "ordersFeed"
   },
   "imperativeConfiguration": {
     "request": {
@@ -19,8 +20,7 @@
         "totalPaymentDue"
       ],
       "recommendedFields": [
-        "orderSellerNote",
-        "orderCustomerNote"
+
       ],
       "shallNotInclude": [
         "identifier",
@@ -52,14 +52,47 @@
         "orderProposalStatus"
       ],
       "recommendedFields": [
-        "orderSellerNote",
-        "orderCustomerNote"
+
       ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
       "requiredOptions": [
 
+      ]
+    },
+    "ordersFeed": {
+      "requiredFields": [
+        "type",
+        "id",
+        "seller",
+        "orderedItem",
+        "totalPaymentDue",
+        "orderProposalVersion",
+        "orderProposalStatus"
+      ],
+      "requiredOptions": [
+        {
+          "description": [
+            "While these properties are marked as optional in the specification, a booking system must provide either `totalPaymentTax` or `taxCalculationExcluded` for an Order."
+          ],
+          "options": [
+            "totalPaymentTax",
+            "taxCalculationExcluded"
+          ],
+          "oneOf": true
+        }
+      ],
+      "recommendedFields": [
+
+      ],
+      "shallNotInclude": [
+        "orderCreationStatus",
+        "broker",
+        "brokerRole",
+        "bookingService",
+        "customer",
+        "orderNumber"
       ]
     },
     "patch": {
@@ -121,6 +154,9 @@
     "orderSellerNote",
     "orderCustomerNote"
   ],
+  "notInSpec": [
+		"orderRequiresApproval"
+	],
   "fields": {
     "type": {
       "fieldName": "type",
