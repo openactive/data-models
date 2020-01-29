@@ -14,7 +14,7 @@
 		"BResponse": "response",
 		"OrderProposalPatch": "request",
 		"OrderPatch": "cancellation",
-		"OrdersFeed": "response",
+		"OrdersFeed": "ordersFeed",
 		"OrderStatus": "response"
 	},
 	"imperativeConfiguration": {
@@ -52,15 +52,14 @@
 				"orderedItem"
 			],
 			"recommendedFields": [
-				"allowCustomerCancellationFullRefund",
-				"accessCode",
-				"accessToken"
+				"allowCustomerCancellationFullRefund"
 			],
 			"shallNotInclude": [
 				"orderItemStatus",
 				"cancellationMessage",
 				"customerNotice",
-				"orderItemIntakeForm"
+				"accessCode",
+				"accessToken"
 			],
 			"requiredOptions": [
 
@@ -82,8 +81,31 @@
 			],
 			"shallNotInclude": [
 				"cancellationMessage",
-				"customerNotice",
-				"orderItemIntakeForm"
+				"customerNotice"
+			],
+			"requiredOptions": [
+
+			]
+		},
+		"ordersFeed": {
+			"hasId": true,
+			"requiredFields": [
+				"type",
+				"id",
+				"orderItemStatus",
+				"acceptedOffer",
+				"orderedItem"
+			],
+			"recommendedFields": [
+				"allowCustomerCancellationFullRefund",
+				"accessCode",
+				"accessToken"
+			],
+			"shallNotInclude": [
+				"attendee",
+				"attendeeDetailsRequired",
+				"orderItemIntakeForm",
+				"orderItemIntakeFormResponse"
 			],
 			"requiredOptions": [
 

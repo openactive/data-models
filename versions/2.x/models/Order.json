@@ -5,10 +5,6 @@
 	"idFormat": "https://schema.org/URL",
 	"sampleId": "https://example.com/Order/a4bf0373270be803",
 	"validationMode": {
-		"C1Request": "C1request",
-		"C1Response": "response",
-		"C2Request": "request",
-		"C2Response": "response",
 		"PRequest": "request",
 		"PResponse": "response",
 		"BRequest": "request",
@@ -20,31 +16,6 @@
 		"OrderStatus": "response"
 	},
 	"imperativeConfiguration": {
-		"C1request": {
-			"requiredFields": [
-				"type",
-				"broker",
-				"brokerRole",
-				"orderedItem",
-				"seller"
-			],
-			"recommendedFields": [
-
-			],
-			"shallNotInclude": [
-				"id",
-				"identifier",
-				"orderNumber",
-				"bookingService",
-				"totalPaymentTax",
-				"orderCreationStatus",
-				"orderProposalVersion",
-				"totalPaymentDue"
-			],
-			"requiredOptions": [
-
-			]
-		},
 		"request": {
 			"requiredFields": [
 				"type",
@@ -123,7 +94,8 @@
 
 			],
 			"shallNotInclude": [
-				"orderCreationStatus"
+				"orderCreationStatus",
+				"orderProposalVersion"
 			]
 		},
 		"orderFeed": {
@@ -131,9 +103,6 @@
 				"type",
 				"id",
 				"seller",
-				"broker",
-				"brokerRole",
-				"bookingService",
 				"orderedItem",
 				"totalPaymentDue"
 			],
@@ -153,7 +122,13 @@
 
 			],
 			"shallNotInclude": [
-				"orderCreationStatus"
+				"orderCreationStatus",
+				"broker",
+				"brokerRole",
+				"bookingService",
+				"customer",
+				"orderProposalVersion",
+				"orderNumber"
 			]
 		},
 		"cancellation": {
