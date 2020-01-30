@@ -17,7 +17,8 @@
 	},
 	"imperativeConfiguration": {
     "request": {},
-    "response": {}
+		"response": {},
+		"bookableFeed": {}
   },
 	"imperativeConfigurationWithContext": {
 		"request": {
