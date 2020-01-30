@@ -302,7 +302,7 @@
         },
         {
           "validationMode": "OpenBookingError",
-          "name": "Error"
+          "name": "Error Response"
         }
       ]
     }
