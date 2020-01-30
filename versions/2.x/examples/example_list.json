@@ -91,6 +91,11 @@
         "file": "booking_spec_examples/orderstatus_example_1.json",
         "name": "OrderStatus Example",
         "validationMode": "OrderStatus"
+      },
+      {
+        "file": "error_response_example_1.json",
+        "name": "Error Response Example",
+        "validationMode": "OpenBookingError"
       }
     ]
   },
