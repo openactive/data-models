@@ -9,6 +9,7 @@
   ],
   "recommendedFields": [],
   "validationMode": {
+    "BookableRPDEFeed": "response",
     "C1Request": "request",
     "C1Response": "response",
     "C2Request": "request",
