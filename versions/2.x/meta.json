@@ -299,6 +299,10 @@
         {
           "validationMode": "OrderStatus",
           "name": "Order Status"
+        },
+        {
+          "validationMode": "OpenBookingError",
+          "name": "Error"
         }
       ]
     }
