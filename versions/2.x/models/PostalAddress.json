@@ -30,7 +30,16 @@
 			"requiredFields": [],
 			"recommendedFields": []
 		}
-	},
+  },
+  "requiredFields": [
+    "type",
+    "streetAddress",
+    "addressLocality",
+    "addressRegion",
+    "postalCode",
+    "addressCountry"
+  ],
+  "recommendedFields": [],
   "inSpec": [
     "type",
     "addressCountry",
