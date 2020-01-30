@@ -93,7 +93,7 @@
         "validationMode": "OrderStatus"
       },
       {
-        "file": "error_response_example_1.json",
+        "file": "booking_spec_examples/error_response_example_1.json",
         "name": "Error Response Example",
         "validationMode": "OpenBookingError"
       }
