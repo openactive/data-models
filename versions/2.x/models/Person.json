@@ -60,25 +60,25 @@
         "customer": [
 					"email"
         ]
-      },
-			"bookableFeed": {
-				"requiredFields": {
-					"seller": [
-						"id",
-						"name",
-						"legalName",
-						"taxMode",
-						"vatID",
-						"address"
-					]
-				},
-				"recommendedFields": {
-					"seller": [
-						"email",
-						"url",
-						"logo"
-					]
-				}
+      }
+		},
+		"bookableFeed": {
+			"requiredFields": {
+				"seller": [
+					"id",
+					"name",
+					"legalName",
+					"taxMode",
+					"vatID",
+					"address"
+				]
+			},
+			"recommendedFields": {
+				"seller": [
+					"email",
+					"url",
+					"logo"
+				]
 			}
 		}
 	},
