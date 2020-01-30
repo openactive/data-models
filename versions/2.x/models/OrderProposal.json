@@ -30,7 +30,6 @@
         "orderCreationStatus",
         "orderProposalVersion",
         "lease",
-        "orderRequiresApproval",
         "orderProposalStatus"
       ],
       "requiredOptions": [
@@ -48,7 +47,6 @@
         "totalPaymentDue",
         "totalPaymentTax",
         "orderProposalVersion",
-        "orderRequiresApproval",
         "orderProposalStatus"
       ],
       "recommendedFields": [
@@ -126,7 +124,6 @@
         "payment",
         "orderProposalVersion",
         "lease",
-        "orderRequiresApproval",
         "orderSellerNote"
       ]
     }
