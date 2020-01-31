@@ -61,11 +61,17 @@
         "customer": [
 					"email"
         ]
+			},
+			"shallNotInclude": {
+        "seller": [
+					"givenName",
+					"familyName"
+        ]
       }
 		},
 		"bookableFeed": {
 			"requiredFields": {
-				"seller": [
+				"organizer": [
 					"id",
 					"name",
 					"legalName",
@@ -75,12 +81,18 @@
 				]
 			},
 			"recommendedFields": {
-				"seller": [
+				"organizer": [
 					"email",
 					"url",
 					"logo"
 				]
-			}
+			},
+			"shallNotInclude": {
+        "organizer": [
+					"givenName",
+					"familyName"
+        ]
+      }
 		}
 	},
 	"inSpec": [
