@@ -20,7 +20,8 @@
  		},
  		"response": {
  			"requiredFields": [
- 				"type"
+            "type",
+            "name"
  			],
  			"recommendedFields": []
  		}
@@ -29,7 +30,8 @@
       "type",
       "name",
       "url",
-      "termsOfService"
+      "termsOfService",
+      "softwareVersion"
    ],
    "notInSpec":[],
    "fields":{
@@ -55,6 +57,14 @@
          "sameAs": "https://pending.schema.org/termsOfService",
          "model": "ArrayOf#Terms",
          "description": ["The terms of service of the Booking System."]
-      }
+      },
+      "softwareVersion": {	
+         "fieldName": "softwareVersion",	
+         "sameAs": "https://schema.org/softwareVersion",	
+         "requiredType": "https://schema.org/Text",	
+         "description": [	
+           "The version of the application, useful for on-premise installations. Note this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."	
+         ]
+       }
    }
 }
