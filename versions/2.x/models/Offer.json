@@ -211,7 +211,7 @@
 			"sameAs": "https://schema.org/availableChannel",
 			"requiredType": "ArrayOf#https://openactive.io/AvailableChannelType",
 			"description": [
-				""
+				"The channels through which a booking can be made."
 			]
 		},
 		"validFromBeforeStartDate": {
