@@ -185,7 +185,7 @@
             "byDay": [
               "https://schema.org/Tuesday"
             ],
-            "beta:timeZone": "Europe/London"
+            "scheduleTimezone": "Europe/London"
           }
         ],
         "subEvent": [

@@ -194,7 +194,7 @@
               "https://schema.org/Sunday"
             ],
             "duration": "PT1H",
-            "beta:timeZone": "Europe/London"
+            "scheduleTimezone": "Europe/London"
           }
         ],
         "offers": [

@@ -35,7 +35,7 @@
             "duration": "PT8H",
             "startTime": "09:00",
             "endTime": "17:00",
-            "beta:timeZone": "Europe/London",
+            "scheduleTimezone": "Europe/London",
             "scheduledEventType": "Event"
           }
         ],
