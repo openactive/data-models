@@ -80,7 +80,6 @@
       "shallNotInclude": [
         "orderCreationStatus",
         "customer",
-        "payment",
         "orderProposalVersion"
       ],
       "requiredOptions": [
@@ -113,7 +112,6 @@
       ],
       "shallNotInclude": [
         "orderCreationStatus",
-        "payment",
         "orderProposalVersion"
       ],
       "requiredOptions": [
