@@ -5,11 +5,16 @@
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/organization/",
   "requiredFields": [
-    "id"
+    "name"
   ],
-  "recommendedFields": [],
+  "recommendedFields": [
+    "url",
+    "id",
+    "telephone",
+    "sameAs"
+  ],
   "validationMode": {
-    "BookableRPDEFeed": "response",
+    "BookableRPDEFeed": "bookableFeed",
     "C1Request": "request",
     "C1Response": "response",
     "C2Request": "request",
@@ -26,9 +31,44 @@
   "imperativeConfiguration": {
     "request": {},
     "response": {},
-    "result": {}
+    "result": {},
+    "bookableFeed": {
+      "requiredFields": [
+        "id",
+        "name"
+      ],
+      "recommendedFields": [
+        "url",
+        "telephone",
+        "sameAs"
+      ]
+    }
   },
   "imperativeConfigurationWithContext": {
+    "bookableFeed": {
+      "requiredFields": {
+        "organizer": [
+          "id",
+          "name"
+        ],
+        "provider": [
+          "id",
+          "name"
+        ]
+      },
+      "recommendedFields": {
+        "organizer": [
+          "url",
+          "telephone",
+          "sameAs"
+        ],
+        "provider": [
+          "url",
+          "telephone",
+          "sameAs"
+        ]
+      }
+    },
     "request": {
       "requiredFields": {
         "broker": [
