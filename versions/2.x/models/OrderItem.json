@@ -35,7 +35,6 @@
         "unitTaxSpecification",
         "additionalProperty",
         "accessCode",
-        "accessToken",
         "error",
         "cancellationMessage",
         "customerNotice",
@@ -61,7 +60,7 @@
         "cancellationMessage",
         "customerNotice",
         "accessCode",
-        "accessToken"
+        "accessPass"
       ],
       "requiredOptions": [
 
@@ -80,7 +79,7 @@
       "recommendedFields": [
         "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessToken"
+        "accessPass"
       ],
       "shallNotInclude": [
         "cancellationMessage",
@@ -102,7 +101,7 @@
       "recommendedFields": [
         "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessToken"
+        "accessPass"
       ],
       "shallNotInclude": [
         "cancellationMessage",
@@ -125,7 +124,7 @@
       "recommendedFields": [
         "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessToken"
+        "accessPass"
       ],
       "shallNotInclude": [
         "attendee",
@@ -152,7 +151,7 @@
         "unitTaxSpecification",
         "additionalProperty",
         "accessCode",
-        "accessToken",
+        "accessPass",
         "error",
         "cancellationMessage",
         "customerNotice",
@@ -177,7 +176,7 @@
     "orderedItem",
     "additionalProperty",
     "accessCode",
-    "accessToken",
+    "accessPass",
     "error",
     "cancellationMessage",
     "customerNotice",
@@ -240,9 +239,9 @@
       "model": "ArrayOf#PropertyValue",
       "description": ["PropertyValue that contains a text value usable for entrance. Not applicable for an  OrderQuote."]
     },
-    "accessToken": {
-      "fieldName": "accessToken",
-      "sameAs": "https://openactive.io/accessToken",
+    "accessPass": {
+      "fieldName": "accessPass",
+      "sameAs": "https://openactive.io/accessPass",
       "model": "ArrayOf#ImageObject",
       "description": ["ImageObject or Barcode that contains reference to an asset (e.g. Barcode, QR code image or PDF) usable for entrance. Not applicable for an OrderQuote."]
     },

@@ -2,10 +2,10 @@
     "fields": {
         "type": {
             "fieldName": "type",
-            "requiredContent": "UnavailableOpportunityError",
+            "requiredContent": "OpportunityOfferPairNotBookableError",
             "requiredType": "https://schema.org/Text"
         }
     },
     "subClassOf": "#OpenBookingError",
-    "type": "UnavailableOpportunityError"
+    "type": "OpportunityOfferPairNotBookableError"
 }

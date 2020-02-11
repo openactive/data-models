@@ -129,7 +129,8 @@
         "bookingService",
         "customer",
         "orderProposalVersion",
-        "orderNumber"
+        "orderNumber",
+        "payment"
       ]
     },
     "cancellation": {
