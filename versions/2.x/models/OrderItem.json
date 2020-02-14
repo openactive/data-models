@@ -9,7 +9,7 @@
     "C2Request": "request",
     "C2Response": "Cresponse",
     "PRequest": "request",
-    "PResponse": "response",
+    "PResponse": "Presponse",
     "BRequest": "request",
     "BResponse": "response",
     "OrderProposalPatch": "request",
@@ -84,6 +84,29 @@
       "shallNotInclude": [
         "cancellationMessage",
         "customerNotice"
+      ],
+      "requiredOptions": [
+
+      ]
+    },
+    "Presponse": {
+      "hasId": true,
+      "requiredFields": [
+        "type",
+        "orderItemStatus",
+        "acceptedOffer",
+        "orderedItem",
+        "position"
+      ],
+      "recommendedFields": [
+        "allowCustomerCancellationFullRefund",
+        "accessCode",
+        "accessPass"
+      ],
+      "shallNotInclude": [
+        "cancellationMessage",
+        "customerNotice",
+        "id"
       ],
       "requiredOptions": [
 

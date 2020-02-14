@@ -63,7 +63,6 @@
       "requiredFields": [
         "type",
         "id",
-        "seller",
         "orderedItem",
         "totalPaymentDue",
         "orderProposalVersion",
@@ -90,7 +89,8 @@
         "brokerRole",
         "bookingService",
         "customer",
-        "orderNumber"
+        "orderNumber",
+        "seller"
       ]
     },
     "patch": {

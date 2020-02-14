@@ -103,7 +103,6 @@
         "type",
         "id",
         "identifier",
-        "seller",
         "orderedItem",
         "totalPaymentDue"
       ],
@@ -130,7 +129,8 @@
         "customer",
         "orderProposalVersion",
         "orderNumber",
-        "payment"
+        "payment",
+        "seller"
       ]
     },
     "cancellation": {
