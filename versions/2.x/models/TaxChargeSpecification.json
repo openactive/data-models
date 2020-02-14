@@ -34,10 +34,11 @@
       "priceCurrency",
       "identifier",
       "name",
-      "rate"
+      "rate",
+      "prepayment"
    ],
    "notInSpec":[
-
+      "prepayment"
    ],
    "fields":{
       "type":{
