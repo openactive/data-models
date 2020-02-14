@@ -81,6 +81,7 @@
   "orderedItem": [
     {
       "@type": "OrderItem",
+      "position": 0,
       "allowCustomerCancellationFullRefund": true,
       "unitTaxSpecification": [
         {

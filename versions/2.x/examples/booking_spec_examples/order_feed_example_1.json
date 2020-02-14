@@ -1,5 +1,5 @@
 {
-  "next": "/api/orders-rpde?afterTimestamp=1521565719&afterId=e11429ea-467f-4270-ab62-e47368996fe8",
+  "next": "https://example.com/api/orders-rpde?afterTimestamp=1521565719&afterId=e11429ea-467f-4270-ab62-e47368996fe8",
   "items": [
     {
       "state": "updated",
@@ -10,49 +10,11 @@
         "@context": "https://openactive.io/",
         "@type": "Order",
         "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8",
-        "seller": {
-          "@type": "Organization",
-          "@id": "https://example.com/api/organisations/123",
-          "identifier": "CRUOZWJ1",
-          "name": "Better",
-          "taxMode": "https://openactive.io/TaxGross",
-          "legalName": "Greenwich Leisure Limited",
-          "description": "A charitable social enterprise for all the community",
-          "url": "https://www.better.org.uk",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "http://data.better.org.uk/images/logo.png"
-          },
-          "telephone": "020 3457 8700",
-          "email": "customerservices@gll.org",
-          "vatID": "GB 789 1234 56",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Alan Peacock Way",
-            "addressLocality": "Village East",
-            "addressRegion": "Middlesbrough",
-            "postalCode": "TS4 3AE",
-            "addressCountry": "GB"
-          },
-          "termsOfService": [
-            {
-              "@type": "PrivacyPolicy",
-              "name": "Privacy Policy",
-              "url": "https://example.com/privacy-policy",
-              "requiresExplicitConsent": false
-            },
-            {
-              "@type": "TermsOfUse",
-              "name": "Terms and Conditions",
-              "url": "https://example.com/terms-and-conditions",
-              "requiresExplicitConsent": true
-            }
-          ]
-        },
+        "identifier": "e11429ea-467f-4270-ab62-e47368996fe8",
         "orderedItem": [
           {
             "@type": "OrderItem",
-            "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8/order-items/1234",
+            "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8#/orderedItem/1234",
             "orderItemStatus": "https://openactive.io/OrderConfirmed",
             "allowCustomerCancellationFullRefund": true,
             "unitTaxSpecification": [
@@ -77,7 +39,13 @@
             "orderedItem": {
               "@type": "ScheduledSession",
               "@id": "https://example.com/events/452/subEvents/132"
-            }
+            },
+            "accessPass": [
+              {
+                "@type": "Barcode",
+                "text": "0123456789"
+              }
+            ]
           }
         ],
         "totalPaymentDue": {
