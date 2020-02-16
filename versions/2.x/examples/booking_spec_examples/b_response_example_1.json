@@ -87,7 +87,7 @@
       "@type": "OrderItem",
       "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8#/orderedItem/1234",
       "position": 0,
-      "orderItemStatus": "https://openactive.io/OrderConfirmed",
+      "orderItemStatus": "https://openactive.io/OrderItemConfirmed",
       "allowCustomerCancellationFullRefund": true,
       "unitTaxSpecification": [
         {

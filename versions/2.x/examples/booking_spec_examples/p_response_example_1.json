@@ -88,7 +88,7 @@
     {
       "@type": "OrderItem",
       "position": 0,
-      "orderItemStatus": "https://openactive.io/OrderProposed",
+      "orderItemStatus": "https://openactive.io/OrderItemProposed",
       "unitTaxSpecification": [
         {
           "@type": "TaxChargeSpecification",

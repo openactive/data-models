@@ -100,8 +100,8 @@
     "values":[
       "SellerCancelled",
       "CustomerCancelled",
-      "OrderProposed",
-      "OrderConfirmed",
+      "OrderItemProposed",
+      "OrderItemConfirmed",
       "CustomerAttended"
     ]
   },

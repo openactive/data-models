@@ -90,7 +90,7 @@
     {
       "@type": "OrderItem",
       "position": 0,
-      "orderItemStatus": "https://openactive.io/OrderConfirmed",
+      "orderItemStatus": "https://openactive.io/OrderItemConfirmed",
       "allowCustomerCancellationFullRefund": true,
       "unitTaxSpecification": [
         {

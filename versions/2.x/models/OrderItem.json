@@ -284,7 +284,7 @@
       "fieldName": "customerNotice",
       "sameAs": "https://openactive.io/customerNotice",
       "requiredType": "https://schema.org/Text",
-      "description": ["A message set by the Seller to trigger a notification to the Customer, only applicable for an Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/OrderConfirmed or  https://openactive.io/CustomerAttended"]
+      "description": ["A message set by the Seller to trigger a notification to the Customer, only applicable for an Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/OrderItemConfirmed or  https://openactive.io/CustomerAttended"]
     },
     "attendee": {
       "fieldName": "attendee",
