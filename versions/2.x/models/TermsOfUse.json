@@ -1,15 +1,6 @@
 {
    "type":"TermsOfUse",
    "subClassOf":"#Terms",
-   "inSpec":[
-      "type",
-      "name",
-      "url",
-      "requiresExplicitConsent"
-   ],
-   "notInSpec":[
-
-   ],
    "fields":{
       "type":{
          "fieldName":"type",

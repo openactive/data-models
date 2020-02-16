@@ -20,7 +20,7 @@
  		},
  		"response": {
  			"requiredFields": [
-        "type",
+            "type",
  				"name",
  				"url",
  				"requiresExplicitConsent"
@@ -31,7 +31,8 @@
       "type",
       "name",
       "url",
-      "requiresExplicitConsent"
+      "requiresExplicitConsent",
+      "dateModified"
    ],
    "notInSpec":[
 
@@ -59,6 +60,15 @@
          "requiredType":"https://schema.org/Boolean",
          "sameAs": "https://openactive.io/requiresExplicitConsent",
          "description": [""]
-      }
+      },
+      "dateModified": {
+         "fieldName": "dateModified",
+         "sameAs": "https://schema.org/dateModified",
+         "requiredType": "https://schema.org/DateTime",
+         "description": [
+           "The date and time at which the webpage containing the contents of the terms, located at the `url`, was last updated."
+         ],
+         "example": "2018-01-27T12:00:00Z"
+       }
    }
 }
