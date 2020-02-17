@@ -31,8 +31,8 @@
       "fieldName": "statusCode",
       "sameAs": "https://openactive.io/statusCode",
       "requiredType": "https://schema.org/Integer",
-      "requiredContent": "429",
-      "defaultContent": "429",
+      "requiredContent": 429,
+      "defaultContent": 429,
       "description": [
         "An integer representing the HTTP status code."
       ]
