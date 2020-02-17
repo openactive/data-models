@@ -1,12 +1,12 @@
 {
-  "type": "OpportunityOfferPairNotBookableError",
+  "type": "OrderItemNotWithinOrderError",
   "subClassOf": "#OpenBookingError",
   "description": {
     "sections": [
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The `orderedItem` and `acceptedOffer` combination specified are not bookable, as defined in the Open Booking API specification."
+          "The Order UUID for each provided `OrderItem` does not match the Order UUID of the `Order` being PATCHed."
         ]
       }
     ]
@@ -14,15 +14,15 @@
   "fields": {
     "type": {
         "fieldName": "type",
-        "requiredContent": "OpportunityOfferPairNotBookableError",
+        "requiredContent": "OrderItemNotWithinOrderError",
         "requiredType": "https://schema.org/Text"
     },
     "name": {
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The 'orderedItem' and 'acceptedOffer' combination specified are not bookable, as defined in the Open Booking API specification.",
-      "defaultContent": "The 'orderedItem' and 'acceptedOffer' combination specified are not bookable, as defined in the Open Booking API specification.",
+      "example": "The Order UUID for each provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
+      "defaultContent": "The Order UUID for each provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"
@@ -31,8 +31,8 @@
       "fieldName": "statusCode",
       "sameAs": "https://openactive.io/statusCode",
       "requiredType": "https://schema.org/Integer",
-      "requiredContent": 409,
-      "defaultContent": 409,
+      "requiredContent": 500,
+      "defaultContent": 500,
       "description": [
         "An integer representing the HTTP status code."
       ]
