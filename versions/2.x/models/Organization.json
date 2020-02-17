@@ -48,24 +48,32 @@
     "bookableFeed": {
       "requiredFields": {
         "organizer": [
-          "id",
-          "name"
+					"id",
+					"name",
+					"legalName",
+					"taxMode",
+					"address"
         ],
         "provider": [
-          "id",
-          "name"
+					"id",
+					"name",
+					"legalName",
+					"taxMode",
+					"address"
         ]
       },
       "recommendedFields": {
         "organizer": [
-          "url",
-          "telephone",
-          "sameAs"
+					"email",
+					"url",
+					"logo",
+					"vatID"
         ],
         "provider": [
-          "url",
-          "telephone",
-          "sameAs"
+					"email",
+					"url",
+					"logo",
+					"vatID"
         ]
       }
     },

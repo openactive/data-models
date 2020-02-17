@@ -76,7 +76,6 @@
 					"name",
 					"legalName",
 					"taxMode",
-					"vatID",
 					"address"
 				]
 			},
@@ -84,7 +83,8 @@
 				"organizer": [
 					"email",
 					"url",
-					"logo"
+					"logo",
+					"vatID"
 				]
 			},
 			"shallNotInclude": {
