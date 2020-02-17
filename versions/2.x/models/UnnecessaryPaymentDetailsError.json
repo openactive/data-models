@@ -1,12 +1,12 @@
 {
-  "type": "GoneError",
+  "type": "UnnecessaryPaymentDetailsError",
   "subClassOf": "#OpenBookingError",
   "description": {
     "sections": [
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "Where an `Order` has been soft-deleted by an Order Deletion request."
+          "If the `payment` property of the `Order` is provided when it is expected to be absent."
         ]
       }
     ]
@@ -14,15 +14,15 @@
   "fields": {
     "type": {
         "fieldName": "type",
-        "requiredContent": "GoneError",
+        "requiredContent": "UnnecessaryPaymentDetailsError",
         "requiredType": "https://schema.org/Text"
     },
     "name": {
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "Where an Order has been soft-deleted by an Order Deletion request.",
-      "defaultContent": "Where an Order has been soft-deleted by an Order Deletion request.",
+      "example": "If the payment property of the Order is provided when it is expected to be absent.",
+      "defaultContent": "If the payment property of the Order is provided when it is expected to be absent.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"
@@ -31,8 +31,8 @@
       "fieldName": "statusCode",
       "sameAs": "https://openactive.io/statusCode",
       "requiredType": "https://schema.org/Integer",
-      "requiredContent": "410",
-      "defaultContent": "410",
+      "requiredContent": "400",
+      "defaultContent": "400",
       "description": [
         "An integer representing the HTTP status code."
       ]

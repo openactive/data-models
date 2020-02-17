@@ -1,11 +1,41 @@
 {
-    "fields": {
-        "type": {
-            "fieldName": "type",
-            "requiredContent": "OrderCreationFailedError",
-            "requiredType": "https://schema.org/Text"
-        }
+  "type": "OrderCreationFailedError",
+  "subClassOf": "#OpenBookingError",
+  "description": {
+    "sections": [
+      {
+        "title": "Error Use Case",
+        "paragraphs": [
+          "If B fails for any other reason not specified in this list of errors."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+        "fieldName": "type",
+        "requiredContent": "OrderCreationFailedError",
+        "requiredType": "https://schema.org/Text"
     },
-    "subClassOf": "#OpenBookingError",
-    "type": "OrderCreationFailedError"
+    "name": {
+      "description": [
+          "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
+      ],
+      "example": "If B fails for any other reason not specified in this list of errors.",
+      "defaultContent": "If B fails for any other reason not specified in this list of errors.",
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "sameAs": "https://schema.org/name"
+    },
+    "statusCode": {
+      "fieldName": "statusCode",
+      "sameAs": "https://openactive.io/statusCode",
+      "requiredType": "https://schema.org/Integer",
+      "requiredContent": "500",
+      "defaultContent": "500",
+      "description": [
+        "An integer representing the HTTP status code."
+      ]
+    }
+  }
 }

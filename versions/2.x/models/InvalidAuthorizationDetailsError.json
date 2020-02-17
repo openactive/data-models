@@ -1,11 +1,41 @@
 {
-    "fields": {
-        "type": {
-            "fieldName": "type",
-            "requiredContent": "InvalidAuthorizationDetailsError",
-            "requiredType": "https://schema.org/Text"
-        }
+  "type": "InvalidAuthorizationDetailsError",
+  "subClassOf": "#OpenBookingError",
+  "description": {
+    "sections": [
+      {
+        "title": "Error Use Case",
+        "paragraphs": [
+          "If the Broker supplied an invalid set of authorization details, either malformed or expired."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+        "fieldName": "type",
+        "requiredContent": "InvalidAuthorizationDetailsError",
+        "requiredType": "https://schema.org/Text"
     },
-    "subClassOf": "#OpenBookingError",
-    "type": "InvalidAuthorizationDetailsError"
+    "name": {
+      "description": [
+          "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
+      ],
+      "example": "If the Broker supplied an invalid set of authorization details, either malformed or expired.",
+      "defaultContent": "If the Broker supplied an invalid set of authorization details, either malformed or expired.",
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "sameAs": "https://schema.org/name"
+    },
+    "statusCode": {
+      "fieldName": "statusCode",
+      "sameAs": "https://openactive.io/statusCode",
+      "requiredType": "https://schema.org/Integer",
+      "requiredContent": "401",
+      "defaultContent": "401",
+      "description": [
+        "An integer representing the HTTP status code."
+      ]
+    }
+  }
 }

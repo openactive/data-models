@@ -1,11 +1,41 @@
 {
-    "fields": {
-        "type": {
-            "fieldName": "type",
-            "requiredContent": "UnknownOrIncorrectEndpointError",
-            "requiredType": "https://schema.org/Text"
-        }
+  "type": "UnknownOrIncorrectEndpointError",
+  "subClassOf": "#OpenBookingError",
+  "description": {
+    "sections": [
+      {
+        "title": "Error Use Case",
+        "paragraphs": [
+          "Where a Booking System has no endpoint matching the one requested."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+        "fieldName": "type",
+        "requiredContent": "UnknownOrIncorrectEndpointError",
+        "requiredType": "https://schema.org/Text"
     },
-    "subClassOf": "#OpenBookingError",
-    "type": "UnknownOrIncorrectEndpointError"
+    "name": {
+      "description": [
+          "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
+      ],
+      "example": "Where a Booking System has no endpoint matching the one requested.",
+      "defaultContent": "Where a Booking System has no endpoint matching the one requested.",
+      "fieldName": "name",
+      "requiredType": "https://schema.org/Text",
+      "sameAs": "https://schema.org/name"
+    },
+    "statusCode": {
+      "fieldName": "statusCode",
+      "sameAs": "https://openactive.io/statusCode",
+      "requiredType": "https://schema.org/Integer",
+      "requiredContent": "404",
+      "defaultContent": "404",
+      "description": [
+        "An integer representing the HTTP status code."
+      ]
+    }
+  }
 }
