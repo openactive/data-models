@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If B fails for any other reason not specified in this list of errors."
+          "B failed for a reason not specified by a defined type of error in the Open Booking API specification."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If B fails for any other reason not specified in this list of errors.",
-      "defaultContent": "If B fails for any other reason not specified in this list of errors.",
+      "example": "B failed for a reason not specified by a defined type of error in the Open Booking API specification.",
+      "defaultContent": "B failed for a reason not specified by a defined type of error in the Open Booking API specification.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

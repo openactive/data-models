@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "Where an `Order` has been soft-deleted by an Order Deletion request."
+          "An `Order` has been soft-deleted by an Order Deletion request."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "Where an Order has been soft-deleted by an Order Deletion request.",
-      "defaultContent": "Where an Order has been soft-deleted by an Order Deletion request.",
+      "example": "An 'Order' has been soft-deleted by an Order Deletion request.",
+      "defaultContent": "An 'Order' has been soft-deleted by an Order Deletion request.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

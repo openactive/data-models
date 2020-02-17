@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the Broker supplied an invalid API key, either malformed or expired."
+          "The Broker supplied an invalid API key, either malformed or expired."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the Broker supplied an invalid API key, either malformed or expired.",
-      "defaultContent": "If the Broker supplied an invalid API key, either malformed or expired.",
+      "example": "The Broker supplied an invalid API key, either malformed or expired.",
+      "defaultContent": "The Broker supplied an invalid API key, either malformed or expired.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

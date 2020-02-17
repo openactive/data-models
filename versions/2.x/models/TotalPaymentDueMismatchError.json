@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the `totalPaymentDue` property of the submitted `Order` or `OrderProposal` does not match the value calculated for that `Order` or `OrderProposal` by the Booking System."
+          "The `totalPaymentDue` property of the submitted `Order` or `OrderProposal` does not match the value calculated for that `Order` or `OrderProposal` by the Booking System."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the totalPaymentDue property of the submitted Order or OrderProposal does not match the value calculated for that Order or OrderProposal by the Booking System.",
-      "defaultContent": "If the totalPaymentDue property of the submitted Order or OrderProposal does not match the value calculated for that Order or OrderProposal by the Booking System.",
+      "example": "The 'totalPaymentDue' property of the submitted 'Order' or 'OrderProposal' does not match the value calculated for that 'Order' or 'OrderProposal' by the Booking System.",
+      "defaultContent": "The 'totalPaymentDue' property of the submitted 'Order' or 'OrderProposal' does not match the value calculated for that 'Order' or 'OrderProposal' by the Booking System.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

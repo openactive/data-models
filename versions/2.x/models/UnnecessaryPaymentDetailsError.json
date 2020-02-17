@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the `payment` property of the `Order` is provided when it is expected to be absent."
+          "The `payment` property of the `Order` is provided when it is expected to be absent."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the payment property of the Order is provided when it is expected to be absent.",
-      "defaultContent": "If the payment property of the Order is provided when it is expected to be absent.",
+      "example": "The 'payment' property of the 'Order' is provided when it is expected to be absent.",
+      "defaultContent": "The 'payment' property of the 'Order' is provided when it is expected to be absent.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

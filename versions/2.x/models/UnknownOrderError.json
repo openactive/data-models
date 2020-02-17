@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "Where a Booking System has no `Order` matching the one requested."
+          "The Booking System has no `Order` matching the one requested."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "Where a Booking System has no Order matching the one requested.",
-      "defaultContent": "Where a Booking System has no Order matching the one requested.",
+      "example": "The Booking System has no 'Order' matching the one requested.",
+      "defaultContent": "The Booking System has no 'Order' matching the one requested.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

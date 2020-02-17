@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the `payment` property of the `Order` does not include `identifier`."
+          "The `payment` property of the `Order` does not include `identifier`."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the payment property of the Order does not include identifier.",
-      "defaultContent": "If the payment property of the Order does not include identifier.",
+      "example": "The 'payment' property of the 'Order' does not include 'identifier'.",
+      "defaultContent": "The 'payment' property of the 'Order' does not include 'identifier'.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

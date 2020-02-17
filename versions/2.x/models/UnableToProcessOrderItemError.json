@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If any `OrderItem` errors would have been generated at C2 given the same set of `OrderItem`s. The Broker is expected to retry C2 to retrieve such errors."
+          "`OrderItem` errors would have been generated at C2 given the same set of `OrderItem`s. The Broker is expected to retry C2 to retrieve such errors."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If any OrderItem errors would have been generated at C2 given the same set of OrderItems. The Broker is expected to retry C2 to retrieve such errors.",
-      "defaultContent": "If any OrderItem errors would have been generated at C2 given the same set of OrderItems. The Broker is expected to retry C2 to retrieve such errors.",
+      "example": "'OrderItem' errors would have been generated at C2 given the same set of 'OrderItem's. The Broker is expected to retry C2 to retrieve such errors.",
+      "defaultContent": "'OrderItem' errors would have been generated at C2 given the same set of 'OrderItem's. The Broker is expected to retry C2 to retrieve such errors.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "Where a Booking System does not have the generic resource specified."
+          "The Booking System does not have the generic resource specified."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "Where a Booking System does not have the generic resource specified.",
-      "defaultContent": "Where a Booking System does not have the generic resource specified.",
+      "example": "The Booking System does not have the generic resource specified.",
+      "defaultContent": "The Booking System does not have the generic resource specified.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

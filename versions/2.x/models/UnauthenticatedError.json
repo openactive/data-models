@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the Broker did not supply any form of authentication."
+          "The Broker did not supply any form of authentication."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the Broker did not supply any form of authentication.",
-      "defaultContent": "If the Broker did not supply any form of authentication.",
+      "example": "The Broker did not supply any form of authentication.",
+      "defaultContent": "The Broker did not supply any form of authentication.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

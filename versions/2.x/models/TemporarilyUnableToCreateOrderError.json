@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the Booking System is unable for technical reasons to create an `Order` where the data provided to it is sufficient to allow it to do so."
+          "The Booking System is unable for technical reasons to create an `Order` where the data provided to it is sufficient to allow it to do so."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the Booking System is unable for technical reasons to create an Order where the data provided to it is sufficient to allow it to do so.",
-      "defaultContent": "If the Booking System is unable for technical reasons to create an Order where the data provided to it is sufficient to allow it to do so.",
+      "example": "The Booking System is unable for technical reasons to create an 'Order' where the data provided to it is sufficient to allow it to do so.",
+      "defaultContent": "The Booking System is unable for technical reasons to create an 'Order' where the data provided to it is sufficient to allow it to do so.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

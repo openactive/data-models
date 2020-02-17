@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If B fails due to a newer version of the `OrderProposal` existing than that specified by the Broker in `orderProposalVersion`."
+          "B failed due to a newer version of the `OrderProposal` existing than that specified by the Broker in `orderProposalVersion`."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If B fails due to a newer version of the OrderProposal existing than that specified by the Broker in orderProposalVersion.",
-      "defaultContent": "If B fails due to a newer version of the OrderProposal existing than that specified by the Broker in orderProposalVersion.",
+      "example": "B failed due to a newer version of the 'OrderProposal' existing than that specified by the Broker in 'orderProposalVersion'.",
+      "defaultContent": "B failed due to a newer version of the 'OrderProposal' existing than that specified by the Broker in 'orderProposalVersion'.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

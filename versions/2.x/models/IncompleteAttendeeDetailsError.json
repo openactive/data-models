@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The `attendeeDetailsRequired` properties of the `attendee` are not supplied within a `schema:Person` object."
+          "The `attendeeDetailsRequired` properties of the `attendee` are not supplied within a `Person` object."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The attendeeDetailsRequired properties of the attendee are not supplied within a schema:Person object.",
-      "defaultContent": "The attendeeDetailsRequired properties of the attendee are not supplied within a schema:Person object.",
+      "example": "The 'attendeeDetailsRequired' properties of the 'attendee' are not supplied within a 'Person' object.",
+      "defaultContent": "The 'attendeeDetailsRequired' properties of the 'attendee' are not supplied within a 'Person' object.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

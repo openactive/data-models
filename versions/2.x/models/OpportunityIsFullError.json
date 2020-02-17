@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "There are no available spaces for the Opportunity contained in the orderedItem property.",
-      "defaultContent": "There are no available spaces for the Opportunity contained in the orderedItem property.",
+      "example": "There are no available spaces for the Opportunity contained in the 'orderedItem' property.",
+      "defaultContent": "There are no available spaces for the Opportunity contained in the 'orderedItem' property.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

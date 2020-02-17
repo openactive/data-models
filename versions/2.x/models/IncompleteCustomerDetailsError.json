@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the `email` address of the Customer is not supplied within a `schema:Person` object; or if the `customer` property supplied is not a valid `schema:Person` or `schema:Organization` object."
+          "The `email` address of the Customer is not supplied within a `Person` object; or the `customer` property supplied is not a valid `Person` or `Organization` object."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the email address of the Customer is not supplied within a schema:Person object; or if the customer property supplied is not a valid schema:Person or schema:Organization object.",
-      "defaultContent": "If the email address of the Customer is not supplied within a schema:Person object; or if the customer property supplied is not a valid schema:Person or schema:Organization object.",
+      "example": "The 'email' address of the Customer is not supplied within a 'Person' object; or the 'customer' property supplied is not a valid 'Person' or 'Organization' object.",
+      "defaultContent": "The 'email' address of the Customer is not supplied within a 'Person' object; or the 'customer' property supplied is not a valid 'Person' or 'Organization' object.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

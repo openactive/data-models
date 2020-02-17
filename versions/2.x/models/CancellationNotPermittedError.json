@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the `Broker`. The `description` property of the object MUST include a Customer-facing description of the reason that cancellation is not permitted."
+          "Cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the Broker.  The `description` property of the object MUST include a Customer-facing description of the reason that cancellation is not permitted."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the Broker. The description property of the object MUST include a Customer-facing description of the reason that cancellation is not permitted.",
-      "defaultContent": "The cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the Broker. The description property of the object MUST include a Customer-facing description of the reason that cancellation is not permitted.",
+      "example": "Cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the Broker.",
+      "defaultContent": "Cancellation is not permitted due to internal rules of the Booking System not otherwise exposed to the Broker.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The specific OrderItems against which this error is emitted are not able to be booked together.",
-      "defaultContent": "The specific OrderItems against which this error is emitted are not able to be booked together.",
+      "example": "The specific 'OrderItem's against which this error is emitted are not able to be booked together.",
+      "defaultContent": "The specific 'OrderItem's against which this error is emitted are not able to be booked together.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

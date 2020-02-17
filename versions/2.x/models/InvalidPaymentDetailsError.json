@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "If the `payment` property of the `OrderQuote` or `Order` contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid `accountId`."
+          "The `payment` property of the `OrderQuote` or `Order` contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid `accountId`."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "If the payment property of the OrderQuote or Order contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid accountId.",
-      "defaultContent": "If the payment property of the OrderQuote or Order contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid accountId.",
+      "example": "The 'payment' property of the 'OrderQuote' or 'Order' contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid 'accountId'.",
+      "defaultContent": "The 'payment' property of the 'OrderQuote' or 'Order' contains data that is not accepted by the Booking System for reconciliation, e.g. an invalid 'accountId'.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

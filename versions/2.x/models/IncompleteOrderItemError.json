@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "There is a missing acceptedOffer or orderedItem property on the OrderItem.",
-      "defaultContent": "There is a missing acceptedOffer or orderedItem property on the OrderItem.",
+      "example": "There is a missing 'acceptedOffer' or 'orderedItem' property on the 'OrderItem'.",
+      "defaultContent": "There is a missing 'acceptedOffer' or 'orderedItem' property on the 'OrderItem'.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"
