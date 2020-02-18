@@ -22,73 +22,59 @@
   },
 	"imperativeConfigurationWithContext": {
 		"request": {
-			"requiredFields": {
-        "seller": [
-          "id"
-        ],
-        "customer": [
-          "email"
-        ]
-      },
-			"recommendedFields": {
-        "seller": [
-        ],
-        "customer": [
+			"seller": {
+				"requiredFields": [
+					"id"
+				],
+				"recommendedFields": []
+			},
+			"customer": {
+				"requiredFields": [
+					"email"
+				],
+				"recommendedFields": [
 					"givenName",
 					"familyName"
-        ]
+				]
       }
 		},
 		"response": {
-			"requiredFields": {
-        "seller": [
+			"seller": {
+				"requiredFields": [
           "id",
           "name",
           "legalName",
           "taxMode",
           "vatID",
           "address"
-        ],
-        "customer": [
-        ]
-      },
-			"recommendedFields": {
-        "seller": [
-          "email",
-          "url",
-          "logo"
-        ],
-        "customer": [
-					"email"
-        ]
-			},
-			"shallNotInclude": {
-        "seller": [
+				],
+				"recommendedFields": [
+					"email",
+					"url",
+					"logo"
+				],
+				"shallNotInclude": [
 					"givenName",
 					"familyName"
-        ]
-      }
+				]
+			}
 		},
 		"bookableFeed": {
-			"requiredFields": {
-				"organizer": [
+			"organizer": {
+				"requiredFields": [
 					"id",
 					"name",
 					"legalName",
 					"taxMode",
 					"address"
-				]
-			},
-			"recommendedFields": {
-				"organizer": [
+				],
+				"recommendedFields": [
 					"email",
 					"url",
 					"logo",
 					"vatID"
-				]
-			},
-			"shallNotInclude": {
-        "organizer": [
+				],
+				"shallNotInclude": [
 					"givenName",
 					"familyName"
         ]
