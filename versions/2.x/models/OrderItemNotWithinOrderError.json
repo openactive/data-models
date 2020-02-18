@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The Order UUID for each provided `OrderItem` does not match the Order UUID of the `Order` being PATCHed."
+          "The Order UUID for at least one provided `OrderItem` does not match the Order UUID of the `Order` being PATCHed."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The Order UUID for each provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
-      "defaultContent": "The Order UUID for each provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
+      "example": "The Order UUID for at least one provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
+      "defaultContent": "The Order UUID for at least one provided 'OrderItem' does not match the Order UUID of the 'Order' being PATCHed.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

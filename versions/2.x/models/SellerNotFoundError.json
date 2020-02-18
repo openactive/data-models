@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The `@id` of the `seller` included in the request was not found."
+          "The `@id` of the `seller` included in the request was not found within the Booking System."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The '@id' of the 'seller' included in the request was not found.",
-      "defaultContent": "The '@id' of the 'seller' included in the request was not found.",
+      "example": "The '@id' of the 'seller' included in the request was not found within the Booking System.",
+      "defaultContent": "The '@id' of the 'seller' included in the request was not found within the Booking System.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

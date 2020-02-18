@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The `acceptedOffer` is not a URL which corresponds to an `Offer` within the Booking System."
+          "The `@id` provided for the `acceptedOffer` is not a URL which corresponds to an `Offer` within the Booking System."
         ]
       }
     ]
@@ -21,8 +21,8 @@
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The 'acceptedOffer' is not a URL which corresponds to an 'Offer' within the Booking System.",
-      "defaultContent": "The 'acceptedOffer' is not a URL which corresponds to an 'Offer' within the Booking System.",
+      "example": "The '@id' provided for the 'acceptedOffer' is not a URL which corresponds to an 'Offer' within the Booking System.",
+      "defaultContent": "The '@id' provided for the 'acceptedOffer' is not a URL which corresponds to an 'Offer' within the Booking System.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"

@@ -1,12 +1,12 @@
 {
-  "type": "SellerIdMismatchError",
+  "type": "SellerMismatchError",
   "subClassOf": "#OpenBookingError",
   "description": {
     "sections": [
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "The `OrderItem`s  `@id` of the `seller` was not found."
+          "At least one of the `OrderItem`s did not match the specified `seller`."
         ]
       }
     ]
@@ -14,15 +14,15 @@
   "fields": {
     "type": {
         "fieldName": "type",
-        "requiredContent": "SellerIdMismatchError",
+        "requiredContent": "SellerMismatchError",
         "requiredType": "https://schema.org/Text"
     },
     "name": {
       "description": [
           "A short, human-readable summary of the problem type. It should not change from occurrence to occurrence of the problem, except for purposes of localization."
       ],
-      "example": "The 'OrderItem's  '@id' of the 'seller' was not found.",
-      "defaultContent": "The 'OrderItem's  '@id' of the 'seller' was not found.",
+      "example": "At least one of the 'OrderItem's did not match the specified 'seller'.",
+      "defaultContent": "At least one of the 'OrderItem's did not match the specified 'seller'.",
       "fieldName": "name",
       "requiredType": "https://schema.org/Text",
       "sameAs": "https://schema.org/name"
