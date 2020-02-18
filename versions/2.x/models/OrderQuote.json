@@ -81,18 +81,6 @@
         "orderCreationStatus",
         "customer",
         "orderProposalVersion"
-      ],
-      "requiredOptions": [
-        {
-          "description": [
-            "While these properties are marked as optional in the specification, a booking system must provide either `totalPaymentTax` or `taxCalculationExcluded` for an Order."
-          ],
-          "options": [
-            "totalPaymentTax",
-            "taxCalculationExcluded"
-          ],
-          "oneOf": true
-        }
       ]
     },
     "response": {
@@ -113,18 +101,6 @@
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"
-      ],
-      "requiredOptions": [
-        {
-          "description": [
-            "While these properties are marked as optional in the specification, a booking system must provide either `totalPaymentTax` or `taxCalculationExcluded` for an Order."
-          ],
-          "options": [
-            "totalPaymentTax",
-            "taxCalculationExcluded"
-          ],
-          "oneOf": true
-        }
       ]
     }
   },
