@@ -46,30 +46,30 @@
   },
   "imperativeConfigurationWithContext": {
     "bookableFeed": {
-      "requiredFields": {
-        "organizer": [
+      "organizer": {
+        "requiredFields": [
 					"id",
 					"name",
 					"legalName",
 					"taxMode",
 					"address"
         ],
-        "provider": [
-					"id",
-					"name",
-					"legalName",
-					"taxMode",
-					"address"
-        ]
-      },
-      "recommendedFields": {
-        "organizer": [
+        "recommendedFields": [
 					"email",
 					"url",
 					"logo",
 					"vatID"
+        ]
+      },
+      "provider": {
+        "requiredFields": [
+					"id",
+					"name",
+					"legalName",
+					"taxMode",
+					"address"
         ],
-        "provider": [
+        "recommendedFields": [
 					"email",
 					"url",
 					"logo",
@@ -78,37 +78,39 @@
       }
     },
     "request": {
-      "requiredFields": {
-        "broker": [
+      "broker": {
+        "requiredFields": [
           "id",
           "name"
         ],
-        "seller": [
-          "id"
-        ],
-        "customer": [
-          "email",
-          "name",
-          "address"
-        ]
-      },
-      "recommendedFields": {
-        "broker": [
+        "recommendedFields": [
           "email",
           "url",
           "logo"
-        ],
-        "seller": [
-        ],
-        "customer": [
         ]
+      },
+      "seller": {
+        "requiredFields": [
+          "id"
+        ],
+        "recommendedFields": []
+      },
+      "customer": {
+        "requiredFields": [
+          "email",
+          "name",
+          "address"
+        ],
+        "recommendedFields": []
       }
     },
     "response": {
-      "requiredFields": {
-        "broker": [
-        ],
-        "seller": [
+      "broker": {
+        "requiredFields": [],
+        "recommendedFields": []
+      },
+      "seller": {
+        "requiredFields":[
           "id",
           "name",
           "legalName",
@@ -116,28 +118,31 @@
           "vatID",
           "address"
         ],
-        "customer": [
-        ]
-      },
-      "recommendedFields": {
-        "broker": [
-        ],
-        "seller": [
+        "recommendedFields": [
           "email",
           "url",
           "logo"
-        ],
-        "customer": [
         ]
+      },
+      "customer": {
+        "requiredFields": [],
+        "recommendedFields": []
       }
     },
     "result": {
-      "requiredFields": {
-        "broker": [
+      "broker": {
+        "requiredFields": [
           "id",
           "name"
         ],
-        "seller": [
+        "recommendedFields": [
+          "email",
+          "url",
+          "logo"
+        ]
+      },
+      "seller": {
+        "requiredFields": [
           "id",
           "name",
           "legalName",
@@ -145,25 +150,19 @@
           "vatID",
           "address"
         ],
-        "customer": [
+        "recommendedFields": [
+          "email",
+          "url",
+          "logo"
+        ]
+      },
+      "customer": {
+        "requiredFields": [
           "email",
           "name",
           "address"
-        ]
-      },
-      "recommendedFields": {
-        "broker": [
-          "email",
-          "url",
-          "logo"
         ],
-        "seller": [
-          "email",
-          "url",
-          "logo"
-        ],
-        "customer": [
-        ]
+        "recommendedFields": []
       }
     }
   },
