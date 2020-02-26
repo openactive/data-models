@@ -36,7 +36,8 @@
       "identifier",
       "paymentMethod",
       "accountId",
-      "paymentProviderId"
+      "paymentProviderId",
+      "additionalProperty"
    ],
    "fields":{
       "type":{
@@ -74,6 +75,12 @@
          "sameAs":"https://openactive.io/paymentProviderId",
          "requiredType":"https://schema.org/Text",
          "description":["A reference to the specific Payment Provider that is used."]
+      },
+      "additionalProperty": {
+         "fieldName": "additionalProperty",
+         "sameAs": "https://schema.org/additionalProperty",
+         "model": "ArrayOf#PropertyValue",
+         "description": ["PropertyValue that contains a text value useful for reconciliation."]
       }
    }
 }

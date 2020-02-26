@@ -36,7 +36,8 @@
       "identifier",
       "paymentMethod",
       "accountId",
-      "paymentProviderId"
+      "paymentProviderId",
+      "additionalProperty"
    ],
    "fields":{
      "type": {
