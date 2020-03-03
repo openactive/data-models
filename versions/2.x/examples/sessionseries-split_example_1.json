@@ -186,7 +186,8 @@
               "https://schema.org/Tuesday",
               "https://schema.org/Sunday"
             ],
-            "duration": "PT1H"
+            "duration": "PT1H",
+            "scheduleTimezone": "Europe/London"
           }
         ],
         "offers": [
