@@ -17,8 +17,7 @@
     "description",
     "image",
     "hoursAvailable",
-    "offers",
-    "event"
+    "offers"
   ],
   "validationMode": {
 		"C1Response": "response",
