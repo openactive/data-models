@@ -2,33 +2,54 @@
    "type":"Payment",
    "subClassOf": "https://schema.org/Thing",
    "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
+ 		"C1Request": "Crequest",
+ 		"C1Response": "Cresponse",
+ 		"C2Request": "Crequest",
+ 		"C2Response": "Cresponse",
  		"PRequest": "request",
  		"PResponse": "response",
  		"BRequest": "request",
- 		"BResponse": "response",
- 		"OrderProposalPatch": "request",
- 		"OrderPatch": "request"
+ 		"BResponse": "response"
  	},
  	"imperativeConfiguration": {
- 		"request": {
- 			"requiredFields": [],
- 			"recommendedFields": []
+      "Crequest": {
+         "requiredFields": [
+            "type"
+         ],
+         "recommendedFields": [
+            "name",
+            "accountId",
+            "paymentProviderId"
+         ],
+         "shallNotInclude": [
+            "identifier"
+         ]
  		},
- 		"response": {
+ 		"request": {
+         "requiredFields": [
+            "type",
+            "identifier"
+         ],
+         "recommendedFields": [
+            "name",
+            "accountId",
+            "paymentProviderId"
+         ]
+ 		},
+ 		"Cresponse": {
  			"requiredFields": [
- 				"type",
- 				"identifier"
+ 				"type"
  			],
-      "recommendedFields": [
-        "name",
-        "accountId",
-        "paymentProviderId"
-      ]
- 		}
+         "shallNotInclude": [
+            "identifier"
+         ]
+      },
+ 		"response": {
+         "requiredFields": [
+            "type",
+            "identifier"
+         ]
+      }
  	},
    "inSpec":[
       "type",
