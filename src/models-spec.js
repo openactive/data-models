@@ -128,7 +128,7 @@ describe('models', () => {
         };
       },
 
-      toBeValidTypeReference() {
+      toBeValidTypeReference(forRequiredType) {
         return {
           compare(typeRef) {
             const result = {};
@@ -138,6 +138,11 @@ describe('models', () => {
               result.message = `${typeRef} must use https to be a valid schema.org type reference`;
             } else if (typeId.match(/^https:\/\/schema\.org/)) {
               result.pass = schemaOrgDataModel.includes(typeId);
+              if (!result.pass && forRequiredType) {
+                // If this test is for forRequiredType, allow schema.org aliases to be used for pending.schema.org
+                const pendingTypeId = typeId.replace('https://schema.org', 'https://pending.schema.org');
+                result.pass = schemaOrgDataModel.includes(pendingTypeId);
+              }
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate schema.org type reference`;
               }
@@ -601,7 +606,7 @@ describe('models', () => {
             if (
               typeof fieldSpec.requiredType === 'string'
             ) {
-              expect(fieldSpec.requiredType).toBeValidTypeReference();
+              expect(fieldSpec.requiredType).toBeValidTypeReference(true);
             }
           });
         });
