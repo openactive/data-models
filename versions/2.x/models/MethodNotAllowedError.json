@@ -2,10 +2,10 @@
     "fields": {
         "type": {
             "fieldName": "type",
-            "requiredContent": "PatchNotAllowedOnProperty",
+            "requiredContent": "MethodNotAllowedError",
             "requiredType": "https://schema.org/Text"
         }
     },
     "subClassOf": "#OpenBookingError",
-    "type": "PatchNotAllowedOnProperty"
+    "type": "MethodNotAllowedError"
 }

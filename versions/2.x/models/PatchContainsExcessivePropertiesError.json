@@ -2,10 +2,10 @@
     "fields": {
         "type": {
             "fieldName": "type",
-            "requiredContent": "MethodNotAllowed",
+            "requiredContent": "PatchContainsExcessivePropertiesError",
             "requiredType": "https://schema.org/Text"
         }
     },
     "subClassOf": "#OpenBookingError",
-    "type": "MethodNotAllowed"
+    "type": "PatchContainsExcessivePropertiesError"
 }
