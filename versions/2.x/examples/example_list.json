@@ -1,6 +1,6 @@
 [
   {
-    "name": "Opportunity Data Publishing",
+    "name": "Opportunity Data Publishing - Physical",
     "exampleList": [
       {
         "file": "sessionseries_example_1.json",
@@ -41,6 +41,23 @@
       {
         "file": "event_example_1.json",
         "name": "Event Example"
+      }
+    ]
+  },
+  {
+    "name": "Opportunity Data Publishing - Virtual",
+    "exampleList": [
+      {
+        "file": "sessionseries-split-virtual_example_1.json",
+        "name": "Virtual SessionSeries Example"
+      },
+      {
+        "file": "scheduledsession-split-virtual_example_1.json",
+        "name": "Virtual ScheduledSession Example"
+      },
+      {
+        "file": "ondemandevent_example_1.json",
+        "name": "OnDemandEvent Example"
       }
     ]
   },

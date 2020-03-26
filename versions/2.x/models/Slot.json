@@ -75,7 +75,6 @@
         "meetingPoint",
         "name",
         "organizer",
-        "potentialAction",
         "programme",
         "remainingAttendeeCapacity",
         "subEvent",
@@ -134,13 +133,13 @@
     "meetingPoint",
     "name",
     "organizer",
-    "potentialAction",
     "programme",
     "remainingAttendeeCapacity",
     "subEvent",
     "schedulingNote",
     "superEvent",
-    "url"
+    "url",
+    "eventAttendanceMode"
   ],
   "notInSpec": [
     "accessibilityInformation",
@@ -163,14 +162,13 @@
     "maximumAttendeeCapacity",
     "meetingPoint",
     "name",
-    "organizer",
-    "potentialAction",
     "programme",
     "remainingAttendeeCapacity",
     "subEvent",
     "schedulingNote",
     "superEvent",
-    "url"
+    "url",
+    "eventAttendanceMode"
   ],
   "fields": {
     "type": {

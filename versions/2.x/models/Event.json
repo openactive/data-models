@@ -91,7 +91,6 @@
         "level",
         "meetingPoint",
         "isAccessibleForFree",
-        "potentialAction",
         "offers",
         "schedulingNote"
       ]
@@ -155,9 +154,9 @@
     "level",
     "meetingPoint",
     "isAccessibleForFree",
-    "potentialAction",
     "offers",
-    "schedulingNote"
+    "schedulingNote",
+    "eventAttendanceMode"
   ],
   "fields": {
     "type": {
@@ -493,26 +492,6 @@
         "url": "http://www.speedball-world.com"
       }
     },
-    "potentialAction": {
-      "fieldName": "potentialAction",
-      "sameAs": "https://schema.org/potentialAction",
-      "model": "ArrayOf#Action",
-      "description": [
-        "The possible actions that a user may make. e.g. Book."
-      ],
-      "example": [
-        {
-          "name": "Book",
-          "target": {
-            "encodingType": "application/vnd.openactive.v1.0+json",
-            "httpMethod": "POST",
-            "type": "EntryPoint",
-            "url": "https://example.com/orders"
-          },
-          "type": "Action"
-        }
-      ]
-    },
     "programme": {
       "fieldName": "programme",
       "sameAs": "https://openactive.io/programme",
@@ -586,6 +565,15 @@
         "A URL to a web page (or section of a page) that describes the event."
       ],
       "example": "https://example.com/event/1234"
+    },
+    "eventAttendanceMode": {
+      "fieldName": "eventAttendanceMode",
+      "sameAs": "https://pending.schema.org/eventAttendanceMode",
+      "requiredType": "https://pending.schema.org/EventAttendanceModeEnumeration",
+      "description": [
+        "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix."
+      ],
+      "example": "https://schema.org/OnlineEventAttendanceMode"
     }
   },
   "description-example": {

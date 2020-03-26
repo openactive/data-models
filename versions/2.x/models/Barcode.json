@@ -8,9 +8,17 @@
   ],
   "inSpec": [
     "type",
+    "thumbnail",
     "text",
     "url",
-    "thumbnail"
+    "contentUrl",
+    "embedUrl",
+    "width",
+    "height"
+  ],
+  "notInSpec": [
+    "contentUrl",
+    "embedUrl"
   ],
   "fields": {
     "type": {

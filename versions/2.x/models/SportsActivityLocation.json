@@ -6,10 +6,12 @@
     "type"
   ],
   "recommendedFields": [
+    "name",
     "containedInPlace"
   ],
   "inSpec": [
     "type",
+    "name",
     "containedInPlace"
   ],
   "fields": {
@@ -17,6 +19,15 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "SportsActivityLocation"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Court 1",
+      "description": [
+        "The name of the internal location where the activity is taking place"
+      ]
     },
     "containedInPlace": {
       "fieldName": "containedInPlace",

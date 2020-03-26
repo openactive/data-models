@@ -69,7 +69,6 @@
         "level",
         "meetingPoint",
         "isAccessibleForFree",
-        "potentialAction",
         "offers",
         "schedulingNote"
       ]

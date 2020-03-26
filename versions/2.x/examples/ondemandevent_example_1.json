@@ -1,0 +1,104 @@
+{
+  "next": "https://www.example.org/feeds/events?afterTimestamp=1558084806&afterId=151176",
+  "items": [
+    {
+      "state": "updated",
+      "kind": "Event",
+      "id": 151175,
+      "modified": 1558084800,
+      "data": {
+        "@context": [
+          "https://openactive.io/",
+          "https://openactive.io/ns-beta"
+        ],
+        "type": "Event",
+        "identifier": 158313,
+        "url": "https://www.letsride.co.uk/rides/gorhambury-house-loop",
+        "activity": [
+          {
+            "id": "https://openactive.io/activity-list#2a41c553-84be-4970-b3d0-42f9ef6bd9a4",
+            "prefLabel": "Road Cycling",
+            "type": "Concept",
+            "inScheme": "https://openactive.io/activity-list"
+          }
+        ],
+        "startDate": "2019-08-25T10:00:00+01:00",
+        "endDate": "2019-08-25T12:40:00+01:00",
+        "duration": "PT2H40M0S",
+        "maximumAttendeeCapacity": 30,
+        "remainingAttendeeCapacity": 21,
+        "beta:distance": {
+          "type": "QuantitativeValue",
+          "value": 20.9,
+          "unitCode": "SMI"
+        },
+        "name": "Alan's social ride group Gorhambury House loop",
+        "programme": {
+          "type": "Brand",
+          "identifier": "ride-social",
+          "name": "HSBC UK Ride Social",
+          "description": "Welcome to Britain’s biggest network of cyclists! Meet like-minded riders, create groups, and organise your own rides.",
+          "url": "https://www.letsride.co.uk/social",
+          "logo": {
+            "type": "ImageObject",
+            "url": "https://media.letsride.co.uk/view/5ad9bc45eb35e95ac853abb0e7be7a7e/2018+RIDE+SOCIAL+LONGBOX+RGB+LOGO+KEYLINE.png"
+          }
+        },
+        "level": [
+          "Steady"
+        ],
+        "workFeatured": {
+          "type": "VideoObject",
+          "name": "Yoga with Diane",
+          "description": "One hour of intensive hatha yoga, followed by a relaxation meditation.",
+          "duration": "T1H15M",
+          "thumbnail": "dianeh-profile.jpg",
+          "contentURL": "http://concentricyoga.ca/videos/bucket/dianeh-hatha.mpeg",
+          "datePublished": "2020-03-19",
+
+          "...": "..."
+        },
+        "image": [
+          {
+            "type": "ImageObject",
+            "url": "https://media.letsride.co.uk/image/c0f83af33c8ccd598bc4baebabb574f4"
+          }
+        ],
+        "ageRange": {
+          "type": "QuantitativeValue",
+          "minValue": 16
+        },
+        "description": "Leaving Watford heading towards North Watford Woodside Abbots Langley Bedmond gorhambury house St Albans Chiswell Green Bricket Wood then back to Watford check out the map for the exact route This is a British Cycling risk Assessed routeContact telephone number 07472 044502",
+        "offers": [
+          {
+            "type": "Offer",
+            "url": "https://www.letsride.co.uk/rides/gorhambury-house-loop/book",
+            "price": 0
+          }
+        ],
+        "isAccessibleForFree": true,
+        "organizer": {
+          "type": "Organization",
+          "identifier": "steady-pace-group",
+          "url": "https://www.letsride.co.uk/groups/steady-pace-group",
+          "name": "Alan's social ride group",
+          "foundingDate": "2017-11-19T18:45:01+00:00",
+          "description": "My name is Alan I'm creating this group for those people who would like to ride during the week and weekends at a Easygoing steady and fast-paced",
+          "image": {
+            "type": "ImageObject",
+            "url": "https://media.letsride.co.uk/image/85ba237fe836645a642ae4d7f7e93bfe"
+          },
+          "aggregateRating": {
+            "type": "AggregateRating",
+            "reviewCount": 4,
+            "ratingValue": 10,
+            "bestRating": 10,
+            "worstRating": 0
+          }
+        },
+        "meetingPoint": "Gandhi courts car park of Raphael Drive Watford there are no parking restrictions in the car parks"
+      }
+    }
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
