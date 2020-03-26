@@ -16,10 +16,6 @@
     "width",
     "height"
   ],
-  "notInSpec": [
-    "contentUrl",
-    "embedUrl"
-  ],
   "fields": {
     "type": {
       "fieldName": "type",
