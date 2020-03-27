@@ -11,7 +11,7 @@
           "https://openactive.io/",
           "https://openactive.io/ns-beta"
         ],
-        "type": "Event",
+        "type": "OnDemandEvent",
         "identifier": 158313,
         "url": "https://www.letsride.co.uk/rides/gorhambury-house-loop",
         "activity": [
@@ -22,16 +22,7 @@
             "inScheme": "https://openactive.io/activity-list"
           }
         ],
-        "startDate": "2019-08-25T10:00:00+01:00",
-        "endDate": "2019-08-25T12:40:00+01:00",
         "duration": "PT2H40M0S",
-        "maximumAttendeeCapacity": 30,
-        "remainingAttendeeCapacity": 21,
-        "beta:distance": {
-          "type": "QuantitativeValue",
-          "value": 20.9,
-          "unitCode": "SMI"
-        },
         "name": "Alan's social ride group Gorhambury House loop",
         "programme": {
           "type": "Brand",
@@ -47,16 +38,17 @@
         "level": [
           "Steady"
         ],
+        "genderRestriction": "https://openactive.io/NoRestriction",
         "workFeatured": {
           "type": "VideoObject",
-          "name": "Yoga with Diane",
-          "description": "One hour of intensive hatha yoga, followed by a relaxation meditation.",
-          "duration": "T1H15M",
-          "thumbnail": "dianeh-profile.jpg",
-          "contentURL": "http://concentricyoga.ca/videos/bucket/dianeh-hatha.mpeg",
-          "datePublished": "2020-03-19",
-
-          "...": "..."
+          "url": "https://www.youtube.com/watch?v=3fbCs0GVjgQ",
+          "embedUrl": "https://www.youtube.com/embed/3fbCs0GVjgQ",
+          "thumbnail": [
+            {
+              "@type": "ImageObject",
+              "url": "http://example.com/static/image/speedball_thumbnail.jpg"
+            }
+          ]
         },
         "image": [
           {
@@ -87,16 +79,8 @@
           "image": {
             "type": "ImageObject",
             "url": "https://media.letsride.co.uk/image/85ba237fe836645a642ae4d7f7e93bfe"
-          },
-          "aggregateRating": {
-            "type": "AggregateRating",
-            "reviewCount": 4,
-            "ratingValue": 10,
-            "bestRating": 10,
-            "worstRating": 0
           }
-        },
-        "meetingPoint": "Gandhi courts car park of Raphael Drive Watford there are no parking restrictions in the car parks"
+        }
       }
     }
   ],

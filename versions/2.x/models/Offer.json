@@ -24,8 +24,7 @@
 		"opendata": {
 			"requiredFields": [
 				"type",
-				"price",
-				"priceCurrency"
+				"price"
 			],
 			"recommendedFields": [
 				"name",
@@ -37,7 +36,6 @@
 				"id",
 				"type",
 				"price",
-				"priceCurrency",
 				"availableChannel"
 			],
 			"recommendedFields": [
@@ -71,8 +69,7 @@
 			"requiredFields": [
 				"id",
 				"type",
-				"price",
-				"priceCurrency"
+				"price"
 			],
 			"recommendedFields": [
 				"name",

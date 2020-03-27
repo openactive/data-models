@@ -7,10 +7,17 @@
       "id": "1402CBP20150217",
       "modified": 1521565719,
       "data": {
-        "@context": "https://openactive.io/",
+        "@context": [
+          "https://openactive.io/",
+          "https://openactive.io/ns-beta"
+        ],
         "id": "https://opensessions.io/api/session-series/1402CBP20150217",
         "identifier": "1402CBP20150217",
         "type": "SessionSeries",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "beta:isInteractivityPreferred": true,
+        "beta:participantSuppliedEquipment": "https://openactive.io/Required",
+        "beta:isFirstSessionAccessibleForFree": true,
         "organizer": {
           "type": "Organization",
           "name": "Everyone Active",
@@ -71,7 +78,7 @@
             "givenName": "Nicole"
           }
         ],
-        "location": {
+        "beta:affiliatedLocation": {
           "type": "Place",
           "url": "https://www.everyoneactive.com/centres/Middlesbrough-Sports-Village",
           "name": "Middlesbrough Sports Village",
@@ -95,82 +102,6 @@
             {
               "type": "ImageObject",
               "url": "https://s3-eu-west-2.amazonaws.com/prod-everyoneactive-wp/wp-content/uploads/2018/04/13112215/Acton_HeaderBanner.png"
-            }
-          ],
-          "amenityFeature": [
-            {
-              "name": "Changing Facilities",
-              "value": true,
-              "type": "ChangingFacilities"
-            },
-            {
-              "name": "Showers",
-              "value": false,
-              "type": "Showers"
-            },
-            {
-              "name": "Lockers",
-              "value": true,
-              "type": "Lockers"
-            },
-            {
-              "name": "Towels",
-              "value": false,
-              "type": "Towels"
-            },
-            {
-              "name": "Creche",
-              "value": false,
-              "type": "Creche"
-            },
-            {
-              "name": "Parking",
-              "value": true,
-              "type": "Parking"
-            }
-          ],
-          "openingHoursSpecification": [
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Sunday",
-              "opens": "09:00",
-              "closes": "17:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Monday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Tuesday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Wednesday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Thursday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Friday",
-              "opens": "06:30",
-              "closes": "20:30"
-            },
-            {
-              "type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Saturday",
-              "opens": "07:15",
-              "closes": "17:30"
             }
           ]
         },
