@@ -13,17 +13,17 @@
         ],
         "type": "OnDemandEvent",
         "identifier": 158313,
-        "url": "https://www.letsride.co.uk/rides/gorhambury-house-loop",
+        "url": "https://www.example.com/videos/gorhambury-house",
         "activity": [
           {
-            "id": "https://openactive.io/activity-list#2a41c553-84be-4970-b3d0-42f9ef6bd9a4",
-            "prefLabel": "Road Cycling",
             "type": "Concept",
+            "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+            "prefLabel": "Bodypump™",
             "inScheme": "https://openactive.io/activity-list"
           }
         ],
         "duration": "PT2H40M0S",
-        "name": "Alan's social ride group Gorhambury House loop",
+        "name": "Alan's indoor cycling exercises",
         "programme": {
           "type": "Brand",
           "identifier": "ride-social",
@@ -36,7 +36,7 @@
           }
         },
         "level": [
-          "Steady"
+          "Beginner"
         ],
         "genderRestriction": "https://openactive.io/NoRestriction",
         "workFeatured": {
