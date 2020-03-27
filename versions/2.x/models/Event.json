@@ -73,6 +73,7 @@
         "organizer",
         "contributor",
         "maximumAttendeeCapacity",
+        "maximumVirtualAttendeeCapacity",
         "remainingAttendeeCapacity",
         "eventStatus",
         "subEvent",
@@ -136,6 +137,7 @@
     "organizer",
     "contributor",
     "maximumAttendeeCapacity",
+    "maximumVirtualAttendeeCapacity",
     "remainingAttendeeCapacity",
     "eventStatus",
     "subEvent",
@@ -441,6 +443,15 @@
         "The maximum capacity of the Event."
       ],
       "example": 30
+    },
+    "maximumVirtualAttendeeCapacity": {
+      "fieldName": "maximumVirtualAttendeeCapacity",
+      "sameAs": "https://pending.schema.org/maximumVirtualAttendeeCapacity",
+      "requiredType": "https://schema.org/Integer",
+      "description": [
+        "Indicates the maximum number of connections to a shared virtual space."
+      ],
+      "example": 20
     },
     "meetingPoint": {
       "fieldName": "meetingPoint",

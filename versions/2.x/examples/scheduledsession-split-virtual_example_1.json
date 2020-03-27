@@ -20,14 +20,14 @@
         "duration": "PT1H",
         "eventStatus": "https://schema.org/EventScheduled",
         "maximumAttendeeCapacity": 10,
+        "maximumVirtualAttendeeCapacity": 20,
         "remainingAttendeeCapacity": 0,
         "url": "https://bookwhen.com/hulafit/e/ev-ssyp-20160510011500?r=oa",
         "beta:virtualLocation": {
           "type": "VirtualLocation",
           "name": "Zoom Video Chat",
           "url": "https://zoom.us/j/1234567890/signup",
-          "description": "Please log into Zoom a few minutes before the event, and mute your mic while you wait for the session to start",
-          "beta:maximumVirtualAttendeeCapacity": 20
+          "description": "Please log into Zoom a few minutes before the event, and mute your mic while you wait for the session to start"
         }
       }
     }

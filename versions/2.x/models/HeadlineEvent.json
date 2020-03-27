@@ -59,6 +59,7 @@
         "organizer",
         "contributor",
         "maximumAttendeeCapacity",
+        "maximumVirtualAttendeeCapacity",
         "remainingAttendeeCapacity",
         "eventStatus",
         "subEvent",
