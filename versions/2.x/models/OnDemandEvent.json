@@ -96,7 +96,7 @@
       "description": [
         "An video, audio or other media that represents the actual recording of the `OnDemandEvent`."
       ],
-      "example": [{
+      "example": {
         "@type": "VideoObject",
         "url": "https://www.youtube.com/watch?v=3fbCs0GVjgQ",
         "embedUrl": "https://www.youtube.com/embed/3fbCs0GVjgQ",
@@ -106,7 +106,7 @@
             "url": "http://example.com/static/image/speedball_thumbnail.jpg"
           }
         ]
-      }]
+      }
     }
   }
 }
