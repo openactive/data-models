@@ -8,8 +8,8 @@
       "modified": 44234351,
       "data": {
         "@context": "https://openactive.io/",
-        "type": "Slot",
-        "id": "http://www.example.org/api/facility-uses/432#/event/2018-03-01T10:00:00Z",
+        "@type": "Slot",
+        "@id": "http://www.example.org/api/facility-uses/432#/event/2018-03-01T10:00:00Z",
         "facilityUse": "http://www.example.org/api/facility-uses/432",
         "startDate": "2018-03-01T11:00:00Z",
         "endDate": "2018-03-01T11:30:00Z",
@@ -18,7 +18,7 @@
         "maximumUses": 6,
         "offers": [
           {
-            "type": "Offer",
+            "@type": "Offer",
             "name": "30 minute hire",
             "price": 10,
             "priceCurrency": "GBP",

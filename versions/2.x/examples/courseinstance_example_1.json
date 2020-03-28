@@ -11,7 +11,7 @@
           "https://openactive.io/",
           "https://openactive.io/ns-beta"
         ],
-        "type": "CourseInstance",
+        "@type": "CourseInstance",
         "name": "Netball Youth Camp",
         "identifier": 76121,
         "startDate": "2018-08-01",
@@ -19,15 +19,15 @@
         "duration": "P3D",
         "activity": [
           {
-            "id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
-            "type": "Concept",
+            "@id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
+            "@type": "Concept",
             "prefLabel": "Netball",
             "inScheme": "https://openactive.io/activity-list"
           }
         ],
         "eventSchedule": [
           {
-            "type": "Schedule",
+            "@type": "Schedule",
             "startDate": "2018-08-01",
             "endDate": "2018-08-04",
             "repeatCount": 3,
@@ -47,10 +47,10 @@
         ],
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
-          "type": "Place",
+          "@type": "Place",
           "name": "Trent College and The Elms",
           "address": {
-            "type": "PostalAddress",
+            "@type": "PostalAddress",
             "streetAddress": ", Long Eaton",
             "addressLocality": "Nottingham",
             "addressRegion": "Nottinghamshire",
@@ -58,26 +58,26 @@
             "addressCountry": "GB"
           },
           "geo": {
-            "type": "GeoCoordinates",
+            "@type": "GeoCoordinates",
             "latitude": 52.901455,
             "longitude": -1.282734
           }
         },
         "ageRange": {
-          "type": "QuantitativeValue",
+          "@type": "QuantitativeValue",
           "minValue": 11,
           "maxValue": 16
         },
         "leader": [
           {
-            "type": "Person",
+            "@type": "Person",
             "jobTitle": "Derbyshire and Nottinghamshire NDO",
             "name": "Jane Smith",
             "email": "jane.smith@englandnetball.co.uk"
           }
         ],
         "organizer": {
-          "type": "Organization",
+          "@type": "Organization",
           "name": "England Netball",
           "url": "https://www.englandnetball.co.uk"
         },
@@ -86,41 +86,41 @@
         "remainingAttendeeCapacity": 21,
         "offers": [
           {
-            "type": "Offer",
+            "@type": "Offer",
             "name": "Member",
             "price": 124,
             "priceCurrency": "GBP"
           },
           {
-            "type": "Offer",
+            "@type": "Offer",
             "name": "Non-member",
             "price": 154,
             "priceCurrency": "GBP"
           }
         ],
         "beta:course": {
-          "type": "Course",
+          "@type": "Course",
           "name": "Netball Youth Camp",
           "description": "Netball Youth Camps give junior netballers the chance to get together with their friends and take to the court in the holidays!\r\n\r\nThe camp is a non-residential holiday camp providing ‘Nothing but Netball’; not only will there be top quality coaching and fun netball activities but there is even an opportunity to meet and be inspired by an elite player.\r\n\r\nIf you are a junior netball lover (or the parent of one!) these are an unmissable holiday activity.",
           "logo": {
-            "type": "ImageObject",
+            "@type": "ImageObject",
             "url": "https://www.englandnetball.co.uk/app/uploads/2016/03/Netball-youth-camp-ball.jpg"
           },
           "url": "https://www.englandnetball.co.uk/NYC",
           "beta:video": {
-            "type": "VideoObject",
+            "@type": "VideoObject",
             "url": "https://www.youtube.com/watch?v=lvlEpaKTotQ"
           },
           "activity": [
             {
-              "id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
-              "type": "Concept",
+              "@id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
+              "@type": "Concept",
               "prefLabel": "Netball",
               "inScheme": "https://openactive.io/activity-list"
             }
           ],
           "author": {
-            "type": "Organization",
+            "@type": "Organization",
             "name": "England Netball",
             "url": "https://www.englandnetball.co.uk"
           }

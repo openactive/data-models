@@ -35,7 +35,7 @@
       "sameAs": "https://openactive.io/concept",
       "model": "ArrayOf#Concept",
       "example": [{
-        "id": "https://example.com/concept/martial-arts",
+        "@id": "https://example.com/concept/martial-arts",
         "type": "Concept",
         "prefLabel": "Martial Arts",
         "inScheme": "https://example.com/scheme/123",

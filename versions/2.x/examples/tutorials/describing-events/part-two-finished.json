@@ -1,29 +1,29 @@
 {
   "@context": "https://openactive.io/",
-  "type": "Event",
+  "@type": "Event",
   "name": "Blade and tone",
   "url": "http://www.example.org/events/1",
   "description": "Run by our head instructor, this is an intermediate class for those with existing roller blading experience, where we focus on exercises to tone key muscle groups. Bring your own boots, shape up, and have fun!",
   "image": [
   {
-    "type": "ImageObject",
+    "@type": "ImageObject",
     "url": "https://example.com/static/image/yourimage_large.jpg",
     "thumbnail": [
       {
-        "type": "ImageObject",
+        "@type": "ImageObject",
         "url": "https://example.com/static/image/yourimage_thumbnail.jpg"
       }
     ]
   }],
   "activity": [{
      "id":"https://openactive.io/activity-list/#7e5cb3ee-8c91-4f85-8c97-e335e0013eb3",
-      "type": "Concept",
+      "@type": "Concept",
       "prefLabel": "Roller blading",
       "inScheme": "https://openactive.io/activity-list"
    }],
   "eventSchedule": [
     {
-      "type": "Schedule",
+      "@type": "Schedule",
       "startDate": "2018-08-13",
       "endDate": "2020-08-13",
       "duration": "PT1H",
@@ -37,16 +37,16 @@
     }
   ],
   "programme": {
-    "type": "Brand",
+    "@type": "Brand",
     "name": "BladeFitness™️",
     "url": "https://www.exampleorgbody.org/blade-fitness/",
     "description": "A programme of events to encourage participation and get fit through roller blading"
   },
   "location": {
-      "type": "Place",
+      "@type": "Place",
       "name": "ExampleCo Gym",
       "address": {
-         "type": "PostalAddress",
+         "@type": "PostalAddress",
          "streetAddress": "1 High Street",
          "addressLocality": "Colchester",
          "addressRegion": "Essex",
@@ -54,18 +54,18 @@
          "addressCountry": "GB"
       },
       "geo": {
-         "type": "GeoCoordinates",
+         "@type": "GeoCoordinates",
          "latitude": 51.88805,
          "longitude": 0.90286
       }
    },
    "organizer": {
        "name": "Colchester Bladers",
-       "type": "Organization",
+       "@type": "Organization",
        "url": "https://www.examplecluburl.com"
    },
   "ageRange": {
-    "type": "QuantitativeValue",
+    "@type": "QuantitativeValue",
     "minValue": 18
   },
   "genderRestriction": "https://openactive.io/NoRestriction",
@@ -73,7 +73,7 @@
     "intermediate"
   ],
   "offers": [{
-    "type": "Offer",
+    "@type": "Offer",
     "name": "Single session",
     "price": 10,
     "priceCurrency": "GBP"

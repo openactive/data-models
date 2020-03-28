@@ -8,8 +8,8 @@
       "modified": 1521565719,
       "data": {
         "@context": "https://openactive.io/",
-        "type": "ScheduledSession",
-        "id": "https://opensessions.io/api/session-series/1402CBP20150217#/subEvent/C5EE1E55-2DE6-44F7-A865-42F268A82C63",
+        "@type": "ScheduledSession",
+        "@id": "https://opensessions.io/api/session-series/1402CBP20150217#/subEvent/C5EE1E55-2DE6-44F7-A865-42F268A82C63",
         "identifier": "C5EE1E55-2DE6-44F7-A865-42F268A82C63",
         "superEvent": "https://opensessions.io/api/session-series/1402CBP20150217",
         "startDate": "2016-05-09T18:15:00Z",
