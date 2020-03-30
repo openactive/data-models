@@ -400,7 +400,7 @@
         "ArrayOf#Concept"
       ],
       "description": [
-        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements."
+        "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. `Beginner`, `Intermediate`, `Advanced`. Or in the case of martial arts, specific belt requirements."
       ],
       "example": [ "Beginner" ]
     },
