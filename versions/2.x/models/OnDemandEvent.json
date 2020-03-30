@@ -96,7 +96,7 @@
       "sameAs": "https://schema.org/workFeatured",
       "model": "#MediaObject",
       "description": [
-        "An video, audio or other media that represents the actual recording of the `OnDemandEvent`."
+        "A video, audio or other media that represents the actual recording of the `OnDemandEvent`."
       ],
       "example": {
         "@type": "VideoObject",
