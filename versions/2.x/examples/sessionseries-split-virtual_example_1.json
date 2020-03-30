@@ -17,6 +17,7 @@
         "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
         "beta:isInteractivityPreferred": true,
         "beta:participantSuppliedEquipment": "https://openactive.io/Required",
+        "beta:donationPaymentUrl": "https://www.paypal.com/donate/acme_fit",
         "beta:isFirstSessionAccessibleForFree": true,
         "organizer": {
           "@type": "Organization",
