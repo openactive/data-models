@@ -402,7 +402,7 @@
       "description": [
         "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. beginner/intermediate/advanced. Or in the case of martial arts, specific belt requirements."
       ],
-      "example": [ "beginner" ]
+      "example": [ "Beginner" ]
     },
     "location": {
       "fieldName": "location",
