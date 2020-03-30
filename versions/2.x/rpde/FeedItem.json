@@ -49,6 +49,7 @@
         "HeadlineEvent",
         "Event",
         "EventSeries",
+        "OnDemandEvent",
         "Order"
       ],
       "description": [

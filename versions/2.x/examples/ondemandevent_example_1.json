@@ -3,7 +3,7 @@
   "items": [
     {
       "state": "updated",
-      "kind": "Event",
+      "kind": "OnDemandEvent",
       "id": 151175,
       "modified": 1558084800,
       "data": {
