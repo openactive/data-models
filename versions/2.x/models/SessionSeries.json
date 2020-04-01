@@ -4,6 +4,14 @@
   "notInSpec": [
     "remainingAttendeeCapacity"
   ],
+  "requiredFields": [
+    "type",
+    "url",
+    "name",
+    "location",
+    "activity",
+    "organizer"
+  ],
   "requiredOptions": [],
   "recommendedFields": [
     "id",
