@@ -120,7 +120,14 @@
       "defaultFeedPath": "event-series",
       "kind": ["EventSeries"],
       "bookable": false
-
+    },
+    {
+      "identifier": "OnDemandEvent",
+      "name": "OnDemandEvent",
+      "sameAs": "https://schema.org/OnDemandEvent",
+      "defaultFeedPath": "on-demand-event",
+      "kind": ["OnDemandEvent"],
+      "bookable": true
     }
   ],
   "baseGraph": {
