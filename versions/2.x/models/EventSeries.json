@@ -67,9 +67,6 @@
     "schedulingNote",
     "eventAttendanceMode"
   ],
-  "notInSpec": [
-    "eventAttendanceMode"
-  ],
   "fields": {
     "type": {
       "fieldName": "type",
