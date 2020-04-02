@@ -13,6 +13,7 @@
         "@type": "SessionSeries",
         "organizer": {
           "@type": "Organization",
+          "@id": "https://id.bookingsystem.example.com/organizers/1",
           "name": "Everyone Active",
           "url": "https://www.everyoneactive.com/",
           "logo": {

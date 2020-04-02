@@ -3,13 +3,13 @@
   "derivedFrom": "https://schema.org/Organization",
   "hasId": true,
   "idFormat": "https://schema.org/URL",
-  "sampleId": "https://example.com/organization/",
+  "sampleId": "https://id.bookingsystem.example.com/organizers/1",
   "requiredFields": [
+    "id",
     "name"
   ],
   "recommendedFields": [
     "url",
-    "id",
     "telephone",
     "sameAs"
   ],

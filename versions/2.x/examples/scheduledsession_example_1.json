@@ -125,6 +125,7 @@
           },
           "organizer": {
             "@type": "Organization",
+            "@id": "https://id.bookingsystem.example.com/organizers/1",
             "identifier": "CRUOZWJ1",
             "name": "Better",
             "url": "https://www.better.org.uk",

@@ -78,6 +78,7 @@
         ],
         "organizer": {
           "@type": "Organization",
+          "@id": "https://id.bookingsystem.example.com/organizers/1",
           "name": "England Netball",
           "url": "https://www.englandnetball.co.uk"
         },

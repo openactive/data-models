@@ -73,6 +73,7 @@
         "isAccessibleForFree": true,
         "organizer": {
           "@type": "Organization",
+          "@id": "https://id.bookingsystem.example.com/organizers/1",
           "identifier": "steady-pace-group",
           "url": "https://www.letsride.co.uk/groups/steady-pace-group",
           "name": "Alan's social ride group",
