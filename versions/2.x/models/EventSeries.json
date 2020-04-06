@@ -67,6 +67,11 @@
     "schedulingNote",
     "eventAttendanceMode"
   ],
+  "notInSpec": [
+    "eventSchedule",
+    "startDate",
+    "endDate"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",
