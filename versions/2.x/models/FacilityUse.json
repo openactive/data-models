@@ -114,7 +114,7 @@
       "sameAs": "https://openactive.io/attendeeInstructions",
       "requiredType": "https://schema.org/Text",
       "description": [
-        "Provides additional notes and instructions for users of a facility. E.g. more information on how to find it, what to bring, etc."
+        "Provides additional notes and instructions for users of a facility, for example more information on how to find it, what to bring, etc. The value of this property must not include HTML or other markup."
       ],
       "example": "The tennis court is locked with a keycode, so please ensure you book online in advance to gain access."
     },
@@ -141,7 +141,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
-        "A free text description of the facility use"
+        "A plain text description of the facility use, which must not include HTML or other markup."
       ]
     },
     "event": {

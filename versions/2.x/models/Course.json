@@ -56,7 +56,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "Netball Youth Camps give junior netballers the chance to get together with their friends and take to the court in the holidays!\n\nThe camp is a non-residential holiday camp providing ‘Nothing but Netball’; not only will there be top quality coaching and fun netball activities but there is even an opportunity to meet and be inspired by an elite player.\n\nIf you are a junior netball lover (or the parent of one!) these are an unmissable holiday activity.",
       "description": [
-        "The description of the Course"
+        "A plain text description of the Course, which must not include HTML or other markup."
       ]
     },
     "identifier": {

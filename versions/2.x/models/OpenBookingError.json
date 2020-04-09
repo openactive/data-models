@@ -3,7 +3,7 @@
     "fields": {
         "description": {
             "description": [
-                "A human-readable explanation specific to this occurrence of the problem, providing specific information about why the error occurred in this particular case."
+                "A plain-text human-readable explanation specific to this occurrence of the problem, providing specific information about why the error occurred in this particular case. This must not include HTML or other markup."
             ],
             "example": "No customer details supplied. These must be supplied for calls to C2, P, and B.",
             "fieldName": "description",

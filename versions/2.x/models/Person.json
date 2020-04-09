@@ -117,7 +117,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "The leader of the coaching team",
       "description": [
-        "The description of the Person"
+        "A plain text description of the Person, which must not include HTML or other markup."
       ]
     },
     "identifier": {

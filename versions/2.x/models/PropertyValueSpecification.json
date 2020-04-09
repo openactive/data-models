@@ -47,7 +47,7 @@
          "requiredType":"https://schema.org/Text",
          "sameAs": "https://schema.org/description",
          "description":[
-            "Descriptive help text for the field."
+            "Descriptive help plain text for the field, which must not include HTML or other markup."
          ]
       },
       "valueRequired":{

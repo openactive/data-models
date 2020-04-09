@@ -31,7 +31,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "Play Ball! is a series of games for people of all abilities.",
       "description": [
-        "A text description for the brand."
+        "A plain text description for the brand, which must not include HTML or other markup."
       ]
     },
     "identifier": {

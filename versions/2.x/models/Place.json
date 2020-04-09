@@ -172,7 +172,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "Raynes Park High School in London",
       "description": [
-        "The description of the Place"
+        "A plain text description of the Place, which must not include HTML or other markup."
       ]
     },
     "geo": {

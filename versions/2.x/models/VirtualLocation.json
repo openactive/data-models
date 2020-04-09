@@ -44,7 +44,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "Please log into Zoom a few minutes before the event, and mute your mic while you wait for the session to start.",
       "description": [
-        "A free text description of the livestream, including any instructions to join."
+        "A plain text description of the live stream, including any instructions to join. This description must not include HTML or other markup."
       ]
     },
     "url": {

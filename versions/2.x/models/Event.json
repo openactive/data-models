@@ -225,7 +225,7 @@
       "sameAs": "https://openactive.io/attendeeInstructions",
       "requiredType": "https://schema.org/Text",
       "description": [
-        "Provides additional notes and instructions for event attendees. E.g. more information on how to find the event, what to bring, etc."
+        "Provides additional notes and instructions for event attendees, for example more information on how to find the event, what to bring, etc. The value of this property must not include HTML or other markup."
       ],
       "example": "Ensure you bring trainers and a bottle of water."
     },
@@ -262,7 +262,7 @@
       "requiredType": "https://schema.org/Text",
       "example": "An fast paced game that incorporates netball, handball and football.",
       "description": [
-        "A free text description of the event"
+        "A plain text description of the event, which must not include HTML or other markup."
       ]
     },
     "duration": {
