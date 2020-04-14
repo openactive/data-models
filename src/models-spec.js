@@ -660,10 +660,14 @@ describe('models', () => {
         });
 
         describe('validationMode', () => {
-          it('should point to entries in imperativeConfiguration', () => {
+          it('should point to entries in imperativeConfiguration or imperativeConfigurationWithContext', () => {
             if (Object.prototype.hasOwnProperty.call(jsonData, 'validationMode')) {
+              const imperativeConfigurationKeys = [].concat(
+                Object.keys(jsonData.imperativeConfiguration || {}),
+                Object.keys(jsonData.imperativeConfigurationWithContext || {}),
+              );
               for (const imperativeConfigurationKey of Object.values(jsonData.validationMode)) {
-                expect(Object.keys(jsonData.imperativeConfiguration)).toContain(imperativeConfigurationKey);
+                expect(imperativeConfigurationKeys).toContain(imperativeConfigurationKey);
               }
             }
           });

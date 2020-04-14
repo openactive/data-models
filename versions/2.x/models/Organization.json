@@ -29,9 +29,6 @@
     "OrderStatus": "result"
   },
   "imperativeConfiguration": {
-    "request": {},
-    "response": {},
-    "result": {},
     "bookableFeed": {
       "requiredFields": [
         "id",

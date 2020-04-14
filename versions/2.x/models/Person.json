@@ -4,10 +4,8 @@
   "hasId": true,
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/person/",
-  "requiredFields": [
-    "id"
-  ],
   "validationMode": {
+    "RPDEFeed": "feed",
     "BookableRPDEFeed": "bookableFeed",
     "C1Request": "request",
     "C1Response": "response",
@@ -19,11 +17,19 @@
     "BResponse": "response"
   },
   "imperativeConfiguration": {
+    "feed": {},
     "request": {},
     "response": {},
     "bookableFeed": {}
   },
   "imperativeConfigurationWithContext": {
+    "feed": {
+      "organizer": {
+        "requiredFields": [
+          "id"
+        ]
+      }
+    },
     "request": {
       "seller": {
         "requiredFields": [
