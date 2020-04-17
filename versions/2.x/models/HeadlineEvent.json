@@ -1,7 +1,7 @@
 {
   "type": "HeadlineEvent",
   "subClassOf": "#Event",
-  "notInSpec": [
+  "shallNotInclude": [
     "eventSchedule"
   ],
   "requiredOptions": [],
@@ -64,7 +64,6 @@
         "eventStatus",
         "subEvent",
         "superEvent",
-        "eventSchedule",
         "activity",
         "category",
         "ageRange",

@@ -80,6 +80,26 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "CourseInstance"
+    },
+    "eventSchedule": {
+      "fieldName": "eventSchedule",
+      "sameAs": "https://pending.schema.org/eventSchedule",
+      "model": "ArrayOf#Schedule",
+      "description": [
+        "A an array of oa:Schedule or oa:PartialSchedule, which represents a recurrence pattern."
+      ],
+      "example": [
+        {
+          "@type": "PartialSchedule",
+          "repeatFrequency": "P1W",
+          "startTime": "20:15",
+          "endTime": "20:45",
+          "byDay": [
+            "http://schema.org/Tuesday"
+          ],
+          "scheduleTimezone": "Europe/London"
+        }
+      ]
     }
   }
 }

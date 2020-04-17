@@ -29,6 +29,9 @@
     "level",
     "programme"
   ],
+  "shallNotInclude": [
+    "eventSchedule"
+  ],
   "inSpec": [
     "id",
     "type",
@@ -49,7 +52,6 @@
     "eventStatus",
     "subEvent",
     "superEvent",
-    "eventSchedule",
     "activity",
     "category",
     "ageRange",
@@ -68,7 +70,6 @@
     "eventAttendanceMode"
   ],
   "notInSpec": [
-    "eventSchedule",
     "startDate",
     "endDate"
   ],

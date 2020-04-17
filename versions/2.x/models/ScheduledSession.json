@@ -2,7 +2,6 @@
   "type": "ScheduledSession",
   "subClassOf": "#Event",
   "notInSpec": [
-    "eventSchedule",
     "subEvent"
   ],
   "requiredFields": [
@@ -19,6 +18,9 @@
     "offers",
     "url",
     "endDate"
+  ],
+  "shallNotInclude": [
+    "eventSchedule"
   ],
   "validationMode": {
     "C1Request": "request",
@@ -56,7 +58,6 @@
         "eventStatus",
         "subEvent",
         "superEvent",
-        "eventSchedule",
         "activity",
         "category",
         "ageRange",

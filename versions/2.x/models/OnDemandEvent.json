@@ -41,7 +41,6 @@
     "eventStatus",
     "subEvent",
     "superEvent",
-    "eventSchedule",
     "activity",
     "category",
     "ageRange",
@@ -61,7 +60,6 @@
     "workFeatured"
   ],
   "notInSpec": [
-    "eventSchedule",
     "subEvent",
     "schedulingNote",
     "maximumAttendeeCapacity",
@@ -73,6 +71,9 @@
     "eventAttendanceMode",
     "eventStatus",
     "meetingPoint"
+  ],
+  "shallNotInclude": [
+    "eventSchedule"
   ],
   "fields": {
     "type": {

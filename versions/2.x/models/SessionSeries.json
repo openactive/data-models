@@ -51,7 +51,45 @@
         "organizer"
       ]
 		}
-	},
+  },
+  "inSpec": [
+    "id",
+    "type",
+    "identifier",
+    "url",
+    "name",
+    "description",
+    "image",
+    "startDate",
+    "endDate",
+    "duration",
+    "location",
+    "organizer",
+    "contributor",
+    "maximumAttendeeCapacity",
+    "maximumVirtualAttendeeCapacity",
+    "remainingAttendeeCapacity",
+    "eventStatus",
+    "subEvent",
+    "superEvent",
+    "activity",
+    "category",
+    "ageRange",
+    "genderRestriction",
+    "programme",
+    "attendeeInstructions",
+    "leader",
+    "accessibilitySupport",
+    "accessibilityInformation",
+    "isCoached",
+    "level",
+    "meetingPoint",
+    "isAccessibleForFree",
+    "offers",
+    "schedulingNote",
+    "eventAttendanceMode",
+    "eventSchedule"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",
@@ -68,6 +106,26 @@
       "inheritsTo": {
         "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule"]
       }
+    },
+    "eventSchedule": {
+      "fieldName": "eventSchedule",
+      "sameAs": "https://pending.schema.org/eventSchedule",
+      "model": "ArrayOf#Schedule",
+      "description": [
+        "A an array of oa:Schedule or oa:PartialSchedule, which represents a recurrence pattern."
+      ],
+      "example": [
+        {
+          "@type": "PartialSchedule",
+          "repeatFrequency": "P1W",
+          "startTime": "20:15",
+          "endTime": "20:45",
+          "byDay": [
+            "http://schema.org/Tuesday"
+          ],
+          "scheduleTimezone": "Europe/London"
+        }
+      ]
     }
   }
 }
