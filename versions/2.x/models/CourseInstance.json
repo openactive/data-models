@@ -2,6 +2,79 @@
   "type": "CourseInstance",
   "subClassOf": "#Event",
   "derivedFrom": "https://schema.org/CourseInstance",
+  "requiredFields": [
+    "type",
+    "url",
+    "name",
+    "location",
+    "activity",
+    "organizer",
+    "offers",
+    "startDate",
+    "endDate"
+  ],
+  "requiredOptions": [
+    {
+      "description": [
+        "A data publisher must provide either a `subEvent` or specify an `eventSchedule` for a CourseInstance."
+      ],
+      "options": [
+        "subEvent",
+        "eventSchedule"
+      ],
+      "oneOf": true
+    }
+  ],
+  "recommendedFields": [
+    "id",
+    "description",
+    "image",
+    "eventStatus",
+    "ageRange",
+    "genderRestriction",
+    "leader",
+    "level",
+    "maximumAttendeeCapacity",
+    "remainingAttendeeCapacity"
+  ],
+  "inSpec": [
+    "id",
+    "type",
+    "identifier",
+    "url",
+    "name",
+    "description",
+    "image",
+    "startDate",
+    "endDate",
+    "duration",
+    "location",
+    "organizer",
+    "contributor",
+    "maximumAttendeeCapacity",
+    "maximumVirtualAttendeeCapacity",
+    "remainingAttendeeCapacity",
+    "eventStatus",
+    "subEvent",
+    "superEvent",
+    "eventSchedule",
+    "activity",
+    "category",
+    "ageRange",
+    "genderRestriction",
+    "programme",
+    "attendeeInstructions",
+    "leader",
+    "accessibilitySupport",
+    "accessibilityInformation",
+    "isCoached",
+    "level",
+    "meetingPoint",
+    "isAccessibleForFree",
+    "offers",
+    "schedulingNote",
+    "eventAttendanceMode"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",

@@ -11,19 +11,8 @@
     "location",
     "activity",
     "organizer",
-    "offers"
-  ],
-  "requiredOptions": [
-    {
-      "description": [
-        "While these properties are marked as optional in the specification, a data publisher must provide either a `startDate` or specify an `eventSchedule` for an event."
-      ],
-      "options": [
-        "startDate",
-        "eventSchedule"
-      ],
-      "oneOf": true
-    }
+    "offers",
+    "startDate"
   ],
   "commonTypos": {
     "offer": "offers"
@@ -39,8 +28,10 @@
     "level",
     "maximumAttendeeCapacity",
     "remainingAttendeeCapacity",
-    "startDate",
     "endDate"
+  ],
+  "shallNotInclude": [
+    "eventSchedule"
   ],
   "validationMode": {
     "C1Request": "request",

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const request = require('sync-request'); // eslint-disable-line import/no-extraneous-dependencies
+const $rdf = require('rdflib'); // eslint-disable-line import/no-extraneous-dependencies
 
 const getEnums = require('./getEnums');
 const getMetaData = require('./getMetaData');
@@ -43,15 +44,19 @@ const schemaOrgDataModel = (() => {
 })();
 
 const parseRDFXML = (uri) => {
-  const translationUri = `http://rdf-translator.appspot.com/convert/detect/json-ld/${encodeURI(uri)}`;
-  const response = request('POST', translationUri);
+  const response = request('GET', uri);
 
-  const context = JSON.parse(response.body)['@context'];
-  const ids = JSON.parse(response.body)['@graph'].map((entity) => {
-    const [namespace, shortId] = entity['@id'].split(':');
-    return context[namespace] ? `${context[namespace]}${shortId}` : entity['@id'];
-  });
+  // Convert RDF file to string
+  const rdf = `${response.body}`;
 
+  // Parse RDF string into store
+  const store = $rdf.graph();
+  $rdf.parse(rdf, store, uri, 'application/rdf+xml');
+
+  // Get all subjects specified in RDF file as a Set
+  const ids = new Set(store.statements.map(x => x.subject.value).filter(x => x.indexOf('n') !== 0));
+
+  // Return the Set
   return ids;
 };
 
@@ -152,12 +157,12 @@ describe('models', () => {
                 result.message = `${typeRef} is not an accurate pending.schema.org type reference`;
               }
             } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
-              result.pass = goodRelationsDataModel.includes(typeId);
+              result.pass = goodRelationsDataModel.has(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate goodrelations type reference`;
               }
             } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
-              result.pass = skosDataModel.includes(typeId);
+              result.pass = skosDataModel.has(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not a valid SKOS type reference`;
               }
@@ -204,13 +209,13 @@ describe('models', () => {
               }
             } else if (typeId.match(/^http:\/\/purl\.org\/goodrelations\/v1/)) {
               const expectedId = `http://purl.org/goodrelations/v1/${field}`;
-              result.pass = expectedId === typeId && goodRelationsDataModel.includes(typeId);
+              result.pass = expectedId === typeId && goodRelationsDataModel.has(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate goodrelations reference for ${field}`;
               }
             } else if (typeId.match(/^http:\/\/www\.w3\.org\/2004\/02\/skos\/core#/)) {
               const expectedId = `http://www.w3.org/2004/02/skos/core#${field}`;
-              result.pass = expectedId === typeId && skosDataModel.includes(typeId);
+              result.pass = expectedId === typeId && skosDataModel.has(typeId);
               if (!result.pass) {
                 result.message = `${typeRef} is not an accurate SKOS reference for ${field}`;
               }
