@@ -310,6 +310,10 @@
         {
           "validationMode": "OpenBookingError",
           "name": "Error Response"
+        },
+        {
+          "validationMode": "TestInterface",
+          "name": "Test Interface"
         }
       ]
     }

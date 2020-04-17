@@ -38,6 +38,87 @@
     "remainingAttendeeCapacity"
   ],
   "shallNotInclude": [],
+  "validationMode": {
+    "C1Request": "request",
+		"C1Response": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"BRequest": "request",
+		"BResponse": "response",
+    "OrdersFeed": "request",
+    "OrderStatus": "response",
+    "TestInterface": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+      "requiredFields": [
+        "type",
+        "id"
+      ],
+      "shallNotInclude": [
+        "identifier",
+        "url",
+        "name",
+        "description",
+        "image",
+        "startDate",
+        "endDate",
+        "duration",
+        "location",
+        "organizer",
+        "contributor",
+        "maximumAttendeeCapacity",
+        "maximumVirtualAttendeeCapacity",
+        "remainingAttendeeCapacity",
+        "eventStatus",
+        "subEvent",
+        "superEvent",
+        "activity",
+        "category",
+        "ageRange",
+        "genderRestriction",
+        "programme",
+        "attendeeInstructions",
+        "leader",
+        "accessibilitySupport",
+        "accessibilityInformation",
+        "isCoached",
+        "level",
+        "meetingPoint",
+        "isAccessibleForFree",
+        "offers",
+        "schedulingNote",
+        "eventSchedule"
+      ]
+    },
+    "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "url",
+        "name",
+        "location",
+        "activity",
+        "startDate"
+      ],
+      "recommendedFields": [
+        "endDate",
+        "duration",
+        "ageRange",
+        "genderRestriction",
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
+      ],
+      "shallNotInclude": [
+        "offers",
+        "subEvent",
+        "organizer"
+      ]
+		}
+	},
   "inSpec": [
     "id",
     "type",

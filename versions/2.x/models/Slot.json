@@ -37,7 +37,8 @@
 		"BRequest": "request",
 		"BResponse": "response",
     "OrdersFeed": "request",
-    "OrderStatus": "response"
+    "OrderStatus": "response",
+    "TestInterface": "request"
 	},
 	"imperativeConfiguration": {
 		"request": {
