@@ -37,6 +37,7 @@
     "maximumAttendeeCapacity",
     "remainingAttendeeCapacity"
   ],
+  "shallNotInclude": [],
   "inSpec": [
     "id",
     "type",

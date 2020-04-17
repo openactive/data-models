@@ -22,6 +22,7 @@
     "leader",
     "level"
   ],
+  "shallNotInclude": [],
   "validationMode": {
 		"C1Response": "response",
 		"C2Response": "response",
