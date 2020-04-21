@@ -33,6 +33,9 @@
           "sameAs": [
             "https://www.facebook.com/everyoneactive/",
             "https://twitter.com/everyoneactive"
+          ],
+          "beta:formalCriteriaMet": [
+            "https://emduk.org/advice-on-how-instructors-can-continue-to-deliver-their-classes-online/"
           ]
         },
         "activity": [

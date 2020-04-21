@@ -77,7 +77,10 @@
           "identifier": "steady-pace-group",
           "url": "https://www.letsride.co.uk/groups/steady-pace-group",
           "name": "Alan's social ride group",
-          "description": "My name is Alan I'm creating this group for those people who would like to ride during the week and weekends at a Easygoing steady and fast-paced"
+          "description": "My name is Alan I'm creating this group for those people who would like to ride during the week and weekends at a Easygoing steady and fast-paced",
+          "beta:formalCriteriaMet": [
+            "https://emduk.org/advice-on-how-instructors-can-continue-to-deliver-their-classes-online/"
+          ]
         }
       }
     }
