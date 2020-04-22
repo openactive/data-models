@@ -249,6 +249,10 @@
         {
           "validationMode": "BookableRPDEFeed",
           "name": "Bookable Opportunity RPDE Feed"
+        },
+        {
+          "validationMode": "DatasetSite",
+          "name": "Dataset Site"
         }
       ]
     },
