@@ -25,6 +25,7 @@
     "backgroundImage"
   ],
   "inSpec": [
+    "id",
     "type",
     "url",
     "name",
