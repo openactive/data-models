@@ -104,7 +104,6 @@
     "request": {
       "broker": {
         "requiredFields": [
-          "id",
           "name"
         ],
         "recommendedFields": [
@@ -156,7 +155,6 @@
     "result": {
       "broker": {
         "requiredFields": [
-          "id",
           "name"
         ],
         "recommendedFields": [
