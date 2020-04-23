@@ -62,6 +62,26 @@
     ]
   },
   {
+    "name": "Opportunity Data Publishing - Dataset Sites",
+    "exampleList": [
+      {
+        "file": "https://www.openactive.io/dataset-site-template/example.json",
+        "name": "Dataset Site Embedded JSON-LD Example",
+        "validationMode": "DatasetSite"
+      },
+      {
+        "file": "https://openactive.io/data-catalogs/singular.jsonld",
+        "name": "Data Catalog Example",
+        "validationMode": "DatasetSite"
+      },
+      {
+        "file": "https://openactive.io/data-catalogs/data-catalog-collection.jsonld",
+        "name": "Data Catalog Collection Example",
+        "validationMode": "DatasetSite"
+      }
+    ]
+  },
+  {
     "name": "Open Booking API - Simple",
     "exampleList": [
       {
