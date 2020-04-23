@@ -14,7 +14,8 @@
     "name",
     "additionalType",
     "encodingFormat",
-    "contentUrl"
+    "contentUrl",
+    "identifier"
   ],
   "description": {
     "sections": [
@@ -32,6 +33,15 @@
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "DataDownload"
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
+      "requiredType": "https://schema.org/Text",
+      "example": "ScheduledSession",
+      "description": [
+        "A local non-URI identifier for the resource"
+      ]
     },
     "name": {
       "fieldName": "name",
