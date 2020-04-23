@@ -71,12 +71,12 @@
       },
       {
         "file": "https://openactive.io/data-catalogs/singular.jsonld",
-        "name": "Data Catalog Example",
+        "name": "DataCatalog Example",
         "validationMode": "DataCatalog"
       },
       {
         "file": "https://openactive.io/data-catalogs/data-catalog-collection.jsonld",
-        "name": "Data Catalog Collection Example",
+        "name": "DataCatalogCollection Example",
         "validationMode": "DataCatalog"
       }
     ]
