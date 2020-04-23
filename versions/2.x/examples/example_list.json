@@ -62,7 +62,7 @@
     ]
   },
   {
-    "name": "Opportunity Data Publishing - Dataset Sites (Preview)",
+    "name": "Dataset Sites (Preview)",
     "exampleList": [
       {
         "file": "https://www.openactive.io/dataset-site-template/example.json",
