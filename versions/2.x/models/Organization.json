@@ -15,6 +15,7 @@
   "validationMode": {
     "RPDEFeed": "feed",
     "DatasetSite": "datasetSite",
+    "DataCatalog": "dataCatalog",
     "BookableRPDEFeed": "bookableFeed",
     "C1Request": "request",
     "C1Response": "response",
@@ -35,6 +36,14 @@
         "name",
         "logo",
         "legalName",
+        "url"
+      ],
+      "recommendedFields": [
+      ]
+    },
+    "dataCatalog": {
+      "requiredFields": [
+        "name",
         "url"
       ],
       "recommendedFields": [

@@ -252,7 +252,11 @@
         },
         {
           "validationMode": "DatasetSite",
-          "name": "Dataset Site or Data Catalog"
+          "name": "Dataset Site"
+        },
+        {
+          "validationMode": "DataCatalog",
+          "name": "Data Catalog"
         }
       ]
     },
