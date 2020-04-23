@@ -22,7 +22,7 @@
       {
         "title": "EARLY RELEASE NOTICE",
         "paragraphs": [
-          "In order to expedite the OpenActive tooling work, this class has been added to the model for the purposes of testing.",
+          "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback.",
           "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
         ]
       }

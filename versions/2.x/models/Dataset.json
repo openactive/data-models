@@ -49,8 +49,8 @@
       {
         "title": "EARLY RELEASE NOTICE",
         "paragraphs": [
-          "In order to expedite the OpenActive tooling work, this class has been added to the model for the purposes of testing.",
-          "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
+          "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback. It is mostly stable, as it based almost entirely on schema.org.",
+          "HOWEVER, IT IS STILL SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
         ]
       }
     ]
