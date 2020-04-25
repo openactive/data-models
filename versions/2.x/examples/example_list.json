@@ -76,7 +76,7 @@
       },
       {
         "file": "https://openactive.io/data-catalogs/data-catalog-collection.jsonld",
-        "name": "DataCatalogCollection Example",
+        "name": "DataCatalog Collection Example",
         "validationMode": "DataCatalog"
       }
     ]
