@@ -9,8 +9,19 @@
     "type",
     "name",
     "license",
-    "publisher",
-    "dataset"
+    "publisher"
+  ],
+  "requiredOptions": [
+    {
+      "description": [
+        "The `DataCatalog` must include either `hasPart` if it is a collection of smaller `DataCatalog`s, or `dataset` if it is a collection of dataset sites."
+      ],
+      "options": [
+        "hasPart",
+        "dataset"
+      ],
+      "oneOf": true
+    }
   ],
   "recommendedFields": [
     "datePublished"
@@ -23,7 +34,8 @@
     "publisher",
     "dateModified",
     "datePublished",
-    "dataset"
+    "dataset",
+    "hasPart"
   ],
   "description": {
     "sections": [
@@ -105,6 +117,18 @@
       "example": [
         "https://opendata.exercise-anywhere.com/",
         "https://www.participant.co.uk/participant/openactive/"
+      ]
+    },
+    "hasPart": {
+      "fieldName": "hasPart",
+      "sameAs": "https://schema.org/hasPart",
+      "requiredType": "ArrayOf#https://schema.org/URL",
+      "description": [
+        "The URLs of each smaller `DataCatalog` within this `DataCatalog` collection."
+      ],
+      "example": [
+        "https://opendata.leisurecloud.live/api/datacatalog",
+        "https://openactivedatacatalog.legendonlineservices.co.uk/api/DataCatalog"
       ]
     }
   }
