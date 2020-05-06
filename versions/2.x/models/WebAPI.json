@@ -31,7 +31,7 @@
         "title": "EARLY RELEASE NOTICE",
         "paragraphs": [
           "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback.",
-          "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
+          "IT IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
         ]
       }
     ]
@@ -92,7 +92,7 @@
       "sameAs": "http://purl.org/dc/terms/conformsTo",
       "requiredType": "ArrayOf#https://schema.org/URL",
       "example": [ 
-        "https://www.openactive.io/open-booking-api/1.0/#core"
+        "https://openactive.io/open-booking-api/1.0/#core"
       ],
       "description": [
         "Indicates the version and profiles of OpenActive Open Booking Specification with which this WebAPI conforms, by specifying these as URLs."
@@ -102,7 +102,7 @@
       "fieldName": "endpointDescription",
       "sameAs": "http://www.w3.org/ns/dcat#endpointDescription",
       "requiredType": "https://schema.org/URL",
-      "example": "https://www.openactive.io/open-booking-api/1.0/swagger.json",
+      "example": "https://openactive.io/open-booking-api/1.0/swagger.json",
       "description": [
         "The Open API document associated with this version of the Open Booking API"
       ]

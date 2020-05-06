@@ -69,7 +69,7 @@
     "name": "Dataset Sites (Preview)",
     "exampleList": [
       {
-        "file": "https://www.openactive.io/dataset-site-template/example.json",
+        "file": "https://openactive.io/dataset-site-template/example.json",
         "name": "Dataset Site Embedded JSON-LD Example",
         "validationMode": "DatasetSite"
       },

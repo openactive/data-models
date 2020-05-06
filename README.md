@@ -116,7 +116,7 @@ const metaData = getMetaData('2.0');
 //   "defaultPrefix": "schema",
 //   "openActivePrefix": "oa",
 //   "contextUrl": "https://openactive.io/",
-//   "specUrl": "https://www.openactive.io/modelling-opportunity-data/EditorsDraft/",
+//   "specUrl": "https://openactive.io/modelling-opportunity-data/EditorsDraft/",
 //   "defaultActivityLists": [
 //     "https://openactive.io/activity-list"
 //   ],

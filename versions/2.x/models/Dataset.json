@@ -50,7 +50,7 @@
         "title": "EARLY RELEASE NOTICE",
         "paragraphs": [
           "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback. It is mostly stable, as it based almost entirely on schema.org.",
-          "HOWEVER, IT IS STILL SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://www.openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
+          "HOWEVER, IT IS STILL SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://openactive.io/dataset-api-discovery/EditorsDraft/) evolves."
         ]
       }
     ]
@@ -198,7 +198,7 @@
       "fieldName": "schemaVersion",
       "sameAs": "https://schema.org/schemaVersion",
       "requiredType": "https://schema.org/URL",
-      "example": "https://www.openactive.io/modelling-opportunity-data/2.0/",
+      "example": "https://openactive.io/modelling-opportunity-data/2.0/",
       "description": [
         "Indicates the version of OpenActive Modelling Opportunity Data Specification with which this `Dataset` conforms, by specifying its URL."
       ]
