@@ -33,13 +33,36 @@
     "BResponse": "response",
     "OrdersFeed": "request",
     "OrderStatus": "response",
-    "TestInterface": "request"
+    "TestInterface": "testInterface"
 	},
 	"imperativeConfiguration": {
+    "testInterface": {
+      "requiredFields": [
+        "type"
+      ],
+      "requiredOptions": [
+        {
+          "description": [
+            "Either a `superEvent` for the request, or an `@id` for the response must be included."
+          ],
+          "options": [
+            "superEvent",
+            "id"
+          ],
+          "oneOf": true
+        }
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+      ]
+    },
 		"request": {
       "requiredFields": [
         "type",
         "id"
+      ],
+      "recommendedFields": [
       ],
       "shallNotInclude": [
         "identifier",

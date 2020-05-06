@@ -28,9 +28,19 @@
 		"C2Response": "response",
 		"PResponse": "response",
 		"BResponse": "response",
-    "OrderStatus": "response"
+    "OrderStatus": "response",
+    "TestInterface": "testInterface"
 	},
 	"imperativeConfiguration": {
+    "testInterface": {
+      "requiredFields": [
+        "type"
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+      ]
+    },
     "response": {
       "requiredFields": [
         "type",

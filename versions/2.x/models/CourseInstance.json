@@ -49,9 +49,18 @@
 		"BResponse": "response",
     "OrdersFeed": "request",
     "OrderStatus": "response",
-    "TestInterface": "request"
+    "TestInterface": "testInterface"
 	},
 	"imperativeConfiguration": {
+    "testInterface": {
+      "requiredFields": [
+        "type"
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+      ]
+    },
 		"request": {
       "requiredFields": [
         "type",

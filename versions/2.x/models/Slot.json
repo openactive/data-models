@@ -41,6 +41,27 @@
     "TestInterface": "request"
 	},
 	"imperativeConfiguration": {
+    "testInterface": {
+      "requiredFields": [
+        "type"
+      ],
+      "requiredOptions": [
+        {
+          "description": [
+            "For a request, a `facilityUse` must be included. For a response, an `@id` must be included."
+          ],
+          "options": [
+            "facilityUse",
+            "id"
+          ],
+          "oneOf": true
+        }
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+      ]
+    },
 		"request": {
       "requiredFields": [
         "type",
