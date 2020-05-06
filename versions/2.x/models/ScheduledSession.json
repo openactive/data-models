@@ -43,7 +43,7 @@
       "requiredOptions": [
         {
           "description": [
-            "Either a `superEvent` for the request, or an `@id` for the response must be included."
+            "For a request, a `superEvent` must be included. For a response, an `@id` must be included."
           ],
           "options": [
             "superEvent",
