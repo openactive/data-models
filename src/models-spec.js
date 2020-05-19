@@ -22,20 +22,20 @@ const schemaOrgDataModel = (() => {
     {
       // In expectation of future update, schema file is upgraded to use https
       // See https://schema.org/docs/faq.html#19
-      url: 'https://schema.org/version/latest/schema.jsonld',
+      url: 'https://webschemas.org/version/latest/schema.jsonld',
       prefixReplacement: 'https://schema.org',
     },
     {
       // In expectation of future update, schema file is upgraded to use https
       // See https://schema.org/docs/faq.html#19
-      url: 'https://schema.org/version/latest/ext-meta.jsonld',
+      url: 'https://webschemas.org/version/latest/ext-meta.jsonld',
       prefixReplacement: 'https://schema.org',
     },
     {
       // Note even though schema.org has migrated http://pending.schema.org/ to http://schema.org/
       // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
       // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
-      url: 'https://schema.org/version/latest/ext-pending.jsonld',
+      url: 'https://webschemas.org/version/latest/ext-pending.jsonld',
       prefixReplacement: 'https://pending.schema.org',
     },
   ];
