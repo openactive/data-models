@@ -71,17 +71,8 @@
     "bookableFeed": {
       "organizer": {
         "requiredFields": [
-          "id",
-          "name",
-          "legalName",
-          "taxMode",
-          "address"
-        ],
-        "recommendedFields": [
-          "email",
-          "url",
-          "logo",
-          "vatID"
+					"id",
+					"taxMode"
         ],
         "shallNotInclude": [
           "givenName",

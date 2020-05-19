@@ -74,30 +74,24 @@
         "requiredFields": [
 					"id",
 					"name",
-					"legalName",
-					"taxMode",
-					"address"
+					"taxMode"
         ],
         "recommendedFields": [
-					"email",
-					"url",
-					"logo",
-					"vatID"
+          "url",
+          "telephone",
+          "sameAs"
         ]
       },
       "provider": {
         "requiredFields": [
 					"id",
 					"name",
-					"legalName",
-					"taxMode",
-					"address"
+					"taxMode"
         ],
         "recommendedFields": [
-					"email",
-					"url",
-					"logo",
-					"vatID"
+          "url",
+          "telephone",
+          "sameAs"
         ]
       }
     },
