@@ -138,13 +138,13 @@
           "name",
           "legalName",
           "taxMode",
-          "vatID",
           "address"
         ],
         "recommendedFields": [
           "email",
           "url",
-          "logo"
+          "logo",
+          "vatID"
         ]
       },
       "customer": {
@@ -169,13 +169,13 @@
           "name",
           "legalName",
           "taxMode",
-          "vatID",
           "address"
         ],
         "recommendedFields": [
           "email",
           "url",
-          "logo"
+          "logo",
+          "vatID"
         ]
       },
       "customer": {
