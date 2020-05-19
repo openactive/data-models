@@ -54,13 +54,13 @@
           "name",
           "legalName",
           "taxMode",
-          "vatID",
           "address"
         ],
         "recommendedFields": [
           "email",
           "url",
-          "logo"
+          "logo",
+          "vatID"
         ],
         "shallNotInclude": [
           "givenName",
