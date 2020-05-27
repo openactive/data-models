@@ -128,7 +128,7 @@
     "topConceptOf": {
       "fieldName": "topConceptOf",
       "sameAs": "http://www.w3.org/2004/02/skos/core#topConceptOf",
-      "requiredType": "ArrayOf#https://schema.org/URL",
+      "requiredType": "https://schema.org/URL",
       "example": "https://openactive.io/activity-list",
       "description": [
         "A reference to the Scheme URI, the existence of which indicates that this Concept is at the top level of the hierarchy."
