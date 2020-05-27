@@ -10,6 +10,10 @@
     "repeatFrequency",
     "startTime"
   ],
+  "notInSpec":[
+    "idTemplate",
+    "urlTemplate"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",
