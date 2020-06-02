@@ -127,6 +127,7 @@
       "sameAs": "https://schema.org/OnDemandEvent",
       "defaultFeedPath": "on-demand-event",
       "kind": ["OnDemandEvent"],
+      "themeDisplayName": "On Demand Events",
       "bookable": true
     }
   ],
