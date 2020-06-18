@@ -34,6 +34,7 @@
     "eventSchedule"
   ],
   "validationMode": {
+    "RPDEFeed": "feed",
     "C1Request": "request",
 		"C1Response": "response",
 		"C2Request": "request",
@@ -45,8 +46,24 @@
     "OrdersFeed": "request",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
-	},
+  },
+  "imperativeConfigurationWithContext": {
+    "feed": {
+      "subEvent": {
+        "requiredFields": [
+          "type",
+          "url",
+          "name",
+          "location",
+          "activity",
+          "organizer",
+          "startDate"
+        ]
+      }
+    }
+  },
 	"imperativeConfiguration": {
+    "feed": {},
     "testInterface": {
       "requiredFields": [
         "type"
