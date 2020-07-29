@@ -176,6 +176,10 @@ const models2 = getModels('2.0');
 
 ```
 
+#### getSchemaOrgVocab()
+
+Returns the bundled JSON-LD version of the schema.org vocabulary.
+
 #### versions
 
 A hash of available versions. This includes some named aliases. You can pass the keys of this hash to any of the above methods in the `version` parameter.

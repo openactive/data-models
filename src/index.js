@@ -13,6 +13,7 @@ const getMetaData = require('./getMetaData');
 const loadEnum = require('./loadEnum');
 const loadModel = require('./loadModel');
 const versions = require('./versions');
+const getSchemaOrgVocab = require('./getSchemaOrgVocab');
 
 function createExports() {
   const root = {
@@ -26,6 +27,7 @@ function createExports() {
     loadEnum,
     loadModel,
     versions,
+    getSchemaOrgVocab,
   };
   return root;
 }

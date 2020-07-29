@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 const fs = require('fs');
 const path = require('path');
+const request = require('sync-request');
 
 const generateContext = require('./generateContext');
 const generateGraph = require('./generateGraph');
@@ -78,3 +80,28 @@ fs.writeFileSync(
 module.exports = ${JSON.stringify(specs)};`,
   () => {},
 );
+
+const assets = [
+  {
+    name: 'schemaOrgVocab',
+    url: 'https://schema.org/version/latest/schemaorg-current-https.jsonld',
+  },
+];
+
+console.log('Fetching schema.org vocab...');
+for (const asset of assets) {
+  const schema = JSON.parse(request('GET', asset.url, {
+    headers: {
+      'Content-Type': 'application/ld+json',
+    },
+  }).getBody());
+
+  fs.writeFileSync(
+    path.join(distPath, `${asset.name}.js`),
+    `/* eslint-disable */
+  // This is a generated file. Do not edit manually.
+  module.exports = ${JSON.stringify(schema)};`,
+    () => {},
+  );
+}
+console.log('schema.org vocab downloaded successfully.');

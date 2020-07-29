@@ -6,6 +6,7 @@ const $rdf = require('rdflib'); // eslint-disable-line import/no-extraneous-depe
 const getEnums = require('./getEnums');
 const getMetaData = require('./getMetaData');
 const derivePrefix = require('./helpers/derivePrefix');
+const getSchemaOrgVocab = require('./getSchemaOrgVocab');
 
 const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
@@ -26,14 +27,7 @@ const schemaOrgDataModel = (() => {
     return entity['@id'];
   };
 
-  const fetchIds = (url) => {
-    const response = request('GET', url, {
-      accept: 'application/ld+json',
-    });
-    return JSON.parse(response.body)['@graph'].map(entity => getPrefixReplacedId(entity));
-  };
-
-  return fetchIds('https://schema.org/version/latest/schemaorg-current-https.jsonld');
+  return getSchemaOrgVocab()['@graph'].map(entity => getPrefixReplacedId(entity));
 })();
 
 const parseRDFXML = (uri) => {
