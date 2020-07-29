@@ -11,36 +11,29 @@ const loadModelFromFile = require('./loadModelFromFile');
 const versions = require('./versions');
 
 const schemaOrgDataModel = (() => {
-  const fetchIds = (url, prefixReplacement) => {
+  // Note even though schema.org has migrated http://pending.schema.org/ to https://schema.org/
+  // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
+  // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
+  const getPrefixReplacedId = (entity) => {
+    if (entity['https://schema.org/isPartOf']
+      && entity['https://schema.org/isPartOf']['@id'] !== 'http://meta.schema.org') {
+      return entity['@id']
+        .replace(/^https:\/\/schema.org/,
+          // Although schema.org has now been updated to use https for the main @id values,
+          // it has still not done so for https://schema.org/isPartOf values
+          entity['https://schema.org/isPartOf']['@id'].replace(/^http:\/\//, 'https://'));
+    }
+    return entity['@id'];
+  };
+
+  const fetchIds = (url) => {
     const response = request('GET', url, {
       accept: 'application/ld+json',
     });
-    return JSON.parse(response.body)['@graph'].map(entity => entity['@id'].replace(/^http:\/\/schema.org/, prefixReplacement));
+    return JSON.parse(response.body)['@graph'].map(entity => getPrefixReplacedId(entity));
   };
 
-  const schemaSources = [
-    {
-      // In expectation of future update, schema file is upgraded to use https
-      // See https://schema.org/docs/faq.html#19
-      url: 'https://webschemas.org/version/latest/schema.jsonld',
-      prefixReplacement: 'https://schema.org',
-    },
-    {
-      // In expectation of future update, schema file is upgraded to use https
-      // See https://schema.org/docs/faq.html#19
-      url: 'https://webschemas.org/version/latest/ext-meta.jsonld',
-      prefixReplacement: 'https://schema.org',
-    },
-    {
-      // Note even though schema.org has migrated http://pending.schema.org/ to http://schema.org/
-      // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
-      // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
-      url: 'https://webschemas.org/version/latest/ext-pending.jsonld',
-      prefixReplacement: 'https://pending.schema.org',
-    },
-  ];
-
-  return schemaSources.reduce((store, source) => store.concat(fetchIds(source.url, source.prefixReplacement)), []);
+  return fetchIds('https://schema.org/version/latest/schemaorg-current-https.jsonld');
 })();
 
 const parseRDFXML = (uri) => {
