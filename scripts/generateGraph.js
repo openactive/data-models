@@ -71,100 +71,98 @@ const generateGraph = (version, metaData, enums) => {
 
   const files = fs.readdirSync(basePath);
   for (const file of files) {
-    if (file !== 'model_list.json') {
-      const jsonPath = path.join(basePath, file);
-      const data = fs.readFileSync(jsonPath, 'utf8');
-      const model = JSON.parse(data);
+    const jsonPath = path.join(basePath, file);
+    const data = fs.readFileSync(jsonPath, 'utf8');
+    const model = JSON.parse(data);
 
-      let modelPrefix = metaData.openActivePrefix;
-      const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
-      if (hasModelDerivedFrom) {
-        modelPrefix = derivePrefix(model.derivedFrom, metaData.namespaces) || modelPrefix;
-      }
-      const modelDerivedFromName = hasModelDerivedFrom
-        ? model.derivedFrom.replace(metaData.namespaces[modelPrefix], '')
-        : model.type;
-      if (modelPrefix !== metaData.defaultPrefix) {
-        if (modelPrefix === metaData.openActivePrefix) {
-          const rdfsClass = {
-            '@id': `${modelPrefix}:${modelDerivedFromName}`,
-            '@type': 'rdfs:Class',
-            'rdfs:label': {
-              en: modelDerivedFromName,
-            },
-            'rdfs:comment': {
-              en: '',
-            },
-          };
-          if (typeof model.subClassOf !== 'undefined') {
-            let subClassNamespace = derivePrefix(model.subClassOf, metaData.namespaces) || metaData.openActivePrefix;
-            const subClassName = model.subClassOf.replace(/^#/, '').replace(metaData.namespaces[subClassNamespace], '');
-            // We should check whether the parent of this is derived from elsewhere
-            if (model.subClassOf.match(/^#/)) {
-              subClassNamespace = getPrefixForType(basePath, metaData, subClassName) || modelPrefix;
-            }
-            rdfsClass['rdfs:subClassOf'] = `${subClassNamespace}:${subClassName}`;
+    let modelPrefix = metaData.openActivePrefix;
+    const hasModelDerivedFrom = typeof model.derivedFrom !== 'undefined' && model.derivedFrom !== null;
+    if (hasModelDerivedFrom) {
+      modelPrefix = derivePrefix(model.derivedFrom, metaData.namespaces) || modelPrefix;
+    }
+    const modelDerivedFromName = hasModelDerivedFrom
+      ? model.derivedFrom.replace(metaData.namespaces[modelPrefix], '')
+      : model.type;
+    if (modelPrefix !== metaData.defaultPrefix) {
+      if (modelPrefix === metaData.openActivePrefix) {
+        const rdfsClass = {
+          '@id': `${modelPrefix}:${modelDerivedFromName}`,
+          '@type': 'rdfs:Class',
+          'rdfs:label': {
+            en: modelDerivedFromName,
+          },
+          'rdfs:comment': {
+            en: '',
+          },
+        };
+        if (typeof model.subClassOf !== 'undefined') {
+          let subClassNamespace = derivePrefix(model.subClassOf, metaData.namespaces) || metaData.openActivePrefix;
+          const subClassName = model.subClassOf.replace(/^#/, '').replace(metaData.namespaces[subClassNamespace], '');
+          // We should check whether the parent of this is derived from elsewhere
+          if (model.subClassOf.match(/^#/)) {
+            subClassNamespace = getPrefixForType(basePath, metaData, subClassName) || modelPrefix;
           }
-          propsAndClasses.rdfs_classes.push(rdfsClass);
+          rdfsClass['rdfs:subClassOf'] = `${subClassNamespace}:${subClassName}`;
         }
+        propsAndClasses.rdfs_classes.push(rdfsClass);
       }
-      for (const fieldName in model.fields) {
-        if (
-          Object.prototype.hasOwnProperty.call(model.fields, fieldName)
-          && typeof metaData.keywords[fieldName] === 'undefined'
-          && !fieldName.match(/^@/)
-        ) {
-          const field = model.fields[fieldName];
-          let fieldPrefix = modelPrefix;
-          const hasFieldSameAs = typeof field.sameAs !== 'undefined' && field.sameAs !== null;
-          if (hasFieldSameAs) {
-            fieldPrefix = derivePrefix(field.sameAs, metaData.namespaces) || fieldPrefix;
-          }
-          if (fieldPrefix !== metaData.defaultPrefix) {
-            const fieldSameAsName = hasFieldSameAs
-              ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
-              : fieldName;
-            if (fieldPrefix === metaData.openActivePrefix) {
-              // Find an existing property
-              const found = propsAndClasses.rdfs_properties.filter(
-                value => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`,
-              );
-              let property;
-              if (found.length === 0) {
-                property = {
-                  '@id': `${fieldPrefix}:${fieldSameAsName}`,
-                  '@type': 'rdf:Property',
-                  'rdfs:label': {
-                    en: fieldSameAsName,
-                  },
-                  'rdfs:comment': {
-                    en: typeof field.description === 'string' ? field.description : field.description.join(' '),
-                  },
-                  'schema:domainIncludes': [],
-                };
-                propsAndClasses.rdfs_properties.push(property);
-              } else {
-                ([property] = found);
-              }
-              property['schema:domainIncludes'].push(`${modelPrefix}:${modelDerivedFromName}`);
-              const types = deriveSingularTypes(field);
-              const range = property['schema:rangeIncludes'] || [];
-              if (types.length > 0) {
-                for (const type of types) {
-                  if (type.match(/^[A-Za-z]+$/)) {
-                    const typePrefix = getPrefixForType(basePath, metaData, type) || metaData.openActivePrefix;
-                    range.push(`${typePrefix}:${type}`);
-                  } else if (oaEnums.indexOf(type) >= 0) {
-                    range.push(`${metaData.openActivePrefix}:${type.replace(metaData.contextUrl, '')}`);
-                  } else {
-                    const typePrefix = derivePrefix(type, metaData.namespaces) || metaData.openActivePrefix;
-                    const typeName = type.replace(/^#/, '').replace(metaData.namespaces[typePrefix], '');
-                    range.push(`${typePrefix}:${typeName}`);
-                  }
+    }
+    for (const fieldName in model.fields) {
+      if (
+        Object.prototype.hasOwnProperty.call(model.fields, fieldName)
+        && typeof metaData.keywords[fieldName] === 'undefined'
+        && !fieldName.match(/^@/)
+      ) {
+        const field = model.fields[fieldName];
+        let fieldPrefix = modelPrefix;
+        const hasFieldSameAs = typeof field.sameAs !== 'undefined' && field.sameAs !== null;
+        if (hasFieldSameAs) {
+          fieldPrefix = derivePrefix(field.sameAs, metaData.namespaces) || fieldPrefix;
+        }
+        if (fieldPrefix !== metaData.defaultPrefix) {
+          const fieldSameAsName = hasFieldSameAs
+            ? field.sameAs.replace(metaData.namespaces[fieldPrefix], '')
+            : fieldName;
+          if (fieldPrefix === metaData.openActivePrefix) {
+            // Find an existing property
+            const found = propsAndClasses.rdfs_properties.filter(
+              value => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`,
+            );
+            let property;
+            if (found.length === 0) {
+              property = {
+                '@id': `${fieldPrefix}:${fieldSameAsName}`,
+                '@type': 'rdf:Property',
+                'rdfs:label': {
+                  en: fieldSameAsName,
+                },
+                'rdfs:comment': {
+                  en: typeof field.description === 'string' ? field.description : field.description.join(' '),
+                },
+                'schema:domainIncludes': [],
+              };
+              propsAndClasses.rdfs_properties.push(property);
+            } else {
+              ([property] = found);
+            }
+            property['schema:domainIncludes'].push(`${modelPrefix}:${modelDerivedFromName}`);
+            const types = deriveSingularTypes(field);
+            const range = property['schema:rangeIncludes'] || [];
+            if (types.length > 0) {
+              for (const type of types) {
+                if (type.match(/^[A-Za-z]+$/)) {
+                  const typePrefix = getPrefixForType(basePath, metaData, type) || metaData.openActivePrefix;
+                  range.push(`${typePrefix}:${type}`);
+                } else if (oaEnums.indexOf(type) >= 0) {
+                  range.push(`${metaData.openActivePrefix}:${type.replace(metaData.contextUrl, '')}`);
+                } else {
+                  const typePrefix = derivePrefix(type, metaData.namespaces) || metaData.openActivePrefix;
+                  const typeName = type.replace(/^#/, '').replace(metaData.namespaces[typePrefix], '');
+                  range.push(`${typePrefix}:${typeName}`);
                 }
               }
-              property['schema:rangeIncludes'] = [...new Set(range)];
             }
+            property['schema:rangeIncludes'] = [...new Set(range)];
           }
         }
       }

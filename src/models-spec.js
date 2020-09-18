@@ -63,12 +63,10 @@ const forEachVersion = (cb) => {
 const forEachVersionedFile = (cb) => {
   forEachVersion((version, metaData, modelsDirpath, rpdeDirpath, files) => {
     for (const file of files) {
-      if (file !== 'model_list.json') {
-        const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
-        const filePath = path.join(dir, file);
-        const data = fs.readFileSync(filePath, 'utf8');
-        cb(version, metaData, modelsDirpath, rpdeDirpath, file, data);
-      }
+      const dir = file.match(/^Feed/) ? rpdeDirpath : modelsDirpath;
+      const filePath = path.join(dir, file);
+      const data = fs.readFileSync(filePath, 'utf8');
+      cb(version, metaData, modelsDirpath, rpdeDirpath, file, data);
     }
   });
 };
