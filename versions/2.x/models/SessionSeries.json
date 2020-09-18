@@ -10,7 +10,8 @@
     "name",
     "location",
     "activity",
-    "organizer"
+    "organizer",
+    "offers"
   ],
   "requiredOptions": [],
   "recommendedFields": [

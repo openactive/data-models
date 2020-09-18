@@ -17,12 +17,8 @@ const schemaOrgDataModel = (() => {
   // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
   const getPrefixReplacedId = (entity) => {
     if (entity['https://schema.org/isPartOf']
-      && entity['https://schema.org/isPartOf']['@id'] !== 'http://meta.schema.org') {
-      return entity['@id']
-        .replace(/^https:\/\/schema.org/,
-          // Although schema.org has now been updated to use https for the main @id values,
-          // it has still not done so for https://schema.org/isPartOf values
-          entity['https://schema.org/isPartOf']['@id'].replace(/^http:\/\//, 'https://'));
+      && entity['https://schema.org/isPartOf']['@id'] !== 'https://meta.schema.org') {
+      return entity['@id'].replace(/^https:\/\/schema.org/, entity['https://schema.org/isPartOf']['@id']);
     }
     return entity['@id'];
   };
