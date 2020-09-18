@@ -35,8 +35,7 @@
 			"requiredFields": [
 				"id",
 				"type",
-				"price",
-				"availableChannel"
+				"price"
 			],
 			"recommendedFields": [
 				"name",
