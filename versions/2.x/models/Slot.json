@@ -29,18 +29,19 @@
   ],
   "validationMode": {
     "C1Request": "request",
-		"C1Response": "response",
-		"C2Request": "request",
-		"C2Response": "response",
-		"PRequest": "request",
-		"PResponse": "response",
-		"BRequest": "request",
-		"BResponse": "response",
+    "C1Response": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "BRequest": "request",
+    "BResponse": "response",
     "OrdersFeed": "request",
     "OrderStatus": "response",
     "TestInterface": "request"
-	},
-	"imperativeConfiguration": {
+  },
+  "imperativeConfigurationWithContext": {},
+  "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
         "type"
@@ -62,7 +63,7 @@
       "shallNotInclude": [
       ]
     },
-		"request": {
+    "request": {
       "requiredFields": [
         "type",
         "id"
@@ -121,8 +122,8 @@
         "remainingUses",
         "offers"
       ]
-		}
-	},
+    }
+  },
   "inSpec": [
     "type",
     "id",

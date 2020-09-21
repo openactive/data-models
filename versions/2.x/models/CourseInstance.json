@@ -50,7 +50,7 @@
     "OrdersFeed": "request",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
-	},
+  },
 	"imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [

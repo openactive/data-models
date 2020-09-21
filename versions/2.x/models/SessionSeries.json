@@ -25,14 +25,15 @@
   ],
   "shallNotInclude": [],
   "validationMode": {
-		"C1Response": "response",
-		"C2Response": "response",
-		"PResponse": "response",
-		"BResponse": "response",
+    "C1Response": "response",
+    "C2Response": "response",
+    "PResponse": "response",
+    "BResponse": "response",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
-	},
-	"imperativeConfiguration": {
+  },
+  "imperativeConfigurationWithContext": {},
+  "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
         "type"
@@ -62,7 +63,7 @@
         "subEvent",
         "organizer"
       ]
-		}
+    }
   },
   "inSpec": [
     "id",

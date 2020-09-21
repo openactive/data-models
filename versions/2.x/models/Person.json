@@ -71,8 +71,8 @@
     "bookableFeed": {
       "organizer": {
         "requiredFields": [
-					"id",
-					"taxMode"
+          "id",
+          "taxMode"
         ],
         "shallNotInclude": [
           "givenName",

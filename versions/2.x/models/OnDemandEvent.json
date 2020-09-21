@@ -75,6 +75,7 @@
   "shallNotInclude": [
     "eventSchedule"
   ],
+  "imperativeConfigurationWithContext": {},
   "fields": {
     "type": {
       "fieldName": "type",
