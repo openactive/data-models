@@ -32,7 +32,23 @@
   "shallNotInclude": [
     "eventSchedule"
   ],
-  "validationMode": {},
+  "validationMode": {
+    "C1Response": "response",
+    "C2Response": "response",
+    "PResponse": "response",
+    "BResponse": "response",
+    "OrderStatus": "response"
+  },
+  "imperativeConfigurationWithContext": {},
+  "imperativeConfiguration": {
+    "response": {
+      "requiredFields": [
+        "type",
+        "name",
+        "activity"
+      ]
+    }
+  },
   "inSpec": [
     "id",
     "type",

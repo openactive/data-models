@@ -14,9 +14,9 @@
   ],
   "validationMode": {
     "RPDEFeed": "feed",
+    "BookableRPDEFeed": "bookableFeed",
     "DatasetSite": "datasetSite",
     "DataCatalog": "dataCatalog",
-    "BookableRPDEFeed": "bookableFeed",
     "C1Request": "request",
     "C1Response": "response",
     "C2Request": "request",
