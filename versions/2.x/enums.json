@@ -87,7 +87,6 @@
   "OpenBookingFlowRequirement":{
     "namespace": "https://openactive.io/",
     "values":[
-      "OnlinePrepayment",
       "OpenBookingIntakeForm",
       "OpenBookingAttendeeDetails",
       "OpenBookingApproval",
