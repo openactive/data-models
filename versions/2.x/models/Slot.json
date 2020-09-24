@@ -115,11 +115,11 @@
       ],
       "recommendedFields": [
         "endDate",
-        "duration"
+        "duration",
+        "maximumUses",
+        "remainingUses"
       ],
       "shallNotInclude": [
-        "maximumUses",
-        "remainingUses",
         "offers"
       ]
     }
