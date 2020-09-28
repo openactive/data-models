@@ -16,6 +16,9 @@
       "fieldName": "object",
       "sameAs": "https://schema.org/object",
       "model": "#Event",
+      "alternativeModels": [
+        "#Order"
+      ],
       "example": {
         "@type": "SessionSeries",
         "@id": "https://id.booking-system.example.com/session-series/42"
