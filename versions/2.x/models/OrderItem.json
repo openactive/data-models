@@ -72,8 +72,7 @@
         "id",
         "orderItemStatus",
         "acceptedOffer",
-        "orderedItem",
-        "position"
+        "orderedItem"
       ],
       "recommendedFields": [
         "allowCustomerCancellationFullRefund",
