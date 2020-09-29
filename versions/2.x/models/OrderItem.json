@@ -138,7 +138,6 @@
       "hasId": true,
       "requiredFields": [
         "type",
-        "id",
         "orderItemStatus",
         "acceptedOffer",
         "orderedItem"
@@ -156,7 +155,16 @@
         "position"
       ],
       "requiredOptions": [
-
+        {
+          "description": [
+            "An `OrderProposal` MUST include `orderProposalStatus` and `orderProposalVersion` without an `@id`, where as an `Order` MUST include only an `@id`."
+          ],
+          "options": [
+            "id",
+            "orderProposalStatus"
+          ],
+          "oneOf": true
+        }
       ]
     },
     "cancellation": {
