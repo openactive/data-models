@@ -6,7 +6,7 @@
       {
         "title": "Error Use Case",
         "paragraphs": [
-          "`OrderItem` errors would have been generated at C2 given the same set of `OrderItem`s. The Broker is expected to retry C2 to retrieve such errors."
+          "`OrderItem` errors would have been generated at C2 given the same set of `OrderItem`s. The Broker is expected to retry C2 to retrieve such errors.  This error MUST only be used as a response from P or B."
         ]
       }
     ]
