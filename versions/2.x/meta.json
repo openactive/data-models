@@ -12,7 +12,7 @@
       "name": "SessionSeries",
       "sameAs": "https://openactive.io/SessionSeries",
       "parent": "EventSeries",
-      "defaultFeedPath": "session-series",
+      "defaultFeedPath": "/session-series",
       "themeDisplayName": "Sessions",
       "bookable": false
     },
@@ -21,7 +21,7 @@
       "name": "ScheduledSession",
       "sameAs": "https://openactive.io/ScheduledSession",
       "parent": "SessionSeries",
-      "defaultFeedPath": "scheduled-sessions",
+      "defaultFeedPath": "/scheduled-sessions",
       "themeDisplayName": "Sessions",
       "bookable": true
     },
@@ -29,7 +29,7 @@
       "identifier": "FacilityUse",
       "name": "FacilityUse",
       "sameAs": "https://openactive.io/FacilityUse",
-      "defaultFeedPath": "facility-uses",
+      "defaultFeedPath": "/facility-uses",
       "themeDisplayName": "Facilities",
       "bookable": false
     },
@@ -37,7 +37,7 @@
       "identifier": "IndividualFacilityUse",
       "name": "IndividualFacilityUse",
       "sameAs": "https://openactive.io/IndividualFacilityUse",
-      "defaultFeedPath": "individual-facility-uses",
+      "defaultFeedPath": "/individual-facility-uses",
       "themeDisplayName": "Facilities",
       "bookable": false
     },
@@ -46,7 +46,7 @@
       "name": "Slot for FacilityUse",
       "sameAs": "https://openactive.io/Slot",
       "parent": "FacilityUse",
-      "defaultFeedPath": "facility-use-slots",
+      "defaultFeedPath": "/facility-use-slots",
       "themeDisplayName": "Facilities",
       "bookable": true
     },
@@ -55,7 +55,7 @@
       "name": "Slot for IndividualFacilityUse",
       "sameAs": "https://openactive.io/Slot",
       "parent": "IndividualFacilityUse",
-      "defaultFeedPath": "individual-facility-use-slots",
+      "defaultFeedPath": "/individual-facility-use-slots",
       "themeDisplayName": "Facilities",
       "bookable": true
     },
@@ -63,7 +63,7 @@
       "identifier": "Course",
       "name": "Course",
       "sameAs": "https://schema.org/Course",
-      "defaultFeedPath": "courses",
+      "defaultFeedPath": "/courses",
       "themeDisplayName": "Courses",
       "bookable": false
     },
@@ -72,7 +72,7 @@
       "name": "CourseInstance",
       "sameAs": "https://schema.org/CourseInstance",
       "parent": "Course",
-      "defaultFeedPath": "course-instances",
+      "defaultFeedPath": "/course-instances",
       "themeDisplayName": "Courses",
       "bookable": true
     },
@@ -81,7 +81,7 @@
       "name": "Event for CourseInstance",
       "sameAs": "https://schema.org/Event",
       "parent": "CourseInstance",
-      "defaultFeedPath": "course-instance-subevents",
+      "defaultFeedPath": "/course-instance-subevents",
       "themeDisplayName": "Courses",
       "bookable": true
     },
@@ -90,7 +90,7 @@
       "name": "HeadlineEvent",
       "sameAs": "https://openactive.io/HeadlineEvent",
       "parent": "EventSeries",
-      "defaultFeedPath": "headline-events",
+      "defaultFeedPath": "/headline-events",
       "themeDisplayName": "Headline Events",
       "bookable": true
     },
@@ -99,7 +99,7 @@
       "name": "Event for HeadlineEvent",
       "sameAs": "https://schema.org/Event",
       "parent": "HeadlineEvent",
-      "defaultFeedPath": "headline-event-subevents",
+      "defaultFeedPath": "/headline-event-subevents",
       "themeDisplayName": "Headline Events",
       "bookable": true
     },
@@ -108,7 +108,7 @@
       "name": "Event",
       "sameAs": "https://schema.org/Event",
       "parent": "EventSeries",
-      "defaultFeedPath": "events",
+      "defaultFeedPath": "/events",
       "kind": ["Event"],
       "themeDisplayName": "Events",
       "bookable": true
@@ -117,7 +117,7 @@
       "identifier": "EventSeries",
       "name": "EventSeries",
       "sameAs": "https://schema.org/EventSeries",
-      "defaultFeedPath": "event-series",
+      "defaultFeedPath": "/event-series",
       "kind": ["EventSeries"],
       "bookable": false
     },
@@ -125,7 +125,7 @@
       "identifier": "OnDemandEvent",
       "name": "OnDemandEvent",
       "sameAs": "https://schema.org/OnDemandEvent",
-      "defaultFeedPath": "on-demand-event",
+      "defaultFeedPath": "/on-demand-event",
       "kind": ["OnDemandEvent"],
       "themeDisplayName": "On Demand Events",
       "bookable": true
