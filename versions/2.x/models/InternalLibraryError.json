@@ -1,6 +1,6 @@
 {
   "type": "InternalLibraryError",
-  "subClassOf": "#OpenBookingInternalError",
+  "subClassOf": "#InternalOpenBookingError",
   "description": {
     "sections": [
       {

@@ -1,5 +1,5 @@
 {
-  "type": "OpenBookingInternalError",
+  "type": "InternalOpenBookingError",
   "subClassOf": "#OpenBookingError",
   "description": {
     "sections": [
@@ -14,7 +14,7 @@
   "fields": {
     "type": {
         "fieldName": "type",
-        "requiredContent": "OpenBookingInternalError",
+        "requiredContent": "InternalOpenBookingError",
         "requiredType": "https://schema.org/Text"
     },
     "name": {
