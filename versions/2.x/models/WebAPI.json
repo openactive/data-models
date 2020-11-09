@@ -23,7 +23,8 @@
     "endpointURL",
     "conformsTo",
     "endpointDescription",
-    "landingPage"
+    "landingPage",
+    "authenticationAuthority"
   ],
   "description": {
     "sections": [
