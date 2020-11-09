@@ -115,6 +115,15 @@
       "description": [
         "The web page the broker uses to obtain access to the API, e.g. via a web form."
       ]
+    },
+    "authenticationAuthority": {
+      "fieldName": "authenticationAuthority",
+      "sameAs": "https://openactive.io/authenticationAuthority",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://auth.bookingsystem.com",
+      "description": [
+        "The location of the OpenID Provider or other relevant authentication authority that may be used to access the API."
+      ]
     }
   }
 }
