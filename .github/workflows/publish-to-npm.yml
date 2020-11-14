@@ -29,6 +29,8 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - name: Push version update
+      run: git push
 
     - name: Emit repository_dispatch
       uses: mvasigh/dispatch-action@1.1.6
