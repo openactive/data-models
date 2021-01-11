@@ -28,7 +28,7 @@
       ],
       "recommendedFields": [
         "name",
-        "ageRange"
+        "ageRestriction"
       ]
     },
     "bookableopendata": {
@@ -39,6 +39,9 @@
       ],
       "recommendedFields": [
         "name",
+        "ageRestriction"
+      ],
+      "shallNotInclude": [
         "ageRange"
       ]
     },
@@ -52,6 +55,7 @@
         "priceCurrency",
         "name",
         "ageRange",
+        "ageRestriction",
         "advanceBooking",
         "prepayment",
         "acceptedPaymentMethod",
@@ -72,10 +76,11 @@
       ],
       "recommendedFields": [
         "name",
-        "ageRange"
+        "ageRestriction"
       ],
       "shallNotInclude": [
-        "availableChannel"
+        "availableChannel",
+        "ageRange"
       ]
     }
   },
@@ -86,6 +91,7 @@
     "priceCurrency",
     "name",
     "ageRange",
+    "ageRestriction",
     "advanceBooking",
     "prepayment",
     "acceptedPaymentMethod",
@@ -155,7 +161,20 @@
       "sameAs": "https://openactive.io/ageRange",
       "model": "#QuantitativeValue",
       "description": [
-        "Indicates that an Offer is applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties."
+        "DEPRECATED: Please use `oa:ageRestriction` instead when describing an `Offer`."
+      ],
+      "example": {
+        "@type": "QuantitativeValue",
+        "minValue": 15,
+        "maxValue": 60
+      }
+    },
+    "ageRestriction": {
+      "fieldName": "ageRestriction",
+      "sameAs": "https://openactive.io/ageRestriction",
+      "model": "#QuantitativeValue",
+      "description": [
+        "Indicates that an Offer is only applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties. This must be displayed prominently to the user when selecting an `Offer` or before booking."
       ],
       "example": {
         "@type": "QuantitativeValue",

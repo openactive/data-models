@@ -101,6 +101,8 @@
         "category",
         "ageRange",
         "genderRestriction",
+        "ageRestriction",
+        "additionalAdmissionRestriction",
         "programme",
         "attendeeInstructions",
         "leader",
@@ -224,19 +226,6 @@
         }
       ]
     },
-    "ageRange": {
-      "fieldName": "ageRange",
-      "sameAs": "https://openactive.io/ageRange",
-      "model": "#QuantitativeValue",
-      "description": [
-        "Indicates that an event is suitable for a specific age range. If only a single age is specified then this is assumed to be a minimum age. Age ranges can be specified as follows: 18-30"
-      ],
-      "example": {
-        "@type": "QuantitativeValue",
-        "minValue": 15,
-        "maxValue": 60
-      }
-    },
     "attendeeInstructions": {
       "fieldName": "attendeeInstructions",
       "sameAs": "https://openactive.io/attendeeInstructions",
@@ -277,7 +266,7 @@
       "fieldName": "description",
       "sameAs": "https://schema.org/description",
       "requiredType": "https://schema.org/Text",
-      "example": "An fast paced game that incorporates netball, handball and football.",
+      "example": "A fast paced game that incorporates netball, handball and football.",
       "description": [
         "A plain text description of the event, which must not include HTML or other markup."
       ]
@@ -318,9 +307,44 @@
       "sameAs": "https://openactive.io/genderRestriction",
       "requiredType": "https://openactive.io/GenderRestrictionType",
       "description": [
-        "Indicates that an event is restricted to male, female or a mixed audience. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience"
+        "Indicates that an event is restricted to male, female or a mixed audience. This information must be displayed prominently to the user before booking. If a gender restriction isn't specified then applications should assume that an event is suitable for a mixed audience."
       ],
       "example": "https://openactive.io/FemaleOnly"
+    },
+    "ageRange": {
+      "fieldName": "ageRange",
+      "sameAs": "https://openactive.io/ageRange",
+      "model": "#QuantitativeValue",
+      "description": [
+        "Indicates that an event is recommended as being suitable for or is targetted at a specific age range."
+      ],
+      "example": {
+        "@type": "QuantitativeValue",
+        "minValue": 50,
+        "maxValue": 60
+      }
+    },
+    "ageRestriction": {
+      "fieldName": "ageRestriction",
+      "sameAs": "https://openactive.io/ageRestriction",
+      "model": "#QuantitativeValue",
+      "description": [
+        "The enforced attendee age range requirement of the Event or Offer, that must be displayed prominently to the user before booking."
+      ],
+      "example": {
+        "@type": "QuantitativeValue",
+        "minValue": 15,
+        "maxValue": 60
+      }
+    },
+    "additionalAdmissionRestriction": {
+      "fieldName": "additionalAdmissionRestriction",
+      "sameAs": "https://openactive.io/additionalAdmissionRestriction",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "example": [ "Participants younger than 12 must be accompanied by an adult", "Participants must be comfortable standing for long periods of time" ],
+      "description": [
+        "Free text restrictions that must be displayed prominently to the user before booking. This property must only contain restrictions not described by `oa:ageRestriction` or `oa:genderRestriction`."
+      ]
     },
     "identifier": {
       "fieldName": "identifier",

@@ -123,7 +123,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://auth.bookingsystem.com",
       "description": [
-        "The location of the OpenID Provider or other relevant authentication authority that may be used to access the API."
+        "The location of the OpenID Provider or other relevant authentication authority that must be used to access the API."
       ]
     }
   }
