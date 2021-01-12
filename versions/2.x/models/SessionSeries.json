@@ -89,6 +89,8 @@
     "category",
     "ageRange",
     "genderRestriction",
+    "ageRestriction",
+    "additionalAdmissionRestriction",
     "programme",
     "attendeeInstructions",
     "leader",
