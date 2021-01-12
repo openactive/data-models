@@ -40,7 +40,8 @@
     "accessibilityInformation",
     "accessibilitySupport",
     "category",
-    "attendeeInstructions"
+    "attendeeInstructions",
+    "additionalAdmissionRestriction"
   ],
   "fields": {
     "type": {

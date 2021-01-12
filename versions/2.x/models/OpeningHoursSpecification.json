@@ -12,7 +12,9 @@
     "type",
     "opens",
     "closes",
-    "dayOfWeek"
+    "dayOfWeek",
+    "validFrom",
+    "validThrough"
   ],
   "fields": {
     "type": {
@@ -46,6 +48,24 @@
         "The opening time."
       ],
       "example": "09:00"
+    },
+    "validFrom": {
+      "fieldName": "validFrom",
+      "sameAs": "https://schema.org/validFrom",
+      "requiredType": "https://schema.org/Date",
+      "description": [
+        "The date when the item becomes valid. The item will be valid at the beginning of the specified day."
+      ],
+      "example": "2018-01-22"
+    },
+    "validThrough": {
+      "fieldName": "validThrough",
+      "sameAs": "https://schema.org/validThrough",
+      "requiredType": "https://schema.org/Date",
+      "description": [
+        "The date after which the item is no longer valid. The item will cease to be valid at the end of the specified day."
+      ],
+      "example": "2018-01-27"
     }
   }
 }
