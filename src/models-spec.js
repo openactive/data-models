@@ -15,12 +15,13 @@ const schemaOrgDataModel = (() => {
   // Note even though schema.org has migrated http://pending.schema.org/ to https://schema.org/
   // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
   // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
+  // Note we also replace the prefix "schema:" with "https://schema.org/"
   const getPrefixReplacedId = (entity) => {
-    if (entity['https://schema.org/isPartOf']
-      && entity['https://schema.org/isPartOf']['@id'] !== 'https://meta.schema.org') {
-      return entity['@id'].replace(/^https:\/\/schema.org/, entity['https://schema.org/isPartOf']['@id']);
+    if (entity['schema:isPartOf']
+      && entity['schema:isPartOf']['@id'] !== 'https://meta.schema.org') {
+      return entity['@id'].replace(/^schema:/, `${entity['schema:isPartOf']['@id']}/`);
     }
-    return entity['@id'];
+    return entity['@id'].replace(/^schema:/, 'https://schema.org/');
   };
 
   return getSchemaOrgVocab()['@graph'].map(entity => getPrefixReplacedId(entity));

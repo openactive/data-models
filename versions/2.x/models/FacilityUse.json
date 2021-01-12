@@ -70,7 +70,8 @@
     "accessibilityInformation",
     "accessibilitySupport",
     "category",
-    "attendeeInstructions"
+    "attendeeInstructions",
+    "additionalAdmissionRestriction"
   ],
   "fields": {
     "type": {
@@ -290,6 +291,15 @@
         "priceCurrency": "GBP",
         "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
       }
+    },
+    "additionalAdmissionRestriction": {
+      "fieldName": "additionalAdmissionRestriction",
+      "sameAs": "https://openactive.io/additionalAdmissionRestriction",
+      "requiredType": "ArrayOf#https://schema.org/Text",
+      "example": [ "Participants younger than 12 must be accompanied by an adult", "Participants must be comfortable standing for long periods of time" ],
+      "description": [
+        "Free text restrictions that must be displayed prominently to the user before booking. This property must only contain restrictions not described by `oa:ageRestriction` or `oa:genderRestriction`."
+      ]
     },
     "url": {
       "fieldName": "url",
