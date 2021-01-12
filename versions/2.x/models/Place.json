@@ -42,6 +42,7 @@
     "containsPlace",
     "telephone",
     "openingHoursSpecification",
+    "specialOpeningHoursSpecification",
     "amenityFeature"
   ],
   "validationMode": {
@@ -232,6 +233,14 @@
       "model": "ArrayOf#OpeningHoursSpecification",
       "description": [
         "The times the Place is open"
+      ]
+    },
+    "specialOpeningHoursSpecification": {
+      "sameAs": "https://schema.org/specialOpeningHoursSpecification",
+      "fieldName": "specialOpeningHoursSpecification",
+      "model": "ArrayOf#OpeningHoursSpecification",
+      "description": [
+        "Explicitly override general opening hours brought in scope by `schema:openingHoursSpecification`."
       ]
     },
     "telephone": {
