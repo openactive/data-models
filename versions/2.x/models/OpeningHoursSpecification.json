@@ -27,17 +27,17 @@
       "sameAs": "https://schema.org/closes",
       "requiredType": "https://schema.org/Time",
       "description": [
-        "The closing time."
+        "The closing time. Set \"00:00\" for the value of `opens` and `closes` to indicated the `Place` is closed on the specified days."
       ],
       "example": "17:00"
     },
     "dayOfWeek": {
       "fieldName": "dayOfWeek",
       "sameAs": "https://schema.org/dayOfWeek",
-      "requiredType": "https://schema.org/DayOfWeek",
-      "example": "https://schema.org/Monday",
+      "requiredType": "ArrayOf#https://schema.org/DayOfWeek",
+      "example": [ "https://schema.org/Saturday", "https://schema.org/Sunday" ],
       "description": [
-        "Defines the day of the week upon which the Place is open"
+        "Defines the days of the week upon which the `opens` and `closes` values are specified."
       ]
     },
     "opens": {
@@ -45,7 +45,7 @@
       "sameAs": "https://schema.org/opens",
       "requiredType": "https://schema.org/Time",
       "description": [
-        "The opening time."
+        "The opening time. Set \"00:00\" for the value of `opens` and `closes` to indicated the `Place` is closed on the specified days."
       ],
       "example": "09:00"
     },
