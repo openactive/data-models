@@ -16,7 +16,8 @@
       "Thursday",
       "Friday",
       "Saturday",
-      "Sunday"
+      "Sunday",
+      "PublicHolidays"
     ]
   },
   "EventStatusType": {
