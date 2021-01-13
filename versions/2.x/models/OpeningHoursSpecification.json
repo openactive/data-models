@@ -5,8 +5,7 @@
   "requiredFields": [
     "type",
     "opens",
-    "closes",
-    "dayOfWeek"
+    "closes"
   ],
   "inSpec": [
     "type",
