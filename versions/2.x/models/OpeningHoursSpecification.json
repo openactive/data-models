@@ -4,6 +4,7 @@
   "hasId": false,
   "requiredFields": [
     "type",
+    "dayOfWeek",
     "opens",
     "closes"
   ],
@@ -15,6 +16,23 @@
     "validFrom",
     "validThrough"
   ],
+  "validationMode": {
+    "RPDEFeed": "feed",
+    "BookableRPDEFeed": "feed"
+  },
+  "imperativeConfigurationWithContext": {
+    "feed": {
+      "specialOpeningHoursSpecification": {
+        "requiredFields": [
+          "type",
+          "opens",
+          "closes",
+          "validFrom",
+          "validThrough"
+        ]
+      }
+    }
+  },
   "fields": {
     "type": {
       "fieldName": "type",
@@ -36,7 +54,7 @@
       "requiredType": "ArrayOf#https://schema.org/DayOfWeek",
       "example": [ "https://schema.org/Saturday", "https://schema.org/Sunday" ],
       "description": [
-        "Defines the days of the week upon which the `opens` and `closes` values are specified."
+        "Defines the days of the week upon which the `opens` and `closes` values are specified. Note this property is optional when used within `specialOpeningHoursSpecification`."
       ]
     },
     "opens": {
@@ -53,7 +71,7 @@
       "sameAs": "https://schema.org/validFrom",
       "requiredType": "https://schema.org/Date",
       "description": [
-        "The date when the item becomes valid. The item will be valid at the beginning of the specified day."
+        "The date when the item becomes valid. The item will be valid at the beginning of the specified day. Note this property is required when used within `specialOpeningHoursSpecification`."
       ],
       "example": "2018-01-22"
     },
@@ -62,7 +80,7 @@
       "sameAs": "https://schema.org/validThrough",
       "requiredType": "https://schema.org/Date",
       "description": [
-        "The date after which the item is no longer valid. The item will cease to be valid at the end of the specified day."
+        "The date after which the item is no longer valid. The item will cease to be valid at the end of the specified day. Note this property is required when used within `specialOpeningHoursSpecification`."
       ],
       "example": "2018-01-27"
     }
