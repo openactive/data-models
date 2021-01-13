@@ -133,45 +133,52 @@
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Sunday",
-              "opens": "09:00",
-              "closes": "17:30"
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday"
+              ],
+              "opens": "06:00",
+              "closes": "13:00"
             },
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Monday",
-              "opens": "06:30",
-              "closes": "21:30"
+              "dayOfWeek": [
+                "https://schema.org/Monday",
+                "https://schema.org/Tuesday",
+                "https://schema.org/Wednesday",
+                "https://schema.org/Thursday"
+              ],
+              "opens": "16:00",
+              "closes": "20:00"
             },
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Tuesday",
-              "opens": "06:30",
-              "closes": "21:30"
+              "dayOfWeek": [
+                "https://schema.org/Friday"
+              ],
+              "opens": "06:00",
+              "closes": "12:00"
             },
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Wednesday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
+              "dayOfWeek": [
+                "https://schema.org/Saturday",
+                "https://schema.org/Sunday",
+                "https://schema.org/PublicHolidays"
+              ],
+              "opens": "08:00",
+              "closes": "12:00"
+            }
+          ],
+          "specialOpeningHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Thursday",
-              "opens": "06:30",
-              "closes": "21:30"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Friday",
-              "opens": "06:30",
-              "closes": "20:30"
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": "https://schema.org/Saturday",
-              "opens": "07:15",
-              "closes": "17:30"
+              "opens": "00:00",
+              "closes": "00:00",
+              "validFrom": "2021-01-01",
+              "validThrough": "2021-01-31"
             }
           ]
         },
