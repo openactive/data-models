@@ -21,7 +21,9 @@
     "type",
     "name",
     "description",
-    "url"
+    "url",
+    "accessId",
+    "accessCode"
   ],
   "fields": {
     "type": {
@@ -33,9 +35,9 @@
       "fieldName": "name",
       "sameAs": "https://schema.org/name",
       "requiredType": "https://schema.org/Text",
-      "example": "Zoom Room",
+      "example": "Zoom",
       "description": [
-        "The name of the livestream."
+        "The name of the service that is providing remote access to the Opportunity."
       ]
     },
     "description": {
@@ -53,7 +55,25 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://zoom.us/room/3fbCs0GVjgQ",
       "description": [
-        "The URL for the livestream."
+        "The URL that enables remote access to the Opportunity, which should include encoded access credentials where possible."
+      ]
+    },
+    "accessId": {
+      "fieldName": "accessId",
+      "sameAs": "https://openactive.io/accessId",
+      "requiredType": "https://schema.org/Text",
+      "example": "123456789",
+      "description": [
+        "The identifier required to access the `VirtualLocation` from any device, without requiring the URL, e.g. the meeting ID."
+      ]
+    },
+    "accessCode": {
+      "fieldName": "accessCode",
+      "sameAs": "https://schema.org/accessCode",
+      "requiredType": "https://schema.org/Text",
+      "example": "211277",
+      "description": [
+        "The password or pin required to access the `VirtualLocation` from any device, without requiring the URL, e.g. the meeting password."
       ]
     }
   }

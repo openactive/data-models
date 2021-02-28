@@ -194,6 +194,7 @@
     "orderedItem",
     "accessCode",
     "accessPass",
+    "accessChannel",
     "error",
     "cancellationMessage",
     "customerNotice",
@@ -255,6 +256,12 @@
       "sameAs": "https://openactive.io/accessPass",
       "model": "ArrayOf#ImageObject",
       "description": ["ImageObject or Barcode that contains reference to an asset (e.g. Barcode, QR code image or PDF) usable for entrance. Not applicable for an OrderQuote."]
+    },
+    "accessChannel": {
+      "fieldName": "accessChannel",
+      "sameAs": "https://openactive.io/accessChannel",
+      "model": "#VirtualLocation",
+      "description": ["Channel through which the user can participate in the Opportunity. Not applicable for an OrderQuote."]
     },
     "error": {
       "fieldName": "error",
