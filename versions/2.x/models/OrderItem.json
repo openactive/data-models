@@ -266,25 +266,25 @@
       "fieldName": "cancellationMessage",
       "sameAs": "https://openactive.io/cancellationMessage",
       "requiredType": "https://schema.org/Text",
-      "description": ["A message set by the Seller in the event of Opportunity cancellation, only applicable for an  Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/SellerCancelled"]
+      "description": ["A message set by the Seller in the event of Opportunity cancellation, only applicable for an  `Order` and where the `OrderItem` has `orderItemStatus` set to `https://openactive.io/SellerCancelled`"]
     },
     "customerNotice": {
       "fieldName": "customerNotice",
       "sameAs": "https://openactive.io/customerNotice",
       "requiredType": "https://schema.org/Text",
-      "description": ["A message set by the Seller to trigger a notification to the Customer, only applicable for an Order and where the OrderItem has  orderItemStatus set to  https://openactive.io/OrderItemConfirmed or  https://openactive.io/CustomerAttended"]
+      "description": ["A message set by the Seller to trigger a notification to the Customer, only applicable for an `Order` and where the `OrderItem` has `orderItemStatus` set to  `https://openactive.io/OrderItemConfirmed` or `https://openactive.io/CustomerAttended`"]
     },
     "attendee": {
       "fieldName": "attendee",
       "sameAs": "https://schema.org/attendee",
       "model": "#Person",
-      "description": []
+      "description": ["The person attending the Opportunity related to the OrderItem."]
     },
     "attendeeDetailsRequired": {
       "fieldName": "attendeeDetailsRequired",
       "sameAs": "https://openactive.io/attendeeDetailsRequired",
       "requiredType": "ArrayOf#https://schema.org/Property",
-      "description": []
+      "description": ["The properties of `schema:Person` that are required to describe an `attendee` for this `OrderItem`."]
     },
     "orderItemIntakeForm": {
       "fieldName": "orderItemIntakeForm",
