@@ -231,7 +231,7 @@
             "name": "Oxygen - Senior",
             "price": 3.3,
             "priceCurrency": "GBP",
-            "ageRange": {
+            "ageRestriction": {
               "@type": "QuantitativeValue",
               "minValue": 50
             },
