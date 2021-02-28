@@ -168,8 +168,8 @@
         "The organization ultimately responsible for this `Dataset`."
       ],
       "example": {
+        "@type": "Organization",
         "name": "Central Speedball Association",
-        "type": "Organization",
         "url": "http://www.speedball-world.com"
       }
     },

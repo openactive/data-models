@@ -14,7 +14,7 @@ The type of object that this model describes. The name of the file should corres
 
 ```json
 {
-  "type": "Event"
+  "@type": "Event"
 }
 ```
 
@@ -26,14 +26,14 @@ When calling `loadModel`, all of the parent model properties will be inherited.
 
 ```json
 {
-  "type": "BabyChanging",
+  "@type": "BabyChanging",
   "subClassOf": "#LocationFeatureSpecification"
 }
 ```
 
 ```json
 {
-  "type": "FacilityUse",
+  "@type": "FacilityUse",
   "subClassOf": "https://schema.org/Product"
 }
 ```

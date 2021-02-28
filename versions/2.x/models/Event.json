@@ -522,8 +522,8 @@
         "The person or organization ultimately responsible for an event. An organizer might be an  schema:Organization or a schema:Person."
       ],
       "example": {
-        "name": "Central Speedball Association",
         "@type": "Organization",
+        "name": "Central Speedball Association",
         "url": "http://www.speedball-world.com"
       }
     },

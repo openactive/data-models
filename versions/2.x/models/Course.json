@@ -45,8 +45,8 @@
         "The person or organization who have created the Course. An author might be an schema:Organization or a schema:Person."
       ],
       "example": {
-        "name": "Central Speedball Association",
         "@type": "Organization",
+        "name": "Central Speedball Association",
         "url": "http://www.speedball-world.com"
       }
     },

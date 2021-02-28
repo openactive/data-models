@@ -81,8 +81,8 @@
         "The organization ultimately responsible for maintaining this `DataCatalog`."
       ],
       "example": {
+        "@type": "Organization",
         "name": "Central Speedball Association",
-        "type": "Organization",
         "url": "http://www.speedball-world.com"
       }
     },
