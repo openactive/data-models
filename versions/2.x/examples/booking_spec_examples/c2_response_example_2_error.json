@@ -91,7 +91,6 @@
       "@type": "OrderItem",
       "position": 0,
       "orderItemStatus": "https://openactive.io/OrderItemConfirmed",
-      "allowCustomerCancellationFullRefund": true,
       "unitTaxSpecification": [
         {
           "@type": "TaxChargeSpecification",
@@ -109,6 +108,7 @@
         "price": 10,
         "priceCurrency": "GBP",
         "validFromBeforeStartDate": "P6D",
+        "allowCustomerCancellationFullRefund": true,
         "latestCancellationBeforeStartDate": "P1D"
       },
       "orderedItem": {
@@ -127,8 +127,8 @@
           "name": "Bodypump",
           "activity": [
             {
-              "@type": "Concept",
-              "@id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+              "type": "Concept",
+              "id": "https://openactive.io/activity-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
               "prefLabel": "Bodypump™",
               "inScheme": "https://openactive.io/activity-list"
             }

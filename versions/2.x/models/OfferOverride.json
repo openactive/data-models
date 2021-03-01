@@ -56,6 +56,7 @@
 		"availableChannel",
 		"validFromBeforeStartDate",
 		"latestCancellationBeforeStartDate",
+		"allowCustomerCancellationFullRefund",
 		"openBookingFlowRequirement",
 		"identifier",
 		"description",
@@ -68,7 +69,8 @@
 		"ageRange",
 		"ageRestriction",
 		"validFromBeforeStartDate",
-		"latestCancellationBeforeStartDate"
+		"latestCancellationBeforeStartDate",
+		"allowCustomerCancellationFullRefund"
 	],
 	"fields": {
 		"type": {

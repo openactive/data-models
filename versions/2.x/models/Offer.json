@@ -39,7 +39,8 @@
       ],
       "recommendedFields": [
         "name",
-        "ageRestriction"
+        "ageRestriction",
+        "allowCustomerCancellationFullRefund"
       ],
       "shallNotInclude": [
         "ageRange"
@@ -62,6 +63,7 @@
         "availableChannel",
         "validFromBeforeStartDate",
         "latestCancellationBeforeStartDate",
+        "allowCustomerCancellationFullRefund",
         "openBookingFlowRequirement",
         "identifier",
         "description",
@@ -76,7 +78,8 @@
       ],
       "recommendedFields": [
         "name",
-        "ageRestriction"
+        "ageRestriction",
+        "allowCustomerCancellationFullRefund"
       ],
       "shallNotInclude": [
         "availableChannel",
@@ -98,6 +101,7 @@
     "availableChannel",
     "validFromBeforeStartDate",
     "latestCancellationBeforeStartDate",
+    "allowCustomerCancellationFullRefund",
     "openBookingFlowRequirement",
     "identifier",
     "description",
@@ -244,6 +248,12 @@
       "description": [
         "The duration before the startDate during which this Offer may not be cancelled, given in ISO 8601 format."
       ]
+    },
+    "allowCustomerCancellationFullRefund": {
+      "fieldName": "allowCustomerCancellationFullRefund",
+      "sameAs": "https://openactive.io/allowCustomerCancellationFullRefund",
+      "requiredType": "https://schema.org/Boolean",
+      "description": ["Whether the opportunity can be cancelled with a full refund at any time before the `startDate`, or before the `latestCancellationBeforeStartDate` if provided."]
     },
     "openBookingFlowRequirement": {
       "fieldName": "openBookingFlowRequirement",

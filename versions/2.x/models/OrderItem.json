@@ -31,7 +31,6 @@
       ],
       "shallNotInclude": [
         "orderItemStatus",
-        "allowCustomerCancellationFullRefund",
         "unitTaxSpecification",
         "accessCode",
         "error",
@@ -50,9 +49,6 @@
         "acceptedOffer",
         "orderedItem",
         "position"
-      ],
-      "recommendedFields": [
-        "allowCustomerCancellationFullRefund"
       ],
       "shallNotInclude": [
         "orderItemStatus",
@@ -75,9 +71,9 @@
         "orderedItem"
       ],
       "recommendedFields": [
-        "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessPass"
+        "accessPass",
+        "accessChannel"
       ],
       "shallNotInclude": [
         "cancellationMessage",
@@ -97,9 +93,9 @@
         "position"
       ],
       "recommendedFields": [
-        "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessPass"
+        "accessPass",
+        "accessChannel"
       ],
       "shallNotInclude": [
         "cancellationMessage",
@@ -120,9 +116,9 @@
         "orderedItem"
       ],
       "recommendedFields": [
-        "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessPass"
+        "accessPass",
+        "accessChannel"
       ],
       "shallNotInclude": [
         "cancellationMessage",
@@ -142,9 +138,9 @@
         "orderedItem"
       ],
       "recommendedFields": [
-        "allowCustomerCancellationFullRefund",
         "accessCode",
-        "accessPass"
+        "accessPass",
+        "accessChannel"
       ],
       "shallNotInclude": [
         "attendee",
@@ -166,7 +162,6 @@
       "recommendedFields": [
       ],
       "shallNotInclude": [
-        "allowCustomerCancellationFullRefund",
         "unitTaxSpecification",
         "accessCode",
         "accessPass",
@@ -188,7 +183,6 @@
     "type",
     "position",
     "orderItemStatus",
-    "allowCustomerCancellationFullRefund",
     "unitTaxSpecification",
     "acceptedOffer",
     "orderedItem",
@@ -220,12 +214,6 @@
       "sameAs": "https://schema.org/orderItemStatus",
       "requiredType": "https://openactive.io/OrderItemStatus",
       "description": []
-    },
-    "allowCustomerCancellationFullRefund": {
-      "fieldName": "allowCustomerCancellationFullRefund",
-      "sameAs": "https://openactive.io/allowCustomerCancellationFullRefund",
-      "requiredType": "https://schema.org/Boolean",
-      "description": ["Whether the event can be cancelled."]
     },
     "unitTaxSpecification": {
       "fieldName": "unitTaxSpecification",
