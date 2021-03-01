@@ -5,8 +5,8 @@
   "url": "http://www.example.org/events/1",
   "activity": [
     {
-      "id": "https://openactive.io/activity-list/#7e5cb3ee-8c91-4f85-8c97-e335e0013eb3",
       "@type": "Concept",
+      "@id": "https://openactive.io/activity-list/#7e5cb3ee-8c91-4f85-8c97-e335e0013eb3",
       "prefLabel": "Roller blading",
       "inScheme": "https://openactive.io/activity-list"
     }
