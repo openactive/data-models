@@ -466,6 +466,7 @@ If this field has been deprecated, both `"deprecated": true` should be set, and 
 }
 ```
 
+Note that this is different from schema.org's `supersededBy`, as deprecation can occur for a specific use of the property within a particular type rather than the entire property.
 
 ## Namespace resolution
 
