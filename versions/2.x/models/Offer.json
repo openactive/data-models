@@ -165,13 +165,11 @@
       "sameAs": "https://openactive.io/ageRange",
       "model": "#QuantitativeValue",
       "description": [
-        "DEPRECATED: Please use `oa:ageRestriction` instead when describing an `Offer`."
+        "DEPRECATED: Please use `oa:ageRestriction` instead when describing an `Offer`.",
+        "Indicates that an Offer is only applicable to a specific age range."
       ],
-      "example": {
-        "@type": "QuantitativeValue",
-        "minValue": 15,
-        "maxValue": 60
-      }
+      "deprecated": true,
+      "deprecationGuidance": "Use `ageRestriction` instead of `ageRange` within the `Offer` for cases where the `Offer` is age restricted."
     },
     "ageRestriction": {
       "fieldName": "ageRestriction",

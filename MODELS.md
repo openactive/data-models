@@ -197,25 +197,6 @@ A key-value object of Fields (see below).
 }
 ```
 
-#### betaFields
-
-An key-value object of beta namespace fields (see below). These are currently not respected by the validator.
-
-```json
-{
-  "betaFields": {
-    "beta:description": {
-      "fieldName": "beta:description",
-      "requiredType": "https://schema.org/Text",
-      "example": "An fast paced game that incorporates netball, handball and football.",
-      "description": [
-        "A free text description of the event"
-      ]
-    }
-  }
-}
-```
-
 #### description
 
 TODO
@@ -471,6 +452,19 @@ To specify a whitelist of fields (anything not in this list will not be inherita
 ```
 
 `exclude` takes precedence over `include`.
+
+
+#### deprecated and deprecationGuidance
+
+If this field has been deprecated, both `"deprecated": true` should be set, and `deprecationGuidance` should be provided:
+
+```json
+{
+  "fieldName": "ageRange",
+  "deprecated": true,
+  "deprecationGuidance": "Use `ageRestriction` instead of `ageRange` within the `Offer` for cases where the `Offer` is age restricted."
+}
+```
 
 
 ## Namespace resolution
