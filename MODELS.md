@@ -454,19 +454,18 @@ To specify a whitelist of fields (anything not in this list will not be inherita
 `exclude` takes precedence over `include`.
 
 
-#### deprecated and deprecationGuidance
+#### deprecationGuidance
 
-If this field has been deprecated, both `"deprecated": true` should be set, and `deprecationGuidance` should be provided:
+If this field has been deprecated, `deprecationGuidance` must be provided:
 
 ```json
 {
   "fieldName": "ageRange",
-  "deprecated": true,
   "deprecationGuidance": "Use `ageRestriction` instead of `ageRange` within the `Offer` for cases where the `Offer` is age restricted."
 }
 ```
 
-Note that this is different from schema.org's `supersededBy`, as deprecation can occur for a specific use of the property within a particular type rather than the entire property.
+Note that deprecation is different from schema.org's `supersededBy`, as deprecation can occur for a specific use of the property within a particular type rather than the entire property.
 
 ## Namespace resolution
 

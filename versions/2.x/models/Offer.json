@@ -167,7 +167,6 @@
       "description": [
         "Indicates that an Offer is only applicable to a specific age range."
       ],
-      "deprecated": true,
       "deprecationGuidance": "Use `ageRestriction` instead of `ageRange` within the `Offer` for cases where the `Offer` is age restricted."
     },
     "ageRestriction": {
@@ -175,7 +174,7 @@
       "sameAs": "https://openactive.io/ageRestriction",
       "model": "#QuantitativeValue",
       "description": [
-        "Indicates that an Offer is only applicable to a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties. This must be displayed prominently to the user when selecting an `Offer` or before booking."
+        "Indicates that an Offer can only be purchased by participants within a specific age range. Specified as a QuantitativeValue with minValue and maxValue properties. This must be displayed prominently to the user when selecting an `Offer` or before booking."
       ],
       "example": {
         "@type": "QuantitativeValue",
