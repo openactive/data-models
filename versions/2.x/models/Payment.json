@@ -55,7 +55,6 @@
       "type",
       "name",
       "identifier",
-      "paymentMethod",
       "accountId",
       "paymentProviderId",
       "additionalProperty"
@@ -78,12 +77,6 @@
          "requiredType":"https://schema.org/Text",
          "example":"SB1234",
          "description":["The identifier of the payment held by the Broker and/or Payment Provider."]
-      },
-      "paymentMethod":{
-         "fieldName":"paymentMethod",
-         "sameAs":"https://schema.org/paymentMethod",
-         "requiredType":"https://schema.org/PaymentMethod",
-         "description":["paymentMethod must not be used, and is reserved for future versions of this specification."]
       },
       "accountId":{
          "fieldName":"accountId",

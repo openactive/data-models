@@ -34,7 +34,6 @@
       "type",
       "name",
       "identifier",
-      "paymentMethod",
       "accountId",
       "paymentProviderId",
       "additionalProperty"
