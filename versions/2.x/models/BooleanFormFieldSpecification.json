@@ -1,32 +1,34 @@
 {
-   "type":"BooleanFormFieldSpecification",
-   "subClassOf":"#PropertyValueSpecification",
-    "hasId":false,
-    "requiredFields":[
-            "type",
-            "name"
-         ],
-         "recommendedFields":[
-            "description"
-         ],
-         "shallNotInclude":[
-            "valueRequired"
-         ],
-         "requiredOptions":[],
-   "inSpec":[
+   "type": "BooleanFormFieldSpecification",
+   "subClassOf": "#PropertyValueSpecification",
+   "sampleId": "https://example.com/photoconsent",
+   "requiredFields": [
       "type",
+      "id",
+      "name"
+   ],
+   "recommendedFields": [
+      "description"
+   ],
+   "shallNotInclude": [
+      "valueRequired"
+   ],
+   "requiredOptions": [],
+   "inSpec": [
+      "type",
+      "id",
       "name",
       "description",
       "valueRequired"
    ],
-   "notInSpec":[
-     "valueRequired"
+   "notInSpec": [
+      "valueRequired"
    ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"BooleanFormFieldSpecification"
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "BooleanFormFieldSpecification"
       }
    }
 }

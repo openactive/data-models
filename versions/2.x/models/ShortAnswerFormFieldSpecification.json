@@ -1,32 +1,30 @@
 {
-   "type":"ShortAnswerFormFieldSpecification",
-   "subClassOf":"#PropertyValueSpecification",
-   "hasId":false,
-   "requiredFields":[
-            "type",
-            "name"
-         ],
-         "recommendedFields":[
-            "description"
-         ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[],
-   "inSpec":[
+   "type": "ShortAnswerFormFieldSpecification",
+   "subClassOf": "#PropertyValueSpecification",
+   "sampleId": "https://example.com/question1",
+   "requiredFields": [
       "type",
+      "id",
+      "name"
+   ],
+   "recommendedFields": [
+      "description"
+   ],
+   "shallNotInclude": [],
+   "requiredOptions": [],
+   "inSpec": [
+      "type",
+      "id",
       "name",
       "description",
       "valueRequired"
    ],
-   "notInSpec":[
-
-   ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"ShortAnswerFormFieldSpecification"
+   "notInSpec": [],
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "ShortAnswerFormFieldSpecification"
       }
    }
 }

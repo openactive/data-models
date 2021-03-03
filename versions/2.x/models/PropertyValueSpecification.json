@@ -1,60 +1,58 @@
 {
-   "type":"PropertyValueSpecification",
+   "type": "PropertyValueSpecification",
    "derivedFrom": "https://schema.org/PropertyValueSpecification",
-   "status":{
-      "response":{
-         "hasId":false,
-         "requiredFields":[
+   "hasId": true,
+   "idFormat": "https://schema.org/URL",
+   "sampleId": "https://example.com/someid",
+   "status": {
+      "response": {
+         "hasId": false,
+         "requiredFields": [
             "type",
             "name"
          ],
-         "recommendedFields":[
+         "recommendedFields": [
             "description"
          ],
-         "shallNotInclude":[
-
-         ],
-         "requiredOptions":[
-
-         ]
+         "shallNotInclude": [],
+         "requiredOptions": []
       }
    },
-   "inSpec":[
+   "inSpec": [
       "type",
+      "id",
       "name",
       "description",
       "valueRequired"
    ],
-   "notInSpec":[
-
-   ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"PropertyValueSpecification"
+   "notInSpec": [],
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "PropertyValueSpecification"
       },
-      "name":{
-         "fieldName":"name",
-         "requiredType":"https://schema.org/Text",
+      "name": {
+         "fieldName": "name",
+         "requiredType": "https://schema.org/Text",
          "sameAs": "https://schema.org/name",
-         "description":[
+         "description": [
             "Display label for the field."
          ]
       },
-      "description":{
-         "fieldName":"description",
-         "requiredType":"https://schema.org/Text",
+      "description": {
+         "fieldName": "description",
+         "requiredType": "https://schema.org/Text",
          "sameAs": "https://schema.org/description",
-         "description":[
+         "description": [
             "Descriptive help plain text for the field, which must not include HTML or other markup."
          ]
       },
-      "valueRequired":{
-         "fieldName":"valueRequired",
-         "requiredType":"https://schema.org/Text",
+      "valueRequired": {
+         "fieldName": "valueRequired",
+         "requiredType": "https://schema.org/Text",
          "sameAs": "https://schema.org/valueRequired",
-         "description":[
+         "description": [
             "Specifies that a value for the field is required to proceed with the booking."
          ]
       }
