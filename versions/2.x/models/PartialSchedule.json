@@ -12,7 +12,8 @@
   ],
   "notInSpec":[
     "idTemplate",
-    "urlTemplate"
+    "urlTemplate",
+    "scheduledEventType"
   ],
   "fields": {
     "type": {
