@@ -163,16 +163,10 @@
     "identifier": {
       "fieldName": "identifier",
       "sameAs": "https://schema.org/identifier",
-      "alternativeModels": [
-        "#PropertyValue",
-        "ArrayOf#PropertyValue"
-      ],
       "requiredType": "https://schema.org/Text",
-      "alternativeTypes": [
-        "https://schema.org/Integer"
-      ],
-      "example": "SB1234",
-      "description": ["A local non-URI identifier for the resource"]
+      "example": "123e4567-e89b-12d3-a456-426614174000",
+      "description": ["The Order UUID of the Order, OrderQuote or OrderProposal, which is required within the Orders feed."],
+      "valueConstraint": "UUID"
     },
     "seller": {
       "fieldName": "seller",

@@ -317,6 +317,61 @@ The maximum number of decimal places this field should have.
 }
 ```
 
+#### minValueInclusive
+
+The minimum value of an integer, inclusive.
+
+```json
+"repeatCount": {
+  "fieldName": "repeatCount",
+  "sameAs": "https://pending.schema.org/repeatCount",
+  "requiredType": "https://schema.org/Integer",
+  "example": 3,
+  "description": [
+    "Defines the number of times a recurring Event will take place."
+  ],
+  "minValueInclusive": 1
+},
+```
+
+#### valueConstraint
+
+A specific constraint on the value of the property.
+
+Available constraints are:
+
+##### `UriTemplate`
+
+A RFC 6570 compliant Uri Template represented as a string.
+
+```json
+{
+  "fieldName": "idTemplate",
+  "sameAs": "https://openactive.io/idTemplate",
+  "requiredType": "https://schema.org/Text",
+  "example": "https://api.example.org/session-series/123/{startDate}",
+  "description": [
+    "An RFC 6570 compliant URI template that can be used to generate a unique identifier (`@id`) for every event described by the schedule. This property is required if the data provider is supporting third-party booking via the Open Booking API, or providing complimentary individual `subEvent`s."
+  ],
+  "valueConstraint": "UriTemplate"
+},
+```
+
+##### `UUID`
+
+A lowercase universally unique identifier represented as a string. RFC 4122 Section 3 requires that UUID characters be generated in lower case.
+
+```json
+{
+  "fieldName": "identifier",
+  "sameAs": "https://schema.org/identifier",
+  "requiredType": "https://schema.org/Text",
+  "example": "123e4567-e89b-12d3-a456-426614174000",
+  "description": ["The Order UUID of the Order, OrderQuote or OrderProposal, which is required within the Orders feed."],
+  "valueConstraint": "UUID"
+},
+```
+
 #### requiredContent
 
 If this property must be set to a specific value, this can be specified here.

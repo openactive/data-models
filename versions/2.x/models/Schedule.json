@@ -137,7 +137,8 @@
       "example": "https://api.example.org/session-series/123/{startDate}",
       "description": [
         "An RFC6570 compliant URI template that can be used to generate a unique identifier (`@id`) for every event described by the schedule. This property is required if the data provider is supporting third-party booking via the Open Booking API, or providing complimentary individual `subEvent`s."
-      ]
+      ],
+      "valueConstraint": "UriTemplate"
     },
     "repeatCount": {
       "fieldName": "repeatCount",
@@ -146,7 +147,8 @@
       "example": 3,
       "description": [
         "Defines the number of times a recurring Event will take place."
-      ]
+      ],
+      "minValueInclusive": 1
     },
     "repeatFrequency": {
       "fieldName": "repeatFrequency",
@@ -207,7 +209,8 @@
       "example": "https://example.org/session-series/123/{startDate}",
       "description": [
         "An RFC6570 compliant URI template that can be used to generate a unique `url` for every event described by the schedule. This property is required if the data provider wants to provide participants with a unique URL to book to attend an event."
-      ]
+      ],
+      "valueConstraint": "UriTemplate"
     }
   }
 }
