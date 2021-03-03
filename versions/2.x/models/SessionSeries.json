@@ -2,9 +2,7 @@
   "type": "SessionSeries",
   "subClassOf": "#Event",
   "notInSpec": [
-    "remainingAttendeeCapacity",
-    "startDate",
-    "endDate"
+    "remainingAttendeeCapacity"
   ],
   "requiredFields": [
     "type",
