@@ -77,7 +77,7 @@
       "description": [
         "A commonly used identifier for the characteristic represented by the property"
       ],
-      "example": "ActivePlaces"
+      "example": "https://example.com/photoconsent"
     },
     "value": {
       "fieldName": "value",
