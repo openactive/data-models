@@ -138,6 +138,25 @@
       "inheritsFrom": {
         "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule"]
       }
+    },
+    "startDate": {
+      "fieldName": "startDate",
+      "sameAs": "https://schema.org/startDate",
+      "requiredType": "https://schema.org/DateTime",
+      "description": [
+        "The start date and time of the event."
+      ],
+      "example": "2018-01-27T12:00:00Z"
+    },
+    "endDate": {
+      "fieldName": "endDate",
+      "sameAs": "https://schema.org/endDate",
+      "requiredType": "https://schema.org/DateTime",
+      "description": [
+        "The end date and time of the event.",
+        "It is recommended that publishers provide either an schema:endDate or a schema:duration for an event."
+      ],
+      "example": "2018-01-27T12:00:00Z"
     }
   }
 }

@@ -221,11 +221,8 @@
       "fieldName": "endDate",
       "sameAs": "https://schema.org/endDate",
       "requiredType": "https://schema.org/DateTime",
-      "alternativeTypes": [
-        "https://schema.org/Date"
-      ],
       "description": [
-        "The end date and time of the slot. Can be specified as a schema:Date or schema:DateTime",
+        "The end date and time of the slot.",
         "It is recommended that publishers provide either an schema:endDate or a schema:duration for an slot."
       ],
       "example": "2018-01-27T12:00:00Z"
@@ -299,11 +296,8 @@
       "fieldName": "startDate",
       "sameAs": "https://schema.org/startDate",
       "requiredType": "https://schema.org/DateTime",
-      "alternativeTypes": [
-        "https://schema.org/Date"
-      ],
       "description": [
-        "The start date and time of the slot. Can be specified as a schema:Date or schema:DateTime"
+        "The start date and time of the slot."
       ],
       "example": "2018-01-27T12:00:00Z"
     }
