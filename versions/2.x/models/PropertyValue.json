@@ -2,15 +2,53 @@
   "type": "PropertyValue",
   "derivedFrom": "https://schema.org/PropertyValue",
   "hasId": false,
-  "requiredFields": [
-    "name",
-    "type",
-    "value"
-  ],
+  "validationMode": {
+    "RPDEFeed": "all",
+    "BookableRPDEFeed": "all",
+    "DatasetSite": "all",
+    "DataCatalog": "all",
+    "C1Request": "all",
+    "C1Response": "all",
+    "C2Request": "all",
+    "C2Response": "all",
+    "PRequest": "all",
+    "PResponse": "all",
+    "BRequest": "all",
+    "BResponse": "all",
+    "OrderProposalPatch": "all",
+    "OrderPatch": "all",
+    "OrdersFeed": "all",
+    "OrderStatus": "all"
+  },
+  "imperativeConfigurationWithContext": {
+    "all": {
+      "accessCode": {
+        "requiredFields": [
+          "type",
+          "name",
+          "description"
+        ]
+      },
+      "additionalProperty": {
+        "requiredFields": [
+          "type",
+          "name",
+          "value"
+        ]
+      },
+      "orderItemIntakeFormResponse": {
+        "requiredFields": [
+          "type",
+          "propertyID",
+          "value"
+        ]
+      }
+    }
+  },
   "inSpec": [
+    "type",
     "name",
     "propertyID",
-    "type",
     "value",
     "description"
   ],
