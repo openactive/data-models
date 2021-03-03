@@ -23,8 +23,7 @@
  			"requiredFields": [
  				"type",
  				"price",
- 				"priceCurrency",
-        "name"
+            "name"
  			]
  		}
  	},

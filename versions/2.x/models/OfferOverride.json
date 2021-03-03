@@ -23,8 +23,7 @@
 			"requiredFields": [
 				"id",
 				"type",
-				"price",
-				"priceCurrency"
+				"price"
 			],
 			"recommendedFields": [
 				"name"
@@ -34,8 +33,7 @@
 			"requiredFields": [
 				"id",
 				"type",
-				"price",
-				"priceCurrency"
+				"price"
 			],
 			"recommendedFields": [
 				"name"
