@@ -167,6 +167,15 @@
             "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
           }
         ],
+        "beta:facilitySetting": "https://openactive.io/ns-beta#IndoorFacility",
+        "beta:facilityType": [
+          {
+            "type": "Concept",
+            "id": "https://openactive.io/facility-types#a5ac16fe-06ac-4bc1-93f7-69ff3bfcf3b9",
+            "prefLabel": "3G Artificial Grass",
+            "inScheme": "https://openactive.io/facility-types"
+          }
+        ],
         "offers": [
           {
             "@type": "Offer",
