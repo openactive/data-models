@@ -319,7 +319,7 @@ The maximum number of decimal places this field should have.
 
 #### minValueInclusive
 
-The minimum value of an integer, inclusive.
+The minimum value of a number, inclusive.
 
 ```json
 "repeatCount": {
