@@ -372,6 +372,33 @@ A lowercase universally unique identifier represented as a string. RFC 4122 Sect
 },
 ```
 
+#### allowReferencing
+
+Allow the property value to be an IRI referencing the `@id` of a JSON-LD object in another feed.
+
+```json
+"superEvent": {
+  "fieldName": "superEvent",
+  "sameAs": "https://schema.org/superEvent",
+  "model": "#Event",
+  "allowReferencing": true
+},
+```
+
+#### requireReferencingInValidationMode
+
+The value of this property must be an IRI in the specified validation modes.
+
+```json
+"orderedItem": {
+  "fieldName": "orderedItem",
+  "sameAs": "https://schema.org/orderedItem",
+  "model": "#Event",
+  "allowReferencing": true,
+  "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest", "OrdersFeed"]
+},
+```
+
 #### requiredContent
 
 If this property must be set to a specific value, this can be specified here.

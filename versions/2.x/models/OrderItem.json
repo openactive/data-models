@@ -225,12 +225,16 @@
       "fieldName": "acceptedOffer",
       "sameAs": "https://schema.org/acceptedOffer",
       "model": "#Offer",
+      "allowReferencing": true,
+      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest", "OrdersFeed"],
       "description": ["The offer from the associated orderedItem that has been selected by the Customer. The price of this includes or excludes tax depending on the taxMode of the Order."]
     },
     "orderedItem": {
       "fieldName": "orderedItem",
       "sameAs": "https://schema.org/orderedItem",
       "model": "#Event",
+      "allowReferencing": true,
+      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest", "OrdersFeed"],
       "description": ["The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."]
     },
     "accessCode": {

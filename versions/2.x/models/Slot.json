@@ -234,9 +234,7 @@
       "alternativeModels": [
         "#IndividualFacilityUse"
       ],
-      "alternativeTypes": [
-        "https://schema.org/URL"
-      ],
+      "allowReferencing": true,
       "description": [
         "`FacilityUse` or `IndividualFacilityUse` that has this `Slot`, either directly embedded or referenced by its `@id`"
       ],

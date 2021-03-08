@@ -175,6 +175,8 @@
       "alternativeModels": [
         "#Person"
       ],
+      "allowReferencing": true,
+      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest"],
       "description": ["The organisation (schema:Organization) or person (schema:Person) providing access to events or facilities via a Booking System. e.g. a leisure provider or independent instructor running a yoga classes."]
     },
     "taxCalculationExcluded": {
