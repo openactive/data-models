@@ -231,9 +231,6 @@
       "fieldName": "facilityUse",
       "sameAs": "https://openactive.io/facilityUse",
       "model": "#FacilityUse",
-      "alternativeModels": [
-        "#IndividualFacilityUse"
-      ],
       "allowReferencing": true,
       "description": [
         "`FacilityUse` or `IndividualFacilityUse` that has this `Slot`, either directly embedded or referenced by its `@id`"
