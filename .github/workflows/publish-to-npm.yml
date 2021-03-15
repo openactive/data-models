@@ -18,10 +18,10 @@ jobs:
       run: |
         git config user.name OpenActive Bot
         git config user.email hello@openactive.io
-    - name: Use Node.js 12.x
+    - name: Use Node.js 14.x
       uses: actions/setup-node@v1
       with:
-        node-version: 12
+        node-version: 14
         registry-url: https://registry.npmjs.org/
     - name: Install
       run: npm ci
