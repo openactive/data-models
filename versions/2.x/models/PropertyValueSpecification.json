@@ -50,7 +50,7 @@
       },
       "valueRequired": {
          "fieldName": "valueRequired",
-         "requiredType": "https://schema.org/Text",
+         "requiredType": "https://schema.org/Boolean",
          "sameAs": "https://schema.org/valueRequired",
          "description": [
             "Specifies that a value for the field is required to proceed with the booking."

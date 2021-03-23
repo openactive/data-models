@@ -84,7 +84,7 @@
       "sameAs": "https://schema.org/value",
       "requiredType": "https://schema.org/Text",
       "alternativeTypes": [
-        "https://schema.org/Integer"
+        "https://schema.org/Boolean"
       ],
       "description": [
         "The actual value of this identifier"
