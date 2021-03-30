@@ -20,14 +20,6 @@ const versions = require('../src/versions');
       'Content-Type': 'application/ld+json',
     },
   }).getBody());
-
-  fs.writeFileSync(
-    path.join(distPath, 'schemaOrgVocab.js'),
-    `/* eslint-disable */
-  // This is a generated file. Do not edit manually.
-  module.exports = ${JSON.stringify(schema)};`,
-    () => {},
-  );
   console.log('schema.org vocab downloaded successfully.');
 
   const specs = {};
@@ -113,6 +105,14 @@ const versions = require('../src/versions');
   module.exports = {
     ${Object.entries(properties).map(([key, value]) => `${JSON.stringify(key)}: new Set(${JSON.stringify(value)}),`)}
   }`,
+    () => {},
+  );
+
+  fs.writeFileSync(
+    path.join(distPath, 'schemaOrgVocab.js'),
+    `/* eslint-disable */
+  // This is a generated file. Do not edit manually.
+  module.exports = ${JSON.stringify(schema)};`,
     () => {},
   );
 })();
