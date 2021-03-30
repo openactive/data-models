@@ -176,6 +176,25 @@ const models2 = getModels('2.0');
 
 ```
 
+
+#### getProperties( [version] )
+
+Returns a Set containing the fully qualified property names within the version
+
+##### Example
+
+```js
+
+const { getProperties } = require('@openactive/data-models');
+
+// Returns the latest version of the properties Set
+const models = getProperties();
+
+// Returns the 2.0 version of the properties Set
+const models2 = getProperties('2.0');
+
+```
+
 #### getSchemaOrgVocab()
 
 Returns the bundled JSON-LD version of the schema.org vocabulary.
