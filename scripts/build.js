@@ -99,6 +99,14 @@ const versions = require('../src/versions');
   );
 
   fs.writeFileSync(
+    path.join(distPath, 'specs.js'),
+    `/* eslint-disable */
+  // This is a generated file. Do not edit manually.
+  module.exports = ${JSON.stringify(specs)};`,
+    () => {},
+  );
+
+  fs.writeFileSync(
     path.join(distPath, 'properties.js'),
     `/* eslint-disable */
   // This is a generated file. Do not edit manually.
