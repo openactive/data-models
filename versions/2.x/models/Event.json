@@ -557,7 +557,7 @@
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"
       ],
       "inheritsTo": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers"]
+        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers", "startDate", "endDate"]
       }
     },
     "schedulingNote": {
@@ -577,7 +577,7 @@
         "Relates a child event to a parent event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A parent event might specify a recurring schedule, of which the child event is one specific instance"
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers"]
+        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers", "startDate", "endDate"]
       }
     },
     "startDate": {

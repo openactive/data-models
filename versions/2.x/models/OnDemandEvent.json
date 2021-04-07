@@ -92,7 +92,7 @@
         "Relates an `OnDemandEvent` to an `EventSeries`."
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "offers"]
+        "exclude": ["id", "identifier", "subEvent", "superEvent", "offers", "startDate", "endDate"]
       }
     },
     "workFeatured": {

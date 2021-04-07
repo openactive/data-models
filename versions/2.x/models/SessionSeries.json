@@ -119,7 +119,7 @@
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"
       ],
       "inheritsTo": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule"]
+        "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule", "startDate", "endDate"]
       }
     },
     "eventSchedule": {
