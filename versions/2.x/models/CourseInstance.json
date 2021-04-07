@@ -176,6 +176,24 @@
       "requiredType": "https://schema.org/Text",
       "requiredContent": "CourseInstance"
     },
+    "startDate": {
+      "fieldName": "startDate",
+      "sameAs": "https://schema.org/startDate",
+      "requiredType": "https://schema.org/Date",
+      "description": [
+        "The start date of this course."
+      ],
+      "example": "2018-01-06"
+    },
+    "endDate": {
+      "fieldName": "endDate",
+      "sameAs": "https://schema.org/endDate",
+      "requiredType": "https://schema.org/Date",
+      "description": [
+        "The end date of this course."
+      ],
+      "example": "2018-01-27"
+    },
     "eventSchedule": {
       "fieldName": "eventSchedule",
       "sameAs": "https://pending.schema.org/eventSchedule",
