@@ -2,7 +2,7 @@
 
 Data models used to drive the OpenActive validator and developer documentation.
 
-[![Build Status](https://travis-ci.com/openactive/data-models.svg?branch=master)](https://travis-ci.com/openactive/data-models)
+[![Tests](https://github.com/openactive/data-models/actions/workflows/npm-test.yml/badge.svg?branch=master)](https://github.com/openactive/data-models/actions/workflows/npm-test.yml)
 [![Known Vulnerabilities](https://snyk.io/test/github/openactive/data-models/badge.svg)](https://snyk.io/test/github/openactive/data-models)
 
 ## Introduction
