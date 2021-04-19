@@ -103,13 +103,22 @@
     "offers",
     "schedulingNote",
     "eventAttendanceMode",
-    "eventSchedule"
+    "eventSchedule",
+    "bookingChannel"
   ],
   "fields": {
     "type": {
       "fieldName": "type",
       "requiredType": "https://schema.org/Text",
       "requiredContent": "SessionSeries"
+    },
+    "bookingChannel": {
+      "fieldName": "bookingChannel",
+      "sameAs": "https://openactive.io/bookingChannel",
+      "requiredType": "ArrayOf#https://openactive.io/BookingChannelType",
+      "description": [
+        "The channels through which a booking can be made."
+      ]
     },
     "subEvent": {
       "fieldName": "subEvent",

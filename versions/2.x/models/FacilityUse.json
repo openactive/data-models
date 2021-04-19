@@ -71,7 +71,8 @@
     "accessibilitySupport",
     "category",
     "attendeeInstructions",
-    "additionalAdmissionRestriction"
+    "additionalAdmissionRestriction",
+    "bookingChannel"
   ],
   "fields": {
     "type": {
@@ -128,6 +129,14 @@
         "Provides additional notes and instructions for users of a facility, for example more information on how to find it, what to bring, etc. The value of this property must not include HTML or other markup."
       ],
       "example": "The tennis court is locked with a keycode, so please ensure you book online in advance to gain access."
+    },
+    "bookingChannel": {
+      "fieldName": "bookingChannel",
+      "sameAs": "https://openactive.io/bookingChannel",
+      "requiredType": "ArrayOf#https://openactive.io/BookingChannelType",
+      "description": [
+        "The channels through which a booking can be made."
+      ]
     },
     "category": {
       "fieldName": "category",

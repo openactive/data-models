@@ -51,7 +51,6 @@
 		"advanceBooking",
 		"acceptedPaymentMethod",
 		"prepayment",
-		"availableChannel",
 		"validFromBeforeStartDate",
 		"latestCancellationBeforeStartDate",
 		"allowCustomerCancellationFullRefund",
@@ -61,7 +60,6 @@
 		"url"
 	],
 	"notInSpec": [
-		"availableChannel",
 		"advanceBooking",
 		"prepayment",
 		"ageRange",

@@ -60,7 +60,6 @@
         "advanceBooking",
         "prepayment",
         "acceptedPaymentMethod",
-        "availableChannel",
         "validFromBeforeStartDate",
         "latestCancellationBeforeStartDate",
         "allowCustomerCancellationFullRefund",
@@ -82,7 +81,6 @@
         "allowCustomerCancellationFullRefund"
       ],
       "shallNotInclude": [
-        "availableChannel",
         "ageRange"
       ]
     }
@@ -98,7 +96,6 @@
     "advanceBooking",
     "prepayment",
     "acceptedPaymentMethod",
-    "availableChannel",
     "validFromBeforeStartDate",
     "latestCancellationBeforeStartDate",
     "allowCustomerCancellationFullRefund",
@@ -220,14 +217,6 @@
         "Indicates whether to accept this offer, a participant must pay in advance, pay when attending, or have the option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."
       ],
       "example": "https://openactive.io/Required"
-    },
-    "availableChannel": {
-      "fieldName": "availableChannel",
-      "sameAs": "https://schema.org/availableChannel",
-      "requiredType": "ArrayOf#https://openactive.io/AvailableChannelType",
-      "description": [
-        "The channels through which a booking can be made."
-      ]
     },
     "validFromBeforeStartDate": {
       "fieldName": "validFromBeforeStartDate",
