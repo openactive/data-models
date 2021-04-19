@@ -86,7 +86,8 @@
     "isAccessibleForFree",
     "offers",
     "schedulingNote",
-    "eventAttendanceMode"
+    "eventAttendanceMode",
+    "bookingChannel"
   ],
   "notInSpec": [
     "startDate",

@@ -41,7 +41,8 @@
     "accessibilitySupport",
     "category",
     "attendeeInstructions",
-    "additionalAdmissionRestriction"
+    "additionalAdmissionRestriction",
+    "bookingChannel"
   ],
   "fields": {
     "type": {
