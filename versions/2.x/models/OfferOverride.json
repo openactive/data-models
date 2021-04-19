@@ -50,7 +50,7 @@
 		"ageRestriction",
 		"advanceBooking",
 		"acceptedPaymentMethod",
-		"prepayment",
+		"openBookingPrepayment",
 		"validFromBeforeStartDate",
 		"latestCancellationBeforeStartDate",
 		"allowCustomerCancellationFullRefund",
@@ -61,7 +61,7 @@
 	],
 	"notInSpec": [
 		"advanceBooking",
-		"prepayment",
+		"openBookingPrepayment",
 		"ageRange",
 		"ageRestriction",
 		"validFromBeforeStartDate",

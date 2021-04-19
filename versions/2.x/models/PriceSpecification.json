@@ -29,7 +29,7 @@
       "type",
       "price",
       "priceCurrency",
-      "prepayment"
+      "openBookingPrepayment"
    ],
    "notInSpec":[],
    "fields":{
@@ -50,9 +50,9 @@
          "sameAs": "https://schema.org/priceCurrency",
          "description":["The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."]
       },
-      "prepayment": {
-			"fieldName": "prepayment",
-			"sameAs": "https://openactive.io/prepayment",
+      "openBookingPrepayment": {
+			"fieldName": "openBookingPrepayment",
+			"sameAs": "https://openactive.io/openBookingPrepayment",
 			"requiredType": "https://openactive.io/RequiredStatusType",
 			"description": [
 				"Indicates if proceeding with booking requires a Customer to pay in advance, pay when attending, or have the option to do either. Values must be one of  https://openactive.io/Required,  https://openactive.io/Optional or  https://openactive.io/Unavailable."

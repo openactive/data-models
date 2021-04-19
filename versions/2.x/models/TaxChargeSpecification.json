@@ -34,10 +34,10 @@
       "identifier",
       "name",
       "rate",
-      "prepayment"
+      "openBookingPrepayment"
    ],
    "notInSpec":[
-      "prepayment"
+      "openBookingPrepayment"
    ],
    "fields":{
       "type":{
