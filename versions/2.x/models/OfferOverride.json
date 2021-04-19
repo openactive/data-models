@@ -48,7 +48,7 @@
 		"name",
 		"ageRange",
 		"ageRestriction",
-		"advanceBooking",
+		"openBookingInAdvance",
 		"acceptedPaymentMethod",
 		"openBookingPrepayment",
 		"validFromBeforeStartDate",
@@ -60,7 +60,7 @@
 		"url"
 	],
 	"notInSpec": [
-		"advanceBooking",
+		"openBookingInAdvance",
 		"openBookingPrepayment",
 		"ageRange",
 		"ageRestriction",
