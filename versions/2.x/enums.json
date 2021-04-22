@@ -108,7 +108,6 @@
   "BookingChannelType":{
     "namespace": "https://openactive.io/",
     "values":[
-      "OpenBookingPrepayment",
       "TelephoneAdvanceBooking",
       "TelephonePrepayment",
       "OnlinePrepayment"
