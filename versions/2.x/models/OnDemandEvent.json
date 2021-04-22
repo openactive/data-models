@@ -59,7 +59,8 @@
     "offers",
     "schedulingNote",
     "eventAttendanceMode",
-    "workFeatured"
+    "workFeatured",
+    "bookingChannel"
   ],
   "notInSpec": [
     "subEvent",
@@ -113,6 +114,14 @@
           }
         ]
       }
+    },
+    "bookingChannel": {
+      "fieldName": "bookingChannel",
+      "sameAs": "https://openactive.io/bookingChannel",
+      "requiredType": "ArrayOf#https://openactive.io/BookingChannelType",
+      "description": [
+        "The channels through which a booking can be made."
+      ]
     }
   }
 }

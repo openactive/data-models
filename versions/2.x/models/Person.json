@@ -100,7 +100,8 @@
     "termsOfService",
     "taxMode",
     "vatID",
-    "legalName"
+    "legalName",
+    "allowOpenBooking"
   ],
   "fields": {
     "type": {
@@ -271,6 +272,15 @@
       "example": "Central Speedball Ltd",
       "description": [
         "The official name of the organization, e.g. the registered company name."
+      ]
+    },
+    "allowOpenBooking": {
+      "fieldName": "allowOpenBooking",
+      "sameAs": "https://openactive.io/allowOpenBooking",
+      "requiredType": "https://schema.org/Boolean",
+      "example": true,
+      "description":[
+        "Indicates whether the Seller allows open booking"
       ]
     }
   }

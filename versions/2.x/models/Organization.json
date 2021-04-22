@@ -199,7 +199,8 @@
     "url",
     "logo",
     "address",
-    "termsOfService"
+    "termsOfService",
+    "allowOpenBooking"
   ],
   "fields": {
     "type": {
@@ -331,6 +332,15 @@
       "model": "ArrayOf#Terms",
       "description": [
         "The terms of service of the Seller."
+      ]
+    },
+    "allowOpenBooking": {
+      "fieldName": "allowOpenBooking",
+      "sameAs": "https://openactive.io/allowOpenBooking",
+      "requiredType": "https://schema.org/Boolean",
+      "example": true,
+      "description":[
+        "Indicates whether the Seller allows open booking"
       ]
     }
   }
