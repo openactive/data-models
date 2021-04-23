@@ -200,7 +200,7 @@
     "logo",
     "address",
     "termsOfService",
-    "allowOpenBooking"
+    "isOpenBookingAllowed"
   ],
   "fields": {
     "type": {
@@ -334,9 +334,9 @@
         "The terms of service of the Seller."
       ]
     },
-    "allowOpenBooking": {
-      "fieldName": "allowOpenBooking",
-      "sameAs": "https://openactive.io/allowOpenBooking",
+    "isOpenBookingAllowed": {
+      "fieldName": "isOpenBookingAllowed",
+      "sameAs": "https://openactive.io/isOpenBookingAllowed",
       "requiredType": "https://schema.org/Boolean",
       "example": true,
       "description":[
