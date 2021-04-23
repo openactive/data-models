@@ -340,7 +340,7 @@
       "requiredType": "https://schema.org/Boolean",
       "example": true,
       "description":[
-        "Indicates whether the Seller allows open booking"
+        "Indicates whether the Seller allows open booking or not"
       ]
     }
   }
