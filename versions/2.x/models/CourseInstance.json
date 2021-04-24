@@ -168,8 +168,7 @@
     "isAccessibleForFree",
     "offers",
     "schedulingNote",
-    "eventAttendanceMode",
-    "bookingChannel"
+    "eventAttendanceMode"
   ],
   "fields": {
     "type": {
@@ -213,14 +212,6 @@
           ],
           "scheduleTimezone": "Europe/London"
         }
-      ]
-    },
-    "bookingChannel": {
-      "fieldName": "bookingChannel",
-      "sameAs": "https://openactive.io/bookingChannel",
-      "requiredType": "ArrayOf#https://openactive.io/BookingChannelType",
-      "description": [
-        "The channels through which a booking can be made."
       ]
     }
   }

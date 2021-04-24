@@ -105,8 +105,7 @@
         "subEvent",
         "schedulingNote",
         "superEvent",
-        "url",
-        "bookingChannel"
+        "url"
       ]
     },
     "response": {
@@ -167,8 +166,7 @@
     "schedulingNote",
     "superEvent",
     "url",
-    "eventAttendanceMode",
-    "bookingChannel"
+    "eventAttendanceMode"
   ],
   "notInSpec": [
     "accessibilityInformation",
@@ -199,8 +197,7 @@
     "schedulingNote",
     "superEvent",
     "url",
-    "eventAttendanceMode",
-    "bookingChannel"
+    "eventAttendanceMode"
   ],
   "shallNotInclude": [
     "eventSchedule"

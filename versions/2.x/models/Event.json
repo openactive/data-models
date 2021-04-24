@@ -179,8 +179,7 @@
     "isAccessibleForFree",
     "offers",
     "schedulingNote",
-    "eventAttendanceMode",
-    "bookingChannel"
+    "eventAttendanceMode"
   ],
   "fields": {
     "type": {
@@ -237,14 +236,6 @@
         "Provides additional notes and instructions for event attendees, for example more information on how to find the event, what to bring, etc. The value of this property must not include HTML or other markup."
       ],
       "example": "Ensure you bring trainers and a bottle of water."
-    },
-    "bookingChannel": {
-      "fieldName": "bookingChannel",
-      "sameAs": "https://openactive.io/bookingChannel",
-      "requiredType": "ArrayOf#https://openactive.io/BookingChannelType",
-      "description": [
-        "The channels through which a booking can be made."
-      ]
     },
     "category": {
       "fieldName": "category",
