@@ -87,6 +87,7 @@
       "hasId": true,
       "requiredFields": [
         "type",
+        "id",
         "orderItemStatus",
         "acceptedOffer",
         "orderedItem",
@@ -99,11 +100,9 @@
       ],
       "shallNotInclude": [
         "cancellationMessage",
-        "customerNotice",
-        "id"
+        "customerNotice"
       ],
       "requiredOptions": [
-
       ]
     },
     "orderStatus": {
@@ -133,6 +132,7 @@
       "hasId": true,
       "requiredFields": [
         "type",
+        "id",
         "orderItemStatus",
         "acceptedOffer",
         "orderedItem"
