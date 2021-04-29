@@ -18,6 +18,7 @@
     "OrderProposalPatch": "all",
     "OrderPatch": "all",
     "OrdersFeed": "all",
+    "OrderProposalsFeed": "all",
     "OrderStatus": "all"
   },
   "imperativeConfigurationWithContext": {

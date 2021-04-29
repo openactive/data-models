@@ -45,6 +45,7 @@
     "BRequest": "request",
     "BResponse": "response",
     "OrdersFeed": "request",
+    "OrderProposalsFeed": "request",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
   },

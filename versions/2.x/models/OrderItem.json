@@ -15,6 +15,7 @@
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "orderProposalsFeed",
     "OrderStatus": "orderStatus"
   },
   "imperativeConfiguration": {
@@ -88,19 +89,19 @@
       "requiredFields": [
         "type",
         "id",
-        "orderItemStatus",
         "acceptedOffer",
         "orderedItem",
         "position"
       ],
       "recommendedFields": [
-        "accessCode",
-        "accessPass",
-        "accessChannel"
       ],
       "shallNotInclude": [
         "cancellationMessage",
-        "customerNotice"
+        "customerNotice",
+        "orderItemStatus",
+        "accessCode",
+        "accessPass",
+        "accessChannel"
       ],
       "requiredOptions": [
       ]
@@ -120,8 +121,6 @@
         "accessChannel"
       ],
       "shallNotInclude": [
-        "cancellationMessage",
-        "customerNotice",
         "position"
       ],
       "requiredOptions": [
@@ -148,6 +147,32 @@
         "orderItemIntakeForm",
         "orderItemIntakeFormResponse",
         "position"
+      ],
+      "requiredOptions": [
+      ]
+    },
+    "orderProposalsFeed": {
+      "hasId": true,
+      "requiredFields": [
+        "type",
+        "id",
+        "acceptedOffer",
+        "orderedItem"
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+        "attendee",
+        "attendeeDetailsRequired",
+        "orderItemIntakeForm",
+        "orderItemIntakeFormResponse",
+        "position",
+        "accessCode",
+        "accessPass",
+        "accessChannel",
+        "orderItemStatus",
+        "cancellationMessage",
+        "customerNotice"
       ],
       "requiredOptions": [
       ]

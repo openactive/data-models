@@ -6,7 +6,8 @@
     "PRequest": "request",
     "PResponse": "response",
     "OrderProposalPatch": "patch",
-    "OrdersFeed": "ordersFeed"
+    "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed"
   },
   "imperativeConfiguration": {
     "request": {

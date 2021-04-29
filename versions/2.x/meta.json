@@ -313,6 +313,10 @@
           "name": "Orders RPDE feed"
         },
         {
+          "validationMode": "OrderProposalsFeed",
+          "name": "OrderProposals RPDE feed"
+        },
+        {
           "validationMode": "OrderStatus",
           "name": "Order Status"
         },

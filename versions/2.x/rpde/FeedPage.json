@@ -8,7 +8,8 @@
     "license"
   ],
   "validationMode": {
-		"OrdersFeed": "orderfeed"
+		"OrdersFeed": "orderfeed",
+		"OrderProposalsFeed": "orderfeed"
 	},
 	"imperativeConfiguration": {
     "orderfeed": {

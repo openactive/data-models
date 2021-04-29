@@ -18,6 +18,7 @@
     "OrderProposalPatch": "request",
     "OrderPatch": "request",
     "OrdersFeed": "response",
+    "OrderProposalsFeed": "response",
     "OrderStatus": "response"
   },
   "imperativeConfiguration": {

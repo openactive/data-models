@@ -13,6 +13,7 @@
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response"
   },
   "imperativeConfiguration": {
