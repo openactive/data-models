@@ -20,9 +20,7 @@
     "request": {
       "requiredFields": [
         "type",
-        "broker",
         "brokerRole",
-        "customer",
         "orderedItem",
         "totalPaymentDue",
         "seller"
@@ -73,7 +71,6 @@
         "type",
         "id",
         "seller",
-        "broker",
         "brokerRole",
         "bookingService",
         "orderedItem",
