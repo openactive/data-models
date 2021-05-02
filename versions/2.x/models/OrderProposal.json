@@ -14,9 +14,7 @@
       "requiredFields": [
         "type",
         "seller",
-        "broker",
         "brokerRole",
-        "customer",
         "orderedItem",
         "totalPaymentDue"
       ],
@@ -41,7 +39,6 @@
       "requiredFields": [
         "type",
         "seller",
-        "broker",
         "brokerRole",
         "bookingService",
         "orderedItem",

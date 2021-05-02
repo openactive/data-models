@@ -12,7 +12,6 @@
     "C1request": {
       "requiredFields": [
         "type",
-        "broker",
         "brokerRole",
         "orderedItem",
         "seller"
@@ -38,9 +37,7 @@
     "request": {
       "requiredFields": [
         "type",
-        "broker",
         "brokerRole",
-        "customer",
         "orderedItem",
         "seller"
       ],
@@ -67,7 +64,6 @@
       "requiredFields": [
         "type",
         "seller",
-        "broker",
         "brokerRole",
         "bookingService",
         "orderedItem",
@@ -87,9 +83,7 @@
       "requiredFields": [
         "type",
         "seller",
-        "broker",
         "brokerRole",
-        "customer",
         "bookingService",
         "orderedItem",
         "totalPaymentDue",
