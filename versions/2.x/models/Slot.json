@@ -181,7 +181,6 @@
     "eventStatus",
     "genderRestriction",
     "ageRestriction",
-    "additionalAdmissionRestriction",
     "image",
     "isAccessibleForFree",
     "isCoached",
