@@ -195,6 +195,17 @@
       ],
       "example": "2018-01-27"
     },
+    "subEvent": {
+      "fieldName": "subEvent",
+      "sameAs": "https://schema.org/subEvent",
+      "model": "ArrayOf#Event",
+      "description": [
+        "The occurrences of this CourseInstance."
+      ],
+      "inheritsTo": {
+        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers", "startDate", "endDate"]
+      }
+    },
     "eventSchedule": {
       "fieldName": "eventSchedule",
       "sameAs": "https://pending.schema.org/eventSchedule",
