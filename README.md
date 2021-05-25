@@ -40,6 +40,35 @@ const examples = getExamples('2.0');
 
 ```
 
+#### getExamplesWithContent([version])
+
+Returns a list of examples relating to the specification version supplied, that includes the JSON content of these examples.
+
+Each object in the list should contain the following keys:
+
+* **name** - A human-readable name describing the example.
+* **file** - The file the example is in.
+* **data** - The JSON data of the example file.
+
+##### Example
+
+```js
+
+const { getExamplesWithContent } = require('@openactive/data-models');
+
+const examples = getExamplesWithContent('2.0');
+
+// [
+//   {
+//     "file": "event_example_1.json",
+//     "name": "Example Event",
+//     "data": { ... }
+//   },
+//   // ...
+// ]
+
+```
+
 #### getFullyQualifiedProperty(name [, version [, contexts]])
 
 Returns a resolved version of a property, indicating its namespace, prefix and alias. It will by default insert the OpenActive context for the provided specification version at the top of the context tree.
