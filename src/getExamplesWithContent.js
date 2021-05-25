@@ -1,7 +1,7 @@
 const fs = require('fs');
 const getExamples = require('./getExamples');
 
-const EXAMPLES_DIRECTORY = 'versions/2.x/examples/';
+const EXAMPLES_DIRECTORY = `${__dirname}/../versions/2.x/examples/`;
 
 const getExamplesWithContent = (version) => {
   const examples = getExamples(version);
