@@ -9,7 +9,7 @@ const getExamplesWithContent = async (version) => {
   for (const { file, name } of examples.flatMap(x => x.exampleList)) {
     // Only include local examples
     if (file.indexOf('http') !== 0) {
-      const data = await fs.readFile(`${EXAMPLES_DIRECTORY}${file}`, { encoding: 'utf8' });
+      const data = JSON.parse(await fs.readFile(`${EXAMPLES_DIRECTORY}${file}`, { encoding: 'utf8' }));
       output.push({
         name,
         file,
