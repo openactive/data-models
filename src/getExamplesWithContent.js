@@ -1,4 +1,4 @@
-const fs = require('fs/promises');
+const fs = require('fs').promises;
 const getExamples = require('./getExamples');
 
 const EXAMPLES_DIRECTORY = `${__dirname}/../versions/2.x/examples/`;
