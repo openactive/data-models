@@ -202,7 +202,7 @@
     "instanceOfCourse": {
       "fieldName": "instanceOfCourse",
       "sameAs": "https://openactive.io/instanceOfCourse",
-      "model": "ArrayOf#Course",
+      "model": "#Course",
       "description": [
         "The description of the Course for which this is a distinct instance."
       ]
