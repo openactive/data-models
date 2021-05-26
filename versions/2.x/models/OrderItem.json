@@ -1,6 +1,7 @@
 {
   "type": "OrderItem",
   "derivedFrom": "https://schema.org/OrderItem",
+  "hasId": true,
   "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/OrderItem/",
   "validationMode": {
@@ -20,7 +21,6 @@
   },
   "imperativeConfiguration": {
     "request": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "acceptedOffer",
@@ -31,6 +31,7 @@
 
       ],
       "shallNotInclude": [
+        "id",
         "orderItemStatus",
         "unitTaxSpecification",
         "accessCode",
@@ -44,7 +45,6 @@
       ]
     },
     "Cresponse": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "acceptedOffer",
@@ -52,6 +52,7 @@
         "position"
       ],
       "shallNotInclude": [
+        "id",
         "orderItemStatus",
         "cancellationMessage",
         "customerNotice",
@@ -63,7 +64,6 @@
       ]
     },
     "response": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
@@ -85,7 +85,6 @@
       ]
     },
     "Presponse": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
@@ -107,7 +106,6 @@
       ]
     },
     "orderStatus": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
@@ -128,7 +126,6 @@
       ]
     },
     "ordersFeed": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
@@ -152,7 +149,6 @@
       ]
     },
     "orderProposalsFeed": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
@@ -178,7 +174,6 @@
       ]
     },
     "cancellation": {
-      "hasId": true,
       "requiredFields": [
         "type",
         "id",
