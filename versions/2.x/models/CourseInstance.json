@@ -169,7 +169,11 @@
     "isAccessibleForFree",
     "offers",
     "schedulingNote",
-    "eventAttendanceMode"
+    "eventAttendanceMode",
+    "instanceOfCourse"
+  ],
+  "notInSpec": [
+    "superEvent"
   ],
   "fields": {
     "type": {
@@ -194,6 +198,14 @@
         "The end date of this course."
       ],
       "example": "2018-01-27"
+    },
+    "instanceOfCourse": {
+      "fieldName": "instanceOfCourse",
+      "sameAs": "https://openactive.io/instanceOfCourse",
+      "model": "ArrayOf#Course",
+      "description": [
+        "The description of the Course for which this is a distinct instance."
+      ]
     },
     "subEvent": {
       "fieldName": "subEvent",

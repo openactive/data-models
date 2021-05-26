@@ -99,7 +99,7 @@
             "priceCurrency": "GBP"
           }
         ],
-        "beta:course": {
+        "instanceOfCourse": {
           "@type": "Course",
           "name": "Netball Youth Camp",
           "description": "Netball Youth Camps give junior netballers the chance to get together with their friends and take to the court in the holidays!\r\n\r\nThe camp is a non-residential holiday camp providing ‘Nothing but Netball’; not only will there be top quality coaching and fun netball activities but there is even an opportunity to meet and be inspired by an elite player.\r\n\r\nIf you are a junior netball lover (or the parent of one!) these are an unmissable holiday activity.",
