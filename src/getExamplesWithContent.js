@@ -14,7 +14,6 @@ const getExamplesWithContent = async (version) => {
         name,
         file,
         data,
-        // data: JSON.parse(fs.readFileSync(`${EXAMPLES_DIRECTORY}${file}`, { encoding: 'utf8' })),
       });
     }
   }
