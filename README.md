@@ -56,16 +56,19 @@ Each object in the list should contain the following keys:
 
 const { getExamplesWithContent } = require('@openactive/data-models');
 
-const examples = getExamplesWithContent('2.0');
+(async () => {
+  const examples = await getExamplesWithContent('2.0');
 
-// [
-//   {
-//     "file": "event_example_1.json",
-//     "name": "Example Event",
-//     "data": { ... }
-//   },
-//   // ...
-// ]
+  // [
+  //   {
+  //     "file": "event_example_1.json",
+  //     "name": "Example Event",
+  //     "data": { ... }
+  //   },
+  //   // ...
+  // ]
+})();
+
 
 ```
 
