@@ -205,7 +205,10 @@
       "model": "#Course",
       "description": [
         "The description of the Course for which this is a distinct instance."
-      ]
+      ],
+      "inheritsFrom": {
+        "exclude": ["id", "identifier"]
+      }
     },
     "subEvent": {
       "fieldName": "subEvent",

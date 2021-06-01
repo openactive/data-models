@@ -17,14 +17,6 @@
         "startDate": "2018-08-01",
         "endDate": "2018-08-04",
         "duration": "P3D",
-        "activity": [
-          {
-            "@id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
-            "@type": "Concept",
-            "prefLabel": "Netball",
-            "inScheme": "https://openactive.io/activity-list"
-          }
-        ],
         "eventSchedule": [
           {
             "@type": "PartialSchedule",
@@ -55,12 +47,6 @@
             "identifier": 1400109455
           }
         ],
-        "category": [
-          "Holiday camps"
-        ],
-        "level": [
-          "Beginner"
-        ],
         "eventStatus": "https://schema.org/EventScheduled",
         "location": {
           "@type": "Place",
@@ -78,11 +64,6 @@
             "latitude": 52.901455,
             "longitude": -1.282734
           }
-        },
-        "ageRange": {
-          "@type": "QuantitativeValue",
-          "minValue": 11,
-          "maxValue": 16
         },
         "leader": [
           {
@@ -119,10 +100,12 @@
           "@type": "Course",
           "name": "Netball Youth Camp",
           "description": "Netball Youth Camps give junior netballers the chance to get together with their friends and take to the court in the holidays!\r\n\r\nThe camp is a non-residential holiday camp providing ‘Nothing but Netball’; not only will there be top quality coaching and fun netball activities but there is even an opportunity to meet and be inspired by an elite player.\r\n\r\nIf you are a junior netball lover (or the parent of one!) these are an unmissable holiday activity.",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://www.englandnetball.co.uk/app/uploads/2016/03/Netball-youth-camp-ball.jpg"
-          },
+          "image": [
+            {
+              "@type": "ImageObject",
+              "url": "https://www.englandnetball.co.uk/app/uploads/2016/03/Netball-youth-camp-ball.jpg"
+            }
+          ],
           "url": "https://www.englandnetball.co.uk/NYC",
           "beta:video": [
             {
@@ -130,6 +113,15 @@
               "url": "https://www.youtube.com/watch?v=lvlEpaKTotQ"
             }
           ],
+          "accessibilitySupport": [
+            {
+              "@type": "Concept",
+              "@id": "https://openactive.io/accessibility-support#1393f2dc-3fcc-4be9-a99f-f1e51f5ad277",
+              "prefLabel": "Visual impairment",
+              "inScheme": "https://openactive.io/accessibility-support"
+            }
+          ],
+          "accessibilityInformation": "Please contact the centre for more information on the accessibility of this course.",
           "activity": [
             {
               "@id": "https://openactive.io/activity-list#fbdc35a8-3dd0-40ee-a7ca-6ff40b3e5f90",
@@ -138,11 +130,19 @@
               "inScheme": "https://openactive.io/activity-list"
             }
           ],
-          "author": {
-            "@type": "Organization",
-            "name": "England Netball",
-            "url": "https://www.englandnetball.co.uk"
-          }
+          "author": "https://id.bookingsystem.example.com/organizers/1",
+          "ageRange": {
+            "@type": "QuantitativeValue",
+            "minValue": 11,
+            "maxValue": 16
+          },
+          "genderRestriction": "https://openactive.io/NoRestriction",
+          "level": [
+            "Beginner"
+          ],
+          "category": [
+            "Holiday camps"
+          ]
         }
       }
     }
