@@ -85,6 +85,7 @@
       "alternativeModels": [
         "#Person"
       ],
+      "allowReferencing": true,
       "description": [
         "The person or organization who designed the Course. An author might be an schema:Organization or a schema:Person.",
         "This property may reference the `@id` of the `organizer` of the `CourseInstance` within which this `Course` is embedded, to reduce data duplication."
@@ -94,8 +95,7 @@
         "@id": "https://id.bookingsystem.example.com/organizers/1",
         "name": "Central Speedball Association",
         "url": "http://www.speedball-world.com"
-      },
-      "allowReferencing": true
+      }
     },
     "category": {
       "fieldName": "category",
