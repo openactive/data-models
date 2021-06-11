@@ -2,6 +2,8 @@
   "type": "Brand",
   "derivedFrom": "https://schema.org/Brand",
   "hasId": true,
+  "idFormat": "https://schema.org/URL",
+  "sampleId": "https://example.com/programmes/12345",
   "requiredFields": [
     "type",
     "name",
