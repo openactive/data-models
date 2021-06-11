@@ -6,6 +6,7 @@
   "hasId": true,
   "inSpec": [
     "type",
+    "id",
     "accessibilityInformation",
     "accessibilitySupport",
     "activity",

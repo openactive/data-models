@@ -15,6 +15,7 @@
   ],
   "inSpec": [
     "type",
+    "id",
     "name",
     "url",
     "description",
