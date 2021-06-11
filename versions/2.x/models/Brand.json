@@ -1,7 +1,7 @@
 {
   "type": "Brand",
   "derivedFrom": "https://schema.org/Brand",
-  "hasId": false,
+  "hasId": true,
   "requiredFields": [
     "type",
     "name",
