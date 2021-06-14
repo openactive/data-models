@@ -129,9 +129,7 @@
       "requiredFields": [
         "type",
         "id",
-        "orderItemStatus",
-        "acceptedOffer",
-        "orderedItem"
+        "orderItemStatus"
       ],
       "recommendedFields": [
         "accessCode",
