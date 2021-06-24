@@ -101,8 +101,8 @@
       "SellerCancelled",
       "CustomerCancelled",
       "OrderItemConfirmed",
-      "CustomerAttended",
-      "CustomerAbsent"
+      "AttendeeAttended",
+      "AttendeeAbsent"
     ]
   },
   "EventAttendanceModeEnumeration": {
