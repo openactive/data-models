@@ -125,7 +125,7 @@
       "identifier": "OnDemandEvent",
       "name": "OnDemandEvent",
       "sameAs": "https://schema.org/OnDemandEvent",
-      "defaultFeedPath": "/on-demand-event",
+      "defaultFeedPath": "/on-demand-events",
       "kind": ["OnDemandEvent"],
       "themeDisplayName": "On Demand Events",
       "bookable": true
