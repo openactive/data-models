@@ -77,7 +77,116 @@
   "shallNotInclude": [
     "eventSchedule"
   ],
-  "imperativeConfigurationWithContext": {},
+  "validationMode": {
+    "RPDEFeed": "feed",
+    "BookableRPDEFeed": "feed",
+    "C1Request": "request",
+    "C1Response": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "OrdersFeed": "response",
+    "OrderProposalsFeed": "response",
+    "OrderStatus": "response",
+    "TestInterface": "testInterface"
+  },
+  "imperativeConfigurationWithContext": {
+    "feed": {
+      "subEvent": {
+        "requiredFields": [
+          "type",
+          "url",
+          "name",
+          "location",
+          "activity",
+          "organizer",
+          "startDate"
+        ]
+      }
+    }
+  },
+  "imperativeConfiguration": {
+    "feed": {},
+    "testInterface": {
+      "requiredFields": [
+        "type"
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+      ]
+    },
+    "request": {
+      "requiredFields": [
+        "type",
+        "id"
+      ],
+      "shallNotInclude": [
+        "identifier",
+        "url",
+        "name",
+        "description",
+        "image",
+        "startDate",
+        "endDate",
+        "duration",
+        "location",
+        "organizer",
+        "contributor",
+        "maximumAttendeeCapacity",
+        "maximumVirtualAttendeeCapacity",
+        "remainingAttendeeCapacity",
+        "eventStatus",
+        "subEvent",
+        "superEvent",
+        "activity",
+        "category",
+        "ageRange",
+        "genderRestriction",
+        "ageRestriction",
+        "additionalAdmissionRestriction",
+        "programme",
+        "attendeeInstructions",
+        "leader",
+        "accessibilitySupport",
+        "accessibilityInformation",
+        "isCoached",
+        "level",
+        "meetingPoint",
+        "isAccessibleForFree",
+        "offers",
+        "schedulingNote"
+      ]
+    },
+    "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "url",
+        "name",
+        "location",
+        "activity",
+        "startDate"
+      ],
+      "recommendedFields": [
+        "endDate",
+        "duration",
+        "ageRange",
+        "genderRestriction",
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
+      ],
+      "shallNotInclude": [
+        "offers",
+        "subEvent",
+        "organizer"
+      ]
+    }
+  },
   "fields": {
     "type": {
       "fieldName": "type",

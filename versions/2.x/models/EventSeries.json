@@ -37,6 +37,8 @@
     "C2Response": "response",
     "PResponse": "response",
     "BResponse": "response",
+    "OrdersFeed": "response",
+    "OrderProposalsFeed": "response",
     "OrderStatus": "response"
   },
   "imperativeConfigurationWithContext": {},
