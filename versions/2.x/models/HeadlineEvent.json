@@ -37,8 +37,8 @@
 		"PResponse": "response",
 		"BRequest": "request",
 		"BResponse": "response",
-    "OrdersFeed": "request",
-    "OrderProposalsFeed": "request",
+    "OrdersFeed": "response",
+    "OrderProposalsFeed": "response",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
   },
