@@ -158,8 +158,6 @@
       "shallNotInclude": [
         "attendee",
         "attendeeDetailsRequired",
-        "orderItemIntakeForm",
-        "orderItemIntakeFormResponse",
         "position",
         "accessCode",
         "accessPass",
