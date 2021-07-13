@@ -6,6 +6,7 @@
   ],
   "requiredFields": [
     "type",
+    "id",
     "url",
     "name",
     "location",
@@ -15,7 +16,6 @@
   ],
   "requiredOptions": [],
   "recommendedFields": [
-    "id",
     "description",
     "image",
     "ageRange",

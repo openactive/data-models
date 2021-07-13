@@ -6,6 +6,7 @@
   "sampleId": "https://example.com/event/12345",
   "requiredFields": [
     "type",
+    "id",
     "url",
     "name",
     "location",
@@ -18,7 +19,6 @@
     "offer": "offers"
   },
   "recommendedFields": [
-    "id",
     "description",
     "image",
     "eventStatus",

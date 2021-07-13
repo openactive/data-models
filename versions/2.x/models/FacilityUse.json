@@ -6,6 +6,7 @@
   "sampleId": "https://example.com/facility-use/1",
   "requiredFields": [
     "type",
+    "id",
     "url",
     "name",
     "activity",
@@ -13,7 +14,6 @@
     "provider"
   ],
   "recommendedFields": [
-    "id",
     "description",
     "image",
     "hoursAvailable",

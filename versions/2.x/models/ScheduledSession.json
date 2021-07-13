@@ -6,11 +6,11 @@
   ],
   "requiredFields": [
     "type",
+    "id",
     "startDate"
   ],
   "requiredOptions": [],
   "recommendedFields": [
-    "id",
     "eventStatus",
     "leader",
     "maximumAttendeeCapacity",

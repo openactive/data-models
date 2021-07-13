@@ -4,6 +4,7 @@
   "derivedFrom": "https://schema.org/CourseInstance",
   "requiredFields": [
     "type",
+    "id",
     "url",
     "name",
     "location",
@@ -26,7 +27,6 @@
     }
   ],
   "recommendedFields": [
-    "id",
     "description",
     "image",
     "eventStatus",

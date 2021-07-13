@@ -6,6 +6,7 @@
   "sampleId": "https://example.com/slot/",
   "requiredFields": [
     "type",
+    "id",
     "facilityUse",
     "startDate",
     "duration",
@@ -13,19 +14,7 @@
     "offers"
   ],
   "recommendedFields": [
-    "id",
     "maximumUses"
-  ],
-  "requiredOptions": [
-    {
-      "description": [
-        "While these properties are marked as optional/recommended in the Modelling Specification, one of these must be provided when surfacing a slot through an RPDE feed to ensure that the slots can be processed correctly by data consumers."
-      ],
-      "options": [
-        "id",
-        "identifier"
-      ]
-    }
   ],
   "validationMode": {
     "C1Request": "request",
