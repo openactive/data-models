@@ -1,7 +1,7 @@
 {
   "type": "OrderProposal",
   "subClassOf": "#OrderQuote",
-  "sampleId": "https://example.com/OrderProposal/d45b31031ab6d80b",
+  "sampleId": "https://api.example.com/order-proposals/1a80eca5-99f1-4e9a-81da-937e5621b246",
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",

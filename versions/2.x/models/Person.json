@@ -2,7 +2,7 @@
   "type": "Person",
   "derivedFrom": "https://schema.org/Person",
   "hasId": true,
-  "sampleId": "https://example.com/person/",
+  "sampleId": "https://id.bookingsystem.example.com/people/12345",
   "validationMode": {
     "RPDEFeed": "feed",
     "BookableRPDEFeed": "bookableFeed",

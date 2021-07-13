@@ -1,7 +1,7 @@
 {
   "type": "OrderQuote",
   "subClassOf": "#Order",
-  "sampleId": "https://example.com/OrderQuote/f98e76e95b70e5801",
+  "sampleId": "https://api.example.com/order-quotes/1a80eca5-99f1-4e9a-81da-937e5621b246",
   "validationMode": {
     "C1Request": "C1request",
     "C1Response": "C1response",

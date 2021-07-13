@@ -2,7 +2,7 @@
   "type": "Order",
   "derivedFrom": "https://schema.org/Order",
   "hasId": true,
-  "sampleId": "https://example.com/Order/a4bf0373270be803",
+  "sampleId": "https://api.example.com/orders/1a80eca5-99f1-4e9a-81da-937e5621b246",
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",

@@ -2,7 +2,7 @@
   "type": "Place",
   "derivedFrom": "https://schema.org/Place",
   "hasId": true,
-  "sampleId": "https://example.com/place/",
+  "sampleId": "https://id.bookingsystem.example.com/places/12345",
   "requiredFields": [
     "type",
     "name"
