@@ -2,7 +2,6 @@
   "type": "Event",
   "derivedFrom": "https://schema.org/Event",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://api.example.com/events/12345",
   "requiredFields": [
     "type",

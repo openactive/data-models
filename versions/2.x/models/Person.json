@@ -2,7 +2,6 @@
   "type": "Person",
   "derivedFrom": "https://schema.org/Person",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/person/",
   "validationMode": {
     "RPDEFeed": "feed",

@@ -2,8 +2,7 @@
 	"type": "OfferOverride",
 	"subClassOf": "#Offer",
 	"hasId": true,
-	"idFormat": "https://schema.org/URL",
-	"sampleId": "https://example.com/offer/fc8f8c37e70ae50b",
+  "sampleId": "https://api.example.com/session-series/12345#/offers/2",
 	"validationMode": {
 		"C1Request": "request",
 		"C1Response": "response",

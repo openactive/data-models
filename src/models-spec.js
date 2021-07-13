@@ -390,15 +390,21 @@ describe('models', () => {
           }
         });
 
-        it('should have an idFormat and sampleId if hasId is true', () => {
+        it('should have a sampleId if hasId is true', () => {
           if (typeof jsonData.hasId !== 'undefined') {
             expect(typeof jsonData.hasId).toBe('boolean');
 
             if (jsonData.hasId === true) {
-              expect(jsonData.idFormat).toBeDefined();
               expect(jsonData.sampleId).toBeDefined();
               expect(jsonData.inSpec).toContain('id');
             }
+          }
+        });
+
+        it('should have hasId set to true if a sampleId is specified', () => {
+          if (typeof jsonData.sampleId !== 'undefined') {
+            expect(typeof jsonData.hasId).toBe('boolean');
+            expect(jsonData.hasId).toBeTrue();
           }
         });
 

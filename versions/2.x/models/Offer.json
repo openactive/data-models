@@ -2,7 +2,6 @@
   "type": "Offer",
   "derivedFrom": "https://schema.org/Offer",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://api.example.com/session-series/12345#/offers/2",
   "validationMode": {
     "RPDEFeed": "opendata",

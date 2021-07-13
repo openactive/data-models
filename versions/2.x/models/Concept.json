@@ -2,7 +2,6 @@
   "type": "Concept",
   "derivedFrom": "http://www.w3.org/2004/02/skos/core#Concept",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://openactive.io/activity-list#a454c7e6-52da-426d-9bd1-743e9d7d266d",
   "requiredFields": [
     "type",

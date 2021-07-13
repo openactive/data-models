@@ -2,7 +2,6 @@
   "type": "DataCatalog",
   "derivedFrom": "https://schema.org/DataCatalog",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://opendata.leisurecloud.live/api/datacatalog",
   "requiredFields": [
     "id",

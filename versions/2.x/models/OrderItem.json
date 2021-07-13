@@ -2,7 +2,6 @@
   "type": "OrderItem",
   "derivedFrom": "https://schema.org/OrderItem",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/OrderItem/",
   "validationMode": {
     "C1Request": "request",

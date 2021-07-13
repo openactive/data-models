@@ -2,7 +2,6 @@
   "type": "Organization",
   "derivedFrom": "https://schema.org/Organization",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://id.bookingsystem.example.com/organizers/1",
   "requiredFields": [
     "name"

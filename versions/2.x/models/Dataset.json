@@ -2,7 +2,6 @@
   "type": "Dataset",
   "derivedFrom": "https://schema.org/Dataset",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://opendata.fusion-lifestyle.com/OpenActive/",
   "requiredFields": [
     "id",

@@ -52,7 +52,7 @@ Note this cannot be set when `subClassOf` is set to an external class.
 
 #### hasId
 
-A `boolean` indicating whether this model has an `id` field.
+A `boolean` indicating whether this model has a JSON-LD `@id` property, which must always be in URL format.
 
 ```json
 {
@@ -60,23 +60,13 @@ A `boolean` indicating whether this model has an `id` field.
 }
 ```
 
-#### idFormat
-
-The format that the id should be represented as.
-
-```json
-{
-  "idFormat": "https://schema.org/url"
-}
-```
-
 #### sampleId
 
-An example `id`.
+An example `@id`.
 
 ```json
 {
-  "sampleId": "https://example.com/event/"
+  "sampleId": "https://api.example.com/events/12345"
 }
 ```
 

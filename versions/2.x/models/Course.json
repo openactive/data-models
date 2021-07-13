@@ -1,7 +1,6 @@
 {
   "type": "Course",
   "derivedFrom": "https://schema.org/Course",
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://api.example.com/courses/12345",
   "hasId": true,
   "inSpec": [

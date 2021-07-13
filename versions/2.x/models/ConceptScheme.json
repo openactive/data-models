@@ -2,7 +2,6 @@
   "type": "ConceptScheme",
   "derivedFrom": "http://www.w3.org/2004/02/skos/core#ConceptScheme",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/scheme/",
   "requiredFields": [
     "type",

@@ -2,7 +2,6 @@
   "type": "Place",
   "derivedFrom": "https://schema.org/Place",
   "hasId": true,
-  "idFormat": "https://schema.org/URL",
   "sampleId": "https://example.com/place/",
   "requiredFields": [
     "type",
