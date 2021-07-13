@@ -2,6 +2,7 @@
   "type": "CourseInstance",
   "subClassOf": "#Event",
   "derivedFrom": "https://schema.org/CourseInstance",
+  "sampleId": "https://api.example.com/course-instances/12345",
   "requiredFields": [
     "type",
     "id",

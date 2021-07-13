@@ -3,7 +3,7 @@
   "hasId": true,
   "subClassOf": "https://schema.org/Product",
   "idFormat": "https://schema.org/URL",
-  "sampleId": "https://example.com/facility-use/1",
+  "sampleId": "https://api.example.com/facility-uses/12345",
   "requiredFields": [
     "type",
     "id",

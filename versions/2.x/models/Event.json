@@ -3,7 +3,7 @@
   "derivedFrom": "https://schema.org/Event",
   "hasId": true,
   "idFormat": "https://schema.org/URL",
-  "sampleId": "https://example.com/event/12345",
+  "sampleId": "https://api.example.com/events/12345",
   "requiredFields": [
     "type",
     "id",

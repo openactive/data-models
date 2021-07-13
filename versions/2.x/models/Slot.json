@@ -2,8 +2,7 @@
   "type": "Slot",
   "hasId": true,
   "subClassOf": "#Event",
-  "idFormat": "https://schema.org/URL",
-  "sampleId": "https://example.com/slot/",
+  "sampleId": "https://api.example.com/slots/12345",
   "requiredFields": [
     "type",
     "id",
