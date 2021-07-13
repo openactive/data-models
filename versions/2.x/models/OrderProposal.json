@@ -1,5 +1,6 @@
 {
   "type": "OrderProposal",
+  "hasId": true,
   "subClassOf": "#OrderQuote",
   "sampleId": "https://api.example.com/order-proposals/1a80eca5-99f1-4e9a-81da-937e5621b246",
   "validationMode": {

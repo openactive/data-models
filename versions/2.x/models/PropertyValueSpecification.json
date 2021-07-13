@@ -2,7 +2,7 @@
    "type": "PropertyValueSpecification",
    "derivedFrom": "https://schema.org/PropertyValueSpecification",
    "hasId": true,
-    "sampleId": "https://example.com/someid",
+   "sampleId": "https://example.com/someid",
    "status": {
       "response": {
          "hasId": false,

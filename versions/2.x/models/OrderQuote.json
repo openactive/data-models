@@ -1,5 +1,6 @@
 {
   "type": "OrderQuote",
+  "hasId": true,
   "subClassOf": "#Order",
   "sampleId": "https://api.example.com/order-quotes/1a80eca5-99f1-4e9a-81da-937e5621b246",
   "validationMode": {
