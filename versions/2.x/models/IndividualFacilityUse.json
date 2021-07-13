@@ -1,9 +1,11 @@
 {
   "type": "IndividualFacilityUse",
+  "hasId": true,
   "subClassOf": "#FacilityUse",
-  "sampleId": "https://example.com/individual-facility-use/1",
+  "sampleId": "https://api.example.com/individual-facility-uses/12345",
   "requiredFields": [
     "type",
+    "id",
     "url",
     "name",
     "activity",
@@ -11,7 +13,6 @@
     "provider"
   ],
   "recommendedFields": [
-    "id",
     "description",
     "image",
     "hoursAvailable",
