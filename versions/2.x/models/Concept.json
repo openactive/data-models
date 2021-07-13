@@ -47,7 +47,7 @@
       "fieldName": "id",
       "requiredType": "https://schema.org/URL",
       "description": [
-        "The `@id` of a Concept from the OpenActive Activity List. This value [must always exactly match](https://developer.openactive.io/publishing-data/activity-list-references) an `id` from the OpenActive Activity List."
+        "The `@id` of a Concept from the [OpenActive Activity List](https://github.com/openactive/activity-list). This value [must always exactly match](https://developer.openactive.io/publishing-data/activity-list-references) an `id` from the [OpenActive Activity List](https://github.com/openactive/activity-list)."
       ],
       "example": "https://openactive.io/activity-list#a454c7e6-52da-426d-9bd1-743e9d7d266d"
     },
@@ -93,7 +93,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://openactive.io/activity-list",
       "description": [
-        "A stable URL reference for the taxonomy, which must be `https://openactive.io/activity-list` to reference the OpenActive Activity List."
+        "A stable URL reference for the taxonomy, which must be `https://openactive.io/activity-list` to [reference the OpenActive Activity List](https://developer.openactive.io/publishing-data/activity-list-references)."
       ]
     },
     "narrower": {
