@@ -1,5 +1,6 @@
 {
   "type": "ScheduledSession",
+  "hasId": true,
   "subClassOf": "#Event",
   "sampleId": "https://api.example.com/scheduled-sessions/12345",
   "notInSpec": [

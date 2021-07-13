@@ -1,5 +1,6 @@
 {
   "type": "SessionSeries",
+  "hasId": true,
   "subClassOf": "#Event",
   "sampleId": "https://api.example.com/session-series/12345",
   "notInSpec": [

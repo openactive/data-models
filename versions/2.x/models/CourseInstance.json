@@ -1,5 +1,6 @@
 {
   "type": "CourseInstance",
+  "hasId": true,
   "subClassOf": "#Event",
   "derivedFrom": "https://schema.org/CourseInstance",
   "sampleId": "https://api.example.com/course-instances/12345",

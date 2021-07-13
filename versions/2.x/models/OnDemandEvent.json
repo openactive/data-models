@@ -1,5 +1,6 @@
 {
   "type": "OnDemandEvent",
+  "hasId": true,
   "subClassOf": "#Event",
   "derivedFrom": "https://schema.org/OnDemandEvent",
   "sampleId": "https://api.example.com/on-demand-events/12345",

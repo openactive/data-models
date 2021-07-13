@@ -1,5 +1,6 @@
 {
   "type": "HeadlineEvent",
+  "hasId": true,
   "subClassOf": "#Event",
   "sampleId": "https://api.example.com/headline-events/12345",
   "shallNotInclude": [
