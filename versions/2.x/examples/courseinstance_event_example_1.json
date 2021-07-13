@@ -12,8 +12,9 @@
           "https://openactive.io/ns-beta"
         ],
         "@type": "CourseInstance",
-        "name": "Netball Youth Camp",
+        "@id": "https://id.bookingsystem.example.com/course-instances/76121",
         "identifier": 76121,
+        "name": "Netball Youth Camp",
         "startDate": "2018-08-01",
         "endDate": "2018-08-04",
         "duration": "P3D",

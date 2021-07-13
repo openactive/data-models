@@ -12,6 +12,7 @@
           "https://openactive.io/ns-beta"
         ],
         "@type": "Event",
+        "@id": "https://id.bookingsystem.example.com/events/158313",
         "identifier": 158313,
         "url": "https://www.letsride.co.uk/rides/gorhambury-house-loop",
         "activity": [

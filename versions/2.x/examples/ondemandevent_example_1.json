@@ -12,6 +12,7 @@
           "https://openactive.io/ns-beta"
         ],
         "@type": "OnDemandEvent",
+        "@id": "https://id.bookingsystem.example.com/on-demand-events/158313",
         "identifier": 158313,
         "url": "https://www.example.com/videos/gorhambury-house",
         "activity": [
