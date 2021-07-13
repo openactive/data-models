@@ -334,7 +334,7 @@ describe('models', () => {
           // Only for JSON-LD models
           if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
             forEachField(jsonData, (field, fieldSpec) => {
-              if (field !== 'type') {
+              if (field !== 'type' && field !== 'id') {
                 expect(fieldSpec.sameAs).toBeValidPropertyReferenceFor(field);
               }
             });

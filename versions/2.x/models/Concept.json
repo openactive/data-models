@@ -43,6 +43,14 @@
       "requiredType": "https://schema.org/Text",
       "requiredContent": "Concept"
     },
+    "id": {
+      "fieldName": "id",
+      "requiredType": "https://schema.org/URL",
+      "description": [
+        "The `@id` of a Concept from the OpenActive Activity List. This value [must always exactly match](https://developer.openactive.io/publishing-data/activity-list-references) an `id` from the OpenActive Activity List."
+      ],
+      "example": "https://openactive.io/activity-list#a454c7e6-52da-426d-9bd1-743e9d7d266d"
+    },
     "altLabel": {
       "fieldName": "altLabel",
       "sameAs": "http://www.w3.org/2004/02/skos/core#altLabel",
