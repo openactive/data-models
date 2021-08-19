@@ -28,8 +28,7 @@
         "totalPaymentTax",
         "orderCreationStatus",
         "orderProposalVersion",
-        "totalPaymentDue",
-        "payment"
+        "totalPaymentDue"
       ],
       "requiredOptions": [
 
@@ -54,8 +53,7 @@
         "orderProposalVersion",
         "lease",
         "totalPaymentDue",
-        "orderRequiresApproval",
-        "payment"
+        "orderRequiresApproval"
       ],
       "requiredOptions": [
 
