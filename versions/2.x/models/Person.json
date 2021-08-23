@@ -179,8 +179,11 @@
       "fieldName": "gender",
       "sameAs": "https://pending.schema.org/gender",
       "requiredType": "https://schema.org/GenderType",
+      "alternativeTypes": [
+        "https://schema.org/Text"
+      ],
       "description": [
-        "Indicates the gender of the person."
+        "Indicates the gender of the person. While `https://schema.org/Male` and `https://schema.org/Female` may be used, text strings are also acceptable for people who do not identify as a binary gender."
       ],
       "example": "https://schema.org/Female"
     },
