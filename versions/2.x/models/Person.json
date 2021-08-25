@@ -100,7 +100,8 @@
     "taxMode",
     "vatID",
     "legalName",
-    "isOpenBookingAllowed"
+    "isOpenBookingAllowed",
+    "emergencyContact"
   ],
   "fields": {
     "type": {
@@ -241,6 +242,14 @@
       "model": "#PostalAddress",
       "description": [
         "Address of the Seller, used on tax receipts."
+      ]
+    },
+    "emergencyContact": {
+      "fieldName": "emergencyContact",
+      "sameAs": "https://openactive.io/emergencyContact",
+      "model": "#Person",
+      "description": [
+        "Person to contact in case of emergencies related to this Person."
       ]
     },
     "termsOfService": {
