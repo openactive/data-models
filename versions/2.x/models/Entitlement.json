@@ -1,0 +1,69 @@
+{
+  "type": "Entitlement",
+  "subClassOf": "https://schema.org/Permit",
+  "hasId": false,
+  "inSpec": [
+    "type",
+    "validFrom",
+    "validUntil",
+    "entitlementType",
+    "evidenceRequestAction"
+  ],
+  "description": {
+    "sections": [
+      {
+        "title": "EARLY RELEASE NOTICE",
+        "paragraphs": [
+          "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback.",
+          "IT IS STILL SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "Entitlement"
+    },
+    "validFrom": {
+      "fieldName": "validFrom",
+      "sameAs": "https://schema.org/validFrom",
+      "requiredType": "https://schema.org/DateTime",
+      "description": [
+        "The date the entitlement becomes valid. This must be in the past."
+      ]
+    },
+    "validUntil": {
+      "fieldName": "validUntil",
+      "sameAs": "https://schema.org/validUntil",
+      "requiredType": "https://schema.org/DateTime",
+      "description": [
+        "The date that the entitlement is no longer valid. This must be in the future."
+      ]
+    },
+    "entitlementType": {
+      "fieldName": "entitlementType",
+      "sameAs": "https://openactive.io/entitlementType",
+      "model": "#Concept",
+      "allowReferencing": true,
+      "description": [
+        "For the request, this is the value of the @id of the Concept being referenced. For the response, this the full Concept object including the @id and prefLabel."
+      ],
+      "example": {
+        "@type": "Concept",
+        "@id": "https://data.mcractive.com/openactive/entitlement-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+        "prefLabel": "MCRactive Adult Resident",
+        "inScheme": "https://data.mcractive.com/openactive/entitlement-list"
+      }
+    },
+    "evidenceRequestAction": {
+      "fieldName": "evidenceRequestAction",
+      "sameAs": "https://openactive.io/evidenceRequestAction",
+      "model": "#Action",
+      "description": [
+        "Any evidence request associated with the entitlement."
+      ]
+    }
+  }
+}

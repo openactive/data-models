@@ -1,0 +1,90 @@
+{
+  "type": "CustomerAccount",
+  "subClassOf": "https://schema.org/Thing",
+  "hasId": true,
+  "sampleId": "https://id.bookingsystem.example.com/customer-accounts/fdc14503-275e-46d3-9922-45b986c9f9aa",
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "accountNumber",
+    "customer",
+    "accessPass",
+    "hasHiddenEntitlements",
+    "outstandingAction",
+    "entitlement"
+  ],
+  "description": {
+    "sections": [
+      {
+        "title": "EARLY RELEASE NOTICE",
+        "paragraphs": [
+          "This class represents a draft that is designed to inform the OpenActive specification work with implementation feedback.",
+          "IT IS STILL SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
+        ]
+      }
+    ]
+  },
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "CustomerAccount"
+    },
+    "identifier": {
+      "fieldName": "identifier",
+      "sameAs": "https://schema.org/identifier",
+      "requiredType": "https://schema.org/Text",
+      "example": "fdc14503-275e-46d3-9922-45b986c9f9aa",
+      "description": [
+        "The identifier of the Customer Account used by the Booking System."
+      ]
+    },
+    "accountNumber": {
+      "fieldName": "accountNumber",
+      "sameAs": "https://openactive.io/accountNumber",
+      "requiredType": "https://schema.org/Text",
+      "description": ["The customer-facing identifier for the Customer Account."]
+    },
+    "customer": {
+      "fieldName": "customer",
+      "sameAs": "https://schema.org/customer",
+      "model": "#Person",
+      "alternativeModels": [
+        "#Organization"
+      ],
+      "description": ["The person or organization to whom this Customer Account belongs."]
+    },
+    "accessPass": {
+      "fieldName": "accessPass",
+      "sameAs": "https://openactive.io/accessPass",
+      "model": "ArrayOf#Barcode",
+      "description": ["The barcode, QR code, magnetic stripe, or swipe card associated with this Customer Account, within their own namespaces."]
+    },
+    "hasHiddenEntitlements": {
+      "fieldName": "hasHiddenEntitlements",
+      "sameAs": "https://openactive.io/hasHiddenEntitlements",
+      "requiredType": "https://schema.org/Boolean",
+      "description": [
+        "Whether there are any additional entitlements (other than those listed in entitlement) or other types of discounts are associated with the Customer Account that will influence pricing, and therefore whether the pricing for the entitlement in the feed should be treated as indicative."
+      ],
+      "example": true
+    },
+    "outstandingAction": {
+      "fieldName": "outstandingAction",
+      "sameAs": "https://openactive.io/outstandingAction",
+      "model": "ArrayOf#Action",
+      "description": [
+        "Outstanding actions on this Customer Account, such as the resolution of outstanding debts or membership renewal. These may prevent the Customer from making bookings."
+      ]
+    },
+    "entitlement": {
+      "fieldName": "entitlement",
+      "sameAs": "https://openactive.io/entitlement",
+      "model": "ArrayOf#Entitlement",
+      "description": [
+        "The current valid and active entitlements associated with this customer. Note that expired or inactive entitlements are not included in this list."
+      ]
+    }
+  }
+}

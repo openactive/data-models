@@ -100,8 +100,9 @@
     "taxMode",
     "vatID",
     "legalName",
+    "emergencyContact",
     "isOpenBookingAllowed",
-    "emergencyContact"
+    "hasAccount"
   ],
   "fields": {
     "type": {
@@ -292,6 +293,15 @@
       "example": true,
       "description":[
         "Indicates whether the Seller allows open booking"
+      ]
+    },
+    "hasAccount": {	
+      "fieldName": "hasAccount",	
+      "sameAs": "https://openactive.io/hasAccount",	
+      "model": "#CustomerAccount",	
+      "description": [
+        "Reference to the CustomerAccount associated with this Customer, for use within the Open Booking API flow.",
+        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."	
       ]
     }
   }
