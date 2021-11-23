@@ -102,7 +102,8 @@
     "openBookingFlowRequirement",
     "identifier",
     "description",
-    "url"
+    "url",
+    "eligibleEntitlementType"
   ],
   "fields": {
     "type": {
@@ -255,6 +256,23 @@
       "example": "http://www.rphs.org.uk/",
       "description": [
         "URL describing the offer"
+      ]
+    },
+    "eligibleEntitlementType": {
+      "fieldName": "eligibleEntitlementType",
+      "sameAs": "https://openactive.io/eligibleEntitlementType",
+      "model": "ArrayOf#Concept",
+      "description": [
+        "Offers in open data can be marked as requiring an entitlement type via `eligibleEntitlementType`. The same Offer may be applicable to multiple entitlement types, and the Customer must have at least one matching entitlement type to qualify for the Offer.",
+        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
+      ],
+      "example": [
+        {
+          "@type": "Concept",
+          "@id": "https://data.mcractive.com/openactive/entitlement-list#5e78bcbe-36db-425a-9064-bf96d09cc351",
+          "prefLabel": "MCRactive Adult Resident",
+          "inScheme": "https://data.mcractive.com/openactive/entitlement-list"
+        }
       ]
     }
   }

@@ -57,7 +57,8 @@
 		"openBookingFlowRequirement",
 		"identifier",
 		"description",
-		"url"
+		"url",
+		"eligibleEntitlementType"
 	],
 	"notInSpec": [
 		"openBookingInAdvance",
@@ -66,7 +67,8 @@
 		"ageRestriction",
 		"validFromBeforeStartDate",
 		"latestCancellationBeforeStartDate",
-		"allowCustomerCancellationFullRefund"
+		"allowCustomerCancellationFullRefund",
+		"eligibleEntitlementType"
 	],
 	"fields": {
 		"type": {

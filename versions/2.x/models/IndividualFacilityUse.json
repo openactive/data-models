@@ -42,7 +42,9 @@
     "accessibilitySupport",
     "category",
     "attendeeInstructions",
-    "additionalAdmissionRestriction"
+    "additionalAdmissionRestriction",
+    "customerAccountBookingRestriction",
+    "isOpenBookingWithCustomerAccountAllowed"
   ],
   "fields": {
     "type": {

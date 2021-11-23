@@ -65,6 +65,6 @@
          "description": [	
            "The version of the application, useful for on-premise installations. Note this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Dataset API Discovery specification](https://openactive.io/dataset-api-discovery/EditorsDraft/) evolves."	
          ]
-       }
+      }
    }
 }

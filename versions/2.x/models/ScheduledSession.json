@@ -92,6 +92,8 @@
         "genderRestriction",
         "ageRestriction",
         "additionalAdmissionRestriction",
+        "customerAccountBookingRestriction",
+        "isOpenBookingWithCustomerAccountAllowed",
         "programme",
         "attendeeInstructions",
         "leader",
