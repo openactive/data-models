@@ -8,9 +8,19 @@
     "id",
     "url",
     "name",
-    "activity",
     "location",
     "provider"
+  ],
+  "requiredOptions": [
+    {
+      "description": [
+        "Support for the `facilityType` property has been added to tooling and documentation ahead of inclusion in the next point release of the OpenActive Modelling Opportunity Data specification, as agreed on [the W3C call 2021-06-02](https://github.com/openactive/facility-types/issues/1#issuecomment-853759213). On this basis of this discussion, following the next point release, only `facilityType` will be required."
+      ],
+      "options": [
+        "facilityType",
+        "activity"
+      ]
+    }
   ],
   "recommendedFields": [
     "description",
@@ -41,7 +51,7 @@
         "type",
         "url",
         "name",
-        "activity",
+        "facilityType",
         "location"
       ],
       "shallNotInclude": [
@@ -59,6 +69,7 @@
     "name",
     "description",
     "image",
+    "facilityType",
     "activity",
     "location",
     "event",
@@ -105,6 +116,23 @@
         }
       ]
     },
+    "facilityType": {
+      "fieldName": "facilityType",
+      "sameAs": "https://openactive.io/facilityType",
+      "model": "ArrayOf#Concept",
+      "description": [
+        "Specifies the types of facility being described.",
+        "NOTE: this property has been added to tooling and documentation ahead of inclusion in the next point release of the OpenActive Modelling Opportunity Data specification, as agreed on [the W3C call 2021-06-02](https://github.com/openactive/facility-types/issues/1#issuecomment-853759213)."
+      ],
+      "example": [
+        {
+          "@type": "Concept",
+          "@id": "https://openactive.io/facility-types#bba8ae59-d152-40bc-85cc-88c5375696d4",
+          "prefLabel": "Tennis Court",
+          "inScheme": "https://openactive.io/facility-types"
+        }
+      ]
+    },
     "activity": {
       "fieldName": "activity",
       "sameAs": "https://openactive.io/activity",
@@ -119,7 +147,8 @@
           "prefLabel": "Badminton",
           "inScheme": "https://openactive.io/activity-list"
         }
-      ]
+      ],
+      "deprecationGuidance": "Use `facilityType` instead of `activity` within `FacilityUse` and `IndividualFacilityUse`, as the `facilityType` controlled vocabulary has been designed specifically for facilities."
     },
     "attendeeInstructions": {
       "fieldName": "attendeeInstructions",
@@ -222,10 +251,13 @@
       "example": [
         {
           "@type": "IndividualFacilityUse",
-          "@id": "http://www.example.org/facility-uses/1",
+          "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/1",
           "name": "Tennis Court 1"
         }
-      ]
+      ],
+      "inheritsTo": {
+        "exclude": ["id", "identifier", "individualFacilityUse", "name"]
+      }
     },
     "location": {
       "fieldName": "location",
