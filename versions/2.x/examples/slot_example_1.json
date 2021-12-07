@@ -1,21 +1,21 @@
 {
-  "next": "http://www.example.org/feeds/facility-uses/events?afterChangeNumber=44254329",
+  "next": "http://www.example.org/feeds/individual-facility-use-slots?afterChangeNumber=44254329",
   "items": [
     {
       "state": "updated",
-      "kind": "FacilityUse/Slot",
+      "kind": "IndividualFacilityUse/Slot",
       "id": "009/2018-03-01T10:00:00Z",
       "modified": 44234351,
       "data": {
         "@context": "https://openactive.io/",
         "@type": "Slot",
-        "@id": "http://www.example.org/api/facility-uses/432#/event/2018-03-01T10:00:00Z",
-        "facilityUse": "http://www.example.org/api/facility-uses/432",
+        "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/1#/slots/2018-03-01T10:00:00Z",
+        "facilityUse": "http://www.example.org/facility-uses/1/individual-facility-uses/1",
         "startDate": "2018-03-01T11:00:00Z",
         "endDate": "2018-03-01T11:30:00Z",
         "duration": "PT30M",
-        "remainingUses": 3,
-        "maximumUses": 6,
+        "remainingUses": 1,
+        "maximumUses": 1,
         "offers": [
           {
             "@type": "Offer",
