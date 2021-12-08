@@ -51,7 +51,6 @@
         "type",
         "url",
         "name",
-        "facilityType",
         "location"
       ],
       "shallNotInclude": [
