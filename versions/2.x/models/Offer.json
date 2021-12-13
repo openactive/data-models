@@ -224,7 +224,15 @@
       "sameAs": "https://openactive.io/validFromBeforeStartDate",
       "requiredType": "https://schema.org/Duration",
       "description": [
-        "The duration before the startDate for which this Offer is valid, given in ISO 8601 format. This is a relatively-defined equivalent of schema:validFrom, to allow for Offer inheritance."
+        "The duration before the `startDate` for which this `Offer` is valid, given in ISO 8601 format. This is a relatively-defined equivalent of `schema:validFrom`, to allow for `Offer` inheritance."
+      ]
+    },
+    "validThroughBeforeStartDate": {
+      "fieldName": "validThroughBeforeStartDate",
+      "sameAs": "https://openactive.io/validThroughBeforeStartDate",
+      "requiredType": "https://schema.org/Duration",
+      "description": [
+        "The duration before the `startDate` after which the `Offer` is no longer valid, given in ISO 8601 format. This is a relatively-defined equivalent of `schema:validThrough`, to allow for `Offer` inheritance."
       ]
     },
     "latestCancellationBeforeStartDate": {
