@@ -29,7 +29,7 @@
     "validFrom": {
       "fieldName": "validFrom",
       "sameAs": "https://schema.org/validFrom",
-      "requiredType": "https://schema.org/DateTime",
+      "requiredType": "https://schema.org/Date",
       "description": [
         "The date the entitlement becomes valid. This must be in the past."
       ]
@@ -37,7 +37,7 @@
     "validUntil": {
       "fieldName": "validUntil",
       "sameAs": "https://schema.org/validUntil",
-      "requiredType": "https://schema.org/DateTime",
+      "requiredType": "https://schema.org/Date",
       "description": [
         "The date that the entitlement is no longer valid. This must be in the future."
       ]
