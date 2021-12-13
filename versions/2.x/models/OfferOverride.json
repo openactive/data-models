@@ -52,6 +52,7 @@
 		"acceptedPaymentMethod",
 		"openBookingPrepayment",
 		"validFromBeforeStartDate",
+		"validThroughBeforeStartDate",
 		"latestCancellationBeforeStartDate",
 		"allowCustomerCancellationFullRefund",
 		"openBookingFlowRequirement",
@@ -66,6 +67,7 @@
 		"ageRange",
 		"ageRestriction",
 		"validFromBeforeStartDate",
+		"validThroughBeforeStartDate",
 		"latestCancellationBeforeStartDate",
 		"allowCustomerCancellationFullRefund",
 		"eligibleEntitlementType"
