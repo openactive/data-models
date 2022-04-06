@@ -297,7 +297,7 @@
     },
     "provider": {
       "fieldName": "provider",
-      "sameAs": "https://schema.org/provider",
+      "sameAs": "https://pending.schema.org/provider",
       "model": "#Organization",
       "description": [
         "The organisation responsible for providing the facility"

@@ -151,7 +151,8 @@
       },
       "description": [
         "The place within which this Place exists"
-      ]
+      ],
+      "allowReferencing": true
     },
     "containsPlace": {
       "fieldName": "containsPlace",
