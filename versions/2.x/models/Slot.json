@@ -95,8 +95,7 @@
         "remainingAttendeeCapacity",
         "subEvent",
         "schedulingNote",
-        "superEvent",
-        "url"
+        "superEvent"
       ]
     },
     "response": {
@@ -188,7 +187,6 @@
     "subEvent",
     "schedulingNote",
     "superEvent",
-    "url",
     "eventAttendanceMode"
   ],
   "shallNotInclude": [
@@ -287,6 +285,15 @@
         "The start date and time of the slot."
       ],
       "example": "2018-01-27T12:00:00Z"
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
+      "description": [
+        "A URL to a web page (or section of a page) that describes the specific Slot."
+      ],
+      "example": "https://example.com/slots/1234"
     }
   }
 }
