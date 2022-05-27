@@ -44,7 +44,6 @@
         "bookingService",
         "orderedItem",
         "totalPaymentDue",
-        "totalPaymentTax",
         "orderProposalVersion",
         "orderProposalStatus"
       ],
