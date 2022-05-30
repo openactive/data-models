@@ -82,15 +82,10 @@
       }
     ]
   },
-  "lease": {
-    "@type": "Lease",
-    "leaseExpires": "2018-10-01T11:00:00Z"
-  },
   "orderedItem": [
     {
       "@type": "OrderItem",
       "position": 0,
-      "orderItemStatus": "https://openactive.io/OrderItemConfirmed",
       "unitTaxSpecification": [
         {
           "@type": "TaxChargeSpecification",
@@ -167,14 +162,14 @@
   ],
   "totalPaymentDue": {
     "@type": "PriceSpecification",
-    "price": 0,
+    "price": 5,
     "priceCurrency": "GBP"
   },
   "totalPaymentTax": [
     {
       "@type": "TaxChargeSpecification",
       "name": "VAT at 20%",
-      "price": 0,
+      "price": 1,
       "priceCurrency": "GBP",
       "rate": 0.2
     }
