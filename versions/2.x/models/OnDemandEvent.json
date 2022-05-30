@@ -13,8 +13,7 @@
     "offers",
     "url"
   ],
-  "requiredOptions": [
-  ],
+  "requiredOptions": [],
   "recommendedFields": [
     "duration",
     "description",
@@ -108,10 +107,8 @@
       "requiredFields": [
         "type"
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [
@@ -197,7 +194,15 @@
         "Relates an `OnDemandEvent` to an `EventSeries`."
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "offers", "startDate", "endDate"]
+        "exclude": [
+          "id",
+          "identifier",
+          "subEvent",
+          "superEvent",
+          "offers",
+          "startDate",
+          "endDate"
+        ]
       }
     },
     "workFeatured": {
@@ -211,7 +216,7 @@
         "@type": "VideoObject",
         "url": "https://www.youtube.com/watch?v=3fbCs0GVjgQ",
         "embedUrl": "https://www.youtube.com/embed/3fbCs0GVjgQ",
-        "thumbnail":[
+        "thumbnail": [
           {
             "@type": "ImageObject",
             "url": "http://example.com/static/image/speedball_thumbnail.jpg"

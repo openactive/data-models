@@ -16,18 +16,18 @@
     "BookableRPDEFeed": "bookableFeed",
     "DatasetSite": "datasetSite",
     "DataCatalog": "dataCatalog",
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
+    "C1Request": "request",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderProposalPatch": "request",
     "OrderPatch": "request",
     "OrdersFeed": "result",
@@ -42,16 +42,14 @@
         "legalName",
         "url"
       ],
-      "recommendedFields": [
-      ]
+      "recommendedFields": []
     },
     "dataCatalog": {
       "requiredFields": [
         "name",
         "url"
       ],
-      "recommendedFields": [
-      ]
+      "recommendedFields": []
     },
     "bookableFeed": {
       "requiredFields": [
@@ -131,7 +129,7 @@
         "recommendedFields": []
       },
       "seller": {
-        "requiredFields":[
+        "requiredFields": [
           "id",
           "name",
           "legalName",
@@ -224,7 +222,7 @@
     },
     "taxMode": {
       "fieldName": "taxMode",
-      "sameAs":"https://openactive.io/taxMode",
+      "sameAs": "https://openactive.io/taxMode",
       "requiredType": "https://openactive.io/TaxMode",
       "description": [
         "Either  https://openactive.io/TaxNet or  https://openactive.io/TaxGross"
@@ -344,18 +342,18 @@
       "sameAs": "https://openactive.io/isOpenBookingAllowed",
       "requiredType": "https://schema.org/Boolean",
       "example": true,
-      "description":[
+      "description": [
         "Indicates whether the Seller allows open booking or not"
       ]
     },
-    "hasAccount": {	
-      "fieldName": "hasAccount",	
-      "sameAs": "https://openactive.io/hasAccount",	
+    "hasAccount": {
+      "fieldName": "hasAccount",
+      "sameAs": "https://openactive.io/hasAccount",
       "model": "#CustomerAccount",
       "allowReferencing": true,
       "description": [
         "Reference to the CustomerAccount associated with this Customer, for use within the Open Booking API flow.",
-        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."	
+        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
       ]
     }
   }

@@ -4,18 +4,18 @@
   "hasId": true,
   "sampleId": "https://api.example.com/orders/1a80eca5-99f1-4e9a-81da-937e5621b246#/orderedItem/12345",
   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "Cresponse",
- 		"C1ResponseOrderItemError": "Cresponse_error",
- 		"C2Request": "request",
- 		"C2Response": "Cresponse",
- 		"C2ResponseOrderItemError": "Cresponse_error",
- 		"PRequest": "request",
- 		"PResponse": "Presponse",
- 		"PResponseOrderItemError": "Presponse_error",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response_error",
+    "C1Request": "request",
+    "C1Response": "Cresponse",
+    "C1ResponseOrderItemError": "Cresponse_error",
+    "C2Request": "request",
+    "C2Response": "Cresponse",
+    "C2ResponseOrderItemError": "Cresponse_error",
+    "PRequest": "request",
+    "PResponse": "Presponse",
+    "PResponseOrderItemError": "Presponse_error",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response_error",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
@@ -30,9 +30,7 @@
         "orderedItem",
         "position"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "id",
         "orderItemStatus",
@@ -43,9 +41,7 @@
         "customerNotice",
         "orderItemIntakeForm"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "Cresponse": {
       "requiredFields": [
@@ -63,9 +59,7 @@
         "accessPass",
         "error"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "Cresponse_error": {
       "requiredFields": [
@@ -82,9 +76,7 @@
         "accessCode",
         "accessPass"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "response": {
       "requiredFields": [
@@ -105,9 +97,7 @@
         "customerNotice",
         "error"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "response_error": {
       "requiredFields": [
@@ -125,9 +115,7 @@
         "cancellationMessage",
         "customerNotice"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "Presponse": {
       "requiredFields": [
@@ -137,8 +125,7 @@
         "orderedItem",
         "position"
       ],
-      "recommendedFields": [
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "cancellationMessage",
         "customerNotice",
@@ -148,8 +135,7 @@
         "accessChannel",
         "error"
       ],
-      "requiredOptions": [
-      ]
+      "requiredOptions": []
     },
     "Presponse_error": {
       "requiredFields": [
@@ -158,8 +144,7 @@
         "orderedItem",
         "position"
       ],
-      "recommendedFields": [
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "cancellationMessage",
         "customerNotice",
@@ -168,8 +153,7 @@
         "accessPass",
         "accessChannel"
       ],
-      "requiredOptions": [
-      ]
+      "requiredOptions": []
     },
     "orderStatus": {
       "requiredFields": [
@@ -187,9 +171,7 @@
       "shallNotInclude": [
         "position"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "ordersFeed": {
       "requiredFields": [
@@ -209,8 +191,7 @@
         "orderItemIntakeFormResponse",
         "position"
       ],
-      "requiredOptions": [
-      ]
+      "requiredOptions": []
     },
     "orderProposalsFeed": {
       "requiredFields": [
@@ -219,8 +200,7 @@
         "acceptedOffer",
         "orderedItem"
       ],
-      "recommendedFields": [
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "attendee",
         "attendeeDetailsRequired",
@@ -232,8 +212,7 @@
         "cancellationMessage",
         "customerNotice"
       ],
-      "requiredOptions": [
-      ]
+      "requiredOptions": []
     },
     "cancellation": {
       "requiredFields": [
@@ -241,8 +220,7 @@
         "id",
         "orderItemStatus"
       ],
-      "recommendedFields": [
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "unitTaxSpecification",
         "accessCode",
@@ -255,9 +233,7 @@
         "orderedItem",
         "position"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     }
   },
   "inSpec": [
@@ -289,7 +265,9 @@
       "fieldName": "position",
       "sameAs": "https://schema.org/position",
       "requiredType": "https://schema.org/Integer",
-      "description": ["An integer representing the order of OrderItems within the array."]
+      "description": [
+        "An integer representing the order of OrderItems within the array."
+      ]
     },
     "orderItemStatus": {
       "fieldName": "orderItemStatus",
@@ -301,83 +279,121 @@
       "fieldName": "unitTaxSpecification",
       "sameAs": "https://openactive.io/unitTaxSpecification",
       "model": "ArrayOf#TaxChargeSpecification",
-      "description": ["Breakdown of tax payable for the OrderItem."]
+      "description": [
+        "Breakdown of tax payable for the OrderItem."
+      ]
     },
     "acceptedOffer": {
       "fieldName": "acceptedOffer",
       "sameAs": "https://schema.org/acceptedOffer",
       "model": "#Offer",
       "allowReferencing": true,
-      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest", "OrdersFeed"],
-      "description": ["The offer from the associated orderedItem that has been selected by the Customer. The price of this includes or excludes tax depending on the taxMode of the Order."]
+      "requireReferencingInValidationMode": [
+        "C1Request",
+        "C2Request",
+        "PRequest",
+        "BRequest",
+        "OrdersFeed"
+      ],
+      "description": [
+        "The offer from the associated orderedItem that has been selected by the Customer. The price of this includes or excludes tax depending on the taxMode of the Order."
+      ]
     },
     "orderedItem": {
       "fieldName": "orderedItem",
       "sameAs": "https://schema.org/orderedItem",
       "model": "#Event",
       "allowReferencing": true,
-      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest", "OrdersFeed"],
-      "description": ["The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."]
+      "requireReferencingInValidationMode": [
+        "C1Request",
+        "C2Request",
+        "PRequest",
+        "BRequest",
+        "OrdersFeed"
+      ],
+      "description": [
+        "The specific bookable Thing that has been selected by the Customer. See the [Modelling-Opportunity-Data] for more information on these types. Note that the Broker Request and Orders feed only require id within these objects to be included; in these contexts, all other properties are ignored."
+      ]
     },
     "accessCode": {
       "fieldName": "accessCode",
       "sameAs": "https://schema.org/accessCode",
       "model": "ArrayOf#PropertyValue",
-      "description": ["PropertyValue that contains a text value usable for entrance. Not applicable for an  OrderQuote."]
+      "description": [
+        "PropertyValue that contains a text value usable for entrance. Not applicable for an  OrderQuote."
+      ]
     },
     "accessPass": {
       "fieldName": "accessPass",
       "sameAs": "https://openactive.io/accessPass",
       "model": "ArrayOf#ImageObject",
-      "description": ["ImageObject or Barcode that contains reference to an asset (e.g. Barcode, QR code image or PDF) usable for entrance. Not applicable for an OrderQuote."]
+      "description": [
+        "ImageObject or Barcode that contains reference to an asset (e.g. Barcode, QR code image or PDF) usable for entrance. Not applicable for an OrderQuote."
+      ]
     },
     "accessChannel": {
       "fieldName": "accessChannel",
       "sameAs": "https://openactive.io/accessChannel",
       "model": "#VirtualLocation",
-      "description": ["Channel through which the user can participate in the Opportunity. Not applicable for an OrderQuote."]
+      "description": [
+        "Channel through which the user can participate in the Opportunity. Not applicable for an OrderQuote."
+      ]
     },
     "error": {
       "fieldName": "error",
       "sameAs": "https://schema.org/error",
       "model": "ArrayOf#OpenBookingError",
-      "description": ["Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."]
+      "description": [
+        "Array of errors related to the OrderItem being included in the Order, only applicable for an  OrderQuote."
+      ]
     },
     "cancellationMessage": {
       "fieldName": "cancellationMessage",
       "sameAs": "https://openactive.io/cancellationMessage",
       "requiredType": "https://schema.org/Text",
-      "description": ["A message set by the Seller in the event of Opportunity cancellation, only applicable for an  `Order` and where the `OrderItem` has `orderItemStatus` set to `https://openactive.io/SellerCancelled`"]
+      "description": [
+        "A message set by the Seller in the event of Opportunity cancellation, only applicable for an  `Order` and where the `OrderItem` has `orderItemStatus` set to `https://openactive.io/SellerCancelled`"
+      ]
     },
     "customerNotice": {
       "fieldName": "customerNotice",
       "sameAs": "https://openactive.io/customerNotice",
       "requiredType": "https://schema.org/Text",
-      "description": ["A message set by the Seller to trigger a notification to the Customer, only applicable for an `Order` and where the `OrderItem` has `orderItemStatus` set to  `https://openactive.io/OrderItemConfirmed` or `https://openactive.io/CustomerAttended`"]
+      "description": [
+        "A message set by the Seller to trigger a notification to the Customer, only applicable for an `Order` and where the `OrderItem` has `orderItemStatus` set to  `https://openactive.io/OrderItemConfirmed` or `https://openactive.io/CustomerAttended`"
+      ]
     },
     "attendee": {
       "fieldName": "attendee",
       "sameAs": "https://schema.org/attendee",
       "model": "#Person",
-      "description": ["The person attending the Opportunity related to the OrderItem."]
+      "description": [
+        "The person attending the Opportunity related to the OrderItem."
+      ]
     },
     "attendeeDetailsRequired": {
       "fieldName": "attendeeDetailsRequired",
       "sameAs": "https://openactive.io/attendeeDetailsRequired",
       "requiredType": "ArrayOf#https://schema.org/Property",
-      "description": ["The properties of `schema:Person` that are required to describe an `attendee` for this `OrderItem`."]
+      "description": [
+        "The properties of `schema:Person` that are required to describe an `attendee` for this `OrderItem`."
+      ]
     },
     "orderItemIntakeForm": {
       "fieldName": "orderItemIntakeForm",
       "sameAs": "https://openactive.io/orderItemIntakeForm",
       "model": "ArrayOf#PropertyValueSpecification",
-      "description": ["PropertyValueSpecifications that describe fields in the orderItemIntakeForm."]
+      "description": [
+        "PropertyValueSpecifications that describe fields in the orderItemIntakeForm."
+      ]
     },
     "orderItemIntakeFormResponse": {
       "fieldName": "orderItemIntakeFormResponse",
       "sameAs": "https://openactive.io/orderItemIntakeFormResponse",
       "model": "ArrayOf#PropertyValue",
-      "description": ["PropertyValues that contains a text value responses to the orderItemIntakeForm."]
+      "description": [
+        "PropertyValues that contains a text value responses to the orderItemIntakeForm."
+      ]
     }
   }
 }

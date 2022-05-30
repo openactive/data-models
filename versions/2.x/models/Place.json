@@ -45,17 +45,17 @@
     "amenityFeature"
   ],
   "validationMode": {
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderStatus": "response"
-	},
-	"imperativeConfiguration": {
+  },
+  "imperativeConfiguration": {
     "response": {
       "requiredFields": [
         "type",
@@ -76,8 +76,8 @@
         "containedInPlace",
         "containsPlace"
       ]
-		}
-	},
+    }
+  },
   "fields": {
     "type": {
       "fieldName": "type",
@@ -101,7 +101,8 @@
         "addressCountry": "GB"
       },
       "description": [
-        "A structured PostalAddress object for the Place.","Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires https://schema.org/PostalAddress and will not accept plain text addresses."
+        "A structured PostalAddress object for the Place.",
+        "Ideally the address should be provided using the PostalAddress structured format. Google Reserve requires https://schema.org/PostalAddress and will not accept plain text addresses."
       ]
     },
     "amenityFeature": {
@@ -216,11 +217,13 @@
       "description": [
         "An image or photo that depicts the place, e.g. a photo taken at a previous event."
       ],
-      "example": [{
-        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
-        "@type": "ImageObject",
-        "url": "http://example.com/static/image/speedball_large.jpg"
-      }]
+      "example": [
+        {
+          "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+          "@type": "ImageObject",
+          "url": "http://example.com/static/image/speedball_large.jpg"
+        }
+      ]
     },
     "name": {
       "fieldName": "name",

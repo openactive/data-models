@@ -253,7 +253,9 @@
       "fieldName": "allowCustomerCancellationFullRefund",
       "sameAs": "https://openactive.io/allowCustomerCancellationFullRefund",
       "requiredType": "https://schema.org/Boolean",
-      "description": ["Whether the opportunity can be cancelled with a full refund at any time before the `startDate`, or before the `latestCancellationBeforeStartDate` if provided."]
+      "description": [
+        "Whether the opportunity can be cancelled with a full refund at any time before the `startDate`, or before the `latestCancellationBeforeStartDate` if provided."
+      ]
     },
     "openBookingFlowRequirement": {
       "fieldName": "openBookingFlowRequirement",

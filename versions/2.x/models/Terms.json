@@ -1,78 +1,82 @@
 {
-   "type":"Terms",
-   "subClassOf":"https://schema.org/DigitalDocument",
+   "type": "Terms",
+   "subClassOf": "https://schema.org/DigitalDocument",
    "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
- 		"OrderProposalPatch": "request",
- 		"OrderPatch": "request"
- 	},
- 	"imperativeConfiguration": {
- 		"request": {
- 			"requiredFields": [],
- 			"recommendedFields": []
- 		},
- 		"response": {
- 			"requiredFields": [
+      "C1Request": "request",
+      "C1Response": "response",
+      "C1ResponseOrderItemError": "response",
+      "C2Request": "request",
+      "C2Response": "response",
+      "C2ResponseOrderItemError": "response",
+      "PRequest": "request",
+      "PResponse": "response",
+      "PResponseOrderItemError": "response",
+      "BRequest": "request",
+      "BResponse": "response",
+      "BResponseOrderItemError": "response",
+      "OrderProposalPatch": "request",
+      "OrderPatch": "request"
+   },
+   "imperativeConfiguration": {
+      "request": {
+         "requiredFields": [],
+         "recommendedFields": []
+      },
+      "response": {
+         "requiredFields": [
             "type",
- 				"name",
- 				"url",
- 				"requiresExplicitConsent"
- 			]
- 		}
- 	},
-   "inSpec":[
+            "name",
+            "url",
+            "requiresExplicitConsent"
+         ]
+      }
+   },
+   "inSpec": [
       "type",
       "name",
       "url",
       "requiresExplicitConsent",
       "dateModified"
    ],
-   "notInSpec":[
-
-   ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"Terms"
+   "notInSpec": [],
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "Terms"
       },
-      "name":{
-         "fieldName":"name",
-         "requiredType":"https://schema.org/Text",
+      "name": {
+         "fieldName": "name",
+         "requiredType": "https://schema.org/Text",
          "sameAs": "https://schema.org/name",
-         "description":["The name of the terms. The name must distinguish this from other terms fields provided, e.g. 'Terms and Conditions' or 'Privacy Policy'."]
+         "description": [
+            "The name of the terms. The name must distinguish this from other terms fields provided, e.g. 'Terms and Conditions' or 'Privacy Policy'."
+         ]
       },
-      "url":{
-         "fieldName":"url",
+      "url": {
+         "fieldName": "url",
          "sameAs": "https://schema.org/url",
-         "requiredType":"https://schema.org/URL",
-         "description": ["The URL of the webpage containing the contents of the terms."]
+         "requiredType": "https://schema.org/URL",
+         "description": [
+            "The URL of the webpage containing the contents of the terms."
+         ]
       },
-      "requiresExplicitConsent":{
-         "fieldName":"requiresExplicitConsent",
-         "requiredType":"https://schema.org/Boolean",
+      "requiresExplicitConsent": {
+         "fieldName": "requiresExplicitConsent",
+         "requiredType": "https://schema.org/Boolean",
          "sameAs": "https://openactive.io/requiresExplicitConsent",
-         "description": [""]
+         "description": [
+            ""
+         ]
       },
       "dateModified": {
          "fieldName": "dateModified",
          "sameAs": "https://schema.org/dateModified",
          "requiredType": "https://schema.org/DateTime",
          "description": [
-           "The date and time at which the webpage containing the contents of the terms, located at the `url`, was last updated."
+            "The date and time at which the webpage containing the contents of the terms, located at the `url`, was last updated."
          ],
          "example": "2018-01-27T12:00:00Z"
-       }
+      }
    }
 }

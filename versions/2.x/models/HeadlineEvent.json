@@ -31,34 +31,32 @@
     "endDate"
   ],
   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
+    "C1Request": "request",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
   },
-	"imperativeConfiguration": {
+  "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
         "type"
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
-		"request": {
+    "request": {
       "requiredFields": [
         "type",
         "id"
@@ -101,7 +99,7 @@
         "offers",
         "schedulingNote"
       ]
-		},
+    },
     "response": {
       "requiredFields": [
         "type",
@@ -125,8 +123,8 @@
         "offers",
         "subEvent"
       ]
-		}
-	},
+    }
+  },
   "fields": {
     "type": {
       "fieldName": "type",

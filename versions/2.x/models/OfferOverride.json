@@ -2,7 +2,7 @@
 	"type": "OfferOverride",
 	"subClassOf": "#Offer",
 	"hasId": true,
-  "sampleId": "https://api.example.com/session-series/12345#/offers/2",
+	"sampleId": "https://api.example.com/session-series/12345#/offers/2",
 	"validationMode": {
 		"C1Request": "request",
 		"C1Response": "response",

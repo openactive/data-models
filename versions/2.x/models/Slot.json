@@ -51,10 +51,8 @@
           "oneOf": true
         }
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [

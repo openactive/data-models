@@ -295,18 +295,18 @@
       "sameAs": "https://openactive.io/isOpenBookingAllowed",
       "requiredType": "https://schema.org/Boolean",
       "example": true,
-      "description":[
+      "description": [
         "Indicates whether the Seller allows open booking"
       ]
     },
-    "hasAccount": {	
-      "fieldName": "hasAccount",	
-      "sameAs": "https://openactive.io/hasAccount",	
+    "hasAccount": {
+      "fieldName": "hasAccount",
+      "sameAs": "https://openactive.io/hasAccount",
       "model": "#CustomerAccount",
       "allowReferencing": true,
       "description": [
         "Reference to the CustomerAccount associated with this Customer, for use within the Open Booking API flow.",
-        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."	
+        "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
       ]
     }
   }

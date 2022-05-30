@@ -3,40 +3,40 @@
   "derivedFrom": "https://schema.org/PostalAddress",
   "hasId": false,
   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
-		"OrderProposalPatch": "request",
+    "C1Request": "request",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
+    "OrderProposalPatch": "request",
     "OrderPatch": "request",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response"
-	},
-	"imperativeConfiguration": {
-		"request": {
-			"requiredFields": [
-				"type",
-				"streetAddress",
+  },
+  "imperativeConfiguration": {
+    "request": {
+      "requiredFields": [
+        "type",
+        "streetAddress",
         "addressLocality",
         "addressRegion",
         "postalCode",
         "addressCountry"
-			],
-			"recommendedFields": []
-		},
-		"response": {
-			"requiredFields": [],
-			"recommendedFields": []
-		}
+      ],
+      "recommendedFields": []
+    },
+    "response": {
+      "requiredFields": [],
+      "recommendedFields": []
+    }
   },
   "requiredFields": [
     "type",

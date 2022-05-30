@@ -25,18 +25,18 @@
     "eventSchedule"
   ],
   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C1ResponseOrderItemError": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"C2ResponseOrderItemError": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"PResponseOrderItemError": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"BResponseOrderItemError": "response",
+    "C1Request": "request",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
@@ -60,18 +60,15 @@
           "oneOf": true
         }
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [
         "type",
         "id"
       ],
-      "recommendedFields": [
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "identifier",
         "url",
@@ -143,7 +140,16 @@
         "Relates a child event to a parent event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A parent event might specify a recurring schedule, of which the child event is one specific instance"
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "url", "eventSchedule", "startDate", "endDate"]
+        "exclude": [
+          "id",
+          "identifier",
+          "subEvent",
+          "superEvent",
+          "url",
+          "eventSchedule",
+          "startDate",
+          "endDate"
+        ]
       }
     },
     "startDate": {
