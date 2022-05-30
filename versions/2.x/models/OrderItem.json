@@ -4,14 +4,18 @@
   "hasId": true,
   "sampleId": "https://api.example.com/orders/1a80eca5-99f1-4e9a-81da-937e5621b246#/orderedItem/12345",
   "validationMode": {
-    "C1Request": "request",
-    "C1Response": "Cresponse",
-    "C2Request": "request",
-    "C2Response": "Cresponse",
-    "PRequest": "request",
-    "PResponse": "Presponse",
-    "BRequest": "request",
-    "BResponse": "response",
+ 		"C1Request": "request",
+ 		"C1Response": "Cresponse",
+ 		"C1ResponseOrderItemError": "Cresponse_error",
+ 		"C2Request": "request",
+ 		"C2Response": "Cresponse",
+ 		"C2ResponseOrderItemError": "Cresponse_error",
+ 		"PRequest": "request",
+ 		"PResponse": "Presponse",
+ 		"PResponseOrderItemError": "Presponse_error",
+ 		"BRequest": "request",
+ 		"BResponse": "response",
+ 		"BResponseOrderItemError": "response_error",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
@@ -56,6 +60,26 @@
         "cancellationMessage",
         "customerNotice",
         "accessCode",
+        "accessPass",
+        "error"
+      ],
+      "requiredOptions": [
+
+      ]
+    },
+    "Cresponse_error": {
+      "requiredFields": [
+        "type",
+        "acceptedOffer",
+        "orderedItem",
+        "position"
+      ],
+      "shallNotInclude": [
+        "id",
+        "orderItemStatus",
+        "cancellationMessage",
+        "customerNotice",
+        "accessCode",
         "accessPass"
       ],
       "requiredOptions": [
@@ -68,7 +92,29 @@
         "id",
         "orderItemStatus",
         "acceptedOffer",
-        "orderedItem"
+        "orderedItem",
+        "position"
+      ],
+      "recommendedFields": [
+        "accessCode",
+        "accessPass",
+        "accessChannel"
+      ],
+      "shallNotInclude": [
+        "cancellationMessage",
+        "customerNotice",
+        "error"
+      ],
+      "requiredOptions": [
+
+      ]
+    },
+    "response_error": {
+      "requiredFields": [
+        "type",
+        "acceptedOffer",
+        "orderedItem",
+        "position"
       ],
       "recommendedFields": [
         "accessCode",
@@ -87,6 +133,27 @@
       "requiredFields": [
         "type",
         "id",
+        "acceptedOffer",
+        "orderedItem",
+        "position"
+      ],
+      "recommendedFields": [
+      ],
+      "shallNotInclude": [
+        "cancellationMessage",
+        "customerNotice",
+        "orderItemStatus",
+        "accessCode",
+        "accessPass",
+        "accessChannel",
+        "error"
+      ],
+      "requiredOptions": [
+      ]
+    },
+    "Presponse_error": {
+      "requiredFields": [
+        "type",
         "acceptedOffer",
         "orderedItem",
         "position"

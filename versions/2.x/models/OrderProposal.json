@@ -6,6 +6,7 @@
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response_error",
     "OrderProposalPatch": "patch",
     "OrdersFeed": "ordersFeed",
     "OrderProposalsFeed": "ordersFeed"
@@ -46,6 +47,25 @@
         "totalPaymentDue",
         "orderProposalVersion",
         "orderProposalStatus"
+      ],
+      "recommendedFields": [
+
+      ],
+      "shallNotInclude": [
+        "orderCreationStatus"
+      ],
+      "requiredOptions": [
+
+      ]
+    },
+    "response_error": {
+      "requiredFields": [
+        "type",
+        "seller",
+        "brokerRole",
+        "bookingService",
+        "orderedItem",
+        "totalPaymentDue"
       ],
       "recommendedFields": [
 

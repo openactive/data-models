@@ -1,17 +1,21 @@
 {
-   "type":"PriceSpecification",
-   "derivedFrom":"https://schema.org/PriceSpecification",
-   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"OrderProposalPatch": "request",
- 		"OrderPatch": "request"
+	"type":"PriceSpecification",
+	"derivedFrom":"https://schema.org/PriceSpecification",
+	"validationMode": {
+		"C1Request": "request",
+		"C1Response": "response",
+		"C1ResponseOrderItemError": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"C2ResponseOrderItemError": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"PResponseOrderItemError": "response",
+		"BRequest": "request",
+		"BResponse": "response",
+		"BResponseOrderItemError": "response",
+		"OrderProposalPatch": "request",
+		"OrderPatch": "request"
  	},
  	"imperativeConfiguration": {
  		"request": {

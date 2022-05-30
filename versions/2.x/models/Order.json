@@ -6,9 +6,11 @@
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BOrderProposalRequest": "orderProposalRequest",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",

@@ -4,12 +4,16 @@
    "validationMode": {
  		"C1Request": "Crequest",
  		"C1Response": "Cresponse",
+ 		"C1ResponseOrderItemError": "Cresponse",
  		"C2Request": "Crequest",
  		"C2Response": "Cresponse",
+ 		"C2ResponseOrderItemError": "Cresponse",
  		"PRequest": "request",
  		"PResponse": "response",
+ 		"PResponseOrderItemError": "response",
  		"BRequest": "request",
- 		"BResponse": "response"
+ 		"BResponse": "response",
+ 		"BResponseOrderItemError": "response"
  	},
  	"imperativeConfiguration": {
       "Crequest": {

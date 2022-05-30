@@ -8,12 +8,16 @@
     "BookableRPDEFeed": "bookableFeed",
     "C1Request": "request",
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Request": "request",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
-    "BResponse": "response"
+    "BResponse": "response",
+    "BResponseOrderItemError": "response"
   },
   "imperativeConfiguration": {
     "feed": {},

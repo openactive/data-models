@@ -270,7 +270,11 @@
         },
         {
           "validationMode": "C1Response",
-          "name": "OrderQuote Creation C1 Response"
+          "name": "OrderQuote Creation C1 Success Response"
+        },
+        {
+          "validationMode": "C1ResponseOrderItemError",
+          "name": "OrderQuote Creation C1 OrderItem Error Response"
         },
         {
           "validationMode": "C2Request",
@@ -278,7 +282,11 @@
         },
         {
           "validationMode": "C2Response",
-          "name": "OrderQuote Creation C2 Response"
+          "name": "OrderQuote Creation C2 Success Response"
+        },
+        {
+          "validationMode": "C2ResponseOrderItemError",
+          "name": "OrderQuote Creation C2 OrderItem Error Response"
         },
         {
           "validationMode": "PRequest",
@@ -286,7 +294,11 @@
         },
         {
           "validationMode": "PResponse",
-          "name": "OrderProposal Creation P Response"
+          "name": "OrderProposal Creation P Success Response"
+        },
+        {
+          "validationMode": "PResponseOrderItemError",
+          "name": "OrderProposal Creation P OrderItem Error Response"
         },
         {
           "validationMode": "OrderProposalPatch",
@@ -302,7 +314,11 @@
         },
         {
           "validationMode": "BResponse",
-          "name": "Order Creation B Response"
+          "name": "Order Creation B Success Response"
+        },
+        {
+          "validationMode": "BResponseOrderItemError",
+          "name": "Order Creation B OrderItem Error Response"
         },
         {
           "validationMode": "OrderPatch",

@@ -36,9 +36,13 @@
   ],
   "validationMode": {
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response"

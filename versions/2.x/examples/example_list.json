@@ -95,8 +95,13 @@
       },
       {
         "file": "booking_spec_examples/c1_response_example_1.json",
-        "name": "OrderQuote Creation C1 Response Example",
+        "name": "OrderQuote Creation C1 Successful Response Example",
         "validationMode": "C1Response"
+      },
+      {
+        "file": "booking_spec_examples/c1_response_example_2_error.json",
+        "name": "OrderQuote Creation C1 OrderItem Error Response Example",
+        "validationMode": "C1ResponseOrderItemError"
       },
       {
         "file": "booking_spec_examples/c2_request_example_1.json",
@@ -105,8 +110,13 @@
       },
       {
         "file": "booking_spec_examples/c2_response_example_1.json",
-        "name": "OrderQuote Creation C2 Response Example",
+        "name": "OrderQuote Creation C2 Successful Response Example",
         "validationMode": "C2Response"
+      },
+      {
+        "file": "booking_spec_examples/c2_response_example_2_error.json",
+        "name": "OrderQuote Creation C2 OrderItem Error Response Example",
+        "validationMode": "C2ResponseOrderItemError"
       },
       {
         "file": "booking_spec_examples/b_request_example_1.json",
@@ -115,8 +125,13 @@
       },
       {
         "file": "booking_spec_examples/b_response_example_1.json",
-        "name": "Order Creation B Response Example",
+        "name": "Order Creation B Successful Response Example",
         "validationMode": "BResponse"
+      },
+      {
+        "file": "booking_spec_examples/b_response_example_2_error.json",
+        "name": "Order Creation B OrderItem Error Response Example",
+        "validationMode": "BResponseOrderItemError"
       },
       {
         "file": "booking_spec_examples/order_patch_example_1.json",
@@ -150,8 +165,13 @@
       },
       {
         "file": "booking_spec_examples/p_response_example_1.json",
-        "name": "OrderProposal Creation P Response Example",
+        "name": "OrderProposal Creation P Successful Response Example",
         "validationMode": "PResponse"
+      },
+      {
+        "file": "booking_spec_examples/p_response_example_2_error.json",
+        "name": "OrderProposal Creation P OrderItem Error Response Example",
+        "validationMode": "PResponseOrderItemError"
       },
       {
         "file": "booking_spec_examples/b_response_example_2_proposal.json",

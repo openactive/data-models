@@ -152,7 +152,8 @@
       "error": [
         {
           "@type": "OpportunityIsFullError",
-          "description": "There are no spaces remaining in this opportunity"
+          "name": "There are no available spaces for the Opportunity contained in the 'orderedItem' property.",
+          "statusCode": 409
         }
       ]
     }
