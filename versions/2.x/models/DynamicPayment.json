@@ -1,49 +1,53 @@
 {
-   "type":"DynamicPayment",
-   "subClassOf": "#Payment",
-   "validationMode": {
-     "C1Request": "request",
-     "C1Response": "response",
-     "C2Request": "request",
-     "C2Response": "response",
-     "PRequest": "request",
-     "PResponse": "response",
-     "BRequest": "request",
-     "BResponse": "response",
-     "OrderProposalPatch": "request",
-     "OrderPatch": "request"
-   },
-   "imperativeConfiguration": {
-     "request": {
-       "requiredFields": [],
-       "recommendedFields": []
-     },
-     "response": {
-       "requiredFields": [
-         "type",
-         "identifier",
-         "accountId"
-       ],
-       "recommendedFields": [
-         "paymentProviderId",
-         "name"
-       ]
-     }
-   },
-   "inSpec":[
-      "type",
-      "name",
-      "identifier",
-      "paymentMethod",
-      "accountId",
-      "paymentProviderId",
-      "additionalProperty"
-   ],
-   "fields":{
-     "type": {
-       "fieldName": "type",
-       "requiredType": "https://schema.org/Text",
-       "requiredContent": "DynamicPayment"
-     }
+  "type": "DynamicPayment",
+  "subClassOf": "#Payment",
+  "validationMode": {
+    "C1Request": "request",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Request": "request",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PRequest": "request",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BRequest": "request",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
+    "OrderProposalPatch": "request",
+    "OrderPatch": "request"
+  },
+  "imperativeConfiguration": {
+    "request": {
+      "requiredFields": [],
+      "recommendedFields": []
+    },
+    "response": {
+      "requiredFields": [
+        "type",
+        "identifier",
+        "accountId"
+      ],
+      "recommendedFields": [
+        "paymentProviderId",
+        "name"
+      ]
+    }
+  },
+  "inSpec": [
+    "type",
+    "name",
+    "identifier",
+    "paymentMethod",
+    "accountId",
+    "paymentProviderId",
+    "additionalProperty"
+  ],
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "DynamicPayment"
+    }
   }
 }

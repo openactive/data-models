@@ -18,12 +18,16 @@
   "validationMode": {
     "C1Request": "request",
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Request": "request",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
@@ -47,10 +51,8 @@
           "oneOf": true
         }
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [

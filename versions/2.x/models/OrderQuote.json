@@ -6,8 +6,10 @@
   "validationMode": {
     "C1Request": "C1request",
     "C1Response": "C1response",
+    "C1ResponseOrderItemError": "C1response",
     "C2Request": "request",
-    "C2Response": "response"
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response"
   },
   "imperativeConfiguration": {
     "C1request": {
@@ -17,9 +19,7 @@
         "orderedItem",
         "seller"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "id",
         "identifier",
@@ -30,9 +30,7 @@
         "orderProposalVersion",
         "totalPaymentDue"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "request": {
       "requiredFields": [
@@ -41,9 +39,7 @@
         "orderedItem",
         "seller"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "identifier",
         "orderNumber",
@@ -55,9 +51,7 @@
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "C1response": {
       "requiredFields": [
@@ -69,9 +63,7 @@
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus",
         "customer",
@@ -88,9 +80,7 @@
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"
@@ -127,13 +117,17 @@
       "fieldName": "lease",
       "sameAs": "https://openactive.io/lease",
       "model": "#Lease",
-      "description": ["The Lease on the OrderItems which lasts for the duration specified by the Booking System."]
+      "description": [
+        "The Lease on the OrderItems which lasts for the duration specified by the Booking System."
+      ]
     },
     "orderRequiresApproval": {
       "fieldName": "orderRequiresApproval",
       "sameAs": "https://openactive.io/orderRequiresApproval",
       "requiredType": "https://schema.org/Boolean",
-      "description": ["Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."]
+      "description": [
+        "Whether the Booking Flow with Approval must be used to book the set of OrderItems included. must be true if any of the OrderItems require approval."
+      ]
     }
   }
 }

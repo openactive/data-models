@@ -1,8 +1,8 @@
 {
   "@context": "https://openactive.io/",
-  "@type": "OrderQuote",
-  "@id": "https://example.com/api/order-quotes/e11429ea-467f-4270-ab62-e47368996fe8",
-  "orderRequiresApproval": false,
+  "@type": "Order",
+  "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8",
+  "orderNumber": "AB000001",
   "brokerRole": "https://openactive.io/AgentBroker",
   "broker": {
     "@type": "Organization",
@@ -21,6 +21,13 @@
       "postalCode": "TS4 3AE",
       "addressCountry": "GB"
     }
+  },
+  "customer": {
+    "@type": "Person",
+    "email": "geoffcapes@example.com",
+    "telephone": "020 811 8055",
+    "givenName": "Geoff",
+    "familyName": "Capes"
   },
   "seller": {
     "@type": "Organization",
@@ -62,13 +69,6 @@
       }
     ]
   },
-  "customer": {
-    "@type": "Person",
-    "email": "geoffcapes@example.com",
-    "telephone": "020 811 8055",
-    "givenName": "Geoff",
-    "familyName": "Capes"
-  },
   "bookingService": {
     "@type": "BookingService",
     "name": "Playwaze",
@@ -82,15 +82,10 @@
       }
     ]
   },
-  "lease": {
-    "@type": "Lease",
-    "leaseExpires": "2018-10-01T11:00:00Z"
-  },
   "orderedItem": [
     {
       "@type": "OrderItem",
       "position": 0,
-      "orderItemStatus": "https://openactive.io/OrderItemConfirmed",
       "unitTaxSpecification": [
         {
           "@type": "TaxChargeSpecification",
@@ -116,8 +111,6 @@
         "@id": "https://example.com/events/452/subEvents/132",
         "identifier": 123,
         "eventStatus": "https://schema.org/EventScheduled",
-        "maximumAttendeeCapacity": 30,
-        "remainingAttendeeCapacity": 20,
         "startDate": "2018-10-30T11:00:00Z",
         "endDate": "2018-10-30T12:00:00Z",
         "duration": "PT1H",
@@ -133,7 +126,6 @@
               "inScheme": "https://openactive.io/activity-list"
             }
           ],
-          "duration": "PT1H",
           "url": "https://example.com/events/452",
           "location": {
             "@type": "Place",
@@ -167,16 +159,21 @@
   ],
   "totalPaymentDue": {
     "@type": "PriceSpecification",
-    "price": 0,
+    "price": 5,
     "priceCurrency": "GBP"
   },
   "totalPaymentTax": [
     {
       "@type": "TaxChargeSpecification",
       "name": "VAT at 20%",
-      "price": 0,
+      "price": 1,
       "priceCurrency": "GBP",
       "rate": 0.2
     }
-  ]
+  ],
+  "payment": {
+    "@type": "Payment",
+    "name": "AcmeBroker Points",
+    "identifier": "1234567890npduy2f"
+  }
 }

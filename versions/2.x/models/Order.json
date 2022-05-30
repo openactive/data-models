@@ -6,9 +6,11 @@
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BOrderProposalRequest": "orderProposalRequest",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
@@ -24,9 +26,7 @@
         "totalPaymentDue",
         "seller"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "id",
         "identifier",
@@ -36,18 +36,14 @@
         "orderCreationStatus",
         "orderProposalVersion"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "orderProposalRequest": {
       "requiredFields": [
         "type",
         "orderProposalVersion"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "id",
         "identifier",
@@ -61,9 +57,7 @@
         "orderedItem",
         "totalPaymentDue"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "response": {
       "requiredFields": [
@@ -75,9 +69,7 @@
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"
@@ -91,9 +83,7 @@
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus",
         "broker",
@@ -111,9 +101,7 @@
         "type",
         "orderedItem"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "id",
         "identifier",
@@ -128,9 +116,7 @@
         "customer",
         "totalPaymentDue"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     }
   },
   "inSpec": [
@@ -162,7 +148,9 @@
       "sameAs": "https://schema.org/identifier",
       "requiredType": "https://schema.org/Text",
       "example": "123e4567-e89b-12d3-a456-426614174000",
-      "description": ["The Order UUID of the Order, OrderQuote or OrderProposal, which is required within the Orders feed."],
+      "description": [
+        "The Order UUID of the Order, OrderQuote or OrderProposal, which is required within the Orders feed."
+      ],
       "valueConstraint": "UUID"
     },
     "seller": {
@@ -173,32 +161,47 @@
         "#Person"
       ],
       "allowReferencing": true,
-      "requireReferencingInValidationMode": ["C1Request", "C2Request", "PRequest", "BRequest"],
-      "description": ["The organisation (schema:Organization) or person (schema:Person) providing access to events or facilities via a Booking System. e.g. a leisure provider or independent instructor running a yoga classes."]
+      "requireReferencingInValidationMode": [
+        "C1Request",
+        "C2Request",
+        "PRequest",
+        "BRequest"
+      ],
+      "description": [
+        "The organisation (schema:Organization) or person (schema:Person) providing access to events or facilities via a Booking System. e.g. a leisure provider or independent instructor running a yoga classes."
+      ]
     },
     "taxCalculationExcluded": {
       "fieldName": "taxCalculationExcluded",
       "requiredType": "https://schema.org/Boolean",
-      "description": ["Set to true when business-to-business tax calculation is required by the seller or brokerRole settings, but not supported by the Broker."],
+      "description": [
+        "Set to true when business-to-business tax calculation is required by the seller or brokerRole settings, but not supported by the Broker."
+      ],
       "sameAs": "https://openactive.io/taxCalculationExcluded"
     },
     "broker": {
       "fieldName": "broker",
       "sameAs": "https://schema.org/broker",
       "model": "#Organization",
-      "description": ["The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive.io/NoBroker this is not required."]
+      "description": [
+        "The organisation or developer providing an application that allows Customers to make bookings. Those applications will be clients of the API defined in this specification. If brokerRole is set to https://openactive.io/NoBroker this is not required."
+      ]
     },
     "brokerRole": {
       "fieldName": "brokerRole",
       "sameAs": "https://openactive.io/brokerRole",
       "requiredType": "https://openactive.io/BrokerType",
-      "description": ["Either https://openactive.io/AgentBroker,  https://openactive.io/ResellerBroker or  https://openactive.io/NoBroker, as agreed in advance between the Broker and Seller."]
+      "description": [
+        "Either https://openactive.io/AgentBroker,  https://openactive.io/ResellerBroker or  https://openactive.io/NoBroker, as agreed in advance between the Broker and Seller."
+      ]
     },
     "orderNumber": {
       "fieldName": "orderNumber",
       "sameAs": "https://schema.org/orderNumber",
       "requiredType": "https://schema.org/Text",
-      "description": ["The Customer-facing identifier of the Order."]
+      "description": [
+        "The Customer-facing identifier of the Order."
+      ]
     },
     "customer": {
       "fieldName": "customer",
@@ -207,49 +210,65 @@
       "alternativeModels": [
         "#Organization"
       ],
-      "description": ["The person or organization purchasing the Order."]
+      "description": [
+        "The person or organization purchasing the Order."
+      ]
     },
     "bookingService": {
       "fieldName": "bookingService",
       "sameAs": "https://openactive.io/bookingService",
       "model": "#BookingService",
-      "description": ["Details about the Booking System"]
+      "description": [
+        "Details about the Booking System"
+      ]
     },
     "orderedItem": {
       "fieldName": "orderedItem",
       "sameAs": "https://schema.org/orderedItem",
       "model": "ArrayOf#OrderItem",
-      "description": ["The items that constitute the Order."]
+      "description": [
+        "The items that constitute the Order."
+      ]
     },
     "totalPaymentTax": {
       "fieldName": "totalPaymentTax",
       "sameAs": "https://openactive.io/totalPaymentTax",
       "model": "ArrayOf#TaxChargeSpecification",
-      "description": ["Breakdown of tax payable for the Order."]
+      "description": [
+        "Breakdown of tax payable for the Order."
+      ]
     },
     "payment": {
       "fieldName": "payment",
       "sameAs": "https://openactive.io/payment",
       "model": "#Payment",
-      "description": ["The payment associated with the Order by the Broker. It is required for cases where a payment has been taken."]
+      "description": [
+        "The payment associated with the Order by the Broker. It is required for cases where a payment has been taken."
+      ]
     },
     "orderCreationStatus": {
       "fieldName": "orderCreationStatus",
       "sameAs": "https://openactive.io/orderCreationStatus",
       "requiredType": "https://openactive.io/OrderCreationStatus",
-      "description": ["This property is internal to the Broker in this version of the specification."]
+      "description": [
+        "This property is internal to the Broker in this version of the specification."
+      ]
     },
     "orderProposalVersion": {
       "fieldName": "orderProposalVersion",
       "requiredType": "https://schema.org/URL",
       "sameAs": "https://openactive.io/orderProposalVersion",
-      "description": ["The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."]
+      "description": [
+        "The unique URL representing this version of the  OrderProposal, or the version of the OrderProposal to which this Order is related."
+      ]
     },
     "totalPaymentDue": {
       "fieldName": "totalPaymentDue",
       "sameAs": "https://schema.org/totalPaymentDue",
       "model": "#PriceSpecification",
-      "description": [""]
+      "description": [
+        ""
+      ]
     }
   }
 }

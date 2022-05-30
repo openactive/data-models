@@ -13,8 +13,7 @@
     "offers",
     "url"
   ],
-  "requiredOptions": [
-  ],
+  "requiredOptions": [],
   "recommendedFields": [
     "duration",
     "description",
@@ -87,12 +86,16 @@
     "BookableRPDEFeed": "feed",
     "C1Request": "request",
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Request": "request",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
@@ -104,10 +107,8 @@
       "requiredFields": [
         "type"
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [
@@ -193,7 +194,15 @@
         "Relates an `OnDemandEvent` to an `EventSeries`."
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "offers", "startDate", "endDate"]
+        "exclude": [
+          "id",
+          "identifier",
+          "subEvent",
+          "superEvent",
+          "offers",
+          "startDate",
+          "endDate"
+        ]
       }
     },
     "workFeatured": {
@@ -207,7 +216,7 @@
         "@type": "VideoObject",
         "url": "https://www.youtube.com/watch?v=3fbCs0GVjgQ",
         "embedUrl": "https://www.youtube.com/embed/3fbCs0GVjgQ",
-        "thumbnail":[
+        "thumbnail": [
           {
             "@type": "ImageObject",
             "url": "http://example.com/static/image/speedball_thumbnail.jpg"

@@ -8,12 +8,16 @@
     "BookableRPDEFeed": "bookableopendata",
     "C1Request": "request",
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Request": "request",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderProposalPatch": "request",
     "OrderPatch": "request",
     "OrdersFeed": "response",
@@ -249,7 +253,9 @@
       "fieldName": "allowCustomerCancellationFullRefund",
       "sameAs": "https://openactive.io/allowCustomerCancellationFullRefund",
       "requiredType": "https://schema.org/Boolean",
-      "description": ["Whether the opportunity can be cancelled with a full refund at any time before the `startDate`, or before the `latestCancellationBeforeStartDate` if provided."]
+      "description": [
+        "Whether the opportunity can be cancelled with a full refund at any time before the `startDate`, or before the `latestCancellationBeforeStartDate` if provided."
+      ]
     },
     "openBookingFlowRequirement": {
       "fieldName": "openBookingFlowRequirement",

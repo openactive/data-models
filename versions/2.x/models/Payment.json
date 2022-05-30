@@ -1,17 +1,21 @@
 {
-   "type":"Payment",
+   "type": "Payment",
    "subClassOf": "https://schema.org/Thing",
    "validationMode": {
- 		"C1Request": "Crequest",
- 		"C1Response": "Cresponse",
- 		"C2Request": "Crequest",
- 		"C2Response": "Cresponse",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"BRequest": "request",
- 		"BResponse": "response"
- 	},
- 	"imperativeConfiguration": {
+      "C1Request": "Crequest",
+      "C1Response": "Cresponse",
+      "C1ResponseOrderItemError": "Cresponse",
+      "C2Request": "Crequest",
+      "C2Response": "Cresponse",
+      "C2ResponseOrderItemError": "Cresponse",
+      "PRequest": "request",
+      "PResponse": "response",
+      "PResponseOrderItemError": "response",
+      "BRequest": "request",
+      "BResponse": "response",
+      "BResponseOrderItemError": "response"
+   },
+   "imperativeConfiguration": {
       "Crequest": {
          "requiredFields": [
             "type"
@@ -24,8 +28,8 @@
          "shallNotInclude": [
             "identifier"
          ]
- 		},
- 		"request": {
+      },
+      "request": {
          "requiredFields": [
             "type",
             "identifier"
@@ -35,23 +39,23 @@
             "accountId",
             "paymentProviderId"
          ]
- 		},
- 		"Cresponse": {
- 			"requiredFields": [
- 				"type"
- 			],
+      },
+      "Cresponse": {
+         "requiredFields": [
+            "type"
+         ],
          "shallNotInclude": [
             "identifier"
          ]
       },
- 		"response": {
+      "response": {
          "requiredFields": [
             "type",
             "identifier"
          ]
       }
- 	},
-   "inSpec":[
+   },
+   "inSpec": [
       "type",
       "name",
       "identifier",
@@ -60,48 +64,60 @@
       "paymentProviderId",
       "additionalProperty"
    ],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"Payment"
+   "fields": {
+      "type": {
+         "fieldName": "type",
+         "requiredType": "https://schema.org/Text",
+         "requiredContent": "Payment"
       },
-      "name":{
-         "fieldName":"name",
-         "sameAs":"https://schema.org/name",
-         "requiredType":"https://schema.org/Text",
-         "description":["Optional free text description of the payment method for the Booking System, to help the Seller in discussions with the Customer (e.g. 'AcmeBroker Points' or 'AcmeBroker via Credit Card')."]
+      "name": {
+         "fieldName": "name",
+         "sameAs": "https://schema.org/name",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+            "Optional free text description of the payment method for the Booking System, to help the Seller in discussions with the Customer (e.g. 'AcmeBroker Points' or 'AcmeBroker via Credit Card')."
+         ]
       },
-      "identifier":{
-         "fieldName":"identifier",
-         "sameAs":"https://schema.org/identifier",
-         "requiredType":"https://schema.org/Text",
-         "example":"SB1234",
-         "description":["The identifier of the payment held by the Broker and/or Payment Provider."]
+      "identifier": {
+         "fieldName": "identifier",
+         "sameAs": "https://schema.org/identifier",
+         "requiredType": "https://schema.org/Text",
+         "example": "SB1234",
+         "description": [
+            "The identifier of the payment held by the Broker and/or Payment Provider."
+         ]
       },
-      "paymentMethod":{
-         "fieldName":"paymentMethod",
-         "sameAs":"https://schema.org/paymentMethod",
-         "requiredType":"http://purl.org/goodrelations/v1#PaymentMethod",
-         "description":["paymentMethod must not be used, and is reserved for future versions of this specification."]
+      "paymentMethod": {
+         "fieldName": "paymentMethod",
+         "sameAs": "https://schema.org/paymentMethod",
+         "requiredType": "http://purl.org/goodrelations/v1#PaymentMethod",
+         "description": [
+            "paymentMethod must not be used, and is reserved for future versions of this specification."
+         ]
       },
-      "accountId":{
-         "fieldName":"accountId",
-         "sameAs":"https://schema.org/accountId",
-         "requiredType":"https://schema.org/Text",
-         "description":["A reference used by the Seller to group transactions, which is used to aid reconciliation."]
+      "accountId": {
+         "fieldName": "accountId",
+         "sameAs": "https://schema.org/accountId",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+            "A reference used by the Seller to group transactions, which is used to aid reconciliation."
+         ]
       },
-      "paymentProviderId":{
-         "fieldName":"paymentProviderId",
-         "sameAs":"https://openactive.io/paymentProviderId",
-         "requiredType":"https://schema.org/Text",
-         "description":["A reference to the specific Payment Provider that is used."]
+      "paymentProviderId": {
+         "fieldName": "paymentProviderId",
+         "sameAs": "https://openactive.io/paymentProviderId",
+         "requiredType": "https://schema.org/Text",
+         "description": [
+            "A reference to the specific Payment Provider that is used."
+         ]
       },
       "additionalProperty": {
          "fieldName": "additionalProperty",
          "sameAs": "https://schema.org/additionalProperty",
          "model": "ArrayOf#PropertyValue",
-         "description": ["PropertyValue that contains a text value useful for reconciliation."]
+         "description": [
+            "PropertyValue that contains a text value useful for reconciliation."
+         ]
       }
    }
 }

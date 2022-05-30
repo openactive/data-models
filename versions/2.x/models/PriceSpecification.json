@@ -1,56 +1,64 @@
 {
-   "type":"PriceSpecification",
-   "derivedFrom":"https://schema.org/PriceSpecification",
-   "validationMode": {
- 		"C1Request": "request",
- 		"C1Response": "response",
- 		"C2Request": "request",
- 		"C2Response": "response",
- 		"PRequest": "request",
- 		"PResponse": "response",
- 		"BRequest": "request",
- 		"BResponse": "response",
- 		"OrderProposalPatch": "request",
- 		"OrderPatch": "request"
- 	},
- 	"imperativeConfiguration": {
- 		"request": {
- 			"requiredFields": [],
- 			"recommendedFields": []
- 		},
- 		"response": {
- 			"requiredFields": [
- 				"type",
- 				"price"
- 			]
- 		}
- 	},
-   "inSpec":[
-      "type",
-      "price",
-      "priceCurrency",
-      "openBookingPrepayment"
-   ],
-   "notInSpec":[],
-   "fields":{
-      "type":{
-         "fieldName":"type",
-         "requiredType":"https://schema.org/Text",
-         "requiredContent":"PriceSpecification"
-      },
-      "price":{
-         "fieldName":"price",
-         "requiredType":"https://schema.org/Number",
-         "sameAs": "https://schema.org/price",
-         "description":["The total amount."]
-      },
-      "priceCurrency":{
-         "fieldName":"priceCurrency",
-         "requiredType":"https://schema.org/Text",
-         "sameAs": "https://schema.org/priceCurrency",
-         "description":["The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."]
-      },
-      "openBookingPrepayment": {
+	"type": "PriceSpecification",
+	"derivedFrom": "https://schema.org/PriceSpecification",
+	"validationMode": {
+		"C1Request": "request",
+		"C1Response": "response",
+		"C1ResponseOrderItemError": "response",
+		"C2Request": "request",
+		"C2Response": "response",
+		"C2ResponseOrderItemError": "response",
+		"PRequest": "request",
+		"PResponse": "response",
+		"PResponseOrderItemError": "response",
+		"BRequest": "request",
+		"BResponse": "response",
+		"BResponseOrderItemError": "response",
+		"OrderProposalPatch": "request",
+		"OrderPatch": "request"
+	},
+	"imperativeConfiguration": {
+		"request": {
+			"requiredFields": [],
+			"recommendedFields": []
+		},
+		"response": {
+			"requiredFields": [
+				"type",
+				"price"
+			]
+		}
+	},
+	"inSpec": [
+		"type",
+		"price",
+		"priceCurrency",
+		"openBookingPrepayment"
+	],
+	"notInSpec": [],
+	"fields": {
+		"type": {
+			"fieldName": "type",
+			"requiredType": "https://schema.org/Text",
+			"requiredContent": "PriceSpecification"
+		},
+		"price": {
+			"fieldName": "price",
+			"requiredType": "https://schema.org/Number",
+			"sameAs": "https://schema.org/price",
+			"description": [
+				"The total amount."
+			]
+		},
+		"priceCurrency": {
+			"fieldName": "priceCurrency",
+			"requiredType": "https://schema.org/Text",
+			"sameAs": "https://schema.org/priceCurrency",
+			"description": [
+				"The currency of the price. Specified as a 3-letter ISO 4217 value. If a  PriceSpecification has a zero price, then this property is not required. Otherwise the priceCurrency must be specified."
+			]
+		},
+		"openBookingPrepayment": {
 			"fieldName": "openBookingPrepayment",
 			"sameAs": "https://openactive.io/openBookingPrepayment",
 			"requiredType": "https://openactive.io/RequiredStatusType",
@@ -59,5 +67,5 @@
 			],
 			"example": "https://openactive.io/Required"
 		}
-   }
+	}
 }

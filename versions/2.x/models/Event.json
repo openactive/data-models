@@ -37,12 +37,16 @@
     "BookableRPDEFeed": "feed",
     "C1Request": "request",
     "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
     "C2Request": "request",
     "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response",
     "BRequest": "request",
     "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
@@ -69,10 +73,8 @@
       "requiredFields": [
         "type"
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "request": {
       "requiredFields": [
@@ -251,7 +253,9 @@
       "description": [
         "Provides a set of tags that help categorise and describe an event, e.g. its intensity, purpose, etc."
       ],
-      "example": [ "High Intensity" ]
+      "example": [
+        "High Intensity"
+      ]
     },
     "contributor": {
       "fieldName": "contributor",
@@ -260,13 +264,15 @@
       "description": [
         "A Person who contributes to the facilitation of the Event."
       ],
-      "example": [{
-        "@type": "Person",
-        "familyName": "Smith",
-        "givenName": "Nicole",
-        "@id": "https://example.com/locations/1234ABCD/leaders/89",
-        "identifier": 89
-      }]
+      "example": [
+        {
+          "@type": "Person",
+          "familyName": "Smith",
+          "givenName": "Nicole",
+          "@id": "https://example.com/locations/1234ABCD/leaders/89",
+          "identifier": 89
+        }
+      ]
     },
     "description": {
       "fieldName": "description",
@@ -347,7 +353,10 @@
       "fieldName": "additionalAdmissionRestriction",
       "sameAs": "https://openactive.io/additionalAdmissionRestriction",
       "requiredType": "ArrayOf#https://schema.org/Text",
-      "example": [ "Participants younger than 12 must be accompanied by an adult", "Participants must be comfortable standing for long periods of time" ],
+      "example": [
+        "Participants younger than 12 must be accompanied by an adult",
+        "Participants must be comfortable standing for long periods of time"
+      ],
       "description": [
         "Free text restrictions that must be displayed prominently to the user before booking. This property must only contain restrictions not described by `oa:ageRestriction` or `oa:genderRestriction`."
       ]
@@ -356,7 +365,10 @@
       "fieldName": "customerAccountBookingRestriction",
       "sameAs": "https://openactive.io/customerAccountBookingRestriction",
       "requiredType": "ArrayOf#https://schema.org/Text",
-      "example": [ "Gold members only", "Gym induction required" ],
+      "example": [
+        "Gold members only",
+        "Gym induction required"
+      ],
       "description": [
         "Free text restrictions to display to the Customer at the browse stage, that may apply when using a Customer Account to make the booking.",
         "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
@@ -395,16 +407,18 @@
       "description": [
         "An image or photo that depicts the event, e.g. a photo taken at a previous event."
       ],
-      "example": [{
-        "@type": "ImageObject",
-        "url": "http://example.com/static/image/speedball_large.jpg",
-        "thumbnail":[
-          {
-            "@type": "ImageObject",
-            "url": "http://example.com/static/image/speedball_thumbnail.jpg"
-          }
-        ]
-      }]
+      "example": [
+        {
+          "@type": "ImageObject",
+          "url": "http://example.com/static/image/speedball_large.jpg",
+          "thumbnail": [
+            {
+              "@type": "ImageObject",
+              "url": "http://example.com/static/image/speedball_thumbnail.jpg"
+            }
+          ]
+        }
+      ]
     },
     "isAccessibleForFree": {
       "fieldName": "isAccessibleForFree",
@@ -431,14 +445,16 @@
       "description": [
         "Refers to a person (schema:Person) who will be leading an event. E.g. a coach. This is a more specific role than an organiser or a contributor. The person will need to have given their consent for their personal information to be present in the Open Data."
       ],
-      "example": [{
-        "@type": "Person",
-        "familyName": "Smith",
-        "givenName": "Nicole",
-        "gender": "https://schema.org/Male",
-        "@id": "https://example.com/locations/1234ABCD/leaders/89",
-        "identifier": 89
-      }]
+      "example": [
+        {
+          "@type": "Person",
+          "familyName": "Smith",
+          "givenName": "Nicole",
+          "gender": "https://schema.org/Male",
+          "@id": "https://example.com/locations/1234ABCD/leaders/89",
+          "identifier": 89
+        }
+      ]
     },
     "level": {
       "fieldName": "level",
@@ -450,7 +466,9 @@
       "description": [
         "A general purpose property for specifying the suitability of an event for different participant “levels”. E.g. `Beginner`, `Intermediate`, `Advanced`. Or in the case of martial arts, specific belt requirements."
       ],
-      "example": [ "Beginner" ]
+      "example": [
+        "Beginner"
+      ]
     },
     "location": {
       "fieldName": "location",
@@ -524,14 +542,16 @@
       "description": [
         "An array of schema:Offer that include the price of attending."
       ],
-      "example": [ {
-        "@type": "Offer",
-        "identifier": "OX-AD",
-        "name": "Adult",
-        "price": 3.3,
-        "priceCurrency": "GBP",
-        "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
-      } ]
+      "example": [
+        {
+          "@type": "Offer",
+          "identifier": "OX-AD",
+          "name": "Adult",
+          "price": 3.3,
+          "priceCurrency": "GBP",
+          "url": "https://profile.everyoneactive.com/booking?Site=0140&Activities=1402CBP20150217&Culture=en-GB"
+        }
+      ]
     },
     "organizer": {
       "fieldName": "organizer",
@@ -580,7 +600,16 @@
         "Relates a parent event to a child event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A child event might be a specific instance of an Event within a schedule"
       ],
       "inheritsTo": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers", "startDate", "endDate"]
+        "exclude": [
+          "id",
+          "identifier",
+          "subEvent",
+          "superEvent",
+          "eventSchedule",
+          "offers",
+          "startDate",
+          "endDate"
+        ]
       }
     },
     "schedulingNote": {
@@ -600,7 +629,16 @@
         "Relates a child event to a parent event. Properties describing the parent event can be assumed to apply to the child, unless otherwise specified. A parent event might specify a recurring schedule, of which the child event is one specific instance"
       ],
       "inheritsFrom": {
-        "exclude": ["id", "identifier", "subEvent", "superEvent", "eventSchedule", "offers", "startDate", "endDate"]
+        "exclude": [
+          "id",
+          "identifier",
+          "subEvent",
+          "superEvent",
+          "eventSchedule",
+          "offers",
+          "startDate",
+          "endDate"
+        ]
       }
     },
     "startDate": {

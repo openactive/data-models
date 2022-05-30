@@ -29,22 +29,24 @@
     "offers"
   ],
   "validationMode": {
-		"C1Response": "response",
-		"C2Response": "response",
-		"PResponse": "response",
-		"BResponse": "response",
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
-	},
-	"imperativeConfiguration": {
+  },
+  "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
         "type"
       ],
-      "recommendedFields": [
-      ],
-      "shallNotInclude": [
-      ]
+      "recommendedFields": [],
+      "shallNotInclude": []
     },
     "response": {
       "requiredFields": [
@@ -58,8 +60,8 @@
         "event",
         "provider"
       ]
-		}
-	},
+    }
+  },
   "inSpec": [
     "type",
     "id",
@@ -168,12 +170,14 @@
       "description": [
         "Provides a set of tags that help categorise and describe a facility."
       ],
-      "example": [{
-        "@type": "Concept",
-        "@id": "https://example.com/reference/categories#Top%20Club%20Level",
-        "inScheme": "https://example.com/reference/categories",
-        "prefLabel": "Top Club Level"
-      }]
+      "example": [
+        {
+          "@type": "Concept",
+          "@id": "https://example.com/reference/categories#Top%20Club%20Level",
+          "inScheme": "https://example.com/reference/categories",
+          "prefLabel": "Top Club Level"
+        }
+      ]
     },
     "description": {
       "fieldName": "description",
@@ -234,11 +238,13 @@
       "description": [
         "An image or photo that depicts the facility use, e.g. a photo taken at a previous event."
       ],
-      "example": [{
-        "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
-        "@type": "ImageObject",
-        "url": "http://example.com/static/image/speedball_large.jpg"
-      }]
+      "example": [
+        {
+          "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+          "@type": "ImageObject",
+          "url": "http://example.com/static/image/speedball_large.jpg"
+        }
+      ]
     },
     "individualFacilityUse": {
       "fieldName": "individualFacilityUse",
@@ -255,7 +261,12 @@
         }
       ],
       "inheritsTo": {
-        "exclude": ["id", "identifier", "individualFacilityUse", "name"]
+        "exclude": [
+          "id",
+          "identifier",
+          "individualFacilityUse",
+          "name"
+        ]
       }
     },
     "location": {
@@ -328,7 +339,10 @@
       "fieldName": "additionalAdmissionRestriction",
       "sameAs": "https://openactive.io/additionalAdmissionRestriction",
       "requiredType": "ArrayOf#https://schema.org/Text",
-      "example": [ "Participants younger than 12 must be accompanied by an adult", "Participants must be comfortable standing for long periods of time" ],
+      "example": [
+        "Participants younger than 12 must be accompanied by an adult",
+        "Participants must be comfortable standing for long periods of time"
+      ],
       "description": [
         "Free text restrictions that must be displayed prominently to the user before booking. This property must only contain restrictions not described by `oa:ageRestriction` or `oa:genderRestriction`."
       ]
@@ -337,7 +351,10 @@
       "fieldName": "customerAccountBookingRestriction",
       "sameAs": "https://openactive.io/customerAccountBookingRestriction",
       "requiredType": "ArrayOf#https://schema.org/Text",
-      "example": [ "Gold members only", "Gym induction required" ],
+      "example": [
+        "Gold members only",
+        "Gym induction required"
+      ],
       "description": [
         "Free text restrictions to display to the Customer at the browse stage, that may apply when using a Customer Account to make the booking.",
         "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."

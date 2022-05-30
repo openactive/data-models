@@ -6,6 +6,7 @@
   "validationMode": {
     "PRequest": "request",
     "PResponse": "response",
+    "PResponseOrderItemError": "response_error",
     "OrderProposalPatch": "patch",
     "OrdersFeed": "ordersFeed",
     "OrderProposalsFeed": "ordersFeed"
@@ -19,9 +20,7 @@
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "identifier",
         "orderNumber",
@@ -32,9 +31,7 @@
         "lease",
         "orderProposalStatus"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
     },
     "response": {
       "requiredFields": [
@@ -47,15 +44,26 @@
         "orderProposalVersion",
         "orderProposalStatus"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
-      "requiredOptions": [
-
-      ]
+      "requiredOptions": []
+    },
+    "response_error": {
+      "requiredFields": [
+        "type",
+        "seller",
+        "brokerRole",
+        "bookingService",
+        "orderedItem",
+        "totalPaymentDue"
+      ],
+      "recommendedFields": [],
+      "shallNotInclude": [
+        "orderCreationStatus"
+      ],
+      "requiredOptions": []
     },
     "ordersFeed": {
       "requiredFields": [
@@ -66,9 +74,7 @@
         "orderProposalVersion",
         "orderProposalStatus"
       ],
-      "recommendedFields": [
-
-      ],
+      "recommendedFields": [],
       "shallNotInclude": [
         "orderCreationStatus",
         "broker",
@@ -138,8 +144,8 @@
     "orderCustomerNote"
   ],
   "notInSpec": [
-		"orderRequiresApproval"
-	],
+    "orderRequiresApproval"
+  ],
   "fields": {
     "type": {
       "fieldName": "type",
@@ -149,21 +155,26 @@
     "orderProposalStatus": {
       "fieldName": "orderProposalStatus",
       "requiredType": "https://openactive.io/OrderProposalStatus",
-      "description": [""],
+      "description": [
+        ""
+      ],
       "sameAs": "https://openactive.io/orderProposalStatus"
     },
     "orderSellerNote": {
       "fieldName": "orderSellerNote",
       "requiredType": "https://schema.org/Text",
-      "description": [""],
+      "description": [
+        ""
+      ],
       "sameAs": "https://openactive.io/orderSellerNote"
     },
     "orderCustomerNote": {
       "fieldName": "orderCustomerNote",
       "requiredType": "https://schema.org/Text",
-      "description": [""],
+      "description": [
+        ""
+      ],
       "sameAs": "https://openactive.io/orderCustomerNote"
-
     }
   }
 }
