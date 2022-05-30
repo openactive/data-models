@@ -84,8 +84,7 @@
         "id",
         "orderItemStatus",
         "acceptedOffer",
-        "orderedItem",
-        "position"
+        "orderedItem"
       ],
       "recommendedFields": [
         "accessCode",
@@ -103,8 +102,7 @@
       "requiredFields": [
         "type",
         "acceptedOffer",
-        "orderedItem",
-        "position"
+        "orderedItem"
       ],
       "recommendedFields": [
         "accessCode",

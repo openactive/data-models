@@ -174,7 +174,7 @@
         "validationMode": "PResponseOrderItemError"
       },
       {
-        "file": "booking_spec_examples/b_response_example_2_proposal.json",
+        "file": "booking_spec_examples/b_request_example_2_proposal.json",
         "name": "Order Creation B OrderProposal Request Example",
         "validationMode": "BOrderProposalRequest"
       },
