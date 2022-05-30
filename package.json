@@ -1,6 +1,6 @@
 {
   "name": "@openactive/data-models",
-  "version": "2.0.269",
+  "version": "2.0.270",
   "description": "Data models used to drive that OpenActive validator, developer documentation, and model libraries",
   "homepage": "https://www.openactive.io",
   "author": "OpenActive Community <hello@openactive.io>",
