@@ -41,7 +41,11 @@
         "customerNotice",
         "orderItemIntakeForm"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "Cresponse": {
       "requiredFields": [
@@ -231,7 +235,11 @@
         "orderedItem",
         "position"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     }
   },
   "inSpec": [
