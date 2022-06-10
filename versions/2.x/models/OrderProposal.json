@@ -38,13 +38,14 @@
         "type",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderProposalVersion",
         "orderProposalStatus"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
@@ -59,7 +60,9 @@
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
