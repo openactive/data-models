@@ -40,7 +40,7 @@ jobs:
     needs: publish
     strategy:
       matrix:
-        repo: ['OpenActive.NET', 'models-php', 'models-ruby', 'models-ts', 'data-model-validator', 'openactive.github.io', 'developer-documentation', 'openactive-test-suite']
+        repo: ['OpenActive.NET', 'models-php', 'models-ruby', 'models-ts', 'data-model-validator-site', 'openactive.github.io', 'developer-documentation', 'openactive-test-suite']
     runs-on: ubuntu-latest
     steps:
       - name: Trigger tooling update
