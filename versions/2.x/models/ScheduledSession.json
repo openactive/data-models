@@ -24,6 +24,10 @@
   "shallNotInclude": [
     "eventSchedule"
   ],
+  "rpdeKind": [
+    "ScheduledSession",
+    "ScheduledSession.SessionSeries"
+  ],
   "validationMode": {
     "C1Request": "request",
     "C1Response": "response",
@@ -40,9 +44,19 @@
     "OrdersFeed": "response",
     "OrderProposalsFeed": "response",
     "OrderStatus": "response",
-    "TestInterface": "testInterface"
+    "TestInterface": "testInterface",
+    "RPDEFeed": "feed",
+    "BookableRPDEFeed": "feed"
   },
-  "imperativeConfigurationWithContext": {},
+  "imperativeConfigurationWithContext": {
+    "feed": {
+      "ScheduledSession": {
+        "referencedFields": [
+          "superEvent"
+        ]
+      }
+    }
+  },
   "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
@@ -123,7 +137,8 @@
       "shallNotInclude": [
         "offers"
       ]
-    }
+    },
+    "feed": {}
   },
   "fields": {
     "type": {
