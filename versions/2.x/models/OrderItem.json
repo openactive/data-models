@@ -63,7 +63,11 @@
         "accessPass",
         "error"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "Cresponse_error": {
       "requiredFields": [
@@ -100,7 +104,11 @@
         "customerNotice",
         "error"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "response_error": {
       "requiredFields": [
@@ -137,7 +145,11 @@
         "accessChannel",
         "error"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "Presponse_error": {
       "requiredFields": [
@@ -173,7 +185,11 @@
       "shallNotInclude": [
         "position"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "ordersFeed": {
       "requiredFields": [
@@ -193,7 +209,11 @@
         "orderItemIntakeFormResponse",
         "position"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "orderedItem",
+        "acceptedOffer"
+      ]
     },
     "orderProposalsFeed": {
       "requiredFields": [
