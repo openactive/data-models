@@ -56,7 +56,6 @@
         "type",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue"
       ],
