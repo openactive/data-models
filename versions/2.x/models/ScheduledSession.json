@@ -54,6 +54,11 @@
         "referencedFields": [
           "superEvent"
         ]
+      },
+      "ScheduledSession.SessionSeries": {
+        "shallNotBeReferencedFields": [
+          "superEvent"
+        ]
       }
     }
   },
