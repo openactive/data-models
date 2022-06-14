@@ -1,7 +1,6 @@
 {
   "@context": "https://openactive.io/",
   "@type": "Order",
-  "@id": "https://example.com/api/orders/e11429ea-467f-4270-ab62-e47368996fe8",
   "orderNumber": "AB000001",
   "brokerRole": "https://openactive.io/AgentBroker",
   "broker": {
