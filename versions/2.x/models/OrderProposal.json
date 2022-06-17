@@ -36,6 +36,7 @@
     "response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
         "orderedItem",
