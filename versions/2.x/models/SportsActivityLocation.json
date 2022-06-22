@@ -8,6 +8,7 @@
     "type",
     "name"
   ],
+  "requiredOptions": [],
   "recommendedFields": [
     "id",
     "url",
