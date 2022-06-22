@@ -7,6 +7,10 @@
       "id": "1402CBP20150217",
       "modified": 1521565719,
       "data": {
+        "@context": [
+          "https://openactive.io/",
+          "https://openactive.io/ns-beta"
+        ],
         "@type": "Place",
         "@id": "https://api.example.com/places/1402CBP20150217",
         "name": "Belle Vue Sports Village",
@@ -19,9 +23,9 @@
         ],
         "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village",
         "telephone": "0161 231 0754",
+        "email": "bellevuesportsvillage@gll.org",
         "address": {
           "@type": "PostalAddress",
-          "email": "bellevuesportsvillage@gll.org",
           "addressCountry": "GB",
           "addressRegion": "Manchester",
           "addressLocality": "Manchester",
@@ -107,7 +111,8 @@
         ],
         "containsPlace": [
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/1",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Gym",
             "description": "Our fully equipped, air-conditioned gym offers a range of fitness equipment for everyone. Our members can choose from cardiovascular machines such as treadmills and rowers, resistance equipment including a large free weights section and dedicated stretching area.",
@@ -119,7 +124,8 @@
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/2",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Female Gym",
             "description": "Kick start your fitness regime in our private womens only gym where you can hit the cardio kit and resistance machines in comfort. Our separate women's only gym allows you to exercise in a welcoming environment.",
@@ -131,7 +137,8 @@
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/3",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Studio",
             "description": "We have a great range of Fitness Classes at Belle Vue Leisure Centre including Group Cycle, Zumba, Pilates and much much more.",
@@ -152,7 +159,8 @@
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/4",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Stadium Pitch",
             "description": "Our Stadium Pitch sits within the Speedway Stadium on the inside of the track! The pitch is floodlit so can be played on all year round and is suitable for both football training and fixtures.\n\nTo book a 3G pitch please use our booking partner WePlayFootball. Bookings can be made up to 28 days in advance, Better membership discount can be used at the checkout.",
@@ -164,19 +172,21 @@
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/5",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Basketball Hall",
             "description": "The National Basketball Performance Centre (NBPC) is part of Belle Vue Sports Village.\n\n- It features a purpose-built hall with 3 courts developed to FIBA standards for international competition and a multi-sports hall with a further 2 basketball courts.\n- The NBPC show court, which has basketball lines only, also features FIBA scoreboards, 24 second cubes, red LED fitted backboards and Olympic standard portable baskets.\n\nTo book a court at the National Basketball Performance Centre, please use the link below or drop in to one of our Pay & Play sessions.",
             "image": [
               {
                 "@type": "ImageObject",
-                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1567007662/production/0000/0/00\nBPC_Full_Centre_Court_resized.jpg"
+                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1567007662/production/0000/0/00/NBPC_Full_Centre_Court_resized.jpg"
               }
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/6",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Function Room",
             "description": "The Stadium holds up to 400 delegates (theatre) 300 guests (banquet). The Peter Craven Suite boasts spectacular views across the speedway track and, combined with the two additional suites, concourse space and prime location, provides a truly unique setting for a wide range of event styles including exhibitions, functions, conferences, dinners and celebrations.",
@@ -188,7 +198,8 @@
             ]
           },
           {
-            "type": "SportsActivityLocation",
+            "@type": "SportsActivityLocation",
+            "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/7",
             "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
             "name": "Multi-Sports Hall",
             "description": "Our Multi Sports hall can host a range of activities such as basketball, netball, futsal, badminton and table tennis.\n\nThe multi sports hall host 2 full size basketball/futsal courts and can accommodate 8 badminton courts.",
@@ -254,13 +265,13 @@
         ],
         "beta:video": [
           {
-            "type": "VideoObject",
+            "@type": "VideoObject",
             "url": "https://www.youtube.com/watch?v=xvDZZLqlc-0"
           }
         ],
         "beta:virtualTour": [
           {
-            "type": "3DModel",
+            "@type": "3DModel",
             "url": "https://my.matterport.com/show/?m=Z4rkJ9dPHt7"
           }
         ],
@@ -273,7 +284,7 @@
           "description": "Fusion Lifestyle was established in April 2000 following a decision by a London Borough Council to outsource the management of the leisure facilities. Fusion now manages a diverse portfolio of facilities using our specialist expertise to provide sustainable solutions for councils and exciting products and programmes for our customers. Fusion is a national operator managing leisure facilities from Wales to London and as far north as Newcastle. \n\nNo two Fusion sites are the same, we retain the heritage of centres when we refurbish and we are experienced at managing centres from ice rinks to outward bound residential centres, town halls and expansive leisure facilities. We put our energies into providing facilities and programmes that are an attractive proposition to the local community. We respect the history of our centres and it is not uncommon for generations of local residents to hold fond memories of learning to swim in our centres, playing football matches over the years and hosting birthday celebrations at our sites.\n\nFusion is a registered charity, there are therefore no shareholders. We are able to continually reinvest in facilities, products and importantly people.\n",
           "beta:formattedDescription": "<p>Fusion Lifestyle was established in April 2000 following a decision by a London Borough Council to outsource the management of the leisure facilities. Fusion now manages a diverse portfolio of facilities using our specialist expertise to provide sustainable solutions for councils and exciting products and programmes for our customers. Fusion is a national operator managing leisure facilities from Wales to London and as far north as Newcastle.&nbsp;</p><p><br></p><p>No two Fusion sites are the same, we retain the heritage of centres when we refurbish and we are experienced at managing centres from ice rinks to outward bound residential centres, town halls and expansive leisure facilities. We put our energies into providing facilities and programmes that are an attractive proposition to the local community. We respect the history of our centres and it is not uncommon for generations of local residents to hold fond memories of learning to swim in our centres, playing football matches over the years and hosting birthday celebrations at our sites.</p><p><br></p><p>Fusion is a registered charity, there are therefore no shareholders. We are able to continually reinvest in facilities, products and importantly people.</p>",
           "logo": {
-            "type": "ImageObject",
+            "@type": "ImageObject",
             "url": "https://res.cloudinary.com/gladstone/image/upload/fusion-lifestyle-live/drmjlapeaees3kpkw8xy"
           },
           "telephone": "01455 890508",
@@ -285,12 +296,13 @@
           ],
           "beta:video": [
             {
-              "type": "VideoObject",
+              "@type": "VideoObject",
               "url": "https://www.youtube.com/watch?v=DJWojDGvsW8"
             }
           ]
         }
       }
     }
-  ]
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }
