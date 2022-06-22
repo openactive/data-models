@@ -27,6 +27,7 @@
     "containedInPlace",
     "containsPlace",
     "telephone",
+    "email",
     "openingHoursSpecification",
     "specialOpeningHoursSpecification",
     "amenityFeature"
