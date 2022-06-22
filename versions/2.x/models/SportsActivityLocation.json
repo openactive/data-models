@@ -1,0 +1,96 @@
+{
+  "type": "SportsActivityLocation",
+  "derivedFrom": "https://schema.org/SportsActivityLocation",
+  "subClassOf": "#Place",
+  "hasId": true,
+  "sampleId": "https://id.bookingsystem.example.com/places/12345/sports-activity-locations/1",
+  "requiredFields": [
+    "type",
+    "name"
+  ],
+  "recommendedFields": [
+    "id",
+    "url",
+    "description",
+    "image"
+  ],
+  "inSpec": [
+    "type",
+    "id",
+    "identifier",
+    "url",
+    "name",
+    "description",
+    "image",
+    "address",
+    "geo",
+    "containedInPlace",
+    "containsPlace",
+    "telephone",
+    "email",
+    "openingHoursSpecification",
+    "specialOpeningHoursSpecification",
+    "amenityFeature"
+  ],
+  "notInSpec": [
+    "address",
+    "geo"
+  ],
+  "fields": {
+    "type": {
+      "fieldName": "type",
+      "requiredType": "https://schema.org/Text",
+      "requiredContent": "SportsActivityLocation"
+    },
+    "name": {
+      "fieldName": "name",
+      "sameAs": "https://schema.org/name",
+      "requiredType": "https://schema.org/Text",
+      "example": "Basketball Hall",
+      "description": [
+        "The name of the SportsActivityLocation"
+      ]
+    },
+    "description": {
+      "fieldName": "description",
+      "sameAs": "https://schema.org/description",
+      "requiredType": "https://schema.org/Text",
+      "example": "The National Basketball Performance Centre (NBPC) is part of Belle Vue Sports Village.\n\n- It features a purpose-built hall with 3 courts developed to FIBA standards for international competition and a multi-sports hall with a further 2 basketball courts.\n- The NBPC show court, which has basketball lines only, also features FIBA scoreboards, 24 second cubes, red LED fitted backboards and Olympic standard portable baskets.\n\nTo book a court at the National Basketball Performance Centre, please use the link below or drop in to one of our Pay & Play sessions.",
+      "description": [
+        "A plain text description of the SportsActivityLocation, which must not include HTML or other markup."
+      ]
+    },
+    "openingHoursSpecification": {
+      "sameAs": "https://schema.org/openingHoursSpecification",
+      "fieldName": "openingHoursSpecification",
+      "model": "ArrayOf#OpeningHoursSpecification",
+      "description": [
+        "The times the SportsActivityLocation is open"
+      ]
+    },
+    "image": {
+      "fieldName": "image",
+      "sameAs": "https://schema.org/image",
+      "model": "ArrayOf#ImageObject",
+      "description": [
+        "An image or photo that depicts the specific SportsActivityLocation."
+      ],
+      "example": [
+        {
+          "thumbnail": "http://example.com/static/image/speedball_thumbnail.jpg",
+          "@type": "ImageObject",
+          "url": "http://example.com/static/image/speedball_large.jpg"
+        }
+      ]
+    },
+    "url": {
+      "fieldName": "url",
+      "sameAs": "https://schema.org/url",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+      "description": [
+        "A website URL that describes the SportsActivityLocation"
+      ]
+    }
+  }
+}
