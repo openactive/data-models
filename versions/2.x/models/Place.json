@@ -142,7 +142,7 @@
         }
       ],
       "description": [
-        "An array listing the Ammenities of the Place."
+        "An array listing the Amenities of the Place."
       ]
     },
     "containedInPlace": {

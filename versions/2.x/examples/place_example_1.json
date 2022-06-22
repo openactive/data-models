@@ -1,0 +1,296 @@
+{
+  "next": "https://www.example.com/api/rpde/places?afterTimestamp=1521565719&afterId=1402CBP20150217",
+  "items": [
+    {
+      "state": "updated",
+      "kind": "Place",
+      "id": "1402CBP20150217",
+      "modified": 1521565719,
+      "data": {
+        "@type": "Place",
+        "@id": "https://api.example.com/places/1402CBP20150217",
+        "name": "Belle Vue Sports Village",
+        "description": "Belle Vue Sports Village is the proud home to the National Basketball Performance Centre and Belle Vue Leisure Centre, providing school, community and elite use as well as the home for the National Speedway Stadium.  Belle Vue Leisure Centre has completed a  £200,000 gym refurbishment which offers access to a 60 station community gym with cardio and free weights from as little as £18.50 per month. We also offer a separate ladies only gym, 2 indoor multi-use sports hall and 2 all-weather 3G pitches, and a Studio. Our facility is available for drop-in, community, club, private hire and events. We have extensive lessons and couses programmes where you can jump into our gymnastics lessons or rule the court in our basketball lessons. The National Basketball Performance Centre, the home of Manchester Giant’s. Manchester Mystics and Manchester Thunder, boasts 3 superb courts and a capacity to hold 2000 spectators.  This facility is part of a unique collection of community and elite facilities governed by MCRactive, a not for profit organisation established and overseen by Manchester City Council. It is operated by Better under the MCRactive brand.",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://s3.eu-west-1.amazonaws.com/op-prod-eks/venue-images/1pefpF8nSHpKVtEhVeIkvezCQ6NMtN0UDPmiI2BL.jpg"
+          }
+        ],
+        "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village",
+        "telephone": "0161 231 0754",
+        "address": {
+          "@type": "PostalAddress",
+          "email": "bellevuesportsvillage@gll.org",
+          "addressCountry": "GB",
+          "addressRegion": "Manchester",
+          "addressLocality": "Manchester",
+          "postalCode": "M12 4TF",
+          "streetAddress": "Kirkmanshulme Lane"
+        },
+        "amenityFeature": [
+          {
+            "@type": "BabyChanging",
+            "name": "Baby Changing",
+            "value": false
+          },
+          {
+            "@type": "beta:Bar",
+            "name": "Bar",
+            "value": false
+          },
+          {
+            "@type": "beta:Cafe",
+            "name": "Cafe",
+            "value": false
+          },
+          {
+            "@type": "ChangingFacilities",
+            "name": "Changing Facilities",
+            "value": true
+          },
+          {
+            "@type": "Creche",
+            "name": "Creche",
+            "value": false
+          },
+          {
+            "@type": "Lockers",
+            "name": "Lockers",
+            "value": true
+          },
+          {
+            "@type": "Parking",
+            "name": "Parking",
+            "value": true
+          },
+          {
+            "@type": "Showers",
+            "name": "Showers",
+            "value": true
+          },
+          {
+            "@type": "Toilets",
+            "name": "Toilets",
+            "value": true
+          },
+          {
+            "@type": "Towels",
+            "name": "Towels",
+            "value": false
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Adapted For Wheelchairs",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Disabled Toilet",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Accessible Parking",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Accessible Changing",
+            "value": true
+          },
+          {
+            "@type": "LocationFeatureSpecification",
+            "name": "Lift",
+            "value": true
+          }
+        ],
+        "containsPlace": [
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Gym",
+            "description": "Our fully equipped, air-conditioned gym offers a range of fitness equipment for everyone. Our members can choose from cardiovascular machines such as treadmills and rowers, resistance equipment including a large free weights section and dedicated stretching area.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-5.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592159613/production/0065/7/70/IMG_2255.jpg"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Female Gym",
+            "description": "Kick start your fitness regime in our private womens only gym where you can hit the cardio kit and resistance machines in comfort. Our separate women's only gym allows you to exercise in a welcoming environment.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-2.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592159013/production/0065/7/68/PHOTO-2020-06-09-14-25-52.jpg"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Studio",
+            "description": "We have a great range of Fitness Classes at Belle Vue Leisure Centre including Group Cycle, Zumba, Pilates and much much more.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592158966/production/0065/7/66/PHOTO-2020-06-09-14-25-53_3.jpg"
+              }
+            ],
+            "specialOpeningHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "opens": "00:00",
+                "closes": "00:00",
+                "validFrom": "2022-01-01",
+                "validThrough": "2022-12-31"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Stadium Pitch",
+            "description": "Our Stadium Pitch sits within the Speedway Stadium on the inside of the track! The pitch is floodlit so can be played on all year round and is suitable for both football training and fixtures.\n\nTo book a 3G pitch please use our booking partner WePlayFootball. Bookings can be made up to 28 days in advance, Better membership discount can be used at the checkout.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-3.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1567007522/production/0000/0/00/speedway_u21.jpg"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Basketball Hall",
+            "description": "The National Basketball Performance Centre (NBPC) is part of Belle Vue Sports Village.\n\n- It features a purpose-built hall with 3 courts developed to FIBA standards for international competition and a multi-sports hall with a further 2 basketball courts.\n- The NBPC show court, which has basketball lines only, also features FIBA scoreboards, 24 second cubes, red LED fitted backboards and Olympic standard portable baskets.\n\nTo book a court at the National Basketball Performance Centre, please use the link below or drop in to one of our Pay & Play sessions.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1567007662/production/0000/0/00\nBPC_Full_Centre_Court_resized.jpg"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Function Room",
+            "description": "The Stadium holds up to 400 delegates (theatre) 300 guests (banquet). The Peter Craven Suite boasts spectacular views across the speedway track and, combined with the two additional suites, concourse space and prime location, provides a truly unique setting for a wide range of event styles including exhibitions, functions, conferences, dinners and celebrations.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1569512551/production/0000/0/00/IMG_3394.jpg"
+              }
+            ]
+          },
+          {
+            "type": "SportsActivityLocation",
+            "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
+            "name": "Multi-Sports Hall",
+            "description": "Our Multi Sports hall can host a range of activities such as basketball, netball, futsal, badminton and table tennis.\n\nThe multi sports hall host 2 full size basketball/futsal courts and can accommodate 8 badminton courts.",
+            "image": [
+              {
+                "@type": "ImageObject",
+                "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592159051/production/0065/7/69/PHOTO-2020-06-09-14-25-51.jpg"
+              }
+            ]
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "18:00:00",
+            "dayOfWeek": [
+              "https://schema.org/Sunday",
+              "https://schema.org/Saturday"
+            ],
+            "opens": "08:30:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "closes": "22:00:00",
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday"
+            ],
+            "opens": "06:30:00"
+          }
+        ],
+        "specialOpeningHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "opens": "00:00",
+            "closes": "00:00",
+            "validFrom": "2021-01-01",
+            "validThrough": "2021-01-31"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 53.483592,
+          "longitude": -2.269241
+        },
+        "beta:formattedDescription": "<p>Belle Vue Sports Village is the proud home to the National Basketball Performance Centre and Belle Vue Leisure Centre, providing school, community and elite use as well as the home for the National Speedway Stadium.  Belle Vue Leisure Centre has completed a  £200,000 gym refurbishment which offers access to a 60 station community gym with cardio and free weights from as little as £18.50 per month. We also offer a separate ladies only gym, 2 indoor multi-use sports hall and 2 all-weather 3G pitches, and a Studio. Our facility is available for drop-in, community, club, private hire and events. We have extensive lessons and couses programmes where you can jump into our gymnastics lessons or rule the court in our basketball lessons. The National Basketball Performance Centre, the home of Manchester Giant’s. Manchester Mystics and Manchester Thunder, boasts 3 superb courts and a capacity to hold 2000 spectators.  This facility is part of a unique collection of community and elite facilities governed by MCRactive, a not for profit organisation established and overseen by Manchester City Council. It is operated by Better under the MCRactive brand.</p>",
+        "beta:placeType": [
+          {
+            "@type": "Concept",
+            "@id": "https://openactive.io/place-types#7f17c97e-2e6f-4b75-a4ac-6b0faba92f34",
+            "inScheme": "https://openactive.io/place-types",
+            "prefLabel": "Arena"
+          },
+          {
+            "@type": "Concept",
+            "@id": "https://openactive.io/place-types#89a263e2-3925-4add-81cf-a0fbdf9542ad",
+            "inScheme": "https://openactive.io/place-types",
+            "prefLabel": "Leisure Centre"
+          }
+        ],
+        "beta:video": [
+          {
+            "type": "VideoObject",
+            "url": "https://www.youtube.com/watch?v=xvDZZLqlc-0"
+          }
+        ],
+        "beta:virtualTour": [
+          {
+            "type": "3DModel",
+            "url": "https://my.matterport.com/show/?m=Z4rkJ9dPHt7"
+          }
+        ],
+        "beta:serviceOperator": {
+          "@type": "Organization",
+          "@id": "https://better-admin.org.uk/api/openactive/better",
+          "identifier": 90001,
+          "name": "Better",
+          "legalName": "Greenwich Leisure Limited",
+          "description": "Fusion Lifestyle was established in April 2000 following a decision by a London Borough Council to outsource the management of the leisure facilities. Fusion now manages a diverse portfolio of facilities using our specialist expertise to provide sustainable solutions for councils and exciting products and programmes for our customers. Fusion is a national operator managing leisure facilities from Wales to London and as far north as Newcastle. \n\nNo two Fusion sites are the same, we retain the heritage of centres when we refurbish and we are experienced at managing centres from ice rinks to outward bound residential centres, town halls and expansive leisure facilities. We put our energies into providing facilities and programmes that are an attractive proposition to the local community. We respect the history of our centres and it is not uncommon for generations of local residents to hold fond memories of learning to swim in our centres, playing football matches over the years and hosting birthday celebrations at our sites.\n\nFusion is a registered charity, there are therefore no shareholders. We are able to continually reinvest in facilities, products and importantly people.\n",
+          "beta:formattedDescription": "<p>Fusion Lifestyle was established in April 2000 following a decision by a London Borough Council to outsource the management of the leisure facilities. Fusion now manages a diverse portfolio of facilities using our specialist expertise to provide sustainable solutions for councils and exciting products and programmes for our customers. Fusion is a national operator managing leisure facilities from Wales to London and as far north as Newcastle.&nbsp;</p><p><br></p><p>No two Fusion sites are the same, we retain the heritage of centres when we refurbish and we are experienced at managing centres from ice rinks to outward bound residential centres, town halls and expansive leisure facilities. We put our energies into providing facilities and programmes that are an attractive proposition to the local community. We respect the history of our centres and it is not uncommon for generations of local residents to hold fond memories of learning to swim in our centres, playing football matches over the years and hosting birthday celebrations at our sites.</p><p><br></p><p>Fusion is a registered charity, there are therefore no shareholders. We are able to continually reinvest in facilities, products and importantly people.</p>",
+          "logo": {
+            "type": "ImageObject",
+            "url": "https://res.cloudinary.com/gladstone/image/upload/fusion-lifestyle-live/drmjlapeaees3kpkw8xy"
+          },
+          "telephone": "01455 890508",
+          "url": "https://better.org.uk/",
+          "email": "noreply@better-comms.org.uk",
+          "sameAs": [
+            "https://twitter.com/Fusion_LS/",
+            "https://www.facebook.com/fusionlifestyle/"
+          ],
+          "beta:video": [
+            {
+              "type": "VideoObject",
+              "url": "https://www.youtube.com/watch?v=DJWojDGvsW8"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

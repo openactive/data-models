@@ -45,6 +45,10 @@
       {
         "file": "event_eventseries_example_1.json",
         "name": "Event with EventSeries Example"
+      },
+      {
+        "file": "place_example_1.json",
+        "name": "Place Example"
       }
     ]
   },
