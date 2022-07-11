@@ -21,7 +21,7 @@
       "sameAs": "https://schema.org/maxValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "The maximum value."
+        "The maximum value, inclusive."
       ],
       "example": 60
     },
@@ -30,7 +30,7 @@
       "sameAs": "https://schema.org/minValue",
       "requiredType": "https://schema.org/Integer",
       "description": [
-        "The minimum value."
+        "The minimum value, inclusive."
       ],
       "example": 16
     }
