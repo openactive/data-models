@@ -36,15 +36,17 @@
     "response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderProposalVersion",
         "orderProposalStatus"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
@@ -55,11 +57,12 @@
         "type",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],

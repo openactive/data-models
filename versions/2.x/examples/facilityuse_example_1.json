@@ -23,6 +23,32 @@
             "inScheme": "https://openactive.io/facility-types"
           }
         ],
+        "individualFacilityUse": [
+          {
+            "@type": "IndividualFacilityUse",
+            "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/1",
+            "name": "Outdoor Tennis on Main Tennis Court 1",
+            "beta:sportsActivityLocation": [
+              {
+                "type": "SportsActivityLocation",
+                "name": "Main Tennis Court 1",
+                "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
+              }
+            ]
+          },
+          {
+            "@type": "IndividualFacilityUse",
+            "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/2",
+            "name": "Outdoor Tennis on Main Tennis Court 2",
+            "beta:sportsActivityLocation": [
+              {
+                "type": "SportsActivityLocation",
+                "name": "Main Tennis Court 2",
+                "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
+              }
+            ]
+          }
+        ],
         "provider": {
           "@type": "Organization",
           "@id": "https://id.bookingsystem.example.com/organizers/1",
@@ -153,32 +179,6 @@
           {
             "@type": "ImageObject",
             "url": "http://example.org/images/1.jpg"
-          }
-        ],
-        "individualFacilityUse": [
-          {
-            "@type": "IndividualFacilityUse",
-            "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/1",
-            "name": "Outdoor Tennis on Main Tennis Court 1",
-            "beta:sportsActivityLocation": [
-              {
-                "type": "SportsActivityLocation",
-                "name": "Main Tennis Court 1",
-                "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
-              }
-            ]
-          },
-          {
-            "@type": "IndividualFacilityUse",
-            "@id": "http://www.example.org/facility-uses/1/individual-facility-uses/2",
-            "name": "Outdoor Tennis on Main Tennis Court 2",
-            "beta:sportsActivityLocation": [
-              {
-                "type": "SportsActivityLocation",
-                "name": "Main Tennis Court 2",
-                "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
-              }
-            ]
           }
         ],
         "beta:facilitySetting": "https://openactive.io/ns-beta#OutdoorFacility",

@@ -56,14 +56,16 @@
     "C1response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus",
         "customer",
@@ -73,14 +75,16 @@
     "response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"

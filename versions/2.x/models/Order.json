@@ -10,7 +10,7 @@
     "BRequest": "request",
     "BOrderProposalRequest": "orderProposalRequest",
     "BResponse": "response",
-    "BResponseOrderItemError": "response",
+    "BResponseOrderItemError": "response_error",
     "OrderProposalPatch": "request",
     "OrderPatch": "cancellation",
     "OrdersFeed": "ordersFeed",
@@ -65,11 +65,28 @@
         "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
+      "shallNotInclude": [
+        "orderCreationStatus",
+        "orderProposalVersion"
+      ]
+    },
+    "response_error": {
+      "requiredFields": [
+        "type",
+        "seller",
+        "brokerRole",
+        "orderedItem",
+        "totalPaymentDue"
+      ],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"

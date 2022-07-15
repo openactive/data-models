@@ -478,6 +478,7 @@
         "The location at which the event will take place. Or, in the case of events that may span multiple locations, the initial meeting or starting point.",
         "Locations must be specified as a [Place](/models/place) complete with a fully described geographic location and/or address."
       ],
+      "allowReferencing": true,
       "example": {
         "@type": "Place",
         "@id": "https://example.com/locations/1234ABCD",

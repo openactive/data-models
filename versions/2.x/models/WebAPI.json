@@ -5,7 +5,7 @@
   "requiredFields": [
     "type",
     "name",
-    "endpointURL",
+    "endpointUrl",
     "conformsTo",
     "endpointDescription",
     "landingPage"
@@ -20,7 +20,7 @@
     "description",
     "documentation",
     "termsOfService",
-    "endpointURL",
+    "endpointUrl",
     "conformsTo",
     "endpointDescription",
     "landingPage",
@@ -79,14 +79,15 @@
         "A link to terms of service related to the use of this API."
       ]
     },
-    "endpointURL": {
-      "fieldName": "endpointURL",
-      "sameAs": "http://www.w3.org/ns/dcat#endpointURL",
+    "endpointUrl": {
+      "fieldName": "endpointUrl",
+      "sameAs": "https://openactive.io/endpointUrl",
       "requiredType": "https://schema.org/URL",
       "example": "https://example.bookingsystem.com/api/openbooking",
       "description": [
         "The base URL of the Open Booking API"
-      ]
+      ],
+      "schemaNote": "This has been defined in the OpenActive namespace, given that it was dropped from the PR at https://github.com/schemaorg/schemaorg/pull/2635."
     },
     "conformsTo": {
       "fieldName": "conformsTo",

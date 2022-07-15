@@ -129,6 +129,15 @@
       "kind": ["OnDemandEvent"],
       "themeDisplayName": "On Demand Events",
       "bookable": true
+    },
+    {
+      "identifier": "Place",
+      "name": "Place",
+      "sameAs": "https://schema.org/Place",
+      "defaultFeedPath": "/places",
+      "kind": ["Place"],
+      "themeDisplayName": "Places",
+      "bookable": false
     }
   ],
   "baseGraph": {
