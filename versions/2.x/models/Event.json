@@ -591,7 +591,8 @@
       "description": [
         "The number of places that are still available for the Event."
       ],
-      "example": 20
+      "example": 20,
+      "minValueInclusive": 0
     },
     "subEvent": {
       "fieldName": "subEvent",

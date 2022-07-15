@@ -277,7 +277,8 @@
       "description": [
         "The remaining available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
-      "example": 5
+      "example": 5,
+      "minValueInclusive": 0
     },
     "startDate": {
       "fieldName": "startDate",
