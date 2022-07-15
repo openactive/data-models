@@ -65,9 +65,9 @@
       "fieldName": "documentation",
       "sameAs": "https://pending.schema.org/documentation",
       "requiredType": "https://schema.org/URL",
-      "example": "https://developer.openactive.io",
+      "example": "https://permalink.openactive.io/dataset-site/open-booking-api-documentation",
       "description": [
-        "A link to documentation related to the Dataset, or a link to the OpenActive developer documentation if no Dataset-specific documentation is available."
+        "A link to documentation related to how to use the Open Booking API, or a link to the OpenActive developer documentation using `https://permalink.openactive.io/dataset-site/open-booking-api-documentation` if no system-specific documentation is available."
       ]
     },
     "termsOfService": {
@@ -85,7 +85,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://example.bookingsystem.com/api/openbooking",
       "description": [
-        "The base URL of the Open Booking API"
+        "The Base URI of this implementation of the Open Booking API"
       ],
       "schemaNote": "This has been defined in the OpenActive namespace, given that it was dropped from the PR at https://github.com/schemaorg/schemaorg/pull/2635."
     },
@@ -115,7 +115,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://exampleforms.com/get-me-an-api-access-key",
       "description": [
-        "The web page the broker uses to obtain access to the API, e.g. via a web form."
+        "The URL of a web page that the Broker may use to obtain access to the API, e.g. via a web form."
       ]
     },
     "authenticationAuthority": {
@@ -124,7 +124,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://auth.bookingsystem.com",
       "description": [
-        "The location of the OpenID Provider or other relevant authentication authority that must be used to access the API."
+        "The location of the OpenID Provider that must be used to access the API."
       ]
     }
   }
