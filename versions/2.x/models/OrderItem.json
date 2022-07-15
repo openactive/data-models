@@ -209,18 +209,12 @@
         "orderItemIntakeFormResponse",
         "position"
       ],
-      "requiredOptions": [],
-      "shallNotBeReferencedFields": [
-        "orderedItem",
-        "acceptedOffer"
-      ]
+      "requiredOptions": []
     },
     "orderProposalsFeed": {
       "requiredFields": [
         "type",
-        "id",
-        "acceptedOffer",
-        "orderedItem"
+        "id"
       ],
       "recommendedFields": [],
       "shallNotInclude": [
