@@ -30,7 +30,10 @@
         "orderProposalVersion",
         "totalPaymentDue"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "request": {
       "requiredFields": [
@@ -51,7 +54,10 @@
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "C1response": {
       "requiredFields": [
@@ -70,6 +76,9 @@
         "orderCreationStatus",
         "customer",
         "orderProposalVersion"
+      ],
+      "shallNotBeReferencedFields": [
+        "seller"
       ]
     },
     "response": {
@@ -88,6 +97,9 @@
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"
+      ],
+      "shallNotBeReferencedFields": [
+        "seller"
       ]
     }
   },

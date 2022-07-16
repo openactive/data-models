@@ -31,7 +31,10 @@
         "lease",
         "orderProposalStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "response": {
       "requiredFields": [
@@ -50,7 +53,10 @@
       "shallNotInclude": [
         "orderCreationStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "seller"
+      ]
     },
     "response_error": {
       "requiredFields": [
@@ -66,7 +72,10 @@
       "shallNotInclude": [
         "orderCreationStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "seller"
+      ]
     },
     "ordersFeed": {
       "requiredFields": [
