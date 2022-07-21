@@ -31,4 +31,11 @@ describe('loadModel', () => {
     expect(modelData.fields.value.inheritedFrom).toBe('#LocationFeatureSpecification');
     expect(modelData.fields.type.requiredContent).toBe('Showers');
   });
+  it('should not mutate models', () => {
+    // TODO use deep equal to check that loadModel('Event') is the same before and after loadModel('CourseInstance')
+    const modelCourseInstance = loadModel('CourseInstance');
+    const modelEvent = loadModel('Event');
+    expect(modelCourseInstance.fields.startDate.requiredType).toBe('https://schema.org/Date');
+    expect(modelEvent.fields.startDate.requiredType).toBe('https://schema.org/DateTime');
+  });
 });

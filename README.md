@@ -174,7 +174,7 @@ const metaData = getMetaData('2.0');
 
 #### loadModel(modelName [, version])
 
-Returns the model definition for a particular version of the spec.
+Returns the model definition, augmented based on model inheritance, for a particular version of the spec.
 
 ##### Example
 
@@ -192,7 +192,7 @@ const eventModel2 = loadModel('Event', '2.0');
 
 #### getModels( [version] )
 
-Returns a map of model definitions for a particular version of the spec.
+Returns a map of raw model definitions for a particular version of the spec.
 
 ##### Example
 

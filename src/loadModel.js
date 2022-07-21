@@ -1,5 +1,4 @@
 const loadModelCheckArgs = require('./helpers/loadModelCheckArgs');
-const loadModelMergeParent = require('./helpers/loadModelMergeParent');
 const specs = require('./dist/specs');
 
 const loadModel = (name, version) => {
@@ -10,24 +9,12 @@ const loadModel = (name, version) => {
   }
   if (
     typeof specs[specVersion] === 'undefined'
-    || typeof specs[specVersion][jsonKey] === 'undefined'
-    || typeof specs[specVersion][jsonKey][name] === 'undefined'
+    || typeof specs[specVersion].renderedModels[jsonKey] === 'undefined'
+    || typeof specs[specVersion].renderedModels[jsonKey][name] === 'undefined'
   ) {
     throw Error(`Invalid model name "${name}" supplied`);
   }
-  let model = Object.assign({}, specs[specVersion][jsonKey][name]);
-  if (typeof model.subClassOf !== 'undefined') {
-    if (model.subClassOf.match(/^#[A-Za-z]+$/)) {
-      const parentModelName = model.subClassOf.substr(1);
-      const parentModel = loadModel(parentModelName, specVersion);
-      model = loadModelMergeParent(model, parentModel);
-    } else {
-      model.baseSchemaClass = model.subClassOf;
-    }
-  } else {
-    model.baseSchemaClass = model.derivedFrom;
-  }
-  return model;
+  return specs[specVersion].renderedModels[jsonKey][name];
 };
 
 module.exports = loadModel;
