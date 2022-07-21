@@ -28,8 +28,8 @@
     "BRequest": "request",
     "BResponse": "response",
     "BResponseOrderItemError": "response",
-    "OrdersFeed": "response",
-    "OrderProposalsFeed": "response",
+    "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response",
     "TestInterface": "request"
   },
@@ -118,6 +118,23 @@
       ],
       "shallNotBeReferencedFields": [
         "facilityUse"
+      ]
+    },
+    "ordersFeed": {
+      "requiredFields": [
+        "type",
+        "id",
+        "startDate",
+        "facilityUse"
+      ],
+      "recommendedFields": [
+        "endDate",
+        "duration",
+        "maximumUses",
+        "remainingUses"
+      ],
+      "shallNotInclude": [
+        "offers"
       ]
     }
   },

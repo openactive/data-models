@@ -38,8 +38,8 @@
     "BRequest": "request",
     "BResponse": "response",
     "BResponseOrderItemError": "response",
-    "OrdersFeed": "response",
-    "OrderProposalsFeed": "response",
+    "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response",
     "TestInterface": "testInterface"
   },
@@ -126,6 +126,22 @@
       ],
       "shallNotBeReferencedFields": [
         "superEvent"
+      ]
+    },
+    "ordersFeed": {
+      "requiredFields": [
+        "type",
+        "id",
+        "startDate",
+        "superEvent"
+      ],
+      "recommendedFields": [
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
+      ],
+      "shallNotInclude": [
+        "offers"
       ]
     }
   },
