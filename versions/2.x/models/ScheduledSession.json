@@ -123,6 +123,9 @@
       ],
       "shallNotInclude": [
         "offers"
+      ],
+      "shallNotBeReferencedFields": [
+        "superEvent"
       ]
     }
   },
