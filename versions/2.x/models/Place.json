@@ -167,14 +167,23 @@
       "example": [
         {
           "@type": "SportsActivityLocation",
-          "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/1",
+          "@id": "https://api.example.com/places/1402CBP20150217/sports-activity-locations/3",
           "url": "https://www.better.org.uk/leisure-centre/manchester/belle-vue-sports-village/facilities",
-          "name": "Gym",
-          "description": "Our fully equipped, air-conditioned gym offers a range of fitness equipment for everyone. Our members can choose from cardiovascular machines such as treadmills and rowers, resistance equipment including a large free weights section and dedicated stretching area.",
+          "name": "Studio",
+          "description": "We have a great range of Fitness Classes at Belle Vue Leisure Centre including Group Cycle, Zumba, Pilates and much much more.",
           "image": [
             {
               "@type": "ImageObject",
-              "url": "https://res-5.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592159613/production/0065/7/70/IMG_2255.jpg"
+              "url": "https://res-1.cloudinary.com/gll/image/upload/c_fit,f_auto,h_169,w_384/v1592158966/production/0065/7/66/PHOTO-2020-06-09-14-25-53_3.jpg"
+            }
+          ],
+          "specialOpeningHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "opens": "00:00",
+              "closes": "00:00",
+              "validFrom": "2022-01-01",
+              "validThrough": "2022-12-31"
             }
           ]
         }
