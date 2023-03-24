@@ -2,18 +2,25 @@
   "type": "WebAPI",
   "derivedFrom": "https://pending.schema.org/WebAPI",
   "hasId": false,
-  "requiredFields": [
-    "type",
-    "name",
-    "endpointUrl",
-    "conformsTo",
-    "endpointDescription",
-    "landingPage"
-  ],
-  "recommendedFields": [
-    "documentation",
-    "termsOfService"
-  ],
+  "validationMode": {
+    "DatasetSite": "datasetSite"
+  },
+  "imperativeConfiguration": {
+    "datasetSite": {
+      "requiredFields": [
+        "type",
+        "name",
+        "endpointUrl",
+        "conformsTo",
+        "endpointDescription",
+        "landingPage"
+      ],
+      "recommendedFields": [
+        "documentation",
+        "termsOfService"
+      ]
+    }
+  },
   "inSpec": [
     "type",
     "name",
