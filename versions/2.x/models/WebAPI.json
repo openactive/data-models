@@ -3,24 +3,45 @@
   "derivedFrom": "https://pending.schema.org/WebAPI",
   "hasId": false,
   "validationMode": {
-    "DatasetSite": "datasetSite"
+    "RPDEFeed": "noRequired",
+    "BookableRPDEFeed": "noRequired",
+    "DataCatalog": "noRequired",
+    "C1Request": "noRequired",
+    "C1Response": "noRequired",
+    "C1ResponseOrderItemError": "noRequired",
+    "C2Request": "noRequired",
+    "C2Response": "noRequired",
+    "C2ResponseOrderItemError": "noRequired",
+    "PRequest": "noRequired",
+    "PResponse": "noRequired",
+    "PResponseOrderItemError": "noRequired",
+    "BRequest": "noRequired",
+    "BResponse": "noRequired",
+    "BResponseOrderItemError": "noRequired",
+    "OrderProposalPatch": "noRequired",
+    "OrderPatch": "noRequired",
+    "OrdersFeed": "noRequired",
+    "OrderProposalsFeed": "noRequired",
+    "OrderStatus": "noRequired"
   },
   "imperativeConfiguration": {
-    "datasetSite": {
-      "requiredFields": [
-        "type",
-        "name",
-        "endpointUrl",
-        "conformsTo",
-        "endpointDescription",
-        "landingPage"
-      ],
-      "recommendedFields": [
-        "documentation",
-        "termsOfService"
-      ]
+    "noRequired": {
+      "requiredFields": [],
+      "recommendedFields": []
     }
   },
+  "requiredFields": [
+    "type",
+    "name",
+    "endpointUrl",
+    "conformsTo",
+    "endpointDescription",
+    "landingPage"
+  ],
+  "recommendedFields": [
+    "documentation",
+    "termsOfService"
+  ],
   "inSpec": [
     "type",
     "name",
