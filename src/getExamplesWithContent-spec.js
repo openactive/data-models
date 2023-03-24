@@ -2,7 +2,7 @@ const getExamplesWithContent = require('./getExamplesWithContent');
 
 describe('getExamplesWithContent', () => {
   it('should throw if passed an invalid spec version', async () => {
-    expectAsync(getExamplesWithContent('0.0')).toBeRejected();
+    expect(getExamplesWithContent('0.0')).toThrow();
   });
 
   it('should return valid examples as JSON', async () => {
