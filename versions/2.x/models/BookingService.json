@@ -34,7 +34,7 @@
       "requiredOptions": [
         {
           "description": [
-            "A `BookingService` must include a `name`, unless it is an bespoke build, in which case `hasCredential` may be included as the only property."
+            "A `BookingService` must include a `name`, unless it is a bespoke build, in which case only `hasCredential` is required."
           ],
           "options": [
             "name",
