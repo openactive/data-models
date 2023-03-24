@@ -3,26 +3,33 @@
   "derivedFrom": "https://schema.org/Dataset",
   "hasId": true,
   "sampleId": "https://opendata.fusion-lifestyle.com/OpenActive/",
-  "requiredFields": [
-    "id",
-    "type",
-    "url",
-    "name",
-    "description",
-    "keywords",
-    "license",
-    "distribution",
-    "discussionUrl",
-    "documentation",
-    "inLanguage",
-    "publisher",
-    "schemaVersion"
-  ],
-  "recommendedFields": [
-    "datePublished",
-    "dateModified",
-    "backgroundImage"
-  ],
+  "validationMode": {
+    "DatasetSite": "datasetSite"
+  },
+  "imperativeConfiguration": {
+    "datasetSite": {
+      "requiredFields": [
+        "id",
+        "type",
+        "url",
+        "name",
+        "description",
+        "keywords",
+        "license",
+        "distribution",
+        "discussionUrl",
+        "documentation",
+        "inLanguage",
+        "publisher",
+        "schemaVersion"
+      ],
+      "recommendedFields": [
+        "datePublished",
+        "dateModified",
+        "backgroundImage"
+      ]
+    }
+  },
   "inSpec": [
     "id",
     "type",
