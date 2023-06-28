@@ -58,7 +58,8 @@
       "shallNotInclude": [
         "offers",
         "event",
-        "provider"
+        "provider",
+        "individualFacilityUse"
       ]
     }
   },
