@@ -32,6 +32,10 @@
           "type",
           "name",
           "description"
+        ],
+        "shallNotInclude": [
+          "value",
+          "propertyID"
         ]
       },
       "additionalProperty": {
@@ -39,6 +43,10 @@
           "type",
           "name",
           "value"
+        ],
+        "shallNotInclude": [
+          "description",
+          "propertyID"
         ]
       },
       "orderItemIntakeFormResponse": {
@@ -46,6 +54,10 @@
           "type",
           "propertyID",
           "value"
+        ],
+        "shallNotInclude": [
+          "name",
+          "description"
         ]
       }
     }
