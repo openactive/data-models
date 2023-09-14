@@ -2,6 +2,34 @@
   "type": "WebAPI",
   "derivedFrom": "https://pending.schema.org/WebAPI",
   "hasId": false,
+  "validationMode": {
+    "RPDEFeed": "noRequired",
+    "BookableRPDEFeed": "noRequired",
+    "DataCatalog": "noRequired",
+    "C1Request": "noRequired",
+    "C1Response": "noRequired",
+    "C1ResponseOrderItemError": "noRequired",
+    "C2Request": "noRequired",
+    "C2Response": "noRequired",
+    "C2ResponseOrderItemError": "noRequired",
+    "PRequest": "noRequired",
+    "PResponse": "noRequired",
+    "PResponseOrderItemError": "noRequired",
+    "BRequest": "noRequired",
+    "BResponse": "noRequired",
+    "BResponseOrderItemError": "noRequired",
+    "OrderProposalPatch": "noRequired",
+    "OrderPatch": "noRequired",
+    "OrdersFeed": "noRequired",
+    "OrderProposalsFeed": "noRequired",
+    "OrderStatus": "noRequired"
+  },
+  "imperativeConfiguration": {
+    "noRequired": {
+      "requiredFields": [],
+      "recommendedFields": []
+    }
+  },
   "requiredFields": [
     "type",
     "name",

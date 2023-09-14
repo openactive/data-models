@@ -15,7 +15,8 @@
     "BResponse": "response",
     "BResponseOrderItemError": "response",
     "OrderProposalPatch": "request",
-    "OrderPatch": "request"
+    "OrderPatch": "request",
+    "DatasetSite": "datasetSite"
   },
   "imperativeConfiguration": {
     "request": {
@@ -27,6 +28,21 @@
         "type",
         "name"
       ],
+      "recommendedFields": []
+    },
+    "datasetSite": {
+      "requiredOptions": [
+        {
+          "description": [
+            "A `BookingService` must include a `name`, unless it is a bespoke build, in which case only `hasCredential` is required."
+          ],
+          "options": [
+            "name",
+            "hasCredential"
+          ]
+        }
+      ],
+      "requiredFields": [],
       "recommendedFields": []
     }
   },

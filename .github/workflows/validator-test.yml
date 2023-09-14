@@ -1,0 +1,39 @@
+name: Test validator
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  test-validator:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout data-models
+      uses: actions/checkout@v2
+      with:
+        path: data-models
+    - name: Checkout data-model-validator
+      uses: actions/checkout@v2
+      with:
+        path: data-model-validator
+        repository: openactive/data-model-validator
+
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+
+    - name: Install data-models
+      run: npm install
+      working-directory: data-models
+    - name: Install data-model-validator
+      run: npm install
+      working-directory: data-model-validator
+    
+    - name: Update data-model-validator to reference local data-models
+      run: npm install file:../data-models
+      working-directory: data-model-validator
+      
+    - name: Test
+      run: npm test
+      working-directory: data-model-validator
