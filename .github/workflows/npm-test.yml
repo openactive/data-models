@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [14, 16, 18]
+        version: ${{ fromJSON(vars.SUPPORTED_NODE_VERSIONS) }}
         
     steps:
     - name: Checkout
