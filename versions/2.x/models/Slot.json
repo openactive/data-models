@@ -31,9 +31,28 @@
     "OrdersFeed": "ordersFeed",
     "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response",
-    "TestInterface": "request"
+    "TestInterface": "request",
+    "RPDEFeed": "feed",
+    "BookableRPDEFeed": "feed"
   },
-  "imperativeConfigurationWithContext": {},
+  "rpdeKind": [
+    "FacilityUse/Slot",
+    "IndividualFacilityUse/Slot"
+  ],
+  "imperativeConfigurationWithContext": {
+    "feed": {
+      "FacilityUse/Slot": {
+        "referencedFields": [
+          "facilityUse"
+        ]
+      },
+      "IndividualFacilityUse/Slot": {
+        "referencedFields": [
+          "facilityUse"
+        ]
+      }
+    }
+  },
   "imperativeConfiguration": {
     "testInterface": {
       "requiredFields": [
@@ -136,7 +155,8 @@
       "shallNotInclude": [
         "offers"
       ]
-    }
+    },
+    "feed": {}
   },
   "inSpec": [
     "type",
