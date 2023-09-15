@@ -31,39 +31,51 @@
         "lease",
         "orderProposalStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderProposalVersion",
         "orderProposalStatus"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "seller"
+      ]
     },
     "response_error": {
       "requiredFields": [
         "type",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "shallNotBeReferencedFields": [
+        "seller"
+      ]
     },
     "ordersFeed": {
       "requiredFields": [

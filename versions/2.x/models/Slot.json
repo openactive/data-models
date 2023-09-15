@@ -28,8 +28,8 @@
     "BRequest": "request",
     "BResponse": "response",
     "BResponseOrderItemError": "response",
-    "OrdersFeed": "response",
-    "OrderProposalsFeed": "response",
+    "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response",
     "TestInterface": "request",
     "RPDEFeed": "feed",
@@ -120,6 +120,26 @@
       ]
     },
     "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "startDate",
+        "facilityUse"
+      ],
+      "recommendedFields": [
+        "endDate",
+        "duration",
+        "maximumUses",
+        "remainingUses"
+      ],
+      "shallNotInclude": [
+        "offers"
+      ],
+      "shallNotBeReferencedFields": [
+        "facilityUse"
+      ]
+    },
+    "ordersFeed": {
       "requiredFields": [
         "type",
         "id",
@@ -297,7 +317,8 @@
       "description": [
         "The remaining available courts or pitches at this time. Must be 0 or 1 for an IndividualFacilityUse."
       ],
-      "example": 5
+      "example": 5,
+      "minValueInclusive": 0
     },
     "startDate": {
       "fieldName": "startDate",

@@ -30,7 +30,10 @@
         "orderProposalVersion",
         "totalPaymentDue"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "request": {
       "requiredFields": [
@@ -51,39 +54,52 @@
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "requiredOptions": []
+      "requiredOptions": [],
+      "referencedFields": [
+        "seller"
+      ]
     },
     "C1response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus",
         "customer",
         "orderProposalVersion"
+      ],
+      "shallNotBeReferencedFields": [
+        "seller"
       ]
     },
     "response": {
       "requiredFields": [
         "type",
+        "id",
         "seller",
         "brokerRole",
-        "bookingService",
         "orderedItem",
         "totalPaymentDue",
         "orderRequiresApproval"
       ],
-      "recommendedFields": [],
+      "recommendedFields": [
+        "bookingService"
+      ],
       "shallNotInclude": [
         "orderCreationStatus",
         "orderProposalVersion"
+      ],
+      "shallNotBeReferencedFields": [
+        "seller"
       ]
     }
   },

@@ -7,6 +7,7 @@ const generateContext = require('./generateContext');
 const generateGraph = require('./generateGraph');
 const generatePropertyList = require('./generatePropertyList');
 const versions = require('../src/versions');
+const renderModel = require('../src/helpers/renderModel');
 
 (async () => {
   const uniqueVersions = [...new Set(Object.values(versions))];
@@ -30,8 +31,14 @@ const versions = require('../src/versions');
   for (const version of uniqueVersions) {
     const specPath = path.join(__dirname, '..', 'versions', version);
     const spec = {
-      models: {},
-      rpde: {},
+      rawModels: {
+        models: {},
+        rpde: {},
+      },
+      renderedModels: {
+        models: {},
+        rpde: {},
+      },
       examples: null,
       meta: null,
     };
@@ -53,11 +60,23 @@ const versions = require('../src/versions');
 
     for (const folder of ['models', 'rpde']) {
       const files = fs.readdirSync(path.join(specPath, folder));
+
+      const rawModels = {};
       for (const file of files) {
         const filePath = path.join(specPath, folder, file);
         const data = fs.readFileSync(filePath, 'utf8');
         const jsonData = JSON.parse(data);
-        spec[folder][jsonData.type] = jsonData;
+        rawModels[jsonData.type] = jsonData;
+      }
+
+      const renderModelFromRaw = (type) => {
+        const model = rawModels[type];
+        return renderModel(model, modelName => renderModelFromRaw(modelName));
+      };
+
+      for (const type of Object.keys(rawModels)) {
+        spec.rawModels[folder][type] = rawModels[type];
+        spec.renderedModels[folder][type] = renderModelFromRaw(type);
       }
     }
 

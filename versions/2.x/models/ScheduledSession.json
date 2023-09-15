@@ -4,7 +4,8 @@
   "subClassOf": "#Event",
   "sampleId": "https://api.example.com/scheduled-sessions/12345",
   "notInSpec": [
-    "subEvent"
+    "subEvent",
+    "organizer"
   ],
   "requiredFields": [
     "type",
@@ -41,8 +42,8 @@
     "BRequest": "request",
     "BResponse": "response",
     "BResponseOrderItemError": "response",
-    "OrdersFeed": "response",
-    "OrderProposalsFeed": "response",
+    "OrdersFeed": "ordersFeed",
+    "OrderProposalsFeed": "ordersFeed",
     "OrderStatus": "response",
     "TestInterface": "testInterface",
     "RPDEFeed": "feed",
@@ -128,6 +129,25 @@
       ]
     },
     "response": {
+      "requiredFields": [
+        "type",
+        "id",
+        "startDate",
+        "superEvent"
+      ],
+      "recommendedFields": [
+        "eventStatus",
+        "maximumAttendeeCapacity",
+        "remainingAttendeeCapacity"
+      ],
+      "shallNotInclude": [
+        "offers"
+      ],
+      "shallNotBeReferencedFields": [
+        "superEvent"
+      ]
+    },
+    "ordersFeed": {
       "requiredFields": [
         "type",
         "id",

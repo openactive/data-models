@@ -296,11 +296,8 @@
       "fieldName": "endDate",
       "sameAs": "https://schema.org/endDate",
       "requiredType": "https://schema.org/DateTime",
-      "alternativeTypes": [
-        "https://schema.org/Date"
-      ],
       "description": [
-        "The end date and time of the event. Can be specified as a schema:Date or  schema:DateTime",
+        "The end date and time of the event. Can be specified as a schema:DateTime",
         "It is recommended that publishers provide either an schema:endDate or a schema:duration for an event."
       ],
       "example": "2018-01-27T12:00:00Z"
@@ -478,6 +475,7 @@
         "The location at which the event will take place. Or, in the case of events that may span multiple locations, the initial meeting or starting point.",
         "Locations must be specified as a [Place](/models/place) complete with a fully described geographic location and/or address."
       ],
+      "allowReferencing": true,
       "example": {
         "@type": "Place",
         "@id": "https://example.com/locations/1234ABCD",
@@ -590,7 +588,8 @@
       "description": [
         "The number of places that are still available for the Event."
       ],
-      "example": 20
+      "example": 20,
+      "minValueInclusive": 0
     },
     "subEvent": {
       "fieldName": "subEvent",
@@ -645,11 +644,8 @@
       "fieldName": "startDate",
       "sameAs": "https://schema.org/startDate",
       "requiredType": "https://schema.org/DateTime",
-      "alternativeTypes": [
-        "https://schema.org/Date"
-      ],
       "description": [
-        "The start date and time of the event. Can be specified as a schema:Date or schema:DateTime."
+        "The start date and time of the event. Can be specified as a schema:DateTime."
       ],
       "example": "2018-01-27T12:00:00Z"
     },

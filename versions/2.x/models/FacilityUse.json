@@ -58,7 +58,8 @@
       "shallNotInclude": [
         "offers",
         "event",
-        "provider"
+        "provider",
+        "individualFacilityUse"
       ]
     }
   },
@@ -276,6 +277,7 @@
       "description": [
         "The location at which the facility use will take place."
       ],
+      "allowReferencing": true,
       "example": {
         "@type": "Place",
         "address": {

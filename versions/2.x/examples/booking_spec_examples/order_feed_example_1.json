@@ -36,10 +36,7 @@
               "allowCustomerCancellationFullRefund": true,
               "latestCancellationBeforeStartDate": "P1D"
             },
-            "orderedItem": {
-              "@type": "ScheduledSession",
-              "@id": "https://example.com/events/452/subEvents/132"
-            },
+            "orderedItem": "https://example.com/events/452/subEvents/132",
             "accessPass": [
               {
                 "@type": "Barcode",

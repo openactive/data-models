@@ -45,6 +45,10 @@
       {
         "file": "event_eventseries_example_1.json",
         "name": "Event with EventSeries Example"
+      },
+      {
+        "file": "place_example_1.json",
+        "name": "Place Example"
       }
     ]
   },
@@ -69,7 +73,7 @@
     "name": "Dataset Sites (Preview)",
     "exampleList": [
       {
-        "file": "https://openactive.io/dataset-site-template/example.json",
+        "file": "https://openactive.io/dataset-site-template/example.jsonld",
         "name": "Dataset Site Embedded JSON-LD Example",
         "validationMode": "DatasetSite"
       },

@@ -2,10 +2,38 @@
   "type": "WebAPI",
   "derivedFrom": "https://pending.schema.org/WebAPI",
   "hasId": false,
+  "validationMode": {
+    "RPDEFeed": "noRequired",
+    "BookableRPDEFeed": "noRequired",
+    "DataCatalog": "noRequired",
+    "C1Request": "noRequired",
+    "C1Response": "noRequired",
+    "C1ResponseOrderItemError": "noRequired",
+    "C2Request": "noRequired",
+    "C2Response": "noRequired",
+    "C2ResponseOrderItemError": "noRequired",
+    "PRequest": "noRequired",
+    "PResponse": "noRequired",
+    "PResponseOrderItemError": "noRequired",
+    "BRequest": "noRequired",
+    "BResponse": "noRequired",
+    "BResponseOrderItemError": "noRequired",
+    "OrderProposalPatch": "noRequired",
+    "OrderPatch": "noRequired",
+    "OrdersFeed": "noRequired",
+    "OrderProposalsFeed": "noRequired",
+    "OrderStatus": "noRequired"
+  },
+  "imperativeConfiguration": {
+    "noRequired": {
+      "requiredFields": [],
+      "recommendedFields": []
+    }
+  },
   "requiredFields": [
     "type",
     "name",
-    "endpointURL",
+    "endpointUrl",
     "conformsTo",
     "endpointDescription",
     "landingPage"
@@ -20,7 +48,7 @@
     "description",
     "documentation",
     "termsOfService",
-    "endpointURL",
+    "endpointUrl",
     "conformsTo",
     "endpointDescription",
     "landingPage",
@@ -65,9 +93,9 @@
       "fieldName": "documentation",
       "sameAs": "https://pending.schema.org/documentation",
       "requiredType": "https://schema.org/URL",
-      "example": "https://developer.openactive.io",
+      "example": "https://permalink.openactive.io/dataset-site/open-booking-api-documentation",
       "description": [
-        "A link to documentation related to the Dataset, or a link to the OpenActive developer documentation if no Dataset-specific documentation is available."
+        "A link to documentation related to how to use the Open Booking API, or a link to the OpenActive developer documentation using `https://permalink.openactive.io/dataset-site/open-booking-api-documentation` if no system-specific documentation is available."
       ]
     },
     "termsOfService": {
@@ -79,14 +107,15 @@
         "A link to terms of service related to the use of this API."
       ]
     },
-    "endpointURL": {
-      "fieldName": "endpointURL",
-      "sameAs": "http://www.w3.org/ns/dcat#endpointURL",
+    "endpointUrl": {
+      "fieldName": "endpointUrl",
+      "sameAs": "https://openactive.io/endpointUrl",
       "requiredType": "https://schema.org/URL",
       "example": "https://example.bookingsystem.com/api/openbooking",
       "description": [
-        "The base URL of the Open Booking API"
-      ]
+        "The Base URI of this implementation of the Open Booking API"
+      ],
+      "schemaNote": "This has been defined in the OpenActive namespace, given that it was dropped from the PR at https://github.com/schemaorg/schemaorg/pull/2635."
     },
     "conformsTo": {
       "fieldName": "conformsTo",
@@ -114,7 +143,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://exampleforms.com/get-me-an-api-access-key",
       "description": [
-        "The web page the broker uses to obtain access to the API, e.g. via a web form."
+        "The URL of a web page that the Broker may use to obtain access to the API, e.g. via a web form."
       ]
     },
     "authenticationAuthority": {
@@ -123,7 +152,7 @@
       "requiredType": "https://schema.org/URL",
       "example": "https://auth.bookingsystem.com",
       "description": [
-        "The location of the OpenID Provider or other relevant authentication authority that must be used to access the API."
+        "The location of the OpenID Provider that must be used to access the API."
       ]
     }
   }
