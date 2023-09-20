@@ -4,6 +4,9 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "16:00"
+      timezone: "Europe/London"
     groups:
       development-dependencies:
         dependency-type: "development"
