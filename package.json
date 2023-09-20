@@ -37,7 +37,7 @@
     "lint": "eslint \"src/**/*.js\" \"scripts/**/*.js\"",
     "lint-fix": "eslint --fix \"src/**/*.js\" \"scripts/**/*.js\"",
     "prepare": "npm run build",
-    "pretest": "npm run build && npm run lint-fix",
+    "pretest": "npm run build && npm run lint",
     "test": "npm run test-no-lint",
     "test-no-lint": "jasmine",
     "test-debug": "node --inspect-brk -i ./node_modules/jasmine/bin/jasmine.js",
