@@ -10,7 +10,7 @@ const loadEnum = (name, version) => {
   ) {
     throw Error(`Invalid enum name "${name}" supplied`);
   }
-  return Object.assign({ name }, specs[specVersion].enums[name]);
+  return { name, ...specs[specVersion].enums[name] };
 };
 
 module.exports = loadEnum;
