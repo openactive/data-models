@@ -41,6 +41,7 @@ jobs:
           author: openactive-bot <openactive-bot@users.noreply.github.com>
           signoff: false
           branch: ci/eslint
+          base: master
           delete-branch: true
           title: 'ESLint fix'
           body: |
