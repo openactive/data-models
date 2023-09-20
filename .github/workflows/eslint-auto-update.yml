@@ -1,0 +1,67 @@
+name: ESLint Fix
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Checkout
+        uses: actions/checkout@v2
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+        with:
+          node-version: 14
+      - name: Install
+        run: npm ci
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+      - name: Lint Fix
+        run: npm run lint-fix
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+        with:
+          path: ./
+          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+          commit-message: ESLint --fix
+          committer: openactive-bot <openactive-bot@users.noreply.github.com>
+          author: openactive-bot <openactive-bot@users.noreply.github.com>
+          signoff: false
+          branch: ci/eslint
+          delete-branch: true
+          title: 'ESLint fix'
+          body: |
+            Lint fixes based on the latest version of ESLint.
+          labels: |
+            automated pr
+          draft: false
+      - name: Auto-approve PR
+        uses: hmarr/auto-approve-action@v3
+        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+        with:
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created' && steps.metadata.outputs.dependency-group == 'eslint'
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
