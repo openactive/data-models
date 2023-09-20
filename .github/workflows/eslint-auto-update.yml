@@ -35,7 +35,8 @@ jobs:
         if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
         with:
           path: ./
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Note must create the PR with a different token to the one used to approve it
+          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
           commit-message: ESLint --fix
           committer: openactive-bot <openactive-bot@users.noreply.github.com>
           author: openactive-bot <openactive-bot@users.noreply.github.com>
@@ -53,7 +54,7 @@ jobs:
         uses: hmarr/auto-approve-action@v3
         if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
         with:
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
       - name: Enable Pull Request Automerge
         if: steps.cpr.outputs.pull-request-operation == 'created' && steps.metadata.outputs.dependency-group == 'eslint'
         uses: peter-evans/enable-pull-request-automerge@v3
