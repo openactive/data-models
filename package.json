@@ -26,8 +26,8 @@
     "eslint": "^7.27.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.23.3",
-    "jasmine": "^3.2.0",
-    "jasmine-expect": "^4.0.3",
+    "jasmine": "^5.1.0",
+    "jasmine-expect": "^5.0.0",
     "jsonld": "^5.0.0",
     "rdflib": "^2.2.32",
     "sync-request": "^6.1.0"
