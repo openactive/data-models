@@ -25,7 +25,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}    
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
