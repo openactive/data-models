@@ -40,7 +40,7 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           path: ./
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
           commit-message: ESLint --fix
           signoff: false
           branch: ci/eslint
