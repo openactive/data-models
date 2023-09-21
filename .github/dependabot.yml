@@ -1,0 +1,22 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "09:00"
+      timezone: "Europe/London"
+    groups:
+      development-dependencies:
+        dependency-type: "development"
+        exclude-patterns:
+        - "eslint*"
+        - "jasmine*"
+      eslint:
+        dependency-type: "development"
+        patterns:
+        - "eslint*"
+      jasmine:
+        dependency-type: "development"
+        patterns:
+        - "jasmine*"
