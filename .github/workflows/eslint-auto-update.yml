@@ -23,7 +23,9 @@ jobs:
     if: ${{needs.dependabot-metadata.outputs.dependency-group == 'eslint' }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2       
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}    
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -32,8 +34,6 @@ jobs:
         run: npm ci
       - name: Lint Fix
         run: npm run lint-fix
-      - name: git reset to include version bump in new PR 
-        run: git reset HEAD~1
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
