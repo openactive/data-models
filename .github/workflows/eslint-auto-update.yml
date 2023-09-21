@@ -6,39 +6,41 @@ permissions:
   pull-requests: write
 
 jobs:
-  dependabot:
+  dependabot-metadata:
     runs-on: ubuntu-latest
     if: ${{ github.actor == 'dependabot[bot]' }}
+    outputs:
+      dependency-group: ${{ steps.metadata.outputs.dependency-group }}
     steps:
       - name: Dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: dependabot-metadata
+    if: ${{needs.dependabot-metadata.outputs.dependency-group == 'eslint' }}
+    steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+        uses: actions/checkout@v2       
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
         with:
           node-version: 14
       - name: Install
         run: npm ci
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
       - name: Lint Fix
         run: npm run lint-fix
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+      - name: git reset to include version bump in new PR 
+        run: git reset HEAD~
       - name: Create Pull Request
         id: cpr
-        uses: peter-evans/create-pull-request@v4
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
+        uses: peter-evans/create-pull-request@v5
         with:
           path: ./
-          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: ESLint --fix
-          committer: openactive-bot <openactive-bot@users.noreply.github.com>
-          author: openactive-bot <openactive-bot@users.noreply.github.com>
           signoff: false
           branch: ci/eslint
           base: master
@@ -49,19 +51,6 @@ jobs:
           labels: |
             automated pr
           draft: false
-      - name: Auto-approve PR
-        uses: hmarr/auto-approve-action@v3
-        if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
-        with:
-         pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-      - name: Enable Pull Request Automerge
-        if: steps.cpr.outputs.pull-request-operation == 'created' && steps.metadata.outputs.dependency-group == 'eslint'
-        uses: peter-evans/enable-pull-request-automerge@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash
-
       - name: Check outputs
         run: |
           echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
