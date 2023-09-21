@@ -126,7 +126,7 @@ const generateGraph = (version, metaData, enums) => {
           if (fieldPrefix === metaData.openActivePrefix) {
             // Find an existing property
             const found = propsAndClasses.rdfs_properties.filter(
-              value => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`,
+              (value) => value['@id'] === `${fieldPrefix}:${fieldSameAsName}`,
             );
             let property;
             if (found.length === 0) {
@@ -168,12 +168,12 @@ const generateGraph = (version, metaData, enums) => {
       }
     }
   }
-  return Object.assign(
-    {},
-    metaData.baseGraph,
-    extraData,
-    propsAndClasses,
-  );
+  return {
+
+    ...metaData.baseGraph,
+    ...extraData,
+    ...propsAndClasses,
+  };
 };
 
 module.exports = generateGraph;
