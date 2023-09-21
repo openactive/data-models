@@ -13,7 +13,7 @@ const loadModelFromFile = (name, version) => {
   }
   const data = fs.readFileSync(jsonPath, 'utf8');
   const model = JSON.parse(data);
-  return renderModel(model, modelName => loadModelFromFile(modelName, specVersion));
+  return renderModel(model, (modelName) => loadModelFromFile(modelName, specVersion));
 };
 
 module.exports = loadModelFromFile;

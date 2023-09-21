@@ -4,10 +4,9 @@ const getExamples = require('./getExamples');
 const EXAMPLES_DIRECTORY = `${__dirname}/../versions/2.x/examples/`;
 const EXAMPLES_BASE_URL = 'https://openactive.io/data-models/versions/2.x/examples/';
 
-
 const getExamplesWithContent = (version, fetcherForRemoteExamplesSync) => {
   const examples = getExamples(version);
-  const flattenedExamples = examples.flatMap(x => x.exampleList.map(example => ({ category: x.name, ...example })));
+  const flattenedExamples = examples.flatMap((x) => x.exampleList.map((example) => ({ category: x.name, ...example })));
   const output = [];
   for (const example of flattenedExamples) {
     if (example.file.indexOf('http') !== 0) {

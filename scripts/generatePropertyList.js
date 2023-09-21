@@ -10,9 +10,9 @@ const getPropertiesFromVocab = async (vocab) => {
     '@type': 'rdf:Property',
     '@explicit': true,
   });
-  return framedOutput['@graph'].map(x => x['@id']);
+  return framedOutput['@graph'].map((x) => x['@id']);
 };
 
-const generatePropertyList = async graphs => (await Promise.all(graphs.map(getPropertiesFromVocab))).flat();
+const generatePropertyList = async (graphs) => (await Promise.all(graphs.map(getPropertiesFromVocab))).flat();
 
 module.exports = generatePropertyList;
