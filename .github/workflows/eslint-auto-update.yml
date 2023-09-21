@@ -35,6 +35,8 @@ jobs:
         run: npm ci
       - name: Lint Fix
         run: npm run lint-fix
+      - name: git reset to include the version bumps in the PR
+        run: git reset HEAD~1
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v5
