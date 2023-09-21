@@ -35,7 +35,6 @@ jobs:
         if: ${{ steps.metadata.outputs.dependency-group == 'eslint' }}
         with:
           path: ./
-          # Note must create the PR with a different token to the one used to approve it
           token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
           commit-message: ESLint --fix
           committer: openactive-bot <openactive-bot@users.noreply.github.com>
