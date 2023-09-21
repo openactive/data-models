@@ -23,4 +23,5 @@ jobs:
       - name: Auto-approve Dependabot PRs
         uses: hmarr/auto-approve-action@v3
         with:
+          # Need to approve with a different GitHub account to that which created the PR
           github-token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
