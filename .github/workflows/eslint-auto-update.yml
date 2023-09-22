@@ -1,0 +1,92 @@
+name: ESLint Fix
+on: pull_request
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # Has dependabot created this PR?
+  dependabot-metadata:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    outputs:
+      dependency-group: ${{ steps.metadata.outputs.dependency-group }}
+    steps:
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1
+        with:
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
+  # Is this PR an eslint upgrade?
+  lint-test:
+    runs-on: ubuntu-latest
+    needs: dependabot-metadata
+    if: ${{ needs.dependabot-metadata.outputs.dependency-group == 'eslint' }}
+    outputs:
+      outcome: ${{ steps.lint-test.outcome }}
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Install
+      run: npm ci
+    - name: Lint test
+      id: lint-test
+      run: npm run lint
+  # Has the eslint upgrade resulted in lint errors? If so, create a PR to attempt a lint --fix, in case they can be automatically resolved
+  create-pr:
+    runs-on: ubuntu-latest
+    needs: lint-test
+    if: ${{ always() && needs.lint-test.outputs.outcome == 'failure' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: Install
+        run: npm ci
+      - name: Lint Fix
+        run: npm run lint-fix
+      - name: git reset to include the version bumps in the PR
+        run: git reset HEAD~1
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          path: ./
+          token: ${{ secrets.DEPENDABOT_PUBLIC_REPO_ACCESS_TOKEN }}
+          commit-message: ESLint --fix
+          committer: openactive-bot <openactive-bot@users.noreply.github.com>
+          author: openactive-bot <openactive-bot@users.noreply.github.com>
+          signoff: false
+          branch: ci/eslint
+          base: master
+          delete-branch: true
+          title: 'ESLint fix'
+          body: |
+            Lint fixes based on the latest version of ESLint.
+          labels: |
+            automated pr
+          draft: false
+      - name: Auto-approve PR
+        uses: hmarr/auto-approve-action@v3
+        with:
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+      - name: Enable auto-merge for Dependabot PRs
+        run: gh pr merge "$PR_URL" --auto --body "" --squash
+        env:
+          PR_URL: ${{ steps.cpr.outputs.pull-request-url }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
