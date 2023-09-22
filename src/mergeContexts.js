@@ -5,7 +5,7 @@ const mergeContexts = (contexts = []) => {
     if (contextsArg === null) {
       contextsArg = [];
     } else if (!(contextsArg instanceof Array)) {
-      contextsArg = [Object.assign({}, contextsArg)];
+      contextsArg = [{ ...contextsArg }];
     } else {
       contextsArg = contexts.slice();
     }

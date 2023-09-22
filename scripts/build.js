@@ -71,7 +71,7 @@ const renderModel = require('../src/helpers/renderModel');
 
       const renderModelFromRaw = (type) => {
         const model = rawModels[type];
-        return renderModel(model, modelName => renderModelFromRaw(modelName));
+        return renderModel(model, (modelName) => renderModelFromRaw(modelName));
       };
 
       for (const type of Object.keys(rawModels)) {

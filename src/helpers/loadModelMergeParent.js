@@ -1,5 +1,5 @@
 const loadModelMergeParent = (paramModel, paramParentModel) => {
-  let model = Object.assign({}, paramModel);
+  let model = { ...paramModel };
   const parentModel = paramParentModel;
   for (const field in parentModel.fields) {
     if (Object.prototype.hasOwnProperty.call(parentModel.fields, field)) {
