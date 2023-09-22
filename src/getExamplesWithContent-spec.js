@@ -18,13 +18,13 @@ describe('getExamplesWithContent', () => {
   });
 
   it('should use remote fetcher for remote examples', async () => {
-    const mockFetcher = x => `Fetcher:${x}`;
+    const mockFetcher = (x) => `Fetcher:${x}`;
 
     const examples = getExamplesWithContent('latest', mockFetcher);
     expect(typeof examples).toBe('object');
     expect(examples instanceof Array).toBe(true);
 
-    const remoteExamples = examples.filter(x => x.file.indexOf('http') === 0);
+    const remoteExamples = examples.filter((x) => x.file.indexOf('http') === 0);
     expect(remoteExamples).toBeNonEmptyArray();
 
     for (const { file, data } of remoteExamples) {
