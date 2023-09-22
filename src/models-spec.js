@@ -24,7 +24,7 @@ const schemaOrgDataModel = (() => {
     return entity['@id'].replace(/^schema:/, 'https://schema.org/');
   };
 
-  return getSchemaOrgVocab()['@graph'].map(entity => getPrefixReplacedId(entity));
+  return getSchemaOrgVocab()['@graph'].map((entity) => getPrefixReplacedId(entity));
 })();
 
 const parseRDFXML = (uri) => {
@@ -38,7 +38,7 @@ const parseRDFXML = (uri) => {
   $rdf.parse(rdf, store, uri, 'application/rdf+xml');
 
   // Get all subjects specified in RDF file as a Set
-  const ids = new Set(store.statements.map(x => x.subject.value).filter(x => x.indexOf('n') !== 0));
+  const ids = new Set(store.statements.map((x) => x.subject.value).filter((x) => x.indexOf('n') !== 0));
 
   // Return the Set
   return ids;
@@ -568,7 +568,7 @@ describe('models', () => {
           forEachField(jsonData, (field, fieldSpec) => {
             if (typeof fieldSpec.description !== 'undefined') {
               expect(fieldSpec.description instanceof Array
-                && fieldSpec.description.filter(item => typeof item !== 'string').length === 0).toBe(true, field);
+                && fieldSpec.description.filter((item) => typeof item !== 'string').length === 0).toBe(true, field);
             } else if (field !== 'type') {
               fail(`Does not have description, '${field}'.`);
             }
@@ -668,7 +668,7 @@ describe('models', () => {
           it('should have keys which are validationModes from the metadata', () => {
             if (Object.prototype.hasOwnProperty.call(jsonData, 'validationMode')) {
               const allowedValidationModes = metaData.validationModeGroups.reduce((allModes, group) => {
-                const modesInGroup = group.validationModeList.map(modeObj => modeObj.validationMode);
+                const modesInGroup = group.validationModeList.map((modeObj) => modeObj.validationMode);
                 return allModes.concat(modesInGroup);
               }, []);
               for (const validationMode of Object.keys(jsonData.validationMode)) {
