@@ -60,12 +60,9 @@
     },
     "modified": {
       "fieldName": "modified",
-      "requiredType": "https://schema.org/Text",
-      "alternativeTypes": [
-        "https://schema.org/Integer"
-      ],
+      "requiredType": "https://schema.org/Integer",
       "description": [
-        "The modified property should contain either the modified timestamp or change number of the item, depending on the ordering strategy used. It must be appropriately comparable to itself as either a string or integer, representing a chronological ordering. It must always be updated when any data within <data> is updated, and such an update must set the value of the property to be greater than or equal to (>=) all existing modified values. It may be any format, but should be an integer where possible. Integer values must be represented as integers, not strings. The value of the modified property of the last item must be used in either the afterTimestamp or afterChangeNumber parameter of the \"next\" URL (though such an item may not be included in <items> if it is filtered out). The format of the modified property and the relevant URL parameter must be identical."
+        "The modified property should contain either the modified timestamp or change number of the item, depending on the ordering strategy used. It must be appropriately comparable to itself as an integer, representing a chronological ordering. It must always be updated when any data within <data> is updated, and such an update must set the value of the property to be greater than or equal to (>=) all existing modified values. It must be an integer. The value of the modified property of the last item must be used in either the afterTimestamp or afterChangeNumber parameter of the \"next\" URL (though such an item may not be included in <items> if it is filtered out). The format of the modified property and the relevant URL parameter must be identical."
       ]
     },
     "state": {
