@@ -93,6 +93,23 @@ const renderModel = require('../src/helpers/renderModel');
     fs.mkdirSync(distPath);
   }
 
+  const schemaOrgDataModel = (() => {
+    // Note even though schema.org has migrated http://pending.schema.org/ to https://schema.org/
+    // We still use https://pending.schema.org/ to simplify the tooling (as the modelling specification does not
+    // allow for arbitrary pending terms to be used as-is, they must instead be added to a custom extension)
+    const getPrefixReplaced = (entity) => {
+      if (entity['schema:isPartOf']
+        && entity['schema:isPartOf']['@id'] === 'https://pending.schema.org') {
+
+        entity['@id'] = entity['@id'].replace(/^schema:/, 'pending:');
+        return entity;
+      }
+      return entity;
+    };
+
+    return schema['@graph'].map(entity => getPrefixReplaced(entity));
+  })();
+
   fs.writeFileSync(
     path.join(distPath, 'contexts.js'),
     `/* eslint-disable */
@@ -131,7 +148,7 @@ const renderModel = require('../src/helpers/renderModel');
     path.join(distPath, 'schemaOrgVocab.js'),
     `/* eslint-disable */
   // This is a generated file. Do not edit manually.
-  module.exports = ${JSON.stringify(schema)};`,
+  module.exports = ${JSON.stringify({ schema, ...{ '@graph': schemaOrgDataModel } })};`,
     () => {},
   );
 })();
