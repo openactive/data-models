@@ -17,6 +17,7 @@ jobs:
       with:
         path: data-model-validator
         repository: openactive/data-model-validator
+        ref: ci/lost-pixel
 
     - name: Use Node.js 14.x
       uses: actions/setup-node@v1
@@ -37,3 +38,12 @@ jobs:
     - name: Test
       run: npm test
       working-directory: data-model-validator
+
+    - name: Start server (in background)
+      run: npm run start &
+      working-directory: data-model-validator
+
+    - name: Lost Pixel
+      uses: lost-pixel/lost-pixel@v3.16.0
+      env:
+        LOST_PIXEL_API_KEY: ${{ secrets.LOST_PIXEL_API_KEY }}
