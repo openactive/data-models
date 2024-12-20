@@ -37,3 +37,59 @@ jobs:
     - name: Test
       run: npm test
       working-directory: data-model-validator
+
+  test-openactive-test-suite:
+    runs-on: ubuntu-latest
+    needs: test-validator
+    services:
+      # Label used to access the service container, which by convention is hostname of the service
+      reference.bookingsystem:
+        image: ghcr.io/openactive/reference.bookingsystem:latest # ${{ github.event.package.package_version.version }}
+        env:
+          ASPNETCORE_ENVIRONMENT: no-auth
+          ApplicationHostBaseUrl: http://reference.bookingsystem
+        # Set health checks to wait until reference implementation has started
+        options: >-
+          --health-cmd "curl -f http://localhost/OpenActive"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 80:80
+    steps:
+      - name: Setup Node.js 18.17.1
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.17.1
+
+      - name: Checkout data-models
+        uses: actions/checkout@v4
+        with:
+          path: data-models
+
+      - name: Checkout OpenActive Test Suite
+        uses: actions/checkout@v4
+        with:
+          repository: openactive/openactive-test-suite
+          path: openactive-test-suite
+  
+      - name: Install data-models
+        run: npm install
+        working-directory: data-models
+      
+      - name: Update openactive-test-suite to reference local data-models
+        run: |
+          cd packages/openactive-broker-microservice && npm install file:../../../data-models
+          cd packages/openactive-integration-tests && npm install file:../../../data-models
+        working-directory: openactive-test-suite
+        
+      - name: Run OpenActive Integration Tests
+        run: npm start
+        env:
+          FORCE_COLOR: 1
+          NODE_CONFIG: |
+            {"broker": {"outputPath": "../../output/", "datasetSiteUrl": "http://reference.bookingsystem/openactive"}, "integrationTests": { "outputPath": "../../output/", "generateConformanceCertificate": false, "useRandomOpportunities": false }}
+          NODE_ENV: .example.no-auth
+          NODE_APP_INSTANCE: ci
+        working-directory: openactive-test-suite
+  
