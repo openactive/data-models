@@ -2,9 +2,10 @@ name: Test validator site
 
 on:
   pull_request:
+    branches: [ master ]
 
 jobs:
   test-validator-site:
     uses: openactive/data-model-validator-site/.github/workflows/test-and-deploy.yml@feature/reusable-validator-site
     with:
-      data-models_ref: {{ github.ref }}
+      data-models_ref: ${{ github.ref }}
