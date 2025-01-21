@@ -1,6 +1,8 @@
 name: Test validator site
 
 on:
+  push:
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
