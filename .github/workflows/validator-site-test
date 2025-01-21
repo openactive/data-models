@@ -3,6 +3,8 @@ name: Test validator site
 on:
   pull_request:
     branches: [ master ]
+  push:
+    branches: [ feature/test-data-model-validator-site ]
 
 jobs:
   test-validator-site:
