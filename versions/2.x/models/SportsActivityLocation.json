@@ -15,6 +15,30 @@
     "description",
     "image"
   ],
+  "validationMode": {
+    "C1Response": "response",
+    "C1ResponseOrderItemError": "response",
+    "C2Response": "response",
+    "C2ResponseOrderItemError": "response",
+    "PResponse": "response",
+    "PResponseOrderItemError": "response",
+    "BResponse": "response",
+    "BResponseOrderItemError": "response",
+    "OrderStatus": "response"
+  },
+  "imperativeConfiguration": {
+    "response": {
+      "requiredFields": [
+        "type",
+        "name"
+      ],
+      "requiredOptions": [],
+      "shallNotInclude": [
+        "containedInPlace",
+        "containsPlace"
+      ]
+    }
+  },
   "inSpec": [
     "type",
     "id",
