@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "downlevelIteration": true,
+    "target": "ES2019"
+  },
+  "include": [
+    "src/**/*"
+  ]
+} 

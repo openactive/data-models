@@ -1,3 +1,7 @@
+/**
+ * @param {Array<Record<string, any>>} contexts
+ * @returns {Record<string, any>}
+ */
 const mergeContexts = (contexts = []) => {
   let contextsArg = contexts;
   // Sort the contexts
