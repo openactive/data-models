@@ -9,19 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout data-models
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         path: data-models
     - name: Checkout data-model-validator
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         path: data-model-validator
         repository: openactive/data-model-validator
 
-    - name: Use Node.js 14.x
+    - name: Use Node.js 18.17.1
       uses: actions/setup-node@v1
       with:
-        node-version: 14
+        node-version: 18.17.1
 
     - name: Install data-models
       run: npm install

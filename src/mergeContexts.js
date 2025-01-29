@@ -1,3 +1,7 @@
+/**
+ * @param {Array<Record<string, any>>} contexts
+ * @returns {Record<string, any>}
+ */
 const mergeContexts = (contexts = []) => {
   let contextsArg = contexts;
   // Sort the contexts
@@ -5,6 +9,7 @@ const mergeContexts = (contexts = []) => {
     if (contextsArg === null) {
       contextsArg = [];
     } else if (!(contextsArg instanceof Array)) {
+      // @ts-ignore Object is of type 'unknown'
       contextsArg = [{ ...contextsArg }];
     } else {
       contextsArg = contexts.slice();

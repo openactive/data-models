@@ -1,6 +1,6 @@
 {
   "name": "@openactive/data-models",
-  "version": "2.0.318",
+  "version": "3.0.0",
   "description": "Data models used to drive that OpenActive validator, developer documentation, and model libraries",
   "homepage": "https://www.openactive.io",
   "author": "OpenActive Community <hello@openactive.io>",
@@ -12,7 +12,8 @@
   ],
   "main": "src/index.js",
   "engines": {
-    "node": "14.16.0"
+    "node": ">=18.17.1",
+    "npm": ">=9.6.7"
   },
   "repository": {
     "type": "git",
@@ -23,21 +24,24 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.49.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.23.3",
-    "jasmine": "^5.1.0",
+    "@types/jasmine": "^5.1.4",
+    "@types/node": "^20.11.24",
     "jasmine-expect": "^5.0.0",
+    "eslint": "^8.47.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.5",
+    "jasmine": "^5.1.0",
     "jsonld": "^8.3.1",
     "rdflib": "^1.1.0",
-    "sync-request": "^6.1.0"
+    "sync-request": "^6.1.0",
+    "typescript": "^5.1.6"
   },
   "scripts": {
     "build": "node scripts/build.js",
     "lint": "eslint \"src/**/*.js\" \"scripts/**/*.js\"",
     "lint-fix": "eslint --fix \"src/**/*.js\" \"scripts/**/*.js\"",
     "prepare": "npm run build",
-    "pretest": "npm run build && npm run lint",
+    "pretest": "npm run build && npm run lint && npx tsc",
     "test": "npm run test-no-lint",
     "test-no-lint": "jasmine",
     "test-debug": "node --inspect-brk -i ./node_modules/jasmine/bin/jasmine.js",

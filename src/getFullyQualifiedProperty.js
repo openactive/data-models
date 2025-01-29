@@ -4,6 +4,12 @@ const deriveVersion = require('./helpers/deriveVersion');
 
 const KEYWORD_REGEX = /^@(context|id|value|language|type|container|list|set|reverse|index|base|vocab|graph)$/;
 
+/**
+ * @param {string} value
+ * @param {string} version
+ * @param {Array<Record<string, any>>} contexts
+ * @returns {{prefix: string|null, namespace: string|null, label: string|null, alias: string|null}}
+ */
 const getFullyQualifiedProperty = (value, version, contexts = []) => {
   const specVersion = deriveVersion(version);
 
@@ -13,6 +19,7 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
     if (contextsArg === null) {
       contextsArg = [];
     } else if (!(contextsArg instanceof Array)) {
+      // @ts-ignore Object is of type 'unknown'
       contextsArg = [{ ...contextsArg }];
     } else {
       contextsArg = contexts.slice();

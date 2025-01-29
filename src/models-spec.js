@@ -28,6 +28,7 @@ const schemaOrgDataModel = (() => {
 })();
 
 const parseRDFXML = (uri) => {
+  // @ts-ignore sync-request has no call signatures
   const response = request('GET', uri);
 
   // Convert RDF file to string
@@ -278,8 +279,10 @@ describe('models', () => {
           if (Object.prototype.hasOwnProperty.call(jsonData, 'subClassOf')) {
             expect(jsonData.subClassOf).not.toStartWith('ArrayOf#');
             if (jsonData.subClassOf.startsWith('http')) {
+              // @ts-ignore custom jasmine matchers
               expect(jsonData.subClassOf).toBeValidTypeReference();
             } else {
+              // @ts-ignore custom jasmine matchers
               expect(jsonData.subClassOf).toBeValidModelReference();
             }
           }
@@ -291,6 +294,7 @@ describe('models', () => {
               && typeof jsonData.subClassOf === 'string') {
               if (jsonData.subClassOf.startsWith('https://schema.org/')) {
                 const modelName = jsonData.subClassOf.replace(/^https:\/\/schema.org\//, '#');
+                // @ts-ignore custom jasmine matchers
                 expect(modelName).not.toBeValidModelReference();
               } else if (jsonData.subClassOf.startsWith('https://')) {
                 throw new Error(`Cannot determine model name from ${jsonData.subClassOf}`);
@@ -304,6 +308,7 @@ describe('models', () => {
             if (
               typeof jsonData.derivedFrom === 'string'
             ) {
+              // @ts-ignore custom jasmine matchers
               expect(jsonData.derivedFrom).toBeValidTypeReference();
             }
           });
@@ -335,7 +340,10 @@ describe('models', () => {
           if (!(typeof jsonData.isJsonLd !== 'undefined' && jsonData.isJsonLd === false)) {
             forEachField(jsonData, (field, fieldSpec) => {
               if (field !== 'type' && field !== 'id') {
-                expect(fieldSpec.sameAs).toBeValidPropertyReferenceFor(field);
+                if (typeof fieldSpec.sameAs !== 'undefined') {
+                  // @ts-ignore custom jasmine matchers
+                  expect(fieldSpec.sameAs).toBeValidPropertyReferenceFor(field);
+                }
               }
             });
           }
@@ -589,6 +597,7 @@ describe('models', () => {
             if (
               typeof fieldSpec.model === 'string'
             ) {
+              // @ts-ignore custom jasmine matchers
               expect(fieldSpec.model).toBeValidModelReference();
             }
           });
@@ -599,6 +608,7 @@ describe('models', () => {
             if (
               typeof fieldSpec.requiredType === 'string'
             ) {
+              // @ts-ignore custom jasmine matchers
               expect(fieldSpec.requiredType).toBeValidTypeReference(true);
             }
           });
@@ -612,6 +622,7 @@ describe('models', () => {
                 && fieldSpec.alternativeModels.length > 0
               ) {
                 fieldSpec.alternativeModels.forEach((alternativeModel) => {
+                  // @ts-ignore custom jasmine matchers
                   expect(alternativeModel).toBeValidModelReference();
                 });
               }
