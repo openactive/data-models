@@ -28,10 +28,10 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Use Node.js 14.x
+    - name: Use Node.js 18.17.1
       uses: actions/setup-node@v1
       with:
-        node-version: 14
+        node-version: 18.17.1
     - name: Install
       run: npm ci
     - name: Lint test
@@ -48,10 +48,10 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
-      - name: Use Node.js 14.x
+      - name: Use Node.js 18.17.1
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 18.17.1
       - name: Install
         run: npm ci
       - name: Lint Fix
