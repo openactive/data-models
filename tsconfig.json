@@ -4,9 +4,11 @@
     "allowJs": true,
     "checkJs": true,
     "downlevelIteration": true,
-    "target": "ES2019"
+    "target": "ES2019",
+    "moduleResolution": "node",
+    "types": ["jasmine", "node", "jasmine-expect"]
   },
   "include": [
     "src/**/*"
   ]
-} 
+}

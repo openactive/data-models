@@ -19,6 +19,7 @@ const getFullyQualifiedProperty = (value, version, contexts = []) => {
     if (contextsArg === null) {
       contextsArg = [];
     } else if (!(contextsArg instanceof Array)) {
+      // @ts-ignore Object is of type 'unknown'
       contextsArg = [{ ...contextsArg }];
     } else {
       contextsArg = contexts.slice();
