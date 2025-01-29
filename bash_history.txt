@@ -1,0 +1,500 @@
+git diff
+git add .
+git commit -m "Fixed URL"
+git push
+git diff
+git add .
+git commit -m "schema.org access error"
+git push
+npm run publish-patch
+npm install @openactive/data-models@2.0.127
+npm test
+git diff
+git add .
+git commit -m "Embed schema.org vocab"
+git push
+git status
+git diff
+git add .
+git commit -m "Clean up"
+git push
+npm run publish-patch
+npm test
+npm test
+npm test
+git add .
+git commit -m "Add better beta messaging"
+npm run publish-patch
+ git diff
+git add .
+git commit -m "Fix message"
+npm run publish-patch
+npm run dev
+npm install --save sanitize-html
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm install --save xss
+npm install --save xss
+npm test
+npm test
+npm install striptags --save
+npm test
+npm install --save string-strip-html
+npm test
+npm test
+npm test
+npm install html-entities --save
+npm install html-entities --save
+npm test
+npm test
+git status
+git status
+git diff
+git diff
+git diff
+git status
+git dff
+git diff
+git add .
+git commit -m "Improve checking for HTML content"
+npm run publish-patch
+git status
+git diff
+git add .
+git commit -m "Increase severity of activity list conformance error"
+npm run publish-patch
+npm test
+git add .
+git commit -m "Increase severity of activity list conformance error"
+npm run publish-patch
+npm test
+npm test
+git diff
+git stash
+npm test
+git status
+git reset HEAD --hard
+git status
+npm test
+npm test
+git add .
+git commit -m "Update id to @id"
+git status
+npm test
+git add .
+npm test
+git stuat
+git status
+git diff
+git status
+npm test
+git add .
+npm test
+git add .
+git status
+npm test
+git add .
+npm test
+npm test
+npm test
+git add .
+npm test
+git add .
+npm test
+git add .
+npm test
+git add .
+npm test
+git add .
+npm test
+npm test
+git add .
+git sttaus
+git commit -m "Update type to @type"
+git status
+npm test
+git stash apply
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git add .
+git commit -m "Update typeAndId rule to use @type and @id"
+git status
+npm test
+npm test
+npm test
+git status
+git add .
+git commit -m "Warning for open data, failure for bookable data"
+git push
+git checkout master
+git status
+git branch
+git pull
+npm run publish-patch
+git diff
+git diff
+npm test
+git add .
+git commit -m "Fix references to @type/type in error messages"
+git push
+npm run publish-patch
+cd ../data-models
+npm test
+git reset ~HEAD
+git reset HEAD~
+git status
+git diff
+git add .
+git commit -m "Support for booking with VirtualLocation openactive/open-booking-api#176"
+git push --force
+git push --force
+npm test
+git status
+git diff
+git add .
+git commit -m "Bump version"
+git push
+npm test
+npm test
+npm test
+git log
+npm run publish-patch
+git pull
+git add .
+git commit -m "Bump version"
+git push
+npm start build
+npm run build
+npm run build
+npm install jsonld --save-dev
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm run build
+npm test
+npm test\
+npm test
+npm test
+npm test
+npm test
+git status
+git diff
+git stash
+git stash apply
+git checkout master
+npm test
+git status
+git status
+npm test
+npm test
+npm test
+npm test
+npm build
+npm run buildz
+npm run build
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git status
+git diff
+git add .
+git commit -m "Resolve inherits bug https://github.com/openactive/modelling-opportunity-data/issues/271"
+git push
+git status
+npm tests
+npm test
+git status
+git d
+git diff
+git add .
+git pull
+git commit -m "Move bookingChannel back to beta https://github.com/openactive/modelling-opportunity-data/issues/161"
+git push
+nvm --help
+nvm alias
+npm test
+git commit -m "Include OrderItem IDs in P"
+git push
+git add .
+git commit -m "Include OrderItem IDs in P"
+git push
+git pull
+npm tests
+npm test
+npm test
+git pull
+git add .
+git commit -m "Support OrderProposals feed"
+git push
+npm test
+npm test
+npm test
+git commit -m "Include OrderItem IDs in P"
+git push
+git add .
+git commit -m "Include OrderItem IDs in P"
+git push
+git pull
+npm tests
+npm test
+npm test
+git pull
+git add .
+git commit -m "Support OrderProposals feed"
+git push
+npm test
+npm test
+npm test
+git pull
+git status
+git add .
+git commit -m "Better documentation for CourseInstance"
+git push
+git pull
+npm test
+npm test
+npm test
+npm test
+git status
+git add .
+git commit -m "Add getExamplesWithContent.js"
+git push
+npm test
+git push
+npm test
+npm test
+git add .
+git commit -m "More robust dir reference"
+git push
+git checkout master
+git diff
+git add .
+git commit -m "Allow 
+    "additionalAdmissionRestriction" for slot"
+git pull
+git push
+npm test
+npm install
+npm test
+nvm use 14
+nvm use 14
+npm test
+git reset HEAD~
+npm test
+git push
+npm test
+git diff
+git add .
+git commit -m "Fix to allow building in webpack"
+git push
+npm test
+git diff
+git add .
+git commit -m "Fix OrderItem validation"
+git pull
+git reset HEAD~2
+git checkout package.json
+git checkout package-lock.json
+git status
+git pull
+git commit -m "Fix OrderItem validation"
+git add .
+git commit -m "Fix OrderItem validation"
+git push
+npm test
+npm start
+npm test
+npm test
+npm test
+git status
+git status
+git diff
+git add .
+git commit -m "Improve courses examples, model and documentation"
+git push
+git reset HEAD~
+git status
+git pull
+git stash
+git pull
+git stash apply
+npm test
+git add .
+git commit -m "Improve courses examples, model and documentation"
+git push
+git push
+git pull
+npm test
+git add .
+git commit -m "Fix for Course to CourseInstance 
+git commit -m "Fix for Course to CourseInstance inheritance"
+git status
+git push
+npm start
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git status
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git status
+npm test
+npm test
+npm test
+npm test
+jasmine
+npm run jasmine
+npm run test-no-lint
+git pull
+git push
+ npm version patch
+npm version patch
+git diff
+git add .
+git commit -m "Slots url and temporary schema.org workaround"
+git status
+npm version patch
+npm publish
+npm publish
+git diff
+git log
+git commit -m "Restore provider property fix"
+git commit -m "Restore provider property fix"
+git commit -m "Restore provider property fix"
+git commit -m "Restore provider property fix"
+git diff
+git add .
+git commit -m "Restore provider property fix"
+git push
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git reset HEAD^
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git reset HEAD~
+git status
+git reset HEAD~
+git status
+git pull
+git stash
+git status
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test loadModel
+jasmine loadModel
+node jasmine loadModel
+node ./node_modules/jasmine/bin/jasmine.js loadModel
+node ./node_modules/jasmine/bin/jasmine.js
+node ./node_modules/jasmine/bin/jasmine.js
+node ./node_modules/jasmine/bin/jasmine.js
+node ./node_modules/jasmine/bin/jasmine.js loadModel
+node ./node_modules/jasmine/bin/jasmine.js loadModel-spec
+node ./node_modules/jasmine/bin/jasmine.js loadModel-spec.js
+node ./node_modules/jasmine/bin/jasmine.js -- loadModel-spec.js
+node ./node_modules/jasmine/bin/jasmine.js --filter=loadModel-spec.js
+node ./node_modules/jasmine/bin/jasmine.js
+node ./node_modules/jasmine/bin/jasmine.js
+node ./node_modules/jasmine/bin/jasmine.js
+npm test
+npm test
+npm test
+npm test
+npm test
+npm test
+git pull
+git checkout -b "docs/contains-place"
+git diff
+npm test
+git commit -m "docs: Improve documentation for containsPlace"
+git add .
+git commit -m "docs: Improve documentation for containsPlace"
+git commit -m "Additional example property"
+git add .
+npm test
+git commit -m "Additional example property"
+git pr create
+gh pr create
+gh pr create
+gh pr create
+history -w bash_history.txt
