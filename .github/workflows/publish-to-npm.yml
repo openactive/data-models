@@ -16,8 +16,8 @@ jobs:
         token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
     - name: Identify
       run: |
-        git config user.name OpenActive Bot
-        git config user.email hello@openactive.io
+        git config user.name openactive-bot
+        git config user.email openactive-bot@users.noreply.github.com
     - name: Use Node.js 18.17.1
       uses: actions/setup-node@v1
       with:
