@@ -10,5 +10,4 @@ jobs:
   test-validator-site:
     uses: openactive/data-model-validator-site/.github/workflows/test-and-deploy.yml@master
     with:
-      data-model-validator-site_ref: refs/heads/master
       data-models_ref: ${{ github.ref }}
