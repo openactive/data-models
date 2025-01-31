@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 jobs:
-  test-validator-site:
+  openactive-test-suite:
     uses: openactive/openactive-test-suite/.github/workflows/test-and-publish.yml@master
     with:
       quick_test: true
