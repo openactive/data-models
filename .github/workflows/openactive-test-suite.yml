@@ -10,4 +10,5 @@ jobs:
   test-validator-site:
     uses: openactive/openactive-test-suite/.github/workflows/test-and-publish.yml@master
     with:
+      quick_test: true
       data-models_ref: ${{ github.ref }}
