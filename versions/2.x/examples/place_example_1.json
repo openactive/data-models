@@ -39,12 +39,12 @@
             "value": false
           },
           {
-            "@type": "beta:Bar",
+            "@type": "Bar",
             "name": "Bar",
             "value": false
           },
           {
-            "@type": "beta:Cafe",
+            "@type": "Cafe",
             "name": "Cafe",
             "value": false
           },
