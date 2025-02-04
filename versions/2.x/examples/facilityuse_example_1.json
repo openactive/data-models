@@ -30,7 +30,7 @@
             "name": "Outdoor Tennis on Main Tennis Court 1",
             "beta:sportsActivityLocation": [
               {
-                "type": "SportsActivityLocation",
+                "@type": "SportsActivityLocation",
                 "name": "Main Tennis Court 1",
                 "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
               }
@@ -42,7 +42,7 @@
             "name": "Outdoor Tennis on Main Tennis Court 2",
             "beta:sportsActivityLocation": [
               {
-                "type": "SportsActivityLocation",
+                "@type": "SportsActivityLocation",
                 "name": "Main Tennis Court 2",
                 "containedInPlace": "http://www.example.org/api/locations/8958f9b8-2004-4e90-80ff-50c98a9b121d"
               }
