@@ -508,7 +508,7 @@
     },
     "maximumVirtualAttendeeCapacity": {
       "fieldName": "maximumVirtualAttendeeCapacity",
-      "sameAs": "https://pending.schema.org/maximumVirtualAttendeeCapacity",
+      "sameAs": "https://schema.org/maximumVirtualAttendeeCapacity",
       "requiredType": "https://schema.org/Integer",
       "description": [
         "Indicates the maximum number of connections to a shared virtual space."
@@ -660,7 +660,7 @@
     },
     "eventAttendanceMode": {
       "fieldName": "eventAttendanceMode",
-      "sameAs": "https://pending.schema.org/eventAttendanceMode",
+      "sameAs": "https://schema.org/eventAttendanceMode",
       "requiredType": "https://schema.org/EventAttendanceModeEnumeration",
       "description": [
         "The eventAttendanceMode of an event indicates whether it occurs online, offline, or a mix."

@@ -314,7 +314,7 @@ The minimum value of a number, inclusive.
 ```json
 "repeatCount": {
   "fieldName": "repeatCount",
-  "sameAs": "https://pending.schema.org/repeatCount",
+  "sameAs": "https://schema.org/repeatCount",
   "requiredType": "https://schema.org/Integer",
   "example": 3,
   "description": [

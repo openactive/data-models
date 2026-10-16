@@ -274,6 +274,18 @@ The test run will also include a run of [eslint](https://eslint.org/). To run th
 $ npm run test-no-lint
 ```
 
+### Updating schema.org
+
+The build downloads the schema.org vocabulary from a tagged release (`schemaOrgVocabUrl` in `scripts/build.js`) rather than the latest version, so a new schema.org release cannot break the build until the pin is changed. Pin to the GitHub tag URL: `schema.org/version/<n>/` only serves the current release, so a pin to it would break as soon as the next release is published.
+
+To move to a new schema.org release:
+
+1. Change the tag and release number in `schemaOrgVocabUrl`.
+2. Run `npm test`.
+3. If schema.org has moved terms from pending to core, tests fail with `... is not an accurate pending.schema.org reference ...`. Change the matching `sameAs` and `derivedFrom` values under `versions/2.x/models` from `https://pending.schema.org/<term>` to `https://schema.org/<term>`, and update any examples in [MODELS.md](MODELS.md). Leave the `pending` namespace in `meta.json`, as it is part of the published JSON-LD context.
+
+For example, schema.org 30.1 moved 20 terms used by these models from pending to core: `EventSeries`, `Schedule`, `VirtualLocation`, `WebAPI`, `byDay`, `byMonth`, `byMonthDay`, `documentation`, `eventAttendanceMode`, `eventSchedule`, `exceptDate`, `gender`, `hasCredential`, `jobTitle`, `maximumVirtualAttendeeCapacity`, `provider`, `repeatCount`, `repeatFrequency`, `scheduleTimezone` and `termsOfService`.
+
 ### Adding models
 
 Add new models to the `versions/models` directory.

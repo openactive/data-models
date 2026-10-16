@@ -1,6 +1,6 @@
 {
   "type": "Schedule",
-  "derivedFrom": "https://pending.schema.org/Schedule",
+  "derivedFrom": "https://schema.org/Schedule",
   "derivedFromPending": true,
   "hasId": false,
   "requiredFields": [
@@ -59,7 +59,7 @@
     },
     "byDay": {
       "fieldName": "byDay",
-      "sameAs": "https://pending.schema.org/byDay",
+      "sameAs": "https://schema.org/byDay",
       "requiredType": "ArrayOf#https://schema.org/DayOfWeek",
       "alternativeTypes": ["ArrayOf#https://schema.org/Text"],
       "example": ["https://schema.org/Monday"],
@@ -70,7 +70,7 @@
     },
     "byMonth": {
       "fieldName": "byMonth",
-      "sameAs": "https://pending.schema.org/byMonth",
+      "sameAs": "https://schema.org/byMonth",
       "requiredType": "ArrayOf#https://schema.org/Integer",
       "example": [2],
       "description": [
@@ -79,7 +79,7 @@
     },
     "byMonthDay": {
       "fieldName": "byMonthDay",
-      "sameAs": "https://pending.schema.org/byMonthDay",
+      "sameAs": "https://schema.org/byMonthDay",
       "requiredType": "ArrayOf#https://schema.org/Integer",
       "example": [28],
       "description": [
@@ -115,7 +115,7 @@
     },
     "exceptDate": {
       "fieldName": "exceptDate",
-      "sameAs": "https://pending.schema.org/exceptDate",
+      "sameAs": "https://schema.org/exceptDate",
       "requiredType": "ArrayOf#https://schema.org/Date",
       "alternativeTypes": ["ArrayOf#https://schema.org/DateTime"],
       "example": [
@@ -142,7 +142,7 @@
     },
     "repeatCount": {
       "fieldName": "repeatCount",
-      "sameAs": "https://pending.schema.org/repeatCount",
+      "sameAs": "https://schema.org/repeatCount",
       "requiredType": "https://schema.org/Integer",
       "example": 3,
       "description": [
@@ -152,7 +152,7 @@
     },
     "repeatFrequency": {
       "fieldName": "repeatFrequency",
-      "sameAs": "https://pending.schema.org/repeatFrequency",
+      "sameAs": "https://schema.org/repeatFrequency",
       "requiredType": "https://schema.org/Duration",
       "example": "P1D",
       "description": [
@@ -195,7 +195,7 @@
     },
     "scheduleTimezone": {
       "fieldName": "scheduleTimezone",
-      "sameAs": "https://pending.schema.org/scheduleTimezone",
+      "sameAs": "https://schema.org/scheduleTimezone",
       "requiredType": "https://schema.org/Text",
       "example": "Europe/London",
       "description": [
