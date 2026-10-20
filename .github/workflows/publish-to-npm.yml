@@ -51,6 +51,21 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN2 }}
+    # npm may take several minutes to make a new version available; downstream repositories install @latest
+    # as soon as they are dispatched, so wait until the new version can be fetched before dispatching
+    - name: Wait for the new version on npm
+      run: |
+        version=$(node -p "require('./package.json').version")
+        for i in $(seq 1 60); do
+          if curl -sf -o /dev/null "https://registry.npmjs.org/@openactive%2fdata-models/$version?nocache=$(date +%s)"; then
+            echo "$version is available on npm"
+            exit 0
+          fi
+          echo "Attempt $i: $version not yet available, waiting"
+          sleep 30
+        done
+        echo "$version was not available on npm within 30 minutes"
+        exit 1
 
   dispatch:
     needs: publish
