@@ -4,22 +4,37 @@ on:
   push:
     branches: [ master ]
 
+# Never run two publishes at once; a second merge waits for the first to finish
+concurrency:
+  group: publish-to-npm
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: ${{ !contains(github.event.head_commit.author.email, 'openactive-bot@users.noreply.github.com') }}
+    # Loop guard: the version bump commit below is pushed by the OpenActive GitHub App, and also carries [skip ci]
+    if: ${{ github.actor != 'openactive[bot]' }}
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
+    - name: Generate GitHub App Token
+      uses: actions/create-github-app-token@v1
+      id: generate-token
       with:
-        token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+        app-id: ${{ secrets.GH_APP_ID }}
+        private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        token: ${{ steps.generate-token.outputs.token }}
     - name: Identify
       run: |
-        git config user.name openactive-bot
-        git config user.email openactive-bot@users.noreply.github.com
+        git config --global user.name "openactive[bot]"
+        git config --global user.email 207210293+openactive[bot]@users.noreply.github.com
     - name: Use Node.js 18.17.1
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v4
       with:
         node-version: 18.17.1
         registry-url: https://registry.npmjs.org/
@@ -28,24 +43,50 @@ jobs:
     - name: Test
       run: npm test
     - name: Increment Version
-      run: npm version patch
+      run: npm version patch -m "%s [skip ci]"
+    # Push before publishing: if the push is rejected, nothing is published, so npm can never get ahead of GitHub
+    - name: Push version update
+      run: git push origin HEAD:master
     - name: Publish to npm
       run: npm publish
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-    - name: Push version update
-      run: git push
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN2 }}
+    # npm may take several minutes to make a new version available; downstream repositories install @latest
+    # as soon as they are dispatched, so wait until the new version can be fetched before dispatching
+    - name: Wait for the new version on npm
+      run: |
+        version=$(node -p "require('./package.json').version")
+        for i in $(seq 1 60); do
+          if curl -sf -o /dev/null "https://registry.npmjs.org/@openactive%2fdata-models/$version?nocache=$(date +%s)"; then
+            echo "$version is available on npm"
+            exit 0
+          fi
+          echo "Attempt $i: $version not yet available, waiting"
+          sleep 30
+        done
+        echo "$version was not available on npm within 30 minutes"
+        exit 1
 
   dispatch:
     needs: publish
     strategy:
+      fail-fast: false
       matrix:
         repo: ['OpenActive.NET', 'OpenActive.DatasetSite.NET', 'models-php', 'models-ruby', 'models-ts', 'data-model-validator-site', 'openactive.github.io', 'developer-documentation', 'openactive-test-suite']
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger tooling update
-        uses: peter-evans/repository-dispatch@v1
+      # Without owner and repositories, the token only covers this repository and cannot dispatch to others
+      - name: Generate GitHub App Token
+        uses: actions/create-github-app-token@v1
+        id: generate-token
         with:
-          token: ${{ secrets.PUBLIC_REPO_ACCESS_TOKEN }}
+          app-id: ${{ secrets.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          owner: openactive
+          repositories: ${{ matrix.repo }}
+      - name: Trigger tooling update
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ steps.generate-token.outputs.token }}
           repository: openactive/${{ matrix.repo }}
           event-type: data-models-update

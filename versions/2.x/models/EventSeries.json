@@ -2,7 +2,7 @@
   "type": "EventSeries",
   "hasId": true,
   "subClassOf": "#Event",
-  "derivedFrom": "https://pending.schema.org/EventSeries",
+  "derivedFrom": "https://schema.org/EventSeries",
   "sampleId": "https://api.example.com/event-series/12345",
   "requiredFields": [
     "type",

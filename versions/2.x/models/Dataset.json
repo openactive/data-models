@@ -169,7 +169,7 @@
     },
     "documentation": {
       "fieldName": "documentation",
-      "sameAs": "https://pending.schema.org/documentation",
+      "sameAs": "https://schema.org/documentation",
       "requiredType": "https://schema.org/URL",
       "example": "https://permalink.openactive.io/dataset-site/open-data-documentation",
       "description": [

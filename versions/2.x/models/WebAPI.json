@@ -1,6 +1,6 @@
 {
   "type": "WebAPI",
-  "derivedFrom": "https://pending.schema.org/WebAPI",
+  "derivedFrom": "https://schema.org/WebAPI",
   "hasId": false,
   "validationMode": {
     "RPDEFeed": "noRequired",
@@ -91,7 +91,7 @@
     },
     "documentation": {
       "fieldName": "documentation",
-      "sameAs": "https://pending.schema.org/documentation",
+      "sameAs": "https://schema.org/documentation",
       "requiredType": "https://schema.org/URL",
       "example": "https://permalink.openactive.io/dataset-site/open-booking-api-documentation",
       "description": [
@@ -100,7 +100,7 @@
     },
     "termsOfService": {
       "fieldName": "termsOfService",
-      "sameAs": "https://pending.schema.org/termsOfService",
+      "sameAs": "https://schema.org/termsOfService",
       "requiredType": "https://schema.org/URL",
       "example": "https://example.bookingsystem.com/terms",
       "description": [

@@ -1,6 +1,6 @@
 {
   "type": "VirtualLocation",
-  "derivedFrom": "https://pending.schema.org/VirtualLocation",
+  "derivedFrom": "https://schema.org/VirtualLocation",
   "hasId": false,
   "requiredFields":[
     "type"

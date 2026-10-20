@@ -13,7 +13,9 @@ const renderModel = require('../src/helpers/renderModel');
   const uniqueVersions = [...new Set(Object.values(versions))];
   const distPath = path.join(__dirname, '..', 'src', 'dist');
 
-  const schemaOrgVocabUrl = 'https://schema.org/version/latest/schemaorg-current-https.jsonld';
+  // Pinned to a tagged schema.org release so a new release cannot break CI unannounced.
+  // schema.org/version/<n>/ only serves the current release, so use the GitHub tag instead.
+  const schemaOrgVocabUrl = 'https://raw.githubusercontent.com/schemaorg/schemaorg/v30.1/data/releases/30.1/schemaorg-current-https.jsonld';
 
   console.log('Fetching schema.org vocab...');
   const schema = JSON.parse(request('GET', schemaOrgVocabUrl, {
@@ -130,6 +132,7 @@ const renderModel = require('../src/helpers/renderModel');
   fs.writeFileSync(
     path.join(distPath, 'schemaOrgVocab.js'),
     `/* eslint-disable */
+  // @ts-nocheck - the schema.org vocabulary is too large for tsc to infer (TS2590).
   // This is a generated file. Do not edit manually.
   module.exports = ${JSON.stringify(schema)};`,
     () => {},

@@ -183,7 +183,7 @@
     },
     "gender": {
       "fieldName": "gender",
-      "sameAs": "https://pending.schema.org/gender",
+      "sameAs": "https://schema.org/gender",
       "requiredType": "https://schema.org/GenderType",
       "alternativeTypes": [
         "https://schema.org/Text"
@@ -224,7 +224,7 @@
     },
     "jobTitle": {
       "fieldName": "jobTitle",
-      "sameAs": "https://pending.schema.org/jobTitle",
+      "sameAs": "https://schema.org/jobTitle",
       "requiredType": "https://schema.org/Text",
       "example": "Team Captain",
       "description": [
@@ -259,7 +259,7 @@
     },
     "termsOfService": {
       "fieldName": "termsOfService",
-      "sameAs": "https://pending.schema.org/termsOfService",
+      "sameAs": "https://schema.org/termsOfService",
       "model": "ArrayOf#Terms",
       "description": [
         "The terms of service of the Seller."
