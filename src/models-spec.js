@@ -27,6 +27,24 @@ const schemaOrgDataModel = (() => {
   return getSchemaOrgVocab()['@graph'].map((entity) => getPrefixReplacedId(entity));
 })();
 
+const parseRDFXML = (uri) => {
+  // @ts-ignore sync-request has no call signatures
+  const response = request('GET', uri);
+
+  // Convert RDF file to string
+  const rdf = `${response.body}`;
+
+  // Parse RDF string into store
+  const store = $rdf.graph();
+  $rdf.parse(rdf, store, uri, 'application/rdf+xml');
+
+  // Get all subjects specified in RDF file as a Set
+  const ids = new Set(store.statements.map((x) => x.subject.value).filter((x) => x.indexOf('n') !== 0));
+
+  // Return the Set
+  return ids;
+};
+
 // Parse an RDF/XML string and return the set of subjects it defines
 const parseRDFXMLString = (rdf, baseUri) => {
   // Parse RDF string into store
@@ -47,10 +65,9 @@ const warnUsingFallback = (uri, localFile, reason) => {
   }
 };
 
-// Download the RDF/XML vocabulary at `uri` and return the set of subjects it defines. If the
-// download fails or does not return usable RDF/XML, and a `fallbackFile` is given, use that local
-// copy instead and flag that it was used.
-const parseRDFXML = (uri, fallbackFile) => {
+// As parseRDFXML, but if the download fails or does not return usable RDF/XML, use the local copy
+// `fallbackFile` instead and flag that it was used.
+const parseRDFXMLWithFallback = (uri, fallbackFile) => {
   let reason;
   try {
     // @ts-ignore sync-request has no call signatures
@@ -68,9 +85,6 @@ const parseRDFXML = (uri, fallbackFile) => {
     reason = error.message;
   }
 
-  if (!fallbackFile) {
-    throw new Error(`Could not load ${uri} (${reason})`);
-  }
   warnUsingFallback(uri, fallbackFile, reason);
   return parseRDFXMLString(fs.readFileSync(fallbackFile, 'utf8'), uri);
 };
@@ -78,7 +92,7 @@ const parseRDFXML = (uri, fallbackFile) => {
 // GoodRelations has been unavailable from its own site at times (401 Unauthorized from October
 // 2026). If so, the tests use a copy of its final release (V 1.0, 2011-10-01, CC BY 3.0), taken
 // from the Internet Archive.
-const goodRelationsDataModel = parseRDFXML(
+const goodRelationsDataModel = parseRDFXMLWithFallback(
   'http://purl.org/goodrelations/v1.owl',
   path.join(__dirname, '..', 'spec', 'vocabularies', 'goodrelations-v1.owl'),
 );
