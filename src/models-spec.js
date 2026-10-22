@@ -45,7 +45,57 @@ const parseRDFXML = (uri) => {
   return ids;
 };
 
-const goodRelationsDataModel = parseRDFXML('http://www.heppnetz.de/ontologies/goodrelations/v1.owl');
+// Parse an RDF/XML string and return the set of subjects it defines
+const parseRDFXMLString = (rdf, baseUri) => {
+  // Parse RDF string into store
+  const store = $rdf.graph();
+  $rdf.parse(rdf, store, baseUri, 'application/rdf+xml');
+
+  // Get all subjects specified in RDF file as a Set
+  return new Set(store.statements.map((x) => x.subject.value).filter((x) => x.indexOf('n') !== 0));
+};
+
+// Report that a local copy was used, in the test output and, on GitHub Actions, as a warning
+// annotation on the run, so that a vocabulary that has stopped being available is noticed
+const warnUsingFallback = (uri, localFile, reason) => {
+  const message = `Could not load ${uri} (${reason}). Using the local copy ${path.relative(path.join(__dirname, '..'), localFile)} instead.`;
+  console.warn(`\nWARNING: ${message}\n`); // eslint-disable-line no-console
+  if (process.env.GITHUB_ACTIONS === 'true') {
+    console.log(`::warning title=Vocabulary download failed::${message}`); // eslint-disable-line no-console
+  }
+};
+
+// As parseRDFXML, but if the download fails or does not return usable RDF/XML, use the local copy
+// `fallbackFile` instead and flag that it was used.
+const parseRDFXMLWithFallback = (uri, fallbackFile) => {
+  let reason;
+  try {
+    // @ts-ignore sync-request has no call signatures
+    const response = request('GET', uri, { timeout: 30000 });
+    if (response.statusCode !== 200) {
+      reason = `HTTP ${response.statusCode}`;
+    } else {
+      const ids = parseRDFXMLString(`${response.body}`, uri);
+      if (ids.size > 0) {
+        return ids;
+      }
+      reason = 'no terms found in the response';
+    }
+  } catch (error) {
+    reason = error.message;
+  }
+
+  warnUsingFallback(uri, fallbackFile, reason);
+  return parseRDFXMLString(fs.readFileSync(fallbackFile, 'utf8'), uri);
+};
+
+// GoodRelations has been unavailable from its own site at times (401 Unauthorized from October
+// 2026). If so, the tests use a copy of its final release (V 1.0, 2011-10-01, CC BY 3.0), taken
+// from the Internet Archive.
+const goodRelationsDataModel = parseRDFXMLWithFallback(
+  'http://purl.org/goodrelations/v1.owl',
+  path.join(__dirname, '..', 'spec', 'vocabularies', 'goodrelations-v1.owl'),
+);
 const skosDataModel = parseRDFXML('https://www.w3.org/2009/08/skos-reference/skos.rdf');
 
 const forEachVersion = (cb) => {
