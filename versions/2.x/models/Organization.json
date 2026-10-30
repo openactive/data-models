@@ -69,6 +69,36 @@
         "requiredFields": [
           "id"
         ]
+      },
+      "$": {
+        "requiredFields": [
+          "name",
+          "activity",
+          "location"
+        ],
+        "recommendedFields": [
+          "id",
+          "description",
+          "url",
+          "sameAs",
+          "email",
+          "telephone"
+        ]
+      },
+      "data": {
+        "requiredFields": [
+          "name",
+          "activity",
+          "location"
+        ],
+        "recommendedFields": [
+          "id",
+          "description",
+          "url",
+          "sameAs",
+          "email",
+          "telephone"
+        ]
       }
     },
     "bookableFeed": {
@@ -206,7 +236,11 @@
     "hasAccount",
     "activity",
     "location",
-    "ageRange"
+    "ageRange",
+    "genderRestriction",
+    "alternateName",
+    "memberOf",
+    "member"
   ],
   "fields": {
     "type": {
@@ -379,9 +413,15 @@
       "fieldName": "location",
       "sameAs": "https://schema.org/location",
       "model": "#Place",
-      "allowReferencing": true,
+      "alternativeModels": [
+        "ArrayOf#Place",
+        "#PostalAddress"
+      ],
+      "alternativeTypes": [
+        "https://schema.org/Text"
+      ],
       "description": [
-        "The location at which this organization provides activity."
+        "The main address of the organization, or the key locations of the activities it provides."
       ],
       "example": {
         "@type": "Place",
@@ -406,6 +446,53 @@
         "minValue": 5,
         "maxValue": 16
       }
+    },
+    "genderRestriction": {
+      "fieldName": "genderRestriction",
+      "sameAs": "https://openactive.io/genderRestriction",
+      "requiredType": "https://openactive.io/GenderRestrictionType",
+      "description": [
+        "Indicates that the organization provides activities that are restricted to male or female participants, or that there are no restrictions."
+      ],
+      "example": "https://openactive.io/FemaleOnly"
+    },
+    "alternateName": {
+      "fieldName": "alternateName",
+      "sameAs": "https://schema.org/alternateName",
+      "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "ArrayOf#https://schema.org/Text"
+      ],
+      "description": [
+        "Aliases, common acronyms or alternative names for the organization."
+      ],
+      "example": [
+        "EYC"
+      ]
+    },
+    "memberOf": {
+      "fieldName": "memberOf",
+      "sameAs": "https://schema.org/memberOf",
+      "model": "#Organization",
+      "allowReferencing": true,
+      "description": [
+        "The `@id` of an organization that this organization is affiliated to. For example, a club can link to its national governing body."
+      ],
+      "example": "https://example.org/id/organisation/national-governing-body"
+    },
+    "member": {
+      "fieldName": "member",
+      "sameAs": "https://schema.org/member",
+      "requiredType": "ArrayOf#https://schema.org/URL",
+      "alternativeTypes": [
+        "https://schema.org/URL"
+      ],
+      "description": [
+        "The `@id`s of organizations affiliated to this organization. For example, a national governing body can list its affiliated clubs."
+      ],
+      "example": [
+        "https://example.org/id/organisation/1"
+      ]
     }
   }
 }
