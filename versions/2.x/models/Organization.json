@@ -74,7 +74,8 @@
         "requiredFields": [
           "name",
           "activity",
-          "location"
+          "location",
+          "beta:dateVerified"
         ],
         "recommendedFields": [
           "id",
@@ -89,7 +90,8 @@
         "requiredFields": [
           "name",
           "activity",
-          "location"
+          "location",
+          "beta:dateVerified"
         ],
         "recommendedFields": [
           "id",
