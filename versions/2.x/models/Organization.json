@@ -203,7 +203,10 @@
     "address",
     "termsOfService",
     "isOpenBookingAllowed",
-    "hasAccount"
+    "hasAccount",
+    "activity",
+    "location",
+    "ageRange"
   ],
   "fields": {
     "type": {
@@ -355,6 +358,54 @@
         "Reference to the CustomerAccount associated with this Customer, for use within the Open Booking API flow.",
         "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
       ]
+    },
+    "activity": {
+      "fieldName": "activity",
+      "sameAs": "https://openactive.io/activity",
+      "model": "ArrayOf#Concept",
+      "description": [
+        "The physical activity or activities provided by this organization."
+      ],
+      "example": [
+        {
+          "@type": "Concept",
+          "@id": "https://openactive.io/activity-list#6bb8b844-df3e-4cae-bf5f-3e129c6b1a9d",
+          "prefLabel": "Sailing",
+          "inScheme": "https://openactive.io/activity-list"
+        }
+      ]
+    },
+    "location": {
+      "fieldName": "location",
+      "sameAs": "https://schema.org/location",
+      "model": "#Place",
+      "allowReferencing": true,
+      "description": [
+        "The location at which this organization provides activity."
+      ],
+      "example": {
+        "@type": "Place",
+        "@id": "https://example.com/locations/1234ABCD",
+        "name": "Example Sailing Club",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "SE10 0BW",
+          "addressCountry": "GB"
+        }
+      }
+    },
+    "ageRange": {
+      "fieldName": "ageRange",
+      "sameAs": "https://openactive.io/ageRange",
+      "model": "#QuantitativeValue",
+      "description": [
+        "The age range this organization caters for overall."
+      ],
+      "example": {
+        "@type": "QuantitativeValue",
+        "minValue": 5,
+        "maxValue": 16
+      }
     }
   }
 }
