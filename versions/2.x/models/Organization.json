@@ -75,7 +75,8 @@
           "name",
           "activity",
           "location",
-          "beta:dateVerified"
+          "beta:dateVerified",
+          "license"
         ],
         "recommendedFields": [
           "id",
@@ -242,7 +243,8 @@
     "genderRestriction",
     "alternateName",
     "memberOf",
-    "member"
+    "member",
+    "license"
   ],
   "fields": {
     "type": {
@@ -494,6 +496,15 @@
       ],
       "example": [
         "https://example.org/id/organisation/1"
+      ]
+    },
+    "license": {
+      "fieldName": "license",
+      "sameAs": "https://schema.org/license",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://creativecommons.org/licenses/by/4.0/",
+      "description": [
+        "Reference to the license under which the Organization's data is published. Required when an Organization is published on its own outside an RPDE feed; in an RPDE feed, the license is given by each feed page, so it should not be included."
       ]
     }
   }
