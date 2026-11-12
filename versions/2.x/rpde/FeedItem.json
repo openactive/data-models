@@ -20,7 +20,8 @@
       "fieldName": "data",
       "model": "#Event",
       "alternativeModels": [
-        "#FacilityUse"
+        "#FacilityUse",
+        "#Organization"
       ],
       "description": [
         "Note this property must not be included if state is \"deleted\"."
@@ -51,7 +52,8 @@
         "EventSeries",
         "OnDemandEvent",
         "Order",
-        "Place"
+        "Place",
+        "Organization"
       ],
       "description": [
         "The kind property allows for the representation of different entity types, though where possible referenced entities should be embedded into the primary entity. Each entity type (kind) can be synchronised separately, this allows a decoupling of the sync logic from the data structure, and allows the data structure to be reassembled on the data consumer side (at System 2)."
