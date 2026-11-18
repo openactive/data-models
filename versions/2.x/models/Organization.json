@@ -69,6 +69,39 @@
         "requiredFields": [
           "id"
         ]
+      },
+      "$": {
+        "requiredFields": [
+          "name",
+          "activity",
+          "location",
+          "beta:dateVerified",
+          "license"
+        ],
+        "recommendedFields": [
+          "id",
+          "description",
+          "url",
+          "sameAs",
+          "email",
+          "telephone"
+        ]
+      },
+      "data": {
+        "requiredFields": [
+          "name",
+          "activity",
+          "location",
+          "beta:dateVerified"
+        ],
+        "recommendedFields": [
+          "id",
+          "description",
+          "url",
+          "sameAs",
+          "email",
+          "telephone"
+        ]
       }
     },
     "bookableFeed": {
@@ -203,7 +236,15 @@
     "address",
     "termsOfService",
     "isOpenBookingAllowed",
-    "hasAccount"
+    "hasAccount",
+    "activity",
+    "location",
+    "ageRange",
+    "genderRestriction",
+    "alternateName",
+    "memberOf",
+    "member",
+    "license"
   ],
   "fields": {
     "type": {
@@ -354,6 +395,116 @@
       "description": [
         "Reference to the CustomerAccount associated with this Customer, for use within the Open Booking API flow.",
         "Note that this property is in EARLY RELEASE AND IS SUBJECT TO CHANGE, as the [Customer Accounts proposal](https://github.com/openactive/customer-accounts) evolves."
+      ]
+    },
+    "activity": {
+      "fieldName": "activity",
+      "sameAs": "https://openactive.io/activity",
+      "model": "ArrayOf#Concept",
+      "description": [
+        "The physical activity or activities provided by this organization."
+      ],
+      "example": [
+        {
+          "@type": "Concept",
+          "@id": "https://openactive.io/activity-list#6bb8b844-df3e-4cae-bf5f-3e129c6b1a9d",
+          "prefLabel": "Sailing",
+          "inScheme": "https://openactive.io/activity-list"
+        }
+      ]
+    },
+    "location": {
+      "fieldName": "location",
+      "sameAs": "https://schema.org/location",
+      "model": "#Place",
+      "alternativeModels": [
+        "ArrayOf#Place",
+        "#PostalAddress"
+      ],
+      "alternativeTypes": [
+        "https://schema.org/Text"
+      ],
+      "description": [
+        "The main address of the organization, or the key locations of the activities it provides."
+      ],
+      "example": {
+        "@type": "Place",
+        "@id": "https://example.com/locations/1234ABCD",
+        "name": "Example Sailing Club",
+        "address": {
+          "@type": "PostalAddress",
+          "postalCode": "SE10 0BW",
+          "addressCountry": "GB"
+        }
+      }
+    },
+    "ageRange": {
+      "fieldName": "ageRange",
+      "sameAs": "https://openactive.io/ageRange",
+      "model": "#QuantitativeValue",
+      "description": [
+        "The age range this organization caters for overall."
+      ],
+      "example": {
+        "@type": "QuantitativeValue",
+        "minValue": 5,
+        "maxValue": 16
+      }
+    },
+    "genderRestriction": {
+      "fieldName": "genderRestriction",
+      "sameAs": "https://openactive.io/genderRestriction",
+      "requiredType": "https://openactive.io/GenderRestrictionType",
+      "description": [
+        "Indicates that the organization provides activities that are restricted to male or female participants, or that there are no restrictions."
+      ],
+      "example": "https://openactive.io/FemaleOnly"
+    },
+    "alternateName": {
+      "fieldName": "alternateName",
+      "sameAs": "https://schema.org/alternateName",
+      "requiredType": "https://schema.org/Text",
+      "alternativeTypes": [
+        "ArrayOf#https://schema.org/Text"
+      ],
+      "description": [
+        "Aliases, common acronyms or alternative names for the organization."
+      ],
+      "example": [
+        "EYC"
+      ]
+    },
+    "memberOf": {
+      "fieldName": "memberOf",
+      "sameAs": "https://schema.org/memberOf",
+      "model": "#Organization",
+      "allowReferencing": true,
+      "description": [
+        "The `@id` of an organization that this organization is affiliated to. For example, a club can link to its national governing body."
+      ],
+      "example": "https://example.org/id/organisation/national-governing-body"
+    },
+    "member": {
+      "fieldName": "member",
+      "sameAs": "https://schema.org/member",
+      "requiredType": "ArrayOf#https://schema.org/URL",
+      "alternativeTypes": [
+        "https://schema.org/URL"
+      ],
+      "description": [
+        "The `@id`s of organizations affiliated to this organization. For example, a national governing body can list its affiliated clubs."
+      ],
+      "example": [
+        "https://example.org/id/organisation/1"
+      ]
+    },
+    "license": {
+      "fieldName": "license",
+      "sameAs": "https://schema.org/license",
+      "requiredType": "https://schema.org/URL",
+      "example": "https://creativecommons.org/licenses/by/4.0/",
+      "description": [
+        "Reference to the license under which the Organization's data is published. Required when an Organization is published on its own outside an RPDE feed; in an RPDE feed, the license is given by each feed page, so it should not be included."
       ]
     }
   }
